@@ -1,0 +1,17 @@
+export default {
+  django: `${browser.config.baseUrl}/admin/login/`,
+  djangoUsers: `${browser.config.baseUrl}/admin/users/user/`,
+  homepage: new RegExp(`${browser.config.baseUrl}/project`),
+  login: new RegExp(/https:\/\/schemadesign-stage\.auth0\.com\/login\?state=([a-zA-Z0-9#]*)/),
+  resetPassword: new RegExp(/https:\/\/schemadesign-stage\.auth0\.com\/lo\/reset\?ticket=([a-zA-Z0-9#]*)/),
+  projectDetails: new RegExp(`${browser.config.baseUrl}/project/([1-9]*)`),
+  datasource: new RegExp(`${browser.config.baseUrl}/project/([0-9]*)/datasource`),
+  source: new RegExp(`${browser.config.baseUrl}/datasource/([0-9]*)/source`),
+  datasourcePreview: new RegExp(`${browser.config.baseUrl}/datasource/([0-9]*)/preview`),
+  datasourceResults: new RegExp(`${browser.config.baseUrl}/datasource/([0-9]*)/result`),
+  steps: new RegExp(`${browser.config.baseUrl}/datasource/([0-9]*)/steps`),
+  filters: new RegExp(`${browser.config.baseUrl}/datasource/([0-9]*)/filters`),
+  tags: new RegExp(`${browser.config.baseUrl}/datasource/([0-9]*)/tag`),
+  states: new RegExp(`${browser.config.baseUrl}/datasource/([0-9]*)/states`),
+  metadata: new RegExp(`${browser.config.baseUrl}/datasource/([0-9]*)/metadata`),
+};

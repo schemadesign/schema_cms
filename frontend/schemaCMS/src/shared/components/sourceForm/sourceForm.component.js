@@ -46,10 +46,6 @@ export class SourceFormComponent extends PureComponent {
     uploadingDataSources: [],
   };
 
-  static state = {
-    googleLink: '',
-  };
-
   handleUploadChange = (data, { setFieldValue }) => {
     const uploadFile = getEventFiles(data);
     if (!uploadFile.length) {
@@ -194,7 +190,7 @@ export class SourceFormComponent extends PureComponent {
     const fileUploadingError = !!propOr(false, 'error', uploadingDataSource);
     const fileUploading = !!uploadingDataSource && !fileUploadingError;
     const fileName = ifElse(isNil, () => pathOr('', ['fileName'], values), prop('fileName'))(uploadingDataSource);
-    console.log('values', values);
+
     return (
       <Fragment>
         <TextInput
