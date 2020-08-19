@@ -13,7 +13,7 @@ export const DATA_SOURCE_RUN_LAST_JOB = 'runLastJob';
 export const SOURCE_TYPE_FILE = 'file';
 export const SOURCE_TYPE_API = 'api';
 export const SOURCE_TYPE_DATABASE = 'database';
-export const SOURCE_TYPE_GOOGLE_SHEET = 'googleSheet';
+export const SOURCE_TYPE_GOOGLE_SHEET = 'google_sheet';
 
 export const SOURCE_PAGE = 'source';
 export const PREVIEW_PAGE = 'preview';

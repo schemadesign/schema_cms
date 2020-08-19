@@ -171,8 +171,8 @@ export class SourceFormComponent extends PureComponent {
     return (
       <RadioBaseComponent
         label={this.props.intl.formatMessage(messages.googleSpreadSheet)}
-        value={DATA_SOURCE_GOOGLE_SHEET}
-        id={DATA_SOURCE_GOOGLE_SHEET}
+        value={SOURCE_TYPE_GOOGLE_SHEET}
+        id={SOURCE_TYPE_GOOGLE_SHEET}
       >
         <Button id="googleSpreadsheetUploadIcon" customStyles={{ background, ...buttonStyles }} type="button">
           <CsvIcon customStyles={{ fill }} />
