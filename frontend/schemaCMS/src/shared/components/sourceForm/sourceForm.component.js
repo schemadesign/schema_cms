@@ -104,7 +104,7 @@ export class SourceFormComponent extends PureComponent {
     />
   );
 
-  renderGoogleUploader = ({ setFieldValue, fileName, disabled, ...restProps }) => {
+  renderSpreadsheetInput = ({ setFieldValue, fileName, disabled, ...restProps }) => {
     const { handleChange } = this.props;
     return (
       <TextInput
@@ -140,7 +140,7 @@ export class SourceFormComponent extends PureComponent {
         equals(SOURCE_TYPE_GOOGLE_SPREADSHEET),
         () => (
           <Fragment>
-            {this.renderGoogleUploader({
+            {this.renderSpreadsheetInput({
               ...restProps,
               disabled: isProcessing || fileUploading,
             })}
@@ -168,7 +168,7 @@ export class SourceFormComponent extends PureComponent {
     );
   };
 
-  renderGoogleButton = type => {
+  renderSpreadsheetButton = type => {
     const { active, unActive } = this.props.theme.radioButton;
     const { fill, background } = type === DATA_SOURCE_LINK ? active : unActive;
 
@@ -219,7 +219,7 @@ export class SourceFormComponent extends PureComponent {
           onChange={handleChange}
         >
           {this.renderRadioButton(type)}
-          {this.renderGoogleButton(type)}
+          {this.renderSpreadsheetButton(type)}
         </RadioGroup>
         {this.renderSourceUpload({
           type,
