@@ -6,14 +6,14 @@ export const FETCH_LIST_DELAY = 5 * 1000;
 export const DATA_SOURCE_FORM = 'data_source_form';
 export const DATA_SOURCE_NAME = 'name';
 export const DATA_SOURCE_FILE = 'file';
-export const DATA_SOURCE_LINK = 'link';
+export const DATA_SOURCE_GOOGLE_SHEET = 'googleSheet';
 export const DATA_SOURCE_TYPE = 'type';
 export const DATA_SOURCE_RUN_LAST_JOB = 'runLastJob';
 
 export const SOURCE_TYPE_FILE = 'file';
 export const SOURCE_TYPE_API = 'api';
 export const SOURCE_TYPE_DATABASE = 'database';
-export const SOURCE_TYPE_GOOGLE_SPREADSHEET = 'link';
+export const SOURCE_TYPE_GOOGLE_SHEET = 'googleSheet';
 
 export const SOURCE_PAGE = 'source';
 export const PREVIEW_PAGE = 'preview';

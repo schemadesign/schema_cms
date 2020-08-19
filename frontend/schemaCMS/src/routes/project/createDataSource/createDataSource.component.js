@@ -3,6 +3,7 @@ import PropTypes from 'prop-types';
 import { FormattedMessage } from 'react-intl';
 import { Formik } from 'formik';
 import Helmet from 'react-helmet';
+import { cond, always, equals } from 'ramda';
 
 import { SourceForm } from '../../../shared/components/sourceForm';
 import messages from './createDataSource.messages';
@@ -25,6 +26,11 @@ export class CreateDataSource extends PureComponent {
     }).isRequired,
     createDataSource: PropTypes.func.isRequired,
   };
+
+  validateFile = values =>
+    cond([[equals('file'), always(!values.fileName)], [equals('googleSheet'), always(!values.googleSheet)]])(
+      values.type
+    );
 
   handleSubmit = async (requestData, { setErrors, setSubmitting }) => {
     const { createDataSource } = this.props;
@@ -83,7 +89,7 @@ export class CreateDataSource extends PureComponent {
                   <NextButton
                     id="createDataSourceSaveBtn"
                     onClick={submitForm}
-                    disabled={!values.fileName || !isValid || isSubmitting}
+                    disabled={this.validateFile(values) || !isValid || isSubmitting}
                     loading={isSubmitting}
                   >
                     <FormattedMessage {...messages.save} />

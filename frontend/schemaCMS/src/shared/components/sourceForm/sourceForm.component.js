@@ -22,8 +22,8 @@ import {
   SOURCE_TYPE_API,
   SOURCE_TYPE_DATABASE,
   SOURCE_TYPE_FILE,
-  SOURCE_TYPE_GOOGLE_SPREADSHEET,
-  DATA_SOURCE_LINK,
+  SOURCE_TYPE_GOOGLE_SHEET,
+  DATA_SOURCE_GOOGLE_SHEET,
 } from '../../../modules/dataSource/dataSource.constants';
 import { Uploader } from '../form/uploader';
 import { getEventFiles, isProcessingData } from '../../utils/helpers';
@@ -104,13 +104,13 @@ export class SourceFormComponent extends PureComponent {
     />
   );
 
-  renderSpreadsheetInput = ({ setFieldValue, fileName, disabled, ...restProps }) => {
+  renderSpreadsheetInput = ({ setFieldValue, disabled, googleSheet, ...restProps }) => {
     const { handleChange } = this.props;
     return (
       <TextInput
-        value={name || ''}
+        value={googleSheet || ''}
         onChange={handleChange}
-        name={DATA_SOURCE_LINK}
+        name={DATA_SOURCE_GOOGLE_SHEET}
         fullWidth
         checkOnlyErrors
         label={this.props.intl.formatMessage(messages.name)}
@@ -137,7 +137,7 @@ export class SourceFormComponent extends PureComponent {
       [equals(SOURCE_TYPE_API), () => {}],
       [equals(SOURCE_TYPE_DATABASE), () => {}],
       [
-        equals(SOURCE_TYPE_GOOGLE_SPREADSHEET),
+        equals(SOURCE_TYPE_GOOGLE_SHEET),
         () => (
           <Fragment>
             {this.renderSpreadsheetInput({
@@ -170,13 +170,13 @@ export class SourceFormComponent extends PureComponent {
 
   renderSpreadsheetButton = type => {
     const { active, unActive } = this.props.theme.radioButton;
-    const { fill, background } = type === DATA_SOURCE_LINK ? active : unActive;
+    const { fill, background } = type === DATA_SOURCE_GOOGLE_SHEET ? active : unActive;
 
     return (
       <RadioBaseComponent
         label={this.props.intl.formatMessage(messages.googleSpreadSheet)}
-        value={DATA_SOURCE_LINK}
-        id={DATA_SOURCE_LINK}
+        value={DATA_SOURCE_GOOGLE_SHEET}
+        id={DATA_SOURCE_GOOGLE_SHEET}
       >
         <Button id="googleSpreadsheetUploadIcon" customStyles={{ background, ...buttonStyles }} type="button">
           <CsvIcon customStyles={{ fill }} />
@@ -190,11 +190,11 @@ export class SourceFormComponent extends PureComponent {
     const { jobsState, id, metaData } = dataSource;
     const { isProcessing } = isProcessingData({ jobsState, metaData });
     const uploadingDataSource = find(propEq('id', id), uploadingDataSources);
-    const { name, type } = values;
+    const { name, type, googleSheet } = values;
     const fileUploadingError = !!propOr(false, 'error', uploadingDataSource);
     const fileUploading = !!uploadingDataSource && !fileUploadingError;
     const fileName = ifElse(isNil, () => pathOr('', ['fileName'], values), prop('fileName'))(uploadingDataSource);
-
+    console.log('values', values);
     return (
       <Fragment>
         <TextInput
@@ -224,6 +224,7 @@ export class SourceFormComponent extends PureComponent {
         {this.renderSourceUpload({
           type,
           fileName,
+          googleSheet,
           isProcessing: isProcessing && !!dataSource.fileName,
           fileUploadingError,
           fileUploading,
