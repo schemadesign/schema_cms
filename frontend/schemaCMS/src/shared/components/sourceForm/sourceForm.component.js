@@ -22,6 +22,8 @@ import {
   SOURCE_TYPE_API,
   SOURCE_TYPE_DATABASE,
   SOURCE_TYPE_FILE,
+  SOURCE_TYPE_GOOGLE_SPREADSHEET,
+  DATA_SOURCE_LINK,
 } from '../../../modules/dataSource/dataSource.constants';
 import { Uploader } from '../form/uploader';
 import { getEventFiles, isProcessingData } from '../../utils/helpers';
@@ -42,6 +44,10 @@ export class SourceFormComponent extends PureComponent {
   static defaultProps = {
     dataSource: {},
     uploadingDataSources: [],
+  };
+
+  static state = {
+    googleLink: '',
   };
 
   handleUploadChange = (data, { setFieldValue }) => {
@@ -98,6 +104,22 @@ export class SourceFormComponent extends PureComponent {
     />
   );
 
+  renderGoogleUploader = ({ setFieldValue, fileName, disabled, ...restProps }) => {
+    const { handleChange } = this.props;
+    return (
+      <TextInput
+        value={name || ''}
+        onChange={handleChange}
+        name={DATA_SOURCE_LINK}
+        fullWidth
+        checkOnlyErrors
+        label={this.props.intl.formatMessage(messages.name)}
+        isEdit
+        {...restProps}
+      />
+    );
+  };
+
   renderSourceUpload = ({ type, isProcessing, fileUploadingError, fileUploading, ...restProps }) =>
     cond([
       [
@@ -114,6 +136,18 @@ export class SourceFormComponent extends PureComponent {
       ],
       [equals(SOURCE_TYPE_API), () => {}],
       [equals(SOURCE_TYPE_DATABASE), () => {}],
+      [
+        equals(SOURCE_TYPE_GOOGLE_SPREADSHEET),
+        () => (
+          <Fragment>
+            {this.renderGoogleUploader({
+              ...restProps,
+              disabled: isProcessing || fileUploading,
+            })}
+            {this.renderProcessingMessage({ isProcessing, fileUploadingError, fileUploading })}
+          </Fragment>
+        ),
+      ],
       [T, always(null)],
     ])(type);
 
@@ -128,6 +162,23 @@ export class SourceFormComponent extends PureComponent {
         id={DATA_SOURCE_FILE}
       >
         <Button id="csvUploadIcon" customStyles={{ background, ...buttonStyles }} type="button">
+          <CsvIcon customStyles={{ fill }} />
+        </Button>
+      </RadioBaseComponent>
+    );
+  };
+
+  renderGoogleButton = type => {
+    const { active, unActive } = this.props.theme.radioButton;
+    const { fill, background } = type === DATA_SOURCE_LINK ? active : unActive;
+
+    return (
+      <RadioBaseComponent
+        label={this.props.intl.formatMessage(messages.googleSpreadSheet)}
+        value={DATA_SOURCE_LINK}
+        id={DATA_SOURCE_LINK}
+      >
+        <Button id="googleSpreadsheetUploadIcon" customStyles={{ background, ...buttonStyles }} type="button">
           <CsvIcon customStyles={{ fill }} />
         </Button>
       </RadioBaseComponent>
@@ -168,6 +219,7 @@ export class SourceFormComponent extends PureComponent {
           onChange={handleChange}
         >
           {this.renderRadioButton(type)}
+          {this.renderGoogleButton(type)}
         </RadioGroup>
         {this.renderSourceUpload({
           type,
