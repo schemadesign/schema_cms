@@ -43,4 +43,7 @@ export const DATA_SOURCE_SCHEMA = Yup.object().shape({
   [DATA_SOURCE_FILE]: Yup.mixed()
     .test('fileSize', 'File Size is too large (max 900MB)', (value = {}) => defaultTo(0, value.size) <= FILE_SIZE)
     .test('fileName', "File Name shouldn't be longer than 100 characters.", ({ name = '' } = {}) => name.length <= 100),
+  [DATA_SOURCE_GOOGLE_SHEET]: Yup.string()
+    .trim()
+    .url('The link field needs to be a valid URL'),
 });

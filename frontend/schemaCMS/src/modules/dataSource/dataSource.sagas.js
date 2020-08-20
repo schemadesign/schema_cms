@@ -101,7 +101,6 @@ function* create({ payload }) {
     yield put(DataSourceRoutines.create.request());
     const requestData = { project: payload.projectId, ...omit(['file'], payload.requestData) };
     const formData = formatFormData({ file: payload.requestData.file });
-
     const {
       data: { id },
     } = yield api.post(DATA_SOURCES_PATH, requestData);
