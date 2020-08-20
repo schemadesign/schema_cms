@@ -108,7 +108,12 @@ function* create({ payload }) {
 
     yield put(
       DataSourceRoutines.create.success({
-        dataSource: { id, fileName: payload.requestData.file.name, progress: 0 },
+        dataSource: {
+          id,
+          fileName: payload.requestData.file ? payload.requestData.file.name : '',
+          googleSheet: payload.requestData.googleSheet,
+          progress: 0,
+        },
         isUpload: true,
       })
     );

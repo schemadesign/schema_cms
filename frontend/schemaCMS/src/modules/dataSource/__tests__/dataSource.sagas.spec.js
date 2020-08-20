@@ -17,7 +17,7 @@ describe('DataSource: sagas', () => {
   const defaultState = Immutable({});
 
   describe('create', () => {
-    it('should dispatch a success action', async () => {
+    it('should dispatch a success action for file', async () => {
       const payload = { projectId: '1', requestData: { file: { file: 'file', name: 'fileName' }, name: 'name' } };
       const responseData = {
         id: 1,
@@ -38,7 +38,40 @@ describe('DataSource: sagas', () => {
         .put(ProjectRoutines.fetchOne.trigger({ projectId: payload.projectId }))
         .put(
           DataSourceRoutines.create.success({
-            dataSource: { id: responseData.id, fileName: 'fileName', progress: 0 },
+            dataSource: { id: responseData.id, fileName: 'fileName', googleSheet: '', progress: 0 },
+            isUpload: true,
+          })
+        )
+        .put(DataSourceRoutines.updateProgress.success({ id: responseData.id, progress: 0 }))
+        .put(DataSourceRoutines.updateUploadingDataSourceStatus.trigger({ data: responseData, error: null }))
+        .dispatch(DataSourceRoutines.create(payload))
+        .silentRun();
+
+      expect(browserHistory.push).toBeCalledWith('/project/1/datasource');
+    });
+
+    it('should dispatch a success action for spreadsheet', async () => {
+      const payload = { projectId: '1', requestData: { googleSheet: 'googleSheetUrl', name: 'name' } };
+      const responseData = {
+        id: 1,
+        metaData: null,
+      };
+      const options = {
+        headers: { 'Content-Type': 'multipart/form-data' },
+      };
+      jest.spyOn(browserHistory, 'push');
+
+      mockApi.post(DATA_SOURCES_PATH, { project: '1', name: 'name' }).reply(OK, responseData);
+      mockApi
+        .patch(`${DATA_SOURCES_PATH}/${responseData.id}`, /form-data; name="file"[^]*object/m, options)
+        .reply(OK, responseData);
+
+      await expectSaga(watchDataSource)
+        .withState(defaultState)
+        .put(ProjectRoutines.fetchOne.trigger({ projectId: payload.projectId }))
+        .put(
+          DataSourceRoutines.create.success({
+            dataSource: { id: responseData.id, fileName: '', googleSheet: 'googleSheetUrl', progress: 0 },
             isUpload: true,
           })
         )
