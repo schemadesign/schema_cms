@@ -18,7 +18,10 @@ describe('DataSource: sagas', () => {
 
   describe('create', () => {
     it('should dispatch a success action', async () => {
-      const payload = { projectId: '1', requestData: { file: { file: 'file', name: 'fileName' }, name: 'name' } };
+      const payload = {
+        projectId: '1',
+        requestData: { file: { file: 'file', name: 'fileName' }, name: 'name', googleSheet: 'googleSheetUrl' },
+      };
       const responseData = {
         id: 1,
         metaData: null,
@@ -38,7 +41,7 @@ describe('DataSource: sagas', () => {
         .put(ProjectRoutines.fetchOne.trigger({ projectId: payload.projectId }))
         .put(
           DataSourceRoutines.create.success({
-            dataSource: { id: responseData.id, fileName: 'fileName', progress: 0 },
+            dataSource: { id: responseData.id, fileName: 'fileName', googleSheet: 'googleSheetUrl', progress: 0 },
             isUpload: true,
           })
         )
