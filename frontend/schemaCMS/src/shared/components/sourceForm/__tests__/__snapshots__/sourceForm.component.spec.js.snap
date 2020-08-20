@@ -254,6 +254,33 @@ exports[`SourceFormComponent: Component should render correctly 1`] = `
         />
       </Component>
     </RadioBaseComponent>
+    <RadioBaseComponent
+      id="google_sheet"
+      label="Google Spreadsheet"
+      value="google_sheet"
+    >
+      <Component
+        customStyles={
+          Object {
+            "background": "#1d1d20",
+            "height": 96,
+            "marginBottom": 10,
+            "pointerEvents": "none",
+            "width": 96,
+          }
+        }
+        id="googleSpreadsheetUploadIcon"
+        type="button"
+      >
+        <Component
+          customStyles={
+            Object {
+              "fill": "#FFF",
+            }
+          }
+        />
+      </Component>
+    </RadioBaseComponent>
   </RadioGroup>
   <Uploader
     accept=".csv"
@@ -713,6 +740,33 @@ exports[`SourceFormComponent: Component should render file uploader 1`] = `
           customStyles={
             Object {
               "fill": "#1d1d20",
+            }
+          }
+        />
+      </Component>
+    </RadioBaseComponent>
+    <RadioBaseComponent
+      id="google_sheet"
+      label="Google Spreadsheet"
+      value="google_sheet"
+    >
+      <Component
+        customStyles={
+          Object {
+            "background": "#1d1d20",
+            "height": 96,
+            "marginBottom": 10,
+            "pointerEvents": "none",
+            "width": 96,
+          }
+        }
+        id="googleSpreadsheetUploadIcon"
+        type="button"
+      >
+        <Component
+          customStyles={
+            Object {
+              "fill": "#FFF",
             }
           }
         />

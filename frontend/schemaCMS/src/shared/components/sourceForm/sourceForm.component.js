@@ -166,7 +166,7 @@ export class SourceFormComponent extends PureComponent {
 
   renderSpreadsheetButton = type => {
     const { active, unActive } = this.props.theme.radioButton;
-    const { fill, background } = type === DATA_SOURCE_GOOGLE_SHEET ? active : unActive;
+    const { fill, background } = type === SOURCE_TYPE_GOOGLE_SHEET ? active : unActive;
 
     return (
       <RadioBaseComponent
@@ -221,7 +221,7 @@ export class SourceFormComponent extends PureComponent {
           type,
           fileName,
           googleSheet,
-          isProcessing: isProcessing && !!dataSource.fileName,
+          isProcessing: isProcessing && (!!dataSource.fileName || !!dataSource.googleSheet),
           fileUploadingError,
           fileUploading,
           ...restProps,

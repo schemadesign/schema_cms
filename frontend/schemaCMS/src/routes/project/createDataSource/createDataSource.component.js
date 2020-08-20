@@ -8,7 +8,11 @@ import { cond, always, equals } from 'ramda';
 import { SourceForm } from '../../../shared/components/sourceForm';
 import messages from './createDataSource.messages';
 import { ContextHeader } from '../../../shared/components/contextHeader';
-import { DATA_SOURCE_SCHEMA } from '../../../modules/dataSource/dataSource.constants';
+import {
+  DATA_SOURCE_FILE,
+  DATA_SOURCE_GOOGLE_SHEET,
+  DATA_SOURCE_SCHEMA,
+} from '../../../modules/dataSource/dataSource.constants';
 import { errorMessageParser, getMatchParam, filterMenuOptions } from '../../../shared/utils/helpers';
 import { BackButton, NavigationContainer, NextButton } from '../../../shared/components/navigation';
 import { MobileMenu } from '../../../shared/components/menu/mobileMenu';
@@ -28,14 +32,14 @@ export class CreateDataSource extends PureComponent {
   };
 
   validateFile = values =>
-    cond([[equals('file'), always(!values.fileName)], [equals('googleSheet'), always(!values.googleSheet)]])(
-      values.type
-    );
+    cond([
+      [equals(DATA_SOURCE_FILE), always(!values.fileName)],
+      [equals(DATA_SOURCE_GOOGLE_SHEET), always(!values.googleSheet)],
+    ])(values.type);
 
   handleSubmit = async (requestData, { setErrors, setSubmitting }) => {
     const { createDataSource } = this.props;
     const projectId = getMatchParam(this.props, 'projectId');
-
     try {
       setSubmitting(true);
       await createDataSource({ requestData, projectId });
@@ -70,7 +74,7 @@ export class CreateDataSource extends PureComponent {
         <Formik
           id="csvUploadFileName"
           enableReinitialize
-          initialValues={{ fileName: '' }}
+          initialValues={{ fileName: '', googleSheet: '' }}
           validationSchema={DATA_SOURCE_SCHEMA}
           onSubmit={this.handleSubmit}
         >
