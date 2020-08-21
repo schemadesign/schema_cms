@@ -48,7 +48,7 @@ class DataSource(MetaGeneratorMixin, SoftDeleteObject, TimeStampedModel):
         upload_to=file_upload_path,
         validators=[FileExtensionValidator(allowed_extensions=["csv", "tsv"])],
     )
-    google_sheet = models.URLField(blank=True, default="")
+    google_sheet = models.URLField(null=True, blank=True, default="")
     created_by = models.ForeignKey(
         settings.AUTH_USER_MODEL, on_delete=models.SET_NULL, related_name="data_sources", null=True
     )
