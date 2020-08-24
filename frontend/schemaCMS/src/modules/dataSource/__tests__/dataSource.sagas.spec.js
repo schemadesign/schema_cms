@@ -31,7 +31,9 @@ describe('DataSource: sagas', () => {
       };
       jest.spyOn(browserHistory, 'push');
 
-      mockApi.post(DATA_SOURCES_PATH, { project: '1', name: 'name' }).reply(OK, responseData);
+      mockApi
+        .post(DATA_SOURCES_PATH, { project: '1', name: 'name', google_sheet: 'googleSheetUrl' })
+        .reply(OK, responseData);
       mockApi
         .patch(`${DATA_SOURCES_PATH}/${responseData.id}`, /form-data; name="file"[^]*object/m, options)
         .reply(OK, responseData);

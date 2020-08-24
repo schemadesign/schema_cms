@@ -161,6 +161,7 @@ exports[`CreateDataSource: Component should render correctly 1`] = `
         "_exclusive": Object {},
         "_mutate": undefined,
         "_nodes": Array [
+          "googleSheet",
           "file",
           "type",
           "name",
@@ -203,6 +204,37 @@ exports[`CreateDataSource: Component should render correctly 1`] = `
               [Function],
             ],
             "transforms": Array [],
+          },
+          "googleSheet": StringSchema {
+            "_blacklist": RefSet {
+              "list": Set {},
+              "refs": Map {},
+            },
+            "_conditions": Array [],
+            "_deps": Array [],
+            "_exclusive": Object {
+              "trim": false,
+              "undefined": false,
+            },
+            "_mutate": undefined,
+            "_options": Object {
+              "abortEarly": true,
+              "recursive": true,
+            },
+            "_type": "string",
+            "_typeError": [Function],
+            "_whitelist": RefSet {
+              "list": Set {},
+              "refs": Map {},
+            },
+            "tests": Array [
+              [Function],
+              [Function],
+            ],
+            "transforms": Array [
+              [Function],
+              [Function],
+            ],
           },
           "name": StringSchema {
             "_blacklist": RefSet {
