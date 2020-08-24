@@ -9,8 +9,8 @@ logger.setLevel(logging.INFO)
 client = boto3.client("ssm")
 
 
-with open("ssm_parameters.json") as config_file:
-    parameters = json.load(config_file)
+with open("ssm_parameters.json") as parameters_json:
+    parameters = json.load(parameters_json)
 
 
 for param in parameters:
