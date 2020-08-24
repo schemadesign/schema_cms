@@ -7,6 +7,7 @@ verify_ssl = true
 
 [packages]
 wrapt = {editable = true, path = "."}
+schema-cms-infra = {editable = true, path = "."}
 
 [requires]
 python_version = "3.8"

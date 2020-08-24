@@ -18,6 +18,7 @@ setuptools.setup(
     package_dir={"": "."},
     packages=setuptools.find_packages(where="."),
     install_requires=[
+        "boto3==1.14.47",
         "aws-cdk.cx-api=={version}".format(version=AWS_CDK_VERSION),
         "aws-cdk.core=={version}".format(version=AWS_CDK_VERSION),
         "aws_cdk.assets=={version}".format(version=AWS_CDK_VERSION),

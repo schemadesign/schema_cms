@@ -4,7 +4,6 @@ include $(SELF_DIR)/base.mk
 .PHONY: shell help build rebuild service login test clean prune version
 
 install: install-infra-cdk
-	$(MAKE) -C $(SELF_DIR)/backend/app install
 	$(MAKE) -C $(SELF_DIR)/backend/functions/worker install
 	$(MAKE) -C $(SELF_DIR)/backend/functions/image_resize install
 	$(MAKE) -C $(SELF_DIR)/frontend install
@@ -31,6 +30,7 @@ deploy-components:
 	$(MAKE) -C $(SELF_DIR)infra deploy-components
 
 deploy-app:
+	$(MAKE) -C $(SELF_DIR)infra create-ssm-params
 	$(MAKE) -C $(SELF_DIR)infra deploy-api
 	$(MAKE) -C $(SELF_DIR)infra deploy-image-resize
 	$(MAKE) -C $(SELF_DIR)infra deploy-workers
