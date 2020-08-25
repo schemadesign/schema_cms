@@ -33,7 +33,7 @@ Docker is used to develop, test, and improve an environment.
 ### Easy way
 `make setup` & ☕
 
-You will find a more detailed documentation in `./frontend/schemaCMS`, `./frontend/schemaUI`, `./backend/app`, and `./docs`
+You will find a more detailed documentation in `./frontend/schemaCMS`, `./frontend/schemaUI`, `./backend/app`.
 
 ## Running
 Run backend - `Before you run app make sure that you have the latest local.env file`
