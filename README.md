@@ -75,7 +75,7 @@ Now all data source files, block images etc. will be saved to disk.
 1. In a new browser tab go to `http://localhost:1080/`
 2. In a second tab open `http://localhost:8000/admin/` and login as a root user, you can set a root password in the `local.env`, changing value of `DJANGO_ROOT_PASSWORD` but the default password is set to `root12345` 
 3. Now go to a `Users` tab and click the `INVITE USER` button, fill all required fields and `SAVE`  
-> NOTE: you can use dummy email if you want because locally we don't sending any emails
+> NOTE: you can use dummy email if you want because locally we don't send any emails
 4. Go to a tab from step 1. You should see an invitation email with a password change link. Click it and set the password.
 5. After the password is set you can go to the `http://localhost:3000` and login using invited user credentials  
 > NOTE: you won't be able to login to app if you don't set password
