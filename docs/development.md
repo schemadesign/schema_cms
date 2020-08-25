@@ -1,3 +1,0 @@
-## TODO
-
-Development instructions here
