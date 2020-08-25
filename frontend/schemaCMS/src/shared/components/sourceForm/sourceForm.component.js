@@ -12,6 +12,7 @@ import {
   customRadioGroupStyles,
   WarningWrapper,
   ErrorWrapper,
+  SourceButtonWrapper,
 } from './sourceForm.styles';
 import messages from './sourceForm.messages';
 import { TextInput } from '../form/inputs/textInput';
@@ -29,7 +30,7 @@ import { Uploader } from '../form/uploader';
 import { getEventFiles, isProcessingData } from '../../utils/helpers';
 
 const { RadioGroup, RadioBaseComponent, Label } = Form;
-const { CsvIcon } = Icons;
+const { CsvIcon, GoogleSpreadsheetIcon } = Icons;
 
 export class SourceFormComponent extends PureComponent {
   static propTypes = {
@@ -107,6 +108,7 @@ export class SourceFormComponent extends PureComponent {
         value={googleSheet || ''}
         onChange={handleChange}
         name={DATA_SOURCE_GOOGLE_SHEET}
+        placeholder={this.props.intl.formatMessage(messages.googleSpreadSheetPlaceholder)}
         fullWidth
         checkOnlyErrors
         label={this.props.intl.formatMessage(messages.name)}
@@ -175,7 +177,7 @@ export class SourceFormComponent extends PureComponent {
         id={SOURCE_TYPE_GOOGLE_SHEET}
       >
         <Button id="googleSpreadsheetUploadIcon" customStyles={{ background, ...buttonStyles }} type="button">
-          <CsvIcon customStyles={{ fill }} />
+          <GoogleSpreadsheetIcon customStyles={{ fill }} />
         </Button>
       </RadioBaseComponent>
     );
@@ -214,8 +216,8 @@ export class SourceFormComponent extends PureComponent {
           value={type}
           onChange={handleChange}
         >
-          {this.renderRadioButton(type)}
-          {this.renderSpreadsheetButton(type)}
+          <SourceButtonWrapper>{this.renderRadioButton(type)}</SourceButtonWrapper>
+          <SourceButtonWrapper>{this.renderSpreadsheetButton(type)}</SourceButtonWrapper>
         </RadioGroup>
         {this.renderSourceUpload({
           type,

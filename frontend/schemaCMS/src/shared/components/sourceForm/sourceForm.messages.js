@@ -16,7 +16,11 @@ export default defineMessages({
   },
   googleSpreadSheet: {
     id: 'shared.components.sourceForm.googleSpreadSheet',
-    defaultMessage: 'Google Spreadsheet',
+    defaultMessage: 'Spreadsheet',
+  },
+  googleSpreadSheetPlaceholder: {
+    id: 'shared.components.sourceForm.googleSpreadSheetPlaceholder',
+    defaultMessage: 'Put a valid Google Spreadsheet URL here',
   },
   fileName: {
     id: 'shared.components.sourceForm.fileName',
