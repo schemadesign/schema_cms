@@ -482,9 +482,18 @@ class SectionListCreateSerializer(CustomModelSerializer):
 
 
 class PageDisplayNameSerializer(ReadOnlySerializer):
+    is_published = serializers.SerializerMethodField()
+    is_hidden = serializers.SerializerMethodField()
+
     class Meta:
         model = models.Page
-        fields = ("id", "display_name", "name")
+        fields = ("id", "display_name", "name", "is_draft", "is_published", "is_hidden")
+
+    def get_is_published(self, obj: models.Page):
+        return obj.is_published
+
+    def get_is_hidden(self, obj: models.Page):
+        return not obj.published_version.is_public
 
 
 class SectionInternalConnectionSerializer(ReadOnlySerializer):

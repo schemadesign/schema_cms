@@ -1,5 +1,7 @@
 ## 1.9.0 (August 18, 2020) - Change
 
+Add state of the page to the page name
+
 Automation tests:
  - changed the approach from object-oriented to functional
  - added a README.md

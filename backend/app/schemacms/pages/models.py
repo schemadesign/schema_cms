@@ -124,6 +124,14 @@ class Page(Content):
     class Meta:
         ordering = ("-created",)
 
+    @property
+    def is_published(self):
+        published_states = [constants.PageState.PUBLISHED, constants.PageState.WAITING_TO_REPUBLISH]
+        if self.is_draft:
+            return self.published_version.state in published_states
+        else:
+            return self.state in published_states
+
     def create_or_update_block(self, block):
         return PageBlock.objects.update_or_create(id=block.get("id", None), defaults={"page": self, **block})
 

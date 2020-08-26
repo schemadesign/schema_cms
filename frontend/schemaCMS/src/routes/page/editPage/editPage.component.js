@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import PropTypes from 'prop-types';
 import { FormattedMessage, useIntl } from 'react-intl';
 import { useEffectOnce } from 'react-use';
-import { useHistory, useParams, useLocation } from 'react-router';
+import { useHistory, useParams, useLocation, Prompt } from 'react-router';
 import { useFormik } from 'formik';
 import Helmet from 'react-helmet';
 import { isEmpty, pick, pathOr, defaultTo } from 'ramda';
@@ -84,6 +84,9 @@ export const EditPage = ({
   const [removeLoading, setRemoveLoading] = useState(false);
   const [publishLoading, setPublishLoading] = useState(false);
   const [updateLoading, setUpdateLoading] = useState(false);
+  const [leavingPageModalOpen, setLeavingPageModalOpen] = useState(false);
+  const [leavingPageLoading, setLeavingPageLoading] = useState(false);
+  const [customLocation, setCustomLocation] = useState(false);
   const { pageId } = useParams();
   const history = useHistory();
   const { state = {} } = useLocation();
@@ -146,6 +149,29 @@ export const EditPage = ({
       reportError(e);
       setPublishLoading(false);
     }
+  };
+
+  const handleConfirmLeavePage = async () => {
+    try {
+      setPublishLoading(true);
+      history.push(customLocation);
+    } catch (e) {
+      reportError(e);
+      setPublishLoading(false);
+    }
+  };
+
+  const handlePromptMessage = location => {
+    if (!customLocation) {
+      setCustomLocation(location);
+      setLeavingPageModalOpen(true);
+      return false;
+    }
+  };
+
+  const handleBackButtonClick = () => {
+    setLeavingPageModalOpen(false);
+    setCustomLocation(false);
   };
 
   useEffectOnce(() => {
@@ -218,7 +244,12 @@ export const EditPage = ({
           </NavigationContainer>
         </form>
       </LoadingWrapper>
-      <Modal ariaHideApp={false} isOpen={removeModalOpen} contentLabel="Confirm Removal" style={modalStyles}>
+      <Modal
+        ariaHideApp={false}
+        isOpen={removeModalOpen}
+        contentLabel={intl.formatMessage(messages.confirmRemovalMessage)}
+        style={modalStyles}
+      >
         <ModalTitle>
           <FormattedMessage {...messages.removeTitle} />
         </ModalTitle>
@@ -236,7 +267,12 @@ export const EditPage = ({
           </NextButton>
         </ModalActions>
       </Modal>
-      <Modal ariaHideApp={false} isOpen={publishModalOpen} contentLabel="Confirm Publishing" style={modalStyles}>
+      <Modal
+        ariaHideApp={false}
+        isOpen={publishModalOpen}
+        contentLabel={intl.formatMessage(messages.confirmPublishing)}
+        style={modalStyles}
+      >
         <ModalTitle>
           <FormattedMessage {...messages.publishTitle} />
         </ModalTitle>
@@ -254,6 +290,30 @@ export const EditPage = ({
           </NextButton>
         </ModalActions>
       </Modal>
+      <Modal
+        ariaHideApp={false}
+        isOpen={leavingPageModalOpen}
+        contentLabel={intl.formatMessage(messages.confirmLeavingPage)}
+        style={modalStyles}
+      >
+        <ModalTitle>
+          <FormattedMessage {...messages.leavingPageTitle} />
+        </ModalTitle>
+        <ModalActions>
+          <BackButton onClick={handleBackButtonClick} disabled={leavingPageLoading}>
+            <FormattedMessage {...messages.cancelLeavePage} />
+          </BackButton>
+          <NextButton
+            id="confirmLeavingPageBtn"
+            onClick={handleConfirmLeavePage}
+            loading={leavingPageLoading}
+            disabled={leavingPageLoading}
+          >
+            <FormattedMessage {...messages.confirmPublish} />
+          </NextButton>
+        </ModalActions>
+      </Modal>
+      <Prompt when={dirty} message={location => handlePromptMessage(location)} />
     </Container>
   );
 };
