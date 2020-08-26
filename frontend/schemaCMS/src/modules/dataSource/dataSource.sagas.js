@@ -38,6 +38,7 @@ import {
   META_FAILED,
   META_SUCCESS,
   RESULT_PAGE,
+  PREVIEW_PAGE,
 } from './dataSource.constants';
 import { formatFormData } from '../../shared/utils/helpers';
 import { ProjectRoutines } from '../project';
@@ -297,7 +298,11 @@ function* revertToJob({ payload: { dataSourceId, jobId } }) {
     const { data } = yield api.post(`${DATA_SOURCES_PATH}/${dataSourceId}/revert-job`, { id: jobId });
 
     yield put(DataSourceRoutines.revertToJob.success(data));
-    browserHistory.push(`/datasource/${dataSourceId}/${RESULT_PAGE}`);
+    if (data.activeJob.scripts.length) {
+      browserHistory.push(`/datasource/${dataSourceId}/${RESULT_PAGE}`);
+    } else {
+      browserHistory.push(`/datasource/${dataSourceId}/${PREVIEW_PAGE}`);
+    }
   } catch (error) {
     yield put(DataSourceRoutines.revertToJob.failure(error));
   } finally {
