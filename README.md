@@ -23,7 +23,7 @@ Docker is used to develop, test, and improve an environment.
 
 1. Install [docker](https://docs.docker.com/install/)
 2. Install [docker-compose](https://docs.docker.com/compose/install/) if you are using Linux
-3. Install [python8](https://www.python.org/downloads/)
+3. Install [python 3.8](https://www.python.org/downloads/)
 4. Install [pipenv](https://github.com/pypa/pipenv#installation)
 5. Install [npm](https://www.npmjs.com/)
 6. Install [yarn](https://classic.yarnpkg.com/en/docs/install/#mac-stable)
@@ -47,13 +47,13 @@ make fe-up
 ```
 
 ## Development
-Backend in running on `localhost:8000`
+Backend is running on `localhost:8000`
 
-MailCatcher in running on `localhost:1080`
+MailCatcher is running on `localhost:1080`
 
-Documentations in running on `localhost:8001`
+Documentations is running on `localhost:8001`
 
-Frontend in running on `localhost:3000`
+Frontend is running on `localhost:3000`
 
 # Local set-up and usage notes
 
