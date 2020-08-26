@@ -33,18 +33,26 @@ Docker is used to develop, test, and improve an environment.
 ### Easy way
 `make setup` & ☕
 
-You will find a more detailed documentation in `./frontend/schemaCMS`, `./frontend/schemaUI`, `./backend/app`.
+You will find a more detailed documentation in `./frontend/schemaCMS`, `./frontend/schemaUI`, `./backend/app` and `./docs`
 
 ## Running
-Run backend - `Before you run app make sure that you have the latest local.env file`
 
-```shell script
-make up
-```
-Run frontend
-```shell script
-make fe-up
-```
+1. Create Auth0 tenant for local use. You can find instruction [here](./docs/auth0.md).
+2. Create and fill `local.env` file:
+
+    ```bash
+    cp local.env.example local.env
+    ```
+2. Run backend services:
+
+    ```bash
+    make up
+    ```
+3. Run frontend:
+
+    ```bash
+    make fe-up
+    ```
 
 ## Development
 Backend is running on `localhost:8000`
@@ -114,21 +122,7 @@ Application requires Auth0 and domain with verified certificate in AWS.
 
 ### Auth0 configuration
 
-1. Log In and create a new Auth0 tenant
-2. Go to `Applications` and create `SINGLE PAGE APPLICATION`
-3. Fill:
-    - `Allowed Callback URLs`:
-        -   `https://<[your-domain]>/api/v1/auth/complete/auth0`
-    - `Allowed Logout URLs`:
-        - `https://<[your-domain]>/api/v1/auth/login/auth0,`
-        - `https://<[your-domain]>/auth/not-registered,`
-        - `https://<[your-domain]>/auth/revoked-access`
-    - `Allowed Web Origins`:
-        - `https://<[your-domain]>`
-4. Again go to `Applications` and create `MACHINE TO MACHINE`
-5. Choose `Auth0 Management Api` and `Select all` scopes.
-6. Fill:
-    - `Allowed Callback URLs`: `https://<[your-domain]>`
+You can find instruction [here](./docs/auth0.md).
     
 ## Steps
 ### Deploy base resources and components
@@ -162,8 +156,6 @@ From project root directory:
 
 From project root directory:
 
-1. Run `make build` to create and push docker images with app to AWS ECR
-2. After successful build run `deploy-app`
+1. Run `make build` to create and push docker images with application to AWS ECR
+2. After successful build run `make deploy-app`
 3. Set app and public api domains in DNS by creating CNAME records pointing newly created ELB
-
-*Note: Those steps may take 15-40 min
