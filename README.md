@@ -35,9 +35,9 @@ Docker is used to develop, test, and improve an environment.
 
 You will find a more detailed documentation in `./frontend/schemaCMS`, `./frontend/schemaUI`, `./backend/app` and `./docs`
 
-## Running
+## Running locally
 
-1. Create Auth0 tenant for local use. You can find instruction [here](./docs/auth0.md).
+1. Create Auth0 tenant for local use. You can find instructions [here](./docs/auth0.md).
 2. Create and fill `local.env` file:
 
     ```bash
@@ -111,18 +111,14 @@ Application requires Auth0 and domain with verified certificate in AWS.
 ### Prerequisites
 
 1. Make sure you run `make setup` and you have all packages installed.
-2. Install [aws-vault](https://github.com/99designs/aws-vault).
-3. Create [Auth0](https://auth0.com/) tenant with applications.
+2. [aws-vault](https://github.com/99designs/aws-vault) installed.
+3. [Auth0](https://auth0.com/) tenant and required applications created. You can find instructions [here](./docs/auth0.md)
 
 ### aws-vault configuration
-1. Log In to [AWS Console](https://aws.amazon.com/console/), go to `My security credentials` and create access key
-2. Use created access key to add new profile in [aws-vault](https://github.com/99designs/aws-vault#quick-start)
-3. Edit file `~/aws/config` by adding line `region=<selected-deployment-region>` under profile you added
-4. Update profile and region in `.project_config.json`
-
-### Auth0 configuration
-
-You can find instruction [here](./docs/auth0.md).
+1. Log In to [AWS Console](https://aws.amazon.com/console/), go to `My security credentials` and create access key.
+2. Use created access key to add new profile in [aws-vault](https://github.com/99designs/aws-vault#quick-start).
+3. Edit file `~/aws/config` by adding line `region=<selected-deployment-region>` under profile you added.
+4. Update profile and region in `.project_config.json`.
     
 ## Steps
 ### Deploy base resources and components
