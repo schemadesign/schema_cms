@@ -32,6 +32,7 @@ export const mapDispatchToProps = dispatch => ({
     {
       removeDataSource: promisifyRoutine(DataSourceRoutines.removeOne),
       onDataSourceChange: promisifyRoutine(DataSourceRoutines.updateOne),
+      copyDataSource: promisifyRoutine(DataSourceRoutines.copyDataSource),
     },
     dispatch
   ),

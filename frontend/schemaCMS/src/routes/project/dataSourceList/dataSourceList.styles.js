@@ -51,10 +51,6 @@ export const Header = styled.div`
   justify-content: space-between;
 `;
 
-export const HeaderIcon = styled.div`
-  margin-top: -8px;
-`;
-
 export const Loading = styled.span`
   color: ${setColorWithTheme(true)};
 `;

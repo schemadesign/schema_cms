@@ -3,8 +3,6 @@ import { createStructuredSelector } from 'reselect';
 import { withRouter } from 'react-router-dom';
 import { hot } from 'react-hot-loader';
 import { bindPromiseCreators, promisifyRoutine } from 'redux-saga-routines';
-import { injectIntl } from 'react-intl';
-import { withTheme } from 'styled-components';
 
 import { compose } from 'ramda';
 import { DataSourceList } from './dataSourceList.component';
@@ -23,6 +21,7 @@ export const mapDispatchToProps = dispatch => ({
       createDataSource: promisifyRoutine(DataSourceRoutines.create),
       fetchDataSources: promisifyRoutine(DataSourceRoutines.fetchList),
       cancelFetchListLoop: promisifyRoutine(DataSourceRoutines.cancelFetchListLoop),
+      copyDataSource: promisifyRoutine(DataSourceRoutines.copyDataSource),
     },
     dispatch
   ),
@@ -34,7 +33,5 @@ export default compose(
     mapStateToProps,
     mapDispatchToProps
   ),
-  injectIntl,
-  withRouter,
-  withTheme
+  withRouter
 )(DataSourceList);

@@ -17,6 +17,7 @@ export const DataSourceRoutines = {
   fetchPreview: createRoutine(`${prefix}FETCH_PREVIEW`),
   updateUploadingDataSourceStatus: createRoutine(`${prefix}UPDATE_UPLOADING_DATA_SOURCE_STATUS`),
   updateProgress: createRoutine(`${prefix}UPDATE_PROGRESS`),
+  copyDataSource: createRoutine(`${prefix}COPY_DATA_SOURCE`),
 };
 
 export const INITIAL_STATE = new Immutable({

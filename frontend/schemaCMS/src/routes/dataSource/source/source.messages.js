@@ -47,7 +47,19 @@ export default defineMessages({
     defaultMessage: 'Source',
   },
   nameDataSourceProjectNameUniqueError: {
-    id: 'project.createDataSource.nameDataSourceProjectNameUniqueError',
+    id: 'dataSource.source.nameDataSourceProjectNameUniqueError',
     defaultMessage: 'A data source with this name already exists in project',
+  },
+  copyConfirmTitle: {
+    id: 'dataSource.source.copyConfirmTitle',
+    defaultMessage: 'There are unsaved data. Do you want to copy without it?',
+  },
+  cancelCopy: {
+    id: 'dataSource.source.cancelCopy',
+    defaultMessage: 'Cancel',
+  },
+  confirmCopy: {
+    id: 'dataSource.source.confirmCopy',
+    defaultMessage: 'Copy',
   },
 });

@@ -12,6 +12,7 @@ export const defaultProps = {
   userRole: ROLES.ADMIN,
   createDataSource: Function.prototype,
   fetchDataSources: Function.prototype,
+  copyDataSource: Function.prototype,
   cancelFetchListLoop: Function.prototype,
   dataSources: [],
   uploadingDataSources: [{ id: 20, progress: 50 }, { id: 18, error: new Error('error') }],

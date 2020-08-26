@@ -1,15 +1,35 @@
 import React from 'react';
-import { shallow } from 'enzyme';
+import { act } from 'react-test-renderer';
 
 import { DataSourceList } from '../dataSourceList.component';
+import { DataSourceCard } from '../dataSourceCard.component';
 import { defaultProps, propsWithDataSources } from '../dataSourceList.stories';
-import { PlusButton } from '../../../../shared/components/navigation';
 import { ListItemTitle } from '../../../../shared/components/listComponents';
+import { makeContextRenderer } from '../../../../shared/utils/testUtils';
+import { dataSources } from '../../../../modules/dataSource/dataSource.mock';
+
+const mockPushHistory = jest.fn();
+
+jest.mock('react-router', () => ({
+  ...jest.requireActual('react-router'),
+  useHistory: () => ({
+    push: mockPushHistory,
+  }),
+  useParams: () => ({
+    projectId: 'projectId',
+  }),
+}));
 
 describe('DataSourceList: Component', () => {
-  const component = props => <DataSourceList {...defaultProps} {...props} />;
-
-  const render = (props = {}) => shallow(component(props));
+  const cardProps = {
+    uploadingDataSources: [],
+    copyDataSource: Function.prototype,
+    index: 0,
+    key: 0,
+    projectId: 'projectId',
+  };
+  const render = props => makeContextRenderer(<DataSourceList {...defaultProps} {...props} />);
+  const renderCard = dataSource => makeContextRenderer(<DataSourceCard {...cardProps} {...dataSource} />);
 
   it('should render empty', async () => {
     const wrapper = await render();
@@ -22,51 +42,43 @@ describe('DataSourceList: Component', () => {
   });
 
   it('should go to source', async () => {
-    jest.spyOn(propsWithDataSources.history, 'push');
-    const wrapper = await render(propsWithDataSources);
+    const wrapper = await renderCard(dataSources[0]);
 
-    wrapper
-      .find(ListItemTitle)
-      .at(0)
-      .simulate('click');
+    wrapper.root.findByType(ListItemTitle).props.onClick();
 
-    expect(propsWithDataSources.history.push).toHaveBeenCalledWith('/datasource/17/source');
+    expect(mockPushHistory).toHaveBeenCalledWith('/datasource/17/source');
   });
 
   it('should go to preview', async () => {
-    jest.spyOn(propsWithDataSources.history, 'push');
-    const wrapper = await render(propsWithDataSources);
+    const wrapper = await renderCard(dataSources[2]);
 
-    wrapper
-      .find(ListItemTitle)
-      .at(1)
-      .simulate('click');
+    wrapper.root.findByType(ListItemTitle).props.onClick();
 
-    expect(propsWithDataSources.history.push).toHaveBeenCalledWith('/datasource/17/preview');
+    expect(mockPushHistory).toHaveBeenCalledWith('/datasource/17/preview');
   });
 
   it('should go to data result', async () => {
-    jest.spyOn(propsWithDataSources.history, 'push');
-    const wrapper = await render(propsWithDataSources);
+    const wrapper = await renderCard(dataSources[3]);
 
-    wrapper
-      .find(ListItemTitle)
-      .at(2)
-      .simulate('click');
+    wrapper.root.findByType(ListItemTitle).props.onClick();
 
-    expect(propsWithDataSources.history.push).toHaveBeenCalledWith('/datasource/17/result');
+    expect(mockPushHistory).toHaveBeenCalledWith('/datasource/17/result');
   });
 
-  it('should go to create data source page', () => {
-    jest.spyOn(propsWithDataSources.history, 'push');
-    const wrapper = render(propsWithDataSources);
+  it('should go to create data source page', async () => {
+    const wrapper = await render(propsWithDataSources);
 
-    wrapper
-      .find(PlusButton)
-      .at(0)
-      .simulate('click');
+    wrapper.root.findByProps({ id: 'createDataSourceDesktopBtn' }).props.onClick();
 
-    expect(propsWithDataSources.history.push).toHaveBeenCalledWith('/project/1/datasource/add');
+    expect(mockPushHistory).toHaveBeenCalledWith('/project/projectId/datasource/add');
+  });
+
+  it('should go to create data source page on mobile', async () => {
+    const wrapper = await render(propsWithDataSources);
+
+    wrapper.root.findByProps({ id: 'createDataSourceBtn' }).props.onClick();
+
+    expect(mockPushHistory).toHaveBeenCalledWith('/project/projectId/datasource/add');
   });
 
   it('should call fetchDataSources on componentDidMount', async () => {
@@ -87,15 +99,24 @@ describe('DataSourceList: Component', () => {
     expect(defaultProps.cancelFetchListLoop).toHaveBeenCalled();
   });
 
-  it('should set error correctly', async () => {
+  it('should render error correctly', async () => {
     const errorResponse = 'fetchDataSources should return error';
     const wrapper = await render({
       fetchDataSources: jest.fn().mockReturnValue(Promise.reject(errorResponse)),
     });
 
-    const { loading, error } = wrapper.state();
+    expect(wrapper).toMatchSnapshot();
+  });
 
-    expect(loading).toBeFalsy();
-    expect(error).toBe(errorResponse);
+  it('should call copyDataSources', async () => {
+    jest.spyOn(propsWithDataSources, 'copyDataSource');
+    const wrapper = await render(propsWithDataSources);
+    const projectId = 'projectId';
+
+    await act(async () => {
+      await wrapper.root.findByProps({ id: 'dataSourceCopyButton-0' }).props.onClick();
+    });
+
+    expect(propsWithDataSources.copyDataSource).toHaveBeenCalledWith({ dataSourceId: 17, projectId });
   });
 });

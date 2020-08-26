@@ -1,1364 +1,3671 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`DataSourceList: Component should render correctly 1`] = `
-<styled.div>
-  <HelmetWrapper
-    defer={true}
-    encodeSpecialCharacters={true}
-    title="Data Sources"
-  />
-  <MobileMenu
-    active="dataSourceNavBtn"
-    headerSubtitle="Overview"
-    headerTitle="Data Sources"
-    options={
-      Array [
-        Object {
-          "allowedRoles": Array [
-            "admin",
-            "editor",
-          ],
-          "id": "projectsNavBtn",
-          "label": <FormattedMessage
-            defaultMessage="Projects"
-            id="project.view.projectsListPage"
-            values={Object {}}
-          />,
-          "to": "/project/",
-          "type": "link_item",
-        },
-        Object {
-          "allowedRoles": Array [
-            "admin",
-          ],
-          "id": "usersPageNavBtn",
-          "label": <FormattedMessage
-            defaultMessage="Users"
-            id="project.view.usersPage"
-            values={Object {}}
-          />,
-          "to": "/user/",
-          "type": "link_item",
-        },
-        Object {
-          "allowedRoles": Array [
-            "admin",
-            "editor",
-          ],
-          "id": "projectDetailsNavBtn",
-          "label": <FormattedMessage
-            defaultMessage="Project details"
-            id="project.view.projectDetails"
-            values={Object {}}
-          />,
-          "to": "/project/1",
-          "type": "link_item",
-        },
-        Object {
-          "allowedRoles": Array [
-            "admin",
-            "editor",
-          ],
-          "id": "dataSourceNavBtn",
-          "label": <FormattedMessage
-            defaultMessage="Data Sources"
-            id="project.view.projectDataSources"
-            values={Object {}}
-          />,
-          "to": "/project/1/datasource",
-          "type": "link_item",
-        },
-        Object {
-          "allowedRoles": Array [
-            "admin",
-          ],
-          "id": "usersNavBtn",
-          "label": <FormattedMessage
-            defaultMessage="Project Users"
-            id="project.view.projectUsersPage"
-            values={Object {}}
-          />,
-          "to": "/project/1/user",
-          "type": "link_item",
-        },
-        Object {
-          "allowedRoles": Array [
-            "admin",
-            "editor",
-          ],
-          "id": "contentNavBtn",
-          "label": <FormattedMessage
-            defaultMessage="Content"
-            id="project.view.content"
-            values={Object {}}
-          />,
-          "to": "/project/1/content",
-          "type": "link_item",
-        },
-        Object {
-          "allowedRoles": Array [
-            "admin",
-          ],
-          "id": "templatesNavBtn",
-          "label": <FormattedMessage
-            defaultMessage="Templates"
-            id="project.view.templates"
-            values={Object {}}
-          />,
-          "to": "/project/1/templates",
-          "type": "link_item",
-        },
-      ]
-    }
-  />
-  <ProjectTabs
-    active="sources"
-    url="/project/1"
-  />
-  <ContextHeader
-    subtitle="Overview"
-    title="Data Sources"
+<div
+  className="sc-fznxsB fvMaWZ"
+>
+  <div
+    className="sc-fznxKY gZarnC"
   >
-    <PlusButton
-      customStyles={Object {}}
-      hideOnDesktop={false}
-      id="createDataSourceDesktopBtn"
-      onClick={[Function]}
-    />
-  </ContextHeader>
-  <LoadingWrapper
-    error={null}
-    loading={false}
-    noData={false}
-    noDataContent="No Data Sources"
-  >
-    <styled.section>
-      <Styled(Component)
-        footerComponent={
-          <ForwardRef(styled.div)>
-            <ForwardRef(styled.div)
-              metaProcessing={false}
-            >
-              <ForwardRef(styled.span)
-                id="metaItem-0"
-              >
-                Source
-              </ForwardRef(styled.span)>
-              <ForwardRef(styled.span)
-                id="metaItemValue-0"
-              >
-                <Unknown
-                  customStyles={
-                    Object {
-                      "fill": "#FFF",
-                      "height": 40,
-                      "width": 40,
-                    }
-                  }
-                />
-              </ForwardRef(styled.span)>
-            </ForwardRef(styled.div)>
-            <ForwardRef(styled.div)
-              metaProcessing={false}
-            >
-              <ForwardRef(styled.span)
-                id="metaItem-1"
-              >
-                Items
-              </ForwardRef(styled.span)>
-              <ForwardRef(styled.span)
-                id="metaItemValue-1"
-              >
-                —
-              </ForwardRef(styled.span)>
-            </ForwardRef(styled.div)>
-            <ForwardRef(styled.div)
-              metaProcessing={false}
-            >
-              <ForwardRef(styled.span)
-                id="metaItem-2"
-              >
-                Fields
-              </ForwardRef(styled.span)>
-              <ForwardRef(styled.span)
-                id="metaItemValue-2"
-              >
-                —
-              </ForwardRef(styled.span)>
-            </ForwardRef(styled.div)>
-            <ForwardRef(styled.div)
-              metaProcessing={false}
-            >
-              <ForwardRef(styled.span)
-                id="metaItem-3"
-              >
-                Filters
-              </ForwardRef(styled.span)>
-              <ForwardRef(styled.span)
-                id="metaItemValue-3"
-              >
-                —
-              </ForwardRef(styled.span)>
-            </ForwardRef(styled.div)>
-            <ForwardRef(styled.div)
-              metaProcessing={false}
-            >
-              <ForwardRef(styled.span)
-                id="metaItem-4"
-              >
-                Tags
-              </ForwardRef(styled.span)>
-              <ForwardRef(styled.span)
-                id="metaItemValue-4"
-              >
-                —
-              </ForwardRef(styled.span)>
-            </ForwardRef(styled.div)>
-          </ForwardRef(styled.div)>
+    <div
+      style={
+        Object {
+          "alignItems": "flex-start",
+          "color": "#FFF",
+          "display": "flex",
+          "flexDirection": "row",
+          "justifyContent": "space-between",
+          "paddingBottom": "18px",
+          "width": "100%",
         }
-        headerComponent={
-          <ForwardRef(styled.span)
-            id="dataSourceStatus"
-            metaProcessing={true}
-          >
-            <FormattedMessage
-              defaultMessage="No data source uploaded"
-              id="project.dataSourceList.noDataSourceUploaded"
-              values={Object {}}
-            />
-          </ForwardRef(styled.span)>
-        }
-        id="dataSourceContainer"
-        key="0"
-      >
-        <Styled(H1)
-          id="dataSourceTitle"
-          onClick={[Function]}
+      }
+    >
+      <div>
+        <div
+          className="sc-fznMAR DQQGK"
         >
-          name
-        </Styled(H1)>
-      </Styled(Component)>
-      <Styled(Component)
-        footerComponent={
-          <ForwardRef(styled.div)>
-            <ForwardRef(styled.div)
-              metaProcessing={false}
-            >
-              <ForwardRef(styled.span)
-                id="metaItem-0"
-              >
-                Source
-              </ForwardRef(styled.span)>
-              <ForwardRef(styled.span)
-                id="metaItemValue-0"
-              >
-                <Unknown
-                  customStyles={
-                    Object {
-                      "fill": "#FFF",
-                      "height": 40,
-                      "width": 40,
-                    }
-                  }
-                />
-              </ForwardRef(styled.span)>
-            </ForwardRef(styled.div)>
-            <ForwardRef(styled.div)
-              metaProcessing={false}
-            >
-              <ForwardRef(styled.span)
-                id="metaItem-1"
-              >
-                Items
-              </ForwardRef(styled.span)>
-              <ForwardRef(styled.span)
-                id="metaItemValue-1"
-              >
-                —
-              </ForwardRef(styled.span)>
-            </ForwardRef(styled.div)>
-            <ForwardRef(styled.div)
-              metaProcessing={false}
-            >
-              <ForwardRef(styled.span)
-                id="metaItem-2"
-              >
-                Fields
-              </ForwardRef(styled.span)>
-              <ForwardRef(styled.span)
-                id="metaItemValue-2"
-              >
-                —
-              </ForwardRef(styled.span)>
-            </ForwardRef(styled.div)>
-            <ForwardRef(styled.div)
-              metaProcessing={false}
-            >
-              <ForwardRef(styled.span)
-                id="metaItem-3"
-              >
-                Filters
-              </ForwardRef(styled.span)>
-              <ForwardRef(styled.span)
-                id="metaItemValue-3"
-              >
-                —
-              </ForwardRef(styled.span)>
-            </ForwardRef(styled.div)>
-            <ForwardRef(styled.div)
-              metaProcessing={false}
-            >
-              <ForwardRef(styled.span)
-                id="metaItem-4"
-              >
-                Tags
-              </ForwardRef(styled.span)>
-              <ForwardRef(styled.span)
-                id="metaItemValue-4"
-              >
-                —
-              </ForwardRef(styled.span)>
-            </ForwardRef(styled.div)>
-          </ForwardRef(styled.div)>
-        }
-        headerComponent={
-          <ForwardRef(styled.span)
-            id="dataSourceStatus"
-            metaProcessing={true}
+          <h2
+            className="sc-fzoYkl dENXbG"
+            id="headerTitle"
+            style={
+              Object {
+                "fontFamily": "Inter, \\"Helvetica Neue\\", Helvetica, Arial, sans-serif",
+                "fontSize": "24px",
+                "fontWeight": 100,
+                "margin": 0,
+              }
+            }
           >
-            <FormattedMessage
-              defaultMessage="No data source uploaded"
-              id="project.dataSourceList.noDataSourceUploaded"
-              values={Object {}}
-            />
-          </ForwardRef(styled.span)>
+            Data Sources
+          </h2>
+          <h1
+            className="sc-fzpkJw enKAbF"
+            id="headerSubtitle"
+            style={
+              Object {
+                "fontFamily": "Inter, \\"Helvetica Neue\\", Helvetica, Arial, sans-serif",
+                "fontSize": "24px",
+                "fontWeight": 600,
+                "letterSpacing": "-0.12px",
+                "lineHight": 1.25,
+                "margin": 0,
+              }
+            }
+          >
+            Overview
+          </h1>
+        </div>
+      </div>
+      <button
+        disabled={false}
+        id="topHeaderOpenMenuBtn"
+        onClick={[Function]}
+        style={
+          Object {
+            "backgroundColor": "transparent",
+            "border": "none",
+            "borderRadius": "48px",
+            "color": "#FFF",
+            "cursor": "pointer",
+            "display": "inline-block",
+            "fill": "#FFF",
+            "fontSize": "18px",
+            "margin": "0",
+            "minHeight": "48px",
+            "outline": "none",
+            "padding": "0",
+            "position": "absolute",
+            "right": -6,
+            "top": 6,
+            "transition": "background 0.25s ease-in-out, color 0.25s ease-in-out",
+          }
         }
-        id="dataSourceContainer"
-        key="1"
+        type="button"
       >
-        <Styled(H1)
-          id="dataSourceTitle"
-          onClick={[Function]}
+        <svg
+          style={
+            Object {
+              "fill": "#FFF",
+              "height": "60px",
+              "width": "60px",
+            }
+          }
+          viewBox="0 0 10 60"
         >
-          name
-        </Styled(H1)>
-      </Styled(Component)>
-      <Styled(Component)
-        footerComponent={
-          <ForwardRef(styled.div)>
-            <ForwardRef(styled.div)
-              metaProcessing={false}
-            >
-              <ForwardRef(styled.span)
-                id="metaItem-0"
-              >
-                Source
-              </ForwardRef(styled.span)>
-              <ForwardRef(styled.span)
-                id="metaItemValue-0"
-              >
-                <Unknown
-                  customStyles={
-                    Object {
-                      "fill": "#FFF",
-                      "height": 40,
-                      "width": 40,
-                    }
-                  }
-                />
-              </ForwardRef(styled.span)>
-            </ForwardRef(styled.div)>
-            <ForwardRef(styled.div)
-              metaProcessing={false}
-            >
-              <ForwardRef(styled.span)
-                id="metaItem-1"
-              >
-                Items
-              </ForwardRef(styled.span)>
-              <ForwardRef(styled.span)
-                id="metaItemValue-1"
-              >
-                —
-              </ForwardRef(styled.span)>
-            </ForwardRef(styled.div)>
-            <ForwardRef(styled.div)
-              metaProcessing={false}
-            >
-              <ForwardRef(styled.span)
-                id="metaItem-2"
-              >
-                Fields
-              </ForwardRef(styled.span)>
-              <ForwardRef(styled.span)
-                id="metaItemValue-2"
-              >
-                —
-              </ForwardRef(styled.span)>
-            </ForwardRef(styled.div)>
-            <ForwardRef(styled.div)
-              metaProcessing={false}
-            >
-              <ForwardRef(styled.span)
-                id="metaItem-3"
-              >
-                Filters
-              </ForwardRef(styled.span)>
-              <ForwardRef(styled.span)
-                id="metaItemValue-3"
-              >
-                —
-              </ForwardRef(styled.span)>
-            </ForwardRef(styled.div)>
-            <ForwardRef(styled.div)
-              metaProcessing={false}
-            >
-              <ForwardRef(styled.span)
-                id="metaItem-4"
-              >
-                Tags
-              </ForwardRef(styled.span)>
-              <ForwardRef(styled.span)
-                id="metaItemValue-4"
-              >
-                —
-              </ForwardRef(styled.span)>
-            </ForwardRef(styled.div)>
-          </ForwardRef(styled.div)>
+          <path
+            d="M5 37a3 3 0 110 6 3 3 0 010-6zm0-10a3 3 0 110 6 3 3 0 010-6zm0-10a3 3 0 110 6 3 3 0 010-6z"
+            fillRule="evenodd"
+          />
+        </svg>
+      </button>
+    </div>
+    <div
+      style={
+        Object {
+          "backgroundColor": "#000",
+          "bottom": 0,
+          "color": "#FFF",
+          "maxWidth": null,
+          "padding": "18px 20px 27px",
+          "position": "absolute",
+          "right": 0,
+          "textAlign": "left",
+          "top": 0,
+          "transform": "translateX(100%)",
+          "transition": "transform 400ms cubic-bezier(0.86, 0, 0.07, 1), visibility 0s linear 400ms",
+          "visibility": 0,
+          "width": "100%",
+          "zIndex": 99999,
         }
-        headerComponent={
-          <ForwardRef(styled.span)
-            id="dataSourceStatus"
-            metaProcessing={true}
-          >
-            <FormattedMessage
-              defaultMessage="No data source uploaded"
-              id="project.dataSourceList.noDataSourceUploaded"
-              values={Object {}}
-            />
-          </ForwardRef(styled.span)>
-        }
-        id="dataSourceContainer"
-        key="2"
+      }
+    >
+      <div
+        className="sc-fzolEj fhwccp"
       >
-        <Styled(H1)
-          id="dataSourceTitle"
-          onClick={[Function]}
+        <div
+          className="sc-fznWOq fzTKqt"
         >
-          name
-        </Styled(H1)>
-      </Styled(Component)>
-      <Styled(Component)
-        footerComponent={
-          <ForwardRef(styled.div)>
-            <ForwardRef(styled.div)
-              metaProcessing={false}
-            >
-              <ForwardRef(styled.span)
-                id="metaItem-0"
-              >
-                Source
-              </ForwardRef(styled.span)>
-              <ForwardRef(styled.span)
-                id="metaItemValue-0"
-              >
-                <Unknown
-                  customStyles={
-                    Object {
-                      "fill": "#FFF",
-                      "height": 40,
-                      "width": 40,
-                    }
-                  }
-                />
-              </ForwardRef(styled.span)>
-            </ForwardRef(styled.div)>
-            <ForwardRef(styled.div)
-              metaProcessing={false}
-            >
-              <ForwardRef(styled.span)
-                id="metaItem-1"
-              >
-                Items
-              </ForwardRef(styled.span)>
-              <ForwardRef(styled.span)
-                id="metaItemValue-1"
-              >
-                —
-              </ForwardRef(styled.span)>
-            </ForwardRef(styled.div)>
-            <ForwardRef(styled.div)
-              metaProcessing={false}
-            >
-              <ForwardRef(styled.span)
-                id="metaItem-2"
-              >
-                Fields
-              </ForwardRef(styled.span)>
-              <ForwardRef(styled.span)
-                id="metaItemValue-2"
-              >
-                —
-              </ForwardRef(styled.span)>
-            </ForwardRef(styled.div)>
-            <ForwardRef(styled.div)
-              metaProcessing={false}
-            >
-              <ForwardRef(styled.span)
-                id="metaItem-3"
-              >
-                Filters
-              </ForwardRef(styled.span)>
-              <ForwardRef(styled.span)
-                id="metaItemValue-3"
-              >
-                —
-              </ForwardRef(styled.span)>
-            </ForwardRef(styled.div)>
-            <ForwardRef(styled.div)
-              metaProcessing={false}
-            >
-              <ForwardRef(styled.span)
-                id="metaItem-4"
-              >
-                Tags
-              </ForwardRef(styled.span)>
-              <ForwardRef(styled.span)
-                id="metaItemValue-4"
-              >
-                —
-              </ForwardRef(styled.span)>
-            </ForwardRef(styled.div)>
-          </ForwardRef(styled.div)>
-        }
-        headerComponent={
-          <ForwardRef(styled.span)
-            id="dataSourceStatus"
-            metaProcessing={true}
+          <div
+            className="sc-fznMAR DQQGK"
           >
-            <FormattedMessage
-              defaultMessage="No data source uploaded"
-              id="project.dataSourceList.noDataSourceUploaded"
-              values={Object {}}
-            />
-          </ForwardRef(styled.span)>
-        }
-        id="dataSourceContainer"
-        key="3"
-      >
-        <Styled(H1)
-          id="dataSourceTitle"
-          onClick={[Function]}
-        >
-          name
-        </Styled(H1)>
-      </Styled(Component)>
-      <Styled(Component)
-        footerComponent={
-          <ForwardRef(styled.div)>
-            <ForwardRef(styled.div)
-              metaProcessing={true}
-            >
-              <ForwardRef(styled.span)
-                id="metaItem-0"
-              >
-                Source
-              </ForwardRef(styled.span)>
-              <ForwardRef(styled.span)
-                id="metaItemValue-0"
-              >
-                <Unknown
-                  customStyles={
-                    Object {
-                      "fill": "#71737e",
-                      "height": 40,
-                      "width": 40,
-                    }
-                  }
-                />
-              </ForwardRef(styled.span)>
-            </ForwardRef(styled.div)>
-            <ForwardRef(styled.div)
-              metaProcessing={true}
-            >
-              <ForwardRef(styled.span)
-                id="metaItem-1"
-              >
-                Items
-              </ForwardRef(styled.span)>
-              <ForwardRef(styled.span)
-                id="metaItemValue-1"
-              >
-                —
-              </ForwardRef(styled.span)>
-            </ForwardRef(styled.div)>
-            <ForwardRef(styled.div)
-              metaProcessing={true}
-            >
-              <ForwardRef(styled.span)
-                id="metaItem-2"
-              >
-                Fields
-              </ForwardRef(styled.span)>
-              <ForwardRef(styled.span)
-                id="metaItemValue-2"
-              >
-                —
-              </ForwardRef(styled.span)>
-            </ForwardRef(styled.div)>
-            <ForwardRef(styled.div)
-              metaProcessing={true}
-            >
-              <ForwardRef(styled.span)
-                id="metaItem-3"
-              >
-                Filters
-              </ForwardRef(styled.span)>
-              <ForwardRef(styled.span)
-                id="metaItemValue-3"
-              >
-                —
-              </ForwardRef(styled.span)>
-            </ForwardRef(styled.div)>
-            <ForwardRef(styled.div)
-              metaProcessing={true}
-            >
-              <ForwardRef(styled.span)
-                id="metaItem-4"
-              >
-                Tags
-              </ForwardRef(styled.span)>
-              <ForwardRef(styled.span)
-                id="metaItemValue-4"
-              >
-                —
-              </ForwardRef(styled.span)>
-            </ForwardRef(styled.div)>
-          </ForwardRef(styled.div)>
-        }
-        headerComponent={
-          <ForwardRef(styled.span)
-            id="dataSourceStatus"
-            metaProcessing={true}
-          >
-            <FormattedMessage
-              defaultMessage="No data source uploaded"
-              id="project.dataSourceList.noDataSourceUploaded"
-              values={Object {}}
-            />
-          </ForwardRef(styled.span)>
-        }
-        id="dataSourceContainer"
-        key="4"
-      >
-        <Styled(H1)
-          id="dataSourceTitle"
-          onClick={[Function]}
-        >
-          name
-        </Styled(H1)>
-      </Styled(Component)>
-      <Styled(Component)
-        footerComponent={
-          <ForwardRef(styled.div)>
-            <ForwardRef(styled.div)
-              metaProcessing={true}
-            >
-              <ForwardRef(styled.span)
-                id="metaItem-0"
-              >
-                Source
-              </ForwardRef(styled.span)>
-              <ForwardRef(styled.span)
-                id="metaItemValue-0"
-              >
-                <Unknown
-                  customStyles={
-                    Object {
-                      "fill": "#71737e",
-                      "height": 40,
-                      "width": 40,
-                    }
-                  }
-                />
-              </ForwardRef(styled.span)>
-            </ForwardRef(styled.div)>
-            <ForwardRef(styled.div)
-              metaProcessing={true}
-            >
-              <ForwardRef(styled.span)
-                id="metaItem-1"
-              >
-                Items
-              </ForwardRef(styled.span)>
-              <ForwardRef(styled.span)
-                id="metaItemValue-1"
-              >
-                —
-              </ForwardRef(styled.span)>
-            </ForwardRef(styled.div)>
-            <ForwardRef(styled.div)
-              metaProcessing={true}
-            >
-              <ForwardRef(styled.span)
-                id="metaItem-2"
-              >
-                Fields
-              </ForwardRef(styled.span)>
-              <ForwardRef(styled.span)
-                id="metaItemValue-2"
-              >
-                —
-              </ForwardRef(styled.span)>
-            </ForwardRef(styled.div)>
-            <ForwardRef(styled.div)
-              metaProcessing={true}
-            >
-              <ForwardRef(styled.span)
-                id="metaItem-3"
-              >
-                Filters
-              </ForwardRef(styled.span)>
-              <ForwardRef(styled.span)
-                id="metaItemValue-3"
-              >
-                —
-              </ForwardRef(styled.span)>
-            </ForwardRef(styled.div)>
-            <ForwardRef(styled.div)
-              metaProcessing={true}
-            >
-              <ForwardRef(styled.span)
-                id="metaItem-4"
-              >
-                Tags
-              </ForwardRef(styled.span)>
-              <ForwardRef(styled.span)
-                id="metaItemValue-4"
-              >
-                —
-              </ForwardRef(styled.span)>
-            </ForwardRef(styled.div)>
-          </ForwardRef(styled.div)>
-        }
-        headerComponent={
-          <ForwardRef(styled.span)
-            id="dataSourceStatus"
-            metaProcessing={true}
-          >
-            <FormattedMessage
-              defaultMessage="No data source uploaded"
-              id="project.dataSourceList.noDataSourceUploaded"
-              values={Object {}}
-            />
-          </ForwardRef(styled.span)>
-        }
-        id="dataSourceContainer"
-        key="5"
-      >
-        <Styled(H1)
-          id="dataSourceTitle"
-          onClick={[Function]}
-        >
-          name
-        </Styled(H1)>
-      </Styled(Component)>
-      <Styled(Component)
-        footerComponent={
-          <ForwardRef(styled.div)>
-            <ForwardRef(styled.div)
-              metaProcessing={false}
-            >
-              <ForwardRef(styled.span)
-                id="metaItem-0"
-              >
-                Source
-              </ForwardRef(styled.span)>
-              <ForwardRef(styled.span)
-                id="metaItemValue-0"
-              >
-                <Unknown
-                  customStyles={
-                    Object {
-                      "fill": "#FFF",
-                      "height": 40,
-                      "width": 40,
-                    }
-                  }
-                />
-              </ForwardRef(styled.span)>
-            </ForwardRef(styled.div)>
-            <ForwardRef(styled.div)
-              metaProcessing={false}
-            >
-              <ForwardRef(styled.span)
-                id="metaItem-1"
-              >
-                Items
-              </ForwardRef(styled.span)>
-              <ForwardRef(styled.span)
-                id="metaItemValue-1"
-              >
-                —
-              </ForwardRef(styled.span)>
-            </ForwardRef(styled.div)>
-            <ForwardRef(styled.div)
-              metaProcessing={false}
-            >
-              <ForwardRef(styled.span)
-                id="metaItem-2"
-              >
-                Fields
-              </ForwardRef(styled.span)>
-              <ForwardRef(styled.span)
-                id="metaItemValue-2"
-              >
-                —
-              </ForwardRef(styled.span)>
-            </ForwardRef(styled.div)>
-            <ForwardRef(styled.div)
-              metaProcessing={false}
-            >
-              <ForwardRef(styled.span)
-                id="metaItem-3"
-              >
-                Filters
-              </ForwardRef(styled.span)>
-              <ForwardRef(styled.span)
-                id="metaItemValue-3"
-              >
-                —
-              </ForwardRef(styled.span)>
-            </ForwardRef(styled.div)>
-            <ForwardRef(styled.div)
-              metaProcessing={false}
-            >
-              <ForwardRef(styled.span)
-                id="metaItem-4"
-              >
-                Tags
-              </ForwardRef(styled.span)>
-              <ForwardRef(styled.span)
-                id="metaItemValue-4"
-              >
-                —
-              </ForwardRef(styled.span)>
-            </ForwardRef(styled.div)>
-          </ForwardRef(styled.div)>
-        }
-        headerComponent={
-          <ForwardRef(styled.span)
-            id="dataSourceStatus"
-            metaProcessing={true}
-          >
-            <FormattedMessage
-              defaultMessage="No data source uploaded"
-              id="project.dataSourceList.noDataSourceUploaded"
-              values={Object {}}
-            />
-          </ForwardRef(styled.span)>
-        }
-        id="dataSourceContainer"
-        key="6"
-      >
-        <Styled(H1)
-          id="dataSourceTitle"
-          onClick={[Function]}
-        >
-          name
-        </Styled(H1)>
-      </Styled(Component)>
-      <Styled(Component)
-        footerComponent={
-          <ForwardRef(styled.div)>
-            <ForwardRef(styled.div)
-              metaProcessing={true}
-            >
-              <ForwardRef(styled.span)
-                id="metaItem-0"
-              >
-                Source
-              </ForwardRef(styled.span)>
-              <ForwardRef(styled.span)
-                id="metaItemValue-0"
-              >
-                <Unknown
-                  customStyles={
-                    Object {
-                      "fill": "#71737e",
-                      "height": 40,
-                      "width": 40,
-                    }
-                  }
-                />
-              </ForwardRef(styled.span)>
-            </ForwardRef(styled.div)>
-            <ForwardRef(styled.div)
-              metaProcessing={true}
-            >
-              <ForwardRef(styled.span)
-                id="metaItem-1"
-              >
-                Items
-              </ForwardRef(styled.span)>
-              <ForwardRef(styled.span)
-                id="metaItemValue-1"
-              >
-                —
-              </ForwardRef(styled.span)>
-            </ForwardRef(styled.div)>
-            <ForwardRef(styled.div)
-              metaProcessing={true}
-            >
-              <ForwardRef(styled.span)
-                id="metaItem-2"
-              >
-                Fields
-              </ForwardRef(styled.span)>
-              <ForwardRef(styled.span)
-                id="metaItemValue-2"
-              >
-                —
-              </ForwardRef(styled.span)>
-            </ForwardRef(styled.div)>
-            <ForwardRef(styled.div)
-              metaProcessing={true}
-            >
-              <ForwardRef(styled.span)
-                id="metaItem-3"
-              >
-                Filters
-              </ForwardRef(styled.span)>
-              <ForwardRef(styled.span)
-                id="metaItemValue-3"
-              >
-                —
-              </ForwardRef(styled.span)>
-            </ForwardRef(styled.div)>
-            <ForwardRef(styled.div)
-              metaProcessing={true}
-            >
-              <ForwardRef(styled.span)
-                id="metaItem-4"
-              >
-                Tags
-              </ForwardRef(styled.span)>
-              <ForwardRef(styled.span)
-                id="metaItemValue-4"
-              >
-                —
-              </ForwardRef(styled.span)>
-            </ForwardRef(styled.div)>
-          </ForwardRef(styled.div)>
-        }
-        headerComponent={
-          <ForwardRef(styled.span)
-            id="dataSourceStatus"
-            metaProcessing={true}
-          >
-            <FormattedMessage
-              defaultMessage="Uploading file failed"
-              id="project.dataSourceList.fileUploadingError"
-              values={Object {}}
-            />
-          </ForwardRef(styled.span)>
-        }
-        id="dataSourceContainer"
-        key="7"
-      >
-        <Styled(H1)
-          id="dataSourceTitle"
-          onClick={[Function]}
-        >
-          name
-        </Styled(H1)>
-      </Styled(Component)>
-      <Styled(Component)
-        footerComponent={
-          <ForwardRef(styled.div)>
-            <ForwardRef(styled.div)
-              metaProcessing={true}
-            >
-              <ForwardRef(styled.span)
-                id="metaItem-0"
-              >
-                Source
-              </ForwardRef(styled.span)>
-              <ForwardRef(styled.span)
-                id="metaItemValue-0"
-              >
-                <Unknown
-                  customStyles={
-                    Object {
-                      "fill": "#71737e",
-                      "height": 40,
-                      "width": 40,
-                    }
-                  }
-                />
-              </ForwardRef(styled.span)>
-            </ForwardRef(styled.div)>
-            <ForwardRef(styled.div)
-              metaProcessing={true}
-            >
-              <ForwardRef(styled.span)
-                id="metaItem-1"
-              >
-                Items
-              </ForwardRef(styled.span)>
-              <ForwardRef(styled.span)
-                id="metaItemValue-1"
-              >
-                —
-              </ForwardRef(styled.span)>
-            </ForwardRef(styled.div)>
-            <ForwardRef(styled.div)
-              metaProcessing={true}
-            >
-              <ForwardRef(styled.span)
-                id="metaItem-2"
-              >
-                Fields
-              </ForwardRef(styled.span)>
-              <ForwardRef(styled.span)
-                id="metaItemValue-2"
-              >
-                —
-              </ForwardRef(styled.span)>
-            </ForwardRef(styled.div)>
-            <ForwardRef(styled.div)
-              metaProcessing={true}
-            >
-              <ForwardRef(styled.span)
-                id="metaItem-3"
-              >
-                Filters
-              </ForwardRef(styled.span)>
-              <ForwardRef(styled.span)
-                id="metaItemValue-3"
-              >
-                —
-              </ForwardRef(styled.span)>
-            </ForwardRef(styled.div)>
-            <ForwardRef(styled.div)
-              metaProcessing={true}
-            >
-              <ForwardRef(styled.span)
-                id="metaItem-4"
-              >
-                Tags
-              </ForwardRef(styled.span)>
-              <ForwardRef(styled.span)
-                id="metaItemValue-4"
-              >
-                —
-              </ForwardRef(styled.span)>
-            </ForwardRef(styled.div)>
-          </ForwardRef(styled.div)>
-        }
-        headerComponent={
-          <ForwardRef(styled.span)
-            id="dataSourceStatus"
-            metaProcessing={true}
-          >
-            <FormattedMessage
-              defaultMessage="Uploading file {uploadProgress}%..."
-              id="project.dataSourceList.fileUploading"
-              values={
+            <h2
+              className="sc-fzoYkl dENXbG"
+              id="headerTitle"
+              style={
                 Object {
-                  "uploadProgress": 50,
+                  "fontFamily": "Inter, \\"Helvetica Neue\\", Helvetica, Arial, sans-serif",
+                  "fontSize": "24px",
+                  "fontWeight": 100,
+                  "margin": 0,
                 }
               }
-            />
-          </ForwardRef(styled.span)>
-        }
-        id="dataSourceContainer"
-        key="8"
-      >
-        <Styled(H1)
-          id="dataSourceTitle"
-          onClick={[Function]}
+            >
+              Data Sources
+            </h2>
+            <h1
+              className="sc-fzpkJw enKAbF"
+              id="headerSubtitle"
+              style={
+                Object {
+                  "fontFamily": "Inter, \\"Helvetica Neue\\", Helvetica, Arial, sans-serif",
+                  "fontSize": "24px",
+                  "fontWeight": 600,
+                  "letterSpacing": "-0.12px",
+                  "lineHight": 1.25,
+                  "margin": 0,
+                }
+              }
+            >
+              Overview
+            </h1>
+          </div>
+        </div>
+        <div
+          className="sc-fzqBkg hScHwl"
         >
-          name
-        </Styled(H1)>
-      </Styled(Component)>
-      <Styled(Component)
-        footerComponent={
-          <ForwardRef(styled.div)>
-            <ForwardRef(styled.div)
-              metaProcessing={true}
-            >
-              <ForwardRef(styled.span)
-                id="metaItem-0"
-              >
-                Source
-              </ForwardRef(styled.span)>
-              <ForwardRef(styled.span)
-                id="metaItemValue-0"
-              >
-                <Unknown
-                  customStyles={
-                    Object {
-                      "fill": "#71737e",
-                      "height": 40,
-                      "width": 40,
-                    }
-                  }
-                />
-              </ForwardRef(styled.span)>
-            </ForwardRef(styled.div)>
-            <ForwardRef(styled.div)
-              metaProcessing={true}
-            >
-              <ForwardRef(styled.span)
-                id="metaItem-1"
-              >
-                Items
-              </ForwardRef(styled.span)>
-              <ForwardRef(styled.span)
-                id="metaItemValue-1"
-              >
-                —
-              </ForwardRef(styled.span)>
-            </ForwardRef(styled.div)>
-            <ForwardRef(styled.div)
-              metaProcessing={true}
-            >
-              <ForwardRef(styled.span)
-                id="metaItem-2"
-              >
-                Fields
-              </ForwardRef(styled.span)>
-              <ForwardRef(styled.span)
-                id="metaItemValue-2"
-              >
-                —
-              </ForwardRef(styled.span)>
-            </ForwardRef(styled.div)>
-            <ForwardRef(styled.div)
-              metaProcessing={true}
-            >
-              <ForwardRef(styled.span)
-                id="metaItem-3"
-              >
-                Filters
-              </ForwardRef(styled.span)>
-              <ForwardRef(styled.span)
-                id="metaItemValue-3"
-              >
-                —
-              </ForwardRef(styled.span)>
-            </ForwardRef(styled.div)>
-            <ForwardRef(styled.div)
-              metaProcessing={true}
-            >
-              <ForwardRef(styled.span)
-                id="metaItem-4"
-              >
-                Tags
-              </ForwardRef(styled.span)>
-              <ForwardRef(styled.span)
-                id="metaItemValue-4"
-              >
-                —
-              </ForwardRef(styled.span)>
-            </ForwardRef(styled.div)>
-          </ForwardRef(styled.div)>
-        }
-        headerComponent={
-          <ForwardRef(styled.span)
-            id="dataSourceStatus"
-            metaProcessing={true}
+          <div
+            className="sc-fzqPZZ bbXJbY"
           >
-            <FormattedMessage
-              defaultMessage="No data source uploaded"
-              id="project.dataSourceList.noDataSourceUploaded"
-              values={Object {}}
-            />
-          </ForwardRef(styled.span)>
+            <a
+              href="/project/"
+              id="projectsNavBtn"
+              onClick={[Function]}
+            >
+              Projects
+            </a>
+          </div>
+          <div
+            className="sc-fzqPZZ bbXJbY"
+          >
+            <a
+              href="/user/"
+              id="usersPageNavBtn"
+              onClick={[Function]}
+            >
+              Users
+            </a>
+          </div>
+          <div
+            className="sc-fzqPZZ bbXJbY"
+          >
+            <a
+              href="/project/projectId"
+              id="projectDetailsNavBtn"
+              onClick={[Function]}
+            >
+              Project details
+            </a>
+          </div>
+          <div
+            className="sc-fzqPZZ jLThQl"
+          >
+            <a
+              href="/project/projectId/datasource"
+              id="dataSourceNavBtn"
+              onClick={[Function]}
+            >
+              Data Sources
+            </a>
+          </div>
+          <div
+            className="sc-fzqPZZ bbXJbY"
+          >
+            <a
+              href="/project/projectId/user"
+              id="usersNavBtn"
+              onClick={[Function]}
+            >
+              Project Users
+            </a>
+          </div>
+          <div
+            className="sc-fzqPZZ bbXJbY"
+          >
+            <a
+              href="/project/projectId/content"
+              id="contentNavBtn"
+              onClick={[Function]}
+            >
+              Content
+            </a>
+          </div>
+          <div
+            className="sc-fzqPZZ bbXJbY"
+          >
+            <a
+              href="/project/projectId/templates"
+              id="templatesNavBtn"
+              onClick={[Function]}
+            >
+              Templates
+            </a>
+          </div>
+        </div>
+        <div
+          className="sc-fzqBkg hScHwl"
+        >
+          <div
+            className="sc-fzqPZZ bbXJbY"
+          >
+            <a
+              href="/settings"
+              id="settingsNavBtn"
+              onClick={[Function]}
+            >
+              Settings
+            </a>
+          </div>
+          <div
+            className="sc-fzqPZZ bbXJbY"
+          >
+            <div
+              onClick={[Function]}
+            >
+              Log out
+            </div>
+          </div>
+        </div>
+        <div
+          className="sc-fzoxKX eIANBM"
+        >
+          <a
+            className="sc-fzoKki cvDvQq"
+            href="/"
+            id="aboutNavBtn"
+            onClick={[Function]}
+          >
+            About Schema CMS
+          </a>
+          <a
+            className="sc-fzoKki cvDvQq"
+            href="/"
+            id="apiNavBtn"
+            onClick={[Function]}
+          >
+            API Doc
+          </a>
+          <a
+            className="sc-fzoKki cvDvQq"
+            href="/"
+            id="repositoryNavBtn"
+            onClick={[Function]}
+          >
+            GitHub Repository
+          </a>
+        </div>
+      </div>
+      <button
+        disabled={false}
+        id="topHeaderCloseMenuButton"
+        onClick={[Function]}
+        style={
+          Object {
+            "backgroundColor": "transparent",
+            "border": "none",
+            "borderRadius": "48px",
+            "color": "#FFF",
+            "cursor": "pointer",
+            "display": "inline-block",
+            "fill": "#FFF",
+            "fontSize": "18px",
+            "margin": "0",
+            "minHeight": "48px",
+            "outline": "none",
+            "padding": "0",
+            "position": "absolute",
+            "right": 0,
+            "top": "6px",
+            "transition": "background 0.25s ease-in-out, color 0.25s ease-in-out",
+          }
         }
-        id="dataSourceContainer"
-        key="9"
+        type="button"
       >
-        <Styled(H1)
-          id="dataSourceTitle"
+        <svg
+          style={
+            Object {
+              "fill": "#FFF",
+              "height": "60px",
+              "width": "60px",
+            }
+          }
+          viewBox="0 0 60 60"
+        >
+          <path
+            d="M39.192 17.98l2.829 2.828L32.828 30l9.193 9.192-2.829 2.829L30 32.828l-9.192 9.193-2.829-2.829L27.172 30l-9.193-9.192 2.829-2.829L30 27.172l9.192-9.193z"
+            fillRule="evenodd"
+          />
+        </svg>
+      </button>
+    </div>
+  </div>
+  <div
+    className="sc-AxhCb ccMvAG"
+    id="tabsContainer"
+  >
+    <div
+      className="sc-AxjAm eSjBJw"
+    >
+      <div
+        className="sc-AxirZ eteeke"
+      >
+        <a
+          className="sc-AxiKw caTYgO"
+          href="/project/projectId"
+          id="settingsTab"
           onClick={[Function]}
         >
-          name
-        </Styled(H1)>
-      </Styled(Component)>
-    </styled.section>
-  </LoadingWrapper>
-  <NavigationContainer
-    contentStyles={null}
-    fixed={true}
-    hideOnDesktop={true}
-    right={false}
+          Settings
+        </a>
+      </div>
+      <div
+        className="sc-AxirZ jwwwmF"
+      >
+        <a
+          className="sc-AxiKw caTYgO"
+          href="/project/projectId/datasource"
+          id="sourcesTab"
+          onClick={[Function]}
+        >
+          Sources
+        </a>
+      </div>
+      <div
+        className="sc-AxirZ eteeke"
+      >
+        <a
+          className="sc-AxiKw caTYgO"
+          href="/project/projectId/content"
+          id="contentTab"
+          onClick={[Function]}
+        >
+          Content
+        </a>
+      </div>
+      <div
+        className="sc-AxirZ eteeke"
+      >
+        <a
+          className="sc-AxiKw caTYgO"
+          href="/project/projectId/templates"
+          id="templatesTab"
+          onClick={[Function]}
+        >
+          Templates
+        </a>
+      </div>
+      <div
+        className="sc-AxirZ eteeke"
+      >
+        <a
+          className="sc-AxiKw caTYgO"
+          href="/project/projectId/user"
+          id="usersTab"
+          onClick={[Function]}
+        >
+          Users
+        </a>
+      </div>
+    </div>
+  </div>
+  <div
+    className="sc-AxhUy eTJXHP"
   >
-    <BackArrowButton
-      id="backBtn"
-      onClick={[Function]}
-    />
-    <PlusButton
-      customStyles={Object {}}
-      hideOnDesktop={false}
-      id="createDataSourceBtn"
-      onClick={[Function]}
-    />
-  </NavigationContainer>
-</styled.div>
+    <div
+      className="sc-AxgMl dfHvBg"
+    >
+      <h2
+        className="sc-AxheI evIuGV"
+        id="desktopHeaderTitle"
+        style={
+          Object {
+            "fontFamily": "Inter, \\"Helvetica Neue\\", Helvetica, Arial, sans-serif",
+            "fontSize": "24px",
+            "fontWeight": 100,
+            "margin": 0,
+          }
+        }
+      >
+        Data Sources
+      </h2>
+      <h1
+        className="sc-Axmtr iQAeZe"
+        id="desktopHeaderSubtitle"
+        style={
+          Object {
+            "fontFamily": "Inter, \\"Helvetica Neue\\", Helvetica, Arial, sans-serif",
+            "fontSize": "24px",
+            "fontWeight": 600,
+            "letterSpacing": "-0.12px",
+            "lineHight": 1.25,
+            "margin": 0,
+          }
+        }
+      >
+        Overview
+      </h1>
+    </div>
+    <div
+      className="sc-AxmLO cAKCgh"
+    >
+      <div
+        className="sc-fzpjYC ftkikz"
+      >
+        <button
+          disabled={false}
+          id="createDataSourceDesktopBtn"
+          onClick={[Function]}
+          style={
+            Object {
+              "backgroundColor": "#FFF",
+              "border": "none",
+              "borderRadius": "48px",
+              "color": "#000",
+              "cursor": "pointer",
+              "display": "inline-block",
+              "fill": "#FFF",
+              "fontSize": "18px",
+              "height": "60px",
+              "margin": "0",
+              "minHeight": "48px",
+              "outline": "none",
+              "padding": "0",
+              "transition": "background 0.25s ease-in-out, color 0.25s ease-in-out",
+              "width": "60px",
+            }
+          }
+        >
+          <svg
+            style={
+              Object {
+                "fill": "#000",
+                "height": "60px",
+                "shapeRendering": "crispEdges",
+                "width": "60px",
+              }
+            }
+            viewBox="0 0 60 60"
+          >
+            <path
+              d="M32 15v13h13v4H32v13h-4V32H15v-4h13V15h4z"
+            />
+          </svg>
+        </button>
+      </div>
+    </div>
+  </div>
+  <section
+    className="sc-fzokOt clWZDR"
+  >
+    <div
+      className="sc-fzplWN gRxfUG"
+      id="dataSourceContainer"
+      style={
+        Object {
+          "backgroundColor": "#1d1d20",
+          "borderTop": "2px solid #FFF",
+          "color": "#FFF",
+          "display": "flex",
+          "flexDirection": "column",
+          "fontFamily": "Inter, \\"Helvetica Neue\\", Helvetica, Arial, sans-serif",
+          "fontSize": "12px",
+          "justifyContent": "space-between",
+          "padding": "12px 14px 14px",
+          "position": "relative",
+        }
+      }
+    >
+      <div
+        style={
+          Object {
+            "height": "100%",
+            "width": "100%",
+          }
+        }
+      >
+        <div
+          style={
+            Object {
+              "color": "#71737e",
+              "marginBottom": 14,
+            }
+          }
+        >
+          <div
+            className="sc-fzoyTs dafKkn"
+          >
+            <ul
+              className="sc-fzoJMP kKNxHP"
+            >
+              <li
+                className="sc-fzoYHE eqJYpq"
+                id="headerItem-0"
+              >
+                3 months ago
+              </li>
+              <li
+                className="sc-fzoYHE eqJYpq"
+                id="headerItem-1"
+              >
+                firstName lastName
+              </li>
+            </ul>
+            <div
+              className="sc-fznLPX jOWzcq"
+              id="dataSourceCopyButton-0"
+              onClick={[Function]}
+            >
+              <svg
+                style={
+                  Object {
+                    "fill": "#FFF",
+                    "height": "20px",
+                    "width": "20px",
+                  }
+                }
+                viewBox="0 0 512 512"
+              >
+                <path
+                  d="M464 64h-48V48c0-26.51-21.49-48-48-48H48C21.49 0 0 21.49 0 48v320c0 26.51 21.49 48 48 48h16v48c0 26.51 21.49 48 48 48h352c26.51 0 48-21.49 48-48V112c0-26.51-21.49-48-48-48zM64 112v272H48c-8.837 0-16-7.163-16-16V48c0-8.837 7.163-16 16-16h320c8.837 0 16 7.163 16 16v16H112c-26.51 0-48 21.49-48 48zm416 352c0 8.837-7.163 16-16 16H112c-8.837 0-16-7.163-16-16V112c0-8.837 7.163-16 16-16h352c8.837 0 16 7.163 16 16v352z"
+                />
+              </svg>
+            </div>
+          </div>
+        </div>
+        <h1
+          className="sc-fznyAO kvxaVQ"
+          id="dataSourceTitle"
+          onClick={[Function]}
+          style={
+            Object {
+              "fontFamily": "Inter, \\"Helvetica Neue\\", Helvetica, Arial, sans-serif",
+              "fontSize": "24px",
+              "fontWeight": 600,
+              "letterSpacing": "-0.12px",
+              "lineHight": 1.25,
+              "margin": 0,
+            }
+          }
+        >
+          name
+        </h1>
+      </div>
+      <div
+        style={
+          Object {
+            "color": "#71737e",
+            "marginBottom": 4,
+            "marginTop": 10,
+          }
+        }
+      >
+        <div
+          className="sc-fznWqX hMmhmk"
+        >
+          <div
+            className="sc-fzoiQi hKzQQm"
+          >
+            <span
+              className="sc-fzqARJ iPXgLm"
+              id="metaItem-0"
+            >
+              Source
+            </span>
+            <span
+              className="sc-fzqNqU hMvxM"
+              id="metaItemValue-0"
+            >
+              <svg
+                style={
+                  Object {
+                    "fill": "#FFF",
+                    "height": 40,
+                    "width": 40,
+                  }
+                }
+                viewBox="0 0 60 60"
+              >
+                <path
+                  d="M33 8v9.332l.005.195A3.67 3.67 0 0036.668 21H46v27.902A3.106 3.106 0 0142.887 52H17.113A3.106 3.106 0 0114 48.902V10.48A2.484 2.484 0 0116.492 8H33zm7 20H20v17h20V28zM29 40v3h-7v-3h7zm9 0v3h-7v-3h7zm-9-5v3h-7v-3h7zm9 0v3h-7v-3h7zm-9-5v3h-7v-3h7zm9 0v3h-7v-3h7zm7.5-11h-8.832l-.144-.006A1.67 1.67 0 0135 17.332V8.5L45.5 19z"
+                  fillRule="evenodd"
+                />
+              </svg>
+            </span>
+          </div>
+          <div
+            className="sc-fzoiQi hKzQQm"
+          >
+            <span
+              className="sc-fzqARJ iPXgLm"
+              id="metaItem-1"
+            >
+              Items
+            </span>
+            <span
+              className="sc-fzqNqU hMvxM"
+              id="metaItemValue-1"
+            >
+              —
+            </span>
+          </div>
+          <div
+            className="sc-fzoiQi hKzQQm"
+          >
+            <span
+              className="sc-fzqARJ iPXgLm"
+              id="metaItem-2"
+            >
+              Fields
+            </span>
+            <span
+              className="sc-fzqNqU hMvxM"
+              id="metaItemValue-2"
+            >
+              —
+            </span>
+          </div>
+          <div
+            className="sc-fzoiQi hKzQQm"
+          >
+            <span
+              className="sc-fzqARJ iPXgLm"
+              id="metaItem-3"
+            >
+              Filters
+            </span>
+            <span
+              className="sc-fzqNqU hMvxM"
+              id="metaItemValue-3"
+            >
+              —
+            </span>
+          </div>
+          <div
+            className="sc-fzoiQi hKzQQm"
+          >
+            <span
+              className="sc-fzqARJ iPXgLm"
+              id="metaItem-4"
+            >
+              Tags
+            </span>
+            <span
+              className="sc-fzqNqU hMvxM"
+              id="metaItemValue-4"
+            >
+              —
+            </span>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div
+      className="sc-fzplWN gRxfUG"
+      id="dataSourceContainer"
+      style={
+        Object {
+          "backgroundColor": "#1d1d20",
+          "borderTop": "2px solid #FFF",
+          "color": "#FFF",
+          "display": "flex",
+          "flexDirection": "column",
+          "fontFamily": "Inter, \\"Helvetica Neue\\", Helvetica, Arial, sans-serif",
+          "fontSize": "12px",
+          "justifyContent": "space-between",
+          "padding": "12px 14px 14px",
+          "position": "relative",
+        }
+      }
+    >
+      <div
+        style={
+          Object {
+            "height": "100%",
+            "width": "100%",
+          }
+        }
+      >
+        <div
+          style={
+            Object {
+              "color": "#71737e",
+              "marginBottom": 14,
+            }
+          }
+        >
+          <span
+            className="sc-fzoNJl gukMYb"
+            id="dataSourceStatus"
+          >
+            No data source uploaded
+          </span>
+        </div>
+        <h1
+          className="sc-fznyAO kvxaVQ"
+          id="dataSourceTitle"
+          onClick={[Function]}
+          style={
+            Object {
+              "fontFamily": "Inter, \\"Helvetica Neue\\", Helvetica, Arial, sans-serif",
+              "fontSize": "24px",
+              "fontWeight": 600,
+              "letterSpacing": "-0.12px",
+              "lineHight": 1.25,
+              "margin": 0,
+            }
+          }
+        >
+          name
+        </h1>
+      </div>
+      <div
+        style={
+          Object {
+            "color": "#71737e",
+            "marginBottom": 4,
+            "marginTop": 10,
+          }
+        }
+      >
+        <div
+          className="sc-fznWqX hMmhmk"
+        >
+          <div
+            className="sc-fzoiQi hKzQQm"
+          >
+            <span
+              className="sc-fzqARJ iPXgLm"
+              id="metaItem-0"
+            >
+              Source
+            </span>
+            <span
+              className="sc-fzqNqU hMvxM"
+              id="metaItemValue-0"
+            >
+              <svg
+                style={
+                  Object {
+                    "fill": "#FFF",
+                    "height": 40,
+                    "width": 40,
+                  }
+                }
+                viewBox="0 0 60 60"
+              >
+                <path
+                  d="M33 8v9.332l.005.195A3.67 3.67 0 0036.668 21H46v27.902A3.106 3.106 0 0142.887 52H17.113A3.106 3.106 0 0114 48.902V10.48A2.484 2.484 0 0116.492 8H33zm7 20H20v17h20V28zM29 40v3h-7v-3h7zm9 0v3h-7v-3h7zm-9-5v3h-7v-3h7zm9 0v3h-7v-3h7zm-9-5v3h-7v-3h7zm9 0v3h-7v-3h7zm7.5-11h-8.832l-.144-.006A1.67 1.67 0 0135 17.332V8.5L45.5 19z"
+                  fillRule="evenodd"
+                />
+              </svg>
+            </span>
+          </div>
+          <div
+            className="sc-fzoiQi hKzQQm"
+          >
+            <span
+              className="sc-fzqARJ iPXgLm"
+              id="metaItem-1"
+            >
+              Items
+            </span>
+            <span
+              className="sc-fzqNqU hMvxM"
+              id="metaItemValue-1"
+            >
+              —
+            </span>
+          </div>
+          <div
+            className="sc-fzoiQi hKzQQm"
+          >
+            <span
+              className="sc-fzqARJ iPXgLm"
+              id="metaItem-2"
+            >
+              Fields
+            </span>
+            <span
+              className="sc-fzqNqU hMvxM"
+              id="metaItemValue-2"
+            >
+              —
+            </span>
+          </div>
+          <div
+            className="sc-fzoiQi hKzQQm"
+          >
+            <span
+              className="sc-fzqARJ iPXgLm"
+              id="metaItem-3"
+            >
+              Filters
+            </span>
+            <span
+              className="sc-fzqNqU hMvxM"
+              id="metaItemValue-3"
+            >
+              —
+            </span>
+          </div>
+          <div
+            className="sc-fzoiQi hKzQQm"
+          >
+            <span
+              className="sc-fzqARJ iPXgLm"
+              id="metaItem-4"
+            >
+              Tags
+            </span>
+            <span
+              className="sc-fzqNqU hMvxM"
+              id="metaItemValue-4"
+            >
+              —
+            </span>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div
+      className="sc-fzplWN gRxfUG"
+      id="dataSourceContainer"
+      style={
+        Object {
+          "backgroundColor": "#1d1d20",
+          "borderTop": "2px solid #FFF",
+          "color": "#FFF",
+          "display": "flex",
+          "flexDirection": "column",
+          "fontFamily": "Inter, \\"Helvetica Neue\\", Helvetica, Arial, sans-serif",
+          "fontSize": "12px",
+          "justifyContent": "space-between",
+          "padding": "12px 14px 14px",
+          "position": "relative",
+        }
+      }
+    >
+      <div
+        style={
+          Object {
+            "height": "100%",
+            "width": "100%",
+          }
+        }
+      >
+        <div
+          style={
+            Object {
+              "color": "#71737e",
+              "marginBottom": 14,
+            }
+          }
+        >
+          <span
+            className="sc-fzoNJl gukMYb"
+            id="dataSourceStatus"
+          >
+            No data source uploaded
+          </span>
+        </div>
+        <h1
+          className="sc-fznyAO kvxaVQ"
+          id="dataSourceTitle"
+          onClick={[Function]}
+          style={
+            Object {
+              "fontFamily": "Inter, \\"Helvetica Neue\\", Helvetica, Arial, sans-serif",
+              "fontSize": "24px",
+              "fontWeight": 600,
+              "letterSpacing": "-0.12px",
+              "lineHight": 1.25,
+              "margin": 0,
+            }
+          }
+        >
+          name
+        </h1>
+      </div>
+      <div
+        style={
+          Object {
+            "color": "#71737e",
+            "marginBottom": 4,
+            "marginTop": 10,
+          }
+        }
+      >
+        <div
+          className="sc-fznWqX hMmhmk"
+        >
+          <div
+            className="sc-fzoiQi hKzQQm"
+          >
+            <span
+              className="sc-fzqARJ iPXgLm"
+              id="metaItem-0"
+            >
+              Source
+            </span>
+            <span
+              className="sc-fzqNqU hMvxM"
+              id="metaItemValue-0"
+            >
+              <svg
+                style={
+                  Object {
+                    "fill": "#FFF",
+                    "height": 40,
+                    "width": 40,
+                  }
+                }
+                viewBox="0 0 60 60"
+              >
+                <path
+                  d="M33 8v9.332l.005.195A3.67 3.67 0 0036.668 21H46v27.902A3.106 3.106 0 0142.887 52H17.113A3.106 3.106 0 0114 48.902V10.48A2.484 2.484 0 0116.492 8H33zm7 20H20v17h20V28zM29 40v3h-7v-3h7zm9 0v3h-7v-3h7zm-9-5v3h-7v-3h7zm9 0v3h-7v-3h7zm-9-5v3h-7v-3h7zm9 0v3h-7v-3h7zm7.5-11h-8.832l-.144-.006A1.67 1.67 0 0135 17.332V8.5L45.5 19z"
+                  fillRule="evenodd"
+                />
+              </svg>
+            </span>
+          </div>
+          <div
+            className="sc-fzoiQi hKzQQm"
+          >
+            <span
+              className="sc-fzqARJ iPXgLm"
+              id="metaItem-1"
+            >
+              Items
+            </span>
+            <span
+              className="sc-fzqNqU hMvxM"
+              id="metaItemValue-1"
+            >
+              —
+            </span>
+          </div>
+          <div
+            className="sc-fzoiQi hKzQQm"
+          >
+            <span
+              className="sc-fzqARJ iPXgLm"
+              id="metaItem-2"
+            >
+              Fields
+            </span>
+            <span
+              className="sc-fzqNqU hMvxM"
+              id="metaItemValue-2"
+            >
+              —
+            </span>
+          </div>
+          <div
+            className="sc-fzoiQi hKzQQm"
+          >
+            <span
+              className="sc-fzqARJ iPXgLm"
+              id="metaItem-3"
+            >
+              Filters
+            </span>
+            <span
+              className="sc-fzqNqU hMvxM"
+              id="metaItemValue-3"
+            >
+              —
+            </span>
+          </div>
+          <div
+            className="sc-fzoiQi hKzQQm"
+          >
+            <span
+              className="sc-fzqARJ iPXgLm"
+              id="metaItem-4"
+            >
+              Tags
+            </span>
+            <span
+              className="sc-fzqNqU hMvxM"
+              id="metaItemValue-4"
+            >
+              —
+            </span>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div
+      className="sc-fzplWN gRxfUG"
+      id="dataSourceContainer"
+      style={
+        Object {
+          "backgroundColor": "#1d1d20",
+          "borderTop": "2px solid #FFF",
+          "color": "#FFF",
+          "display": "flex",
+          "flexDirection": "column",
+          "fontFamily": "Inter, \\"Helvetica Neue\\", Helvetica, Arial, sans-serif",
+          "fontSize": "12px",
+          "justifyContent": "space-between",
+          "padding": "12px 14px 14px",
+          "position": "relative",
+        }
+      }
+    >
+      <div
+        style={
+          Object {
+            "height": "100%",
+            "width": "100%",
+          }
+        }
+      >
+        <div
+          style={
+            Object {
+              "color": "#71737e",
+              "marginBottom": 14,
+            }
+          }
+        >
+          <span
+            className="sc-fzoNJl gukMYb"
+            id="dataSourceStatus"
+          >
+            No data source uploaded
+          </span>
+        </div>
+        <h1
+          className="sc-fznyAO kvxaVQ"
+          id="dataSourceTitle"
+          onClick={[Function]}
+          style={
+            Object {
+              "fontFamily": "Inter, \\"Helvetica Neue\\", Helvetica, Arial, sans-serif",
+              "fontSize": "24px",
+              "fontWeight": 600,
+              "letterSpacing": "-0.12px",
+              "lineHight": 1.25,
+              "margin": 0,
+            }
+          }
+        >
+          name
+        </h1>
+      </div>
+      <div
+        style={
+          Object {
+            "color": "#71737e",
+            "marginBottom": 4,
+            "marginTop": 10,
+          }
+        }
+      >
+        <div
+          className="sc-fznWqX hMmhmk"
+        >
+          <div
+            className="sc-fzoiQi hKzQQm"
+          >
+            <span
+              className="sc-fzqARJ iPXgLm"
+              id="metaItem-0"
+            >
+              Source
+            </span>
+            <span
+              className="sc-fzqNqU hMvxM"
+              id="metaItemValue-0"
+            >
+              <svg
+                style={
+                  Object {
+                    "fill": "#FFF",
+                    "height": 40,
+                    "width": 40,
+                  }
+                }
+                viewBox="0 0 60 60"
+              >
+                <path
+                  d="M33 8v9.332l.005.195A3.67 3.67 0 0036.668 21H46v27.902A3.106 3.106 0 0142.887 52H17.113A3.106 3.106 0 0114 48.902V10.48A2.484 2.484 0 0116.492 8H33zm7 20H20v17h20V28zM29 40v3h-7v-3h7zm9 0v3h-7v-3h7zm-9-5v3h-7v-3h7zm9 0v3h-7v-3h7zm-9-5v3h-7v-3h7zm9 0v3h-7v-3h7zm7.5-11h-8.832l-.144-.006A1.67 1.67 0 0135 17.332V8.5L45.5 19z"
+                  fillRule="evenodd"
+                />
+              </svg>
+            </span>
+          </div>
+          <div
+            className="sc-fzoiQi hKzQQm"
+          >
+            <span
+              className="sc-fzqARJ iPXgLm"
+              id="metaItem-1"
+            >
+              Items
+            </span>
+            <span
+              className="sc-fzqNqU hMvxM"
+              id="metaItemValue-1"
+            >
+              —
+            </span>
+          </div>
+          <div
+            className="sc-fzoiQi hKzQQm"
+          >
+            <span
+              className="sc-fzqARJ iPXgLm"
+              id="metaItem-2"
+            >
+              Fields
+            </span>
+            <span
+              className="sc-fzqNqU hMvxM"
+              id="metaItemValue-2"
+            >
+              —
+            </span>
+          </div>
+          <div
+            className="sc-fzoiQi hKzQQm"
+          >
+            <span
+              className="sc-fzqARJ iPXgLm"
+              id="metaItem-3"
+            >
+              Filters
+            </span>
+            <span
+              className="sc-fzqNqU hMvxM"
+              id="metaItemValue-3"
+            >
+              —
+            </span>
+          </div>
+          <div
+            className="sc-fzoiQi hKzQQm"
+          >
+            <span
+              className="sc-fzqARJ iPXgLm"
+              id="metaItem-4"
+            >
+              Tags
+            </span>
+            <span
+              className="sc-fzqNqU hMvxM"
+              id="metaItemValue-4"
+            >
+              —
+            </span>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div
+      className="sc-fzplWN gRxfUG"
+      id="dataSourceContainer"
+      style={
+        Object {
+          "backgroundColor": "#1d1d20",
+          "borderTop": "2px solid #FFF",
+          "color": "#FFF",
+          "display": "flex",
+          "flexDirection": "column",
+          "fontFamily": "Inter, \\"Helvetica Neue\\", Helvetica, Arial, sans-serif",
+          "fontSize": "12px",
+          "justifyContent": "space-between",
+          "padding": "12px 14px 14px",
+          "position": "relative",
+        }
+      }
+    >
+      <div
+        style={
+          Object {
+            "height": "100%",
+            "width": "100%",
+          }
+        }
+      >
+        <div
+          style={
+            Object {
+              "color": "#71737e",
+              "marginBottom": 14,
+            }
+          }
+        >
+          <span
+            className="sc-fzoNJl gukMYb"
+            id="dataSourceStatus"
+          >
+            No data source uploaded
+          </span>
+        </div>
+        <h1
+          className="sc-fznyAO kvxaVQ"
+          id="dataSourceTitle"
+          onClick={[Function]}
+          style={
+            Object {
+              "fontFamily": "Inter, \\"Helvetica Neue\\", Helvetica, Arial, sans-serif",
+              "fontSize": "24px",
+              "fontWeight": 600,
+              "letterSpacing": "-0.12px",
+              "lineHight": 1.25,
+              "margin": 0,
+            }
+          }
+        >
+          name
+        </h1>
+      </div>
+      <div
+        style={
+          Object {
+            "color": "#71737e",
+            "marginBottom": 4,
+            "marginTop": 10,
+          }
+        }
+      >
+        <div
+          className="sc-fznWqX hMmhmk"
+        >
+          <div
+            className="sc-fzoiQi hKzQQm"
+          >
+            <span
+              className="sc-fzqARJ iPXgLm"
+              id="metaItem-0"
+            >
+              Source
+            </span>
+            <span
+              className="sc-fzqNqU hMvxM"
+              id="metaItemValue-0"
+            >
+              <svg
+                style={
+                  Object {
+                    "fill": "#FFF",
+                    "height": 40,
+                    "width": 40,
+                  }
+                }
+                viewBox="0 0 60 60"
+              >
+                <path
+                  d="M33 8v9.332l.005.195A3.67 3.67 0 0036.668 21H46v27.902A3.106 3.106 0 0142.887 52H17.113A3.106 3.106 0 0114 48.902V10.48A2.484 2.484 0 0116.492 8H33zm7 20H20v17h20V28zM29 40v3h-7v-3h7zm9 0v3h-7v-3h7zm-9-5v3h-7v-3h7zm9 0v3h-7v-3h7zm-9-5v3h-7v-3h7zm9 0v3h-7v-3h7zm7.5-11h-8.832l-.144-.006A1.67 1.67 0 0135 17.332V8.5L45.5 19z"
+                  fillRule="evenodd"
+                />
+              </svg>
+            </span>
+          </div>
+          <div
+            className="sc-fzoiQi hKzQQm"
+          >
+            <span
+              className="sc-fzqARJ iPXgLm"
+              id="metaItem-1"
+            >
+              Items
+            </span>
+            <span
+              className="sc-fzqNqU hMvxM"
+              id="metaItemValue-1"
+            >
+              —
+            </span>
+          </div>
+          <div
+            className="sc-fzoiQi hKzQQm"
+          >
+            <span
+              className="sc-fzqARJ iPXgLm"
+              id="metaItem-2"
+            >
+              Fields
+            </span>
+            <span
+              className="sc-fzqNqU hMvxM"
+              id="metaItemValue-2"
+            >
+              —
+            </span>
+          </div>
+          <div
+            className="sc-fzoiQi hKzQQm"
+          >
+            <span
+              className="sc-fzqARJ iPXgLm"
+              id="metaItem-3"
+            >
+              Filters
+            </span>
+            <span
+              className="sc-fzqNqU hMvxM"
+              id="metaItemValue-3"
+            >
+              —
+            </span>
+          </div>
+          <div
+            className="sc-fzoiQi hKzQQm"
+          >
+            <span
+              className="sc-fzqARJ iPXgLm"
+              id="metaItem-4"
+            >
+              Tags
+            </span>
+            <span
+              className="sc-fzqNqU hMvxM"
+              id="metaItemValue-4"
+            >
+              —
+            </span>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div
+      className="sc-fzplWN gRxfUG"
+      id="dataSourceContainer"
+      style={
+        Object {
+          "backgroundColor": "#1d1d20",
+          "borderTop": "2px solid #FFF",
+          "color": "#FFF",
+          "display": "flex",
+          "flexDirection": "column",
+          "fontFamily": "Inter, \\"Helvetica Neue\\", Helvetica, Arial, sans-serif",
+          "fontSize": "12px",
+          "justifyContent": "space-between",
+          "padding": "12px 14px 14px",
+          "position": "relative",
+        }
+      }
+    >
+      <div
+        style={
+          Object {
+            "height": "100%",
+            "width": "100%",
+          }
+        }
+      >
+        <div
+          style={
+            Object {
+              "color": "#71737e",
+              "marginBottom": 14,
+            }
+          }
+        >
+          <span
+            className="sc-fzoNJl gukMYb"
+            id="dataSourceStatus"
+          >
+            No data source uploaded
+          </span>
+        </div>
+        <h1
+          className="sc-fznyAO kvxaVQ"
+          id="dataSourceTitle"
+          onClick={[Function]}
+          style={
+            Object {
+              "fontFamily": "Inter, \\"Helvetica Neue\\", Helvetica, Arial, sans-serif",
+              "fontSize": "24px",
+              "fontWeight": 600,
+              "letterSpacing": "-0.12px",
+              "lineHight": 1.25,
+              "margin": 0,
+            }
+          }
+        >
+          name
+        </h1>
+      </div>
+      <div
+        style={
+          Object {
+            "color": "#71737e",
+            "marginBottom": 4,
+            "marginTop": 10,
+          }
+        }
+      >
+        <div
+          className="sc-fznWqX hMmhmk"
+        >
+          <div
+            className="sc-fzoiQi glNBwA"
+          >
+            <span
+              className="sc-fzqARJ iPXgLm"
+              id="metaItem-0"
+            >
+              Source
+            </span>
+            <span
+              className="sc-fzqNqU hMvxM"
+              id="metaItemValue-0"
+            >
+              <svg
+                style={
+                  Object {
+                    "fill": "#71737e",
+                    "height": 40,
+                    "width": 40,
+                  }
+                }
+                viewBox="0 0 60 60"
+              >
+                <path
+                  d="M33 8v9.332l.005.195A3.67 3.67 0 0036.668 21H46v27.902A3.106 3.106 0 0142.887 52H17.113A3.106 3.106 0 0114 48.902V10.48A2.484 2.484 0 0116.492 8H33zm7 20H20v17h20V28zM29 40v3h-7v-3h7zm9 0v3h-7v-3h7zm-9-5v3h-7v-3h7zm9 0v3h-7v-3h7zm-9-5v3h-7v-3h7zm9 0v3h-7v-3h7zm7.5-11h-8.832l-.144-.006A1.67 1.67 0 0135 17.332V8.5L45.5 19z"
+                  fillRule="evenodd"
+                />
+              </svg>
+            </span>
+          </div>
+          <div
+            className="sc-fzoiQi glNBwA"
+          >
+            <span
+              className="sc-fzqARJ iPXgLm"
+              id="metaItem-1"
+            >
+              Items
+            </span>
+            <span
+              className="sc-fzqNqU hMvxM"
+              id="metaItemValue-1"
+            >
+              —
+            </span>
+          </div>
+          <div
+            className="sc-fzoiQi glNBwA"
+          >
+            <span
+              className="sc-fzqARJ iPXgLm"
+              id="metaItem-2"
+            >
+              Fields
+            </span>
+            <span
+              className="sc-fzqNqU hMvxM"
+              id="metaItemValue-2"
+            >
+              —
+            </span>
+          </div>
+          <div
+            className="sc-fzoiQi glNBwA"
+          >
+            <span
+              className="sc-fzqARJ iPXgLm"
+              id="metaItem-3"
+            >
+              Filters
+            </span>
+            <span
+              className="sc-fzqNqU hMvxM"
+              id="metaItemValue-3"
+            >
+              —
+            </span>
+          </div>
+          <div
+            className="sc-fzoiQi glNBwA"
+          >
+            <span
+              className="sc-fzqARJ iPXgLm"
+              id="metaItem-4"
+            >
+              Tags
+            </span>
+            <span
+              className="sc-fzqNqU hMvxM"
+              id="metaItemValue-4"
+            >
+              —
+            </span>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div
+      className="sc-fzplWN gRxfUG"
+      id="dataSourceContainer"
+      style={
+        Object {
+          "backgroundColor": "#1d1d20",
+          "borderTop": "2px solid #FFF",
+          "color": "#FFF",
+          "display": "flex",
+          "flexDirection": "column",
+          "fontFamily": "Inter, \\"Helvetica Neue\\", Helvetica, Arial, sans-serif",
+          "fontSize": "12px",
+          "justifyContent": "space-between",
+          "padding": "12px 14px 14px",
+          "position": "relative",
+        }
+      }
+    >
+      <div
+        style={
+          Object {
+            "height": "100%",
+            "width": "100%",
+          }
+        }
+      >
+        <div
+          style={
+            Object {
+              "color": "#71737e",
+              "marginBottom": 14,
+            }
+          }
+        >
+          <span
+            className="sc-fzoNJl gukMYb"
+            id="dataSourceStatus"
+          >
+            No data source uploaded
+          </span>
+        </div>
+        <h1
+          className="sc-fznyAO kvxaVQ"
+          id="dataSourceTitle"
+          onClick={[Function]}
+          style={
+            Object {
+              "fontFamily": "Inter, \\"Helvetica Neue\\", Helvetica, Arial, sans-serif",
+              "fontSize": "24px",
+              "fontWeight": 600,
+              "letterSpacing": "-0.12px",
+              "lineHight": 1.25,
+              "margin": 0,
+            }
+          }
+        >
+          name
+        </h1>
+      </div>
+      <div
+        style={
+          Object {
+            "color": "#71737e",
+            "marginBottom": 4,
+            "marginTop": 10,
+          }
+        }
+      >
+        <div
+          className="sc-fznWqX hMmhmk"
+        >
+          <div
+            className="sc-fzoiQi glNBwA"
+          >
+            <span
+              className="sc-fzqARJ iPXgLm"
+              id="metaItem-0"
+            >
+              Source
+            </span>
+            <span
+              className="sc-fzqNqU hMvxM"
+              id="metaItemValue-0"
+            >
+              <svg
+                style={
+                  Object {
+                    "fill": "#71737e",
+                    "height": 40,
+                    "width": 40,
+                  }
+                }
+                viewBox="0 0 60 60"
+              >
+                <path
+                  d="M33 8v9.332l.005.195A3.67 3.67 0 0036.668 21H46v27.902A3.106 3.106 0 0142.887 52H17.113A3.106 3.106 0 0114 48.902V10.48A2.484 2.484 0 0116.492 8H33zm7 20H20v17h20V28zM29 40v3h-7v-3h7zm9 0v3h-7v-3h7zm-9-5v3h-7v-3h7zm9 0v3h-7v-3h7zm-9-5v3h-7v-3h7zm9 0v3h-7v-3h7zm7.5-11h-8.832l-.144-.006A1.67 1.67 0 0135 17.332V8.5L45.5 19z"
+                  fillRule="evenodd"
+                />
+              </svg>
+            </span>
+          </div>
+          <div
+            className="sc-fzoiQi glNBwA"
+          >
+            <span
+              className="sc-fzqARJ iPXgLm"
+              id="metaItem-1"
+            >
+              Items
+            </span>
+            <span
+              className="sc-fzqNqU hMvxM"
+              id="metaItemValue-1"
+            >
+              —
+            </span>
+          </div>
+          <div
+            className="sc-fzoiQi glNBwA"
+          >
+            <span
+              className="sc-fzqARJ iPXgLm"
+              id="metaItem-2"
+            >
+              Fields
+            </span>
+            <span
+              className="sc-fzqNqU hMvxM"
+              id="metaItemValue-2"
+            >
+              —
+            </span>
+          </div>
+          <div
+            className="sc-fzoiQi glNBwA"
+          >
+            <span
+              className="sc-fzqARJ iPXgLm"
+              id="metaItem-3"
+            >
+              Filters
+            </span>
+            <span
+              className="sc-fzqNqU hMvxM"
+              id="metaItemValue-3"
+            >
+              —
+            </span>
+          </div>
+          <div
+            className="sc-fzoiQi glNBwA"
+          >
+            <span
+              className="sc-fzqARJ iPXgLm"
+              id="metaItem-4"
+            >
+              Tags
+            </span>
+            <span
+              className="sc-fzqNqU hMvxM"
+              id="metaItemValue-4"
+            >
+              —
+            </span>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div
+      className="sc-fzplWN gRxfUG"
+      id="dataSourceContainer"
+      style={
+        Object {
+          "backgroundColor": "#1d1d20",
+          "borderTop": "2px solid #FFF",
+          "color": "#FFF",
+          "display": "flex",
+          "flexDirection": "column",
+          "fontFamily": "Inter, \\"Helvetica Neue\\", Helvetica, Arial, sans-serif",
+          "fontSize": "12px",
+          "justifyContent": "space-between",
+          "padding": "12px 14px 14px",
+          "position": "relative",
+        }
+      }
+    >
+      <div
+        style={
+          Object {
+            "height": "100%",
+            "width": "100%",
+          }
+        }
+      >
+        <div
+          style={
+            Object {
+              "color": "#71737e",
+              "marginBottom": 14,
+            }
+          }
+        >
+          <span
+            className="sc-fzoNJl gukMYb"
+            id="dataSourceStatus"
+          >
+            No data source uploaded
+          </span>
+        </div>
+        <h1
+          className="sc-fznyAO kvxaVQ"
+          id="dataSourceTitle"
+          onClick={[Function]}
+          style={
+            Object {
+              "fontFamily": "Inter, \\"Helvetica Neue\\", Helvetica, Arial, sans-serif",
+              "fontSize": "24px",
+              "fontWeight": 600,
+              "letterSpacing": "-0.12px",
+              "lineHight": 1.25,
+              "margin": 0,
+            }
+          }
+        >
+          name
+        </h1>
+      </div>
+      <div
+        style={
+          Object {
+            "color": "#71737e",
+            "marginBottom": 4,
+            "marginTop": 10,
+          }
+        }
+      >
+        <div
+          className="sc-fznWqX hMmhmk"
+        >
+          <div
+            className="sc-fzoiQi hKzQQm"
+          >
+            <span
+              className="sc-fzqARJ iPXgLm"
+              id="metaItem-0"
+            >
+              Source
+            </span>
+            <span
+              className="sc-fzqNqU hMvxM"
+              id="metaItemValue-0"
+            >
+              <svg
+                style={
+                  Object {
+                    "fill": "#FFF",
+                    "height": 40,
+                    "width": 40,
+                  }
+                }
+                viewBox="0 0 60 60"
+              >
+                <path
+                  d="M33 8v9.332l.005.195A3.67 3.67 0 0036.668 21H46v27.902A3.106 3.106 0 0142.887 52H17.113A3.106 3.106 0 0114 48.902V10.48A2.484 2.484 0 0116.492 8H33zm7 20H20v17h20V28zM29 40v3h-7v-3h7zm9 0v3h-7v-3h7zm-9-5v3h-7v-3h7zm9 0v3h-7v-3h7zm-9-5v3h-7v-3h7zm9 0v3h-7v-3h7zm7.5-11h-8.832l-.144-.006A1.67 1.67 0 0135 17.332V8.5L45.5 19z"
+                  fillRule="evenodd"
+                />
+              </svg>
+            </span>
+          </div>
+          <div
+            className="sc-fzoiQi hKzQQm"
+          >
+            <span
+              className="sc-fzqARJ iPXgLm"
+              id="metaItem-1"
+            >
+              Items
+            </span>
+            <span
+              className="sc-fzqNqU hMvxM"
+              id="metaItemValue-1"
+            >
+              —
+            </span>
+          </div>
+          <div
+            className="sc-fzoiQi hKzQQm"
+          >
+            <span
+              className="sc-fzqARJ iPXgLm"
+              id="metaItem-2"
+            >
+              Fields
+            </span>
+            <span
+              className="sc-fzqNqU hMvxM"
+              id="metaItemValue-2"
+            >
+              —
+            </span>
+          </div>
+          <div
+            className="sc-fzoiQi hKzQQm"
+          >
+            <span
+              className="sc-fzqARJ iPXgLm"
+              id="metaItem-3"
+            >
+              Filters
+            </span>
+            <span
+              className="sc-fzqNqU hMvxM"
+              id="metaItemValue-3"
+            >
+              —
+            </span>
+          </div>
+          <div
+            className="sc-fzoiQi hKzQQm"
+          >
+            <span
+              className="sc-fzqARJ iPXgLm"
+              id="metaItem-4"
+            >
+              Tags
+            </span>
+            <span
+              className="sc-fzqNqU hMvxM"
+              id="metaItemValue-4"
+            >
+              —
+            </span>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div
+      className="sc-fzplWN gRxfUG"
+      id="dataSourceContainer"
+      style={
+        Object {
+          "backgroundColor": "#1d1d20",
+          "borderTop": "2px solid #FFF",
+          "color": "#FFF",
+          "display": "flex",
+          "flexDirection": "column",
+          "fontFamily": "Inter, \\"Helvetica Neue\\", Helvetica, Arial, sans-serif",
+          "fontSize": "12px",
+          "justifyContent": "space-between",
+          "padding": "12px 14px 14px",
+          "position": "relative",
+        }
+      }
+    >
+      <div
+        style={
+          Object {
+            "height": "100%",
+            "width": "100%",
+          }
+        }
+      >
+        <div
+          style={
+            Object {
+              "color": "#71737e",
+              "marginBottom": 14,
+            }
+          }
+        >
+          <span
+            className="sc-fzoNJl gukMYb"
+            id="dataSourceStatus"
+          >
+            Uploading file failed
+          </span>
+        </div>
+        <h1
+          className="sc-fznyAO kvxaVQ"
+          id="dataSourceTitle"
+          onClick={[Function]}
+          style={
+            Object {
+              "fontFamily": "Inter, \\"Helvetica Neue\\", Helvetica, Arial, sans-serif",
+              "fontSize": "24px",
+              "fontWeight": 600,
+              "letterSpacing": "-0.12px",
+              "lineHight": 1.25,
+              "margin": 0,
+            }
+          }
+        >
+          name
+        </h1>
+      </div>
+      <div
+        style={
+          Object {
+            "color": "#71737e",
+            "marginBottom": 4,
+            "marginTop": 10,
+          }
+        }
+      >
+        <div
+          className="sc-fznWqX hMmhmk"
+        >
+          <div
+            className="sc-fzoiQi glNBwA"
+          >
+            <span
+              className="sc-fzqARJ iPXgLm"
+              id="metaItem-0"
+            >
+              Source
+            </span>
+            <span
+              className="sc-fzqNqU hMvxM"
+              id="metaItemValue-0"
+            >
+              <svg
+                style={
+                  Object {
+                    "fill": "#71737e",
+                    "height": 40,
+                    "width": 40,
+                  }
+                }
+                viewBox="0 0 60 60"
+              >
+                <path
+                  d="M33 8v9.332l.005.195A3.67 3.67 0 0036.668 21H46v27.902A3.106 3.106 0 0142.887 52H17.113A3.106 3.106 0 0114 48.902V10.48A2.484 2.484 0 0116.492 8H33zm7 20H20v17h20V28zM29 40v3h-7v-3h7zm9 0v3h-7v-3h7zm-9-5v3h-7v-3h7zm9 0v3h-7v-3h7zm-9-5v3h-7v-3h7zm9 0v3h-7v-3h7zm7.5-11h-8.832l-.144-.006A1.67 1.67 0 0135 17.332V8.5L45.5 19z"
+                  fillRule="evenodd"
+                />
+              </svg>
+            </span>
+          </div>
+          <div
+            className="sc-fzoiQi glNBwA"
+          >
+            <span
+              className="sc-fzqARJ iPXgLm"
+              id="metaItem-1"
+            >
+              Items
+            </span>
+            <span
+              className="sc-fzqNqU hMvxM"
+              id="metaItemValue-1"
+            >
+              —
+            </span>
+          </div>
+          <div
+            className="sc-fzoiQi glNBwA"
+          >
+            <span
+              className="sc-fzqARJ iPXgLm"
+              id="metaItem-2"
+            >
+              Fields
+            </span>
+            <span
+              className="sc-fzqNqU hMvxM"
+              id="metaItemValue-2"
+            >
+              —
+            </span>
+          </div>
+          <div
+            className="sc-fzoiQi glNBwA"
+          >
+            <span
+              className="sc-fzqARJ iPXgLm"
+              id="metaItem-3"
+            >
+              Filters
+            </span>
+            <span
+              className="sc-fzqNqU hMvxM"
+              id="metaItemValue-3"
+            >
+              —
+            </span>
+          </div>
+          <div
+            className="sc-fzoiQi glNBwA"
+          >
+            <span
+              className="sc-fzqARJ iPXgLm"
+              id="metaItem-4"
+            >
+              Tags
+            </span>
+            <span
+              className="sc-fzqNqU hMvxM"
+              id="metaItemValue-4"
+            >
+              —
+            </span>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div
+      className="sc-fzplWN gRxfUG"
+      id="dataSourceContainer"
+      style={
+        Object {
+          "backgroundColor": "#1d1d20",
+          "borderTop": "2px solid #FFF",
+          "color": "#FFF",
+          "display": "flex",
+          "flexDirection": "column",
+          "fontFamily": "Inter, \\"Helvetica Neue\\", Helvetica, Arial, sans-serif",
+          "fontSize": "12px",
+          "justifyContent": "space-between",
+          "padding": "12px 14px 14px",
+          "position": "relative",
+        }
+      }
+    >
+      <div
+        style={
+          Object {
+            "height": "100%",
+            "width": "100%",
+          }
+        }
+      >
+        <div
+          style={
+            Object {
+              "color": "#71737e",
+              "marginBottom": 14,
+            }
+          }
+        >
+          <span
+            className="sc-fzoNJl gukMYb"
+            id="dataSourceStatus"
+          >
+            Uploading file 50%...
+          </span>
+        </div>
+        <h1
+          className="sc-fznyAO kvxaVQ"
+          id="dataSourceTitle"
+          onClick={[Function]}
+          style={
+            Object {
+              "fontFamily": "Inter, \\"Helvetica Neue\\", Helvetica, Arial, sans-serif",
+              "fontSize": "24px",
+              "fontWeight": 600,
+              "letterSpacing": "-0.12px",
+              "lineHight": 1.25,
+              "margin": 0,
+            }
+          }
+        >
+          name
+        </h1>
+      </div>
+      <div
+        style={
+          Object {
+            "color": "#71737e",
+            "marginBottom": 4,
+            "marginTop": 10,
+          }
+        }
+      >
+        <div
+          className="sc-fznWqX hMmhmk"
+        >
+          <div
+            className="sc-fzoiQi glNBwA"
+          >
+            <span
+              className="sc-fzqARJ iPXgLm"
+              id="metaItem-0"
+            >
+              Source
+            </span>
+            <span
+              className="sc-fzqNqU hMvxM"
+              id="metaItemValue-0"
+            >
+              <svg
+                style={
+                  Object {
+                    "fill": "#71737e",
+                    "height": 40,
+                    "width": 40,
+                  }
+                }
+                viewBox="0 0 60 60"
+              >
+                <path
+                  d="M33 8v9.332l.005.195A3.67 3.67 0 0036.668 21H46v27.902A3.106 3.106 0 0142.887 52H17.113A3.106 3.106 0 0114 48.902V10.48A2.484 2.484 0 0116.492 8H33zm7 20H20v17h20V28zM29 40v3h-7v-3h7zm9 0v3h-7v-3h7zm-9-5v3h-7v-3h7zm9 0v3h-7v-3h7zm-9-5v3h-7v-3h7zm9 0v3h-7v-3h7zm7.5-11h-8.832l-.144-.006A1.67 1.67 0 0135 17.332V8.5L45.5 19z"
+                  fillRule="evenodd"
+                />
+              </svg>
+            </span>
+          </div>
+          <div
+            className="sc-fzoiQi glNBwA"
+          >
+            <span
+              className="sc-fzqARJ iPXgLm"
+              id="metaItem-1"
+            >
+              Items
+            </span>
+            <span
+              className="sc-fzqNqU hMvxM"
+              id="metaItemValue-1"
+            >
+              —
+            </span>
+          </div>
+          <div
+            className="sc-fzoiQi glNBwA"
+          >
+            <span
+              className="sc-fzqARJ iPXgLm"
+              id="metaItem-2"
+            >
+              Fields
+            </span>
+            <span
+              className="sc-fzqNqU hMvxM"
+              id="metaItemValue-2"
+            >
+              —
+            </span>
+          </div>
+          <div
+            className="sc-fzoiQi glNBwA"
+          >
+            <span
+              className="sc-fzqARJ iPXgLm"
+              id="metaItem-3"
+            >
+              Filters
+            </span>
+            <span
+              className="sc-fzqNqU hMvxM"
+              id="metaItemValue-3"
+            >
+              —
+            </span>
+          </div>
+          <div
+            className="sc-fzoiQi glNBwA"
+          >
+            <span
+              className="sc-fzqARJ iPXgLm"
+              id="metaItem-4"
+            >
+              Tags
+            </span>
+            <span
+              className="sc-fzqNqU hMvxM"
+              id="metaItemValue-4"
+            >
+              —
+            </span>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div
+      className="sc-fzplWN gRxfUG"
+      id="dataSourceContainer"
+      style={
+        Object {
+          "backgroundColor": "#1d1d20",
+          "borderTop": "2px solid #FFF",
+          "color": "#FFF",
+          "display": "flex",
+          "flexDirection": "column",
+          "fontFamily": "Inter, \\"Helvetica Neue\\", Helvetica, Arial, sans-serif",
+          "fontSize": "12px",
+          "justifyContent": "space-between",
+          "padding": "12px 14px 14px",
+          "position": "relative",
+        }
+      }
+    >
+      <div
+        style={
+          Object {
+            "height": "100%",
+            "width": "100%",
+          }
+        }
+      >
+        <div
+          style={
+            Object {
+              "color": "#71737e",
+              "marginBottom": 14,
+            }
+          }
+        >
+          <span
+            className="sc-fzoNJl gukMYb"
+            id="dataSourceStatus"
+          >
+            No data source uploaded
+          </span>
+        </div>
+        <h1
+          className="sc-fznyAO kvxaVQ"
+          id="dataSourceTitle"
+          onClick={[Function]}
+          style={
+            Object {
+              "fontFamily": "Inter, \\"Helvetica Neue\\", Helvetica, Arial, sans-serif",
+              "fontSize": "24px",
+              "fontWeight": 600,
+              "letterSpacing": "-0.12px",
+              "lineHight": 1.25,
+              "margin": 0,
+            }
+          }
+        >
+          name
+        </h1>
+      </div>
+      <div
+        style={
+          Object {
+            "color": "#71737e",
+            "marginBottom": 4,
+            "marginTop": 10,
+          }
+        }
+      >
+        <div
+          className="sc-fznWqX hMmhmk"
+        >
+          <div
+            className="sc-fzoiQi glNBwA"
+          >
+            <span
+              className="sc-fzqARJ iPXgLm"
+              id="metaItem-0"
+            >
+              Source
+            </span>
+            <span
+              className="sc-fzqNqU hMvxM"
+              id="metaItemValue-0"
+            >
+              <svg
+                style={
+                  Object {
+                    "fill": "#71737e",
+                    "height": 40,
+                    "width": 40,
+                  }
+                }
+                viewBox="0 0 60 60"
+              >
+                <path
+                  d="M33 8v9.332l.005.195A3.67 3.67 0 0036.668 21H46v27.902A3.106 3.106 0 0142.887 52H17.113A3.106 3.106 0 0114 48.902V10.48A2.484 2.484 0 0116.492 8H33zm7 20H20v17h20V28zM29 40v3h-7v-3h7zm9 0v3h-7v-3h7zm-9-5v3h-7v-3h7zm9 0v3h-7v-3h7zm-9-5v3h-7v-3h7zm9 0v3h-7v-3h7zm7.5-11h-8.832l-.144-.006A1.67 1.67 0 0135 17.332V8.5L45.5 19z"
+                  fillRule="evenodd"
+                />
+              </svg>
+            </span>
+          </div>
+          <div
+            className="sc-fzoiQi glNBwA"
+          >
+            <span
+              className="sc-fzqARJ iPXgLm"
+              id="metaItem-1"
+            >
+              Items
+            </span>
+            <span
+              className="sc-fzqNqU hMvxM"
+              id="metaItemValue-1"
+            >
+              —
+            </span>
+          </div>
+          <div
+            className="sc-fzoiQi glNBwA"
+          >
+            <span
+              className="sc-fzqARJ iPXgLm"
+              id="metaItem-2"
+            >
+              Fields
+            </span>
+            <span
+              className="sc-fzqNqU hMvxM"
+              id="metaItemValue-2"
+            >
+              —
+            </span>
+          </div>
+          <div
+            className="sc-fzoiQi glNBwA"
+          >
+            <span
+              className="sc-fzqARJ iPXgLm"
+              id="metaItem-3"
+            >
+              Filters
+            </span>
+            <span
+              className="sc-fzqNqU hMvxM"
+              id="metaItemValue-3"
+            >
+              —
+            </span>
+          </div>
+          <div
+            className="sc-fzoiQi glNBwA"
+          >
+            <span
+              className="sc-fzqARJ iPXgLm"
+              id="metaItem-4"
+            >
+              Tags
+            </span>
+            <span
+              className="sc-fzqNqU hMvxM"
+              id="metaItemValue-4"
+            >
+              —
+            </span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <div
+    className="sc-fzqBZW gRryLC"
+  >
+    <div
+      className="sc-fzoyAV fPdCEj"
+    >
+      <div
+        className="sc-fzqNJr joohLB"
+      >
+        <button
+          disabled={false}
+          id="backBtn"
+          onClick={[Function]}
+          style={
+            Object {
+              "backgroundColor": "#1d1d20",
+              "border": "none",
+              "borderRadius": "48px",
+              "color": "#FFF",
+              "cursor": "pointer",
+              "display": "inline-block",
+              "fill": "#FFF",
+              "fontSize": "18px",
+              "height": "60px",
+              "margin": "0",
+              "minHeight": "48px",
+              "outline": "none",
+              "padding": "0",
+              "transition": "background 0.25s ease-in-out, color 0.25s ease-in-out",
+              "width": "60px",
+            }
+          }
+        >
+          <svg
+            style={
+              Object {
+                "fill": "#FFF",
+                "height": "60px",
+                "width": "60px",
+              }
+            }
+            viewBox="0 0 60 60"
+          >
+            <path
+              d="M25.857 17L28 19.083 18.828 28H45v3H18.828L28 39.917 25.857 42 13 29.5 25.857 17z"
+            />
+          </svg>
+        </button>
+        <div
+          className="sc-fzpjYC ftkikz"
+        >
+          <button
+            disabled={false}
+            id="createDataSourceBtn"
+            onClick={[Function]}
+            style={
+              Object {
+                "backgroundColor": "#FFF",
+                "border": "none",
+                "borderRadius": "48px",
+                "color": "#000",
+                "cursor": "pointer",
+                "display": "inline-block",
+                "fill": "#FFF",
+                "fontSize": "18px",
+                "height": "60px",
+                "margin": "0",
+                "minHeight": "48px",
+                "outline": "none",
+                "padding": "0",
+                "transition": "background 0.25s ease-in-out, color 0.25s ease-in-out",
+                "width": "60px",
+              }
+            }
+          >
+            <svg
+              style={
+                Object {
+                  "fill": "#000",
+                  "height": "60px",
+                  "shapeRendering": "crispEdges",
+                  "width": "60px",
+                }
+              }
+              viewBox="0 0 60 60"
+            >
+              <path
+                d="M32 15v13h13v4H32v13h-4V32H15v-4h13V15h4z"
+              />
+            </svg>
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
 `;
 
 exports[`DataSourceList: Component should render empty 1`] = `
-<styled.div>
-  <HelmetWrapper
-    defer={true}
-    encodeSpecialCharacters={true}
-    title="Data Sources"
-  />
-  <MobileMenu
-    active="dataSourceNavBtn"
-    headerSubtitle="Overview"
-    headerTitle="Data Sources"
-    options={
-      Array [
-        Object {
-          "allowedRoles": Array [
-            "admin",
-            "editor",
-          ],
-          "id": "projectsNavBtn",
-          "label": <FormattedMessage
-            defaultMessage="Projects"
-            id="project.view.projectsListPage"
-            values={Object {}}
-          />,
-          "to": "/project/",
-          "type": "link_item",
-        },
-        Object {
-          "allowedRoles": Array [
-            "admin",
-          ],
-          "id": "usersPageNavBtn",
-          "label": <FormattedMessage
-            defaultMessage="Users"
-            id="project.view.usersPage"
-            values={Object {}}
-          />,
-          "to": "/user/",
-          "type": "link_item",
-        },
-        Object {
-          "allowedRoles": Array [
-            "admin",
-            "editor",
-          ],
-          "id": "projectDetailsNavBtn",
-          "label": <FormattedMessage
-            defaultMessage="Project details"
-            id="project.view.projectDetails"
-            values={Object {}}
-          />,
-          "to": "/project/1",
-          "type": "link_item",
-        },
-        Object {
-          "allowedRoles": Array [
-            "admin",
-            "editor",
-          ],
-          "id": "dataSourceNavBtn",
-          "label": <FormattedMessage
-            defaultMessage="Data Sources"
-            id="project.view.projectDataSources"
-            values={Object {}}
-          />,
-          "to": "/project/1/datasource",
-          "type": "link_item",
-        },
-        Object {
-          "allowedRoles": Array [
-            "admin",
-          ],
-          "id": "usersNavBtn",
-          "label": <FormattedMessage
-            defaultMessage="Project Users"
-            id="project.view.projectUsersPage"
-            values={Object {}}
-          />,
-          "to": "/project/1/user",
-          "type": "link_item",
-        },
-        Object {
-          "allowedRoles": Array [
-            "admin",
-            "editor",
-          ],
-          "id": "contentNavBtn",
-          "label": <FormattedMessage
-            defaultMessage="Content"
-            id="project.view.content"
-            values={Object {}}
-          />,
-          "to": "/project/1/content",
-          "type": "link_item",
-        },
-        Object {
-          "allowedRoles": Array [
-            "admin",
-          ],
-          "id": "templatesNavBtn",
-          "label": <FormattedMessage
-            defaultMessage="Templates"
-            id="project.view.templates"
-            values={Object {}}
-          />,
-          "to": "/project/1/templates",
-          "type": "link_item",
-        },
-      ]
-    }
-  />
-  <ProjectTabs
-    active="sources"
-    url="/project/1"
-  />
-  <ContextHeader
-    subtitle="Overview"
-    title="Data Sources"
+<div
+  className="sc-fznxsB fvMaWZ"
+>
+  <div
+    className="sc-fznxKY gZarnC"
   >
-    <PlusButton
-      customStyles={Object {}}
-      hideOnDesktop={false}
-      id="createDataSourceDesktopBtn"
-      onClick={[Function]}
-    />
-  </ContextHeader>
-  <LoadingWrapper
-    error={null}
-    loading={false}
-    noData={true}
-    noDataContent="No Data Sources"
+    <div
+      style={
+        Object {
+          "alignItems": "flex-start",
+          "color": "#FFF",
+          "display": "flex",
+          "flexDirection": "row",
+          "justifyContent": "space-between",
+          "paddingBottom": "18px",
+          "width": "100%",
+        }
+      }
+    >
+      <div>
+        <div
+          className="sc-fznMAR DQQGK"
+        >
+          <h2
+            className="sc-fzoYkl dENXbG"
+            id="headerTitle"
+            style={
+              Object {
+                "fontFamily": "Inter, \\"Helvetica Neue\\", Helvetica, Arial, sans-serif",
+                "fontSize": "24px",
+                "fontWeight": 100,
+                "margin": 0,
+              }
+            }
+          >
+            Data Sources
+          </h2>
+          <h1
+            className="sc-fzpkJw enKAbF"
+            id="headerSubtitle"
+            style={
+              Object {
+                "fontFamily": "Inter, \\"Helvetica Neue\\", Helvetica, Arial, sans-serif",
+                "fontSize": "24px",
+                "fontWeight": 600,
+                "letterSpacing": "-0.12px",
+                "lineHight": 1.25,
+                "margin": 0,
+              }
+            }
+          >
+            Overview
+          </h1>
+        </div>
+      </div>
+      <button
+        disabled={false}
+        id="topHeaderOpenMenuBtn"
+        onClick={[Function]}
+        style={
+          Object {
+            "backgroundColor": "transparent",
+            "border": "none",
+            "borderRadius": "48px",
+            "color": "#FFF",
+            "cursor": "pointer",
+            "display": "inline-block",
+            "fill": "#FFF",
+            "fontSize": "18px",
+            "margin": "0",
+            "minHeight": "48px",
+            "outline": "none",
+            "padding": "0",
+            "position": "absolute",
+            "right": -6,
+            "top": 6,
+            "transition": "background 0.25s ease-in-out, color 0.25s ease-in-out",
+          }
+        }
+        type="button"
+      >
+        <svg
+          style={
+            Object {
+              "fill": "#FFF",
+              "height": "60px",
+              "width": "60px",
+            }
+          }
+          viewBox="0 0 10 60"
+        >
+          <path
+            d="M5 37a3 3 0 110 6 3 3 0 010-6zm0-10a3 3 0 110 6 3 3 0 010-6zm0-10a3 3 0 110 6 3 3 0 010-6z"
+            fillRule="evenodd"
+          />
+        </svg>
+      </button>
+    </div>
+    <div
+      style={
+        Object {
+          "backgroundColor": "#000",
+          "bottom": 0,
+          "color": "#FFF",
+          "maxWidth": null,
+          "padding": "18px 20px 27px",
+          "position": "absolute",
+          "right": 0,
+          "textAlign": "left",
+          "top": 0,
+          "transform": "translateX(100%)",
+          "transition": "transform 400ms cubic-bezier(0.86, 0, 0.07, 1), visibility 0s linear 400ms",
+          "visibility": 0,
+          "width": "100%",
+          "zIndex": 99999,
+        }
+      }
+    >
+      <div
+        className="sc-fzolEj fhwccp"
+      >
+        <div
+          className="sc-fznWOq fzTKqt"
+        >
+          <div
+            className="sc-fznMAR DQQGK"
+          >
+            <h2
+              className="sc-fzoYkl dENXbG"
+              id="headerTitle"
+              style={
+                Object {
+                  "fontFamily": "Inter, \\"Helvetica Neue\\", Helvetica, Arial, sans-serif",
+                  "fontSize": "24px",
+                  "fontWeight": 100,
+                  "margin": 0,
+                }
+              }
+            >
+              Data Sources
+            </h2>
+            <h1
+              className="sc-fzpkJw enKAbF"
+              id="headerSubtitle"
+              style={
+                Object {
+                  "fontFamily": "Inter, \\"Helvetica Neue\\", Helvetica, Arial, sans-serif",
+                  "fontSize": "24px",
+                  "fontWeight": 600,
+                  "letterSpacing": "-0.12px",
+                  "lineHight": 1.25,
+                  "margin": 0,
+                }
+              }
+            >
+              Overview
+            </h1>
+          </div>
+        </div>
+        <div
+          className="sc-fzqBkg hScHwl"
+        >
+          <div
+            className="sc-fzqPZZ bbXJbY"
+          >
+            <a
+              href="/project/"
+              id="projectsNavBtn"
+              onClick={[Function]}
+            >
+              Projects
+            </a>
+          </div>
+          <div
+            className="sc-fzqPZZ bbXJbY"
+          >
+            <a
+              href="/user/"
+              id="usersPageNavBtn"
+              onClick={[Function]}
+            >
+              Users
+            </a>
+          </div>
+          <div
+            className="sc-fzqPZZ bbXJbY"
+          >
+            <a
+              href="/project/projectId"
+              id="projectDetailsNavBtn"
+              onClick={[Function]}
+            >
+              Project details
+            </a>
+          </div>
+          <div
+            className="sc-fzqPZZ jLThQl"
+          >
+            <a
+              href="/project/projectId/datasource"
+              id="dataSourceNavBtn"
+              onClick={[Function]}
+            >
+              Data Sources
+            </a>
+          </div>
+          <div
+            className="sc-fzqPZZ bbXJbY"
+          >
+            <a
+              href="/project/projectId/user"
+              id="usersNavBtn"
+              onClick={[Function]}
+            >
+              Project Users
+            </a>
+          </div>
+          <div
+            className="sc-fzqPZZ bbXJbY"
+          >
+            <a
+              href="/project/projectId/content"
+              id="contentNavBtn"
+              onClick={[Function]}
+            >
+              Content
+            </a>
+          </div>
+          <div
+            className="sc-fzqPZZ bbXJbY"
+          >
+            <a
+              href="/project/projectId/templates"
+              id="templatesNavBtn"
+              onClick={[Function]}
+            >
+              Templates
+            </a>
+          </div>
+        </div>
+        <div
+          className="sc-fzqBkg hScHwl"
+        >
+          <div
+            className="sc-fzqPZZ bbXJbY"
+          >
+            <a
+              href="/settings"
+              id="settingsNavBtn"
+              onClick={[Function]}
+            >
+              Settings
+            </a>
+          </div>
+          <div
+            className="sc-fzqPZZ bbXJbY"
+          >
+            <div
+              onClick={[Function]}
+            >
+              Log out
+            </div>
+          </div>
+        </div>
+        <div
+          className="sc-fzoxKX eIANBM"
+        >
+          <a
+            className="sc-fzoKki cvDvQq"
+            href="/"
+            id="aboutNavBtn"
+            onClick={[Function]}
+          >
+            About Schema CMS
+          </a>
+          <a
+            className="sc-fzoKki cvDvQq"
+            href="/"
+            id="apiNavBtn"
+            onClick={[Function]}
+          >
+            API Doc
+          </a>
+          <a
+            className="sc-fzoKki cvDvQq"
+            href="/"
+            id="repositoryNavBtn"
+            onClick={[Function]}
+          >
+            GitHub Repository
+          </a>
+        </div>
+      </div>
+      <button
+        disabled={false}
+        id="topHeaderCloseMenuButton"
+        onClick={[Function]}
+        style={
+          Object {
+            "backgroundColor": "transparent",
+            "border": "none",
+            "borderRadius": "48px",
+            "color": "#FFF",
+            "cursor": "pointer",
+            "display": "inline-block",
+            "fill": "#FFF",
+            "fontSize": "18px",
+            "margin": "0",
+            "minHeight": "48px",
+            "outline": "none",
+            "padding": "0",
+            "position": "absolute",
+            "right": 0,
+            "top": "6px",
+            "transition": "background 0.25s ease-in-out, color 0.25s ease-in-out",
+          }
+        }
+        type="button"
+      >
+        <svg
+          style={
+            Object {
+              "fill": "#FFF",
+              "height": "60px",
+              "width": "60px",
+            }
+          }
+          viewBox="0 0 60 60"
+        >
+          <path
+            d="M39.192 17.98l2.829 2.828L32.828 30l9.193 9.192-2.829 2.829L30 32.828l-9.192 9.193-2.829-2.829L27.172 30l-9.193-9.192 2.829-2.829L30 27.172l9.192-9.193z"
+            fillRule="evenodd"
+          />
+        </svg>
+      </button>
+    </div>
+  </div>
+  <div
+    className="sc-AxhCb ccMvAG"
+    id="tabsContainer"
   >
-    <styled.section />
-  </LoadingWrapper>
-  <NavigationContainer
-    contentStyles={null}
-    fixed={true}
-    hideOnDesktop={true}
-    right={false}
+    <div
+      className="sc-AxjAm eSjBJw"
+    >
+      <div
+        className="sc-AxirZ eteeke"
+      >
+        <a
+          className="sc-AxiKw caTYgO"
+          href="/project/projectId"
+          id="settingsTab"
+          onClick={[Function]}
+        >
+          Settings
+        </a>
+      </div>
+      <div
+        className="sc-AxirZ jwwwmF"
+      >
+        <a
+          className="sc-AxiKw caTYgO"
+          href="/project/projectId/datasource"
+          id="sourcesTab"
+          onClick={[Function]}
+        >
+          Sources
+        </a>
+      </div>
+      <div
+        className="sc-AxirZ eteeke"
+      >
+        <a
+          className="sc-AxiKw caTYgO"
+          href="/project/projectId/content"
+          id="contentTab"
+          onClick={[Function]}
+        >
+          Content
+        </a>
+      </div>
+      <div
+        className="sc-AxirZ eteeke"
+      >
+        <a
+          className="sc-AxiKw caTYgO"
+          href="/project/projectId/templates"
+          id="templatesTab"
+          onClick={[Function]}
+        >
+          Templates
+        </a>
+      </div>
+      <div
+        className="sc-AxirZ eteeke"
+      >
+        <a
+          className="sc-AxiKw caTYgO"
+          href="/project/projectId/user"
+          id="usersTab"
+          onClick={[Function]}
+        >
+          Users
+        </a>
+      </div>
+    </div>
+  </div>
+  <div
+    className="sc-AxhUy eTJXHP"
   >
-    <BackArrowButton
-      id="backBtn"
-      onClick={[Function]}
-    />
-    <PlusButton
-      customStyles={Object {}}
-      hideOnDesktop={false}
-      id="createDataSourceBtn"
-      onClick={[Function]}
-    />
-  </NavigationContainer>
-</styled.div>
+    <div
+      className="sc-AxgMl dfHvBg"
+    >
+      <h2
+        className="sc-AxheI evIuGV"
+        id="desktopHeaderTitle"
+        style={
+          Object {
+            "fontFamily": "Inter, \\"Helvetica Neue\\", Helvetica, Arial, sans-serif",
+            "fontSize": "24px",
+            "fontWeight": 100,
+            "margin": 0,
+          }
+        }
+      >
+        Data Sources
+      </h2>
+      <h1
+        className="sc-Axmtr iQAeZe"
+        id="desktopHeaderSubtitle"
+        style={
+          Object {
+            "fontFamily": "Inter, \\"Helvetica Neue\\", Helvetica, Arial, sans-serif",
+            "fontSize": "24px",
+            "fontWeight": 600,
+            "letterSpacing": "-0.12px",
+            "lineHight": 1.25,
+            "margin": 0,
+          }
+        }
+      >
+        Overview
+      </h1>
+    </div>
+    <div
+      className="sc-AxmLO cAKCgh"
+    >
+      <div
+        className="sc-fzpjYC ftkikz"
+      >
+        <button
+          disabled={false}
+          id="createDataSourceDesktopBtn"
+          onClick={[Function]}
+          style={
+            Object {
+              "backgroundColor": "#FFF",
+              "border": "none",
+              "borderRadius": "48px",
+              "color": "#000",
+              "cursor": "pointer",
+              "display": "inline-block",
+              "fill": "#FFF",
+              "fontSize": "18px",
+              "height": "60px",
+              "margin": "0",
+              "minHeight": "48px",
+              "outline": "none",
+              "padding": "0",
+              "transition": "background 0.25s ease-in-out, color 0.25s ease-in-out",
+              "width": "60px",
+            }
+          }
+        >
+          <svg
+            style={
+              Object {
+                "fill": "#000",
+                "height": "60px",
+                "shapeRendering": "crispEdges",
+                "width": "60px",
+              }
+            }
+            viewBox="0 0 60 60"
+          >
+            <path
+              d="M32 15v13h13v4H32v13h-4V32H15v-4h13V15h4z"
+            />
+          </svg>
+        </button>
+      </div>
+    </div>
+  </div>
+  <div
+    className="sc-fzpans kwRAFW"
+  >
+    No Data Sources
+  </div>
+  <div
+    className="sc-fzqBZW gRryLC"
+  >
+    <div
+      className="sc-fzoyAV fPdCEj"
+    >
+      <div
+        className="sc-fzqNJr joohLB"
+      >
+        <button
+          disabled={false}
+          id="backBtn"
+          onClick={[Function]}
+          style={
+            Object {
+              "backgroundColor": "#1d1d20",
+              "border": "none",
+              "borderRadius": "48px",
+              "color": "#FFF",
+              "cursor": "pointer",
+              "display": "inline-block",
+              "fill": "#FFF",
+              "fontSize": "18px",
+              "height": "60px",
+              "margin": "0",
+              "minHeight": "48px",
+              "outline": "none",
+              "padding": "0",
+              "transition": "background 0.25s ease-in-out, color 0.25s ease-in-out",
+              "width": "60px",
+            }
+          }
+        >
+          <svg
+            style={
+              Object {
+                "fill": "#FFF",
+                "height": "60px",
+                "width": "60px",
+              }
+            }
+            viewBox="0 0 60 60"
+          >
+            <path
+              d="M25.857 17L28 19.083 18.828 28H45v3H18.828L28 39.917 25.857 42 13 29.5 25.857 17z"
+            />
+          </svg>
+        </button>
+        <div
+          className="sc-fzpjYC ftkikz"
+        >
+          <button
+            disabled={false}
+            id="createDataSourceBtn"
+            onClick={[Function]}
+            style={
+              Object {
+                "backgroundColor": "#FFF",
+                "border": "none",
+                "borderRadius": "48px",
+                "color": "#000",
+                "cursor": "pointer",
+                "display": "inline-block",
+                "fill": "#FFF",
+                "fontSize": "18px",
+                "height": "60px",
+                "margin": "0",
+                "minHeight": "48px",
+                "outline": "none",
+                "padding": "0",
+                "transition": "background 0.25s ease-in-out, color 0.25s ease-in-out",
+                "width": "60px",
+              }
+            }
+          >
+            <svg
+              style={
+                Object {
+                  "fill": "#000",
+                  "height": "60px",
+                  "shapeRendering": "crispEdges",
+                  "width": "60px",
+                }
+              }
+              viewBox="0 0 60 60"
+            >
+              <path
+                d="M32 15v13h13v4H32v13h-4V32H15v-4h13V15h4z"
+              />
+            </svg>
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`DataSourceList: Component should render error correctly 1`] = `
+<div
+  className="sc-fznxsB fvMaWZ"
+>
+  <div
+    className="sc-fznxKY gZarnC"
+  >
+    <div
+      style={
+        Object {
+          "alignItems": "flex-start",
+          "color": "#FFF",
+          "display": "flex",
+          "flexDirection": "row",
+          "justifyContent": "space-between",
+          "paddingBottom": "18px",
+          "width": "100%",
+        }
+      }
+    >
+      <div>
+        <div
+          className="sc-fznMAR DQQGK"
+        >
+          <h2
+            className="sc-fzoYkl dENXbG"
+            id="headerTitle"
+            style={
+              Object {
+                "fontFamily": "Inter, \\"Helvetica Neue\\", Helvetica, Arial, sans-serif",
+                "fontSize": "24px",
+                "fontWeight": 100,
+                "margin": 0,
+              }
+            }
+          >
+            Data Sources
+          </h2>
+          <h1
+            className="sc-fzpkJw enKAbF"
+            id="headerSubtitle"
+            style={
+              Object {
+                "fontFamily": "Inter, \\"Helvetica Neue\\", Helvetica, Arial, sans-serif",
+                "fontSize": "24px",
+                "fontWeight": 600,
+                "letterSpacing": "-0.12px",
+                "lineHight": 1.25,
+                "margin": 0,
+              }
+            }
+          >
+            Overview
+          </h1>
+        </div>
+      </div>
+      <button
+        disabled={false}
+        id="topHeaderOpenMenuBtn"
+        onClick={[Function]}
+        style={
+          Object {
+            "backgroundColor": "transparent",
+            "border": "none",
+            "borderRadius": "48px",
+            "color": "#FFF",
+            "cursor": "pointer",
+            "display": "inline-block",
+            "fill": "#FFF",
+            "fontSize": "18px",
+            "margin": "0",
+            "minHeight": "48px",
+            "outline": "none",
+            "padding": "0",
+            "position": "absolute",
+            "right": -6,
+            "top": 6,
+            "transition": "background 0.25s ease-in-out, color 0.25s ease-in-out",
+          }
+        }
+        type="button"
+      >
+        <svg
+          style={
+            Object {
+              "fill": "#FFF",
+              "height": "60px",
+              "width": "60px",
+            }
+          }
+          viewBox="0 0 10 60"
+        >
+          <path
+            d="M5 37a3 3 0 110 6 3 3 0 010-6zm0-10a3 3 0 110 6 3 3 0 010-6zm0-10a3 3 0 110 6 3 3 0 010-6z"
+            fillRule="evenodd"
+          />
+        </svg>
+      </button>
+    </div>
+    <div
+      style={
+        Object {
+          "backgroundColor": "#000",
+          "bottom": 0,
+          "color": "#FFF",
+          "maxWidth": null,
+          "padding": "18px 20px 27px",
+          "position": "absolute",
+          "right": 0,
+          "textAlign": "left",
+          "top": 0,
+          "transform": "translateX(100%)",
+          "transition": "transform 400ms cubic-bezier(0.86, 0, 0.07, 1), visibility 0s linear 400ms",
+          "visibility": 0,
+          "width": "100%",
+          "zIndex": 99999,
+        }
+      }
+    >
+      <div
+        className="sc-fzolEj fhwccp"
+      >
+        <div
+          className="sc-fznWOq fzTKqt"
+        >
+          <div
+            className="sc-fznMAR DQQGK"
+          >
+            <h2
+              className="sc-fzoYkl dENXbG"
+              id="headerTitle"
+              style={
+                Object {
+                  "fontFamily": "Inter, \\"Helvetica Neue\\", Helvetica, Arial, sans-serif",
+                  "fontSize": "24px",
+                  "fontWeight": 100,
+                  "margin": 0,
+                }
+              }
+            >
+              Data Sources
+            </h2>
+            <h1
+              className="sc-fzpkJw enKAbF"
+              id="headerSubtitle"
+              style={
+                Object {
+                  "fontFamily": "Inter, \\"Helvetica Neue\\", Helvetica, Arial, sans-serif",
+                  "fontSize": "24px",
+                  "fontWeight": 600,
+                  "letterSpacing": "-0.12px",
+                  "lineHight": 1.25,
+                  "margin": 0,
+                }
+              }
+            >
+              Overview
+            </h1>
+          </div>
+        </div>
+        <div
+          className="sc-fzqBkg hScHwl"
+        >
+          <div
+            className="sc-fzqPZZ bbXJbY"
+          >
+            <a
+              href="/project/"
+              id="projectsNavBtn"
+              onClick={[Function]}
+            >
+              Projects
+            </a>
+          </div>
+          <div
+            className="sc-fzqPZZ bbXJbY"
+          >
+            <a
+              href="/user/"
+              id="usersPageNavBtn"
+              onClick={[Function]}
+            >
+              Users
+            </a>
+          </div>
+          <div
+            className="sc-fzqPZZ bbXJbY"
+          >
+            <a
+              href="/project/projectId"
+              id="projectDetailsNavBtn"
+              onClick={[Function]}
+            >
+              Project details
+            </a>
+          </div>
+          <div
+            className="sc-fzqPZZ jLThQl"
+          >
+            <a
+              href="/project/projectId/datasource"
+              id="dataSourceNavBtn"
+              onClick={[Function]}
+            >
+              Data Sources
+            </a>
+          </div>
+          <div
+            className="sc-fzqPZZ bbXJbY"
+          >
+            <a
+              href="/project/projectId/user"
+              id="usersNavBtn"
+              onClick={[Function]}
+            >
+              Project Users
+            </a>
+          </div>
+          <div
+            className="sc-fzqPZZ bbXJbY"
+          >
+            <a
+              href="/project/projectId/content"
+              id="contentNavBtn"
+              onClick={[Function]}
+            >
+              Content
+            </a>
+          </div>
+          <div
+            className="sc-fzqPZZ bbXJbY"
+          >
+            <a
+              href="/project/projectId/templates"
+              id="templatesNavBtn"
+              onClick={[Function]}
+            >
+              Templates
+            </a>
+          </div>
+        </div>
+        <div
+          className="sc-fzqBkg hScHwl"
+        >
+          <div
+            className="sc-fzqPZZ bbXJbY"
+          >
+            <a
+              href="/settings"
+              id="settingsNavBtn"
+              onClick={[Function]}
+            >
+              Settings
+            </a>
+          </div>
+          <div
+            className="sc-fzqPZZ bbXJbY"
+          >
+            <div
+              onClick={[Function]}
+            >
+              Log out
+            </div>
+          </div>
+        </div>
+        <div
+          className="sc-fzoxKX eIANBM"
+        >
+          <a
+            className="sc-fzoKki cvDvQq"
+            href="/"
+            id="aboutNavBtn"
+            onClick={[Function]}
+          >
+            About Schema CMS
+          </a>
+          <a
+            className="sc-fzoKki cvDvQq"
+            href="/"
+            id="apiNavBtn"
+            onClick={[Function]}
+          >
+            API Doc
+          </a>
+          <a
+            className="sc-fzoKki cvDvQq"
+            href="/"
+            id="repositoryNavBtn"
+            onClick={[Function]}
+          >
+            GitHub Repository
+          </a>
+        </div>
+      </div>
+      <button
+        disabled={false}
+        id="topHeaderCloseMenuButton"
+        onClick={[Function]}
+        style={
+          Object {
+            "backgroundColor": "transparent",
+            "border": "none",
+            "borderRadius": "48px",
+            "color": "#FFF",
+            "cursor": "pointer",
+            "display": "inline-block",
+            "fill": "#FFF",
+            "fontSize": "18px",
+            "margin": "0",
+            "minHeight": "48px",
+            "outline": "none",
+            "padding": "0",
+            "position": "absolute",
+            "right": 0,
+            "top": "6px",
+            "transition": "background 0.25s ease-in-out, color 0.25s ease-in-out",
+          }
+        }
+        type="button"
+      >
+        <svg
+          style={
+            Object {
+              "fill": "#FFF",
+              "height": "60px",
+              "width": "60px",
+            }
+          }
+          viewBox="0 0 60 60"
+        >
+          <path
+            d="M39.192 17.98l2.829 2.828L32.828 30l9.193 9.192-2.829 2.829L30 32.828l-9.192 9.193-2.829-2.829L27.172 30l-9.193-9.192 2.829-2.829L30 27.172l9.192-9.193z"
+            fillRule="evenodd"
+          />
+        </svg>
+      </button>
+    </div>
+  </div>
+  <div
+    className="sc-AxhCb ccMvAG"
+    id="tabsContainer"
+  >
+    <div
+      className="sc-AxjAm eSjBJw"
+    >
+      <div
+        className="sc-AxirZ eteeke"
+      >
+        <a
+          className="sc-AxiKw caTYgO"
+          href="/project/projectId"
+          id="settingsTab"
+          onClick={[Function]}
+        >
+          Settings
+        </a>
+      </div>
+      <div
+        className="sc-AxirZ jwwwmF"
+      >
+        <a
+          className="sc-AxiKw caTYgO"
+          href="/project/projectId/datasource"
+          id="sourcesTab"
+          onClick={[Function]}
+        >
+          Sources
+        </a>
+      </div>
+      <div
+        className="sc-AxirZ eteeke"
+      >
+        <a
+          className="sc-AxiKw caTYgO"
+          href="/project/projectId/content"
+          id="contentTab"
+          onClick={[Function]}
+        >
+          Content
+        </a>
+      </div>
+      <div
+        className="sc-AxirZ eteeke"
+      >
+        <a
+          className="sc-AxiKw caTYgO"
+          href="/project/projectId/templates"
+          id="templatesTab"
+          onClick={[Function]}
+        >
+          Templates
+        </a>
+      </div>
+      <div
+        className="sc-AxirZ eteeke"
+      >
+        <a
+          className="sc-AxiKw caTYgO"
+          href="/project/projectId/user"
+          id="usersTab"
+          onClick={[Function]}
+        >
+          Users
+        </a>
+      </div>
+    </div>
+  </div>
+  <div
+    className="sc-AxhUy eTJXHP"
+  >
+    <div
+      className="sc-AxgMl dfHvBg"
+    >
+      <h2
+        className="sc-AxheI evIuGV"
+        id="desktopHeaderTitle"
+        style={
+          Object {
+            "fontFamily": "Inter, \\"Helvetica Neue\\", Helvetica, Arial, sans-serif",
+            "fontSize": "24px",
+            "fontWeight": 100,
+            "margin": 0,
+          }
+        }
+      >
+        Data Sources
+      </h2>
+      <h1
+        className="sc-Axmtr iQAeZe"
+        id="desktopHeaderSubtitle"
+        style={
+          Object {
+            "fontFamily": "Inter, \\"Helvetica Neue\\", Helvetica, Arial, sans-serif",
+            "fontSize": "24px",
+            "fontWeight": 600,
+            "letterSpacing": "-0.12px",
+            "lineHight": 1.25,
+            "margin": 0,
+          }
+        }
+      >
+        Overview
+      </h1>
+    </div>
+    <div
+      className="sc-AxmLO cAKCgh"
+    >
+      <div
+        className="sc-fzpjYC ftkikz"
+      >
+        <button
+          disabled={false}
+          id="createDataSourceDesktopBtn"
+          onClick={[Function]}
+          style={
+            Object {
+              "backgroundColor": "#FFF",
+              "border": "none",
+              "borderRadius": "48px",
+              "color": "#000",
+              "cursor": "pointer",
+              "display": "inline-block",
+              "fill": "#FFF",
+              "fontSize": "18px",
+              "height": "60px",
+              "margin": "0",
+              "minHeight": "48px",
+              "outline": "none",
+              "padding": "0",
+              "transition": "background 0.25s ease-in-out, color 0.25s ease-in-out",
+              "width": "60px",
+            }
+          }
+        >
+          <svg
+            style={
+              Object {
+                "fill": "#000",
+                "height": "60px",
+                "shapeRendering": "crispEdges",
+                "width": "60px",
+              }
+            }
+            viewBox="0 0 60 60"
+          >
+            <path
+              d="M32 15v13h13v4H32v13h-4V32H15v-4h13V15h4z"
+            />
+          </svg>
+        </button>
+      </div>
+    </div>
+  </div>
+  <div
+    className="sc-fzozJi djaXso"
+    type="page"
+  >
+    fetchDataSources should return error
+  </div>
+  <div
+    className="sc-fzqBZW gRryLC"
+  >
+    <div
+      className="sc-fzoyAV fPdCEj"
+    >
+      <div
+        className="sc-fzqNJr joohLB"
+      >
+        <button
+          disabled={false}
+          id="backBtn"
+          onClick={[Function]}
+          style={
+            Object {
+              "backgroundColor": "#1d1d20",
+              "border": "none",
+              "borderRadius": "48px",
+              "color": "#FFF",
+              "cursor": "pointer",
+              "display": "inline-block",
+              "fill": "#FFF",
+              "fontSize": "18px",
+              "height": "60px",
+              "margin": "0",
+              "minHeight": "48px",
+              "outline": "none",
+              "padding": "0",
+              "transition": "background 0.25s ease-in-out, color 0.25s ease-in-out",
+              "width": "60px",
+            }
+          }
+        >
+          <svg
+            style={
+              Object {
+                "fill": "#FFF",
+                "height": "60px",
+                "width": "60px",
+              }
+            }
+            viewBox="0 0 60 60"
+          >
+            <path
+              d="M25.857 17L28 19.083 18.828 28H45v3H18.828L28 39.917 25.857 42 13 29.5 25.857 17z"
+            />
+          </svg>
+        </button>
+        <div
+          className="sc-fzpjYC ftkikz"
+        >
+          <button
+            disabled={false}
+            id="createDataSourceBtn"
+            onClick={[Function]}
+            style={
+              Object {
+                "backgroundColor": "#FFF",
+                "border": "none",
+                "borderRadius": "48px",
+                "color": "#000",
+                "cursor": "pointer",
+                "display": "inline-block",
+                "fill": "#FFF",
+                "fontSize": "18px",
+                "height": "60px",
+                "margin": "0",
+                "minHeight": "48px",
+                "outline": "none",
+                "padding": "0",
+                "transition": "background 0.25s ease-in-out, color 0.25s ease-in-out",
+                "width": "60px",
+              }
+            }
+          >
+            <svg
+              style={
+                Object {
+                  "fill": "#000",
+                  "height": "60px",
+                  "shapeRendering": "crispEdges",
+                  "width": "60px",
+                }
+              }
+              viewBox="0 0 60 60"
+            >
+              <path
+                d="M32 15v13h13v4H32v13h-4V32H15v-4h13V15h4z"
+              />
+            </svg>
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
 `;

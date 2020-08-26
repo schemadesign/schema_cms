@@ -20,7 +20,7 @@ export const defaultProps = {
     metaData: {},
     jobs: [],
     project: { id: 'projectId' },
-    id: 'dataSourceIdId',
+    id: 'dataSourceId',
     fileName: 'fileName',
   },
   intl,
@@ -44,6 +44,7 @@ export const defaultProps = {
   setFieldValue: Function.prototype,
   removeDataSource: Function.prototype,
   onDataSourceChange: Function.prototype,
+  copyDataSource: Function.prototype,
 };
 
 storiesOf('Data Source|Source', module)

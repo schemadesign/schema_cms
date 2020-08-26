@@ -71,6 +71,24 @@ describe('DataSource: sagas', () => {
     });
   });
 
+  describe('copyDataSource', () => {
+    it('should dispatch a success action', async () => {
+      const projectId = 'projectId';
+      const dataSourceId = 'dataSourceId';
+      const payload = { projectId, dataSourceId };
+
+      mockApi.post(`${DATA_SOURCES_PATH}/${dataSourceId}/copy`).reply(OK);
+      mockApi.get(`${PROJECTS_PATH}/${projectId}${DATA_SOURCES_PATH}?page_size=1000`).reply(OK);
+
+      await expectSaga(watchDataSource)
+        .withState(defaultState)
+        .put(DataSourceRoutines.fetchList.trigger({ projectId }))
+        .put(DataSourceRoutines.copyDataSource.success())
+        .dispatch(DataSourceRoutines.copyDataSource(payload))
+        .silentRun();
+    });
+  });
+
   describe('fetchList', () => {
     const payload = { projectId: '1' };
     const responseJobProcessingData = {
