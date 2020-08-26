@@ -11,6 +11,10 @@ export const buttonStyles = {
   pointerEvents: 'none',
 };
 
+export const SourceButtonWrapper = styled.div`
+  margin-right: 10px;
+`;
+
 export const customRadioButtonStyles = {
   display: 'flex',
   flexDirection: 'column',

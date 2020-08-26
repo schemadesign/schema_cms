@@ -13,12 +13,14 @@ class DataSourceType:
     FILE = "file"
     DATABASE = "database"
     API = "api"
+    GOOGLE_SHEET = "google_sheet"
 
 
 DATA_SOURCE_TYPE_CHOICES = (
     (DataSourceType.FILE, "file"),
     (DataSourceType.DATABASE, "database"),
     (DataSourceType.API, "api"),
+    (DataSourceType.GOOGLE_SHEET, "google sheet"),
 )
 
 

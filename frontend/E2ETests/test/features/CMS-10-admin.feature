@@ -6,27 +6,21 @@ Feature: CMS-10-Admin
 
     Background: user is logged in
         Given I am on Login page
-        And I have logged in as an admin with valid login and valid password
-        And I am on homepage
+        And I have logged in as an 'admin' with 'valid' login and 'valid' password
+        And I am on 'homepage' page
 
 
-    Scenario: User can see Create New Project page with all its details
-        When I choose to create new project
-        Then I am on Create New Project page
-        And top header is displayed
-        And all elements of Create New Project page are displayed properly
-    @Test
-    Scenario Outline: User can select different status
+    Scenario Outline: User can select different project status
         Given I chose to create new project
         When I select <status> from dropdown
         Then <status> is displayed
 
         Examples:
-            | status |
+            | status        |
             | 'In Progress' |
-            | 'Done' |
-            | 'Hold' |
-            | 'Published' |
+            | 'Done'        |
+            | 'Hold'        |
+            | 'Published'   |
 
 
 
@@ -43,16 +37,22 @@ Feature: CMS-10-Admin
         And validation message about description being too long is displayed
 
 
+
+    Scenario: Validation message should be displayed if domain is not a valid URL
+        Given I chose to create new project
+        When I enter an invalid domain
+        Then validation message about invalid domain is displayed
+
+
+
     Scenario: When adding a project, user can edit entered data
         Given I chose to create new project
-        And I filled out all required fields
         When I edit the data
         Then new data in fields is displayed
 
-
+    @CreateProject
     Scenario: Newly created project should be displayed on Projects page at the top of the list
         Given I chose to create new project
-        And I filled out all required fields
-        When I submit the form to create new project
-        Then I am on Projects page
+        When I create new project
+        Then I am on 'homepage' page
         And created project is at the top of the list

@@ -227,33 +227,64 @@ exports[`SourceFormComponent: Component should render correctly 1`] = `
     onChange={[Function]}
     value="file"
   >
-    <RadioBaseComponent
-      id="file"
-      label="CSV"
-      value="file"
-    >
-      <Component
-        customStyles={
-          Object {
-            "background": "#FFF",
-            "height": 96,
-            "marginBottom": 10,
-            "pointerEvents": "none",
-            "width": 96,
-          }
-        }
-        id="csvUploadIcon"
-        type="button"
+    <styled.div>
+      <RadioBaseComponent
+        id="file"
+        label="CSV"
+        value="file"
       >
         <Component
           customStyles={
             Object {
-              "fill": "#1d1d20",
+              "background": "#FFF",
+              "height": 96,
+              "marginBottom": 10,
+              "pointerEvents": "none",
+              "width": 96,
             }
           }
-        />
-      </Component>
-    </RadioBaseComponent>
+          id="csvUploadIcon"
+          type="button"
+        >
+          <Component
+            customStyles={
+              Object {
+                "fill": "#1d1d20",
+              }
+            }
+          />
+        </Component>
+      </RadioBaseComponent>
+    </styled.div>
+    <styled.div>
+      <RadioBaseComponent
+        id="google_sheet"
+        label="Spreadsheet"
+        value="google_sheet"
+      >
+        <Component
+          customStyles={
+            Object {
+              "background": "#1d1d20",
+              "height": 96,
+              "marginBottom": 10,
+              "pointerEvents": "none",
+              "width": 96,
+            }
+          }
+          id="googleSpreadsheetUploadIcon"
+          type="button"
+        >
+          <Component
+            customStyles={
+              Object {
+                "fill": "#FFF",
+              }
+            }
+          />
+        </Component>
+      </RadioBaseComponent>
+    </styled.div>
   </RadioGroup>
   <Uploader
     accept=".csv"
@@ -691,33 +722,64 @@ exports[`SourceFormComponent: Component should render file uploader 1`] = `
     onChange={[Function]}
     value="file"
   >
-    <RadioBaseComponent
-      id="file"
-      label="CSV"
-      value="file"
-    >
-      <Component
-        customStyles={
-          Object {
-            "background": "#FFF",
-            "height": 96,
-            "marginBottom": 10,
-            "pointerEvents": "none",
-            "width": 96,
-          }
-        }
-        id="csvUploadIcon"
-        type="button"
+    <styled.div>
+      <RadioBaseComponent
+        id="file"
+        label="CSV"
+        value="file"
       >
         <Component
           customStyles={
             Object {
-              "fill": "#1d1d20",
+              "background": "#FFF",
+              "height": 96,
+              "marginBottom": 10,
+              "pointerEvents": "none",
+              "width": 96,
             }
           }
-        />
-      </Component>
-    </RadioBaseComponent>
+          id="csvUploadIcon"
+          type="button"
+        >
+          <Component
+            customStyles={
+              Object {
+                "fill": "#1d1d20",
+              }
+            }
+          />
+        </Component>
+      </RadioBaseComponent>
+    </styled.div>
+    <styled.div>
+      <RadioBaseComponent
+        id="google_sheet"
+        label="Spreadsheet"
+        value="google_sheet"
+      >
+        <Component
+          customStyles={
+            Object {
+              "background": "#1d1d20",
+              "height": 96,
+              "marginBottom": 10,
+              "pointerEvents": "none",
+              "width": 96,
+            }
+          }
+          id="googleSpreadsheetUploadIcon"
+          type="button"
+        >
+          <Component
+            customStyles={
+              Object {
+                "fill": "#FFF",
+              }
+            }
+          />
+        </Component>
+      </RadioBaseComponent>
+    </styled.div>
   </RadioGroup>
   <Uploader
     accept=".csv"

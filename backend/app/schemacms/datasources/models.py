@@ -44,8 +44,11 @@ class DataSource(MetaGeneratorMixin, SoftDeleteObject, TimeStampedModel):
     type = models.CharField(max_length=25, choices=constants.DATA_SOURCE_TYPE_CHOICES)
     project = models.ForeignKey("projects.Project", on_delete=models.CASCADE, related_name="data_sources")
     file = models.FileField(
-        null=True, upload_to=file_upload_path, validators=[FileExtensionValidator(allowed_extensions=["csv"])]
+        null=True,
+        upload_to=file_upload_path,
+        validators=[FileExtensionValidator(allowed_extensions=["csv", "tsv"])],
     )
+    google_sheet = models.URLField(null=True, blank=True, default="")
     created_by = models.ForeignKey(
         settings.AUTH_USER_MODEL, on_delete=models.SET_NULL, related_name="data_sources", null=True
     )
@@ -133,9 +136,10 @@ class DataSource(MetaGeneratorMixin, SoftDeleteObject, TimeStampedModel):
         return dict(id=self.project.id, title=self.project.title)
 
     def schedule_update_meta(self, copy_steps):
-        file = self.get_source_file()
-        if not file:
-            raise ValueError("Cannot schedule meta processing without source file")
+        if not self.file and not self.google_sheet:
+            raise ValueError("Cannot schedule meta processing without source")
+
+        file_size = self.file.size if self.file else settings.EXT_QUEUE_LIMIT - 1
 
         with transaction.atomic():
             self.meta_data.status = constants.ProcessingState.PENDING
@@ -143,12 +147,12 @@ class DataSource(MetaGeneratorMixin, SoftDeleteObject, TimeStampedModel):
 
             transaction.on_commit(
                 lambda: services.schedule_object_meta_processing(
-                    obj=self, source_file_size=file.size, copy_steps=copy_steps
+                    obj=self, source_file_size=file_size, copy_steps=copy_steps
                 )
             )
 
     def update_meta(self, **kwargs):
-        if not self.file:
+        if not self.file and not self.google_sheet:
             return
 
         with transaction.atomic():
@@ -222,7 +226,9 @@ class DataSource(MetaGeneratorMixin, SoftDeleteObject, TimeStampedModel):
                 "updated": self.modified.isoformat(),
                 "creator": None if not self.created_by else self.created_by.get_full_name(),
             },
+            "type": self.type,
             "file": self.file.name if self.file else None,
+            "google_sheet": self.google_sheet,
             "shape": None,
             "result": None,
             "fields": {},
@@ -383,7 +389,8 @@ class DataSourceJob(MetaGeneratorMixin, SoftDeleteObject, TimeStampedModel, fsm.
         return data
 
     def schedule(self):
-        return services.schedule_job_scripts_processing(self, self.datasource.file.size)
+        file_size = self.datasource.file.size if self.datasource.file else settings.EXT_QUEUE_LIMIT
+        return services.schedule_job_scripts_processing(self, file_size)
 
     def schedule_update_meta(self):
         return MetaDataModel.schedule_update_meta(obj=self)

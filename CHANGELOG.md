@@ -1,6 +1,12 @@
-## 1.9.0 (August 17, 2020) - Change
+## 1.9.0 (August 18, 2020) - Change
 
 Add state of the page to the page name
+
+Automation tests:
+ - changed the approach from object-oriented to functional
+ - added a README.md
+ - updated the configuration, so it is easier to run tests on various browsers and environments
+ - added support for Gmail API
 
 ## 1.8.0 (August 17, 2020) - Added 
 

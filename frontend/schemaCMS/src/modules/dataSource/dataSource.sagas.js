@@ -101,14 +101,18 @@ function* create({ payload }) {
     yield put(DataSourceRoutines.create.request());
     const requestData = { project: payload.projectId, ...omit(['file'], payload.requestData) };
     const formData = formatFormData({ file: payload.requestData.file });
-
     const {
       data: { id },
     } = yield api.post(DATA_SOURCES_PATH, requestData);
 
     yield put(
       DataSourceRoutines.create.success({
-        dataSource: { id, fileName: payload.requestData.file.name, progress: 0 },
+        dataSource: {
+          id,
+          fileName: payload.requestData.file ? payload.requestData.file.name : '',
+          googleSheet: payload.requestData.googleSheet,
+          progress: 0,
+        },
         isUpload: true,
       })
     );
