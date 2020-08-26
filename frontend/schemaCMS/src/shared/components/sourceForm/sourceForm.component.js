@@ -12,6 +12,7 @@ import {
   customRadioGroupStyles,
   WarningWrapper,
   ErrorWrapper,
+  SourceButtonWrapper,
 } from './sourceForm.styles';
 import messages from './sourceForm.messages';
 import { TextInput } from '../form/inputs/textInput';
@@ -22,12 +23,14 @@ import {
   SOURCE_TYPE_API,
   SOURCE_TYPE_DATABASE,
   SOURCE_TYPE_FILE,
+  SOURCE_TYPE_GOOGLE_SHEET,
+  DATA_SOURCE_GOOGLE_SHEET,
 } from '../../../modules/dataSource/dataSource.constants';
 import { Uploader } from '../form/uploader';
 import { getEventFiles, isProcessingData } from '../../utils/helpers';
 
 const { RadioGroup, RadioBaseComponent, Label } = Form;
-const { CsvIcon } = Icons;
+const { CsvIcon, GoogleSpreadsheetIcon } = Icons;
 
 export class SourceFormComponent extends PureComponent {
   static propTypes = {
@@ -98,6 +101,23 @@ export class SourceFormComponent extends PureComponent {
     />
   );
 
+  renderSpreadsheetInput = ({ setFieldValue, disabled, googleSheet, ...restProps }) => {
+    const { handleChange } = this.props;
+    return (
+      <TextInput
+        value={googleSheet || ''}
+        onChange={handleChange}
+        name={DATA_SOURCE_GOOGLE_SHEET}
+        placeholder={this.props.intl.formatMessage(messages.googleSpreadSheetPlaceholder)}
+        fullWidth
+        checkOnlyErrors
+        label={this.props.intl.formatMessage(messages.name)}
+        isEdit
+        {...restProps}
+      />
+    );
+  };
+
   renderSourceUpload = ({ type, isProcessing, fileUploadingError, fileUploading, ...restProps }) =>
     cond([
       [
@@ -114,6 +134,18 @@ export class SourceFormComponent extends PureComponent {
       ],
       [equals(SOURCE_TYPE_API), () => {}],
       [equals(SOURCE_TYPE_DATABASE), () => {}],
+      [
+        equals(SOURCE_TYPE_GOOGLE_SHEET),
+        () => (
+          <Fragment>
+            {this.renderSpreadsheetInput({
+              ...restProps,
+              disabled: isProcessing || fileUploading,
+            })}
+            {this.renderProcessingMessage({ isProcessing, fileUploadingError, fileUploading })}
+          </Fragment>
+        ),
+      ],
       [T, always(null)],
     ])(type);
 
@@ -134,12 +166,29 @@ export class SourceFormComponent extends PureComponent {
     );
   };
 
+  renderSpreadsheetButton = type => {
+    const { active, unActive } = this.props.theme.radioButton;
+    const { fill, background } = type === SOURCE_TYPE_GOOGLE_SHEET ? active : unActive;
+
+    return (
+      <RadioBaseComponent
+        label={this.props.intl.formatMessage(messages.googleSpreadSheet)}
+        value={SOURCE_TYPE_GOOGLE_SHEET}
+        id={SOURCE_TYPE_GOOGLE_SHEET}
+      >
+        <Button id="googleSpreadsheetUploadIcon" customStyles={{ background, ...buttonStyles }} type="button">
+          <GoogleSpreadsheetIcon customStyles={{ fill }} />
+        </Button>
+      </RadioBaseComponent>
+    );
+  };
+
   render() {
     const { dataSource, handleChange, values, uploadingDataSources, ...restProps } = this.props;
     const { jobsState, id, metaData } = dataSource;
     const { isProcessing } = isProcessingData({ jobsState, metaData });
     const uploadingDataSource = find(propEq('id', id), uploadingDataSources);
-    const { name, type } = values;
+    const { name, type, googleSheet } = values;
     const fileUploadingError = !!propOr(false, 'error', uploadingDataSource);
     const fileUploading = !!uploadingDataSource && !fileUploadingError;
     const fileName = ifElse(isNil, () => pathOr('', ['fileName'], values), prop('fileName'))(uploadingDataSource);
@@ -167,12 +216,14 @@ export class SourceFormComponent extends PureComponent {
           value={type}
           onChange={handleChange}
         >
-          {this.renderRadioButton(type)}
+          <SourceButtonWrapper>{this.renderRadioButton(type)}</SourceButtonWrapper>
+          <SourceButtonWrapper>{this.renderSpreadsheetButton(type)}</SourceButtonWrapper>
         </RadioGroup>
         {this.renderSourceUpload({
           type,
           fileName,
-          isProcessing: isProcessing && !!dataSource.fileName,
+          googleSheet,
+          isProcessing: isProcessing && (!!dataSource.fileName || !!dataSource.googleSheet),
           fileUploadingError,
           fileUploading,
           ...restProps,

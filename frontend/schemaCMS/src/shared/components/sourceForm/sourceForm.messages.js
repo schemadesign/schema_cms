@@ -14,6 +14,14 @@ export default defineMessages({
     id: 'shared.components.sourceForm.csv',
     defaultMessage: 'CSV',
   },
+  googleSpreadSheet: {
+    id: 'shared.components.sourceForm.googleSpreadSheet',
+    defaultMessage: 'Spreadsheet',
+  },
+  googleSpreadSheetPlaceholder: {
+    id: 'shared.components.sourceForm.googleSpreadSheetPlaceholder',
+    defaultMessage: 'Put a valid Google Spreadsheet URL here',
+  },
   fileName: {
     id: 'shared.components.sourceForm.fileName',
     defaultMessage: 'File Name',

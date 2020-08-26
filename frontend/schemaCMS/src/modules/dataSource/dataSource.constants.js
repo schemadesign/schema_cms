@@ -6,12 +6,14 @@ export const FETCH_LIST_DELAY = 5 * 1000;
 export const DATA_SOURCE_FORM = 'data_source_form';
 export const DATA_SOURCE_NAME = 'name';
 export const DATA_SOURCE_FILE = 'file';
+export const DATA_SOURCE_GOOGLE_SHEET = 'googleSheet';
 export const DATA_SOURCE_TYPE = 'type';
 export const DATA_SOURCE_RUN_LAST_JOB = 'runLastJob';
 
 export const SOURCE_TYPE_FILE = 'file';
 export const SOURCE_TYPE_API = 'api';
 export const SOURCE_TYPE_DATABASE = 'database';
+export const SOURCE_TYPE_GOOGLE_SHEET = 'google_sheet';
 
 export const SOURCE_PAGE = 'source';
 export const PREVIEW_PAGE = 'preview';
@@ -41,4 +43,7 @@ export const DATA_SOURCE_SCHEMA = Yup.object().shape({
   [DATA_SOURCE_FILE]: Yup.mixed()
     .test('fileSize', 'File Size is too large (max 900MB)', (value = {}) => defaultTo(0, value.size) <= FILE_SIZE)
     .test('fileName', "File Name shouldn't be longer than 100 characters.", ({ name = '' } = {}) => name.length <= 100),
+  [DATA_SOURCE_GOOGLE_SHEET]: Yup.string()
+    .trim()
+    .url('The link field needs to be a valid URL'),
 });
