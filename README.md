@@ -38,7 +38,7 @@ You will find a more detailed documentation in `./frontend/schemaCMS`, `./fronte
 ## Running locally
 
 1. Create Auth0 tenant for local use. You can find instructions [here](./docs/auth0.md).
-2. Create and fill `local.env` file:
+2. Copy `local.env-example` file as `local.env` and fill missing `Auth0` envs using values from your tenant:
 
     ```bash
     cp local.env-example local.env
@@ -48,6 +48,8 @@ You will find a more detailed documentation in `./frontend/schemaCMS`, `./fronte
     ```bash
     make up
     ```
+   > NOTE: Check if you have any running containers using the same ports as Schema CMS components, if yes please stop/kill those;
+you can check running containers using a `docker ps` command and stop/kill selected container using `docker stop/kill CONTAINER ID`
 3. Run frontend:
 
     ```bash
@@ -63,30 +65,20 @@ Documentations is running on `localhost:8001`
 
 Frontend is running on `localhost:3000`
 
-# Local set-up and usage notes
-
-## Important notes
-
-*Before you run the app locally:*
- 1. make sure that you have the `local.env` file updated
- 2. check if you have any running containers using the same ports as Schema CMS components, if yes please stop/kill those;
-you can check running containers using a `docker ps` command and stop/kill selected container using `docker stop/kill CONTAINER ID`
- 3. if you want to keep uploaded datasource files and use them after restarting a computer or killing the docker container,
-before you use `docker-compose up`, you have to uncomment the line `- "localstack_data:/tmp/localstack/data"` (line 30) in the` docker-compose.yml` file.
-Now all data source files, block images etc. will be saved to disk.  
-> Note that in this case starting backend may take a little more time because all files must be indexed again.
-
-
 
 ## Inviting user to Schema CMS localy
 
 1. In a new browser tab go to `http://localhost:1080/`
 2. In a second tab open `http://localhost:8000/admin/` and login as a root user, you can set a root password in the `local.env`, changing value of `DJANGO_ROOT_PASSWORD` but the default password is set to `root12345` 
-3. Now go to a `Users` tab and click the `INVITE USER` button, fill all required fields and `SAVE`  
-> NOTE: you can use dummy email if you want because locally we don't send any emails
+3. Now go to a `Users` tab and click the `INVITE USER` button, fill all required fields and `SAVE`.
+
+    > NOTE: You can use dummy email if you want because locally we don't send any emails.
 4. Go to a tab from step 1. You should see an invitation email with a password change link. Click it and set the password.
-5. After the password is set you can go to the `http://localhost:3000` and login using invited user credentials  
-> NOTE: you won't be able to login to app if you don't set password
+5. After the password is set you can go to the `http://localhost:3000` and login using invited user credentials.
+
+    > NOTE: You won't be able to login to app if you don't set password.
+
+    > NOTE: If Gmail email address was used you can log-in to app using `Sign in with Google` option.
 
 ## Changing user role
 
@@ -118,7 +110,7 @@ Application requires Auth0 and domain with verified certificate in AWS.
 1. Log In to [AWS Console](https://aws.amazon.com/console/), go to `My security credentials` and create access key.
 2. Use created access key to add new profile in [aws-vault](https://github.com/99designs/aws-vault#quick-start).
 3. Edit file `~/aws/config` by adding line `region=<selected-deployment-region>` under profile you added.
-4. Update profile and region in `.project_config.json`.
+4. Update `profile` and `region` in `.project_config.json`.
     
 ## Steps
 ### Deploy base resources and components
@@ -132,7 +124,8 @@ From project root directory:
 
 1. Go to [AWS Certificate Manager](https://console.aws.amazon.com/acm) on selected region.
 2. Validate certificate using DNS. You can follow this [guide](https://aws.amazon.com/blogs/security/easier-certificate-validation-using-dns-with-aws-certificate-manager/).
-> NOTE: As domain names please enter two records. First is just your domain name and second is wild card name with asterisk (*.example.com), this allow protect all subdomains.
+
+    > NOTE: As domain names please enter two records. First is just your domain name and second is wild card name with asterisk (*.example.com), this allow protect all subdomains.
 3. Wait till `status` is `Issued`.
 
 ### Create SSN parameters
@@ -147,7 +140,7 @@ User has to request a change from `Sandbox` to `Production` mode. For more infor
 But before that at least one domain has to be verified. To do that follow this steps:
 
 1. Go to [AWS SES](https://console.aws.amazon.com/ses/home) on selected region.
-2. Follow this [guide](https://docs.aws.amazon.com/ses/latest/DeveloperGuide/verify-domain-procedure.html)
+2. Follow this [guide](https://docs.aws.amazon.com/ses/latest/DeveloperGuide/verify-domain-procedure.html).
 3. When domain `Verification Status` will change to `verified` you have to [request](https://docs.aws.amazon.com/ses/latest/DeveloperGuide/request-production-access.html) moving out from `Sandbox` mode.
 > NOTE: Processing this request may take up to 2 days, depending which tier of AWS Support your account is using.
 
@@ -157,6 +150,6 @@ But before that at least one domain has to be verified. To do that follow this s
 
 From project root directory:
 
-1. Run `make build` to create and push docker images with application to AWS ECR
-2. After successful build run `make deploy-app`
+1. Run `make build` to create and push docker images with application to AWS ECR. This step may take some time.
+2. After successful build run `make deploy-app`.
 3. Set app and public api domains in DNS by creating CNAME records pointing newly created ELB
