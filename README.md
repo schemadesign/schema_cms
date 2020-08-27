@@ -41,7 +41,7 @@ You will find a more detailed documentation in `./frontend/schemaCMS`, `./fronte
 2. Create and fill `local.env` file:
 
     ```bash
-    cp local.env.example local.env
+    cp local.env-example local.env
     ```
 2. Run backend services:
 
