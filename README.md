@@ -23,10 +23,10 @@ Docker is used to develop, test, and improve an environment.
 
 1. Install [docker](https://docs.docker.com/install/)
 2. Install [docker-compose](https://docs.docker.com/compose/install/) if you are using Linux
-3. Install [python 3.8](https://www.python.org/downloads/)
-4. Install [pipenv](https://github.com/pypa/pipenv#installation)
-5. Install [npm](https://www.npmjs.com/)
-6. Install [yarn](https://classic.yarnpkg.com/en/docs/install/#mac-stable)
+3. Install [python](https://www.python.org/downloads/) (version 3.8)
+4. Install [pipenv](https://github.com/pypa/pipenv#installation) (python package manager)
+5. Install [npm](https://nodejs.org/en/) (version 12+)
+6. Install [yarn](https://classic.yarnpkg.com/en/docs/install/#mac-stable) (version 1.22.+)
 
 ## Installation
 
@@ -128,15 +128,12 @@ From project root directory:
 1. `make deploy-infra`
 2. `make deploy-components`
 
-### Deploy certificates
+### Validate certificates
 
 1. Go to [AWS Certificate Manager](https://console.aws.amazon.com/acm) on selected region.
-2. Request `Request a public certificate`.
-3. Add your domain names: 
-    - `example.com`
-    - `*.example.com`
-4. Choose `DNS validation`.
-5. Add DNS records from generated csv to your DNS and wait till `status` is `Issued`.
+2. Validate certificate using DNS. You can follow this [guide](https://aws.amazon.com/blogs/security/easier-certificate-validation-using-dns-with-aws-certificate-manager/).
+> NOTE: As domain names please enter two records. First is just your domain name and second is wild card name with asterisk (*.example.com), this allow protect all subdomains.
+3. Wait till `status` is `Issued`.
 
 ### Create SSN parameters
 
@@ -146,7 +143,7 @@ From project root directory:
 ### Verify Domain in Amazon Simple Email Service
 [Amazon Simple Email Service](https://docs.aws.amazon.com/ses/latest/DeveloperGuide/Welcome.html) is used by Schema CMS to send emails.
 Unfortunately `AWS SES` is in `Sandbox` mode as default and because of that you can only send mail `to` and `from` verified email addresses and domains.
-Fortunately user can request a change from `Sandbox` to `Production` mode. For more information look [here](https://docs.aws.amazon.com/ses/latest/DeveloperGuide/request-production-access.html).
+User has to request a change from `Sandbox` to `Production` mode. For more information look [here](https://docs.aws.amazon.com/ses/latest/DeveloperGuide/request-production-access.html).
 But before that at least one domain has to be verified. To do that follow this steps:
 
 1. Go to [AWS SES](https://console.aws.amazon.com/ses/home) on selected region.
