@@ -83,32 +83,39 @@ class PAProjectView(
         "pages": serializers.PAPageDetailSerializer,
     }
     queryset = (
-        Project.objects.select_related("owner",)
-        .prefetch_related(
-            Prefetch("data_sources", queryset=DataSource.objects.all().order_by("-created")),
-            Prefetch(
-                "sections",
-                queryset=(
-                    Section.objects.prefetch_related(
-                        Prefetch(
-                            "pages",
-                            queryset=Page.objects.filter(
-                                is_public=True,
-                                is_draft=False,
-                                state__in=[PageState.PUBLISHED, PageState.WAITING_TO_REPUBLISH],
-                            ),
-                        )
-                    ).filter(is_public=True)
-                ),
-            ),
-            "sections__pages__created_by",
-        )
+        Project.objects.select_related("owner")
+        .prefetch_related(Prefetch("data_sources", queryset=DataSource.objects.all().order_by("-created")))
         .all()
         .order_by("id")
     )
     filter_backends = [DjangoFilterBackend, drf_filters.OrderingFilter]
     filterset_class = filters.ProjectFilterSet
     ordering_fields = ["created", "modified", "title"]
+
+    def get_queryset(self):
+        show_drafts = self.request.query_params.get("show_drafts")
+
+        page_filters = {
+            "is_draft": True if show_drafts == "true" else False,
+            "is_public": True,
+            "state__in": [PageState.DRAFT]
+            if show_drafts == "true"
+            else [PageState.PUBLISHED, PageState.WAITING_TO_REPUBLISH],
+        }
+
+        self.queryset = self.queryset.prefetch_related(
+            Prefetch(
+                "sections",
+                queryset=(
+                    Section.objects.filter(is_public=True).prefetch_related(
+                        Prefetch("pages", queryset=Page.objects.filter(**page_filters))
+                    )
+                ),
+            ),
+            "sections__pages__created_by",
+        )
+
+        return super().get_queryset()
 
     @decorators.action(detail=True, url_path="datasources", methods=["get"])
     def datasources(self, request, **kwargs):
@@ -130,12 +137,19 @@ class PAProjectView(
     @decorators.action(detail=True, url_path="pages", methods=["get"])
     def pages(self, request, **kwargs):
         ordering = request.query_params.get("ordering")
+        show_drafts = self.request.query_params.get("show_drafts")
 
         if ordering not in ["created", "modified", "name", "-created", "-modified", "-name"]:
             ordering = "-created"
 
         pages = Page.objects.filter(
-            section__project=self.get_object(), section__is_public=True, is_public=True
+            section__project=self.get_object(),
+            section__is_public=True,
+            is_public=True,
+            state__in=[PageState.DRAFT]
+            if show_drafts == "true"
+            else [PageState.PUBLISHED, PageState.WAITING_TO_REPUBLISH],
+            is_draft=True if show_drafts == "true" else False,
         ).order_by(ordering)
 
         page = self.paginate_queryset(pages)
