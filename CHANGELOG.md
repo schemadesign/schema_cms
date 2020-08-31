@@ -1,3 +1,7 @@
+### (August 28, 2020) - Fixes
+
+Prompt user when leave route with unsaved changes
+
 ## 1.6.0 (August 26, 2020) - Release
 
 Added:
