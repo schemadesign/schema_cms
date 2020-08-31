@@ -1,0 +1,77 @@
+[
+  {
+    "key": "/schema-cms-app/CERTIFICATE_ARN",
+    "type": "String",
+    "value": "ARN to created certificate"
+  },
+  {
+    "key": "/schema-cms-app/DOMAIN_NAME",
+    "type": "String",
+    "value": "exmaple.com"
+  },
+  {
+    "key": "/schema-cms-app/DJANGO_DEBUG",
+    "type": "SecureString",
+    "value": "`on` if you want to see debug messages `off` if not"
+  },
+  {
+    "key": "/schema-cms-app/DJANGO_DEFAULT_FROM_EMAIL",
+    "type": "SecureString",
+    "value": "Verified domain email address that will be used to send emails for example admin@<your-domain-name>."
+  },
+  {
+    "key": "/schema-cms-app/DJANGO_HOST",
+    "type": "SecureString",
+    "value": "https://exmaple.com"
+  },
+  {
+    "key": "/schema-cms-app/DJANGO_WEBAPP_HOST",
+    "type": "SecureString",
+    "value": "https://exmaple.com"
+  },
+  {
+    "key": "/schema-cms-app/PUBLIC_API_URL",
+    "type": "SecureString",
+    "value": "`https:/api.example.com/` with `/` on the end"
+  },
+  {
+    "key": "/schema-cms-app/DJANGO_ROOT_PASSWORD",
+    "type": "SecureString",
+    "value": "Your password do django admin console."
+  },
+  {
+    "key": "/schema-cms-app/DJANGO_USER_MGMT_BACKEND",
+    "type": "SecureString",
+    "value": "schemacms.users.backend_management.auth0.Auth0UserManagement"
+  },
+  {
+    "key": "/schema-cms-app/DJANGO_SOCIAL_AUTH_AUTH0_DOMAIN",
+    "type": "SecureString",
+    "value": "Domain from created Auth0 `SINGLE PAGE APPLICATION`"
+  },
+  {
+    "key": "/schema-cms-app/DJANGO_SOCIAL_AUTH_AUTH0_KEY",
+    "type": "SecureString",
+    "value": "Client ID from created Auth0 `SINGLE PAGE APPLICATION`"
+  },
+  {
+    "key": "/schema-cms-app/DJANGO_SOCIAL_AUTH_AUTH0_SECRET",
+    "type": "SecureString",
+    "value": "Client Secret from created Auth0 `SINGLE PAGE APPLICATION`"
+  },
+  {
+    "key": "/schema-cms-app/DJANGO_USER_MGMT_AUTH0_DOMAIN",
+    "type": "SecureString",
+    "value": "Domain from created Auth0 `MACHINE TO MACHINE`"
+  },
+  {
+    "key": "/schema-cms-app/DJANGO_USER_MGMT_AUTH0_KEY",
+    "type": "SecureString",
+    "value": "Client ID from created Auth0 `MACHINE TO MACHINE`"
+  },
+  {
+    "key": "/schema-cms-app/DJANGO_USER_MGMT_AUTH0_SECRET",
+    "type": "SecureString",
+    "value": "Client Secret from created Auth0 `MACHINE TO MACHINE`"
+  }
+]

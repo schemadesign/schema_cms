@@ -10,6 +10,10 @@ bootstrap:
 	chmod +x ./cdk-bootstrap.sh
 	pipenv run $(AWS_VAULT) ./cdk-bootstrap.sh
 
+
+create-ssm-params:
+	pipenv run $(AWS_VAULT) python create_parameters.py
+
 deploy-base-infra:
 	pipenv run $(AWS_VAULT) node_modules/.bin/cdk deploy -e schema-cms-base;
 
