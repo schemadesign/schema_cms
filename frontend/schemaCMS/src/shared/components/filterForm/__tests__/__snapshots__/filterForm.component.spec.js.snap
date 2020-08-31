@@ -123,7 +123,6 @@ exports[`FilterForm: Component should render correctly 1`] = `
       <FormattedMessage
         defaultMessage="Are you sure you want to remove this filter?"
         id="shared.components.filterForm.removeTitle"
-        values={Object {}}
       />
     </Styled(H1)>
     <styled.div>
@@ -134,7 +133,6 @@ exports[`FilterForm: Component should render correctly 1`] = `
         <FormattedMessage
           defaultMessage="Cancel"
           id="shared.components.filterForm.cancelRemoval"
-          values={Object {}}
         />
       </BackButton>
       <NextButton
@@ -146,7 +144,6 @@ exports[`FilterForm: Component should render correctly 1`] = `
         <FormattedMessage
           defaultMessage="Confirm"
           id="shared.components.filterForm.confirmRemoval"
-          values={Object {}}
         />
       </NextButton>
     </styled.div>
@@ -240,7 +237,6 @@ exports[`FilterForm: Component should render create form 1`] = `
         <FormattedMessage
           defaultMessage="Filter Name"
           id="shared.components.filterForm.name"
-          values={Object {}}
         />
       }
       name="name"
@@ -271,7 +267,6 @@ exports[`FilterForm: Component should render create form 1`] = `
         <FormattedMessage
           defaultMessage="Field"
           id="shared.components.filterForm.field"
-          values={Object {}}
         />
       }
       name="field"
@@ -291,7 +286,6 @@ exports[`FilterForm: Component should render create form 1`] = `
         <FormattedMessage
           defaultMessage="Filter Type"
           id="shared.components.filterForm.filterType"
-          values={Object {}}
         />
       }
       name="filterType"
@@ -336,7 +330,6 @@ exports[`FilterForm: Component should render create form 1`] = `
           <FormattedMessage
             defaultMessage="Field Type"
             id="shared.components.filterForm.fieldType"
-            values={Object {}}
           />
         }
         name="fieldType"
@@ -391,7 +384,6 @@ exports[`FilterForm: Component should render create form 1`] = `
           <FormattedMessage
             defaultMessage="Unique items"
             id="shared.components.filterForm.unique"
-            values={Object {}}
           />
         }
         name="unique"
@@ -432,7 +424,6 @@ exports[`FilterForm: Component should render create form 1`] = `
         <FormattedMessage
           defaultMessage="Cancel"
           id="shared.components.filterForm.cancel"
-          values={Object {}}
         />
       </BackButton>
       <NextButton
@@ -443,7 +434,6 @@ exports[`FilterForm: Component should render create form 1`] = `
         <FormattedMessage
           defaultMessage="Save"
           id="shared.components.filterForm.saveFilter"
-          values={Object {}}
         />
       </NextButton>
     </NavigationContainer>
@@ -549,7 +539,6 @@ exports[`FilterForm: Component should render edit form 1`] = `
         <FormattedMessage
           defaultMessage="Filter Name"
           id="shared.components.filterForm.name"
-          values={Object {}}
         />
       }
       name="name"
@@ -580,7 +569,6 @@ exports[`FilterForm: Component should render edit form 1`] = `
         <FormattedMessage
           defaultMessage="Field"
           id="shared.components.filterForm.field"
-          values={Object {}}
         />
       }
       name="field"
@@ -600,7 +588,6 @@ exports[`FilterForm: Component should render edit form 1`] = `
         <FormattedMessage
           defaultMessage="Filter Type"
           id="shared.components.filterForm.filterType"
-          values={Object {}}
         />
       }
       name="filterType"
@@ -649,7 +636,6 @@ exports[`FilterForm: Component should render edit form 1`] = `
           <FormattedMessage
             defaultMessage="Field Type"
             id="shared.components.filterForm.fieldType"
-            values={Object {}}
           />
         }
         name="fieldType"
@@ -708,7 +694,6 @@ exports[`FilterForm: Component should render edit form 1`] = `
           <FormattedMessage
             defaultMessage="Unique items"
             id="shared.components.filterForm.unique"
-            values={Object {}}
           />
         }
         name="unique"
@@ -742,7 +727,6 @@ exports[`FilterForm: Component should render edit form 1`] = `
         <FormattedMessage
           defaultMessage="Remove filter"
           id="shared.components.filterForm.deleteFilter"
-          values={Object {}}
         />
       </Styled(Span)>
     </styled.div>
@@ -760,7 +744,6 @@ exports[`FilterForm: Component should render edit form 1`] = `
         <FormattedMessage
           defaultMessage="Back"
           id="shared.components.filterForm.back"
-          values={Object {}}
         />
       </BackButton>
       <NextButton
@@ -771,7 +754,6 @@ exports[`FilterForm: Component should render edit form 1`] = `
         <FormattedMessage
           defaultMessage="Save"
           id="shared.components.filterForm.saveFilter"
-          values={Object {}}
         />
       </NextButton>
     </NavigationContainer>
