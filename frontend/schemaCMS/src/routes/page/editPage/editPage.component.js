@@ -75,6 +75,7 @@ export const EditPage = ({
   pageAdditionalData,
   copyPage,
   publishPage,
+  match,
 }) => {
   const intl = useIntl();
   const [loading, setLoading] = useState(true);
@@ -153,7 +154,7 @@ export const EditPage = ({
 
   const handleConfirmLeavePage = async () => {
     try {
-      setPublishLoading(true);
+      setLeavingPageLoading(true);
       history.push(customLocation);
     } catch (e) {
       reportError(e);
@@ -161,9 +162,9 @@ export const EditPage = ({
     }
   };
 
-  const handlePromptMessage = location => {
-    if (!customLocation) {
-      setCustomLocation(location);
+  const handlePromptMessage = goToLocation => {
+    if (!customLocation && !goToLocation.pathname.includes(match.url)) {
+      setCustomLocation(goToLocation);
       setLeavingPageModalOpen(true);
       return false;
     }
@@ -313,7 +314,7 @@ export const EditPage = ({
           </NextButton>
         </ModalActions>
       </Modal>
-      <Prompt when={dirty} message={location => handlePromptMessage(location)} />
+      <Prompt when={dirty} message={goToLocation => handlePromptMessage(goToLocation)} />
     </Container>
   );
 };
@@ -326,6 +327,7 @@ EditPage.propTypes = {
   copyPage: PropTypes.func.isRequired,
   project: PropTypes.object.isRequired,
   page: PropTypes.object.isRequired,
+  match: PropTypes.object.isRequired,
   fetchPageAdditionalData: PropTypes.func.isRequired,
   pageAdditionalData: PropTypes.object.isRequired,
 };
