@@ -127,12 +127,7 @@ From project root directory:
 
     > NOTE: As domain names please enter two records. First is just your domain name and second is wild card name with asterisk (*.example.com), this allow protect all subdomains.
 3. Wait till `status` is `Issued`.
-
-### Create SSN parameters
-
-1. Copy file `infra/ssm_parameters.example.json` as `infra/ssm_parameters.json`.
-2. Fill parameters values.
-
+    
 ### Verify Domain in Amazon Simple Email Service
 [Amazon Simple Email Service](https://docs.aws.amazon.com/ses/latest/DeveloperGuide/Welcome.html) is used by Schema CMS to send emails.
 Unfortunately `AWS SES` is in `Sandbox` mode as default and because of that you can only send mail `to` and `from` verified email addresses and domains.
@@ -146,10 +141,52 @@ But before that at least one domain has to be verified. To do that follow this s
 
 > NOTE: Before AWS SES will be moved to Production mode mails can be send only to verified email addresses. You can verify emails following this [guide](https://docs.aws.amazon.com/ses/latest/DeveloperGuide/verify-email-addresses-procedure.html)
 
+
+### Create SSN parameters
+
+1. Copy file `infra/ssm_parameters.example.json` as `infra/ssm_parameters.json`.
+2. Fill parameters values.
+    - `/schema-cms-app/CERTIFICATE_ARN` - use `ARN` of certificate validated in previous step. You can find it in `Details` of your this certificate [here]((https://console.aws.amazon.com/acm)).
+    - `/schema-cms-app/DJANGO_DEBUG` - `on` if you want to see debug messages when error happens `off` if not.
+    - `/schema-cms-app/DJANGO_DEFAULT_FROM_EMAIL` - Verified domain email address that will be used to send emails for example `admin@example.com`.
+    - `/schema-cms-app/DOMAIN_NAME` - Domain that will be used to deploy Schema CMS e.g, `example.com`.
+    - `/schema-cms-app/DJANGO_HOST` - Domain with `https://` e.g, `https://example.com`.
+    - `/schema-cms-app/DJANGO_WEBAPP_HOST` - At this moment same value as `DJANGO_HOST`.
+    - `/schema-cms-app/PUBLIC_API_URL` - Subdomain `api` e.g, `https://api.example.com/` with `/` on the end.
+    - `/schema-cms-app/DJANGO_ROOT_PASSWORD` - Your password do django admin console.
+    - `/schema-cms-app/DJANGO_USER_MGMT_BACKEND` - `schemacms.users.backend_management.auth0.Auth0UserManagement`
+    - `/schema-cms-app/DJANGO_SOCIAL_AUTH_AUTH0_DOMAIN` - Domain from created Auth0 `SINGLE PAGE APPLICATION`.
+    - `/schema-cms-app/DJANGO_SOCIAL_AUTH_AUTH0_KEY"` - Client ID from created Auth0 `SINGLE PAGE APPLICATION`.
+    - `/schema-cms-app/DJANGO_SOCIAL_AUTH_AUTH0_SECRET"` - Client Secret from created Auth0 `SINGLE PAGE APPLICATION`.
+    - `/schema-cms-app/DJANGO_USER_MGMT_AUTH0_DOMAIN` - Domain from created Auth0 `MACHINE TO MACHINE`.
+    - `/schema-cms-app/DJANGO_USER_MGMT_AUTH0_KEY` - Client ID from created Auth0 `MACHINE TO MACHINE`.
+    - `/schema-cms-app/DJANGO_USER_MGMT_AUTH0_SECRET` - Client Secret from created Auth0 `MACHINE TO MACHINE`.
+    
 ### Deploy application
 
 From project root directory:
 
 1. Run `make build` to create and push docker images with application to AWS ECR. This step may take some time.
-2. After successful build run `make deploy-app`.
-3. Set app and public api domains in DNS by creating CNAME records pointing newly created ELB
+2. After successful build run `make deploy-app`. This step may take some time.
+3. When `deploy-app` step is done, you need find Load Balancer DNS name record in outputs, that looks similar to:
+    - `schema-cms-api.ApiServiceLoadBalancerDNSBF9EB7FC = schem-ApiSe-1PMWRS8JQDZ21-901620558.us-west-2.elb.amazonaws.com`
+    - or go to list of load balancers on selected region in [AWS Console](https://console.aws.amazon.com/ec2/v2/home?#LoadBalancers:sort=loadBalancerName) and copy `DNS name` from Schema load balancer
+3. Add to your DNS `CNAME` records pointing your domain and `api` subdomain to Load Balancer DNS name.
+    
+
+### Updating Schema CMS version
+
+During first deployment [AWS CodePipeline](https://console.aws.amazon.com/codesuite/codepipeline/pipelines) and [AWS CodeBuild](https://console.aws.amazon.com/codesuite/codebuild/projects) were deployed.
+Those services allow easily deploy selected branch,tag, commit etc. of Schema CMS.
+To deploy selected version of Schema CMS:
+
+1. Go to [AWS CodeBuild](https://console.aws.amazon.com/codesuite/codebuild/projects) on region where Schema CMS was deployed.
+2. Enter to  `SchemaCMS` build project.
+3. Click `Start build`.
+4. Put version you want deploy in `Source version - optional` filed.
+5. Click `Start build`.
+
+App will start deploying after couple of seconds. To monitor progress of deployment go to [AWS CodePipeline](https://console.aws.amazon.com/codesuite/codepipeline/pipelines)
+and enter `schema-cms-pipeline`.
+
+> NOTE: When `Build` stage is done next` Deploy` stage needs `manual approval` to run. `Approve` button will appear on` approve changes` block. Approve to finish deployment.                                                                                .

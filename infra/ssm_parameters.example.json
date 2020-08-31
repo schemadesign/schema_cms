@@ -17,7 +17,7 @@
   {
     "key": "/schema-cms-app/DJANGO_DEFAULT_FROM_EMAIL",
     "type": "SecureString",
-    "value": "`From` email used to send emails for example admin@<your-domain-name>"
+    "value": "Verified domain email address that will be used to send emails for example admin@<your-domain-name>."
   },
   {
     "key": "/schema-cms-app/DJANGO_HOST",
@@ -38,6 +38,11 @@
     "key": "/schema-cms-app/DJANGO_ROOT_PASSWORD",
     "type": "SecureString",
     "value": "Your password do django admin console."
+  },
+  {
+    "key": "/schema-cms-app/DJANGO_USER_MGMT_BACKEND",
+    "type": "SecureString",
+    "value": "schemacms.users.backend_management.auth0.Auth0UserManagement"
   },
   {
     "key": "/schema-cms-app/DJANGO_SOCIAL_AUTH_AUTH0_DOMAIN",
@@ -68,10 +73,5 @@
     "key": "/schema-cms-app/DJANGO_USER_MGMT_AUTH0_SECRET",
     "type": "SecureString",
     "value": "Client Secret from created Auth0 `MACHINE TO MACHINE`"
-  },
-  {
-    "key": "/schema-cms-app/DJANGO_USER_MGMT_BACKEND",
-    "type": "SecureString",
-    "value": "schemacms.users.backend_management.auth0.Auth0UserManagement"
   }
 ]
