@@ -1337,12 +1337,10 @@ exports[`DataSourceList: Component should render empty 1`] = `
   </ContextHeader>
   <LoadingWrapper
     error={null}
-    loading={false}
-    noData={true}
+    loading={true}
+    noData={false}
     noDataContent="No Data Sources"
-  >
-    <styled.section />
-  </LoadingWrapper>
+  />
   <NavigationContainer
     contentStyles={null}
     fixed={true}
