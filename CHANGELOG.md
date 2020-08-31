@@ -1,4 +1,4 @@
-## 1.7.0 (August 27, 2020) - Fixes
+### (August 27, 2020) - Fixes
 
 Changed redirecting user after reverting to the original file with data source
 
