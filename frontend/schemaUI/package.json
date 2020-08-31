@@ -28,6 +28,7 @@
     "babel-loader": "8.0.5",
     "babel-plugin-transform-es2015-modules-commonjs": "^6.26.2",
     "babel-preset-es2015": "^6.24.1",
+    "babel-preset-react-app": "^9.1.2",
     "chai": "^4.2.0",
     "chai-enzyme": "^1.0.0-beta.1",
     "chai-jest-diff": "^1.0.2",
