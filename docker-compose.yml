@@ -11,7 +11,7 @@ services:
       - "5432:5432"
 
   localstack:
-    image: localstack/localstack:0.11.3
+    image: localstack/localstack:0.11.4
     container_name: schema-cms-localstack
     ports:
       - "4566:4566"
@@ -62,12 +62,11 @@ services:
     environment:
       DOCKER_LAMBDA_STAY_OPEN: 1
       DOCKER_LAMBDA_WATCH: 1
-      AWS_STORAGE_BUCKET_NAME: schemacms
+      AWS_ENDPOINT_URL: http://localstack:4566
       IMAGE_SCRAPING_FETCH_TIMEOUT: "15"
       AWS_IMAGE_STORAGE_BUCKET_NAME: schemacms-images
-      AWS_IMAGE_STATIC_URL: http://localhost:4572/schemacms-images
+      AWS_IMAGE_STATIC_URL: http://localstack:4566/schemacms-images
       BACKEND_URL: http://backend:8000/api/v1
-      LAMBDA_AUTH_TOKEN: 97090e73a80c4692bbbf7dedc17c59e0
     volumes:
       - ./backend/functions/worker:/var/task:ro,delegated
     ports:

@@ -1,7 +1,10 @@
 ## [Unrelesead]
 
 ### Fixes
-Bump dependencies versions and fix mocking of redux-sagas/effects
+- Bump dependencies versions and fix mocking of redux-sagas/effects
+
+### Changes
+- README.md and documentation update
 
 ## 1.6.0 (August 26, 2020) - Release
 
