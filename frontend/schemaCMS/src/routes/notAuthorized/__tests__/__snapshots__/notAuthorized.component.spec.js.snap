@@ -12,14 +12,12 @@ exports[`NotAuthorized: Component should render correctly 1`] = `
       <FormattedMessage
         defaultMessage="Error"
         id="notFound.subTitle"
-        values={Object {}}
       />
     }
     headerTitle={
       <FormattedMessage
         defaultMessage="Schema CMS"
         id="notFound.title"
-        values={Object {}}
       />
     }
     isAdmin={true}
@@ -30,7 +28,6 @@ exports[`NotAuthorized: Component should render correctly 1`] = `
       <FormattedMessage
         defaultMessage="You don't have permissions to see this content."
         id="notAuthorized.description"
-        values={Object {}}
       />
     </H1>
   </styled.div>

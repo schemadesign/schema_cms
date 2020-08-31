@@ -21,7 +21,6 @@ exports[`DataWranglingDefaultScript: Component should render correctly 1`] = `
           "label": <FormattedMessage
             defaultMessage="Projects"
             id="jobDetail.projectsListPage"
-            values={Object {}}
           />,
           "to": "/project/",
           "type": "link_item",
@@ -37,7 +36,6 @@ exports[`DataWranglingDefaultScript: Component should render correctly 1`] = `
     <FormattedMessage
       defaultMessage="Description"
       id="dataWranglingScripts.dataWranglingDefaultScript.description"
-      values={Object {}}
     />
   </Component>
   <styled.div>
@@ -47,7 +45,6 @@ exports[`DataWranglingDefaultScript: Component should render correctly 1`] = `
     <FormattedMessage
       defaultMessage="Python Code"
       id="dataWranglingScripts.dataWranglingDefaultScript.pythonCode"
-      values={Object {}}
     />
   </Component>
   <SyntaxHighlighter
@@ -165,7 +162,6 @@ exports[`DataWranglingDefaultScript: Component should render correctly with load
           "label": <FormattedMessage
             defaultMessage="Projects"
             id="jobDetail.projectsListPage"
-            values={Object {}}
           />,
           "to": "/project/",
           "type": "link_item",
@@ -181,7 +177,6 @@ exports[`DataWranglingDefaultScript: Component should render correctly with load
     <FormattedMessage
       defaultMessage="Description"
       id="dataWranglingScripts.dataWranglingDefaultScript.description"
-      values={Object {}}
     />
   </Component>
   <styled.div>
@@ -191,7 +186,6 @@ exports[`DataWranglingDefaultScript: Component should render correctly with load
     <FormattedMessage
       defaultMessage="Python Code"
       id="dataWranglingScripts.dataWranglingDefaultScript.pythonCode"
-      values={Object {}}
     />
   </Component>
   <SyntaxHighlighter

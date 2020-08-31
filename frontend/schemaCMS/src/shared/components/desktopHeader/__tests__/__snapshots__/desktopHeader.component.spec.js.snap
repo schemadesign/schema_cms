@@ -92,14 +92,12 @@ exports[`DesktopTopHeader: Component should render correctly 1`] = `
           <FormattedMessage
             defaultMessage="Schema CMS"
             id="shared.components.desktopHeader.title"
-            values={Object {}}
           />
         </H2>
         <H1>
           <FormattedMessage
             defaultMessage="Menu"
             id="shared.components.desktopHeader.subtitle"
-            values={Object {}}
           />
         </H1>
         <styled.div
@@ -118,7 +116,6 @@ exports[`DesktopTopHeader: Component should render correctly 1`] = `
                 <FormattedMessage
                   defaultMessage="Projects"
                   id="shared.components.desktopHeader.projects"
-                  values={Object {}}
                 />
               </Link>
             </Styled(styled.div)>
@@ -136,7 +133,6 @@ exports[`DesktopTopHeader: Component should render correctly 1`] = `
                 <FormattedMessage
                   defaultMessage="About Schema CMS"
                   id="shared.components.desktopHeader.about"
-                  values={Object {}}
                 />
               </Link>
             </Styled(styled.div)>
@@ -152,7 +148,6 @@ exports[`DesktopTopHeader: Component should render correctly 1`] = `
                 <FormattedMessage
                   defaultMessage="API Doc"
                   id="shared.components.desktopHeader.api"
-                  values={Object {}}
                 />
               </Link>
             </Styled(styled.div)>
@@ -168,7 +163,6 @@ exports[`DesktopTopHeader: Component should render correctly 1`] = `
                 <FormattedMessage
                   defaultMessage="GitHub Repository"
                   id="shared.components.desktopHeader.repository"
-                  values={Object {}}
                 />
               </Link>
             </Styled(styled.div)>
@@ -229,14 +223,12 @@ exports[`DesktopTopHeader: Component should render correctly when no user 1`] = 
           <FormattedMessage
             defaultMessage="Schema CMS"
             id="shared.components.desktopHeader.title"
-            values={Object {}}
           />
         </H2>
         <H1>
           <FormattedMessage
             defaultMessage="Menu"
             id="shared.components.desktopHeader.subtitle"
-            values={Object {}}
           />
         </H1>
         <styled.div
@@ -255,7 +247,6 @@ exports[`DesktopTopHeader: Component should render correctly when no user 1`] = 
                 <FormattedMessage
                   defaultMessage="Projects"
                   id="shared.components.desktopHeader.projects"
-                  values={Object {}}
                 />
               </Link>
             </Styled(styled.div)>
@@ -273,7 +264,6 @@ exports[`DesktopTopHeader: Component should render correctly when no user 1`] = 
                 <FormattedMessage
                   defaultMessage="About Schema CMS"
                   id="shared.components.desktopHeader.about"
-                  values={Object {}}
                 />
               </Link>
             </Styled(styled.div)>
@@ -289,7 +279,6 @@ exports[`DesktopTopHeader: Component should render correctly when no user 1`] = 
                 <FormattedMessage
                   defaultMessage="API Doc"
                   id="shared.components.desktopHeader.api"
-                  values={Object {}}
                 />
               </Link>
             </Styled(styled.div)>
@@ -305,7 +294,6 @@ exports[`DesktopTopHeader: Component should render correctly when no user 1`] = 
                 <FormattedMessage
                   defaultMessage="GitHub Repository"
                   id="shared.components.desktopHeader.repository"
-                  values={Object {}}
                 />
               </Link>
             </Styled(styled.div)>
