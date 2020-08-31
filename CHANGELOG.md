@@ -1,9 +1,8 @@
 ## [Unreleased]
 
 ### Fixes
-Bump dependencies versions and fix mocking of redux-sagas/effects
 
-### (August 28, 2020) - Fixes
+Bump dependencies versions and fix mocking of redux-sagas/effects
 
 Prompt user when leave route with unsaved changes
 
