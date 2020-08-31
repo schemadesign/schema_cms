@@ -1,6 +1,13 @@
-### (August 27, 2020) - Fixes
+## [Unreleased]
 
-Changed redirecting user after reverting to the original file with data source
+### Fixes
+
+- Bump dependencies versions and fix mocking of redux-sagas/effects
+- Changed redirecting user after reverting to the original file with data source
+
+### Changes
+
+- README.md and documentation update
 
 ## 1.6.0 (August 26, 2020) - Release
 

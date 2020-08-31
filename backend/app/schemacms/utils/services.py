@@ -10,13 +10,13 @@ from schemacms.datasources import constants
 
 
 def get_s3():
-    return boto3.client("s3", endpoint_url=settings.AWS_S3_ENDPOINT_URL)
+    return boto3.client("s3", endpoint_url=settings.AWS_ENDPOINT_URL)
 
 
 def get_sqs():
     return boto3.client(
         "sqs",
-        endpoint_url=settings.AWS_SQS_ENDPOINT_URL,
+        endpoint_url=settings.AWS_ENDPOINT_URL,
         aws_access_key_id=settings.AWS_ACCESS_KEY_ID,
         aws_secret_access_key=settings.AWS_SECRET_ACCESS_KEY,
     )

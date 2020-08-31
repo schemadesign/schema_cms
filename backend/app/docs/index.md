@@ -1,4 +1,4 @@
-# schemacms
+# Schema CMS
 
 Check out the project's [documentation](https://github.com/schemadesign/schema_cms).
 
@@ -6,31 +6,53 @@ Check out the project's [documentation](https://github.com/schemadesign/schema_c
 
 - [Docker](https://docs.docker.com/docker-for-mac/install/)  
 
-# Initialize the project
+# Managing commands
 
-Initialize project environment variables using by docker-compose:
+Install packages:
+
 ```bash
-cp local.env.example local.env
+make setup
 ```
+
 
 Start the dev server for local development:
 
 ```bash
-docker-compose up
+make up
 ```
 
-Create a superuser to login to the admin:
+Make Django migrations:
 
 ```bash
-docker-compose run --rm backend ./manage.py createsuperuser
+make makemigrations
 ```
 
-Change root user password:
+Django migrate:
 
 ```bash
-docker-compose run --rm backend ./manage.py changepassword root
+make migrate
 ```
 
-# Continuous Deployment
+Enter backend container:
 
-Work in progress
+```bash
+make exec
+```
+
+Attach backend container:
+
+```bash
+make attach
+```
+
+Run backend test:
+
+```bash
+make pytest
+```
+
+Kill containers:
+
+```bash
+make down
+```

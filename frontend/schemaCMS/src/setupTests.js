@@ -12,6 +12,7 @@ import MockDate from 'mockdate';
 import dayjs from 'dayjs';
 import ReactModal from 'react-modal';
 import React from 'react';
+import * as effects from 'redux-saga/effects';
 
 Enzyme.configure({ adapter: new Adapter() });
 
@@ -27,6 +28,10 @@ MockDate.set('2019-12-01T01:00:00Z');
 ReactModal.setAppElement = Function.prototype;
 jest.doMock('react-modal', () => ReactModal);
 jest.doMock('dayjs', () => dayjs);
+jest.doMock('redux-saga/effects', () => ({
+  ...effects,
+  delay: () => {},
+}));
 jest.doMock('react-syntax-highlighter/dist/esm/styles/hljs', () => ({
   docco: {},
 }));

@@ -7,14 +7,12 @@ exports[`AddUser: Component should render correctly 1`] = `
       <FormattedMessage
         defaultMessage="Add Users"
         id="project.addUser.headerSubtitle"
-        values={Object {}}
       />
     }
     title={
       <FormattedMessage
         defaultMessage="Users"
         id="project.addUser.headerTitle"
-        values={Object {}}
       />
     }
   />
@@ -23,14 +21,12 @@ exports[`AddUser: Component should render correctly 1`] = `
       <FormattedMessage
         defaultMessage="Add Users"
         id="project.addUser.headerSubtitle"
-        values={Object {}}
       />
     }
     headerTitle={
       <FormattedMessage
         defaultMessage="Users"
         id="project.addUser.headerTitle"
-        values={Object {}}
       />
     }
     options={
@@ -44,7 +40,6 @@ exports[`AddUser: Component should render correctly 1`] = `
           "label": <FormattedMessage
             defaultMessage="Projects"
             id="project.view.projectsListPage"
-            values={Object {}}
           />,
           "to": "/project/",
           "type": "link_item",
@@ -57,7 +52,6 @@ exports[`AddUser: Component should render correctly 1`] = `
           "label": <FormattedMessage
             defaultMessage="Users"
             id="project.view.usersPage"
-            values={Object {}}
           />,
           "to": "/user/",
           "type": "link_item",
@@ -71,7 +65,6 @@ exports[`AddUser: Component should render correctly 1`] = `
           "label": <FormattedMessage
             defaultMessage="Project details"
             id="project.view.projectDetails"
-            values={Object {}}
           />,
           "to": "/project/1",
           "type": "link_item",
@@ -85,7 +78,6 @@ exports[`AddUser: Component should render correctly 1`] = `
           "label": <FormattedMessage
             defaultMessage="Data Sources"
             id="project.view.projectDataSources"
-            values={Object {}}
           />,
           "to": "/project/1/datasource",
           "type": "link_item",
@@ -98,7 +90,6 @@ exports[`AddUser: Component should render correctly 1`] = `
           "label": <FormattedMessage
             defaultMessage="Project Users"
             id="project.view.projectUsersPage"
-            values={Object {}}
           />,
           "to": "/project/1/user",
           "type": "link_item",
@@ -112,7 +103,6 @@ exports[`AddUser: Component should render correctly 1`] = `
           "label": <FormattedMessage
             defaultMessage="Content"
             id="project.view.content"
-            values={Object {}}
           />,
           "to": "/project/1/content",
           "type": "link_item",
@@ -125,7 +115,6 @@ exports[`AddUser: Component should render correctly 1`] = `
           "label": <FormattedMessage
             defaultMessage="Templates"
             id="project.view.templates"
-            values={Object {}}
           />,
           "to": "/project/1/templates",
           "type": "link_item",
@@ -141,7 +130,6 @@ exports[`AddUser: Component should render correctly 1`] = `
       <FormattedMessage
         defaultMessage="No users with role Editor available"
         id="project.addUser.noData"
-        values={Object {}}
       />
     }
   />
@@ -158,7 +146,6 @@ exports[`AddUser: Component should render correctly 1`] = `
       <FormattedMessage
         defaultMessage="Back"
         id="project.addUser.back"
-        values={Object {}}
       />
     </BackButton>
   </NavigationContainer>
@@ -172,14 +159,12 @@ exports[`AddUser: Component should render correctly with users 1`] = `
       <FormattedMessage
         defaultMessage="Add Users"
         id="project.addUser.headerSubtitle"
-        values={Object {}}
       />
     }
     title={
       <FormattedMessage
         defaultMessage="Users"
         id="project.addUser.headerTitle"
-        values={Object {}}
       />
     }
   />
@@ -188,14 +173,12 @@ exports[`AddUser: Component should render correctly with users 1`] = `
       <FormattedMessage
         defaultMessage="Add Users"
         id="project.addUser.headerSubtitle"
-        values={Object {}}
       />
     }
     headerTitle={
       <FormattedMessage
         defaultMessage="Users"
         id="project.addUser.headerTitle"
-        values={Object {}}
       />
     }
     options={
@@ -209,7 +192,6 @@ exports[`AddUser: Component should render correctly with users 1`] = `
           "label": <FormattedMessage
             defaultMessage="Projects"
             id="project.view.projectsListPage"
-            values={Object {}}
           />,
           "to": "/project/",
           "type": "link_item",
@@ -222,7 +204,6 @@ exports[`AddUser: Component should render correctly with users 1`] = `
           "label": <FormattedMessage
             defaultMessage="Users"
             id="project.view.usersPage"
-            values={Object {}}
           />,
           "to": "/user/",
           "type": "link_item",
@@ -236,7 +217,6 @@ exports[`AddUser: Component should render correctly with users 1`] = `
           "label": <FormattedMessage
             defaultMessage="Project details"
             id="project.view.projectDetails"
-            values={Object {}}
           />,
           "to": "/project/1",
           "type": "link_item",
@@ -250,7 +230,6 @@ exports[`AddUser: Component should render correctly with users 1`] = `
           "label": <FormattedMessage
             defaultMessage="Data Sources"
             id="project.view.projectDataSources"
-            values={Object {}}
           />,
           "to": "/project/1/datasource",
           "type": "link_item",
@@ -263,7 +242,6 @@ exports[`AddUser: Component should render correctly with users 1`] = `
           "label": <FormattedMessage
             defaultMessage="Project Users"
             id="project.view.projectUsersPage"
-            values={Object {}}
           />,
           "to": "/project/1/user",
           "type": "link_item",
@@ -277,7 +255,6 @@ exports[`AddUser: Component should render correctly with users 1`] = `
           "label": <FormattedMessage
             defaultMessage="Content"
             id="project.view.content"
-            values={Object {}}
           />,
           "to": "/project/1/content",
           "type": "link_item",
@@ -290,7 +267,6 @@ exports[`AddUser: Component should render correctly with users 1`] = `
           "label": <FormattedMessage
             defaultMessage="Templates"
             id="project.view.templates"
-            values={Object {}}
           />,
           "to": "/project/1/templates",
           "type": "link_item",
@@ -306,7 +282,6 @@ exports[`AddUser: Component should render correctly with users 1`] = `
       <FormattedMessage
         defaultMessage="No users with role Editor available"
         id="project.addUser.noData"
-        values={Object {}}
       />
     }
   >
@@ -424,7 +399,6 @@ exports[`AddUser: Component should render correctly with users 1`] = `
       <FormattedMessage
         defaultMessage="Back"
         id="project.addUser.back"
-        values={Object {}}
       />
     </BackButton>
   </NavigationContainer>

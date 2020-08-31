@@ -43,7 +43,7 @@ Then('invited user receive(d) an email with the invitation link', () => {
   });
 });
 
-When('I( have) invite(d) new user to SchemaCMS', () => {
+When('I( have) invite(d) new user to Schema CMS', () => {
   browser.call(async () => {
     const auth = await getAuth();
     await deleteEmails(auth, INVITATION_QUERY, await getEmails(auth, INVITATION_QUERY));

@@ -1,6 +1,6 @@
 {
-  "name": "SchemaCMS",
-  "description": "Chrome Extension for SchemaCMS",
+  "name": "Schema CMS",
+  "description": "Chrome Extension for Schema CMS",
   "browser_action": {
     "default_popup": "popup.html"
   },

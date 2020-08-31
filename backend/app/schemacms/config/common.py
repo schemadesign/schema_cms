@@ -292,19 +292,25 @@ class Common(Configuration):
 
     LOCAL_LAMBDA = False
 
-    AWS_S3_ENDPOINT_URL = os.getenv("AWS_S3_ENDPOINT_URL")
+    AWS_ENDPOINT_URL = os.getenv("AWS_ENDPOINT_URL", None)
+    AWS_S3_ENDPOINT_URL = AWS_ENDPOINT_URL
+
     AWS_ACCESS_KEY_ID = os.getenv("AWS_ACCESS_KEY_ID")
     AWS_SECRET_ACCESS_KEY = os.getenv("AWS_SECRET_ACCESS_KEY")
     AWS_STORAGE_BUCKET_NAME = os.getenv("AWS_STORAGE_BUCKET_NAME")
     AWS_STORAGE_PAGES_BUCKET_NAME = os.getenv("AWS_STORAGE_PAGES_BUCKET_NAME")
     AWS_DEFAULT_ACL = None
 
-    AWS_SQS_ENDPOINT_URL = os.getenv("SQS_ENDPOINT_URL")
     BASE_QUEUE_LIMIT = 52428800  # bytes, 50MB
     EXT_QUEUE_LIMIT = 241172480  # bytes, 230MB
-    SQS_WORKER_QUEUE_URL = os.getenv("SQS_WORKER_QUEUE_URL")
-    SQS_WORKER_EXT_QUEUE_URL = os.getenv("SQS_WORKER_EXT_QUEUE_URL")
-    SQS_WORKER_MAX_QUEUE_URL = os.getenv("SQS_WORKER_MAX_QUEUE_URL")
+
+    SQS_WORKER_QUEUE_URL = os.getenv("SQS_WORKER_QUEUE_URL", "http://localstack:4566/queue/schemacms-queue")
+    SQS_WORKER_EXT_QUEUE_URL = os.getenv(
+        "SQS_WORKER_EXT_QUEUE_URL", "http://localstack:4566/queue/schemacms-queue"
+    )
+    SQS_WORKER_MAX_QUEUE_URL = os.getenv(
+        "SQS_WORKER_MAX_QUEUE_URL", "http://localstack:4566/queue/schemacms-queue"
+    )
 
     # Allow lambda function to call API endpoint
     LAMBDA_AUTH_TOKEN = os.getenv("LAMBDA_AUTH_TOKEN")

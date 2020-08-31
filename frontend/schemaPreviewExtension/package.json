@@ -1,7 +1,7 @@
 {
   "name": "SchemaCMS",
   "version": "0.0.1",
-  "description": "Chrome Extension for SchemaCMS",
+  "description": "Chrome Extension for Schema CMS",
   "scripts": {
     "build": "node utils/build.js",
     "start": "node utils/webserver.js"

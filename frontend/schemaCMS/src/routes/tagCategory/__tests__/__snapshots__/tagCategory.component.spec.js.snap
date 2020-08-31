@@ -7,14 +7,12 @@ exports[`TagCategory: Component should render correctly 1`] = `
       <FormattedMessage
         defaultMessage="Edit"
         id="tagCategory.subTitle"
-        values={Object {}}
       />
     }
     headerTitle={
       <FormattedMessage
         defaultMessage="Tag Category"
         id="tagCategory.title"
-        values={Object {}}
       />
     }
     options={Array []}
@@ -24,14 +22,12 @@ exports[`TagCategory: Component should render correctly 1`] = `
       <FormattedMessage
         defaultMessage="Edit"
         id="tagCategory.subTitle"
-        values={Object {}}
       />
     }
     title={
       <FormattedMessage
         defaultMessage="Tag Category"
         id="tagCategory.title"
-        values={Object {}}
       />
     }
   />
@@ -176,7 +172,6 @@ exports[`TagCategory: Component should render correctly 1`] = `
           <FormattedMessage
             defaultMessage="Back"
             id="tagCategory.back"
-            values={Object {}}
           />
         </BackButton>
         <NextButton
@@ -187,7 +182,6 @@ exports[`TagCategory: Component should render correctly 1`] = `
           <FormattedMessage
             defaultMessage="Save"
             id="tagCategory.saveTagCategory"
-            values={Object {}}
           />
         </NextButton>
       </NavigationContainer>
@@ -232,7 +226,6 @@ exports[`TagCategory: Component should render correctly 1`] = `
       <FormattedMessage
         defaultMessage="Are you sure you want to remove this tag category?"
         id="tagCategory.removeTitle"
-        values={Object {}}
       />
     </Styled(H1)>
     <styled.div>
@@ -243,7 +236,6 @@ exports[`TagCategory: Component should render correctly 1`] = `
         <FormattedMessage
           defaultMessage="Cancel"
           id="tagCategory.cancelRemoval"
-          values={Object {}}
         />
       </BackButton>
       <NextButton
@@ -255,7 +247,6 @@ exports[`TagCategory: Component should render correctly 1`] = `
         <FormattedMessage
           defaultMessage="Confirm"
           id="tagCategory.confirmRemoval"
-          values={Object {}}
         />
       </NextButton>
     </styled.div>
@@ -270,14 +261,12 @@ exports[`TagCategory: Component should render correctly with loader 1`] = `
       <FormattedMessage
         defaultMessage="Edit"
         id="tagCategory.subTitle"
-        values={Object {}}
       />
     }
     headerTitle={
       <FormattedMessage
         defaultMessage="Tag Category"
         id="tagCategory.title"
-        values={Object {}}
       />
     }
     options={Array []}
@@ -287,14 +276,12 @@ exports[`TagCategory: Component should render correctly with loader 1`] = `
       <FormattedMessage
         defaultMessage="Edit"
         id="tagCategory.subTitle"
-        values={Object {}}
       />
     }
     title={
       <FormattedMessage
         defaultMessage="Tag Category"
         id="tagCategory.title"
-        values={Object {}}
       />
     }
   />
@@ -438,7 +425,6 @@ exports[`TagCategory: Component should render correctly with loader 1`] = `
           <FormattedMessage
             defaultMessage="Back"
             id="tagCategory.back"
-            values={Object {}}
           />
         </BackButton>
         <NextButton
@@ -449,7 +435,6 @@ exports[`TagCategory: Component should render correctly with loader 1`] = `
           <FormattedMessage
             defaultMessage="Save"
             id="tagCategory.saveTagCategory"
-            values={Object {}}
           />
         </NextButton>
       </NavigationContainer>
@@ -494,7 +479,6 @@ exports[`TagCategory: Component should render correctly with loader 1`] = `
       <FormattedMessage
         defaultMessage="Are you sure you want to remove this tag category?"
         id="tagCategory.removeTitle"
-        values={Object {}}
       />
     </Styled(H1)>
     <styled.div>
@@ -505,7 +489,6 @@ exports[`TagCategory: Component should render correctly with loader 1`] = `
         <FormattedMessage
           defaultMessage="Cancel"
           id="tagCategory.cancelRemoval"
-          values={Object {}}
         />
       </BackButton>
       <NextButton
@@ -517,7 +500,6 @@ exports[`TagCategory: Component should render correctly with loader 1`] = `
         <FormattedMessage
           defaultMessage="Confirm"
           id="tagCategory.confirmRemoval"
-          values={Object {}}
         />
       </NextButton>
     </styled.div>

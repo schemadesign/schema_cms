@@ -5,7 +5,6 @@ exports[`Loading: Component should render correctly 1`] = `
   <FormattedMessage
     defaultMessage="Loading..."
     id="shared.components.loading.loading"
-    values={Object {}}
   />
 </styled.div>
 `;

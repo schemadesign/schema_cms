@@ -40,7 +40,6 @@ exports[`LogoutModal: Component should be hidden 1`] = `
     <FormattedMessage
       defaultMessage="Are you sure you want to log out?"
       id="shared.components.logoutModal.title"
-      values={Object {}}
     />
   </Styled(H1)>
   <styled.div>
@@ -51,7 +50,6 @@ exports[`LogoutModal: Component should be hidden 1`] = `
       <FormattedMessage
         defaultMessage="Cancel"
         id="shared.components.logoutModal.cancel"
-        values={Object {}}
       />
     </BackButton>
     <ConfirmLink
@@ -61,7 +59,6 @@ exports[`LogoutModal: Component should be hidden 1`] = `
       <FormattedMessage
         defaultMessage="Confirm"
         id="shared.components.logoutModal.confirm"
-        values={Object {}}
       />
     </ConfirmLink>
   </styled.div>
@@ -108,7 +105,6 @@ exports[`LogoutModal: Component should render correctly 1`] = `
     <FormattedMessage
       defaultMessage="Are you sure you want to log out?"
       id="shared.components.logoutModal.title"
-      values={Object {}}
     />
   </Styled(H1)>
   <styled.div>
@@ -119,7 +115,6 @@ exports[`LogoutModal: Component should render correctly 1`] = `
       <FormattedMessage
         defaultMessage="Cancel"
         id="shared.components.logoutModal.cancel"
-        values={Object {}}
       />
     </BackButton>
     <ConfirmLink
@@ -129,7 +124,6 @@ exports[`LogoutModal: Component should render correctly 1`] = `
       <FormattedMessage
         defaultMessage="Confirm"
         id="shared.components.logoutModal.confirm"
-        values={Object {}}
       />
     </ConfirmLink>
   </styled.div>

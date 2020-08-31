@@ -8,14 +8,12 @@ exports[`Settings: Component should render correctly 1`] = `
       <FormattedMessage
         defaultMessage="My Profile"
         id="settings.subTitle"
-        values={Object {}}
       />
     }
     headerTitle={
       <FormattedMessage
         defaultMessage="Schema CMS"
         id="settings.title"
-        values={Object {}}
       />
     }
     options={
@@ -29,7 +27,6 @@ exports[`Settings: Component should render correctly 1`] = `
           "label": <FormattedMessage
             defaultMessage="Projects"
             id="settings.projectsListPage"
-            values={Object {}}
           />,
           "to": "/project/",
           "type": "link_item",
@@ -42,7 +39,6 @@ exports[`Settings: Component should render correctly 1`] = `
           "label": <FormattedMessage
             defaultMessage="Users"
             id="settings.usersPage"
-            values={Object {}}
           />,
           "to": "/user/",
           "type": "link_item",
@@ -55,14 +51,12 @@ exports[`Settings: Component should render correctly 1`] = `
       <FormattedMessage
         defaultMessage="My Profile"
         id="settings.subTitle"
-        values={Object {}}
       />
     }
     title={
       <FormattedMessage
         defaultMessage="Schema CMS"
         id="settings.title"
-        values={Object {}}
       />
     }
   />
@@ -227,14 +221,12 @@ exports[`Settings: Component should render correctly 2`] = `
       <FormattedMessage
         defaultMessage="My Profile"
         id="settings.subTitle"
-        values={Object {}}
       />
     }
     headerTitle={
       <FormattedMessage
         defaultMessage="Schema CMS"
         id="settings.title"
-        values={Object {}}
       />
     }
     options={
@@ -248,7 +240,6 @@ exports[`Settings: Component should render correctly 2`] = `
           "label": <FormattedMessage
             defaultMessage="Projects"
             id="settings.projectsListPage"
-            values={Object {}}
           />,
           "to": "/project/",
           "type": "link_item",
@@ -261,7 +252,6 @@ exports[`Settings: Component should render correctly 2`] = `
           "label": <FormattedMessage
             defaultMessage="Users"
             id="settings.usersPage"
-            values={Object {}}
           />,
           "to": "/user/",
           "type": "link_item",
@@ -274,14 +264,12 @@ exports[`Settings: Component should render correctly 2`] = `
       <FormattedMessage
         defaultMessage="My Profile"
         id="settings.subTitle"
-        values={Object {}}
       />
     }
     title={
       <FormattedMessage
         defaultMessage="Schema CMS"
         id="settings.title"
-        values={Object {}}
       />
     }
   />
@@ -562,7 +550,6 @@ exports[`Settings: Component should render correctly form 1`] = `
         <FormattedMessage
           defaultMessage="Reset password"
           id="settings.resetPassword"
-          values={Object {}}
         />
       </Styled(Span)>
     </styled.div>
@@ -587,7 +574,6 @@ exports[`Settings: Component should render correctly form 1`] = `
         <FormattedMessage
           defaultMessage="Save"
           id="settings.save"
-          values={Object {}}
         />
       </NextButton>
     </NavigationContainer>
@@ -724,7 +710,6 @@ exports[`Settings: Component should render form without reset password link 1`] 
         <FormattedMessage
           defaultMessage="Save"
           id="settings.save"
-          values={Object {}}
         />
       </NextButton>
     </NavigationContainer>

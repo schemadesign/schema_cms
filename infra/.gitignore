@@ -8,3 +8,4 @@ __pycache__
 node_modules
 dist
 schema_cms_infra.egg-info
+ssm_parameters.json
