@@ -1,3 +1,7 @@
+## 1.7.0 (August 27, 2020) - Fixes
+
+Changed redirecting user after reverting to the original file with data source
+
 ## 1.6.0 (August 26, 2020) - Release
 
 Added:
