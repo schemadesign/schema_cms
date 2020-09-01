@@ -1,3 +1,8 @@
+### Fixes
+
+Added number of tags to the data source tile
+Fixed snapshot test for number of tags
+
 ## 1.9.0 (August 18, 2020) - Change
 
 Automation tests:
