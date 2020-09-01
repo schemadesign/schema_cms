@@ -13,7 +13,7 @@ export const defaultProps = {
   createDataSource: Function.prototype,
   fetchDataSources: Function.prototype,
   cancelFetchListLoop: Function.prototype,
-  dataSources: [{ tags: 0 }],
+  dataSources: [],
   uploadingDataSources: [{ id: 20, progress: 50 }, { id: 18, error: new Error('error') }],
   history,
   intl,

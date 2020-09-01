@@ -211,7 +211,7 @@ exports[`DataSourceList: Component should render correctly 1`] = `
               <ForwardRef(styled.span)
                 id="metaItemValue-4"
               >
-                —
+                2
               </ForwardRef(styled.span)>
             </ForwardRef(styled.div)>
           </ForwardRef(styled.div)>
@@ -421,7 +421,7 @@ exports[`DataSourceList: Component should render correctly 1`] = `
               <ForwardRef(styled.span)
                 id="metaItemValue-4"
               >
-                —
+                2
               </ForwardRef(styled.span)>
             </ForwardRef(styled.div)>
           </ForwardRef(styled.div)>
@@ -631,7 +631,7 @@ exports[`DataSourceList: Component should render correctly 1`] = `
               <ForwardRef(styled.span)
                 id="metaItemValue-4"
               >
-                —
+                2
               </ForwardRef(styled.span)>
             </ForwardRef(styled.div)>
           </ForwardRef(styled.div)>
@@ -841,7 +841,7 @@ exports[`DataSourceList: Component should render correctly 1`] = `
               <ForwardRef(styled.span)
                 id="metaItemValue-4"
               >
-                —
+                2
               </ForwardRef(styled.span)>
             </ForwardRef(styled.div)>
           </ForwardRef(styled.div)>
@@ -1051,7 +1051,7 @@ exports[`DataSourceList: Component should render correctly 1`] = `
               <ForwardRef(styled.span)
                 id="metaItemValue-4"
               >
-                —
+                2
               </ForwardRef(styled.span)>
             </ForwardRef(styled.div)>
           </ForwardRef(styled.div)>
@@ -1337,10 +1337,12 @@ exports[`DataSourceList: Component should render empty 1`] = `
   </ContextHeader>
   <LoadingWrapper
     error={null}
-    loading={true}
-    noData={false}
+    loading={false}
+    noData={true}
     noDataContent="No Data Sources"
-  />
+  >
+    <styled.section />
+  </LoadingWrapper>
   <NavigationContainer
     contentStyles={null}
     fixed={true}
