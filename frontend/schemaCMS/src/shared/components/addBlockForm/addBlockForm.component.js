@@ -117,7 +117,7 @@ export const AddBlockForm = ({ fetchBlockTemplates, projectId, backUrl, blockTem
   };
 
   const handlePromptMessage = goToLocation => {
-    if (!customLocation && !goToLocation.pathname.includes(match.url)) {
+    if (!customLocation && !goToLocation.pathname !== match.url) {
       setCustomLocation(goToLocation);
       setLeavingPageModalOpen(true);
       return false;

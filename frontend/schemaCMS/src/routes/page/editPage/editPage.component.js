@@ -163,7 +163,7 @@ export const EditPage = ({
   };
 
   const handlePromptMessage = goToLocation => {
-    if (!customLocation && !goToLocation.pathname.includes(match.url)) {
+    if (!customLocation && goToLocation.pathname !== match.url) {
       setCustomLocation(goToLocation);
       setLeavingPageModalOpen(true);
       return false;
