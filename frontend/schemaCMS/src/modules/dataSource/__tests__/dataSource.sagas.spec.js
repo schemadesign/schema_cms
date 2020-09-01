@@ -322,10 +322,13 @@ describe('DataSource: sagas', () => {
     });
   });
 
-  describe('revertToJob', () => {
+  describe('revertToJob to not original file', () => {
     it('should dispatch a success action', async () => {
+      jest.spyOn(browserHistory, 'push');
+
+      const scripts = [{ id: 1, options: {}, execOrder: 0 }];
       const payload = { jobId: '1', dataSourceId: '1' };
-      const response = { id: '1' };
+      const response = { id: '1', activeJob: { scripts } };
 
       mockApi
         .post(`${DATA_SOURCES_PATH}/${payload.dataSourceId}/revert-job`, { id: payload.jobId })
@@ -336,6 +339,26 @@ describe('DataSource: sagas', () => {
         .put(DataSourceRoutines.revertToJob.success(response))
         .dispatch(DataSourceRoutines.revertToJob(payload))
         .silentRun();
+      expect(browserHistory.push).toBeCalledWith('/datasource/1/result');
+    });
+  });
+  describe('revertToJob to original file', () => {
+    it('should dispatch a success action', async () => {
+      jest.spyOn(browserHistory, 'push');
+
+      const scripts = [];
+      const payload = { jobId: '1', dataSourceId: '1' };
+      const response = { id: '1', activeJob: { scripts } };
+
+      mockApi
+        .post(`${DATA_SOURCES_PATH}/${payload.dataSourceId}/revert-job`, { id: payload.jobId })
+        .reply(OK, response);
+      await expectSaga(watchDataSource)
+        .withState(defaultState)
+        .put(DataSourceRoutines.revertToJob.success(response))
+        .dispatch(DataSourceRoutines.revertToJob(payload))
+        .silentRun();
+      expect(browserHistory.push).toBeCalledWith('/datasource/1/preview');
     });
   });
 });
