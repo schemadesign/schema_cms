@@ -158,12 +158,12 @@ export const EditPage = ({
       history.push(customLocation);
     } catch (e) {
       reportError(e);
-      setPublishLoading(false);
+      setLeavingPageLoading(false);
     }
   };
 
   const handlePromptMessage = goToLocation => {
-    if (!customLocation && !goToLocation.pathname.includes(match.url)) {
+    if (!customLocation && goToLocation.pathname !== match.url) {
       setCustomLocation(goToLocation);
       setLeavingPageModalOpen(true);
       return false;
@@ -287,7 +287,7 @@ export const EditPage = ({
             loading={publishLoading}
             disabled={publishLoading}
           >
-            <FormattedMessage {...messages.confirmPublish} />
+            <FormattedMessage {...messages.confirm} />
           </NextButton>
         </ModalActions>
       </Modal>
@@ -310,7 +310,7 @@ export const EditPage = ({
             loading={leavingPageLoading}
             disabled={leavingPageLoading}
           >
-            <FormattedMessage {...messages.confirmPublish} />
+            <FormattedMessage {...messages.confirm} />
           </NextButton>
         </ModalActions>
       </Modal>

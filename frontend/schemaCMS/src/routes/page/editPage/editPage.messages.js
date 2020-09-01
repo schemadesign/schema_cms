@@ -42,8 +42,8 @@ export default defineMessages({
     id: 'page.editPage.cancelLeavePage',
     defaultMessage: 'Cancel',
   },
-  confirmPublish: {
-    id: 'page.editPage.confirmPublish',
+  confirm: {
+    id: 'page.editPage.confirm',
     defaultMessage: 'Confirm',
   },
   confirmPublishing: {

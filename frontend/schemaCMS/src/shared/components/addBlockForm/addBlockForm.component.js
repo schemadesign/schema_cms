@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import { useEffectOnce } from 'react-use';
 import { useFormik } from 'formik';
 import { FormattedMessage, useIntl } from 'react-intl';
-import { useHistory, useLocation } from 'react-router';
+import { Prompt, useHistory, useLocation } from 'react-router';
 import { propEq, find, map, omit, pipe, prepend, always, defaultTo } from 'ramda';
 
 import { SelectContainer } from './addBlockForm.styles';
@@ -27,10 +27,14 @@ import {
   getDefaultBlockElement,
 } from '../../../modules/blockTemplates/blockTemplates.constants';
 import { renderWhenTrue } from '../../utils/rendering';
+import { Modal, ModalActions, modalStyles, ModalTitle } from '../modal/modal.styles';
 
-export const AddBlockForm = ({ fetchBlockTemplates, projectId, backUrl, blockTemplates }) => {
+export const AddBlockForm = ({ fetchBlockTemplates, projectId, backUrl, blockTemplates, match }) => {
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
+  const [customLocation, setCustomLocation] = useState(false);
+  const [leavingPageModalOpen, setLeavingPageModalOpen] = useState(false);
+  const [leavingPageLoading, setLeavingPageLoading] = useState(false);
   const history = useHistory();
   const intl = useIntl();
   const { state = {} } = useLocation();
@@ -42,7 +46,6 @@ export const AddBlockForm = ({ fetchBlockTemplates, projectId, backUrl, blockTem
     })),
     prepend({ label: blankMessage, value: 0 })
   )(blockTemplates);
-
   const { handleSubmit, handleChange, values, isValid, dirty, setFieldValue, ...restFormikProps } = useFormik({
     initialValues: INITIAL_VALUES_ADD_BLOCK,
     enableReinitialize: true,
@@ -71,7 +74,7 @@ export const AddBlockForm = ({ fetchBlockTemplates, projectId, backUrl, blockTem
           ...page,
           [PAGE_BLOCKS]: [...blocks, { ...rest, name, key: Date.now(), type: name, block: id, elements }],
         };
-
+        setCustomLocation(true);
         history.push(backUrl, { page: updatedPage });
       } catch (errors) {
         reportError(errors);
@@ -102,6 +105,29 @@ export const AddBlockForm = ({ fetchBlockTemplates, projectId, backUrl, blockTem
       }
     })();
   });
+
+  const handleConfirmLeavePage = async () => {
+    try {
+      setLeavingPageLoading(true);
+      history.push(customLocation);
+    } catch (e) {
+      reportError(e);
+      setLeavingPageLoading(false);
+    }
+  };
+
+  const handlePromptMessage = goToLocation => {
+    if (!customLocation && !goToLocation.pathname !== match.url) {
+      setCustomLocation(goToLocation);
+      setLeavingPageModalOpen(true);
+      return false;
+    }
+  };
+
+  const handleBackButtonClick = () => {
+    setLeavingPageModalOpen(false);
+    setCustomLocation(false);
+  };
 
   const renderBlockTemplateElements = blockType =>
     renderWhenTrue(
@@ -145,6 +171,7 @@ export const AddBlockForm = ({ fetchBlockTemplates, projectId, backUrl, blockTem
             options={blocksOptions}
             onSelect={handleSelectType}
             placeholder={intl.formatMessage(messages[`${BLOCK_TYPE}Placeholder`])}
+            dirty={dirty}
             {...restFormikProps}
           />
         </SelectContainer>
@@ -158,6 +185,30 @@ export const AddBlockForm = ({ fetchBlockTemplates, projectId, backUrl, blockTem
           </NextButton>
         </NavigationContainer>
       </form>
+      <Modal
+        ariaHideApp={false}
+        isOpen={leavingPageModalOpen}
+        contentLabel={intl.formatMessage(messages.confirmLeavingPage)}
+        style={modalStyles}
+      >
+        <ModalTitle>
+          <FormattedMessage {...messages.leavingPageTitle} />
+        </ModalTitle>
+        <ModalActions>
+          <BackButton onClick={handleBackButtonClick} disabled={leavingPageLoading}>
+            <FormattedMessage {...messages.cancelLeavePage} />
+          </BackButton>
+          <NextButton
+            id="confirmLeavingPageBtn"
+            onClick={handleConfirmLeavePage}
+            loading={leavingPageLoading}
+            disabled={leavingPageLoading}
+          >
+            <FormattedMessage {...messages.confirm} />
+          </NextButton>
+        </ModalActions>
+      </Modal>
+      <Prompt when={dirty} message={goToLocation => handlePromptMessage(goToLocation)} />
     </LoadingWrapper>
   );
 };
@@ -167,4 +218,5 @@ AddBlockForm.propTypes = {
   blockTemplates: PropTypes.array.isRequired,
   projectId: PropTypes.number.isRequired,
   backUrl: PropTypes.string.isRequired,
+  match: PropTypes.object.isRequired,
 };

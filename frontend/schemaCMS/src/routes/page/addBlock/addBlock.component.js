@@ -51,14 +51,13 @@ const getBreadcrumbsItems = (project, section, page) => [
   },
 ];
 
-export const AddBlock = ({ fetchBlockTemplates, project, userRole, blockTemplates, page }) => {
+export const AddBlock = ({ fetchBlockTemplates, project, userRole, blockTemplates, page, match }) => {
   const intl = useIntl();
   const { pageId } = useParams();
   const projectId = project.id;
   const title = intl.formatMessage(messages.title);
   const subtitle = intl.formatMessage(messages.subtitle);
   const menuOptions = getProjectMenuOptions(projectId);
-
   return (
     <Container>
       <Helmet title={title} />
@@ -70,6 +69,7 @@ export const AddBlock = ({ fetchBlockTemplates, project, userRole, blockTemplate
         projectId={projectId}
         blockTemplates={blockTemplates}
         backUrl={`/page/${pageId}`}
+        match={match}
       />
     </Container>
   );
@@ -81,4 +81,5 @@ AddBlock.propTypes = {
   project: PropTypes.object.isRequired,
   page: PropTypes.object.isRequired,
   userRole: PropTypes.string.isRequired,
+  match: PropTypes.object.isRequired,
 };

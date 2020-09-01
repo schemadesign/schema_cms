@@ -11,6 +11,22 @@ export default defineMessages({
     id: 'page.addBlock.subtitle',
     defaultMessage: 'Add',
   },
+  confirmLeavingPage: {
+    id: 'page.addBlock.confirmLeavingPage',
+    defaultMessage: 'Confirm leaving page',
+  },
+  cancelLeavePage: {
+    id: 'page.addBlock.cancelLeavePage',
+    defaultMessage: 'Cancel',
+  },
+  leavingPageTitle: {
+    id: 'page.addBlock.leavingPageTitle',
+    defaultMessage: 'You have unsaved changes. Are you sure you want to leave?',
+  },
+  confirm: {
+    id: 'page.addBlock.confirm',
+    defaultMessage: 'Confirm',
+  },
   [BLOCK_TYPE]: {
     id: `page.addBlock.${BLOCK_TYPE}`,
     defaultMessage: 'Block Type',

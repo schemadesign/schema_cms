@@ -13,6 +13,8 @@
 ### Changes
 - README.md and documentation update
 
+Fix the case when user is leaving the edit page in order to add block and back
+
 ## 1.6.0 (August 26, 2020) - Release
 
 Added:
