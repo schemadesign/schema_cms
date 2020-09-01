@@ -7,14 +7,12 @@ exports[`Preview: Component should render correctly 1`] = `
       <FormattedMessage
         defaultMessage="Preview"
         id="job.preview.subTitile"
-        values={Object {}}
       />
     }
     headerTitle={
       <FormattedMessage
         defaultMessage="Job"
         id="job.preview.pageTitle"
-        values={Object {}}
       />
     }
     options={
@@ -28,7 +26,6 @@ exports[`Preview: Component should render correctly 1`] = `
           "label": <FormattedMessage
             defaultMessage="Projects"
             id="jobDetail.projectsListPage"
-            values={Object {}}
           />,
           "to": "/project/",
           "type": "link_item",
@@ -41,14 +38,12 @@ exports[`Preview: Component should render correctly 1`] = `
       <FormattedMessage
         defaultMessage="Preview"
         id="job.preview.subTitile"
-        values={Object {}}
       />
     }
     title={
       <FormattedMessage
         defaultMessage="Job"
         id="job.preview.pageTitle"
-        values={Object {}}
       />
     }
   />
@@ -149,14 +144,12 @@ exports[`Preview: Component should render correctly with loader 1`] = `
       <FormattedMessage
         defaultMessage="Preview"
         id="job.preview.subTitile"
-        values={Object {}}
       />
     }
     headerTitle={
       <FormattedMessage
         defaultMessage="Job"
         id="job.preview.pageTitle"
-        values={Object {}}
       />
     }
     options={
@@ -170,7 +163,6 @@ exports[`Preview: Component should render correctly with loader 1`] = `
           "label": <FormattedMessage
             defaultMessage="Projects"
             id="jobDetail.projectsListPage"
-            values={Object {}}
           />,
           "to": "/project/",
           "type": "link_item",
@@ -183,14 +175,12 @@ exports[`Preview: Component should render correctly with loader 1`] = `
       <FormattedMessage
         defaultMessage="Preview"
         id="job.preview.subTitile"
-        values={Object {}}
       />
     }
     title={
       <FormattedMessage
         defaultMessage="Job"
         id="job.preview.pageTitle"
-        values={Object {}}
       />
     }
   />

@@ -8,8 +8,8 @@ Feature: CMS-6
         Given I am logged in admin panel
 
 
-    Scenario: User invited from Django admin panel can log into SchemaCMS
-        Given I have invited new user to SchemaCMS
+    Scenario: User invited from Django admin panel can log into Schema CMS
+        Given I have invited new user to Schema CMS
         And I can see confirmation that user was added
         And invited user appears in the list of Users
         And invited user status is set to 'inactive'

@@ -1,18 +1,16 @@
 import operator
 
+import pytest
 from django.urls import reverse
 from rest_framework import status
 
-import pytest
-
-from schemacms.users import constants as user_constants
 from schemacms.datasources import serializers as ds_serializers, constants as ds_constants
 from schemacms.projects import (
     serializers as projects_serializers,
     models as projects_models,
 )
+from schemacms.users import constants as user_constants
 from schemacms.utils import error
-
 
 pytestmark = [pytest.mark.django_db]
 
@@ -356,3 +354,29 @@ class TestAddEditorToProject:
     @staticmethod
     def get_url(pk):
         return reverse("projects:project-add-editor", kwargs=dict(pk=pk))
+
+
+class TestProjectPagesAdditionalData:
+    @staticmethod
+    def get_url(pk):
+        return reverse("projects:project-page-additional-data", kwargs=dict(pk=pk))
+
+    def test_response(self, api_client, admin, project, section, tag_category_factory, page_factory):
+        tag_category_factory.create_batch(4, project=project, type=dict(content=True))
+        pages = page_factory.create_batch(3, project=project, section=section)
+
+        for page in pages:
+            published_version = page.copy_page(attrs={"is_draft": False})
+
+            page.published_version = published_version
+            page.save()
+
+        api_client.force_authenticate(admin)
+        response = api_client.get(self.get_url(project.id))
+
+        assert response.status_code == status.HTTP_200_OK
+        assert len(response.data["internal_connections"]) == 1
+        assert len(response.data["internal_connections"][0]["pages"]) == 3
+        assert len(response.data["tag_categories"]) == 4
+        assert len(response.data["page_templates"]) == 0
+        assert len(response.data["states"]) == 0

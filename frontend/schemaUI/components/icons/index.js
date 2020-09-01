@@ -24,6 +24,7 @@ import { BinIcon } from './binIcon';
 import { MetadataIcon } from './metadataIcon';
 import { StateIcon } from './stateIcon';
 import { CopyIcon } from './copyIcon';
+import { GoogleSpreadsheetIcon } from './googleSpreadsheetIcon';
 
 const Icons = {
   ResultIcon,
@@ -52,6 +53,7 @@ const Icons = {
   MetadataIcon,
   StateIcon,
   CopyIcon,
+  GoogleSpreadsheetIcon,
 };
 
 export {
@@ -77,6 +79,7 @@ export {
   MetadataIcon,
   StateIcon,
   CopyIcon,
+  GoogleSpreadsheetIcon,
 };
 
 export default Icons;

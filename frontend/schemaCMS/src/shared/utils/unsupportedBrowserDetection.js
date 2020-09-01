@@ -16,6 +16,9 @@ const DEFAULT_SUPPORTED_BROWSERS_CONFIG = {
       minversion: 45,
     },
     {
+      browser: 'chrome headless',
+    },
+    {
       browser: 'edge',
     },
     {
@@ -23,6 +26,9 @@ const DEFAULT_SUPPORTED_BROWSERS_CONFIG = {
       minos: '10.10.0',
       browser: 'safari',
       minversion: 8,
+    },
+    {
+      browser: 'opera',
     },
   ],
   tablet: [

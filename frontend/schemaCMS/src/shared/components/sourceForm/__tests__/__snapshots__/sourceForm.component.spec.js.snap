@@ -205,7 +205,6 @@ exports[`SourceFormComponent: Component should render correctly 1`] = `
     <FormattedMessage
       defaultMessage="Source Type"
       id="shared.components.sourceForm.source"
-      values={Object {}}
     />
   </Component>
   <RadioGroup
@@ -227,33 +226,64 @@ exports[`SourceFormComponent: Component should render correctly 1`] = `
     onChange={[Function]}
     value="file"
   >
-    <RadioBaseComponent
-      id="file"
-      label="CSV"
-      value="file"
-    >
-      <Component
-        customStyles={
-          Object {
-            "background": "#FFF",
-            "height": 96,
-            "marginBottom": 10,
-            "pointerEvents": "none",
-            "width": 96,
-          }
-        }
-        id="csvUploadIcon"
-        type="button"
+    <styled.div>
+      <RadioBaseComponent
+        id="file"
+        label="CSV"
+        value="file"
       >
         <Component
           customStyles={
             Object {
-              "fill": "#1d1d20",
+              "background": "#FFF",
+              "height": 96,
+              "marginBottom": 10,
+              "pointerEvents": "none",
+              "width": 96,
             }
           }
-        />
-      </Component>
-    </RadioBaseComponent>
+          id="csvUploadIcon"
+          type="button"
+        >
+          <Component
+            customStyles={
+              Object {
+                "fill": "#1d1d20",
+              }
+            }
+          />
+        </Component>
+      </RadioBaseComponent>
+    </styled.div>
+    <styled.div>
+      <RadioBaseComponent
+        id="google_sheet"
+        label="Spreadsheet"
+        value="google_sheet"
+      >
+        <Component
+          customStyles={
+            Object {
+              "background": "#1d1d20",
+              "height": 96,
+              "marginBottom": 10,
+              "pointerEvents": "none",
+              "width": 96,
+            }
+          }
+          id="googleSpreadsheetUploadIcon"
+          type="button"
+        >
+          <Component
+            customStyles={
+              Object {
+                "fill": "#FFF",
+              }
+            }
+          />
+        </Component>
+      </RadioBaseComponent>
+    </styled.div>
   </RadioGroup>
   <Uploader
     accept=".csv"
@@ -459,7 +489,6 @@ exports[`SourceFormComponent: Component should render error wrapper 1`] = `
   <FormattedMessage
     defaultMessage="Uploading file failed. Please try again."
     id="shared.components.sourceForm.uploadingError"
-    values={Object {}}
   />
 </styled.div>
 `;
@@ -669,7 +698,6 @@ exports[`SourceFormComponent: Component should render file uploader 1`] = `
     <FormattedMessage
       defaultMessage="Source Type"
       id="shared.components.sourceForm.source"
-      values={Object {}}
     />
   </Component>
   <RadioGroup
@@ -691,33 +719,64 @@ exports[`SourceFormComponent: Component should render file uploader 1`] = `
     onChange={[Function]}
     value="file"
   >
-    <RadioBaseComponent
-      id="file"
-      label="CSV"
-      value="file"
-    >
-      <Component
-        customStyles={
-          Object {
-            "background": "#FFF",
-            "height": 96,
-            "marginBottom": 10,
-            "pointerEvents": "none",
-            "width": 96,
-          }
-        }
-        id="csvUploadIcon"
-        type="button"
+    <styled.div>
+      <RadioBaseComponent
+        id="file"
+        label="CSV"
+        value="file"
       >
         <Component
           customStyles={
             Object {
-              "fill": "#1d1d20",
+              "background": "#FFF",
+              "height": 96,
+              "marginBottom": 10,
+              "pointerEvents": "none",
+              "width": 96,
             }
           }
-        />
-      </Component>
-    </RadioBaseComponent>
+          id="csvUploadIcon"
+          type="button"
+        >
+          <Component
+            customStyles={
+              Object {
+                "fill": "#1d1d20",
+              }
+            }
+          />
+        </Component>
+      </RadioBaseComponent>
+    </styled.div>
+    <styled.div>
+      <RadioBaseComponent
+        id="google_sheet"
+        label="Spreadsheet"
+        value="google_sheet"
+      >
+        <Component
+          customStyles={
+            Object {
+              "background": "#1d1d20",
+              "height": 96,
+              "marginBottom": 10,
+              "pointerEvents": "none",
+              "width": 96,
+            }
+          }
+          id="googleSpreadsheetUploadIcon"
+          type="button"
+        >
+          <Component
+            customStyles={
+              Object {
+                "fill": "#FFF",
+              }
+            }
+          />
+        </Component>
+      </RadioBaseComponent>
+    </styled.div>
   </RadioGroup>
   <Uploader
     accept=".csv"
@@ -923,7 +982,6 @@ exports[`SourceFormComponent: Component should render warning wrapper with job o
   <FormattedMessage
     defaultMessage="There is a script processing ongoing. Please wait until it finishes to try and upload a new file."
     id="shared.components.sourceForm.processing"
-    values={Object {}}
   />
 </styled.div>
 `;
@@ -933,7 +991,6 @@ exports[`SourceFormComponent: Component should render warning wrapper with uploa
   <FormattedMessage
     defaultMessage="Uploading file in progress..."
     id="shared.components.sourceForm.uploadingFile"
-    values={Object {}}
   />
 </styled.div>
 `;

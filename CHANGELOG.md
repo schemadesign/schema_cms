@@ -1,9 +1,31 @@
-### Fixes
-
-Added number of tags to the data source tile
-Fixed snapshot test for number of tags
 
 ## 1.9.0 (August 18, 2020) - Change
+
+## [Unreleased]
+
+### Fixes
+
+- Bump dependencies versions and fix mocking of redux-sagas/effects
+- Prompt user when leave route with unsaved changes
+- Added number of tags to the data source tile
+- Fixed snapshot test for number of tags
+
+### Changes
+
+- README.md and documentation update
+
+## 1.6.0 (August 26, 2020) - Release
+
+Added:
+    
+- state of the page to the page name
+- frontend link field in pages form
+- RSS feature to the project endpoint, so now we generate RSS XML on project level and upload in S3
+- proper icons and usage of Storage in the extension
+- google sheets as data source
+
+Changed:
+ - 'Save' to 'Save draft' text button on the page form
 
 Automation tests:
  - changed the approach from object-oriented to functional
@@ -11,20 +33,10 @@ Automation tests:
  - updated the configuration, so it is easier to run tests on various browsers and environments
  - added support for Gmail API
 
-## 1.8.0 (August 17, 2020) - Added 
 
-Added Frontend link field in pages form
+Chrome extension:
+- clean up and proper URL for fetching page drafts in the example added
 
-Added RSS feature to the project endpoint, so now we generate RSS XML on project level and upload in S3
-
-## 1.7.0 (August 13, 2020) - Release
-
-Clean up the Chrome extension and add proper URL for fetching page drafts in the example
-Added proper icons and usage of Storage in the extension
-
-## 1.6.0 (August 12, 2020) - Change 
-
-Change 'Save' to 'Save draft' text button on the page form
 
 ## 1.5.4 (August 12, 2020) - Fixes
 
