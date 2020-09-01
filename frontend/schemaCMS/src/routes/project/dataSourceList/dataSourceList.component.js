@@ -129,7 +129,7 @@ export class DataSourceList extends PureComponent {
       { name: formatMessage(messages.items), value: formatPrefixedNumber(items) },
       { name: formatMessage(messages.fields), value: fields },
       { name: formatMessage(messages.filters), value: filters },
-      { name: formatMessage(messages.tags), value: tags ? tags.length : 0 },
+      { name: formatMessage(messages.tags), value: tags ? tags.length : '0' },
     ];
     const elements = list.map(({ name, value }, index) => (
       <MetaData key={index} metaProcessing={metaProcessing}>

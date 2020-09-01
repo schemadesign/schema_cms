@@ -41,7 +41,7 @@ export const dataSources = [
     jobsState: {
       lastJobStatus: JOB_STATE_PROCESSING,
     },
-    tags: [{ name: 'tag 1' }, { name: 'tag 2' }],
+    tags: [{ name: 'tag 1' }],
     metaData: {
       status: META_SUCCESS,
     },
@@ -69,7 +69,7 @@ export const dataSources = [
     jobsState: {
       lastJobStatus: null,
     },
-    tags: [{ name: 'tag 1' }, { name: 'tag 2' }],
+    tags: [{ name: 'tag 1' }, { name: 'tag 2' }, { name: 'tag 3' }],
     metaData: {
       status: META_PROCESSING,
     },
@@ -125,7 +125,7 @@ export const dataSources = [
     jobsState: {
       lastJobStatus: null,
     },
-    tags: [{ name: 'tag 1' }, { name: 'tag 2' }],
+    tags: [{ name: 'tag 1' }, { name: 'tag 2' }, { name: 'tag 3' }, { name: 'tag 4' }],
     metaData: {
       status: META_PENDING,
     },
