@@ -158,7 +158,7 @@ export const EditPage = ({
       history.push(customLocation);
     } catch (e) {
       reportError(e);
-      setPublishLoading(false);
+      setLeavingPageLoading(false);
     }
   };
 
@@ -287,7 +287,7 @@ export const EditPage = ({
             loading={publishLoading}
             disabled={publishLoading}
           >
-            <FormattedMessage {...messages.confirmPublish} />
+            <FormattedMessage {...messages.confirm} />
           </NextButton>
         </ModalActions>
       </Modal>
@@ -310,7 +310,7 @@ export const EditPage = ({
             loading={leavingPageLoading}
             disabled={leavingPageLoading}
           >
-            <FormattedMessage {...messages.confirmPublish} />
+            <FormattedMessage {...messages.confirm} />
           </NextButton>
         </ModalActions>
       </Modal>
