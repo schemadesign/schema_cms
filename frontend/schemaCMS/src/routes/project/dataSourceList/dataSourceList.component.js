@@ -115,7 +115,7 @@ export class DataSourceList extends PureComponent {
     </Header>
   );
 
-  renderMetaData = ({ metaData: { items, fields, filters, tags }, metaProcessing }) => {
+  renderMetaData = ({ metaData: { items, fields, filters }, metaProcessing, tags }) => {
     const {
       intl: { formatMessage },
       theme,
@@ -129,7 +129,7 @@ export class DataSourceList extends PureComponent {
       { name: formatMessage(messages.items), value: formatPrefixedNumber(items) },
       { name: formatMessage(messages.fields), value: fields },
       { name: formatMessage(messages.filters), value: filters },
-      { name: formatMessage(messages.tags), value: tags },
+      { name: formatMessage(messages.tags), value: tags ? tags.length : '0' },
     ];
     const elements = list.map(({ name, value }, index) => (
       <MetaData key={index} metaProcessing={metaProcessing}>
@@ -198,7 +198,7 @@ export class DataSourceList extends PureComponent {
       [T, always(this.renderCreatedInformation([whenCreated, `${firstName} ${lastName}`]))],
     ])({ metaFailed, jobProcessing, metaProcessing, isUploading, fileUploadingError, jobFailed, noDataSourceUploaded });
 
-  renderItem = ({ name, created, createdBy, id, metaData, activeJob, jobsState = {}, fileName }, index) => {
+  renderItem = ({ name, created, createdBy, id, tags, metaData, activeJob, jobsState = {}, fileName }, index) => {
     const { firstName = '—', lastName = '' } = createdBy || {};
     const whenCreated = extendedDayjs(created, BASE_DATE_FORMAT).fromNow();
     const jobFailed = propEq('lastJobStatus', JOB_STATE_FAILURE)(jobsState);
@@ -223,8 +223,8 @@ export class DataSourceList extends PureComponent {
       fileUploadingError,
       noDataSourceUploaded,
     });
-    const footer = this.renderMetaData({ metaData, metaProcessing });
 
+    const footer = this.renderMetaData({ metaData, metaProcessing, tags });
     return (
       <ListItem id="dataSourceContainer" key={index} headerComponent={header} footerComponent={footer}>
         <ListItemTitle id="dataSourceTitle" onClick={() => this.handleShowDataSource({ id, activeJob })}>

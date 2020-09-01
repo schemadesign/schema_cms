@@ -1,3 +1,6 @@
+
+## 1.9.0 (August 18, 2020) - Change
+
 ## [Unreleased]
 
 ### Fixes
@@ -5,6 +8,8 @@
 - Bump dependencies versions and fix mocking of redux-sagas/effects
 - Changed redirecting user after reverting to the original file with data source
 - Prompt user when leave route with unsaved changes
+- Added number of tags to the data source tile
+- Fixed snapshot test for number of tags
 
 ### Changes
 
