@@ -82,40 +82,29 @@ class PAProjectView(
         "datasources": serializers.PADataSourceListSerializer,
         "pages": serializers.PAPageDetailSerializer,
     }
+    page_select_related_fields = ["created_by", "published_version", "draft_version", "template"]
     queryset = (
         Project.objects.select_related("owner")
-        .prefetch_related(Prefetch("data_sources", queryset=DataSource.objects.all().order_by("-created")))
+        .prefetch_related(
+            Prefetch("data_sources", queryset=DataSource.objects.all().order_by("-created")),
+            Prefetch(
+                "sections",
+                queryset=Section.objects.filter(is_public=True).prefetch_related(
+                    Prefetch(
+                        "pages",
+                        queryset=Page.objects.select_related(*page_select_related_fields).filter(
+                            is_public=True
+                        ),
+                    )
+                ),
+            ),
+        )
         .all()
         .order_by("id")
     )
     filter_backends = [DjangoFilterBackend, drf_filters.OrderingFilter]
     filterset_class = filters.ProjectFilterSet
     ordering_fields = ["created", "modified", "title"]
-
-    def get_queryset(self):
-        show_drafts = self.request.query_params.get("show_drafts")
-
-        page_filters = {
-            "is_draft": True if show_drafts == "true" else False,
-            "is_public": True,
-            "state__in": [PageState.DRAFT]
-            if show_drafts == "true"
-            else [PageState.PUBLISHED, PageState.WAITING_TO_REPUBLISH],
-        }
-
-        self.queryset = self.queryset.prefetch_related(
-            Prefetch(
-                "sections",
-                queryset=(
-                    Section.objects.filter(is_public=True).prefetch_related(
-                        Prefetch("pages", queryset=Page.objects.filter(**page_filters))
-                    )
-                ),
-            ),
-            "sections__pages__created_by",
-        )
-
-        return super().get_queryset()
 
     @decorators.action(detail=True, url_path="datasources", methods=["get"])
     def datasources(self, request, **kwargs):
@@ -303,6 +292,10 @@ class PADataSourceView(
     @decorators.action(detail=True, url_path="records", methods=["get"])
     def records(self, request, **kwargs):
         page = int(request.query_params.get("page", 1))
+
+        if page == 0:
+            page = 1
+
         page_size = int(request.query_params.get("page_size", 2000))
         columns_list_as_string = request.query_params.get("columns", None)
         orient = records_reader.get_data_format(request.query_params.get("orient", "index"))

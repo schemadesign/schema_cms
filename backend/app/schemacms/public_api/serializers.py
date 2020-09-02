@@ -7,7 +7,7 @@ from rest_framework import serializers
 from ..projects import models as pr_models
 from ..datasources import models as ds_models
 from ..pages import models as pa_models
-from ..pages.constants import ElementType
+from ..pages.constants import ElementType, PageState
 from ..tags import models as t_models
 from ..utils.serializers import ReadOnlySerializer
 from . import utils, records_reader
@@ -258,12 +258,30 @@ class PAPageDetailSerializer(PAPageSerializer):
         return PAPageBlockSerializer(blocks, many=True).data
 
 
-class PASectionSerializer(ReadOnlySerializer):
-    pages = PAPageSerializer(many=True)
+class PAPageDraftSerializer(ReadOnlySerializer):
+    class Meta:
+        model = pa_models.Page
+        fields = ("id", "slug", "display_name")
+
+
+class PASectionWithPagesSerializer(ReadOnlySerializer):
+    pages = serializers.SerializerMethodField()
+    drafts = serializers.SerializerMethodField()
 
     class Meta:
         model = pa_models.Section
-        fields = ("id", "name", "slug", "pages")
+        fields = ("id", "name", "slug", "pages", "drafts")
+
+    def get_drafts(self, section):
+        return PAPageDraftSerializer(section.pages.filter(is_draft=True), many=True).data
+
+    def get_pages(self, section):
+        return PAPageSerializer(
+            section.pages.filter(
+                is_draft=False, state__in=[PageState.PUBLISHED, PageState.WAITING_TO_REPUBLISH]
+            ),
+            many=True,
+        ).data
 
 
 class PAProjectSerializer(ReadOnlySerializer):
@@ -287,7 +305,7 @@ class PAProjectSerializer(ReadOnlySerializer):
         }
 
     def get_content(self, obj):
-        return {"sections": PASectionSerializer(obj.sections, many=True).data}
+        return {"sections": PASectionWithPagesSerializer(obj.sections, many=True).data}
 
 
 class PATagCategorySerializer(ReadOnlySerializer):
