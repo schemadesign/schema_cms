@@ -19,6 +19,7 @@ exports[`UserCreate: Component should render correctly 1`] = `
       <FormattedMessage
         defaultMessage="Users"
         id="userCreate.pageTitle"
+        values={Object {}}
       />
     }
     options={
@@ -31,6 +32,7 @@ exports[`UserCreate: Component should render correctly 1`] = `
           "label": <FormattedMessage
             defaultMessage="Projects"
             id="user.projectsListPage"
+            values={Object {}}
           />,
           "to": "/project/",
           "type": "link_item",
@@ -43,6 +45,7 @@ exports[`UserCreate: Component should render correctly 1`] = `
           "label": <FormattedMessage
             defaultMessage="Users"
             id="user.userPage"
+            values={Object {}}
           />,
           "to": "/user/",
           "type": "link_item",
@@ -67,6 +70,7 @@ exports[`UserCreate: Component should render correctly 1`] = `
       <FormattedMessage
         defaultMessage="Users"
         id="userCreate.pageTitle"
+        values={Object {}}
       />
     }
   />
@@ -161,6 +165,7 @@ exports[`UserCreate: Component should render correctly 1`] = `
         <FormattedMessage
           defaultMessage="Cancel"
           id="userCreate.cancel"
+          values={Object {}}
         />
       </BackButton>
       <NextButton
@@ -171,6 +176,7 @@ exports[`UserCreate: Component should render correctly 1`] = `
         <FormattedMessage
           defaultMessage="Add"
           id="userCreate.add"
+          values={Object {}}
         />
       </NextButton>
     </NavigationContainer>

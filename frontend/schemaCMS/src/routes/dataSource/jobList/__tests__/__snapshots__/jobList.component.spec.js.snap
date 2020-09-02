@@ -7,12 +7,14 @@ exports[`JobList: Component should render correctly 1`] = `
       <FormattedMessage
         defaultMessage="Source"
         id="dataSource.jobList.subTitle"
+        values={Object {}}
       />
     }
     headerTitle={
       <FormattedMessage
         defaultMessage="Past Versions"
         id="dataSource.jobList.title"
+        values={Object {}}
       />
     }
     options={
@@ -26,6 +28,7 @@ exports[`JobList: Component should render correctly 1`] = `
           "label": <FormattedMessage
             defaultMessage="Projects"
             id="project.view.projectsListPage"
+            values={Object {}}
           />,
           "to": "/project/",
           "type": "link_item",
@@ -38,6 +41,7 @@ exports[`JobList: Component should render correctly 1`] = `
           "label": <FormattedMessage
             defaultMessage="Users"
             id="project.view.usersPage"
+            values={Object {}}
           />,
           "to": "/user/",
           "type": "link_item",
@@ -51,6 +55,7 @@ exports[`JobList: Component should render correctly 1`] = `
           "label": <FormattedMessage
             defaultMessage="Project details"
             id="project.view.projectDetails"
+            values={Object {}}
           />,
           "to": "/project/1",
           "type": "link_item",
@@ -64,6 +69,7 @@ exports[`JobList: Component should render correctly 1`] = `
           "label": <FormattedMessage
             defaultMessage="Data Sources"
             id="project.view.projectDataSources"
+            values={Object {}}
           />,
           "to": "/project/1/datasource",
           "type": "link_item",
@@ -76,6 +82,7 @@ exports[`JobList: Component should render correctly 1`] = `
           "label": <FormattedMessage
             defaultMessage="Project Users"
             id="project.view.projectUsersPage"
+            values={Object {}}
           />,
           "to": "/project/1/user",
           "type": "link_item",
@@ -89,6 +96,7 @@ exports[`JobList: Component should render correctly 1`] = `
           "label": <FormattedMessage
             defaultMessage="Content"
             id="project.view.content"
+            values={Object {}}
           />,
           "to": "/project/1/content",
           "type": "link_item",
@@ -101,6 +109,7 @@ exports[`JobList: Component should render correctly 1`] = `
           "label": <FormattedMessage
             defaultMessage="Templates"
             id="project.view.templates"
+            values={Object {}}
           />,
           "to": "/project/1/templates",
           "type": "link_item",
@@ -113,12 +122,14 @@ exports[`JobList: Component should render correctly 1`] = `
       <FormattedMessage
         defaultMessage="Source"
         id="dataSource.jobList.subTitle"
+        values={Object {}}
       />
     }
     title={
       <FormattedMessage
         defaultMessage="Past Versions"
         id="dataSource.jobList.title"
+        values={Object {}}
       />
     }
   />
@@ -156,6 +167,7 @@ exports[`JobList: Component should render correctly 1`] = `
       <FormattedMessage
         defaultMessage="Cancel"
         id="dataSource.jobList.cancel"
+        values={Object {}}
       />
     </BackButton>
     <NextButton
@@ -167,6 +179,7 @@ exports[`JobList: Component should render correctly 1`] = `
       <FormattedMessage
         defaultMessage="Revert"
         id="dataSource.jobList.revert"
+        values={Object {}}
       />
     </NextButton>
   </NavigationContainer>
@@ -180,12 +193,14 @@ exports[`JobList: Component should render correctly with list of jobs 1`] = `
       <FormattedMessage
         defaultMessage="Source"
         id="dataSource.jobList.subTitle"
+        values={Object {}}
       />
     }
     headerTitle={
       <FormattedMessage
         defaultMessage="Past Versions"
         id="dataSource.jobList.title"
+        values={Object {}}
       />
     }
     options={
@@ -199,6 +214,7 @@ exports[`JobList: Component should render correctly with list of jobs 1`] = `
           "label": <FormattedMessage
             defaultMessage="Projects"
             id="project.view.projectsListPage"
+            values={Object {}}
           />,
           "to": "/project/",
           "type": "link_item",
@@ -211,6 +227,7 @@ exports[`JobList: Component should render correctly with list of jobs 1`] = `
           "label": <FormattedMessage
             defaultMessage="Users"
             id="project.view.usersPage"
+            values={Object {}}
           />,
           "to": "/user/",
           "type": "link_item",
@@ -224,6 +241,7 @@ exports[`JobList: Component should render correctly with list of jobs 1`] = `
           "label": <FormattedMessage
             defaultMessage="Project details"
             id="project.view.projectDetails"
+            values={Object {}}
           />,
           "to": "/project/1",
           "type": "link_item",
@@ -237,6 +255,7 @@ exports[`JobList: Component should render correctly with list of jobs 1`] = `
           "label": <FormattedMessage
             defaultMessage="Data Sources"
             id="project.view.projectDataSources"
+            values={Object {}}
           />,
           "to": "/project/1/datasource",
           "type": "link_item",
@@ -249,6 +268,7 @@ exports[`JobList: Component should render correctly with list of jobs 1`] = `
           "label": <FormattedMessage
             defaultMessage="Project Users"
             id="project.view.projectUsersPage"
+            values={Object {}}
           />,
           "to": "/project/1/user",
           "type": "link_item",
@@ -262,6 +282,7 @@ exports[`JobList: Component should render correctly with list of jobs 1`] = `
           "label": <FormattedMessage
             defaultMessage="Content"
             id="project.view.content"
+            values={Object {}}
           />,
           "to": "/project/1/content",
           "type": "link_item",
@@ -274,6 +295,7 @@ exports[`JobList: Component should render correctly with list of jobs 1`] = `
           "label": <FormattedMessage
             defaultMessage="Templates"
             id="project.view.templates"
+            values={Object {}}
           />,
           "to": "/project/1/templates",
           "type": "link_item",
@@ -286,12 +308,14 @@ exports[`JobList: Component should render correctly with list of jobs 1`] = `
       <FormattedMessage
         defaultMessage="Source"
         id="dataSource.jobList.subTitle"
+        values={Object {}}
       />
     }
     title={
       <FormattedMessage
         defaultMessage="Past Versions"
         id="dataSource.jobList.title"
+        values={Object {}}
       />
     }
   />
@@ -335,6 +359,7 @@ exports[`JobList: Component should render correctly with list of jobs 1`] = `
                   <FormattedMessage
                     defaultMessage="Success"
                     id="dataSource.jobList.success"
+                    values={Object {}}
                   />
                 </Span>
               </styled.div>
@@ -344,6 +369,7 @@ exports[`JobList: Component should render correctly with list of jobs 1`] = `
                   <FormattedMessage
                     defaultMessage="Original file"
                     id="dataSource.jobList.originalFile"
+                    values={Object {}}
                   />
                 </Span>
               </styled.div>
@@ -375,6 +401,7 @@ exports[`JobList: Component should render correctly with list of jobs 1`] = `
                   <FormattedMessage
                     defaultMessage="Success"
                     id="dataSource.jobList.success"
+                    values={Object {}}
                   />
                 </Span>
               </styled.div>
@@ -420,6 +447,7 @@ exports[`JobList: Component should render correctly with list of jobs 1`] = `
                   <FormattedMessage
                     defaultMessage="Failed"
                     id="dataSource.jobList.failure"
+                    values={Object {}}
                   />
                 </Span>
               </styled.div>
@@ -460,6 +488,7 @@ exports[`JobList: Component should render correctly with list of jobs 1`] = `
       <FormattedMessage
         defaultMessage="Cancel"
         id="dataSource.jobList.cancel"
+        values={Object {}}
       />
     </BackButton>
     <NextButton
@@ -471,6 +500,7 @@ exports[`JobList: Component should render correctly with list of jobs 1`] = `
       <FormattedMessage
         defaultMessage="Revert"
         id="dataSource.jobList.revert"
+        values={Object {}}
       />
     </NextButton>
   </NavigationContainer>
@@ -484,12 +514,14 @@ exports[`JobList: Component should render correctly with no data 1`] = `
       <FormattedMessage
         defaultMessage="Source"
         id="dataSource.jobList.subTitle"
+        values={Object {}}
       />
     }
     headerTitle={
       <FormattedMessage
         defaultMessage="Past Versions"
         id="dataSource.jobList.title"
+        values={Object {}}
       />
     }
     options={
@@ -503,6 +535,7 @@ exports[`JobList: Component should render correctly with no data 1`] = `
           "label": <FormattedMessage
             defaultMessage="Projects"
             id="project.view.projectsListPage"
+            values={Object {}}
           />,
           "to": "/project/",
           "type": "link_item",
@@ -515,6 +548,7 @@ exports[`JobList: Component should render correctly with no data 1`] = `
           "label": <FormattedMessage
             defaultMessage="Users"
             id="project.view.usersPage"
+            values={Object {}}
           />,
           "to": "/user/",
           "type": "link_item",
@@ -528,6 +562,7 @@ exports[`JobList: Component should render correctly with no data 1`] = `
           "label": <FormattedMessage
             defaultMessage="Project details"
             id="project.view.projectDetails"
+            values={Object {}}
           />,
           "to": "/project/1",
           "type": "link_item",
@@ -541,6 +576,7 @@ exports[`JobList: Component should render correctly with no data 1`] = `
           "label": <FormattedMessage
             defaultMessage="Data Sources"
             id="project.view.projectDataSources"
+            values={Object {}}
           />,
           "to": "/project/1/datasource",
           "type": "link_item",
@@ -553,6 +589,7 @@ exports[`JobList: Component should render correctly with no data 1`] = `
           "label": <FormattedMessage
             defaultMessage="Project Users"
             id="project.view.projectUsersPage"
+            values={Object {}}
           />,
           "to": "/project/1/user",
           "type": "link_item",
@@ -566,6 +603,7 @@ exports[`JobList: Component should render correctly with no data 1`] = `
           "label": <FormattedMessage
             defaultMessage="Content"
             id="project.view.content"
+            values={Object {}}
           />,
           "to": "/project/1/content",
           "type": "link_item",
@@ -578,6 +616,7 @@ exports[`JobList: Component should render correctly with no data 1`] = `
           "label": <FormattedMessage
             defaultMessage="Templates"
             id="project.view.templates"
+            values={Object {}}
           />,
           "to": "/project/1/templates",
           "type": "link_item",
@@ -590,12 +629,14 @@ exports[`JobList: Component should render correctly with no data 1`] = `
       <FormattedMessage
         defaultMessage="Source"
         id="dataSource.jobList.subTitle"
+        values={Object {}}
       />
     }
     title={
       <FormattedMessage
         defaultMessage="Past Versions"
         id="dataSource.jobList.title"
+        values={Object {}}
       />
     }
   />
@@ -633,6 +674,7 @@ exports[`JobList: Component should render correctly with no data 1`] = `
       <FormattedMessage
         defaultMessage="Cancel"
         id="dataSource.jobList.cancel"
+        values={Object {}}
       />
     </BackButton>
     <NextButton
@@ -644,6 +686,7 @@ exports[`JobList: Component should render correctly with no data 1`] = `
       <FormattedMessage
         defaultMessage="Revert"
         id="dataSource.jobList.revert"
+        values={Object {}}
       />
     </NextButton>
   </NavigationContainer>

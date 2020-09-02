@@ -27,6 +27,7 @@ exports[`DataSourceNavigation: Component should render correctly 1`] = `
         <FormattedMessage
           defaultMessage="Source"
           id="shared.components.dataSourceNavigation.source"
+          values={Object {}}
         />
       </styled.div>
     </styled.div>
@@ -52,6 +53,7 @@ exports[`DataSourceNavigation: Component should render correctly 1`] = `
         <FormattedMessage
           defaultMessage="Fields"
           id="shared.components.dataSourceNavigation.preview"
+          values={Object {}}
         />
       </styled.div>
     </styled.div>
@@ -78,6 +80,7 @@ exports[`DataSourceNavigation: Component should render correctly 1`] = `
         <FormattedMessage
           defaultMessage="Steps"
           id="shared.components.dataSourceNavigation.steps"
+          values={Object {}}
         />
       </styled.div>
     </styled.div>
@@ -104,6 +107,7 @@ exports[`DataSourceNavigation: Component should render correctly 1`] = `
         <FormattedMessage
           defaultMessage="Results"
           id="shared.components.dataSourceNavigation.result"
+          values={Object {}}
         />
       </styled.div>
     </styled.div>
@@ -129,6 +133,7 @@ exports[`DataSourceNavigation: Component should render correctly 1`] = `
         <FormattedMessage
           defaultMessage="Filters"
           id="shared.components.dataSourceNavigation.filters"
+          values={Object {}}
         />
       </styled.div>
     </styled.div>
@@ -154,6 +159,7 @@ exports[`DataSourceNavigation: Component should render correctly 1`] = `
         <FormattedMessage
           defaultMessage="Tags"
           id="shared.components.dataSourceNavigation.tag"
+          values={Object {}}
         />
       </styled.div>
     </styled.div>
@@ -179,6 +185,7 @@ exports[`DataSourceNavigation: Component should render correctly 1`] = `
         <FormattedMessage
           defaultMessage="States"
           id="shared.components.dataSourceNavigation.state"
+          values={Object {}}
         />
       </styled.div>
     </styled.div>
@@ -204,6 +211,7 @@ exports[`DataSourceNavigation: Component should render correctly 1`] = `
         <FormattedMessage
           defaultMessage="Metadata"
           id="shared.components.dataSourceNavigation.metadata"
+          values={Object {}}
         />
       </styled.div>
     </styled.div>
@@ -238,6 +246,7 @@ exports[`DataSourceNavigation: Component should render correctly with fake job 1
         <FormattedMessage
           defaultMessage="Source"
           id="shared.components.dataSourceNavigation.source"
+          values={Object {}}
         />
       </styled.div>
     </styled.div>
@@ -263,6 +272,7 @@ exports[`DataSourceNavigation: Component should render correctly with fake job 1
         <FormattedMessage
           defaultMessage="Fields"
           id="shared.components.dataSourceNavigation.preview"
+          values={Object {}}
         />
       </styled.div>
     </styled.div>
@@ -289,6 +299,7 @@ exports[`DataSourceNavigation: Component should render correctly with fake job 1
         <FormattedMessage
           defaultMessage="Steps"
           id="shared.components.dataSourceNavigation.steps"
+          values={Object {}}
         />
       </styled.div>
     </styled.div>
@@ -315,6 +326,7 @@ exports[`DataSourceNavigation: Component should render correctly with fake job 1
         <FormattedMessage
           defaultMessage="Results"
           id="shared.components.dataSourceNavigation.result"
+          values={Object {}}
         />
       </styled.div>
     </styled.div>
@@ -340,6 +352,7 @@ exports[`DataSourceNavigation: Component should render correctly with fake job 1
         <FormattedMessage
           defaultMessage="Filters"
           id="shared.components.dataSourceNavigation.filters"
+          values={Object {}}
         />
       </styled.div>
     </styled.div>
@@ -365,6 +378,7 @@ exports[`DataSourceNavigation: Component should render correctly with fake job 1
         <FormattedMessage
           defaultMessage="Tags"
           id="shared.components.dataSourceNavigation.tag"
+          values={Object {}}
         />
       </styled.div>
     </styled.div>
@@ -390,6 +404,7 @@ exports[`DataSourceNavigation: Component should render correctly with fake job 1
         <FormattedMessage
           defaultMessage="States"
           id="shared.components.dataSourceNavigation.state"
+          values={Object {}}
         />
       </styled.div>
     </styled.div>
@@ -415,6 +430,7 @@ exports[`DataSourceNavigation: Component should render correctly with fake job 1
         <FormattedMessage
           defaultMessage="Metadata"
           id="shared.components.dataSourceNavigation.metadata"
+          values={Object {}}
         />
       </styled.div>
     </styled.div>
@@ -449,6 +465,7 @@ exports[`DataSourceNavigation: Component should render correctly with job 1`] = 
         <FormattedMessage
           defaultMessage="Source"
           id="shared.components.dataSourceNavigation.source"
+          values={Object {}}
         />
       </styled.div>
     </styled.div>
@@ -474,6 +491,7 @@ exports[`DataSourceNavigation: Component should render correctly with job 1`] = 
         <FormattedMessage
           defaultMessage="Fields"
           id="shared.components.dataSourceNavigation.preview"
+          values={Object {}}
         />
       </styled.div>
     </styled.div>
@@ -500,6 +518,7 @@ exports[`DataSourceNavigation: Component should render correctly with job 1`] = 
         <FormattedMessage
           defaultMessage="Steps"
           id="shared.components.dataSourceNavigation.steps"
+          values={Object {}}
         />
       </styled.div>
     </styled.div>
@@ -526,6 +545,7 @@ exports[`DataSourceNavigation: Component should render correctly with job 1`] = 
         <FormattedMessage
           defaultMessage="Results"
           id="shared.components.dataSourceNavigation.result"
+          values={Object {}}
         />
       </styled.div>
     </styled.div>
@@ -551,6 +571,7 @@ exports[`DataSourceNavigation: Component should render correctly with job 1`] = 
         <FormattedMessage
           defaultMessage="Filters"
           id="shared.components.dataSourceNavigation.filters"
+          values={Object {}}
         />
       </styled.div>
     </styled.div>
@@ -576,6 +597,7 @@ exports[`DataSourceNavigation: Component should render correctly with job 1`] = 
         <FormattedMessage
           defaultMessage="Tags"
           id="shared.components.dataSourceNavigation.tag"
+          values={Object {}}
         />
       </styled.div>
     </styled.div>
@@ -601,6 +623,7 @@ exports[`DataSourceNavigation: Component should render correctly with job 1`] = 
         <FormattedMessage
           defaultMessage="States"
           id="shared.components.dataSourceNavigation.state"
+          values={Object {}}
         />
       </styled.div>
     </styled.div>
@@ -626,6 +649,7 @@ exports[`DataSourceNavigation: Component should render correctly with job 1`] = 
         <FormattedMessage
           defaultMessage="Metadata"
           id="shared.components.dataSourceNavigation.metadata"
+          values={Object {}}
         />
       </styled.div>
     </styled.div>

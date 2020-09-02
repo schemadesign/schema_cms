@@ -16,6 +16,7 @@ exports[`UserList: Component should render correctly with users 1`] = `
           <FormattedMessage
             defaultMessage="Admin"
             id="shared.components.userList.admin"
+            values={Object {}}
           />
         </ForwardRef(styled.div)>
       </React.Fragment>
@@ -46,6 +47,7 @@ exports[`UserList: Component should render correctly with users 1`] = `
           <FormattedMessage
             defaultMessage="Editor"
             id="shared.components.userList.editor"
+            values={Object {}}
           />
         </ForwardRef(styled.div)>
       </React.Fragment>
@@ -76,6 +78,7 @@ exports[`UserList: Component should render correctly with users 1`] = `
           <FormattedMessage
             defaultMessage="Admin"
             id="shared.components.userList.admin"
+            values={Object {}}
           />
         </ForwardRef(styled.div)>
       </React.Fragment>

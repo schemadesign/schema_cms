@@ -7,12 +7,14 @@ exports[`View: Component should render correctly 1`] = `
       <FormattedMessage
         defaultMessage="Profile"
         id="user.view.subTitle"
+        values={Object {}}
       />
     }
     headerTitle={
       <FormattedMessage
         defaultMessage="Users"
         id="user.view.title"
+        values={Object {}}
       />
     }
     options={
@@ -25,6 +27,7 @@ exports[`View: Component should render correctly 1`] = `
           "label": <FormattedMessage
             defaultMessage="Projects"
             id="user.projectsListPage"
+            values={Object {}}
           />,
           "to": "/project/",
           "type": "link_item",
@@ -37,6 +40,7 @@ exports[`View: Component should render correctly 1`] = `
           "label": <FormattedMessage
             defaultMessage="Users"
             id="user.userPage"
+            values={Object {}}
           />,
           "to": "/user/",
           "type": "link_item",
@@ -49,12 +53,14 @@ exports[`View: Component should render correctly 1`] = `
       <FormattedMessage
         defaultMessage="Profile"
         id="user.view.subTitle"
+        values={Object {}}
       />
     }
     title={
       <FormattedMessage
         defaultMessage="Users"
         id="user.view.title"
+        values={Object {}}
       />
     }
   />
@@ -117,6 +123,7 @@ exports[`View: Component should render correctly 1`] = `
       <FormattedMessage
         defaultMessage="Are you sure you want to remove this user?"
         id="user.view.removeTitle"
+        values={Object {}}
       />
     </Styled(H1)>
     <styled.div>
@@ -127,6 +134,7 @@ exports[`View: Component should render correctly 1`] = `
         <FormattedMessage
           defaultMessage="Cancel"
           id="user.view.cancelRemoval"
+          values={Object {}}
         />
       </BackButton>
       <NextButton
@@ -137,6 +145,7 @@ exports[`View: Component should render correctly 1`] = `
         <FormattedMessage
           defaultMessage="Confirm"
           id="user.view.confirmRemoval"
+          values={Object {}}
         />
       </NextButton>
     </styled.div>
@@ -180,6 +189,7 @@ exports[`View: Component should render correctly 1`] = `
       <FormattedMessage
         defaultMessage="Are you sure you want to upgrade user?"
         id="user.view.makeAdminTitle"
+        values={Object {}}
       />
     </Styled(H1)>
     <styled.div>
@@ -191,6 +201,7 @@ exports[`View: Component should render correctly 1`] = `
           defaultMessage="Cancel"
           disabled={false}
           id="user.view.cancelRemoval"
+          values={Object {}}
         />
       </BackButton>
       <NextButton
@@ -201,6 +212,7 @@ exports[`View: Component should render correctly 1`] = `
         <FormattedMessage
           defaultMessage="Confirm"
           id="user.view.confirmRemoval"
+          values={Object {}}
         />
       </NextButton>
     </styled.div>
@@ -215,12 +227,14 @@ exports[`View: Component should render correctly for admin user 1`] = `
       <FormattedMessage
         defaultMessage="Profile"
         id="user.view.subTitle"
+        values={Object {}}
       />
     }
     headerTitle={
       <FormattedMessage
         defaultMessage="Users"
         id="user.view.title"
+        values={Object {}}
       />
     }
     options={
@@ -233,6 +247,7 @@ exports[`View: Component should render correctly for admin user 1`] = `
           "label": <FormattedMessage
             defaultMessage="Projects"
             id="user.projectsListPage"
+            values={Object {}}
           />,
           "to": "/project/",
           "type": "link_item",
@@ -245,6 +260,7 @@ exports[`View: Component should render correctly for admin user 1`] = `
           "label": <FormattedMessage
             defaultMessage="Users"
             id="user.userPage"
+            values={Object {}}
           />,
           "to": "/user/",
           "type": "link_item",
@@ -257,12 +273,14 @@ exports[`View: Component should render correctly for admin user 1`] = `
       <FormattedMessage
         defaultMessage="Profile"
         id="user.view.subTitle"
+        values={Object {}}
       />
     }
     title={
       <FormattedMessage
         defaultMessage="Users"
         id="user.view.title"
+        values={Object {}}
       />
     }
   />
@@ -325,6 +343,7 @@ exports[`View: Component should render correctly for admin user 1`] = `
       <FormattedMessage
         defaultMessage="Are you sure you want to remove this user?"
         id="user.view.removeTitle"
+        values={Object {}}
       />
     </Styled(H1)>
     <styled.div>
@@ -335,6 +354,7 @@ exports[`View: Component should render correctly for admin user 1`] = `
         <FormattedMessage
           defaultMessage="Cancel"
           id="user.view.cancelRemoval"
+          values={Object {}}
         />
       </BackButton>
       <NextButton
@@ -345,6 +365,7 @@ exports[`View: Component should render correctly for admin user 1`] = `
         <FormattedMessage
           defaultMessage="Confirm"
           id="user.view.confirmRemoval"
+          values={Object {}}
         />
       </NextButton>
     </styled.div>
@@ -388,6 +409,7 @@ exports[`View: Component should render correctly for admin user 1`] = `
       <FormattedMessage
         defaultMessage="Are you sure you want to upgrade user?"
         id="user.view.makeAdminTitle"
+        values={Object {}}
       />
     </Styled(H1)>
     <styled.div>
@@ -399,6 +421,7 @@ exports[`View: Component should render correctly for admin user 1`] = `
           defaultMessage="Cancel"
           disabled={false}
           id="user.view.cancelRemoval"
+          values={Object {}}
         />
       </BackButton>
       <NextButton
@@ -409,6 +432,7 @@ exports[`View: Component should render correctly for admin user 1`] = `
         <FormattedMessage
           defaultMessage="Confirm"
           id="user.view.confirmRemoval"
+          values={Object {}}
         />
       </NextButton>
     </styled.div>

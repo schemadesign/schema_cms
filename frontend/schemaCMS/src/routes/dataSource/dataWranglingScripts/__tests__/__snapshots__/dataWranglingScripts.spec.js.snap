@@ -15,6 +15,7 @@ exports[`DataWranglingScripts: Component should render correctly 1`] = `
       <FormattedMessage
         defaultMessage="Data Wrangling"
         id="dataSource.dataWranglingScripts.subTitle"
+        values={Object {}}
       />
     }
     options={Array []}
@@ -24,6 +25,7 @@ exports[`DataWranglingScripts: Component should render correctly 1`] = `
       <FormattedMessage
         defaultMessage="Data Wrangling"
         id="dataSource.dataWranglingScripts.subTitle"
+        values={Object {}}
       />
     }
   >
@@ -188,6 +190,7 @@ exports[`DataWranglingScripts: Component should render correctly 1`] = `
         <FormattedMessage
           defaultMessage="Selected steps"
           id="dataSource.dataWranglingScripts.selectedScripts"
+          values={Object {}}
         />
       </Component>
       <div
@@ -216,6 +219,7 @@ exports[`DataWranglingScripts: Component should render correctly 1`] = `
                 <FormattedMessage
                   defaultMessage="Uploaded"
                   id="dataSource.dataWranglingScripts.0"
+                  values={Object {}}
                 />
               </styled.div>
             </Styled(Link)>
@@ -233,6 +237,7 @@ exports[`DataWranglingScripts: Component should render correctly 1`] = `
         <FormattedMessage
           defaultMessage="Steps"
           id="dataSource.dataWranglingScripts.steps"
+          values={Object {}}
         />
       </Component>
       <div
@@ -261,6 +266,7 @@ exports[`DataWranglingScripts: Component should render correctly 1`] = `
                 <FormattedMessage
                   defaultMessage="Uploaded"
                   id="dataSource.dataWranglingScripts.0"
+                  values={Object {}}
                 />
               </styled.div>
             </Styled(Link)>
@@ -293,6 +299,7 @@ exports[`DataWranglingScripts: Component should render correctly 1`] = `
                 <FormattedMessage
                   defaultMessage="Default"
                   id="dataSource.dataWranglingScripts.2"
+                  values={Object {}}
                 />
               </styled.div>
             </Styled(Link)>
@@ -316,6 +323,7 @@ exports[`DataWranglingScripts: Component should render correctly 1`] = `
         <FormattedMessage
           defaultMessage="Save"
           id="dataSource.dataWranglingScripts.save"
+          values={Object {}}
         />
       </NextButton>
     </NavigationContainer>
@@ -436,6 +444,7 @@ exports[`DataWranglingScripts: Component should render correctly multiple checke
       <FormattedMessage
         defaultMessage="Data Wrangling"
         id="dataSource.dataWranglingScripts.subTitle"
+        values={Object {}}
       />
     }
     options={Array []}
@@ -445,6 +454,7 @@ exports[`DataWranglingScripts: Component should render correctly multiple checke
       <FormattedMessage
         defaultMessage="Data Wrangling"
         id="dataSource.dataWranglingScripts.subTitle"
+        values={Object {}}
       />
     }
   >
@@ -610,6 +620,7 @@ exports[`DataWranglingScripts: Component should render correctly multiple checke
         <FormattedMessage
           defaultMessage="Selected steps"
           id="dataSource.dataWranglingScripts.selectedScripts"
+          values={Object {}}
         />
       </Component>
       <Draggable
@@ -656,6 +667,7 @@ exports[`DataWranglingScripts: Component should render correctly multiple checke
         <FormattedMessage
           defaultMessage="Save"
           id="dataSource.dataWranglingScripts.save"
+          values={Object {}}
         />
       </NextButton>
     </NavigationContainer>
@@ -775,6 +787,7 @@ exports[`DataWranglingScripts: Component should render empty list 1`] = `
       <FormattedMessage
         defaultMessage="Data Wrangling"
         id="dataSource.dataWranglingScripts.subTitle"
+        values={Object {}}
       />
     }
     options={Array []}
@@ -784,6 +797,7 @@ exports[`DataWranglingScripts: Component should render empty list 1`] = `
       <FormattedMessage
         defaultMessage="Data Wrangling"
         id="dataSource.dataWranglingScripts.subTitle"
+        values={Object {}}
       />
     }
   >
@@ -907,6 +921,7 @@ exports[`DataWranglingScripts: Component should render empty list 1`] = `
         <FormattedMessage
           defaultMessage="Save"
           id="dataSource.dataWranglingScripts.save"
+          values={Object {}}
         />
       </NextButton>
     </NavigationContainer>
@@ -1001,6 +1016,7 @@ exports[`DataWranglingScripts: Component should render only checked scripts 1`] 
       <FormattedMessage
         defaultMessage="Data Wrangling"
         id="dataSource.dataWranglingScripts.subTitle"
+        values={Object {}}
       />
     }
     options={Array []}
@@ -1010,6 +1026,7 @@ exports[`DataWranglingScripts: Component should render only checked scripts 1`] 
       <FormattedMessage
         defaultMessage="Data Wrangling"
         id="dataSource.dataWranglingScripts.subTitle"
+        values={Object {}}
       />
     }
   >
@@ -1157,6 +1174,7 @@ exports[`DataWranglingScripts: Component should render only checked scripts 1`] 
         <FormattedMessage
           defaultMessage="Selected steps"
           id="dataSource.dataWranglingScripts.selectedScripts"
+          values={Object {}}
         />
       </Component>
       <div
@@ -1185,6 +1203,7 @@ exports[`DataWranglingScripts: Component should render only checked scripts 1`] 
                 <FormattedMessage
                   defaultMessage="Uploaded"
                   id="dataSource.dataWranglingScripts.0"
+                  values={Object {}}
                 />
               </styled.div>
             </Styled(Link)>
@@ -1208,6 +1227,7 @@ exports[`DataWranglingScripts: Component should render only checked scripts 1`] 
         <FormattedMessage
           defaultMessage="Save"
           id="dataSource.dataWranglingScripts.save"
+          values={Object {}}
         />
       </NextButton>
     </NavigationContainer>
@@ -1324,6 +1344,7 @@ exports[`DataWranglingScripts: Component should render only unchecked scripts 1`
     <FormattedMessage
       defaultMessage="Steps"
       id="dataSource.dataWranglingScripts.steps"
+      values={Object {}}
     />
   </Component>
   <div
@@ -1352,6 +1373,7 @@ exports[`DataWranglingScripts: Component should render only unchecked scripts 1`
             <FormattedMessage
               defaultMessage="Uploaded"
               id="dataSource.dataWranglingScripts.0"
+              values={Object {}}
             />
           </styled.div>
         </Styled(Link)>
@@ -1384,6 +1406,7 @@ exports[`DataWranglingScripts: Component should render only unchecked scripts 1`
             <FormattedMessage
               defaultMessage="Default"
               id="dataSource.dataWranglingScripts.2"
+              values={Object {}}
             />
           </styled.div>
         </Styled(Link)>

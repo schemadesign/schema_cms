@@ -365,6 +365,7 @@ exports[`App: Component should not render App when language is not set 1`] = `
           <FormattedMessage
             defaultMessage="Schema CMS"
             id="app.pageTitle"
+            values={Object {}}
           >
             <Component />
           </FormattedMessage>
@@ -758,6 +759,7 @@ exports[`App: Component should render App when language is set 1`] = `
           <FormattedMessage
             defaultMessage="Schema CMS"
             id="app.pageTitle"
+            values={Object {}}
           >
             <Component />
           </FormattedMessage>

@@ -9,12 +9,14 @@ exports[`CreateTagCategory: Component should render correctly 1`] = `
       <FormattedMessage
         defaultMessage="Create"
         id="project.createTagCategory.subTitle"
+        values={Object {}}
       />
     }
     headerTitle={
       <FormattedMessage
         defaultMessage="Tag Category"
         id="project.createTagCategory.subTitle"
+        values={Object {}}
       />
     }
     options={
@@ -28,6 +30,7 @@ exports[`CreateTagCategory: Component should render correctly 1`] = `
           "label": <FormattedMessage
             defaultMessage="Projects"
             id="project.view.projectsListPage"
+            values={Object {}}
           />,
           "to": "/project/",
           "type": "link_item",
@@ -40,6 +43,7 @@ exports[`CreateTagCategory: Component should render correctly 1`] = `
           "label": <FormattedMessage
             defaultMessage="Users"
             id="project.view.usersPage"
+            values={Object {}}
           />,
           "to": "/user/",
           "type": "link_item",
@@ -53,6 +57,7 @@ exports[`CreateTagCategory: Component should render correctly 1`] = `
           "label": <FormattedMessage
             defaultMessage="Project details"
             id="project.view.projectDetails"
+            values={Object {}}
           />,
           "to": "/project/1",
           "type": "link_item",
@@ -66,6 +71,7 @@ exports[`CreateTagCategory: Component should render correctly 1`] = `
           "label": <FormattedMessage
             defaultMessage="Data Sources"
             id="project.view.projectDataSources"
+            values={Object {}}
           />,
           "to": "/project/1/datasource",
           "type": "link_item",
@@ -78,6 +84,7 @@ exports[`CreateTagCategory: Component should render correctly 1`] = `
           "label": <FormattedMessage
             defaultMessage="Project Users"
             id="project.view.projectUsersPage"
+            values={Object {}}
           />,
           "to": "/project/1/user",
           "type": "link_item",
@@ -91,6 +98,7 @@ exports[`CreateTagCategory: Component should render correctly 1`] = `
           "label": <FormattedMessage
             defaultMessage="Content"
             id="project.view.content"
+            values={Object {}}
           />,
           "to": "/project/1/content",
           "type": "link_item",
@@ -103,6 +111,7 @@ exports[`CreateTagCategory: Component should render correctly 1`] = `
           "label": <FormattedMessage
             defaultMessage="Templates"
             id="project.view.templates"
+            values={Object {}}
           />,
           "to": "/project/1/templates",
           "type": "link_item",
@@ -115,12 +124,14 @@ exports[`CreateTagCategory: Component should render correctly 1`] = `
       <FormattedMessage
         defaultMessage="Create"
         id="project.createTagCategory.subTitle"
+        values={Object {}}
       />
     }
     title={
       <FormattedMessage
         defaultMessage="Tag Category"
         id="project.createTagCategory.subTitle"
+        values={Object {}}
       />
     }
   />
@@ -219,6 +230,7 @@ exports[`CreateTagCategory: Component should render correctly 1`] = `
       <FormattedMessage
         defaultMessage="Cancel"
         id="project.createTagCategory.cancel"
+        values={Object {}}
       />
     </BackButton>
     <NextButton
@@ -229,6 +241,7 @@ exports[`CreateTagCategory: Component should render correctly 1`] = `
       <FormattedMessage
         defaultMessage="Save"
         id="project.createTagCategory.saveTag"
+        values={Object {}}
       />
     </NextButton>
   </NavigationContainer>

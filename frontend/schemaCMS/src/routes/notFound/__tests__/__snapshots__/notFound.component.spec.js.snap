@@ -12,12 +12,14 @@ exports[`NotFound: Component should render correctly 1`] = `
       <FormattedMessage
         defaultMessage="Error"
         id="notFound.subTitle"
+        values={Object {}}
       />
     }
     headerTitle={
       <FormattedMessage
         defaultMessage="Schema CMS"
         id="notFound.title"
+        values={Object {}}
       />
     }
     isAdmin={true}
@@ -28,6 +30,7 @@ exports[`NotFound: Component should render correctly 1`] = `
       <FormattedMessage
         defaultMessage="The page you are looking for doesn't exist or has been moved."
         id="notFound.description"
+        values={Object {}}
       />
     </H1>
   </styled.div>

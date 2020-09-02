@@ -22,6 +22,7 @@ exports[`List: Component should render correctly 1`] = `
           "label": <FormattedMessage
             defaultMessage="Projects"
             id="project.view.projectsListPage"
+            values={Object {}}
           />,
           "to": "/project/",
           "type": "link_item",
@@ -34,6 +35,7 @@ exports[`List: Component should render correctly 1`] = `
           "label": <FormattedMessage
             defaultMessage="Users"
             id="project.view.usersPage"
+            values={Object {}}
           />,
           "to": "/user/",
           "type": "link_item",
@@ -213,6 +215,7 @@ exports[`List: Component should render correctly with loading 1`] = `
           "label": <FormattedMessage
             defaultMessage="Projects"
             id="project.view.projectsListPage"
+            values={Object {}}
           />,
           "to": "/project/",
           "type": "link_item",
@@ -225,6 +228,7 @@ exports[`List: Component should render correctly with loading 1`] = `
           "label": <FormattedMessage
             defaultMessage="Users"
             id="project.view.usersPage"
+            values={Object {}}
           />,
           "to": "/user/",
           "type": "link_item",
@@ -404,6 +408,7 @@ exports[`List: Component should render without data 1`] = `
           "label": <FormattedMessage
             defaultMessage="Projects"
             id="project.view.projectsListPage"
+            values={Object {}}
           />,
           "to": "/project/",
           "type": "link_item",
@@ -416,6 +421,7 @@ exports[`List: Component should render without data 1`] = `
           "label": <FormattedMessage
             defaultMessage="Users"
             id="project.view.usersPage"
+            values={Object {}}
           />,
           "to": "/user/",
           "type": "link_item",

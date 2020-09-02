@@ -7,12 +7,14 @@ exports[`JobDetail: Component should render correctly 1`] = `
       <FormattedMessage
         defaultMessage="Details"
         id="jobDetail.subTitle"
+        values={Object {}}
       />
     }
     headerTitle={
       <FormattedMessage
         defaultMessage="Job"
         id="jobDetail.title"
+        values={Object {}}
       />
     }
     options={
@@ -26,6 +28,7 @@ exports[`JobDetail: Component should render correctly 1`] = `
           "label": <FormattedMessage
             defaultMessage="Projects"
             id="jobDetail.projectsListPage"
+            values={Object {}}
           />,
           "to": "/project/",
           "type": "link_item",
@@ -38,12 +41,14 @@ exports[`JobDetail: Component should render correctly 1`] = `
       <FormattedMessage
         defaultMessage="Details"
         id="jobDetail.subTitle"
+        values={Object {}}
       />
     }
     title={
       <FormattedMessage
         defaultMessage="Job"
         id="jobDetail.title"
+        values={Object {}}
       />
     }
   />
@@ -68,6 +73,7 @@ exports[`JobDetail: Component should render correctly 1`] = `
       <FormattedMessage
         defaultMessage="Back"
         id="jobDetail.back"
+        values={Object {}}
       />
     </BackButton>
     <NextButton
@@ -78,6 +84,7 @@ exports[`JobDetail: Component should render correctly 1`] = `
       <FormattedMessage
         defaultMessage="Save"
         id="jobDetail.save"
+        values={Object {}}
       />
     </NextButton>
   </NavigationContainer>
@@ -91,12 +98,14 @@ exports[`JobDetail: Component should render correctly with failure job 1`] = `
       <FormattedMessage
         defaultMessage="Details"
         id="jobDetail.subTitle"
+        values={Object {}}
       />
     }
     headerTitle={
       <FormattedMessage
         defaultMessage="Job"
         id="jobDetail.title"
+        values={Object {}}
       />
     }
     options={
@@ -110,6 +119,7 @@ exports[`JobDetail: Component should render correctly with failure job 1`] = `
           "label": <FormattedMessage
             defaultMessage="Projects"
             id="jobDetail.projectsListPage"
+            values={Object {}}
           />,
           "to": "/project/",
           "type": "link_item",
@@ -122,12 +132,14 @@ exports[`JobDetail: Component should render correctly with failure job 1`] = `
       <FormattedMessage
         defaultMessage="Details"
         id="jobDetail.subTitle"
+        values={Object {}}
       />
     }
     title={
       <FormattedMessage
         defaultMessage="Job"
         id="jobDetail.title"
+        values={Object {}}
       />
     }
   />
@@ -152,6 +164,7 @@ exports[`JobDetail: Component should render correctly with failure job 1`] = `
       <FormattedMessage
         defaultMessage="Back"
         id="jobDetail.back"
+        values={Object {}}
       />
     </BackButton>
     <NextButton
@@ -162,6 +175,7 @@ exports[`JobDetail: Component should render correctly with failure job 1`] = `
       <FormattedMessage
         defaultMessage="Save"
         id="jobDetail.save"
+        values={Object {}}
       />
     </NextButton>
   </NavigationContainer>
@@ -175,12 +189,14 @@ exports[`JobDetail: Component should render correctly with fake job 1`] = `
       <FormattedMessage
         defaultMessage="Details"
         id="jobDetail.subTitle"
+        values={Object {}}
       />
     }
     headerTitle={
       <FormattedMessage
         defaultMessage="Job"
         id="jobDetail.title"
+        values={Object {}}
       />
     }
     options={
@@ -194,6 +210,7 @@ exports[`JobDetail: Component should render correctly with fake job 1`] = `
           "label": <FormattedMessage
             defaultMessage="Projects"
             id="jobDetail.projectsListPage"
+            values={Object {}}
           />,
           "to": "/project/",
           "type": "link_item",
@@ -206,12 +223,14 @@ exports[`JobDetail: Component should render correctly with fake job 1`] = `
       <FormattedMessage
         defaultMessage="Details"
         id="jobDetail.subTitle"
+        values={Object {}}
       />
     }
     title={
       <FormattedMessage
         defaultMessage="Job"
         id="jobDetail.title"
+        values={Object {}}
       />
     }
   />
@@ -236,6 +255,7 @@ exports[`JobDetail: Component should render correctly with fake job 1`] = `
       <FormattedMessage
         defaultMessage="Back"
         id="jobDetail.back"
+        values={Object {}}
       />
     </BackButton>
     <NextButton
@@ -246,6 +266,7 @@ exports[`JobDetail: Component should render correctly with fake job 1`] = `
       <FormattedMessage
         defaultMessage="Save"
         id="jobDetail.save"
+        values={Object {}}
       />
     </NextButton>
   </NavigationContainer>
@@ -259,12 +280,14 @@ exports[`JobDetail: Component should render correctly with loader 1`] = `
       <FormattedMessage
         defaultMessage="Details"
         id="jobDetail.subTitle"
+        values={Object {}}
       />
     }
     headerTitle={
       <FormattedMessage
         defaultMessage="Job"
         id="jobDetail.title"
+        values={Object {}}
       />
     }
     options={
@@ -278,6 +301,7 @@ exports[`JobDetail: Component should render correctly with loader 1`] = `
           "label": <FormattedMessage
             defaultMessage="Projects"
             id="jobDetail.projectsListPage"
+            values={Object {}}
           />,
           "to": "/project/",
           "type": "link_item",
@@ -290,12 +314,14 @@ exports[`JobDetail: Component should render correctly with loader 1`] = `
       <FormattedMessage
         defaultMessage="Details"
         id="jobDetail.subTitle"
+        values={Object {}}
       />
     }
     title={
       <FormattedMessage
         defaultMessage="Job"
         id="jobDetail.title"
+        values={Object {}}
       />
     }
   />
@@ -320,6 +346,7 @@ exports[`JobDetail: Component should render correctly with loader 1`] = `
       <FormattedMessage
         defaultMessage="Back"
         id="jobDetail.back"
+        values={Object {}}
       />
     </BackButton>
     <NextButton
@@ -330,6 +357,7 @@ exports[`JobDetail: Component should render correctly with loader 1`] = `
       <FormattedMessage
         defaultMessage="Save"
         id="jobDetail.save"
+        values={Object {}}
       />
     </NextButton>
   </NavigationContainer>

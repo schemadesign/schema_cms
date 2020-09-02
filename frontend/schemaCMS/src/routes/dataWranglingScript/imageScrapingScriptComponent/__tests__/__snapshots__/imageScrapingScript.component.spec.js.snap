@@ -21,6 +21,7 @@ exports[`DataWranglingScript: Component should render correctly 1`] = `
           "label": <FormattedMessage
             defaultMessage="Projects"
             id="jobDetail.projectsListPage"
+            values={Object {}}
           />,
           "to": "/project/",
           "type": "link_item",
@@ -39,6 +40,7 @@ exports[`DataWranglingScript: Component should render correctly 1`] = `
       <FormattedMessage
         defaultMessage="Description"
         id="dataWranglingScripts.imageScrapingScript.description"
+        values={Object {}}
       />
     </Component>
     <styled.div>
@@ -48,6 +50,7 @@ exports[`DataWranglingScript: Component should render correctly 1`] = `
       <FormattedMessage
         defaultMessage="Python Code"
         id="dataWranglingScripts.imageScrapingScript.pythonCode"
+        values={Object {}}
       />
     </Component>
     <SyntaxHighlighter
@@ -136,6 +139,7 @@ exports[`DataWranglingScript: Component should render correctly 1`] = `
       <FormattedMessage
         defaultMessage="Fields with URLs"
         id="dataWranglingScripts.imageScrapingScript.fieldsWithUrls"
+        values={Object {}}
       />
     </Component>
     <LoadingWrapper
@@ -148,6 +152,7 @@ exports[`DataWranglingScript: Component should render correctly 1`] = `
         <FormattedMessage
           defaultMessage="No fields containing URLs were found."
           id="dataWranglingScripts.imageScrapingScript.noFieldFound"
+          values={Object {}}
         />
       </styled.div>
     </LoadingWrapper>
@@ -172,6 +177,7 @@ exports[`DataWranglingScript: Component should render correctly 1`] = `
       <FormattedMessage
         defaultMessage="Save"
         id="dataWranglingScripts.imageScrapingScript.save"
+        values={Object {}}
       />
     </NextButton>
   </NavigationContainer>
@@ -199,6 +205,7 @@ exports[`DataWranglingScript: Component should render correctly with loader 1`] 
           "label": <FormattedMessage
             defaultMessage="Projects"
             id="jobDetail.projectsListPage"
+            values={Object {}}
           />,
           "to": "/project/",
           "type": "link_item",
@@ -217,6 +224,7 @@ exports[`DataWranglingScript: Component should render correctly with loader 1`] 
       <FormattedMessage
         defaultMessage="Description"
         id="dataWranglingScripts.imageScrapingScript.description"
+        values={Object {}}
       />
     </Component>
     <styled.div>
@@ -226,6 +234,7 @@ exports[`DataWranglingScript: Component should render correctly with loader 1`] 
       <FormattedMessage
         defaultMessage="Python Code"
         id="dataWranglingScripts.imageScrapingScript.pythonCode"
+        values={Object {}}
       />
     </Component>
     <SyntaxHighlighter
@@ -314,6 +323,7 @@ exports[`DataWranglingScript: Component should render correctly with loader 1`] 
       <FormattedMessage
         defaultMessage="Fields with URLs"
         id="dataWranglingScripts.imageScrapingScript.fieldsWithUrls"
+        values={Object {}}
       />
     </Component>
     <LoadingWrapper
@@ -326,6 +336,7 @@ exports[`DataWranglingScript: Component should render correctly with loader 1`] 
         <FormattedMessage
           defaultMessage="No fields containing URLs were found."
           id="dataWranglingScripts.imageScrapingScript.noFieldFound"
+          values={Object {}}
         />
       </styled.div>
     </LoadingWrapper>
@@ -350,6 +361,7 @@ exports[`DataWranglingScript: Component should render correctly with loader 1`] 
       <FormattedMessage
         defaultMessage="Save"
         id="dataWranglingScripts.imageScrapingScript.save"
+        values={Object {}}
       />
     </NextButton>
   </NavigationContainer>

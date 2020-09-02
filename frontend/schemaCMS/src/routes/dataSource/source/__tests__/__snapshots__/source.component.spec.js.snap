@@ -12,6 +12,7 @@ exports[`SourceComponent: Component should render correctly 1`] = `
       <FormattedMessage
         defaultMessage="Source"
         id="dataSource.source.subTitle"
+        values={Object {}}
       />
     }
     options={
@@ -25,6 +26,7 @@ exports[`SourceComponent: Component should render correctly 1`] = `
           "label": <FormattedMessage
             defaultMessage="Projects"
             id="project.view.projectsListPage"
+            values={Object {}}
           />,
           "to": "/project/",
           "type": "link_item",
@@ -37,6 +39,7 @@ exports[`SourceComponent: Component should render correctly 1`] = `
           "label": <FormattedMessage
             defaultMessage="Users"
             id="project.view.usersPage"
+            values={Object {}}
           />,
           "to": "/user/",
           "type": "link_item",
@@ -50,6 +53,7 @@ exports[`SourceComponent: Component should render correctly 1`] = `
           "label": <FormattedMessage
             defaultMessage="Project details"
             id="project.view.projectDetails"
+            values={Object {}}
           />,
           "to": "/project/projectId",
           "type": "link_item",
@@ -63,6 +67,7 @@ exports[`SourceComponent: Component should render correctly 1`] = `
           "label": <FormattedMessage
             defaultMessage="Data Sources"
             id="project.view.projectDataSources"
+            values={Object {}}
           />,
           "to": "/project/projectId/datasource",
           "type": "link_item",
@@ -75,6 +80,7 @@ exports[`SourceComponent: Component should render correctly 1`] = `
           "label": <FormattedMessage
             defaultMessage="Project Users"
             id="project.view.projectUsersPage"
+            values={Object {}}
           />,
           "to": "/project/projectId/user",
           "type": "link_item",
@@ -88,6 +94,7 @@ exports[`SourceComponent: Component should render correctly 1`] = `
           "label": <FormattedMessage
             defaultMessage="Content"
             id="project.view.content"
+            values={Object {}}
           />,
           "to": "/project/projectId/content",
           "type": "link_item",
@@ -100,6 +107,7 @@ exports[`SourceComponent: Component should render correctly 1`] = `
           "label": <FormattedMessage
             defaultMessage="Templates"
             id="project.view.templates"
+            values={Object {}}
           />,
           "to": "/project/projectId/templates",
           "type": "link_item",
@@ -112,6 +120,7 @@ exports[`SourceComponent: Component should render correctly 1`] = `
       <FormattedMessage
         defaultMessage="Source"
         id="dataSource.source.subTitle"
+        values={Object {}}
       />
     }
   >
@@ -551,6 +560,7 @@ exports[`SourceComponent: Component should render correctly 1`] = `
         <FormattedMessage
           defaultMessage="View Past Versions"
           id="dataSource.source.pastVersions"
+          values={Object {}}
         />
       </Styled(Styled(Span))>
       <Styled(Styled(Span))
@@ -560,6 +570,7 @@ exports[`SourceComponent: Component should render correctly 1`] = `
         <FormattedMessage
           defaultMessage="Delete Data Source"
           id="dataSource.source.removeDataSource"
+          values={Object {}}
         />
       </Styled(Styled(Span))>
     </styled.div>
@@ -579,6 +590,7 @@ exports[`SourceComponent: Component should render correctly 1`] = `
         <FormattedMessage
           defaultMessage="Save"
           id="dataSource.source.save"
+          values={Object {}}
         />
       </NextButton>
     </NavigationContainer>
@@ -837,6 +849,7 @@ exports[`SourceComponent: Component should render correctly 1`] = `
       <FormattedMessage
         defaultMessage="Are you sure you want to remove this data source?"
         id="dataSource.source.removeTitle"
+        values={Object {}}
       />
     </Styled(H1)>
     <styled.div>
@@ -847,6 +860,7 @@ exports[`SourceComponent: Component should render correctly 1`] = `
         <FormattedMessage
           defaultMessage="Cancel"
           id="dataSource.source.cancelRemoval"
+          values={Object {}}
         />
       </BackButton>
       <NextButton
@@ -858,6 +872,7 @@ exports[`SourceComponent: Component should render correctly 1`] = `
         <FormattedMessage
           defaultMessage="Confirm"
           id="dataSource.source.confirmRemoval"
+          values={Object {}}
         />
       </NextButton>
     </styled.div>
@@ -901,6 +916,7 @@ exports[`SourceComponent: Component should render correctly 1`] = `
       <FormattedMessage
         defaultMessage="Do you want to run last steps on current file?"
         id="dataSource.source.removeTitle"
+        values={Object {}}
       />
     </Styled(H1)>
     <styled.div>
@@ -913,6 +929,7 @@ exports[`SourceComponent: Component should render correctly 1`] = `
         <FormattedMessage
           defaultMessage="No"
           id="dataSource.source.cancelRemoval"
+          values={Object {}}
         />
       </BackButton>
       <NextButton
@@ -924,6 +941,7 @@ exports[`SourceComponent: Component should render correctly 1`] = `
         <FormattedMessage
           defaultMessage="Yes"
           id="dataSource.source.confirmRemoval"
+          values={Object {}}
         />
       </NextButton>
     </styled.div>
@@ -943,6 +961,7 @@ exports[`SourceComponent: Component should render file uploader 1`] = `
       <FormattedMessage
         defaultMessage="Source"
         id="dataSource.source.subTitle"
+        values={Object {}}
       />
     }
     options={
@@ -956,6 +975,7 @@ exports[`SourceComponent: Component should render file uploader 1`] = `
           "label": <FormattedMessage
             defaultMessage="Projects"
             id="project.view.projectsListPage"
+            values={Object {}}
           />,
           "to": "/project/",
           "type": "link_item",
@@ -968,6 +988,7 @@ exports[`SourceComponent: Component should render file uploader 1`] = `
           "label": <FormattedMessage
             defaultMessage="Users"
             id="project.view.usersPage"
+            values={Object {}}
           />,
           "to": "/user/",
           "type": "link_item",
@@ -981,6 +1002,7 @@ exports[`SourceComponent: Component should render file uploader 1`] = `
           "label": <FormattedMessage
             defaultMessage="Project details"
             id="project.view.projectDetails"
+            values={Object {}}
           />,
           "to": "/project/projectId",
           "type": "link_item",
@@ -994,6 +1016,7 @@ exports[`SourceComponent: Component should render file uploader 1`] = `
           "label": <FormattedMessage
             defaultMessage="Data Sources"
             id="project.view.projectDataSources"
+            values={Object {}}
           />,
           "to": "/project/projectId/datasource",
           "type": "link_item",
@@ -1006,6 +1029,7 @@ exports[`SourceComponent: Component should render file uploader 1`] = `
           "label": <FormattedMessage
             defaultMessage="Project Users"
             id="project.view.projectUsersPage"
+            values={Object {}}
           />,
           "to": "/project/projectId/user",
           "type": "link_item",
@@ -1019,6 +1043,7 @@ exports[`SourceComponent: Component should render file uploader 1`] = `
           "label": <FormattedMessage
             defaultMessage="Content"
             id="project.view.content"
+            values={Object {}}
           />,
           "to": "/project/projectId/content",
           "type": "link_item",
@@ -1031,6 +1056,7 @@ exports[`SourceComponent: Component should render file uploader 1`] = `
           "label": <FormattedMessage
             defaultMessage="Templates"
             id="project.view.templates"
+            values={Object {}}
           />,
           "to": "/project/projectId/templates",
           "type": "link_item",
@@ -1043,6 +1069,7 @@ exports[`SourceComponent: Component should render file uploader 1`] = `
       <FormattedMessage
         defaultMessage="Source"
         id="dataSource.source.subTitle"
+        values={Object {}}
       />
     }
   >
@@ -1485,6 +1512,7 @@ exports[`SourceComponent: Component should render file uploader 1`] = `
         <FormattedMessage
           defaultMessage="Save"
           id="dataSource.source.save"
+          values={Object {}}
         />
       </NextButton>
     </NavigationContainer>
@@ -1740,6 +1768,7 @@ exports[`SourceComponent: Component should render file uploader 1`] = `
       <FormattedMessage
         defaultMessage="Are you sure you want to remove this data source?"
         id="dataSource.source.removeTitle"
+        values={Object {}}
       />
     </Styled(H1)>
     <styled.div>
@@ -1750,6 +1779,7 @@ exports[`SourceComponent: Component should render file uploader 1`] = `
         <FormattedMessage
           defaultMessage="Cancel"
           id="dataSource.source.cancelRemoval"
+          values={Object {}}
         />
       </BackButton>
       <NextButton
@@ -1761,6 +1791,7 @@ exports[`SourceComponent: Component should render file uploader 1`] = `
         <FormattedMessage
           defaultMessage="Confirm"
           id="dataSource.source.confirmRemoval"
+          values={Object {}}
         />
       </NextButton>
     </styled.div>
@@ -1804,6 +1835,7 @@ exports[`SourceComponent: Component should render file uploader 1`] = `
       <FormattedMessage
         defaultMessage="Do you want to run last steps on current file?"
         id="dataSource.source.removeTitle"
+        values={Object {}}
       />
     </Styled(H1)>
     <styled.div>
@@ -1816,6 +1848,7 @@ exports[`SourceComponent: Component should render file uploader 1`] = `
         <FormattedMessage
           defaultMessage="No"
           id="dataSource.source.cancelRemoval"
+          values={Object {}}
         />
       </BackButton>
       <NextButton
@@ -1827,6 +1860,7 @@ exports[`SourceComponent: Component should render file uploader 1`] = `
         <FormattedMessage
           defaultMessage="Yes"
           id="dataSource.source.confirmRemoval"
+          values={Object {}}
         />
       </NextButton>
     </styled.div>

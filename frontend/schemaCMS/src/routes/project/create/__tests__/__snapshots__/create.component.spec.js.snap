@@ -7,12 +7,14 @@ exports[`Create: Component should render correctly 1`] = `
       <FormattedMessage
         defaultMessage="Project Info"
         id="project.create.pageSubTitle"
+        values={Object {}}
       />
     }
     headerTitle={
       <FormattedMessage
         defaultMessage="Create New Project"
         id="project.create.pageTitle"
+        values={Object {}}
       />
     }
     options={
@@ -26,6 +28,7 @@ exports[`Create: Component should render correctly 1`] = `
           "label": <FormattedMessage
             defaultMessage="Projects"
             id="project.view.projectsListPage"
+            values={Object {}}
           />,
           "to": "/project/",
           "type": "link_item",
@@ -38,6 +41,7 @@ exports[`Create: Component should render correctly 1`] = `
           "label": <FormattedMessage
             defaultMessage="Users"
             id="project.view.usersPage"
+            values={Object {}}
           />,
           "to": "/user/",
           "type": "link_item",
@@ -51,6 +55,7 @@ exports[`Create: Component should render correctly 1`] = `
           "label": <FormattedMessage
             defaultMessage="Project details"
             id="project.view.projectDetails"
+            values={Object {}}
           />,
           "to": "/project/projectId",
           "type": "link_item",
@@ -64,6 +69,7 @@ exports[`Create: Component should render correctly 1`] = `
           "label": <FormattedMessage
             defaultMessage="Data Sources"
             id="project.view.projectDataSources"
+            values={Object {}}
           />,
           "to": "/project/projectId/datasource",
           "type": "link_item",
@@ -76,6 +82,7 @@ exports[`Create: Component should render correctly 1`] = `
           "label": <FormattedMessage
             defaultMessage="Project Users"
             id="project.view.projectUsersPage"
+            values={Object {}}
           />,
           "to": "/project/projectId/user",
           "type": "link_item",
@@ -89,6 +96,7 @@ exports[`Create: Component should render correctly 1`] = `
           "label": <FormattedMessage
             defaultMessage="Content"
             id="project.view.content"
+            values={Object {}}
           />,
           "to": "/project/projectId/content",
           "type": "link_item",
@@ -101,6 +109,7 @@ exports[`Create: Component should render correctly 1`] = `
           "label": <FormattedMessage
             defaultMessage="Templates"
             id="project.view.templates"
+            values={Object {}}
           />,
           "to": "/project/projectId/templates",
           "type": "link_item",
@@ -113,12 +122,14 @@ exports[`Create: Component should render correctly 1`] = `
       <FormattedMessage
         defaultMessage="Project Info"
         id="project.create.pageSubTitle"
+        values={Object {}}
       />
     }
     title={
       <FormattedMessage
         defaultMessage="Create New Project"
         id="project.create.pageTitle"
+        values={Object {}}
       />
     }
   />
@@ -345,6 +356,7 @@ exports[`Create: Component should render correctly 1`] = `
         <FormattedMessage
           defaultMessage="Cancel"
           id="project.create.cancel"
+          values={Object {}}
         />
       </BackButton>
       <NextButton
@@ -356,6 +368,7 @@ exports[`Create: Component should render correctly 1`] = `
         <FormattedMessage
           defaultMessage="Finish"
           id="project.create.finish"
+          values={Object {}}
         />
       </NextButton>
     </NavigationContainer>

@@ -7,6 +7,7 @@ exports[`Filter: Component should render correctly 1`] = `
       <FormattedMessage
         defaultMessage="Edit Filter"
         id="filter.subTitle"
+        values={Object {}}
       />
     }
     headerTitle="name"
@@ -21,6 +22,7 @@ exports[`Filter: Component should render correctly 1`] = `
           "label": <FormattedMessage
             defaultMessage="Projects"
             id="filter.projectsListPage"
+            values={Object {}}
           />,
           "to": "/project/",
           "type": "link_item",
@@ -33,6 +35,7 @@ exports[`Filter: Component should render correctly 1`] = `
       <FormattedMessage
         defaultMessage="Edit Filter"
         id="filter.subTitle"
+        values={Object {}}
       />
     }
     title="name"
@@ -92,6 +95,7 @@ exports[`Filter: Component should render correctly with loader 1`] = `
       <FormattedMessage
         defaultMessage="Edit Filter"
         id="filter.subTitle"
+        values={Object {}}
       />
     }
     headerTitle="name"
@@ -106,6 +110,7 @@ exports[`Filter: Component should render correctly with loader 1`] = `
           "label": <FormattedMessage
             defaultMessage="Projects"
             id="filter.projectsListPage"
+            values={Object {}}
           />,
           "to": "/project/",
           "type": "link_item",
@@ -118,6 +123,7 @@ exports[`Filter: Component should render correctly with loader 1`] = `
       <FormattedMessage
         defaultMessage="Edit Filter"
         id="filter.subTitle"
+        values={Object {}}
       />
     }
     title="name"

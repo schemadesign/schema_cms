@@ -8,12 +8,14 @@ exports[`User List: Component should render correctly with loader 1`] = `
       <FormattedMessage
         defaultMessage="Overview"
         id="userList.headerSubtitle"
+        values={Object {}}
       />
     }
     headerTitle={
       <FormattedMessage
         defaultMessage="Users"
         id="userList.headerTitle"
+        values={Object {}}
       />
     }
     options={
@@ -26,6 +28,7 @@ exports[`User List: Component should render correctly with loader 1`] = `
           "label": <FormattedMessage
             defaultMessage="Projects"
             id="user.projectsListPage"
+            values={Object {}}
           />,
           "to": "/project/",
           "type": "link_item",
@@ -38,6 +41,7 @@ exports[`User List: Component should render correctly with loader 1`] = `
           "label": <FormattedMessage
             defaultMessage="Users"
             id="user.userPage"
+            values={Object {}}
           />,
           "to": "/user/",
           "type": "link_item",
@@ -50,12 +54,14 @@ exports[`User List: Component should render correctly with loader 1`] = `
       <FormattedMessage
         defaultMessage="Overview"
         id="userList.headerSubtitle"
+        values={Object {}}
       />
     }
     title={
       <FormattedMessage
         defaultMessage="Users"
         id="userList.headerTitle"
+        values={Object {}}
       />
     }
   >
@@ -89,6 +95,7 @@ exports[`User List: Component should render correctly with loader 1`] = `
       <FormattedMessage
         defaultMessage="Cancel"
         id="userList.cancel"
+        values={Object {}}
       />
     </BackButton>
     <PlusButton
@@ -109,12 +116,14 @@ exports[`User List: Component should render correctly with users data 1`] = `
       <FormattedMessage
         defaultMessage="Overview"
         id="userList.headerSubtitle"
+        values={Object {}}
       />
     }
     headerTitle={
       <FormattedMessage
         defaultMessage="Users"
         id="userList.headerTitle"
+        values={Object {}}
       />
     }
     options={
@@ -127,6 +136,7 @@ exports[`User List: Component should render correctly with users data 1`] = `
           "label": <FormattedMessage
             defaultMessage="Projects"
             id="user.projectsListPage"
+            values={Object {}}
           />,
           "to": "/project/",
           "type": "link_item",
@@ -139,6 +149,7 @@ exports[`User List: Component should render correctly with users data 1`] = `
           "label": <FormattedMessage
             defaultMessage="Users"
             id="user.userPage"
+            values={Object {}}
           />,
           "to": "/user/",
           "type": "link_item",
@@ -151,12 +162,14 @@ exports[`User List: Component should render correctly with users data 1`] = `
       <FormattedMessage
         defaultMessage="Overview"
         id="userList.headerSubtitle"
+        values={Object {}}
       />
     }
     title={
       <FormattedMessage
         defaultMessage="Users"
         id="userList.headerTitle"
+        values={Object {}}
       />
     }
   >
@@ -201,6 +214,7 @@ exports[`User List: Component should render correctly with users data 1`] = `
       <FormattedMessage
         defaultMessage="Cancel"
         id="userList.cancel"
+        values={Object {}}
       />
     </BackButton>
     <PlusButton

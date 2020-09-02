@@ -12,6 +12,7 @@ exports[`DataSourceViews: Component should render correctly 1`] = `
       <FormattedMessage
         defaultMessage="Views"
         id="dataSource.dataSourceViews.subTitle"
+        values={Object {}}
       />
     }
     headerTitle="name"
@@ -26,6 +27,7 @@ exports[`DataSourceViews: Component should render correctly 1`] = `
           "label": <FormattedMessage
             defaultMessage="Projects"
             id="project.view.projectsListPage"
+            values={Object {}}
           />,
           "to": "/project/",
           "type": "link_item",
@@ -38,6 +40,7 @@ exports[`DataSourceViews: Component should render correctly 1`] = `
           "label": <FormattedMessage
             defaultMessage="Users"
             id="project.view.usersPage"
+            values={Object {}}
           />,
           "to": "/user/",
           "type": "link_item",
@@ -51,6 +54,7 @@ exports[`DataSourceViews: Component should render correctly 1`] = `
           "label": <FormattedMessage
             defaultMessage="Project details"
             id="project.view.projectDetails"
+            values={Object {}}
           />,
           "to": "/project/1",
           "type": "link_item",
@@ -64,6 +68,7 @@ exports[`DataSourceViews: Component should render correctly 1`] = `
           "label": <FormattedMessage
             defaultMessage="Data Sources"
             id="project.view.projectDataSources"
+            values={Object {}}
           />,
           "to": "/project/1/datasource",
           "type": "link_item",
@@ -76,6 +81,7 @@ exports[`DataSourceViews: Component should render correctly 1`] = `
           "label": <FormattedMessage
             defaultMessage="Project Users"
             id="project.view.projectUsersPage"
+            values={Object {}}
           />,
           "to": "/project/1/user",
           "type": "link_item",
@@ -89,6 +95,7 @@ exports[`DataSourceViews: Component should render correctly 1`] = `
           "label": <FormattedMessage
             defaultMessage="Content"
             id="project.view.content"
+            values={Object {}}
           />,
           "to": "/project/1/content",
           "type": "link_item",
@@ -101,6 +108,7 @@ exports[`DataSourceViews: Component should render correctly 1`] = `
           "label": <FormattedMessage
             defaultMessage="Templates"
             id="project.view.templates"
+            values={Object {}}
           />,
           "to": "/project/1/templates",
           "type": "link_item",
@@ -113,6 +121,7 @@ exports[`DataSourceViews: Component should render correctly 1`] = `
       <FormattedMessage
         defaultMessage="Views"
         id="dataSource.dataSourceViews.subTitle"
+        values={Object {}}
       />
     }
     title="name"
@@ -144,6 +153,7 @@ exports[`DataSourceViews: Component should render correctly 1`] = `
     <FormattedMessage
       defaultMessage="Coming soon..."
       id="dataSource.dataSourceViews.coming"
+      values={Object {}}
     />
   </styled.div>
   <DataSourceNavigation
