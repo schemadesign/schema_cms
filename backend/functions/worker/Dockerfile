@@ -8,7 +8,9 @@ FROM lambci/lambda-base-2
 
 ENV PATH=/var/lang/bin:$PATH \
     LD_LIBRARY_PATH=/var/lang/lib:$LD_LIBRARY_PATH \
-    AWS_EXECUTION_ENV=AWS_Lambda_python3.8
+    AWS_EXECUTION_ENV=AWS_Lambda_python3.8 \
+    PIP_NO_CACHE_DIR=off \
+ 	PIP_DISABLE_PIP_VERSION_CHECK=1
 
 COPY --from=0 /opt/* /var/
 COPY --from=1 /var/runtime/init /var/rapid/init
