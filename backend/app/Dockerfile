@@ -11,8 +11,8 @@ ENV PIP_DISABLE_PIP_VERSION_CHECK on
 
 WORKDIR /app
 
-RUN apt-get update && apt-get install -y --no-install-recommends postgresql-client npm \
-  && pip install --no-cache-dir pipenv==2020.6.2 awscli \
+RUN apt-get update && apt-get install -y --no-install-recommends postgresql-client \
+  && pip install --no-cache-dir pipenv==2018.11.26 awscli \
   && apt-get purge -y --auto-remove -o APT::AutoRemove::RecommendsImportant=false \
   && rm -rf /var/lib/apt/lists/*
 

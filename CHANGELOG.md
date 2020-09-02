@@ -1,6 +1,3 @@
-
-## 1.9.0 (August 18, 2020) - Change
-
 ## [Unreleased]
 
 ### Fixes
@@ -9,6 +6,7 @@
 - Prompt user when leave route with unsaved changes
 - Added number of tags to the data source tile
 - Fixed snapshot test for number of tags
+- Warnings during building local docker images
 
 ### Changes
 - README.md and documentation update
