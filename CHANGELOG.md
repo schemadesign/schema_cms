@@ -1,4 +1,11 @@
 ## [Unreleased]
+### Fixes
+
+### Changes
+
+### Features
+
+## 1.7.0 (September 02, 2020) - Release
 
 ### Fixes
 - Bump dependencies versions and fix mocking of redux-sagas/effects
@@ -6,6 +13,8 @@
 - Prompt user when leave route with unsaved changes
 - Added number of tags to the data source tile
 - Fixed snapshot test for number of tags
+- Warnings during building local docker images
+- Fix the case when user is leaving the edit page in order to add block and back
 
 ### Changes
 - README.md and documentation update
