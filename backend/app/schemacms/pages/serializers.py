@@ -466,7 +466,17 @@ class SectionListCreateSerializer(CustomModelSerializer):
 
     class Meta:
         model = models.Section
-        fields = ("id", "project", "name", "slug", "created_by", "created", "is_public", "pages_count")
+        fields = (
+            "id",
+            "project",
+            "name",
+            "slug",
+            "created_by",
+            "created",
+            "is_public",
+            "pages_count",
+            "is_rss_content",
+        )
         validators = [
             CustomUniqueTogetherValidator(
                 queryset=models.Section.objects.all(),
@@ -532,7 +542,18 @@ class SectionDetailSerializer(CustomModelSerializer):
 
     class Meta:
         model = models.Section
-        fields = ("id", "project", "name", "slug", "created_by", "created", "is_public", "pages", "main_page")
+        fields = (
+            "id",
+            "project",
+            "name",
+            "slug",
+            "created_by",
+            "created",
+            "is_public",
+            "pages",
+            "main_page",
+            "is_rss_content",
+        )
         validators = [
             CustomUniqueTogetherValidator(
                 queryset=models.Section.objects.all(),

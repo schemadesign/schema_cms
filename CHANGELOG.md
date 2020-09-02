@@ -1,6 +1,3 @@
-
-## 1.9.0 (August 18, 2020) - Change
-
 ## [Unreleased]
 
 ### Fixes
@@ -12,6 +9,7 @@
 
 ### Changes
 - README.md and documentation update
+- Allow to select section which pages will be displayed in RSS xml file
 
 Fix the case when user is leaving the edit page in order to add block and back
 
