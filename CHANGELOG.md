@@ -10,6 +10,7 @@
 ### Changes
 - README.md and documentation update
 - Allow to select section which pages will be displayed in RSS xml file
+- Add switch button to set section to be available in RSS feed
 
 Fix the case when user is leaving the edit page in order to add block and back
 
