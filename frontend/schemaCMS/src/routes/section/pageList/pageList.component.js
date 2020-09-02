@@ -386,9 +386,9 @@ export const PageList = ({
                   </SwitchLabel>
                   <AvailableCopy>
                     <FormattedMessage
-                      {...messages.sectionAvailability}
+                      {...messages.sectionRssEnabled}
                       values={{
-                        availability: intl.formatMessage(messages[values[SECTIONS_RSS] ? 'publicCopy' : 'privateCopy']),
+                        availability: intl.formatMessage(messages[values[SECTIONS_RSS] ? 'enabledRss' : 'disabledRss']),
                       }}
                     />
                     {visitPage}

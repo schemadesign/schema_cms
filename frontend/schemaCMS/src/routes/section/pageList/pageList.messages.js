@@ -57,7 +57,7 @@ export default defineMessages({
   },
   sectionRssEnabled: {
     id: 'section.pageList.sectionRssEnabled',
-    defaultMessage: 'This Section is currently {availability}',
+    defaultMessage: 'This Section is currently {availability} for RSS feed',
   },
   privateCopy: {
     id: 'section.pageList.privateCopy',
@@ -66,6 +66,14 @@ export default defineMessages({
   publicCopy: {
     id: 'section.pageList.publicCopy',
     defaultMessage: 'Public',
+  },
+  enabledRss: {
+    id: 'section.pageList.enabledRss',
+    defaultMessage: 'enabled',
+  },
+  disabledRss: {
+    id: 'section.pageList.disabledRss',
+    defaultMessage: 'disabled',
   },
   visitPage: {
     id: 'section.pageList.visitPage',
