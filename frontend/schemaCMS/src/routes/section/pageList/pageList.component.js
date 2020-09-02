@@ -32,6 +32,7 @@ import {
   SECTIONS_MAIN_PAGE,
   SECTIONS_NAME,
   SECTIONS_PUBLISH,
+  SECTIONS_RSS,
   SECTIONS_SCHEMA,
 } from '../../../modules/sections/sections.constants';
 import {
@@ -208,7 +209,7 @@ export const PageList = ({
     </Fragment>
   ) : null;
   const { handleSubmit, handleChange, values, isValid, dirty, ...restFormikProps } = useFormik({
-    initialValues: pick([SECTIONS_NAME, SECTIONS_PUBLISH, SECTIONS_MAIN_PAGE], section),
+    initialValues: pick([SECTIONS_NAME, SECTIONS_PUBLISH, SECTIONS_MAIN_PAGE, SECTIONS_RSS], section),
     enableReinitialize: true,
     validationSchema: () => SECTIONS_SCHEMA,
     onSubmit: async (formData, { setErrors }) => {
@@ -375,6 +376,25 @@ export const PageList = ({
               <BinIconContainer id="removeSection" onClick={() => setRemoveModalOpen(true)}>
                 <BinIcon />
               </BinIconContainer>
+            </SwitchContainer>
+            <SwitchContainer>
+              <SwitchContent>
+                <Switch value={values[SECTIONS_RSS]} id={SECTIONS_RSS} onChange={handleChange} />
+                <SwitchCopy>
+                  <SwitchLabel htmlFor={SECTIONS_RSS}>
+                    <FormattedMessage {...messages[SECTIONS_RSS]} />
+                  </SwitchLabel>
+                  <AvailableCopy>
+                    <FormattedMessage
+                      {...messages.sectionAvailability}
+                      values={{
+                        availability: intl.formatMessage(messages[values[SECTIONS_RSS] ? 'publicCopy' : 'privateCopy']),
+                      }}
+                    />
+                    {visitPage}
+                  </AvailableCopy>
+                </SwitchCopy>
+              </SwitchContent>
             </SwitchContainer>
           </Switches>
           <NavigationContainer fixed>
