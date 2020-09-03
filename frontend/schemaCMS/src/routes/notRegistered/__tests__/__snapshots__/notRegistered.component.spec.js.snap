@@ -12,14 +12,12 @@ exports[`NotRegistered: Component should render correctly 1`] = `
       <FormattedMessage
         defaultMessage="Error"
         id="notRegistered.subTitle"
-        values={Object {}}
       />
     }
     headerTitle={
       <FormattedMessage
         defaultMessage="Schema CMS"
         id="notRegistered.title"
-        values={Object {}}
       />
     }
     iconComponent={null}

@@ -13,7 +13,6 @@ exports[`UserProfile: Component should render correctly 1`] = `
       <FormattedMessage
         defaultMessage="First Name"
         id="userProfile.firstNameLabel"
-        values={Object {}}
       />
     }
     name="firstName"
@@ -32,7 +31,6 @@ exports[`UserProfile: Component should render correctly 1`] = `
       <FormattedMessage
         defaultMessage="Last Name"
         id="userProfile.lastNameLabel"
-        values={Object {}}
       />
     }
     name="lastName"
@@ -51,7 +49,6 @@ exports[`UserProfile: Component should render correctly 1`] = `
       <FormattedMessage
         defaultMessage="Email"
         id="userProfile.emailLabel"
-        values={Object {}}
       />
     }
     name="email"
@@ -70,7 +67,6 @@ exports[`UserProfile: Component should render correctly 1`] = `
       <FormattedMessage
         defaultMessage="Role"
         id="userProfile.roleLabel"
-        values={Object {}}
       />
     }
     name="role"
@@ -94,7 +90,6 @@ exports[`UserProfile: Component should render correctly current user 1`] = `
       <FormattedMessage
         defaultMessage="First Name"
         id="userProfile.firstNameLabel"
-        values={Object {}}
       />
     }
     name="firstName"
@@ -113,7 +108,6 @@ exports[`UserProfile: Component should render correctly current user 1`] = `
       <FormattedMessage
         defaultMessage="Last Name"
         id="userProfile.lastNameLabel"
-        values={Object {}}
       />
     }
     name="lastName"
@@ -132,7 +126,6 @@ exports[`UserProfile: Component should render correctly current user 1`] = `
       <FormattedMessage
         defaultMessage="Email"
         id="userProfile.emailLabel"
-        values={Object {}}
       />
     }
     name="email"
@@ -151,7 +144,6 @@ exports[`UserProfile: Component should render correctly current user 1`] = `
       <FormattedMessage
         defaultMessage="Role"
         id="userProfile.roleLabel"
-        values={Object {}}
       />
     }
     name="role"
