@@ -569,3 +569,10 @@ class SectionDetailSerializer(CustomModelSerializer):
             return value
         else:
             raise serializers.ValidationError("Page does not exist in section")
+
+    @transaction.atomic()
+    def update(self, instance, validated_data):
+        section = super().update(instance, validated_data)
+        section.project.create_xlm_file()
+
+        return section
