@@ -117,7 +117,7 @@ class Project(SoftDeleteObject, TitleSlugDescriptionModel, TimeStampedModel):
             section__is_rss_content=True,
             is_draft=False,
             state__in=[PageState.PUBLISHED, PageState.WAITING_TO_REPUBLISH],
-        ).order_by("-created")
+        ).order_by("-modified")
 
         for page in pages:
             channel.append(page.create_xml_item())
