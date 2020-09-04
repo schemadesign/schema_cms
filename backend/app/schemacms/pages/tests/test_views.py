@@ -322,12 +322,18 @@ class TestUpdateDeleteSectionView:
 
         assert response.status_code == status.HTTP_200_OK
 
-    def test_delete_section_as_admin(self, api_client, admin, section):
-        self.delete_section(api_client, admin, section)
+    def test_delete_section_as_admin(self, api_client, admin, section, mocker):
+        create_xlm_file_mock = mocker.patch("schemacms.projects.models.Project.create_xlm_file")
 
-    def test_delete_section_as_project_editor(self, api_client, editor, section):
+        self.delete_section(api_client, admin, section)
+        create_xlm_file_mock.assert_called_once()
+
+    def test_delete_section_as_project_editor(self, api_client, editor, section, mocker):
+        create_xlm_file_mock = mocker.patch("schemacms.projects.models.Project.create_xlm_file")
+
         section.project.editors.add(editor)
         self.delete_section(api_client, editor, section)
+        create_xlm_file_mock.assert_called_once()
 
     def delete_section(self, api_client, user, section):
         section_id = section.id

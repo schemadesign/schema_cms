@@ -220,6 +220,11 @@ class SectionViewSet(DetailViewSet):
 
         return super().get_queryset().prefetch_related("pages")
 
+    def perform_destroy(self, instance):
+        project = instance.project
+        super().perform_destroy(instance)
+        project.create_xlm_file()
+
 
 class PageListCreateView(
     ActionSerializerViewSetMixin, mixins.ListModelMixin, mixins.CreateModelMixin, viewsets.GenericViewSet
