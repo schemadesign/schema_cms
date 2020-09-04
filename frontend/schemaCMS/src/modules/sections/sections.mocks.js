@@ -1,4 +1,4 @@
-import { SECTIONS_MAIN_PAGE, SECTIONS_NAME, SECTIONS_PUBLISH } from './sections.constants';
+import { SECTIONS_MAIN_PAGE, SECTIONS_NAME, SECTIONS_PUBLISH, SECTIONS_RSS } from './sections.constants';
 import { PAGE_DISPLAY_NAME } from '../page/page.constants';
 
 export const section = {
@@ -35,6 +35,7 @@ export const section = {
   ],
   pagesCount: 1,
   [SECTIONS_PUBLISH]: true,
+  [SECTIONS_RSS]: false,
   [SECTIONS_MAIN_PAGE]: 3,
   created: '2020-03-09T10:41:17+0000',
 };
@@ -80,6 +81,7 @@ export const sections = [
     pages: [],
     pagesCount: 0,
     [SECTIONS_PUBLISH]: false,
+    [SECTIONS_RSS]: false,
     [SECTIONS_MAIN_PAGE]: null,
     created: '2020-03-09T10:41:17+0000',
   },

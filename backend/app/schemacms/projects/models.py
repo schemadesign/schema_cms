@@ -112,7 +112,11 @@ class Project(SoftDeleteObject, TitleSlugDescriptionModel, TimeStampedModel):
         etree.SubElement(channel, "description").text = self.description
 
         pages = self.page_set.filter(
-            is_public=True, section__is_public=True, is_draft=False, state=PageState.PUBLISHED
+            is_public=True,
+            section__is_public=True,
+            section__is_rss_content=True,
+            is_draft=False,
+            state__in=[PageState.PUBLISHED, PageState.WAITING_TO_REPUBLISH],
         ).order_by("-modified")
 
         for page in pages:

@@ -6,7 +6,7 @@ import { section as sectionMock } from '../sections.mocks';
 
 describe('Sections: redux', () => {
   const state = Immutable({
-    section: { isPublic: false, name: '', pages: [] },
+    section: { isPublic: false, name: '', pages: [], isRssContent: false },
     sections: [],
     pages: {
       count: 0,
@@ -90,6 +90,7 @@ describe('Sections: redux', () => {
         createdBy: 'owner',
         id: 1,
         isPublic: true,
+        isRssContent: false,
         mainPage: 3,
         name: 'Section name',
         pages: [

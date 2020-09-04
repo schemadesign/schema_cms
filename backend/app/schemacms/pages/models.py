@@ -74,6 +74,7 @@ class Section(SoftDeleteObject, TimeStampedModel):
     slug = AutoSlugField(populate_from="name", allow_duplicates=True)
     created_by = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete=models.SET_NULL, null=True)
     is_public = models.BooleanField(default=True)
+    is_rss_content = models.BooleanField(default=False)
     main_page = models.OneToOneField(
         "pages.Page", on_delete=models.SET_NULL, null=True, related_name="main_page"
     )

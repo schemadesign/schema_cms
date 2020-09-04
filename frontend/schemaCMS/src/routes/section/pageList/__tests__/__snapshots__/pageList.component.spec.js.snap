@@ -1556,6 +1556,87 @@ exports[`PageList: Component should render correctly 1`] = `
           </svg>
         </div>
       </div>
+      <div
+        className="sc-fznzOf hTzoGp"
+      >
+        <div
+          className="sc-fzomME eCbTLD"
+        >
+          <div>
+            <input
+              checked={false}
+              id="isRssContent"
+              onChange={[Function]}
+              style={
+                Object {
+                  "height": 0,
+                  "left": 0,
+                  "overflow": "hidden",
+                  "position": "absolute",
+                  "top": 0,
+                  "visibility": "hidden",
+                }
+              }
+              type="checkbox"
+            />
+            <label
+              htmlFor="isRssContent"
+            >
+              <div
+                style={
+                  Object {
+                    "background": "#2F2F36",
+                    "borderRadius": 20,
+                    "boxSizing": "border-box",
+                    "cursor": "pointer",
+                    "height": 24,
+                    "padding": 2,
+                    "transition": "background 200ms ease-in-out",
+                    "width": 44,
+                  }
+                }
+              >
+                <div
+                  style={
+                    Object {
+                      "background": "#FFF",
+                      "borderRadius": "50%",
+                      "height": 20,
+                      "transform": "translateX(0)",
+                      "transition": "transform 200ms ease-in-out",
+                      "width": 20,
+                    }
+                  }
+                />
+              </div>
+            </label>
+          </div>
+          <div
+            className="sc-fzoant bxwlht"
+          >
+            <label
+              className="sc-fznMnq iZIZni"
+              htmlFor="isRssContent"
+            >
+              Make it available for RSS
+            </label>
+            <span
+              className="sc-fzqMAW ksxHwA"
+            >
+              This Section is currently disabled for RSS feed
+              <span
+                className="sc-fznLPX cFNeVS"
+              />
+              Visit Page: 
+              <a
+                href="http://project.domain"
+              >
+                http://project.domain
+              </a>
+            </span>
+          </div>
+        </div>
+      </div>
     </div>
     <div
       className="sc-fzoyAV jiDcgh"

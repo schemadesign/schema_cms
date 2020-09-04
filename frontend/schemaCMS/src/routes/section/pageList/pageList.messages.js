@@ -1,6 +1,6 @@
 /* eslint-disable max-len */
 import { defineMessages } from 'react-intl';
-import { SECTIONS_NAME, SECTIONS_PUBLISH } from '../../../modules/sections/sections.constants';
+import { SECTIONS_NAME, SECTIONS_PUBLISH, SECTIONS_RSS } from '../../../modules/sections/sections.constants';
 
 export default defineMessages({
   title: {
@@ -47,9 +47,17 @@ export default defineMessages({
     id: `section.pageList.${SECTIONS_PUBLISH}`,
     defaultMessage: 'Make it Public',
   },
+  [SECTIONS_RSS]: {
+    id: `section.pageList.${SECTIONS_RSS}`,
+    defaultMessage: 'Make it available for RSS',
+  },
   sectionAvailability: {
     id: 'section.pageList.sectionAvailability',
     defaultMessage: 'This Section is currently {availability}',
+  },
+  sectionRssEnabled: {
+    id: 'section.pageList.sectionRssEnabled',
+    defaultMessage: 'This Section is currently {availability} for RSS feed',
   },
   privateCopy: {
     id: 'section.pageList.privateCopy',
@@ -58,6 +66,14 @@ export default defineMessages({
   publicCopy: {
     id: 'section.pageList.publicCopy',
     defaultMessage: 'Public',
+  },
+  enabledRss: {
+    id: 'section.pageList.enabledRss',
+    defaultMessage: 'enabled',
+  },
+  disabledRss: {
+    id: 'section.pageList.disabledRss',
+    defaultMessage: 'disabled',
   },
   visitPage: {
     id: 'section.pageList.visitPage',

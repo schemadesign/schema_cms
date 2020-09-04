@@ -3,6 +3,7 @@ import * as Yup from 'yup';
 export const SECTIONS_NAME = 'name';
 export const SECTIONS_PUBLISH = 'isPublic';
 export const SECTIONS_MAIN_PAGE = 'mainPage';
+export const SECTIONS_RSS = 'isRssContent';
 
 export const INITIAL_VALUES = {
   [SECTIONS_NAME]: '',

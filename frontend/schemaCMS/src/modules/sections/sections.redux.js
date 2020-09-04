@@ -3,7 +3,7 @@ import Immutable from 'seamless-immutable';
 import { createRoutine } from 'redux-saga-routines';
 import { sortBy, path, propEq, pipe, evolve, reverse } from 'ramda';
 
-import { SECTIONS_NAME, SECTIONS_PUBLISH } from './sections.constants';
+import { SECTIONS_NAME, SECTIONS_PUBLISH, SECTIONS_RSS } from './sections.constants';
 
 const PREFIX = 'SECTIONS/';
 
@@ -22,6 +22,7 @@ export const INITIAL_STATE = new Immutable({
     pages: [],
     [SECTIONS_NAME]: '',
     [SECTIONS_PUBLISH]: false,
+    [SECTIONS_RSS]: false,
   },
   pages: {
     count: 0,
