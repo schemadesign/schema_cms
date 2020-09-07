@@ -1,8 +1,8 @@
 import operator
 
 import auth0.v3
-from django import urls
 import pytest
+from django import urls
 from rest_framework import status
 
 from schemacms.authorization import constants as auth_constants

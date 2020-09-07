@@ -3,6 +3,8 @@ from django import forms
 from django.contrib import auth
 from django.contrib.auth import forms as auth_forms
 
+from . import backend_management
+from .constants import UserSource
 
 USER_MODEL = auth.get_user_model()
 
@@ -31,7 +33,16 @@ class InviteUserForm(UserFormMixin, forms.ModelForm):
         return super().save(commit=commit)
 
     def clean_email(self):
+        mgtm_backend = backend_management.user_mgtm_backend
         email = self.cleaned_data["email"].lower()
+
         if USER_MODEL.objects.filter(email=email).exists():
-            raise forms.ValidationError('The user with email "{}" already exists'.format(email))
+            raise forms.ValidationError(f"The user with email {email} already exists.")
+
+        if mgtm_backend.type == UserSource.OKTA:
+            try:
+                email = mgtm_backend.get_user(email)
+            except backend_management.okta.UserDontExistInOkta:
+                raise forms.ValidationError(f"The user with email {email} does not exists in Okta instance.")
+
         return email

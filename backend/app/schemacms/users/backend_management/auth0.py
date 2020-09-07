@@ -1,12 +1,17 @@
 from urllib import parse
 
+import anymail.exceptions
 import auth0.v3
-from django import urls
+import sentry_sdk
+
 from auth0.v3 import authentication
 from auth0.v3 import management
+
+from django import urls
 from django.conf import settings
 from django.core import exceptions
-from django.utils import crypto
+
+from schemacms import mail
 
 from . import base
 from .. import constants
@@ -15,6 +20,7 @@ from .. import models
 
 class Auth0UserManagement(base.BaseUserManagement):
     connection = "Username-Password-Authentication"
+    type = constants.UserSource.AUTH0
 
     def __init__(self):
         """Retrieve token and setup auth0 proxy"""
@@ -96,13 +102,15 @@ class Auth0UserManagement(base.BaseUserManagement):
         path = urls.reverse("social:begin", kwargs={"backend": "auth0"})
         return "{host}{path}".format(host=settings.DEFAULT_HOST, path=path)
 
-    def get_logout_url(self, return_to=None):
+    def get_logout_url(self, return_to=None, **kwargs):
         """Return logout url to auth0 logout page and then after logout redirect to
         BE auth0 login endpoint.
         """
         if not return_to:
             return_to = self.get_login_url()
+
         params = {"returnTo": return_to, "client_id": settings.SOCIAL_AUTH_AUTH0_KEY}
+
         return f"https://{settings.SOCIAL_AUTH_AUTH0_DOMAIN}/v2/logout?{parse.urlencode(params)}"
 
     @classmethod
@@ -113,13 +121,17 @@ class Auth0UserManagement(base.BaseUserManagement):
         )
         return token["access_token"]
 
-    @classmethod
-    def _generate_password(cls):
-        return "".join(
-            [
-                crypto.get_random_string(length=4, allowed_chars="ABCDEFGHJKLMNPQRSTUVWXYZ"),
-                crypto.get_random_string(length=4, allowed_chars="23456789"),
-                crypto.get_random_string(length=4, allowed_chars="!@#$%^&*"),
-                crypto.get_random_string(length=4),
-            ]
-        )
+    def send_schema_invite(self, user: models.User):
+        url = self.password_change_url(user)
+
+        try:
+            mail.send_message(
+                email=user.email,
+                template=mail.EmailTemplate.INVITATION_AUTH0,
+                subject="Welcome to Schema CMS!",
+                merge_data_dict={"url": url},
+            )
+            return True
+        except anymail.exceptions.AnymailRequestsAPIError as e:
+            sentry_sdk.capture_exception(e)
+            return False

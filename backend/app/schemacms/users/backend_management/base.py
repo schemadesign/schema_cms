@@ -1,3 +1,5 @@
+from django.utils import crypto
+
 from .. import models
 
 
@@ -24,5 +26,13 @@ class BaseUserManagement:
     def get_logout_url(self, return_to=None) -> str:
         raise NotImplementedError
 
-    def get_user_auth0_instances(self, user_email):
-        raise NotImplementedError
+    @classmethod
+    def _generate_password(cls):
+        return "".join(
+            [
+                crypto.get_random_string(length=4, allowed_chars="ABCDEFGHJKLMNPQRSTUVWXYZ"),
+                crypto.get_random_string(length=4, allowed_chars="23456789"),
+                crypto.get_random_string(length=4, allowed_chars="!@#$%^&*"),
+                crypto.get_random_string(length=4),
+            ]
+        )

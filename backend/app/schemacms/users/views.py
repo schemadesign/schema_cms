@@ -4,7 +4,7 @@ from django_filters import rest_framework as django_filters
 from rest_framework import decorators, mixins, permissions, response, status, serializers, viewsets
 
 from . import models as user_models, permissions as user_permissions, serializers as user_serializers, signals
-from .backend_management import user_mgtm_backend
+from .backend_management import user_mgtm_backend, okta
 from .constants import UserRole, ErrorCode
 from ..authorization import constants as auth_constants
 
@@ -55,6 +55,8 @@ class UserViewSet(
             self.perform_create(serializer)
         except auth0.v3.Auth0Error as e:
             raise serializers.ValidationError({"email": [e.message]}, code=ErrorCode.AUTH0_USER_ALREADY_EXIST)
+        except okta.UserDontExistInOkta as e:
+            raise serializers.ValidationError({"email": [e.message]}, code=ErrorCode.OKTA_USER_NOT_EXIST)
         headers = self.get_success_headers(serializer.data)
         return response.Response(serializer.data, status=status.HTTP_201_CREATED, headers=headers)
 

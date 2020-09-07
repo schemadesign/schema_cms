@@ -10,6 +10,7 @@ urlpatterns = [
         "api/v1/",
         urls.include(
             [
+                urls.path("config", misc_views.ConfigView.as_view(), name="config"),
                 urls.path("auth/", urls.include("schemacms.authorization.urls", namespace="authorization")),
                 urls.path("auth/", urls.include("social_django.urls")),
                 urls.path("", urls.include("schemacms.projects.urls")),

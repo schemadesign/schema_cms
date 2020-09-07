@@ -217,6 +217,7 @@ class Common(Configuration):
     # Authentication
     AUTHENTICATION_BACKENDS = {
         "social_core.backends.auth0.Auth0OAuth2",
+        "schemacms.users.backend_management.okta.ExtendedOktaOAuth2",
         "django.contrib.auth.backends.ModelBackend",
     }
 
@@ -273,22 +274,33 @@ class Common(Configuration):
         # Redirect user and add exchange token to query string
         "schemacms.authorization.pipeline.redirect_with_token",
     )
-    # social-django
-    SOCIAL_AUTH_SANITIZE_REDIRECTS = False
-    SOCIAL_AUTH_TRAILING_SLASH = False  # Remove trailing slash from routes
-    SOCIAL_AUTH_AUTH0_DOMAIN = os.getenv("DJANGO_SOCIAL_AUTH_AUTH0_DOMAIN")
-    SOCIAL_AUTH_AUTH0_KEY = os.getenv("DJANGO_SOCIAL_AUTH_AUTH0_KEY")
-    SOCIAL_AUTH_AUTH0_SECRET = os.getenv("DJANGO_SOCIAL_AUTH_AUTH0_SECRET")
-    SOCIAL_AUTH_AUTH0_SCOPE = ["openid", "profile", "email"]
-    SOCIAL_AUTH_PROTECTED_USER_FIELDS = ["first_name", "last_name"]
 
     # User management
     USER_MGMT_BACKEND = os.getenv(
         "DJANGO_USER_MGMT_BACKEND", "schemacms.users.backend_management.auth0.Auth0UserManagement"
     )
+
+    # social-django
+    SOCIAL_AUTH_SANITIZE_REDIRECTS = False
+    SOCIAL_AUTH_TRAILING_SLASH = False  # Remove trailing slash from routes
+    SOCIAL_AUTH_PROTECTED_USER_FIELDS = ["first_name", "last_name"]
+
+    SOCIAL_AUTH_AUTH0_DOMAIN = os.getenv("DJANGO_SOCIAL_AUTH_AUTH0_DOMAIN")
+    SOCIAL_AUTH_AUTH0_KEY = os.getenv("DJANGO_SOCIAL_AUTH_AUTH0_KEY")
+    SOCIAL_AUTH_AUTH0_SECRET = os.getenv("DJANGO_SOCIAL_AUTH_AUTH0_SECRET")
+
     USER_MGMT_AUTH0_DOMAIN = os.getenv("DJANGO_USER_MGMT_AUTH0_DOMAIN")
     USER_MGMT_AUTH0_KEY = os.getenv("DJANGO_USER_MGMT_AUTH0_KEY")
     USER_MGMT_AUTH0_SECRET = os.getenv("DJANGO_USER_MGMT_AUTH0_SECRET")
+
+    SOCIAL_AUTH_AUTH0_SCOPE = ["openid", "profile", "email"]
+
+    OKTA_API_TOKEN = os.getenv("OKTA_API_TOKEN")
+    OKTA_DOMAIN_URL = os.getenv("OKTA_DOMAIN_URL")
+
+    SOCIAL_AUTH_OKTA_OAUTH2_KEY = os.getenv("SOCIAL_AUTH_OKTA_OAUTH2_KEY")
+    SOCIAL_AUTH_OKTA_OAUTH2_SECRET = os.getenv("SOCIAL_AUTH_OKTA_OAUTH2_SECRET")
+    SOCIAL_AUTH_OKTA_OAUTH2_API_URL = f"{OKTA_DOMAIN_URL}/oauth2"
 
     LOCAL_LAMBDA = False
 

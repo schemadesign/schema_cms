@@ -45,7 +45,7 @@ class Logout(views.APIView):
     permission_classes = []
 
     def get(self, request, *args, **kwargs):
-        return shortcuts.redirect(user_mgtm_backend.get_logout_url())
+        return shortcuts.redirect(user_mgtm_backend.get_logout_url(**request.session))
 
 
 obtain_jwt_token = ObtainJSONWebToken.as_view()
