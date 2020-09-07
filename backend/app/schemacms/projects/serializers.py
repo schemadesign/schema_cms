@@ -46,7 +46,7 @@ class ProjectSerializer(serializers.ModelSerializer):
 
     def save(self, **kwargs):
         project = super().save(**kwargs)
-        project.create_xlm_file()
+        project.create_xml_file()
 
         return project
 

@@ -220,11 +220,6 @@ class SectionViewSet(DetailViewSet):
 
         return super().get_queryset().prefetch_related("pages")
 
-    def perform_destroy(self, instance):
-        project = instance.project
-        super().perform_destroy(instance)
-        project.create_xlm_file()
-
 
 class PageListCreateView(
     ActionSerializerViewSetMixin, mixins.ListModelMixin, mixins.CreateModelMixin, viewsets.GenericViewSet
@@ -322,7 +317,7 @@ class PageViewSet(DetailViewSet):
                 page.publish()
                 page.save()
 
-                page.project.create_xlm_file()
+                page.project.create_xml_file()
 
         except Exception as e:
             return response.Response({"error": f"{e}"}, status=status.HTTP_400_BAD_REQUEST)

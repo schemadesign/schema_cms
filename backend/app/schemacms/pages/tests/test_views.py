@@ -301,17 +301,17 @@ class TestUpdateDeleteSectionView:
         assert response.data["results"] == page_serializer.SectionDetailSerializer(section).data
 
     def test_update_section_as_admin(self, api_client, admin, section, mocker):
-        create_xlm_file_mock = mocker.patch("schemacms.projects.models.Project.create_xlm_file")
+        create_xml_file_mock = mocker.patch("schemacms.projects.models.Project.create_xml_file")
 
         self.update_section(api_client, admin, section)
-        create_xlm_file_mock.assert_called_once()
+        create_xml_file_mock.assert_called_once()
 
     def test_update_section_as_project_editor(self, api_client, editor, section, mocker):
-        create_xlm_file_mock = mocker.patch("schemacms.projects.models.Project.create_xlm_file")
+        create_xml_file_mock = mocker.patch("schemacms.projects.models.Project.create_xml_file")
 
         section.project.editors.add(editor)
         self.update_section(api_client, editor, section)
-        create_xlm_file_mock.assert_called_once()
+        create_xml_file_mock.assert_called_once()
 
     def update_section(self, api_client, user, section):
         new_name = "New Section Name"
@@ -323,17 +323,17 @@ class TestUpdateDeleteSectionView:
         assert response.status_code == status.HTTP_200_OK
 
     def test_delete_section_as_admin(self, api_client, admin, section, mocker):
-        create_xlm_file_mock = mocker.patch("schemacms.projects.models.Project.create_xlm_file")
+        create_xml_file_mock = mocker.patch("schemacms.projects.models.Project.create_xml_file")
 
         self.delete_section(api_client, admin, section)
-        create_xlm_file_mock.assert_called_once()
+        create_xml_file_mock.assert_called_once()
 
     def test_delete_section_as_project_editor(self, api_client, editor, section, mocker):
-        create_xlm_file_mock = mocker.patch("schemacms.projects.models.Project.create_xlm_file")
+        create_xml_file_mock = mocker.patch("schemacms.projects.models.Project.create_xml_file")
 
         section.project.editors.add(editor)
         self.delete_section(api_client, editor, section)
-        create_xlm_file_mock.assert_called_once()
+        create_xml_file_mock.assert_called_once()
 
     def delete_section(self, api_client, user, section):
         section_id = section.id
@@ -345,7 +345,7 @@ class TestUpdateDeleteSectionView:
 
     def test_main_page_update(self, api_client, admin, section, page_factory, mocker):
         page_1, page_2 = page_factory.create_batch(2, section=section)
-        create_xlm_file_mock = mocker.patch("schemacms.projects.models.Project.create_xlm_file")
+        create_xml_file_mock = mocker.patch("schemacms.projects.models.Project.create_xml_file")
 
         payload = {"main_page": page_1.id}
         api_client.force_authenticate(admin)
@@ -354,7 +354,7 @@ class TestUpdateDeleteSectionView:
 
         assert response.status_code == status.HTTP_200_OK
         assert section.main_page == page_1
-        create_xlm_file_mock.assert_called_once()
+        create_xml_file_mock.assert_called_once()
 
     def test_main_page_validation(self, api_client, admin, section_factory, page_factory):
         section_1, section_2 = section_factory.create_batch(2)
