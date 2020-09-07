@@ -59,7 +59,7 @@ class TestListCreateProjectView:
         user.role = user_constants.UserRole.ADMIN
         api_client.force_authenticate(user)
 
-        create_xlm_file_mock = mocker.patch("schemacms.projects.models.Project.create_xlm_file")
+        create_xml_file_mock = mocker.patch("schemacms.projects.models.Project.create_xml_file")
 
         self.example_project["editors"].append(user.id)
         response = api_client.post(self.get_url(), data=self.example_project)
@@ -68,23 +68,23 @@ class TestListCreateProjectView:
 
         assert response.status_code == status.HTTP_201_CREATED
         assert response.data == projects_serializers.ProjectSerializer(instance=project).data
-        create_xlm_file_mock.assert_called_once()
+        create_xml_file_mock.assert_called_once()
 
     @pytest.mark.parametrize("role", [user_constants.UserRole.EDITOR, user_constants.UserRole.UNDEFINED])
     def test_create_as_editor(self, api_client, user_factory, role, mocker):
         user = user_factory(role=role)
         api_client.force_authenticate(user)
-        create_xlm_file_mock = mocker.patch("schemacms.projects.models.Project.create_xlm_file")
+        create_xml_file_mock = mocker.patch("schemacms.projects.models.Project.create_xml_file")
 
         response = api_client.post(self.get_url(), data=self.example_project)
 
         assert response.status_code == status.HTTP_403_FORBIDDEN
-        create_xlm_file_mock.assert_not_called()
+        create_xml_file_mock.assert_not_called()
 
     def test_create_without_editors(self, api_client, user, mocker):
         user.role = user_constants.UserRole.ADMIN
         api_client.force_authenticate(user)
-        create_xlm_file_mock = mocker.patch("schemacms.projects.models.Project.create_xlm_file")
+        create_xml_file_mock = mocker.patch("schemacms.projects.models.Project.create_xml_file")
 
         self.example_project.pop("editors")
 
@@ -95,7 +95,7 @@ class TestListCreateProjectView:
 
         assert response.status_code == status.HTTP_201_CREATED
         assert response.data == projects_serializers.ProjectSerializer(instance=project).data
-        create_xlm_file_mock.assert_called_once()
+        create_xml_file_mock.assert_called_once()
 
     def test_num_queries(
         self,
@@ -162,7 +162,7 @@ class TestRetrieveUpdateDeleteProjectView:
 
     def test_update_project_by_owner(self, api_client, user, project, mocker):
         api_client.force_authenticate(user)
-        create_xlm_file_mock = mocker.patch("schemacms.projects.models.Project.create_xlm_file")
+        create_xml_file_mock = mocker.patch("schemacms.projects.models.Project.create_xml_file")
 
         new_title = {"title": "new title"}
 
@@ -171,7 +171,7 @@ class TestRetrieveUpdateDeleteProjectView:
         project.refresh_from_db()
         assert response.status_code == status.HTTP_200_OK
         assert response.data == projects_serializers.ProjectSerializer(instance=project).data
-        create_xlm_file_mock.assert_called_once()
+        create_xml_file_mock.assert_called_once()
 
     def test_update_project_name_already_occupied(self, api_client, user, project_factory, mocker):
         project = project_factory()

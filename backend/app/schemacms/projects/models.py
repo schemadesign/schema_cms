@@ -104,7 +104,7 @@ class Project(SoftDeleteObject, TitleSlugDescriptionModel, TimeStampedModel):
     def in_progress(self):
         pass
 
-    def create_xlm_file(self):
+    def create_xml_file(self):
         feed = etree.Element("rss", **{"version": "2.0"})
         channel = etree.Element("channel")
         etree.SubElement(channel, "title").text = self.title

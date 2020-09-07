@@ -573,6 +573,6 @@ class SectionDetailSerializer(CustomModelSerializer):
     @transaction.atomic()
     def update(self, instance, validated_data):
         section = super().update(instance, validated_data)
-        section.project.create_xlm_file()
+        section.project.create_xml_file()
 
         return section
