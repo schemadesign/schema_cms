@@ -1,6 +1,6 @@
 const API_PREFIX = process.env.REACT_APP_BASE_API_URL;
 
-export const AUTH_PATH = `${API_PREFIX}/auth/login/auth0`;
+export const AUTH_PATH = `${API_PREFIX}/auth/login/okta-oauth2`;
 export const TOKEN_PATH = '/auth/token';
 export const LOGOUT_URL = `${API_PREFIX}/auth/logout`;
 export const ME_PATH = '/users/me';

@@ -146,7 +146,7 @@ class TestForbidLogInWhenNotRegistered:
         email = "123@123.com"
         expected_location = (
             expected_location_template.format(host=settings.DEFAULT_WEBAPP_HOST, path="auth/not-registered")
-            + f"?{parse.urlencode(dict(email=email))}"
+            + f"?{parse.urlencode(dict(state=email))}"
         )
 
         ret = pipeline.user_exist_in_db(backend, details={"email": email})
@@ -180,7 +180,7 @@ class TestUserIsActive:
         mgmt = backend_management.user_mgtm_backend
         expected_location = (
             expected_location_template.format(host=settings.DEFAULT_WEBAPP_HOST, path="auth/revoked-access")
-            + f"?{parse.urlencode(dict(email=user.email))}"
+            + f"?{parse.urlencode(dict(state=user.email))}"
         )
 
         ret = pipeline.user_is_active(backend=backend, user=user)

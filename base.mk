@@ -48,19 +48,19 @@ down:
 	$(DOCKER_COMPOSE) down
 
 exec:
-	$(DOCKER_COMPOSE) run backend bash
+	$(DOCKER_COMPOSE) run --rm backend bash
 
 attach:
 	docker attach schema-cms-backend
 
 migrate:
-	$(DOCKER_COMPOSE) run backend ./manage.py migrate
+	$(DOCKER_COMPOSE) run --rm backend ./manage.py migrate
 
 makemigrations:
-	$(DOCKER_COMPOSE) run backend ./manage.py makemigrations
+	$(DOCKER_COMPOSE) run --rm backend ./manage.py makemigrations
 
 pytest:
-	$(DOCKER_COMPOSE) run backend pytest
+	$(DOCKER_COMPOSE) run --rm backend pytest
 
 clean:
 	# remove created images

@@ -20,8 +20,10 @@ def generate_signed_exchange_token(user):
 def social_user(backend, uid, user=None, *args, **kwargs):
     provider = backend.name
     social = backend.strategy.storage.user.get_social_auth(provider, uid)
+
     if social:
         user = social.user
+
     return {"social": social, "user": user, "is_new": user is None, "new_association": social is None}
 
 
@@ -31,10 +33,13 @@ def associate_by_external_id(backend, details, user=None, *args, **kwargs):
     """
 
     external_user_id = details.get("user_id")
+
     if external_user_id:
         user = backend.strategy.storage.user.get_user(external_id=external_user_id)
+
         if user:
             return {"user": user, "is_new": False}
+
     return {"user": None, "is_new": False}
 
 
@@ -44,6 +49,11 @@ def update_external_id(backend, details, user=None, *args, **kwargs):
 
     if not user.last_login and details.get("email_verified"):
         user.is_active = True
+
+    if backend.name == "okta-oauth2":
+        user.source = constants.UserSource.OKTA
+        user.external_id = details.get("user_id")
+        backend.strategy.storage.user.changed(user)
 
     if backend.name == "auth0" and details["user_id"].startswith("auth0"):
         user.source = constants.UserSource.AUTH0
@@ -71,9 +81,11 @@ def update_user_full_name(strategy, details, user=None, *args, **kwargs):
 
 def redirect_with_token(strategy, user=None, *args, **kwargs):
     uri = strategy.session_get("next", settings.DEFAULT_WEBAPP_HOST)
+
     if not uri.endswith("/"):
         uri = "{}/".format(uri)
     token = generate_signed_exchange_token(user)
+
     return shortcuts.redirect(
         parse.urljoin(uri, "auth/confirm/{uid}/{token}".format(uid=user.id, token=token))
     )
@@ -81,14 +93,32 @@ def redirect_with_token(strategy, user=None, *args, **kwargs):
 
 def user_exist_in_db(backend, details, user=None, *args, **kwargs):
     email = details.get("email")
+
+    if backend.name == "okta-oauth2":
+        backend.strategy.session["okta-oauth2-id-token"] = kwargs.get("response")["id_token"]
+
     if not models.User.objects.filter(email=email).exists():
         return _redirect_user_to_page(backend=backend, email=email, endpoint="not-registered")
 
 
 def _redirect_user_to_page(backend, email, endpoint="not-registered"):
     uri = backend.strategy.session_get("next", settings.DEFAULT_WEBAPP_HOST)
+
     if not uri.endswith("/"):
         uri = "{}/".format(uri)
-    params = dict(email=email)
-    return_to = parse.urljoin(uri, f"auth/{endpoint}") + f"?{parse.urlencode(params)}"
-    return shortcuts.redirect(backend_management.user_mgtm_backend.get_logout_url(return_to=return_to))
+
+    params = dict(state=email)
+
+    if backend.name == "okta-oauth2":
+        return_to = parse.urljoin(uri, f"auth/{endpoint}")
+    else:
+        return_to = parse.urljoin(uri, f"auth/{endpoint}") + f"?{parse.urlencode(params)}"
+
+    kwargs = {
+        "okta-oauth2-id-token": backend.strategy.session_get("okta-oauth2-id-token", None),
+        "email": email,
+    }
+
+    return shortcuts.redirect(
+        backend_management.user_mgtm_backend.get_logout_url(return_to=return_to, **kwargs)
+    )
