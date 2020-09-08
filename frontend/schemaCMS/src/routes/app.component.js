@@ -66,7 +66,7 @@ export class App extends PureComponent {
               <Container>
                 <ScrollToTop />
                 <FormattedMessage {...messages.pageTitle}>
-                  {pageTitle => <Helmet titleTemplate={`%s - ${pageTitle}`} defaultTitle={pageTitle} />}
+                  {pageTitle => <Helmet titleTemplate={`%s - ${pageTitle}`} defaultTitle={pageTitle.toString()} />}
                 </FormattedMessage>
                 <GlobalStyle />
                 <DesktopHeader userRole={userRole} userId={userId} title={projectTitle} />

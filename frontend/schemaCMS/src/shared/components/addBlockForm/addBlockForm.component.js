@@ -122,6 +122,7 @@ export const AddBlockForm = ({ fetchBlockTemplates, projectId, backUrl, blockTem
       setLeavingPageModalOpen(true);
       return false;
     }
+    return true;
   };
 
   const handleBackButtonClick = () => {
@@ -218,5 +219,5 @@ AddBlockForm.propTypes = {
   blockTemplates: PropTypes.array.isRequired,
   projectId: PropTypes.number.isRequired,
   backUrl: PropTypes.string.isRequired,
-  match: PropTypes.object.isRequired,
+  match: PropTypes.object,
 };

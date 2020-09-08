@@ -101,7 +101,7 @@ export class SourceFormComponent extends PureComponent {
     />
   );
 
-  renderSpreadsheetInput = ({ setFieldValue, disabled, googleSheet, ...restProps }) => {
+  renderSpreadsheetInput = ({ googleSheet, ...restProps }) => {
     const { handleChange } = this.props;
     return (
       <TextInput

@@ -81,5 +81,5 @@ AddBlock.propTypes = {
   project: PropTypes.object.isRequired,
   page: PropTypes.object.isRequired,
   userRole: PropTypes.string.isRequired,
-  match: PropTypes.object.isRequired,
+  match: PropTypes.object,
 };

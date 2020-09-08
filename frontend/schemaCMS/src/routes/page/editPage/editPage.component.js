@@ -168,6 +168,7 @@ export const EditPage = ({
       setLeavingPageModalOpen(true);
       return false;
     }
+    return true;
   };
 
   const handleBackButtonClick = () => {

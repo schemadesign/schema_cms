@@ -39,7 +39,7 @@ const Section = ({ created, createdBy, name, id, pagesCount = 0 }) => {
 
 Section.propTypes = {
   created: PropTypes.string.isRequired,
-  createdBy: PropTypes.string.isRequired,
+  createdBy: PropTypes.string,
   name: PropTypes.string.isRequired,
   id: PropTypes.number.isRequired,
   pagesCount: PropTypes.number.isRequired,

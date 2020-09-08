@@ -142,7 +142,7 @@ export const Page = ({
 
 Page.propTypes = {
   created: PropTypes.string.isRequired,
-  createdBy: PropTypes.string.isRequired,
+  createdBy: PropTypes.string,
   name: PropTypes.string.isRequired,
   isChanged: PropTypes.bool.isRequired,
   id: PropTypes.number.isRequired,
