@@ -676,6 +676,10 @@ class TestListCreatePage:
 
 
 class TestUpdateDeletePageView:
+    @pytest.fixture(autouse=True)
+    def mute_create_xml_file(self, mocker):
+        mocker.patch("schemacms.projects.models.Project.create_xml_file")
+
     @staticmethod
     def get_url(pk):
         return reverse("pages:page-detail", kwargs=dict(pk=pk))
