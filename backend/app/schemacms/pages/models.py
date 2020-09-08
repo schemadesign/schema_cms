@@ -128,6 +128,9 @@ class Page(Content):
     class Meta:
         ordering = ("-created",)
 
+    def natural_key(self):
+        return self.slug,
+
     @property
     def is_published(self):
         published_states = [constants.PageState.PUBLISHED, constants.PageState.WAITING_TO_REPUBLISH]

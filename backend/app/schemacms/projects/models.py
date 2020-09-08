@@ -40,6 +40,9 @@ class Project(SoftDeleteObject, TitleSlugDescriptionModel, TimeStampedModel):
     def __str__(self):
         return self.title
 
+    def natural_key(self):
+        return self.slug,
+
     def relative_path_to_save(self, filename):
         base_path = self.file.storage.location
         if not (self.id and self.project_id):

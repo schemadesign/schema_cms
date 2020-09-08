@@ -1,10 +1,22 @@
+from django import forms
+from django import http as dj_http
 from django.contrib import admin
+from django.shortcuts import render
 from django.template.loader import render_to_string
+from django.urls import path
 from django.utils import safestring
 
-from . import models
+from . import models, exporting
 from ..users.models import User
 from ..utils import admin as utils_admin
+
+
+class ProjectImportForm(forms.Form):
+    zip_file = forms.FileField()
+    owner = forms.ModelChoiceField(queryset=User.objects.all())
+
+    def save(self):
+        raise Exception(self.cleaned_data)
 
 
 @admin.register(models.Project)
@@ -12,6 +24,28 @@ class ProjectAdmin(utils_admin.SoftDeleteObjectAdmin):
     list_display = ("title", "owner", "status", "get_editors", "deleted_at")
     fields = ("title", "description", "owner", "editors", "deleted_at")
     filter_horizontal = ("editors",)
+
+    def get_urls(self):
+        urls = super().get_urls()
+        urls += [
+            path("<pk>/export", self.admin_site.admin_view(self.export), name="project-export"),
+            path("import", self.admin_site.admin_view(self.import_project), name="project-import"),
+        ]
+        return urls
+
+    def export(self, request, pk):
+        zipped = exporting.export_project(pk)
+        return dj_http.HttpResponse(zipped.getvalue(), content_type="application/zip")
+
+    def import_project(self, request):
+        if request.method == "POST":
+            form = ProjectImportForm(request.POST, request.FILES)
+            if form.is_valid():
+                form.save()
+        else:
+            form = ProjectImportForm()
+
+        return render(request, "admin/projects/project/import_form.html", {"form": form})
 
     def delete_selected(self, request, queryset):
         return super().delete_queryset(request, queryset.exclude(deleted_at__isnull=0))
