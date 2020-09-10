@@ -1,5 +1,24 @@
 ## [Unreleased]
+
 ### Fixes
+
+### Changes
+
+### Features
+
+## 1.7.2 (September 10, 2020) - Release
+
+### Changes
+
+- Remove signature for public S3 files
+- Revoke is_rss_content for soft-deleted Section & generate new RSS feed when deleted
+
+## 1.7.1 (September 10, 2020) - Hotfix
+
+### Fixes
+
+- Added possibility to change page author in Django Admin panel
+- Allow empty relation for template and section
 
 ### Changes
 
