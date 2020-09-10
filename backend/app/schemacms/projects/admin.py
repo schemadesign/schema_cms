@@ -1,6 +1,9 @@
+import zipfile
+
 from django import forms
 from django import http as dj_http
 from django.contrib import admin
+from django.core import serializers
 from django.shortcuts import render
 from django.template.loader import render_to_string
 from django.urls import path
@@ -16,7 +19,14 @@ class ProjectImportForm(forms.Form):
     owner = forms.ModelChoiceField(queryset=User.objects.all())
 
     def save(self):
-        raise Exception(self.cleaned_data)
+        input_zip = self.cleaned_data["zip_file"]
+        with zipfile.ZipFile(input_zip, "r") as zip_file:
+            for deserialized_object in serializers.deserialize(
+                "json",
+                zip_file.read("objects.json"),
+            ):
+                print(deserialized_object)
+        raise Exception('end')
 
 
 @admin.register(models.Project)

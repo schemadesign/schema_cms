@@ -6,7 +6,28 @@ from ..authorization.authentication import LambdaUser
 from ..utils.managers import generate_soft_delete_manager
 
 
+class DataSourceMetaManager(models.Manager):
+    def get_by_natural_key(self, data_source_name, project_slug):
+        # print(args, self.__class__.__name__)
+        return self.get(datasource__name=data_source_name, datasource__project__slug=project_slug)
+
+
+class DataSourceJobManager(models.Manager):
+    def get_by_natural_key(self, source_file_path, source_file_version, data_source_name, project_slug):
+        # (self.source_file_path, self.source_file_version) + self.datasource.natural_key()
+        # print(args, self.__class__.__name__)
+        return self.get(
+            source_file_path=source_file_path,
+            source_file_version=source_file_version,
+            datasource__name=data_source_name,
+            datasource__project__slug=project_slug,
+        )
+
+
 class DataSourceQuerySet(SoftDeleteQuerySet):
+    def get_by_natural_key(self, name, project_slug):
+        return self.get(name=name, project__slug=project_slug)
+
     @transaction.atomic()
     def create(self, *args, **kwargs):
         from .models import DataSourceMeta
@@ -24,7 +45,9 @@ class DataSourceQuerySet(SoftDeleteQuerySet):
     def annotate_filters_count(self):
         return self.annotate(
             filters_count=models.Count(
-                "filters", filter=models.Q(filters__deleted_at__isnull=True), distinct=True,
+                "filters",
+                filter=models.Q(filters__deleted_at__isnull=True),
+                distinct=True,
             )
         )
 

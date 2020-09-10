@@ -3,6 +3,11 @@ import softdelete.models
 
 def generate_soft_delete_manager(queryset_class):
     class _soft_delete_manager_class(softdelete.models.SoftDeleteManager):
+        def get_by_natural_key(self, *args, **kwargs):
+            qs = super().get_queryset()
+            qs.__class__ = queryset_class
+            return qs.get_by_natural_key(*args, **kwargs)
+
         def get_query_set(self):
             qs = super().get_query_set()
             qs.__class__ = queryset_class

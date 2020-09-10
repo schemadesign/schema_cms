@@ -100,7 +100,7 @@ class PageTemplateAdmin(SoftDeleteObjectAdmin):
 @admin.register(models.Section)
 class SectionAdmin(SoftDeleteObjectAdmin):
     list_display = ("name", "project", "deleted_at")
-    fields = ("project", "name", "deleted_at", "is_rss_content")
+    fields = ("project", "name", "deleted_at", "is_rss_content", "main_page")
     list_filter = ("project", "deleted_at")
     readonly_on_update_fields = ("project",)
 
