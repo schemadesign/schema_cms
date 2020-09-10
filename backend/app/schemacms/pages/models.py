@@ -100,7 +100,9 @@ class Section(SoftDeleteObject, TimeStampedModel):
 
 
 class Page(Content):
-    section = models.ForeignKey("Section", on_delete=models.CASCADE, null=True, blank=True, related_name="pages")
+    section = models.ForeignKey(
+        "Section", on_delete=models.CASCADE, null=True, blank=True, related_name="pages"
+    )
     template = models.ForeignKey("PageTemplate", on_delete=models.SET_NULL, null=True, blank=True)
     display_name = models.CharField(max_length=constants.PAGE_DISPLAY_NAME_MAX_LENGTH, blank=True, default="")
     description = models.TextField(blank=True, default="")
