@@ -118,6 +118,7 @@ class PageAdmin(SoftDeleteObjectAdmin):
         "keywords",
         "is_public",
         "deleted_at",
+        "created_by"
     )
     list_filter = ("project", "section", "deleted_at")
     readonly_on_update_fields = ("project",)
