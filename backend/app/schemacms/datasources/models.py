@@ -338,6 +338,7 @@ class DataSourceJob(MetaGeneratorMixin, SoftDeleteObject, TimeStampedModel, fsm.
     def source_file_url(self):
         if not self.source_file_path:
             return ""
+
         filename = os.path.basename(self.source_file_path)
         params = {
             "Bucket": settings.AWS_STORAGE_BUCKET_NAME,
@@ -346,6 +347,7 @@ class DataSourceJob(MetaGeneratorMixin, SoftDeleteObject, TimeStampedModel, fsm.
         }
         if self.source_file_version:
             params["VersionId"] = self.source_file_version
+
         return services.s3.generate_presigned_url(ClientMethod="get_object", Params=params)
 
     @functional.cached_property
