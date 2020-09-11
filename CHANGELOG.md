@@ -6,6 +6,12 @@
 
 ### Features
 
+## 1.7.4 (September 10, 2020) - Release
+
+### Fixes
+
+-  add missing created by field in Django Admin
+
 ## 1.7.2 (September 10, 2020) - Release
 
 ### Changes
