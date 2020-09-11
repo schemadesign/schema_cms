@@ -10,7 +10,7 @@ from ..utils import admin as utils_admin
 @admin.register(models.Project)
 class ProjectAdmin(utils_admin.SoftDeleteObjectAdmin):
     list_display = ("title", "owner", "status", "get_editors", "deleted_at")
-    fields = ("title", "description", "owner", "editors", "deleted_at")
+    fields = ("title", "description", "owner", "editors", "deleted_at", "created_by")
     filter_horizontal = ("editors",)
 
     def delete_selected(self, request, queryset):
