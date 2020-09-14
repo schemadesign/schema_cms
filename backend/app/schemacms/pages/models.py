@@ -117,6 +117,7 @@ class Page(Content):
     published_version = models.OneToOneField(
         "self", on_delete=models.SET_NULL, related_name="draft_version", null=True, editable=False,
     )
+    publish_date = models.DateTimeField(null=True, blank=True)
     state = FSMField(choices=constants.PAGE_STATE_CHOICES, default=constants.PageState.DRAFT)
     link = models.URLField(blank=True, default="")
 
@@ -154,6 +155,8 @@ class Page(Content):
     def publish(self):
         draft: Page = self.draft_version
 
+        now = timezone.now()
+
         self.name = draft.name
         self.section = draft.section
         self.template = draft.template
@@ -164,7 +167,7 @@ class Page(Content):
         self.is_public = draft.is_public
         self.allow_edit = draft.allow_edit
         self.link = draft.link
-        self.modified = timezone.now()
+        self.publish_date = now
 
         self.delete_blocks()
         self.tags.all().delete()
@@ -177,6 +180,8 @@ class Page(Content):
 
         for tag in draft.tags.all():
             tag.make_clone(attrs={"page": self})
+
+        draft.publish_date = now
 
     @transition(
         field=state, source=constants.PageState.PUBLISHED, target=constants.PageState.WAITING_TO_REPUBLISH
@@ -208,8 +213,8 @@ class Page(Content):
         etree.SubElement(item, "link").text = self.link
         etree.SubElement(item, "description").text = self.description
 
-        ctime = self.modified.ctime()
-        pub_date = f"{ctime[0:3]}, {self.modified.day:02d} {ctime[4:7]}" + self.modified.strftime(
+        ctime = self.publish_date.ctime()
+        pub_date = f"{ctime[0:3]}, {self.publish_date.day:02d} {ctime[4:7]}" + self.publish_date.strftime(
             " %Y %H:%M:%S %z"
         )
         etree.SubElement(item, "pubDate").text = pub_date
