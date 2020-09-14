@@ -87,7 +87,7 @@ class DataSource(MetaGeneratorMixin, SoftDeleteObject, TimeStampedModel):
         return {
             "id": self.id,
             "name": self.name,
-            "created_by": self.created_by.get_full_name(),
+            "created_by": self.created_by.get_full_name() if self.created_by else "",
             "created": self.created.strftime("%Y-%m-%d"),
             "updated": self.modified.strftime("%Y-%m-%d"),
             "custom_data": custom_data,
