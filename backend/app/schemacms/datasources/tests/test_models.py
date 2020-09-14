@@ -86,7 +86,7 @@ class TestDataSource:
                 "source-url": None,
                 "methodology": None,
                 "updated": ds.modified.isoformat(),
-                "creator": ds.created_by.get_full_name(),
+                "creator": ds.created_by.get_full_name() if ds.created_by else "",
             },
             "type": ds.type,
             "file": ds.file.name,
