@@ -15,6 +15,7 @@ import { reducer as pageTemplatesReducer } from './pageTemplates/pageTemplates.r
 import { reducer as sectionsReducer } from './sections/sections.redux';
 import { reducer as dataSourceTagsReducer } from './dataSourceTags/dataSourceTags.redux';
 import { reducer as metadataReducer } from './metadata/metadata.redux';
+import { reducer as configReducer } from './config/config.redux';
 //<-- IMPORT MODULE REDUCER -->
 
 export default function createReducer() {
@@ -36,6 +37,7 @@ export default function createReducer() {
     sections: sectionsReducer,
     dataSourceTags: dataSourceTagsReducer,
     metadata: metadataReducer,
+    config: configReducer,
     //<-- INJECT MODULE REDUCER -->
   };
 }

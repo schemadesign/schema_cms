@@ -18,6 +18,7 @@ import { watchPageTemplates } from './pageTemplates/pageTemplates.sagas';
 import { watchSections } from './sections/sections.sagas';
 import { watchDataSourceTags } from './dataSourceTags/dataSourceTags.sagas';
 import { watchMetadata } from './metadata/metadata.sagas';
+import { watchConfig } from './config/config.sagas';
 //<-- IMPORT MODULE SAGA -->
 
 export default function* rootSaga() {
@@ -40,6 +41,7 @@ export default function* rootSaga() {
       fork(watchSections),
       fork(watchDataSourceTags),
       fork(watchMetadata),
+      fork(watchConfig),
       //<-- INJECT MODULE SAGA -->
     ]);
   } catch (e) {
