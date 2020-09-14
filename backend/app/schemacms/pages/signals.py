@@ -1,5 +1,5 @@
 from django.dispatch import receiver
-from softdelete.signals import pre_soft_delete, post_soft_delete
+from softdelete.signals import pre_soft_delete, post_soft_delete, post_undelete
 
 from schemacms.pages import models
 
@@ -13,4 +13,11 @@ def section_no_longer_rss_when_soft_deleted(sender, instance: models.Section, **
 
 @receiver(post_soft_delete, sender=models.Page)
 def create_xml_file_when_page_soft_deleted(sender, instance: models.Page, **kwargs):
-    instance.project.create_xml_file()
+    if instance.section.is_rss_content:
+        instance.project.create_xml_file()
+
+
+@receiver(post_undelete, sender=models.Page)
+def create_xml_file_when_page_when_page_undelete(sender, instance: models.Page, **kwargs):
+    if instance.section.is_rss_content:
+        instance.project.create_xml_file()

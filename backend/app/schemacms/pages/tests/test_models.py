@@ -1,5 +1,7 @@
 import pytest
 
+from django.utils import timezone
+
 from ..constants import ElementType
 
 
@@ -167,6 +169,7 @@ class TestPageMethods:
     @pytest.mark.freeze_time("2020-08-13 10:00:00")
     def test_create_xml_file(self, page):
         page.description = "Test Desc"
+        page.publish_date = timezone.now()
         page.save()
 
         xml_elements_list = list(page.create_xml_item())
