@@ -155,6 +155,8 @@ class Page(Content):
     def publish(self):
         draft: Page = self.draft_version
 
+        now = timezone.now()
+
         self.name = draft.name
         self.section = draft.section
         self.template = draft.template
@@ -165,7 +167,7 @@ class Page(Content):
         self.is_public = draft.is_public
         self.allow_edit = draft.allow_edit
         self.link = draft.link
-        self.publish_date = timezone.now()
+        self.publish_date = now
 
         self.delete_blocks()
         self.tags.all().delete()
@@ -178,6 +180,8 @@ class Page(Content):
 
         for tag in draft.tags.all():
             tag.make_clone(attrs={"page": self})
+
+        draft.publish_date = now
 
     @transition(
         field=state, source=constants.PageState.PUBLISHED, target=constants.PageState.WAITING_TO_REPUBLISH

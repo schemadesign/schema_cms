@@ -12,7 +12,9 @@ def set_publish_date_for_page(apps, schema_editor):
             is_draft=False, is_template=False, state__in=publish_states
         ):
             page.publish_date = page.modified
-            page.save()
+            page.draft_version.publish_date = page.modified
+            page.save(update_fields=["publish_date"])
+            page.draft_version.save(update_fields=["publish_date"])
 
 
 class Migration(migrations.Migration):
@@ -25,5 +27,5 @@ class Migration(migrations.Migration):
         migrations.AddField(
             model_name="page", name="publish_date", field=models.DateTimeField(blank=True, null=True),
         ),
-        migrations.RunPython(set_publish_date_for_page),
+        migrations.RunPython(set_publish_date_for_page, migrations.RunPython.noop),
     ]
