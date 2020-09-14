@@ -212,7 +212,7 @@ class PAPageSerializer(ReadOnlySerializer):
         )
 
     def get_created_by(self, obj):
-        return obj.created_by.get_full_name()
+        return obj.created_by.get_full_name() if obj.created_by else ""
 
     def get_tags(self, obj):
         res = {}
@@ -280,7 +280,7 @@ class PAProjectSerializer(ReadOnlySerializer):
             "id": obj.id,
             "title": obj.title,
             "description": obj.description,
-            "owner": obj.owner.get_full_name(),
+            "owner": obj.owner.get_full_name() if obj.owner else "",
             "created": obj.created.strftime("%Y-%m-%d"),
             "updated": obj.modified.strftime("%Y-%m-%d"),
             "xml_file": obj.xml_file.url.rsplit("?", 1)[0] if obj.xml_file else None,
