@@ -40,7 +40,7 @@ class State(SoftDeleteObject, TimeStampedModel):
             datasource=self.datasource.formatted_meta,
             description=self.description,
             source_url=self.source_url,
-            author=self.author.get_full_name(),
+            author=self.author.get_full_name() if self.author else "",
         )
 
     def add_tags(self, tags_list):
