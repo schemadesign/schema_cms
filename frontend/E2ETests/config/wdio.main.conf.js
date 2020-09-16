@@ -1,3 +1,4 @@
+import '@babel/polyfill';
 import { config } from 'dotenv';
 import { cond, equals, always } from 'ramda';
 import CHROME_CAPABILITIES from './chrome.conf';
@@ -11,17 +12,20 @@ const browserCapabilities = cond([
   [equals('firefox'), always([FIREFOX_CAPABILITIES])],
   [equals('safari'), always([SAFARI_CAPABILITIES])],
   [equals('all'), always([CHROME_CAPABILITIES, FIREFOX_CAPABILITIES, SAFARI_CAPABILITIES])],
+  [equals('docker'), always([CHROME_CAPABILITIES, FIREFOX_CAPABILITIES])],
 ]);
 
 exports.config = {
   execArgv: process.env.DEBUG ? ['--inspect'] : [],
   runner: 'local',
+  hostname: process.env.HUB_HOST,
+  port: parseInt(process.env.HUB_PORT, 10),
   specs: ['./test/features/**/*.feature'],
   exclude: ['./test/pages/**/*.page.js'],
   maxInstances: process.env.DEBUG ? 1 : 2,
-  capabilities: browserCapabilities(process.env.BROWSER) || [CHROME_CAPABILITIES],
+  capabilities: browserCapabilities(process.env.BROWSER) || [CHROME_CAPABILITIES, FIREFOX_CAPABILITIES],
   logLevel: 'info',
-  bail: process.env.BAIL || 0,
+  bail: process.env.BAIL || 3,
   baseUrl: process.env[`${process.env.ENV}`] || process.env.STAGE,
   waitforTimeout: 30000,
   waitforInterval: 500,
@@ -43,8 +47,16 @@ exports.config = {
   ],
   cucumberOpts: {
     require: ['./test/steps/**/*.steps.js'],
-    backtrace: false,
-    requireModule: ['@babel/register'],
+    backtrace: true,
+    requireModule: [
+      [
+        '@babel/register',
+        {
+          rootMode: 'upward',
+          ignore: ['node_modules'],
+        },
+      ],
+    ],
     dryRun: false,
     failFast: false,
     format: ['pretty'],
