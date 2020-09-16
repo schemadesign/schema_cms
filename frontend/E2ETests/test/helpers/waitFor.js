@@ -17,9 +17,21 @@ export const waitForElement = (selector, index) => {
 export const waitForText = (selector, text, index, timeout = TIMEOUT) => {
   if (index !== undefined) {
     waitForElementsToLoad(selector, index);
+    if (selector[index].getText() === undefined || selector[index].getText() === '') {
+      return browser.waitUntil(() => selector[index].getValue().trim() === text, {
+        timeout,
+        timeoutMsg: `Received text: ${selector[index].getValue().trim()} .\n Expected text: ${text}`,
+      });
+    }
     return browser.waitUntil(() => selector[index].getText().trim() === text, {
       timeout,
       timeoutMsg: `Received text: ${selector[index].getText().trim()} .\n Expected text: ${text}`,
+    });
+  }
+  if (selector.getText() === undefined || selector.getText() === '') {
+    return browser.waitUntil(() => selector.getValue().trim() === text, {
+      timeout,
+      timeoutMsg: `Received text: ${selector.getValue().trim()} .\n Expected text: ${text}`,
     });
   }
   return browser.waitUntil(() => selector.getText().trim() === text, {
@@ -54,8 +66,11 @@ export const waitForUrl = (url, timeout = TIMEOUT) => {
   });
 };
 
-export const waitForNewWindow = () => {
-  browser.waitUntil(() => browser.getWindowHandles().length > 1);
+export const waitForNewWindow = (timeout = TIMEOUT) => {
+  browser.waitUntil(() => browser.getWindowHandles().length > 1, {
+    timeout,
+    timeoutMsg: `New window not existing after ${timeout} milliseconds`,
+  });
 };
 
 export const waitForNotDisplayed = (selector, timeout = TIMEOUT) => {

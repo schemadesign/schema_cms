@@ -6,7 +6,7 @@ Feature: CMS-49-Admin
 
     Background: User is logged in
         Given I am on Login page
-        And I have logged in as an 'admin' with 'valid' login and 'valid' password
+        And I have logged in as an 'existing admin' user with 'valid' login and 'valid' password
         And I am on 'homepage' page
 
     Scenario: User can see Project Settings page after clicking project tile

@@ -74,8 +74,8 @@ describe('DataWranglingScripts: Component', () => {
 
   it('should redirect to image script page', async () => {
     jest.spyOn(defaultProps.history, 'push');
-    const checkedScripts = [{ id: 1 }];
-    const uncheckedScripts = [{ id: 2, specs: { type: IMAGE_SCRAPING_SCRIPT_TYPE } }];
+    const checkedScripts = [{ id: 1, name: 'Image Scraping' }];
+    const uncheckedScripts = [{ id: 2, specs: { type: IMAGE_SCRAPING_SCRIPT_TYPE }, name: 'Image Scraping' }];
     const e = { target: { value: '2', checked: true } };
     const wrapper = await render({ checkedScripts, uncheckedScripts, imageScrapingFields: [] });
     wrapper

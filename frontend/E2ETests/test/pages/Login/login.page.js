@@ -1,6 +1,7 @@
 import { cond, propEq, both } from 'ramda';
+import { camelize } from 'humps';
 import { clickElement, setValue } from '../../helpers/actions';
-import { createSelectors } from '../../helpers/utils';
+import { createSelectors } from "../../helpers/utils";
 import { isTextDisplayed } from '../../helpers/check';
 import { USERS } from '../Constants/credentials.constants';
 import { EMPTY, INVALID, VALID } from '../Constants/general.constants';
@@ -26,8 +27,8 @@ const multiSelectors = {};
 const open = () => () => browser.url('/');
 
 const logIn = Login => (userRole, loginState, passwordState) => {
-  setValue(Login.emailInput(), USERS[userRole].login[loginState]);
-  setValue(Login.passwordInput(), USERS[userRole].password[passwordState].enter);
+  setValue(Login.emailInput(), USERS[camelize(userRole)].login[loginState]);
+  setValue(Login.passwordInput(), USERS[camelize(userRole)].password[passwordState].enter);
   clickElement(Login.submitBtn());
 };
 

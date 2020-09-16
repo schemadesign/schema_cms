@@ -1,6 +1,6 @@
 import path from 'path';
 import PAGE_TITLE from '../../Constants/pageTitle.constants';
-import { CSV_FILE } from "./createDatasource.constants";
+import { CSV_FILE } from './createDatasource.constants';
 import { createSelectors, makeFileInputVisible } from '../../../helpers/utils';
 import { waitForElement, waitForTitle } from '../../../helpers/waitFor';
 import { clickElement, setValue } from '../../../helpers/actions';

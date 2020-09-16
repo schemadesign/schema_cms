@@ -10,7 +10,7 @@ then
 fi
 
 # run tests and get the exit code
-PUPPETEER=true HEADLESS=true ENV=STAGE BROWSER=docker ./node_modules/.bin/wdio ./config/wdio.conf.js || EXIT_CODE=$?
+PUPPETEER=true HEADLESS=true ENV=STAGE BROWSER=chrome ./node_modules/.bin/wdio ./config/wdio.conf.js --spec || EXIT_CODE=$?
 
 # generate report
 #npm run report

@@ -9,6 +9,7 @@ services:
     image: selenium/node-chrome-debug
     volumes:
       - /dev/shm:/dev/shm
+      - ./test/pages/DataSources/files:/test/pages/DataSources/files
     depends_on:
       - selenium-hub
     environment:
@@ -21,12 +22,11 @@ services:
       - "5555:5555"
       - "5900:5900"
 
-
-
   firefox:
     image: selenium/node-firefox-debug
     volumes:
       - /dev/shm:/dev/shm
+      - ./test:/test
     depends_on:
       - selenium-hub
     environment:
@@ -38,3 +38,6 @@ services:
     ports:
       - "5556:5555"
       - "5901:5900"
+
+
+

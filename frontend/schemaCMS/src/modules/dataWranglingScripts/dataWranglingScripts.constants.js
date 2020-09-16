@@ -8,3 +8,9 @@ export const SCRIPT_TYPES = {
   CUSTOM: 1,
   UPLOADED: 0,
 };
+
+export const TYPE_IDS = {
+  2: 'default',
+  1: 'custom',
+  0: 'uploaded',
+};

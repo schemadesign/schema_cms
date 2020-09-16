@@ -46,9 +46,6 @@ const DEFAULT_SUPPORTED_BROWSERS_CONFIG = {
       browser: 'ie',
       versions: [11, 'edge'],
     },
-    {
-      browser: 'edge',
-    },
   ],
   mobile: [
     {

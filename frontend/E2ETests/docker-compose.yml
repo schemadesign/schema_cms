@@ -60,7 +60,7 @@ services:
       dockerfile: ./Dockerfile
     volumes:
       - /dev/shm:/dev/shm
-      - ./report:/usr/app/report
+      - ./test:/test
     environment:
       - HUB_HOST=selenium-hub
       - HUB_PORT=4444

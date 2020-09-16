@@ -1,3 +1,4 @@
+import { camelize } from 'humps';
 import TopHeader from '../../Components/TopHeader/topHeader.component';
 import SubHeader from '../../Components/SubHeader/subHeader.component';
 import Tabs from '../../Components/Tabs/tabs.component';
@@ -5,7 +6,7 @@ import { createSelectors } from '../../../helpers/utils';
 import { waitForText } from '../../../helpers/waitFor';
 import { expectElemsToHaveText } from '../../../helpers/expect';
 import { DATA_SOURCE_STATUS } from '../Create/createDatasource.constants';
-import { DATA_SOURCE_TILE_VALUES } from './dataSourcePage.constants';
+import { DATA_SOURCE_CREATOR_NAME, DATA_SOURCE_TILE_VALUES } from './dataSourcePage.constants';
 
 const singleSelectors = {
   title: '#dataSourceContainer:first-child #dataSourceTitle',
@@ -19,6 +20,7 @@ const singleSelectors = {
   updatedAtLabel: '#jobUpdatedAtLabel > span',
   updatedAtValue: '#jobUpdatedAtValue',
   backBtn: '#backBtn',
+  creator: '#dataSourceContainer:first-child #headerItem-1',
 };
 
 const multiSelectors = {
@@ -27,7 +29,6 @@ const multiSelectors = {
 
 const textSelectors = {
   creationDate: '#dataSourceContainer:first-child #headerItem-0',
-  creator: '#dataSourceContainer:first-child #headerItem-1',
   sourceLabel: '#dataSourceContainer:first-child #metaItem-0',
   itemsLabel: '#dataSourceContainer:first-child #metaItem-1',
   itemsValue: '#dataSourceContainer:first-child #metaItemValue-1',
@@ -46,8 +47,9 @@ const waitForDataSourceStatusToChange = DataSources => dataSourceState =>
 
 const calculateAmountOfDataSources = DataSources => () => DataSources.dataSourceContainers().length;
 
-const expectDataSourceTileToHaveProperData = DataSources => dtsTitle => {
+const expectDataSourceTileToHaveProperData = DataSources => (dtsTitle, userRole) => {
   expectElemsToHaveText(convertedTextSelectors, DATA_SOURCE_TILE_VALUES);
+  expect(DataSources.creator()).toHaveText(DATA_SOURCE_CREATOR_NAME[camelize(userRole)]);
   expect(DataSources.title()).toHaveText(dtsTitle);
   TopHeader.expectTopHeaderToBeDisplayed();
   const currentUrl = browser.getUrl();

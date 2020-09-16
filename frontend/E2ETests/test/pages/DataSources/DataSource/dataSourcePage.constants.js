@@ -1,5 +1,4 @@
 import { CSV_FILE } from '../Create/createDatasource.constants';
-import { SCHEMA_ADMIN_FIRST_NAME, SCHEMA_ADMIN_LAST_NAME } from "../../../credentials/credentials";
 
 export const DATA_SOURCE_MAIN_PAGE = 'datasource';
 export const SOURCE_LABEL = 'Source';
@@ -9,11 +8,13 @@ export const FILTERS_LABEL = 'Filters';
 export const TAGS_LABEL = 'Tags';
 
 const DATA_SOURCE_CREATION_DATE = 'a few seconds ago';
-const DATA_SOURCE_CREATOR_NAME = `${SCHEMA_ADMIN_FIRST_NAME} ${SCHEMA_ADMIN_LAST_NAME}`;
+export const DATA_SOURCE_CREATOR_NAME = {
+  invitedAdmin: `${process.env.DJANGO_FIRST_NAME_ADMIN} ${process.env.DJANGO_LAST_NAME}`,
+  existingAdmin: `${process.env.SCHEMA_ADMIN_FIRST_NAME} ${process.env.SCHEMA_ADMIN_LAST_NAME}`,
+};
 const DATA_SOURCE_EMPTY_VALUE = '—';
 export const DATA_SOURCE_TILE_VALUES = [
   DATA_SOURCE_CREATION_DATE,
-  DATA_SOURCE_CREATOR_NAME,
   SOURCE_LABEL,
   ITEMS_LABEL,
   CSV_FILE.rowsAmount,

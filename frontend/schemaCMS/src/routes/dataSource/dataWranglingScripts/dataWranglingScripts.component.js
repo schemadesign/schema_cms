@@ -8,7 +8,7 @@ import Helmet from 'react-helmet';
 import { DndProvider } from 'react-dnd';
 import MultiBackend from 'react-dnd-multi-backend';
 import HTML5toTouch from 'react-dnd-multi-backend/dist/esm/HTML5toTouch';
-
+import { camelize } from 'humps';
 import {
   checkBoxContainerStyles,
   CheckboxContent,
@@ -32,6 +32,7 @@ import {
   IMAGE_SCRAPING_SCRIPT_TYPE,
   SCRIPT_NAME_MAX_LENGTH,
   SCRIPT_TYPES,
+  TYPE_IDS,
 } from '../../../modules/dataWranglingScripts/dataWranglingScripts.constants';
 import { renderWhenTrue, renderWhenTrueOtherwise } from '../../../shared/utils/rendering';
 import { ContextHeader } from '../../../shared/components/contextHeader';
@@ -174,12 +175,12 @@ export class DataWranglingScripts extends PureComponent {
     return this.props.setCheckedScripts(tempScripts);
   };
 
-  renderCheckbox = ({ id, name, type = SCRIPT_TYPES.CUSTOM, draggableIcon = null, idPrefix = '' }, index) => (
-    <Checkbox id={`${idPrefix}checkbox-${index}`} value={id.toString()}>
+  renderCheckbox = ({ id, name = '', type = SCRIPT_TYPES.CUSTOM, draggableIcon = null, idPrefix = '' }, index) => (
+    <Checkbox id={`${idPrefix}checkbox-${camelize(name)}-${TYPE_IDS[type]}`} value={id.toString()}>
       <CheckboxContent>
         {draggableIcon}
         <Link to={this.getScriptLink({ id, type })}>
-          <StepName id={`checkboxName-${index}`} title={name} drag={!!draggableIcon}>
+          <StepName id={`checkboxName-${camelize(name)}-${TYPE_IDS[type]}`} title={name} drag={!!draggableIcon}>
             {name}
           </StepName>
           <Dot />

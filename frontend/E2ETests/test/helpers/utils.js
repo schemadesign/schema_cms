@@ -1,9 +1,3 @@
-export const convertToCamelCase = str =>
-  str
-    .replace(/\s(.)/g, a => a.toUpperCase())
-    .replace(/\s/g, '')
-    .replace(/^(.)/, b => b.toLowerCase());
-
 export const generateRandomString = length => {
   let result = 'X1';
   const characters = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789';
@@ -16,13 +10,12 @@ export const generateRandomString = length => {
 
 export const randomizeEmail = (localPart, domain) => `${localPart}+${generateRandomString(10)}@${domain}`;
 
-export const makeFileInputVisible = inputName => {
+export const makeFileInputVisible = inputName =>
   browser.execute(inputName => {
     inputName.style.display = 'block';
     inputName.style.height = '50px';
     inputName.style.visibility = 'visible';
   }, inputName);
-};
 
 const jquerySelector = (selector, func) => () => func(selector);
 

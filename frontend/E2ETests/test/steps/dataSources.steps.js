@@ -1,3 +1,4 @@
+import { pascalize } from 'humps';
 import { Given, When, Then } from 'cucumber';
 import ProjectSettings from '../pages/ProjectSettings/projectSettings.page';
 import DataSources from '../pages/DataSources/DataSource/dataSource.page';
@@ -11,26 +12,22 @@ import Tabs from '../pages/Components/Tabs/tabs.component';
 import { generateRandomString } from '../helpers/utils';
 import { clickElement } from '../helpers/actions';
 import { waitForTitle } from '../helpers/waitFor';
-import PAGE_TITLE from '../pages/Constants/pageTitle.constants'
 import { TAB_PAGE_TITLE } from '../pages/Components/Tabs/tabs.constants';
-import { CREATE, CSV_FILE, PROCESS } from "../pages/DataSources/Create/createDatasource.constants";
+import { CREATE, CSV_FILE, PROCESS } from '../pages/DataSources/Create/createDatasource.constants';
 import { DATA_SOURCE_PREVIEW_FIELDS_LABEL } from '../pages/DataSources/Preview/dataSourcePreview.constants';
 import {
-  BACKWARD_FILL_SCRIPT_NAME,
+  DESELECTED,
   IMAGE_SCRAPING_CODE,
   IMAGE_SCRAPING_URL_FIELD_HEADER,
   IMAGE_SCRAPING_URL_FIELD_NAME,
   SCRIPT_PREVIEW_PAGE_TITLE,
   SELECTED,
-  SELECTED_STEPS_HEADER,
   STEPS_COUNTER_TEXT,
   UNSELECTED_STEPS_TEXT,
-  UPLOADED_SCRIPT_NAME,
-  UPLOADED_SCRIPT_TYPE,
-  UPLOADED_STEPS_COUNTER_TEXT,
 } from '../pages/DataSources/Steps/steps.constants';
+import { expectPageToHaveTitle, expectPageToHaveUrl } from '../helpers/expect';
 
-When('I choose to see a list of data sources', () => {
+When('I cho(o)se to see a list of data sources', () => {
   ProjectSettings.dataSourcesAmount = ProjectSettings.dataSourcesTileValue().getText();
   clickElement(ProjectSettings.dataSourcesTile());
 });
@@ -46,9 +43,9 @@ When('I cho(o)se to upload a {string} CSV file', fileState => {
   CreateDataSource.uploadCsvFile(CreateDataSource.datasetName, fileState);
 });
 
-Then('newly created data source is displayed on the list', () => {
+Then('data source created by {string} is displayed on the list', userRole => {
   expect(TopHeader.projectName()).toHaveText(Homepage.tileTitle);
-  DataSources.expectDataSourceTileToHaveProperData(CreateDataSource.datasetName);
+  DataSources.expectDataSourceTileToHaveProperData(CreateDataSource.datasetName, userRole);
   browser.refresh();
 });
 
@@ -83,9 +80,10 @@ Then('data in field preview table matches data from CSV file', () => {
   DataSourcePreview.expectFieldInfoToMatchFile();
 });
 
-When('I( have) navigate(d) to Steps page', () => {
-  clickElement(SubHeader.stepsBtn());
-  expect(browser).toHaveTitle(PAGE_TITLE.steps);
+When('I( have) navigate(d) to {string} page', pageName => {
+  SubHeader.navigateToPage(pageName);
+  expectPageToHaveTitle(pageName);
+  expectPageToHaveUrl(pageName);
 });
 
 Then('I can see a list of predefined scripts', () => {
@@ -94,69 +92,59 @@ Then('I can see a list of predefined scripts', () => {
   expect(Steps.deselectedStepsHeader()).toHaveText(UNSELECTED_STEPS_TEXT);
 });
 
-When('I {word} a script', action => {
+When('I {string} a(n) {string} script', (action, scriptName) => {
   Steps.waitForScriptsToRender();
-  Steps.amountOfPredefinedScripts = Steps.calculateDeselectedScriptsAmount();
-  Steps[`${action}Script`]();
-  Steps.amountOfSelectedScripts = Steps.calculateSelectedScriptsAmount();
+  Steps.amountOfSelectedScripts = Steps.calculateScriptsAmount(SELECTED);
+  Steps.amountOfDeselectedScripts = Steps.calculateScriptsAmount(DESELECTED);
+  Steps[`${action}Script`](scriptName);
 });
 
-Then('script gets {word}', checkboxState =>
+Then('{string} script is {string}', (scriptName, checkboxState) =>
   checkboxState === SELECTED
-    ? expect(Steps.isScriptSelected(checkboxState)).toBe(true)
-    : expect(Steps.isScriptSelected(checkboxState)).toBe(false)
+    ? expect(Steps.isScriptSelected(scriptName)).toBe(true)
+    : expect(Steps.isScriptSelected(scriptName)).toBe(false)
 );
 
-When('I chose to preview a script', () => {
-  clickElement(Steps.imageScrapingScript());
+When('I chose to preview a(n) {string} script', scriptName => {
+  clickElement(Steps.getScriptByName(scriptName));
   waitForTitle(SCRIPT_PREVIEW_PAGE_TITLE);
 });
 
-Then('I can see script code on preview page', () => {
+Then('I can see {string} script code on preview page', scriptName => {
   expect(
-    Steps.imageScrapingPreviewCode()
+    Steps.getScriptCodePreview(scriptName)
       .getText()
       .trim()
   ).toEqual(IMAGE_SCRAPING_CODE);
 });
 
-When('I select an Image Scraping script', () => {
-  clickElement(Steps.imageScrapingScriptCheckbox());
-  waitForTitle(SCRIPT_PREVIEW_PAGE_TITLE);
-});
-
 Then('I can see columns with URL', () => {
   expect(Steps.imageScrapingUrlFieldsHeader()).toHaveText(IMAGE_SCRAPING_URL_FIELD_HEADER);
   expect(Steps.imageScrapingUrlFieldName()).toHaveText(IMAGE_SCRAPING_URL_FIELD_NAME);
+  clickElement(Steps.imageScrapingBackBtn());
 });
 
-Then(/^uploaded script is at the top of the list$/, () => {
-  expect(Steps.selectedStepsHeader()).toHaveText(SELECTED_STEPS_HEADER);
-  expect(Steps.firstSelectedScript()).toHaveText(UPLOADED_SCRIPT_NAME);
-  expect(Steps.firstSelectedScriptType()).toHaveText(UPLOADED_SCRIPT_TYPE);
-  expect(Steps.stepCounter()).toHaveText(UPLOADED_STEPS_COUNTER_TEXT);
+Then('the {string} script is moved to the list of {string} scripts', (scriptName, listType) => {
+  Steps[`get${pascalize(listType)}Checkbox`](scriptName).waitForExist();
+  Steps.waitForNumberOfScriptsToChange(listType, Steps[`amountOf${pascalize(listType)}Scripts`]);
+  Steps.amountOfSelectedScripts = Steps.calculateScriptsAmount(SELECTED);
+  Steps.amountOfDeselectedScripts = Steps.calculateScriptsAmount(DESELECTED);
+  expect(Steps[`${listType}Scripts`]()).toBeElementsArrayOfSize({ eq: Steps[`amountOf${pascalize(listType)}Scripts`] });
 });
 
-Then('the script is moved to the list of selected scripts', () => {
-  Steps.selectedCheckbox().waitForExist();
-  expect(Steps.selectedStepsHeader()).toHaveText(SELECTED_STEPS_HEADER);
-  expect(Steps.selectedScripts()).toBeElementsArrayOfSize({ eq: Steps.amountOfSelectedScripts });
-  expect(Steps.selectedScriptCheckbox()).toBeExisting();
-});
-
-Then('the script is no longer on the default list', () => {
-  expect(Steps.deselectedScripts()).toBeElementsArrayOfSize({
-    eq: Steps.amountOfPredefinedScripts - Steps.calculateSelectedScriptsAmount(),
+Then('the {string} script is no longer on the list of {string} scripts', (scriptName, listType) => {
+  expect(Steps[`${listType}Scripts`]()).toBeElementsArrayOfSize({
+    eq: Steps[`amountOf${pascalize(listType)}Scripts`],
   });
-  expect(Steps.deselectedScriptCheckbox()).not.toHaveText(BACKWARD_FILL_SCRIPT_NAME);
+  expect(Steps.isScriptOnTheList(scriptName, listType)).toBe(false);
 });
 
-Given('I ch(o)ose to process data source with {word} script', scriptType => {
-  Steps.processDataSourceWithScript(scriptType);
+Given('I ch(o)ose to process data source with {string} {string} script', (scriptType, scriptName) => {
+  Steps.processDataSourceWithScript(scriptType, scriptName);
   DataSources.waitForDataSourceStatusToChange(PROCESS);
 });
 
-Then(/^data in table is (.*)$/, dataFormat => {
+Then('data in table is {string}', dataFormat => {
   expect(DataSourcePreview.fieldsAmount()).toHaveText(DATA_SOURCE_PREVIEW_FIELDS_LABEL);
   DataSourcePreview.waitForPreviewTableToRender();
   expect(DataSourcePreview.columns()).toBeElementsArrayOfSize({

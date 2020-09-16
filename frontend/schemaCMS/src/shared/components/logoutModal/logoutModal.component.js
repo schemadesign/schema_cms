@@ -17,7 +17,7 @@ export class LogoutModal extends PureComponent {
     const { logoutModalOpen, onAction: handleAction, redirectUrl } = this.props;
 
     return (
-      <Modal isOpen={logoutModalOpen} contentLabel="Confirm Logout" style={modalStyles}>
+      <Modal id={'confirmLogoutModal'} isOpen={logoutModalOpen} contentLabel="Confirm Logout" style={modalStyles}>
         <ModalTitle>
           <FormattedMessage {...messages.title} />
         </ModalTitle>
@@ -25,7 +25,7 @@ export class LogoutModal extends PureComponent {
           <BackButton onClick={handleAction}>
             <FormattedMessage {...messages.cancel} />
           </BackButton>
-          <ConfirmLink to={redirectUrl} onClick={handleAction}>
+          <ConfirmLink id={'confirmLogoutBtn'} to={redirectUrl} onClick={handleAction}>
             <FormattedMessage {...messages.confirm} />
           </ConfirmLink>
         </ModalActions>

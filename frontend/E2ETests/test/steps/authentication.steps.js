@@ -1,4 +1,5 @@
 import { Given, When, Then } from 'cucumber';
+import { camelize } from 'humps';
 import Login from '../pages/Login/login.page';
 import ResetPassword from '../pages/ResetPassword/resetPassword.page';
 import Profile from '../pages/Profile/profile.page';
@@ -6,7 +7,7 @@ import TopHeader from '../pages/Components/TopHeader/topHeader.component';
 import PAGE_URL from '../pages/Constants/pageURL.constants';
 import { AUTH0_WRONG_CREDS_ERROR, LOGIN_PAGE } from '../pages/Login/loginPage.constants';
 import { RESET_PASSWORD_QUERY, URL_REGEX } from '../GmailAPI/gmail.api.constants';
-import { INVALID, RESET, VALID } from '../pages/Constants/general.constants';
+import { INVALID, INVITED_ADMIN, RANDOM, RESET, VALID } from '../pages/Constants/general.constants';
 import { USERS } from '../pages/Constants/credentials.constants';
 import { HOMEPAGE } from '../pages/Homepage/homepage.constants';
 import { expectPageToHaveTitle, expectPageToHaveUrl } from '../helpers/expect';
@@ -23,6 +24,7 @@ import {
   CHANGE_PASSWORD_SUCCESSFUL_MESSAGE,
   CHANGE_PASSWORD_ERROR_MSG,
 } from '../pages/ResetPassword/resetPassword.constants';
+import { clickElement } from '../helpers/actions';
 
 Given('I am on Login page', () => {
   Login.open();
@@ -30,32 +32,37 @@ Given('I am on Login page', () => {
   expectPageToHaveUrl(LOGIN_PAGE);
 });
 
-Given('I used reset link sent to me', () => {
+Given('I used reset link sent to me', () =>
   browser.call(async () => {
     const auth = await getAuth();
     await waitForEmail(auth, RESET_PASSWORD_QUERY);
     const emailText = await getEmailText(auth, await getEmailId(auth, RESET_PASSWORD_QUERY));
     const emailLink = await getLinksFromEmail(emailText, URL_REGEX);
     await browser.url(emailLink[0]);
-  });
-});
+  })
+);
 
 Given(
-  'I( have) log(ged) in as an {string} with {string} login and {string} password',
+  'I( have) log(ged) in as an {string} user with {string} login and {string} password',
   (userRole, loginState, passwordState) => {
-    Login.logIn(userRole, loginState, passwordState);
+    Login.logIn(camelize(userRole), loginState, passwordState);
   }
 );
 
+Given('I have logged out', () => {
+  TopHeader.logOut();
+});
+
 When('I( have) provide(d) {string} email to recover my password', passwordState => {
-  browser.call(async () => {
+  ResetPassword.resetPassword(RESET, passwordState);
+  return browser.call(async () => {
     const auth = await getAuth();
     await deleteEmails(auth, RESET_PASSWORD_QUERY, await getEmails(auth, RESET_PASSWORD_QUERY));
   });
-  ResetPassword.resetPassword(RESET, passwordState);
 });
 
 When('I provide matching passwords', () => {
+  browser.refresh();
   ResetPassword.setPassword(RESET, VALID);
 });
 
@@ -95,10 +102,13 @@ Then('I see that login is {string} and password is {string}', (loginState, passw
   Login.validateInputs({ loginState, passwordState });
 });
 
-Then('my {string} personal information is displayed in the profile', userRole => {
+Then('my personal information as an {string} user is displayed in the profile', userRole => {
   TopHeader.openProfile();
-  expect(Profile.firstNameValue()).toHaveValue(USERS[userRole].firstName);
-  expect(Profile.lastNameValue()).toHaveValue(USERS[userRole].lastName);
-  expect(Profile.emailValue()).toHaveValue(USERS[userRole].login.valid);
-  expect(Profile.roleValue()).toHaveValue(userRole);
+  expect(Profile.firstNameValue()).toHaveValue(USERS[camelize(userRole)].firstName);
+  expect(Profile.lastNameValue()).toHaveValue(USERS[camelize(userRole)].lastName);
+  expect(Profile.emailValue()).toHaveValue(
+    USERS[camelize(userRole)].login[userRole === INVITED_ADMIN ? RANDOM : VALID]
+  );
+  expect(Profile.roleValue()).toHaveValue(userRole.split(' ').pop());
+  clickElement(TopHeader.logo());
 });

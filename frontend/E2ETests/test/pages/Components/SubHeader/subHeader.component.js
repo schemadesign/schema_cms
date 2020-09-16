@@ -1,6 +1,7 @@
 import { cond, T, match, always } from 'ramda';
+import { camelize } from 'humps';
 import PAGE_URL from '../../Constants/pageURL.constants';
-import { convertToCamelCase, createSelectors } from '../../../helpers/utils';
+import { createSelectors } from '../../../helpers/utils';
 import { expectToBeDisplayed, expectElemsToHaveText } from '../../../helpers/expect';
 import { CREATE_PROJECT_PAGE } from '../../CreateProject/createProject.constants';
 import { HOMEPAGE } from '../../Homepage/homepage.constants';
@@ -12,6 +13,7 @@ import {
   SUBHEADER_HOMEPAGE_TITLE_VALUES,
   SUBHEADER_ICON_LABELS,
 } from './subHeader.constants';
+import { clickElement } from '../../../helpers/actions';
 
 const singleSelectors = {};
 
@@ -58,6 +60,8 @@ const convertedDtsCtaSelectors = createSelectors([createDataSourceCtaSelectors],
 const convertedDataSourceCtaSelectors = createSelectors([dataSourceCtaSelectors], []);
 const convertedDataSourceTextSelectors = createSelectors([dataSourceTextSelectors], []);
 
+const navigateToPage = SubHeader => pageName => clickElement(SubHeader[`${pageName}Btn`]());
+
 const isHomepageSubHeaderDisplayed = () => () => {
   expectToBeDisplayed(convertedHomepageCtaSelectors);
   expectElemsToHaveText(convertedCommonSelectors, SUBHEADER_HOMEPAGE_TITLE_VALUES);
@@ -80,7 +84,7 @@ const isDataSourceSubHeaderIconsDisplayed = () => () => {
 const isDataSourceSubHeaderDisplayed = SubHeader => (dtsName, page) => {
   isDataSourceSubHeaderIconsDisplayed();
   expect(SubHeader.title()).toHaveText(dtsName);
-  expect(SubHeader.subtitle()).toHaveText(SUBHEADER_DATA_SOURCES_SUBTITLE[convertToCamelCase(page)]);
+  expect(SubHeader.subtitle()).toHaveText(SUBHEADER_DATA_SOURCES_SUBTITLE[camelize(page)]);
 };
 
 const expectSubHeaderToMatchPageUrl = SubHeader => url =>
@@ -97,6 +101,7 @@ const getFunctions = SubHeader => ({
   isCreateProjectSubHeaderDisplayed: isCreateProjectSubHeaderDisplayed(SubHeader),
   isDataSourcesSubHeaderDisplayed: isDataSourceMainPageSubHeaderDisplayed(SubHeader),
   isDataSourceSubHeaderDisplayed: isDataSourceSubHeaderDisplayed(SubHeader),
+  navigateToPage: navigateToPage(SubHeader),
 });
 
 const convertedSelectors = createSelectors(

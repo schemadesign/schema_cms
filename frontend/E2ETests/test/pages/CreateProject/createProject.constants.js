@@ -1,5 +1,4 @@
 import { generateRandomString } from '../../helpers/utils';
-import { SCHEMA_ADMIN_FIRST_NAME, SCHEMA_ADMIN_LAST_NAME } from '../../credentials/credentials';
 
 export const CREATE_PROJECT_PAGE = 'createProject';
 export const CREATE_PROJECT_URL = `${browser.config.baseUrl}/project/create/`;
@@ -19,7 +18,10 @@ const CREATE_PROJECT_SUBMIT_LABEL = 'Finish';
 const CREATE_PROJECT_DOMAIN_LABEL = 'Domain';
 const CREATE_PROJECT_CREATION_DATE_TEXT = 'a few seconds ago';
 export const CREATE_PROJECT_DEFAULT_STATUS = 'In Progress';
-const CREATE_PROJECT_OWNER_VALUE = `${SCHEMA_ADMIN_FIRST_NAME} ${SCHEMA_ADMIN_LAST_NAME}`;
+export const CREATE_PROJECT_OWNER_VALUE = {
+  invitedAdmin: `${process.env.DJANGO_FIRST_NAME_ADMIN} ${process.env.DJANGO_LAST_NAME}`,
+  existingAdmin: `${process.env.SCHEMA_ADMIN_FIRST_NAME} ${process.env.SCHEMA_ADMIN_LAST_NAME}`,
+};
 const PLACEHOLDER_VALUE = 'placeholder';
 
 export const CREATE_PROJECT_ELEMENT_VALUES = [
@@ -27,7 +29,6 @@ export const CREATE_PROJECT_ELEMENT_VALUES = [
   CREATE_PROJECT_DESCRIPTION_LABEL,
   CREATE_PROJECT_DOMAIN_LABEL,
   CREATE_PROJECT_OWNER_LABEL,
-  CREATE_PROJECT_OWNER_VALUE,
   CREATE_PROJECT_STATUS_LABEL,
   CREATE_PROJECT_DEFAULT_STATUS,
   CREATE_PROJECT_CANCEL_LABEL,
