@@ -114,8 +114,13 @@ class ProjectViewSet(utils_serializers.ActionSerializerViewSetMixin, viewsets.Mo
             .order_by("name")
         )
 
+        templates_filter_kwargs = {"project": project}
+
+        if request.user.is_editor:
+            templates_filter_kwargs["is_available"] = True
+
         page_templates = (
-            PageTemplate.objects.filter(project=project)
+            PageTemplate.objects.filter(**templates_filter_kwargs)
             .order_by("-created")
             .select_related("project", "created_by")
             .prefetch_related(
