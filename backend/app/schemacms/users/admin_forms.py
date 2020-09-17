@@ -41,7 +41,7 @@ class InviteUserForm(UserFormMixin, forms.ModelForm):
 
         if mgtm_backend.type == UserSource.OKTA:
             try:
-                email = mgtm_backend.get_user(email)
+                email = mgtm_backend.get_user(email)["profile"]["email"]
             except backend_management.okta.UserDontExistInOkta:
                 raise forms.ValidationError(f"The user with email {email} does not exists in Okta instance.")
 
