@@ -20,6 +20,7 @@ class User(AbstractUser):
         choices=constants.USER_SOURCE_CHOICES, max_length=16, default=constants.UserSource.UNDEFINED
     )
     external_id = models.CharField(max_length=64, blank=True)
+    email = models.EmailField(_("email address"), blank=True, unique=True)
     is_active = models.BooleanField(
         _("active"),
         default=True,
