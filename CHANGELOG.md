@@ -6,6 +6,20 @@
 
 ### Features
 
+## 1.7.4 (September 17, 2020) - Release
+
+### Fixes
+
+- Support to AWS CLI version 1 and 2
+- PublicApi endpoints error when owner or created_by fields are empty
+- Removing page template cosing pages removal
+
+## 1.7.3 (September 11, 2020) - Release
+
+### Changes
+
+- Migrations merging
+
 ## 1.7.2 (September 10, 2020) - Release
 
 ### Changes
