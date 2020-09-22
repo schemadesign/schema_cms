@@ -155,6 +155,7 @@ exports[`UserCreate: Component should render correctly 1`] = `
     >
       <BackButton
         disabled={false}
+        id="inviteUserBackBtn"
         onClick={[Function]}
         type="button"
       >
@@ -165,6 +166,7 @@ exports[`UserCreate: Component should render correctly 1`] = `
       </BackButton>
       <NextButton
         disabled={false}
+        id="inviteUserSubmitBtn"
         loading={false}
         type="submit"
       >

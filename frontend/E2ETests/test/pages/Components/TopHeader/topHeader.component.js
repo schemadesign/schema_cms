@@ -25,9 +25,11 @@ const openMenu = TopHeader => () => clickElement(TopHeader.menuBtn());
 const openProfile = TopHeader => () => clickElement(TopHeader.settingsBtn());
 
 const logOut = TopHeader => () => {
-  clickElement(TopHeader.logoutBtn());
-  waitForElement(TopHeader.confirmLogoutModal());
-  clickElement(TopHeader.confirmLogoutBtn());
+  if (TopHeader.logoutBtn().isExisting()) {
+    clickElement(TopHeader.logoutBtn());
+    waitForElement(TopHeader.confirmLogoutModal());
+    clickElement(TopHeader.confirmLogoutBtn());
+  }
 };
 
 const expectTopHeaderToBeDisplayed = () => () => {

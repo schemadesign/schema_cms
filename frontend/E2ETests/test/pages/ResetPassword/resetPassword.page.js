@@ -1,6 +1,7 @@
 import { createSelectors } from '../../helpers/utils';
 import { clickElement, setValue } from '../../helpers/actions';
 import { USERS } from '../Constants/credentials.constants';
+import { DJANGO } from '../Django/django.constants';
 
 const singleSelectors = {
   resetLink: '.auth0-lock-alternative',
@@ -15,9 +16,9 @@ const singleSelectors = {
 
 const multiSelectors = {};
 
-const resetPassword = ResetPassword => (userRole, emailType) => {
+const resetPassword = ResetPassword => (userRole, emailType, appType = DJANGO) => {
   clickElement(ResetPassword.resetLink());
-  setValue(ResetPassword.emailInput(), USERS[userRole].login[emailType]);
+  setValue(ResetPassword.emailInput(), USERS[userRole].login[emailType].app[appType]);
   clickElement(ResetPassword.submitBtn());
 };
 

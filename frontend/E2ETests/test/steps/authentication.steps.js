@@ -7,7 +7,7 @@ import TopHeader from '../pages/Components/TopHeader/topHeader.component';
 import PAGE_URL from '../pages/Constants/pageURL.constants';
 import { AUTH0_WRONG_CREDS_ERROR, LOGIN_PAGE } from '../pages/Login/loginPage.constants';
 import { RESET_PASSWORD_QUERY, URL_REGEX } from '../GmailAPI/gmail.api.constants';
-import { INVALID, INVITED_ADMIN, RANDOM, RESET, VALID } from '../pages/Constants/general.constants';
+import { INVALID, INVITED, RANDOM, RESET, VALID } from '../pages/Constants/general.constants';
 import { USERS } from '../pages/Constants/credentials.constants';
 import { HOMEPAGE } from '../pages/Homepage/homepage.constants';
 import { expectPageToHaveTitle, expectPageToHaveUrl } from '../helpers/expect';
@@ -45,7 +45,7 @@ Given('I used reset link sent to me', () =>
 Given(
   'I( have) log(ged) in as an {string} user with {string} login and {string} password',
   (userRole, loginState, passwordState) => {
-    Login.logIn(camelize(userRole), loginState, passwordState);
+    Login.logIn(camelize(userRole), camelize(loginState), passwordState);
   }
 );
 
@@ -54,11 +54,12 @@ Given('I have logged out', () => {
 });
 
 When('I( have) provide(d) {string} email to recover my password', passwordState => {
-  ResetPassword.resetPassword(RESET, passwordState);
-  return browser.call(async () => {
+  browser.call(async () => {
     const auth = await getAuth();
     await deleteEmails(auth, RESET_PASSWORD_QUERY, await getEmails(auth, RESET_PASSWORD_QUERY));
   });
+
+  ResetPassword.resetPassword(RESET, passwordState);
 });
 
 When('I provide matching passwords', () => {
@@ -99,16 +100,24 @@ Then('the new password is not created', () => {
 });
 
 Then('I see that login is {string} and password is {string}', (loginState, passwordState) => {
-  Login.validateInputs({ loginState, passwordState });
+  Login.validateLoginInputs({ loginState, passwordState });
 });
 
-Then('my personal information as an {string} user is displayed in the profile', userRole => {
-  TopHeader.openProfile();
-  expect(Profile.firstNameValue()).toHaveValue(USERS[camelize(userRole)].firstName);
-  expect(Profile.lastNameValue()).toHaveValue(USERS[camelize(userRole)].lastName);
-  expect(Profile.emailValue()).toHaveValue(
-    USERS[camelize(userRole)].login[userRole === INVITED_ADMIN ? RANDOM : VALID]
-  );
-  expect(Profile.roleValue()).toHaveValue(userRole.split(' ').pop());
-  clickElement(TopHeader.logo());
-});
+Then(
+  'my personal information as an {string} {string} from/in {string} is displayed in the profile',
+  (userRole, userType, appType) => {
+    const combinedUserRole = camelize(`${userType} ${userRole}`);
+    TopHeader.openProfile();
+
+    expect(Profile.lastNameValue()).toHaveValue(USERS[combinedUserRole].lastName.valid.app[camelize(appType)]);
+
+    expect(Profile.firstNameValue()).toHaveValue(USERS[combinedUserRole].firstName.valid.app[camelize(appType)]);
+
+    expect(Profile.emailValue()).toHaveValue(
+      USERS[combinedUserRole].login[combinedUserRole.includes(INVITED) ? RANDOM : VALID].app[camelize(appType)]
+    );
+
+    expect(Profile.roleValue()).toHaveValue(userRole.split(' ').pop());
+    clickElement(TopHeader.logo());
+  }
+);

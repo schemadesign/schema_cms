@@ -139,6 +139,7 @@ export class DesktopHeader extends PureComponent {
           <Overlayer visible={isMenuOpen} onClick={this.handleToggleMenu} />
           <MenuWrapper visible={isMenuOpen} onClick={this.handleToggleMenu}>
             <Menu
+              id="menuContainer"
               open={isMenuOpen}
               onClose={this.handleToggleMenu}
               customStyles={menuStyles(isMenuOpen)}

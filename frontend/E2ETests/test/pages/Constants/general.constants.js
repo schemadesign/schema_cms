@@ -1,6 +1,8 @@
 export const VALID = 'valid';
 export const INVALID = 'invalid';
 export const EMPTY = 'empty';
+export const TOO_SHORT = 'too short';
+export const NOT_EXISTING = 'not existing';
 export const DELETE = 'delete';
 export const ADMIN = 'admin';
 export const EXISTING_ADMIN = 'existingAdmin';

@@ -35,3 +35,16 @@ export const createSelectors = (singleArr, multiArr) =>
     singleArr.map(obj => ({ ...convertSelectors(obj, $) })),
     multiArr.map(obj => ({ ...convertSelectors(obj, $$) }))
   );
+
+export const extractUserRole = str => {
+  return str.includes('existing') ? str.split('existing ')[1] : str.split('invited ')[1];
+};
+
+export const getTranslateXvalueFromMatrix = selector => {
+  const matrix = selector
+    .split('(')[1]
+    .split(')')[0]
+    .split(',');
+
+  return parseInt(matrix[4], 10);
+};

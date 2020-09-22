@@ -2,6 +2,7 @@
 
 exports[`Menu: Component should render correctly 1`] = `
 <div
+  id=""
   style={
     Object {
       "backgroundColor": "#000",
@@ -40,6 +41,7 @@ exports[`Menu: Component should render correctly 1`] = `
 
 exports[`Menu: Component should render opened 1`] = `
 <div
+  id=""
   style={
     Object {
       "backgroundColor": "#000",
@@ -77,6 +79,7 @@ exports[`Menu: Component should render opened 1`] = `
 
 exports[`Menu: Component should with custom styles 1`] = `
 <div
+  id=""
   style={
     Object {
       "backgroundColor": "black",

@@ -1,5 +1,6 @@
 import { generateRandomString } from '../../helpers/utils';
 
+export const DJANGO = 'django';
 export const DJANGO_FIRST_NAME = {
   invitedAdmin: process.env.DJANGO_FIRST_NAME_ADMIN,
   invitedEditor: process.env.DJANGO_FIRST_NAME_EDITOR,

@@ -3,6 +3,7 @@ export default {
   djangoSelectUserToChange: 'Select user to change | Django site admin',
   login: 'Sign In with Auth0',
   homepage: 'Projects Overview - Schema CMS',
+  users: 'Schema CMS',
   resetPassword: 'Change your password',
   projectDetails: 'Project - Schema CMS',
   datasource: 'Data Sources - Schema CMS',

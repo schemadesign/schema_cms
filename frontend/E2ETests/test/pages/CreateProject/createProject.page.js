@@ -4,6 +4,7 @@ import { createSelectors } from '../../helpers/utils';
 import { clickElement, setValue } from '../../helpers/actions';
 import { waitForElement } from '../../helpers/waitFor';
 import { expectElemsToHaveAttribute, expectElemsToHaveText } from '../../helpers/expect';
+import { USERS } from '../Constants/credentials.constants';
 import { VALID } from '../Constants/general.constants';
 import {
   CREATE_PROJECT_ATTRIBUTE_VALUES,
@@ -11,7 +12,6 @@ import {
   CREATE_PROJECT_DEFAULT_STATUS,
   CREATE_PROJECT_ELEMENT_VALUES,
   ATTRIBUTE_VALUES,
-  CREATE_PROJECT_OWNER_VALUE,
 } from './createProject.constants';
 
 const { title, description, domain } = CREATE_PROJECT;
@@ -63,10 +63,18 @@ const createProject = CreateProject => (titleState = VALID, descriptionState = V
   setProjectStatus(CreateProject)();
 };
 
-const expectCreateProjectPageToMatchDesign = CreateProject => userRole => {
+const expectCreateProjectPageToMatchDesign = CreateProject => (userRole, userType, appType) => {
+  const combinedUserRole = camelize(`${userType} ${userRole}`);
+
   SubHeader.expectSubHeaderToMatchPageUrl(browser.getUrl());
   expectElemsToHaveText(convertedTextSelectors, CREATE_PROJECT_ELEMENT_VALUES);
-  expect(CreateProject.ownerInput()).toHaveValue(CREATE_PROJECT_OWNER_VALUE[camelize(userRole)]);
+
+  expect(CreateProject.ownerInput()).toHaveValue(
+    `${USERS[combinedUserRole].firstName.valid.app[camelize(appType)]} ${
+      USERS[combinedUserRole].lastName.valid.app[camelize(appType)]
+    }`
+  );
+
   expectElemsToHaveAttribute(convertedAttributeSelectors, ATTRIBUTE_VALUES, CREATE_PROJECT_ATTRIBUTE_VALUES);
 };
 

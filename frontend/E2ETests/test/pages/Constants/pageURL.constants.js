@@ -2,6 +2,8 @@ export default {
   djangoUsers: `${process.env[`DJANGO_${process.env.ENV}`]}users/user/`,
   homepage: new RegExp(`${browser.config.baseUrl}/project`),
   login: new RegExp(/https:\/\/schemadesign(-[a-z]*)?\.auth0\.com\/login\?state=([a-zA-Z0-9#]*)/),
+  users: new RegExp(`${browser.config.baseUrl}/user`),
+  addUser: new RegExp(`${browser.config.baseUrl}/user/add`),
   resetPassword: new RegExp(/https:\/\/schemadesign(-[a-z]*)?\.auth0\.com\/lo\/reset\?ticket=([a-zA-Z0-9#]*)/),
   projectDetails: new RegExp(`${browser.config.baseUrl}/project/([1-9]*)`),
   datasource: new RegExp(`${browser.config.baseUrl}/project/([0-9]*)/datasource`),

@@ -13,10 +13,10 @@ import {
   CREATE_PROJECT_INVALID_DOMAIN_ERROR,
 } from '../pages/CreateProject/createProject.constants';
 
-Given('I cho(o)se to create new project as an {string}', userRole => {
+Given('I cho(o)se to create new project as an {string} {string} from/in {string}', (userRole, userType, appType) => {
   clickElement(Homepage.createProjectBtn());
   expect(browser).toHaveUrl(CREATE_PROJECT_URL);
-  CreateProject.expectCreateProjectPageToMatchDesign(userRole);
+  CreateProject.expectCreateProjectPageToMatchDesign(userRole, userType, appType);
   TopHeader.expectTopHeaderToBeDisplayed();
 });
 

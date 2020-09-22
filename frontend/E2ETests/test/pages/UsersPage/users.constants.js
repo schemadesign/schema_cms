@@ -1,0 +1,13 @@
+export const FIRST_NAME = 'firstName';
+export const LAST_NAME = 'lastName';
+export const EMAIL = 'email';
+export const FIRST_NAME_STATE = 'firstNameState';
+export const LAST_NAME_STATE = 'lastNameState';
+export const EMAIL_STATE = 'emailState';
+export const USERS_PAGE = 'users';
+export const ADD_USER_PAGE = 'addUser';
+export const EMPTY_INPUT_ERROR = 'Required';
+export const USER_EXISTS_ERROR = 'A user with this email already exists in Schema CMS.';
+export const TOO_SHORT_FIRST_NAME_ERROR = 'Name should have at least 2 characters';
+export const TOO_SHORT_LAST_NAME_ERROR = 'Last name should have at least 2 characters';
+export const INVALID_EMAIL_ERROR = 'Invalid email';

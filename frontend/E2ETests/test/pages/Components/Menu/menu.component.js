@@ -1,4 +1,4 @@
-import { createSelectors } from '../../../helpers/utils';
+import { createSelectors, getTranslateXvalueFromMatrix } from '../../../helpers/utils';
 import { clickElement } from '../../../helpers/actions';
 import { expectToBeDisplayed, expectElemsToHaveText } from '../../../helpers/expect';
 import MENU_ELEMENT_TEXT_VALUES from './menu.constants';
@@ -11,6 +11,10 @@ const singleSelectors = {
   aboutSchemaCMS: '#aboutNavBtn',
   apiDoc: '#apiNavBtn',
   gitHubRepo: '#repositoryNavBtn',
+};
+
+const utilitySelectors = {
+  container: '#menuContainer',
 };
 
 const multiSelectors = {};
@@ -29,12 +33,27 @@ const expectMenuToBeDisplayed = () => () => {
   expectElemsToHaveText(convertedSingleSelectors, MENU_ELEMENT_TEXT_VALUES);
 };
 
+const waitForMenuToHide = Menu => (timeout = browser.config.waitforTimeout) => {
+  browser.waitUntil(() => getTranslateXvalueFromMatrix(Menu.container().getCSSProperty('transform').value) === 595, {
+    timeout,
+    timeoutMsg: `Transform value equals ${getTranslateXvalueFromMatrix(
+      Menu.container().getCSSProperty('transform').value
+    )}`,
+  });
+
+  browser.waitUntil(() => !Menu.container().isDisplayedInViewport(), {
+    timeout,
+    timeoutMsg: 'Menu is still visible in the viewport',
+  });
+};
+
 const getFunctions = Menu => ({
   closeMenu: closeMenu(Menu),
   expectMenuToBeDisplayed: expectMenuToBeDisplayed(Menu),
+  waitForMenuToHide: waitForMenuToHide(Menu),
 });
 
-const convertedSelectors = createSelectors([singleSelectors, ctaSelectors], [multiSelectors]);
+const convertedSelectors = createSelectors([singleSelectors, ctaSelectors, utilitySelectors], [multiSelectors]);
 
 export default {
   ...convertedSelectors,
