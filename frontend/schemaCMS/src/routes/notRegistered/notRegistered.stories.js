@@ -9,7 +9,7 @@ import { intl } from '../../.storybook/helpers';
 export const defaultProps = {
   intl,
   location: {
-    search: '?email=some-mail%40example.com',
+    search: '?state=some-mail%40example.com',
   },
 };
 

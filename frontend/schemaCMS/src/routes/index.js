@@ -1,8 +1,6 @@
 import React, { Component } from 'react';
 import { Redirect, Route, Switch } from 'react-router-dom';
 
-import browserHistory from '../shared/utils/history';
-import { OKTA_URL, AUTH0_URL } from '../shared/utils/api.constants';
 import App from './app.container';
 import AuthRoute from './authRoute/authRoute.container';
 import JWT from './jwt/jwt.container';
