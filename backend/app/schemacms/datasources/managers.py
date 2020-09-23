@@ -7,26 +7,43 @@ from ..utils.managers import generate_soft_delete_manager
 
 
 class DataSourceMetaManager(models.Manager):
-    def get_by_natural_key(self, data_source_name, project_slug):
-        # print(args, self.__class__.__name__)
-        return self.get(datasource__name=data_source_name, datasource__project__slug=project_slug)
+    def get_by_natural_key(self, project_title, data_source_name):
+        return self.get(datasource__name=data_source_name, datasource__project__title=project_title)
 
 
 class DataSourceJobManager(models.Manager):
-    def get_by_natural_key(self, source_file_path, source_file_version, data_source_name, project_slug):
-        # (self.source_file_path, self.source_file_version) + self.datasource.natural_key()
-        # print(args, self.__class__.__name__)
+    def get_by_natural_key(self, project_title, data_source_name, source_file_path, source_file_version):
         return self.get(
             source_file_path=source_file_path,
             source_file_version=source_file_version,
             datasource__name=data_source_name,
-            datasource__project__slug=project_slug,
+            datasource__project__title=project_title,
+        )
+
+
+class DataSourceJobMetaManager(models.Manager):
+    def get_by_natural_key(self, project_title, data_source_name, source_file_path, source_file_version):
+        return self.get(
+            job__source_file_path=source_file_path,
+            job__source_file_version=source_file_version,
+            job__datasource__name=data_source_name,
+            job__datasource__project__title=project_title,
+        )
+
+
+class DataSourceTagManager(models.Manager):
+    def get_by_natural_key(self, project_title, datasource_name, category_name, value):
+        return self.get(
+            datasource__project__title=project_title,
+            datasource__name=datasource_name,
+            category_name=category_name,
+            value=value,
         )
 
 
 class DataSourceQuerySet(SoftDeleteQuerySet):
-    def get_by_natural_key(self, name, project_slug):
-        return self.get(name=name, project__slug=project_slug)
+    def get_by_natural_key(self, project_title, name):
+        return self.get(name=name, project__title=project_title)
 
     @transaction.atomic()
     def create(self, *args, **kwargs):
@@ -45,9 +62,7 @@ class DataSourceQuerySet(SoftDeleteQuerySet):
     def annotate_filters_count(self):
         return self.annotate(
             filters_count=models.Count(
-                "filters",
-                filter=models.Q(filters__deleted_at__isnull=True),
-                distinct=True,
+                "filters", filter=models.Q(filters__deleted_at__isnull=True), distinct=True,
             )
         )
 

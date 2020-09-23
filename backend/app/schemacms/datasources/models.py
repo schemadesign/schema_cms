@@ -76,8 +76,9 @@ class DataSource(MetaGeneratorMixin, SoftDeleteObject, TimeStampedModel):
         return self.name or str(self.id)
 
     def natural_key(self):
-        return (self.name,) + self.project.natural_key()
-    natural_key.dependencies = ['projects.project']
+        return self.project.natural_key() + (self.name,)
+
+    natural_key.dependencies = ["projects.project"]
 
     def get_source_file(self):
         return self.file
@@ -337,8 +338,7 @@ class DataSourceJob(MetaGeneratorMixin, SoftDeleteObject, TimeStampedModel, fsm.
         return f"DataSource Job #{self.pk}"
 
     def natural_key(self):
-        return (self.source_file_path, self.source_file_version) + self.datasource.natural_key()
-    natural_key.dependencies = ['datasources.datasource']
+        return self.datasource.natural_key() + (self.source_file_path, self.source_file_version)
 
     @property
     def get_source_file(self):
@@ -418,8 +418,13 @@ class DataSourceJobMetaData(SoftDeleteObject, MetaDataModel):
         DataSourceJob, on_delete=models.CASCADE, related_name="meta_data"
     )
 
+    objects = managers.DataSourceJobMetaManager()
+
     def __str__(self):
         return f"Job {self.job} meta"
+
+    def natural_key(self):
+        return self.job.natural_key()
 
     def relative_path_to_save(self, filename):
         base_path = self.preview.storage.location

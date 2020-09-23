@@ -6,8 +6,8 @@ from ..utils.managers import generate_soft_delete_manager
 
 
 class ProjectQuerySet(softdelete.models.SoftDeleteQuerySet):
-    def get_by_natural_key(self, slug):
-        return self.get(slug=slug)
+    def get_by_natural_key(self, title):
+        return self.get(title=title)
 
     def annotate_data_source_count(self):
         from ..datasources.models import DataSource

@@ -41,11 +41,11 @@ class Project(SoftDeleteObject, TitleSlugDescriptionModel, TimeStampedModel):
         return self.title
 
     def natural_key(self):
-        return self.slug,
+        return (self.title,)
 
     def relative_path_to_save(self, filename):
-        base_path = self.file.storage.location
-        if not (self.id and self.project_id):
+        base_path = self.xml_file.storage.location
+        if not self.id:
             raise ValueError("Project is not set")
         return os.path.join(base_path, f"/rss/{self.id}/{filename}")
 
