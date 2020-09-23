@@ -104,7 +104,8 @@ Application requires Auth0 and domain with verified certificate in AWS.
 
 1. Make sure you run `make setup` and you have all packages installed.
 2. [aws-vault](https://github.com/99designs/aws-vault) installed.
-3. [Auth0](https://auth0.com/) tenant and required applications created. You can find instructions [here](./docs/auth0.md)
+3. Create and configure [Auth0](https://auth0.com) or [Okta](https://www.okta.com/) identity provider tenant depending what you want to use.
+You can find instructions for Auth0 [here](./docs/auth0.md) and Okta [here](./docs/okta.md).
 
 ### aws-vault configuration
 1. Log In to [AWS Console](https://aws.amazon.com/console/), go to `My security credentials` and create access key.
@@ -154,13 +155,17 @@ But before that at least one domain has to be verified. To do that follow this s
     - `/schema-cms-app/DJANGO_WEBAPP_HOST` - At this moment same value as `DJANGO_HOST`.
     - `/schema-cms-app/PUBLIC_API_URL` - Subdomain `api` e.g, `https://api.example.com/` with `/` on the end.
     - `/schema-cms-app/DJANGO_ROOT_PASSWORD` - Your password do django admin console.
-    - `/schema-cms-app/DJANGO_USER_MGMT_BACKEND` - `schemacms.users.backend_management.auth0.Auth0UserManagement`
-    - `/schema-cms-app/DJANGO_SOCIAL_AUTH_AUTH0_DOMAIN` - Domain from created Auth0 `SINGLE PAGE APPLICATION`.
-    - `/schema-cms-app/DJANGO_SOCIAL_AUTH_AUTH0_KEY"` - Client ID from created Auth0 `SINGLE PAGE APPLICATION`.
-    - `/schema-cms-app/DJANGO_SOCIAL_AUTH_AUTH0_SECRET"` - Client Secret from created Auth0 `SINGLE PAGE APPLICATION`.
-    - `/schema-cms-app/DJANGO_USER_MGMT_AUTH0_DOMAIN` - Domain from created Auth0 `MACHINE TO MACHINE`.
-    - `/schema-cms-app/DJANGO_USER_MGMT_AUTH0_KEY` - Client ID from created Auth0 `MACHINE TO MACHINE`.
-    - `/schema-cms-app/DJANGO_USER_MGMT_AUTH0_SECRET` - Client Secret from created Auth0 `MACHINE TO MACHINE`.
+    - `/schema-cms-app/DJANGO_USER_MGMT_BACKEND` - Set `schemacms.users.backend_management.auth0.Auth0UserManagement` if you want to use Auth0 as identity provider or `schemacms.users.backend_management.okta.OktaUserManagement` if you want use Okta.
+    - `/schema-cms-app/DJANGO_SOCIAL_AUTH_AUTH0_DOMAIN` - Empty string if you be using Okta else set here domain from created Auth0 `SINGLE PAGE APPLICATION`.
+    - `/schema-cms-app/DJANGO_SOCIAL_AUTH_AUTH0_KEY"` - Empty string if you be using Okta else set here client ID from created Auth0 `SINGLE PAGE APPLICATION`.
+    - `/schema-cms-app/DJANGO_SOCIAL_AUTH_AUTH0_SECRET"` - Empty string if you be using Okta else set here client Secret from created Auth0 `SINGLE PAGE APPLICATION`.
+    - `/schema-cms-app/DJANGO_USER_MGMT_AUTH0_DOMAIN` - Empty string if you be using Okta else set here domain from created Auth0 `MACHINE TO MACHINE`.
+    - `/schema-cms-app/DJANGO_USER_MGMT_AUTH0_KEY` - Empty string if you be using Okta else set here client ID from created Auth0 `MACHINE TO MACHINE`.
+    - `/schema-cms-app/DJANGO_USER_MGMT_AUTH0_SECRET` - Empty string if you be using Okta else set here client Secret from created Auth0 `MACHINE TO MACHINE`.
+    - `/schema-cms-app/SOCIAL_AUTH_OKTA_OAUTH2_KEY` - Empty string if you be using Auth0 else set here client key from web app created in Okta.
+    - `/schema-cms-app/SOCIAL_AUTH_OKTA_OAUTH2_SECRET` - Empty string if you be using Auth0 else set here client secret from web app created in Okta.
+    - `/schema-cms-app/OKTA_DOMAIN_URL` - Empty string if you be using Auth0 else set here domain url to your Okta instance, for example `https://dev-7777777.okta.com`.
+    - `/schema-cms-app/OKTA_API_TOKEN` - Empty string if you be using Auth0 else set here created API token to your instance.
     
 ### Deploy application
 

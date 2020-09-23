@@ -1,10 +1,12 @@
 ## [Unreleased]
 
 ### Fixes
+- Editor was able to see unavailable templates
 
 ### Changes
 
 ### Features
+- Okta authentication backend added
 
 ## 1.7.4 (September 17, 2020) - Release
 
