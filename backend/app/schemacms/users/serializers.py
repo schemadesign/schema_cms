@@ -1,10 +1,12 @@
-from rest_framework import serializers
+from rest_framework import serializers, validators
 
 from .models import User
 from ..authorization import constants as auth_constants
 
 
 class UserSerializer(serializers.ModelSerializer):
+    email = serializers.EmailField(validators=[validators.UniqueValidator(queryset=User.objects.all())])
+
     class Meta:
         model = User
         fields = ("id", "username", "email", "first_name", "last_name", "role")
