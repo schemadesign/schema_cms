@@ -2,6 +2,7 @@ from urllib import parse
 
 import auth0.v3
 import django.urls
+
 import pytest
 
 from schemacms.users import constants

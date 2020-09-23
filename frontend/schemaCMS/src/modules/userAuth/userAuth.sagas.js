@@ -8,6 +8,7 @@ import { LOGOUT_URL, RESET_PASSWORD_PATH, TOKEN_PATH } from '../../shared/utils/
 import { selectAuthToken } from './userAuth.selectors';
 import { UserProfileRoutines, UserProfileActions } from '../userProfile/userProfile.redux';
 import { ProjectRoutines } from '../project/project.redux';
+import { ConfigRoutines } from '../config/config.redux';
 
 export function* setAuthorizationToken(token) {
   if (token) {
@@ -34,6 +35,8 @@ function* getJwtToken({ uid, token }) {
 function* startup() {
   const token = yield select(selectAuthToken);
   yield setAuthorizationToken(token);
+
+  yield put(ConfigRoutines.fetchConfig());
 }
 
 function* logout() {

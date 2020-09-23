@@ -1,7 +1,8 @@
 import React, { PureComponent } from 'react';
 import PropTypes from 'prop-types';
+import { ifElse, equals, always } from 'ramda';
 import { Redirect, Route } from 'react-router-dom';
-import { AUTH_PATH } from '../../shared/utils/api.constants';
+import { OKTA_URL, AUTH0_URL } from '../../shared/utils/api.constants';
 
 export class ExternalRedirect extends PureComponent {
   static propTypes = {
@@ -20,6 +21,9 @@ export class AuthRoute extends PureComponent {
     isAuthenticated: PropTypes.bool,
     requireAnonymous: PropTypes.bool,
     isUserFetched: PropTypes.bool,
+    isAuth0Backend: PropTypes.bool,
+    isOktaBckend: PropTypes.bool,
+    authBackend: PropTypes.oneOfType(PropTypes.bool, PropTypes.string),
     fetchCurrentUser: PropTypes.func.isRequired,
   };
 
@@ -29,13 +33,26 @@ export class AuthRoute extends PureComponent {
     isUserFetched: false,
   };
 
+  getAuthURL = ifElse(equals(true), always(OKTA_URL), always(AUTH0_URL));
+
   renderRoute = () => <Route {...this.props} />;
 
   render() {
-    const { isUserFetched, requireAnonymous, isAuthenticated, fetchCurrentUser } = this.props;
+    const {
+      isUserFetched,
+      requireAnonymous,
+      isAuthenticated,
+      fetchCurrentUser,
+      authBackend,
+      isOktaBckend,
+    } = this.props;
 
     if (!isUserFetched) {
       fetchCurrentUser();
+      return null;
+    }
+
+    if (!authBackend) {
       return null;
     }
 
@@ -63,6 +80,6 @@ export class AuthRoute extends PureComponent {
     /**
      * Redirect to register by default
      */
-    return <ExternalRedirect to={AUTH_PATH} />;
+    return <ExternalRedirect to={this.getAuthURL(isOktaBckend)} />;
   }
 }

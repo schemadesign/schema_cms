@@ -1,7 +1,5 @@
 import uuid
 
-import anymail.exceptions
-import sentry_sdk
 from django.contrib.auth.models import AbstractUser
 from django.db import models, transaction
 from django.utils.encoding import python_2_unicode_compatible
@@ -9,7 +7,6 @@ from django.utils.translation import ugettext_lazy as _
 from rest_framework_jwt.settings import api_settings
 
 from . import backend_management, constants, signals, managers
-from .. import mail
 from ..authorization import tokens
 
 jwt_payload_handler = api_settings.JWT_PAYLOAD_HANDLER
@@ -23,6 +20,7 @@ class User(AbstractUser):
         choices=constants.USER_SOURCE_CHOICES, max_length=16, default=constants.UserSource.UNDEFINED
     )
     external_id = models.CharField(max_length=64, blank=True)
+    email = models.EmailField(_("email address"), blank=True, unique=True)
     is_active = models.BooleanField(
         _("active"),
         default=True,
@@ -68,23 +66,17 @@ class User(AbstractUser):
         return jwt_encode_handler(token)
 
     def send_invitation_email(self) -> bool:
-        url = backend_management.user_mgtm_backend.password_change_url(self)
-        try:
-            mail.send_message(
-                email=self.email,
-                template=mail.EmailTemplate.INVITATION,
-                subject="Welcome to Schema CMS!",
-                merge_data_dict={"url": url},
-            )
-            return True
-        except anymail.exceptions.AnymailRequestsAPIError as e:
-            sentry_sdk.capture_exception(e)
-            return False
+        return backend_management.user_mgtm_backend.send_schema_invite(self)
 
     def assign_external_account(self):
-        ret = backend_management.user_mgtm_backend.create_user(self)
+        if backend_management.user_mgtm_backend.type == "auth0":
+            user_id = backend_management.user_mgtm_backend.create_user(self)["user_id"]
+
+        if backend_management.user_mgtm_backend.type == "okta":
+            user_id = backend_management.user_mgtm_backend.get_user(self.email)["id"]
+
         self.source = backend_management.user_mgtm_backend.get_user_source()
-        self.external_id = ret["user_id"]
+        self.external_id = user_id
         self.save(update_fields=["source", "external_id"])
 
     @transaction.atomic()

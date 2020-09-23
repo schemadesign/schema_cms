@@ -8,8 +8,11 @@ exports[`AuthRoute: Component should render <ExternalRedirect> if not authentica
 
 exports[`AuthRoute: Component should render <Route> if is anonymous user 1`] = `
 <Route
+  authBackend="auth0"
   fetchCurrentUser={[Function]}
+  isAuth0Backend={true}
   isAuthenticated={false}
+  isOktaBckend={false}
   isUserFetched={true}
   requireAnonymous={true}
 />
@@ -17,8 +20,11 @@ exports[`AuthRoute: Component should render <Route> if is anonymous user 1`] = `
 
 exports[`AuthRoute: Component should render <Route> if user is logged and all criterias are met 1`] = `
 <Route
+  authBackend="auth0"
   fetchCurrentUser={[Function]}
+  isAuth0Backend={true}
   isAuthenticated={true}
+  isOktaBckend={false}
   isUserFetched={true}
   requireAnonymous={false}
 />
@@ -29,5 +35,7 @@ exports[`AuthRoute: Component should render a <Redirect /> to home page when use
   to="/"
 />
 `;
+
+exports[`AuthRoute: Component should render null if authBackend is null 1`] = `""`;
 
 exports[`AuthRoute: Component should render null if user is not fetched 1`] = `""`;

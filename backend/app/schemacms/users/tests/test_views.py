@@ -1,8 +1,8 @@
 import operator
 
 import auth0.v3
-from django import urls
 import pytest
+from django import urls
 from rest_framework import status
 
 from schemacms.authorization import constants as auth_constants
@@ -199,6 +199,18 @@ class TestUserCreateView:
         assert response.data == {
             "email": [{"message": error_msg, "code": user_constants.ErrorCode.AUTH0_USER_ALREADY_EXIST}]
         }
+
+    def test_user_already_exist_in_db(self, api_client, faker, admin, user_factory):
+        user_factory.create(email="user@test.com")
+        api_client.force_authenticate(admin)
+        url = self.get_url()
+        payload = dict(email="user@test.com")
+        error_msg = "user with this email address already exists."
+
+        response = api_client.post(url, payload)
+
+        assert response.status_code == status.HTTP_400_BAD_REQUEST
+        assert response.data == {"email": [{"message": error_msg, "code": "unique"}]}
 
     def test_url(self):
         assert "/api/v1/users" == self.get_url()

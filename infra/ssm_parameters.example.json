@@ -47,31 +47,51 @@
   {
     "key": "/schema-cms-app/DJANGO_SOCIAL_AUTH_AUTH0_DOMAIN",
     "type": "SecureString",
-    "value": "Domain from created Auth0 `SINGLE PAGE APPLICATION`"
+    "value": "Empty string if you be using OKta else domain from created in Auth0 `SINGLE PAGE APPLICATION`"
   },
   {
     "key": "/schema-cms-app/DJANGO_SOCIAL_AUTH_AUTH0_KEY",
     "type": "SecureString",
-    "value": "Client ID from created Auth0 `SINGLE PAGE APPLICATION`"
+    "value": "Empty string if you be using OKta else client ID from created in Auth0 `SINGLE PAGE APPLICATION`"
   },
   {
     "key": "/schema-cms-app/DJANGO_SOCIAL_AUTH_AUTH0_SECRET",
     "type": "SecureString",
-    "value": "Client Secret from created Auth0 `SINGLE PAGE APPLICATION`"
+    "value": "Empty string if you be using OKta else client Secret from created in Auth0 `SINGLE PAGE APPLICATION`"
   },
   {
     "key": "/schema-cms-app/DJANGO_USER_MGMT_AUTH0_DOMAIN",
     "type": "SecureString",
-    "value": "Domain from created Auth0 `MACHINE TO MACHINE`"
+    "value": "Empty string if you be using OKta else domain from created in Auth0 `MACHINE TO MACHINE`"
   },
   {
     "key": "/schema-cms-app/DJANGO_USER_MGMT_AUTH0_KEY",
     "type": "SecureString",
-    "value": "Client ID from created Auth0 `MACHINE TO MACHINE`"
+    "value": "Empty string if you be using OKta else client ID from created in Auth0 `MACHINE TO MACHINE`"
   },
   {
     "key": "/schema-cms-app/DJANGO_USER_MGMT_AUTH0_SECRET",
     "type": "SecureString",
-    "value": "Client Secret from created Auth0 `MACHINE TO MACHINE`"
+    "value": "Empty string if you be using OKta else client Secret from created Auth0 `MACHINE TO MACHINE`"
+  },
+  {
+    "key": "/schema-cms-app/SOCIAL_AUTH_OKTA_OAUTH2_KEY",
+    "type": "SecureString",
+    "value": "Empty string if you be using Auth0 else set here client key from web app created in Okta.`"
+  },
+  {
+    "key": "/schema-cms-app/SOCIAL_AUTH_OKTA_OAUTH2_SECRET",
+    "type": "SecureString",
+    "value": "Empty string if you be using Auth0 else set here client secret from web app created in Okta."
+  },
+  {
+    "key": "/schema-cms-app/OKTA_DOMAIN_URL",
+    "type": "SecureString",
+    "value": "Empty string if you be using Auth0 else set here domain url to your Okta instance, for example `https://dev-7777777.okta.com`."
+  },
+  {
+    "key": "/schema-cms-app/OKTA_API_TOKEN",
+    "type": "SecureString",
+    "value": "Empty string if you be using Auth0 else set here created API token to your instance."
   }
 ]

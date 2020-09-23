@@ -30,4 +30,13 @@ export default defineMessages({
     id: 'userCreate.0Auth0UserAlreadyExistError',
     defaultMessage: 'A user with this email already exists in Schema CMS.',
   },
+  emailOktaUserNotExistError: {
+    id: 'userCreate.emailOktaUserNotExistError',
+    defaultMessage:
+      'The email is not present in Okta Identity Cloud. Please contact your administrator for more details.',
+  },
+  emailUniqueError: {
+    id: 'userCreate.emailUniqueError',
+    defaultMessage: 'A user with this email already exists in Schema CMS.',
+  },
 });

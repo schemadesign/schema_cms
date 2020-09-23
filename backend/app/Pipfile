@@ -35,7 +35,7 @@ python-dotenv = "~=0.9"
 pytz = "==2019.3"
 Pillow = "==7.0.0"
 sentry-sdk = "==0.14.1"
-social-auth-app-django = "~=3.1"
+social-auth-app-django = "~=4.0"
 django-clone = "*"
 
 

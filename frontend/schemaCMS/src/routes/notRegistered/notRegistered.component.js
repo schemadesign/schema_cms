@@ -18,7 +18,7 @@ export class NotRegisteredComponent extends PureComponent {
   };
 
   render() {
-    const { email } = getQueryParams(this.props);
+    const { state: email } = getQueryParams(this.props);
     const headerTitle = <FormattedMessage {...messages.title} />;
     const headerSubtitle = <FormattedMessage {...messages.subTitle} />;
 

@@ -20,7 +20,7 @@ export class RevokedAccessComponent extends PureComponent {
   render() {
     const headerTitle = <FormattedMessage {...messages.title} />;
     const headerSubtitle = <FormattedMessage {...messages.subTitle} />;
-    const { email } = getQueryParams(this.props);
+    const { state: email } = getQueryParams(this.props);
 
     return (
       <Fragment>
