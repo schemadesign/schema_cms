@@ -8,6 +8,7 @@ import { withStyles } from '../styles/withStyles';
 
 export class MenuComponent extends PureComponent {
   static propTypes = {
+    id: PropTypes.string,
     children: PropTypes.oneOfType([PropTypes.element, PropTypes.string]).isRequired,
     customStyles: PropTypes.object,
     open: PropTypes.bool,
@@ -20,6 +21,7 @@ export class MenuComponent extends PureComponent {
   };
 
   static defaultProps = {
+    id: '',
     customStyles: {},
     open: false,
     isDesktop: false,
@@ -42,13 +44,13 @@ export class MenuComponent extends PureComponent {
   };
 
   render() {
-    const { customStyles, children, theme, open, isDesktop } = this.props;
+    const { customStyles, children, theme, open, isDesktop, id } = this.props;
     const { closeButtonStyles, containerStyles, hideStyles, showStyles } = getStyles({ theme, isDesktop });
     const animationStyles = open ? showStyles : hideStyles;
     const styles = { ...containerStyles, ...customStyles, ...animationStyles };
 
     return (
-      <div style={styles}>
+      <div style={styles} id={id}>
         {children}
         {this.renderCloseButton(closeButtonStyles)}
       </div>

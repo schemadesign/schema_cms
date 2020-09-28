@@ -9,14 +9,14 @@ Feature: CMS-7
 
 
     Scenario Outline: User can log in if login and password are valid
-        When I log in as an <userRole> user with <loginState> login and <passwordState> password
+        When I log in as an <combinedUserRole> user with <loginState> login and <passwordState> password
         Then I am on 'homepage' page
-        And my personal information as an <userRole> user is displayed in the profile
+        And my personal information as an <userRole> <userType> in 'Schema CMS' is displayed in the profile
 
         Examples:
-            | userRole          | loginState | passwordState |
-            | 'existing admin'  | 'valid'    | 'valid'       |
-            | 'existing editor' | 'valid'    | 'valid'       |
+            | userRole | userType   | combinedUserRole  | loginState | passwordState |
+            | 'admin'  | 'existing' | 'existing admin'  | 'valid'    | 'valid'       |
+            | 'editor' | 'existing' | 'existing editor' | 'valid'    | 'valid'       |
 
 
 
@@ -26,21 +26,27 @@ Feature: CMS-7
         Then I am not logged in
 
         Examples:
-            | user               | loginState | passwordState |
-            | 'existing admin'   | 'empty'    | 'empty'       |
-            | 'existing admin'   | 'invalid'  | 'invalid'     |
-            | 'existing admin'   | 'invalid'  | 'empty'       |
-            | 'existing admin'   | 'invalid'  | 'valid'       |
-            | 'existing admin'   | 'empty'    | 'invalid'     |
-            | 'existing admin'   | 'empty'    | 'valid'       |
-            | 'existing admin'   | 'valid'    | 'invalid'     |
-            | 'existing admin'   | 'valid'    | 'empty'       |
-            | 'existing editor'  | 'invalid'  | 'invalid'     |
-            | 'existing editor'  | 'invalid'  | 'empty'       |
-            | 'existing editor'  | 'invalid'  | 'valid'       |
-            | 'existing editor'  | 'empty'    | 'invalid'     |
-            | 'existing editor'  | 'empty'    | 'empty'       |
-            | 'existing editor'  | 'empty'    | 'valid'       |
-            | 'existing editor'  | 'valid'    | 'invalid'     |
-            | 'existing editor'  | 'valid'    | 'empty'       |
+            | user               | loginState     | passwordState |
+            | 'existing admin'   | 'empty'        | 'empty'       |
+            | 'existing admin'   | 'not existing' | 'empty'       |
+            | 'existing admin'   | 'not existing' | 'invalid'     |
+            | 'existing admin'   | 'not existing' | 'valid'       |
+            | 'existing admin'   | 'invalid'      | 'invalid'     |
+            | 'existing admin'   | 'invalid'      | 'empty'       |
+            | 'existing admin'   | 'invalid'      | 'valid'       |
+            | 'existing admin'   | 'empty'        | 'invalid'     |
+            | 'existing admin'   | 'empty'        | 'valid'       |
+            | 'existing admin'   | 'valid'        | 'invalid'     |
+            | 'existing admin'   | 'valid'        | 'empty'       |
+            | 'existing editor'  | 'not existing' | 'invalid'     |
+            | 'existing editor'  | 'not existing' | 'valid'       |
+            | 'existing editor'  | 'not existing' | 'empty'       |
+            | 'existing editor'  | 'invalid'      | 'invalid'     |
+            | 'existing editor'  | 'invalid'      | 'empty'       |
+            | 'existing editor'  | 'invalid'      | 'valid'       |
+            | 'existing editor'  | 'empty'        | 'invalid'     |
+            | 'existing editor'  | 'empty'        | 'empty'       |
+            | 'existing editor'  | 'empty'        | 'valid'       |
+            | 'existing editor'  | 'valid'        | 'invalid'     |
+            | 'existing editor'  | 'valid'        | 'empty'       |
 

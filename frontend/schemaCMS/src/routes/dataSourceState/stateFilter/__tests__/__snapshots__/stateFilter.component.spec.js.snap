@@ -98,6 +98,7 @@ Array [
       </button>
     </div>
     <div
+      id=""
       style={
         Object {
           "backgroundColor": "#000",
@@ -484,6 +485,7 @@ Array [
       </button>
     </div>
     <div
+      id=""
       style={
         Object {
           "backgroundColor": "#000",
@@ -870,6 +872,7 @@ Array [
       </button>
     </div>
     <div
+      id=""
       style={
         Object {
           "backgroundColor": "#000",
@@ -1256,6 +1259,7 @@ Array [
       </button>
     </div>
     <div
+      id=""
       style={
         Object {
           "backgroundColor": "#000",

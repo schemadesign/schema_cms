@@ -5,22 +5,31 @@ Feature: Sanity test run for invited user with admin role
 
   Scenario: After being invited to the Schema CMS, invited user creates new project with all its artifacts
     # CMS-6: inviting new user from Django
-    Given Super Admin is logged in admin panel
-    When Super Admin invite me to Schema CMS as an 'existing admin'
-    Then I can see message that 'existing admin' with this email already exists
-    When Super Admin invited me to Schema CMS as an 'invited admin'
-    Then Super Admin can see confirmation that I was added as an 'admin'
+    Given django admin is logged in admin panel
+    When 'django' admin invites me to Schema CMS as an 'existing admin'
+    Then Admin can see a message in 'django' that 'existing admin' with this email already exists
+    When 'django' admin invites me to Schema CMS as an 'invited admin'
+    Then django admin can see confirmation that I was added as an 'admin'
     And I appear in the list of users as an 'admin'
     And my user status as an 'admin' is set to 'inactive'
     And I received an email with the invitation link
     When I set new password as an 'invited admin'
     Then I am on Login page
-#    #CMS-7: logging in
-    And I can log in to Schema CMS
+#   # CMS-7: logging in
+    And I can log in to Schema CMS as an 'admin' 'invited' from 'django'
     And I am on 'homepage' page
-    And my personal information as an 'invited admin' user is displayed in the profile
+    And my personal information as an 'admin' 'invited' from 'django' is displayed in the profile
+    # CMS-280: inviting new user from app - negative case
+    When 'Schema CMS' admin invites me to Schema CMS as an 'existing admin'
+    Then Admin can see a message in 'Schema CMS' that 'existing admin' with this email already exists
+    # CMS-280: inviting new user from app - positive case
+    Given 'Schema CMS' admin invites me to Schema CMS as an 'invited admin'
+    And I received an email with the invitation link
+    When I set new password as an 'invited admin'
+    Then I can log in to Schema CMS as an 'admin' 'invited' from 'Schema CMS'
+    And my personal information as an 'admin' 'invited' from 'Schema CMS' is displayed in the profile
     # CMS-10: creating project: negative cases
-    Given I chose to create new project as an 'invited admin'
+    Given I chose to create new project as an 'admin' 'invited' from 'django'
     When required fields are empty
     # Then Finish button is not active <= waiting for fix in CMS-1423
     When I enter title and description longer than required
@@ -108,4 +117,6 @@ Feature: Sanity test run for invited user with admin role
     When I provide matching passwords
     Then I am informed that my new password is created
     And I am able to log in using 'reset' password
+
+
 
