@@ -204,6 +204,7 @@ exports[`AddBlockForm: Component should render a block template with added eleme
   >
     <div
       className="sc-fzoKki jXYIlx"
+      id="tagsCounter"
     />
     0 Elements
     <div

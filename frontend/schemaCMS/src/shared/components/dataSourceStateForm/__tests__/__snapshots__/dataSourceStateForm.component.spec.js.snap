@@ -88,6 +88,10 @@ exports[`DataSourceStateForm: Component should render correctly 1`] = `
         </div>
       </div>
     </div>
+    <div
+      className="sc-AxhCb dGHKTI"
+      id="nameError"
+    />
   </div>
   <div
     className="sc-AxirZ CvgNc"
@@ -191,6 +195,10 @@ exports[`DataSourceStateForm: Component should render correctly 1`] = `
         </div>
       </div>
     </div>
+    <div
+      className="sc-AxhCb dGHKTI"
+      id="descriptionError"
+    />
   </div>
   <div
     className="sc-AxirZ CvgNc"
@@ -275,6 +283,10 @@ exports[`DataSourceStateForm: Component should render correctly 1`] = `
         </div>
       </div>
     </div>
+    <div
+      className="sc-AxhCb dGHKTI"
+      id="sourceUrlError"
+    />
   </div>
   <div
     className="sc-AxirZ CvgNc"
@@ -341,6 +353,10 @@ exports[`DataSourceStateForm: Component should render correctly 1`] = `
         }
       />
     </div>
+    <div
+      className="sc-AxhCb dGHKTI"
+      id="authorError"
+    />
   </div>
   <div
     className="sc-AxirZ CvgNc"
@@ -407,6 +423,10 @@ exports[`DataSourceStateForm: Component should render correctly 1`] = `
         }
       />
     </div>
+    <div
+      className="sc-AxhCb dGHKTI"
+      id="createdError"
+    />
   </div>
   <label
     style={

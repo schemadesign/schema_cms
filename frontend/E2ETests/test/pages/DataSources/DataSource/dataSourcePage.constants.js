@@ -9,7 +9,7 @@ export const TAGS_LABEL = 'Tags';
 
 const DATA_SOURCE_CREATION_DATE = 'a few seconds ago';
 export const DATA_SOURCE_CREATOR_NAME = {
-  invitedAdmin: `${process.env.DJANGO_FIRST_NAME_ADMIN} ${process.env.DJANGO_LAST_NAME}`,
+  invitedAdmin: `${process.env.SCHEMA_ADMIN_FIRST_NAME_INVITED} ${process.env.SCHEMA_ADMIN_LAST_NAME_INVITED}`,
   existingAdmin: `${process.env.SCHEMA_ADMIN_FIRST_NAME} ${process.env.SCHEMA_ADMIN_LAST_NAME}`,
 };
 const DATA_SOURCE_EMPTY_VALUE = '—';

@@ -19,6 +19,9 @@ exports[`TextInput: Component should render correctly 1`] = `
     onChange={[Function]}
     value=""
   />
+  <styled.div
+    id="A_FIELD_NAMEError"
+  />
 </styled.div>
 `;
 
@@ -47,6 +50,9 @@ exports[`TextInput: Component should render edit icon 1`] = `
     onChange={[Function]}
     value=""
   />
+  <styled.div
+    id="A_FIELD_NAMEError"
+  />
 </styled.div>
 `;
 
@@ -70,10 +76,14 @@ exports[`TextInput: Component should render error 1`] = `
     value=""
   />
   <styled.div
-    isAuthWidth={false}
-    isLabel={false}
+    id="A_FIELD_NAMEError"
   >
-    An error message
+    <styled.div
+      isAuthWidth={false}
+      isLabel={false}
+    >
+      An error message
+    </styled.div>
   </styled.div>
 </styled.div>
 `;

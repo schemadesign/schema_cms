@@ -469,6 +469,10 @@ exports[`CreateDataSourceState: Component should render correctly 1`] = `
           </div>
         </div>
       </div>
+      <div
+        className="sc-fznxKY gHIYNc"
+        id="nameError"
+      />
     </div>
     <div
       className="sc-fzoXWK fQayrT"
@@ -573,6 +577,10 @@ exports[`CreateDataSourceState: Component should render correctly 1`] = `
           </div>
         </div>
       </div>
+      <div
+        className="sc-fznxKY gHIYNc"
+        id="descriptionError"
+      />
     </div>
     <div
       className="sc-fzoXWK fQayrT"
@@ -659,6 +667,10 @@ exports[`CreateDataSourceState: Component should render correctly 1`] = `
           </div>
         </div>
       </div>
+      <div
+        className="sc-fznxKY gHIYNc"
+        id="sourceUrlError"
+      />
     </div>
     <label
       style={

@@ -19,6 +19,7 @@ import {
 import { EMPTY, INVALID, RANDOM, TOO_SHORT, VALID } from '../Constants/general.constants';
 import { isTextDisplayed } from '../../helpers/check';
 import { USERS } from '../Constants/credentials.constants';
+import { EXISTING } from '../Templates/Tags/tags.constants';
 
 const singleSelectors = {
   addUserBtn: '#addUserBtn',
@@ -28,9 +29,9 @@ const singleSelectors = {
   roleDropdown: '#fieldProjectStatusLabel',
   adminRole: '#select-item-0',
   editorRole: '#select-item-1',
-  firstNameErrorText: 'form > div:nth-child(1) > div:nth-child(2)',
-  lastNameErrorText: 'form > div:nth-child(2) > div:nth-child(2)',
-  emailErrorText: 'form > div:nth-child(3) > div:nth-child(2)',
+  firstNameErrorText: '#firstNameError > div',
+  lastNameErrorText: '#lastNameError > div',
+  emailErrorText: '#emailError > div',
   backBtn: '#inviteUserBackBtn',
   inviteBtn: '#inviteUserSubmitBtn',
 };
@@ -69,7 +70,9 @@ const inviteUserFromApp = Users => (
   expectPageToHaveUrl(ADD_USER_PAGE);
   setFirstName(Users)(USERS[camelize(userRole)].firstName[camelize(firstNameState)].app[camelize(appType)]);
   setLastName(Users)(USERS[camelize(userRole)].lastName[camelize(lastNameState)].app[camelize(appType)]);
-  setEmail(Users)(USERS[camelize(userRole)].login[camelize(emailState)].app[camelize(appType)]);
+  setEmail(Users)(
+    USERS[camelize(userRole)].login[userRole.includes(EXISTING) ? VALID : camelize(emailState)].app[camelize(appType)]
+  );
   setUserRole(Users)(userRole);
   clickElement(Users.inviteBtn());
 };

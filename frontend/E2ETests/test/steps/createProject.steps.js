@@ -29,14 +29,15 @@ When('I select {string} status from dropdown', status => {
   CreateProject.setProjectStatus(status);
 });
 
-When('I create new project', () => {
+When('I create(d) new project', () => {
+  CreateProject.projectName = CREATE_PROJECT.title.valid;
   browser.refresh();
-  CreateProject.createProject();
+  CreateProject.createProject(CreateProject.projectName);
   clickElement(CreateProject.finishBtn());
 });
 
 When('I edit the data', () => {
-  CreateProject.createProject();
+  CreateProject.createProject(CreateProject.projectName);
   setValue(CreateProject.titleInput(), CREATE_PROJECT.title.edited);
   setValue(CreateProject.descriptionInput(), CREATE_PROJECT.description.edited);
   setValue(CreateProject.domainInput(), CREATE_PROJECT.domain.edited);
@@ -54,8 +55,7 @@ Then('{string} status is displayed', status => {
 });
 
 Then('created project is at the top of the list', () => {
-  waitForText(Homepage.projectTitle(), CREATE_PROJECT.title.valid);
-  expect(Homepage.projectTitle()).toHaveText(CREATE_PROJECT.title.valid);
+  expect(Homepage.projectTitle()).toHaveText(CreateProject.projectName);
 });
 
 Then('new data in fields is displayed', () => {

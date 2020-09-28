@@ -116,6 +116,10 @@ exports[`PageForm: Component should render correctly 1`] = `
                 }
               />
             </div>
+            <div
+              className="sc-fzoyAV iHApfx"
+              id="nameError"
+            />
           </div>
           <div
             className="sc-fzoLsD hUaQTG"
@@ -231,6 +235,10 @@ exports[`PageForm: Component should render correctly 1`] = `
           </div>
         </div>
       </div>
+      <div
+        className="sc-fzoyAV iHApfx"
+        id="nameError"
+      />
     </div>
   </div>
   <div
@@ -318,6 +326,10 @@ exports[`PageForm: Component should render correctly 1`] = `
         </div>
       </div>
     </div>
+    <div
+      className="sc-fzoyAV iHApfx"
+      id="displayNameError"
+    />
   </div>
   <div
     className="sc-fzqBZW fPjuQm"
@@ -422,6 +434,10 @@ exports[`PageForm: Component should render correctly 1`] = `
         </div>
       </div>
     </div>
+    <div
+      className="sc-fzoyAV iHApfx"
+      id="descriptionError"
+    />
   </div>
   <div
     className="sc-fzqBZW fPjuQm"
@@ -508,6 +524,10 @@ exports[`PageForm: Component should render correctly 1`] = `
         </div>
       </div>
     </div>
+    <div
+      className="sc-fzoyAV iHApfx"
+      id="keywordsError"
+    />
   </div>
   <div
     className="sc-fzqBZW fPjuQm"
@@ -593,6 +613,10 @@ exports[`PageForm: Component should render correctly 1`] = `
         </div>
       </div>
     </div>
+    <div
+      className="sc-fzoyAV iHApfx"
+      id="linkError"
+    />
   </div>
   <label
     style={
@@ -1016,6 +1040,7 @@ exports[`PageForm: Component should render correctly 1`] = `
   >
     <div
       className="sc-fzqAui eVDEgH"
+      id="tagsCounter"
     />
     1 Block
     <div
@@ -1223,6 +1248,10 @@ exports[`PageForm: Component should render correctly 1`] = `
                   }
                 />
               </div>
+              <div
+                className="sc-fzoyAV iHApfx"
+                id="blocks.0.nameError"
+              />
             </div>
             <div
               className="sc-fzqBkg eWjlir"
@@ -1547,6 +1576,10 @@ exports[`PageForm: Component should render with page template 1`] = `
                 }
               />
             </div>
+            <div
+              className="sc-fzoyAV iHApfx"
+              id="nameError"
+            />
           </div>
           <div
             className="sc-fzoLsD hUaQTG"
@@ -1662,6 +1695,10 @@ exports[`PageForm: Component should render with page template 1`] = `
           </div>
         </div>
       </div>
+      <div
+        className="sc-fzoyAV iHApfx"
+        id="nameError"
+      />
     </div>
   </div>
   <div
@@ -1749,6 +1786,10 @@ exports[`PageForm: Component should render with page template 1`] = `
         </div>
       </div>
     </div>
+    <div
+      className="sc-fzoyAV iHApfx"
+      id="displayNameError"
+    />
   </div>
   <div
     className="sc-fzqBZW fPjuQm"
@@ -1853,6 +1894,10 @@ exports[`PageForm: Component should render with page template 1`] = `
         </div>
       </div>
     </div>
+    <div
+      className="sc-fzoyAV iHApfx"
+      id="descriptionError"
+    />
   </div>
   <div
     className="sc-fzqBZW fPjuQm"
@@ -1939,6 +1984,10 @@ exports[`PageForm: Component should render with page template 1`] = `
         </div>
       </div>
     </div>
+    <div
+      className="sc-fzoyAV iHApfx"
+      id="keywordsError"
+    />
   </div>
   <div
     className="sc-fzqBZW fPjuQm"
@@ -2024,6 +2073,10 @@ exports[`PageForm: Component should render with page template 1`] = `
         </div>
       </div>
     </div>
+    <div
+      className="sc-fzoyAV iHApfx"
+      id="linkError"
+    />
   </div>
   <label
     style={
@@ -2447,6 +2500,7 @@ exports[`PageForm: Component should render with page template 1`] = `
   >
     <div
       className="sc-fzqAui eVDEgH"
+      id="tagsCounter"
     />
     1 Block
     <div
@@ -2654,6 +2708,10 @@ exports[`PageForm: Component should render with page template 1`] = `
                   }
                 />
               </div>
+              <div
+                className="sc-fzoyAV iHApfx"
+                id="blocks.0.nameError"
+              />
             </div>
             <div
               className="sc-fzqBkg eWjlir"

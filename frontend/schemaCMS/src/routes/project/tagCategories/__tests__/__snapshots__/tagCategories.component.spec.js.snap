@@ -167,6 +167,7 @@ exports[`TagCategories: Component should render correctly 1`] = `
     <PlusButton
       customStyles={Object {}}
       hideOnDesktop={false}
+      id="addTagCategoryBtn"
       onClick={[Function]}
     />
   </ContextHeader>
@@ -199,10 +200,11 @@ exports[`TagCategories: Component should render correctly 1`] = `
             }
           />
         }
+        id="tagContainer"
         key="0"
       >
         <Styled(H1)
-          id="tag-category-1"
+          id="tag-category-colors"
           onClick={[Function]}
         >
           Colors
@@ -230,10 +232,11 @@ exports[`TagCategories: Component should render correctly 1`] = `
             }
           />
         }
+        id="tagContainer"
         key="1"
       >
         <Styled(H1)
-          id="tag-category-2"
+          id="tag-category-countries"
           onClick={[Function]}
         >
           Countries
@@ -428,6 +431,7 @@ exports[`TagCategories: Component should render correctly when no categories 1`]
     <PlusButton
       customStyles={Object {}}
       hideOnDesktop={false}
+      id="addTagCategoryBtn"
       onClick={[Function]}
     />
   </ContextHeader>
@@ -460,10 +464,11 @@ exports[`TagCategories: Component should render correctly when no categories 1`]
             }
           />
         }
+        id="tagContainer"
         key="0"
       >
         <Styled(H1)
-          id="tag-category-1"
+          id="tag-category-colors"
           onClick={[Function]}
         >
           Colors
@@ -491,10 +496,11 @@ exports[`TagCategories: Component should render correctly when no categories 1`]
             }
           />
         }
+        id="tagContainer"
         key="1"
       >
         <Styled(H1)
-          id="tag-category-2"
+          id="tag-category-countries"
           onClick={[Function]}
         >
           Countries
@@ -689,6 +695,7 @@ exports[`TagCategories: Component should render correctly with loader 1`] = `
     <PlusButton
       customStyles={Object {}}
       hideOnDesktop={false}
+      id="addTagCategoryBtn"
       onClick={[Function]}
     />
   </ContextHeader>
@@ -721,10 +728,11 @@ exports[`TagCategories: Component should render correctly with loader 1`] = `
             }
           />
         }
+        id="tagContainer"
         key="0"
       >
         <Styled(H1)
-          id="tag-category-1"
+          id="tag-category-colors"
           onClick={[Function]}
         >
           Colors
@@ -752,10 +760,11 @@ exports[`TagCategories: Component should render correctly with loader 1`] = `
             }
           />
         }
+        id="tagContainer"
         key="1"
       >
         <Styled(H1)
-          id="tag-category-2"
+          id="tag-category-countries"
           onClick={[Function]}
         >
           Countries

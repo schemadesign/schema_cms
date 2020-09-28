@@ -744,6 +744,10 @@ Array [
           </div>
         </div>
       </div>
+      <div
+        className="sc-fzoXWK ckWuaH"
+        id="nameError"
+      />
     </div>
     <div
       className="sc-fzoyTs FXPlp"
@@ -847,6 +851,10 @@ Array [
           </div>
         </div>
       </div>
+      <div
+        className="sc-fzoXWK ckWuaH"
+        id="descriptionError"
+      />
     </div>
     <div
       className="sc-fzoyTs FXPlp"
@@ -932,6 +940,10 @@ Array [
           </div>
         </div>
       </div>
+      <div
+        className="sc-fzoXWK ckWuaH"
+        id="sourceUrlError"
+      />
     </div>
     <label
       style={

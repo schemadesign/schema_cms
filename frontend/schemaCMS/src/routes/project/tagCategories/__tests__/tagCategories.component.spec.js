@@ -60,8 +60,8 @@ describe('TagCategories: Component', () => {
     jest.spyOn(defaultProps.history, 'push');
     const fetchTagCategories = jest.fn().mockReturnValue(Promise.resolve());
     const wrapper = await render({ fetchTagCategories });
-    wrapper.find('#tag-category-1').simulate('click');
+    wrapper.find('#tag-category-countries').simulate('click');
 
-    expect(defaultProps.history.push).toBeCalledWith('/tag-category/1');
+    expect(defaultProps.history.push).toBeCalledWith('/tag-category/2');
   });
 });

@@ -118,6 +118,10 @@ Array [
             }
           />
         </div>
+        <div
+          className="sc-fzpans jXSajs"
+          id="elements.0.nameError"
+        />
       </div>
       <div
         className="sc-AxiKw dPWazA"

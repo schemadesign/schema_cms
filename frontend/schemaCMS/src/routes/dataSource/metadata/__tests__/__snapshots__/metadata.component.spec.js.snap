@@ -686,6 +686,7 @@ exports[`Metadata: Component should render correctly 1`] = `
   >
     <div
       className="sc-fzoxKX jNWnEP"
+      id="tagsCounter"
     />
     3 Metadata
     <div
@@ -857,6 +858,10 @@ exports[`Metadata: Component should render correctly 1`] = `
                 }
               />
             </div>
+            <div
+              className="sc-fzqAui bYrwfI"
+              id="metadata.0.keyError"
+            />
           </div>
           <div
             className="sc-AxhCb rOoA"
@@ -1044,6 +1049,10 @@ exports[`Metadata: Component should render correctly 1`] = `
                 }
               />
             </div>
+            <div
+              className="sc-fzqAui bYrwfI"
+              id="metadata.1.keyError"
+            />
           </div>
           <div
             className="sc-AxhCb rOoA"
@@ -1231,6 +1240,10 @@ exports[`Metadata: Component should render correctly 1`] = `
                 }
               />
             </div>
+            <div
+              className="sc-fzqAui bYrwfI"
+              id="metadata.2.keyError"
+            />
           </div>
           <div
             className="sc-AxhCb rOoA"

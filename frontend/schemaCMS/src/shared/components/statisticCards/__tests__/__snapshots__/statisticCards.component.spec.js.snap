@@ -13,7 +13,9 @@ exports[`StatisticCards: Component should render correctly 1`] = `
         }
       }
       headerComponent={
-        <ForwardRef(styled.span)>
+        <ForwardRef(styled.span)
+          id="idHeader"
+        >
           block
         </ForwardRef(styled.span)>
       }

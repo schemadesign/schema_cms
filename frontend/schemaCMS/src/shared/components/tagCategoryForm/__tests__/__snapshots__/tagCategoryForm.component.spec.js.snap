@@ -86,6 +86,10 @@ Array [
         </div>
       </div>
     </div>
+    <div
+      className="sc-AxiKw gmBtgY"
+      id="nameError"
+    />
   </div>,
   <label
     style={
@@ -288,6 +292,7 @@ Array [
   >
     <div
       className="sc-fzqARJ cFaRpH"
+      id="tagsCounter"
     />
     2 Tags
     <div
@@ -301,6 +306,7 @@ Array [
         >
           <button
             disabled={false}
+            id="addTagBtn"
             onClick={[Function]}
             style={
               Object {
@@ -366,8 +372,8 @@ Array [
           }
         >
           <input
-            id="tags.0"
-            name="tags.0"
+            id="tags-0"
+            name="tags-0"
             onBlur={[Function]}
             onChange={[Function]}
             onFocus={[Function]}
@@ -402,6 +408,7 @@ Array [
           />
         </div>
         <svg
+          id="deleteTagBtn-0"
           onClick={[Function]}
           style={
             Object {
@@ -441,8 +448,8 @@ Array [
           }
         >
           <input
-            id="tags.1"
-            name="tags.1"
+            id="tags-1"
+            name="tags-1"
             onBlur={[Function]}
             onChange={[Function]}
             onFocus={[Function]}
@@ -477,6 +484,7 @@ Array [
           />
         </div>
         <svg
+          id="deleteTagBtn-1"
           onClick={[Function]}
           style={
             Object {
@@ -731,6 +739,10 @@ Array [
         </div>
       </div>
     </div>
+    <div
+      className="sc-AxiKw gmBtgY"
+      id="nameError"
+    />
   </div>,
   <label
     style={
@@ -933,6 +945,7 @@ Array [
   >
     <div
       className="sc-fzqARJ cFaRpH"
+      id="tagsCounter"
     />
     0 Tags
     <div
@@ -946,6 +959,7 @@ Array [
         >
           <button
             disabled={false}
+            id="addTagBtn"
             onClick={[Function]}
             style={
               Object {

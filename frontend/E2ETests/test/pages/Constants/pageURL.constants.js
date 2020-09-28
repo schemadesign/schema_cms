@@ -15,4 +15,13 @@ export default {
   tags: new RegExp(`${browser.config.baseUrl}/datasource/([0-9]*)/tag`),
   states: new RegExp(`${browser.config.baseUrl}/datasource/([0-9]*)/states`),
   metadata: new RegExp(`${browser.config.baseUrl}/datasource/([0-9]*)/metadata`),
+  templates: new RegExp(`${browser.config.baseUrl}/project/([0-9]*)/templates`),
+  tagTemplates: new RegExp(`${browser.config.baseUrl}/project/([0-9]*)/tag-templates`),
+  createTagTemplate: new RegExp(`${browser.config.baseUrl}/project/([0-9]*)/tag-templates/create`),
+  get settings() {
+    return this.projectDetails;
+  },
+  get sources() {
+    return this.datasource;
+  },
 };

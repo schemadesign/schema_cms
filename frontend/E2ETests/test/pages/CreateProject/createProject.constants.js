@@ -43,7 +43,9 @@ export const CREATE_PROJECT_ATTRIBUTE_VALUES = [
 
 export const CREATE_PROJECT = {
   title: {
-    valid: `Project ${generateRandomString(8)}`,
+    get valid() {
+      return `Project ${generateRandomString(8)}`;
+    },
     empty: '',
     tooLong: `${generateRandomString(101)}`,
     edited: 'This title has been edited',
@@ -65,4 +67,3 @@ export const CREATE_PROJECT = {
     return `schemacms/api/${this.title.valid}`;
   },
 };
-

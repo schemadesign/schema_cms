@@ -104,6 +104,10 @@ exports[`PageBlock: Component should render correctly 1`] = `
             }
           />
         </div>
+        <div
+          className="sc-AxgMl hYnMEr"
+          id="formikFieldPath.0.nameError"
+        />
       </div>
       <div
         className="sc-AxirZ bnSjNE"

@@ -213,6 +213,7 @@ exports[`CreateTagCategory: Component should render correctly 1`] = `
   >
     <BackButton
       disabled={false}
+      id="cancelBtn"
       onClick={[Function]}
       type="button"
     >
@@ -223,6 +224,7 @@ exports[`CreateTagCategory: Component should render correctly 1`] = `
     </BackButton>
     <NextButton
       disabled={true}
+      id="saveBtn"
       loading={false}
       type="submit"
     >

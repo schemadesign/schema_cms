@@ -21,7 +21,7 @@ Feature: Sanity test run for invited user with admin role
     And my personal information as an 'admin' 'invited' from 'django' is displayed in the profile
     # CMS-280: inviting new user from app - negative case
     When 'Schema CMS' admin invites me to Schema CMS as an 'existing admin'
-    Then Admin can see a message in 'Schema CMS' that 'existing admin' with this email already exists
+    Then Admin can see a message in Schema CMS that user with this email already exists
     # CMS-280: inviting new user from app - positive case
     Given 'Schema CMS' admin invites me to Schema CMS as an 'invited admin'
     And I received an email with the invitation link
@@ -29,7 +29,7 @@ Feature: Sanity test run for invited user with admin role
     Then I can log in to Schema CMS as an 'admin' 'invited' from 'Schema CMS'
     And my personal information as an 'admin' 'invited' from 'Schema CMS' is displayed in the profile
     # CMS-10: creating project: negative cases
-    Given I chose to create new project as an 'admin' 'invited' from 'django'
+    Given I chose to create new project as an 'admin' 'invited' from 'Schema CMS'
     When required fields are empty
     # Then Finish button is not active <= waiting for fix in CMS-1423
     When I enter title and description longer than required
@@ -61,6 +61,37 @@ Feature: Sanity test run for invited user with admin role
     Then I am on 'project details' page
     And I can see the project settings page with all its content
     And project settings match the data on the tile
+    # CMS-798: creating tag templates
+    Given I have entered 'templates' tab
+    And I am on 'templates' page
+    And I chose to see a list of 'tag' templates
+    And I am on 'tag templates' page
+    When I create 3 'single' choice 'dataset' tags which are 'available' for editors
+    Then created tag template is displayed on the tag templates page
+    When I create 3 'single' choice 'content' tags which are 'available' for editors
+    Then created tag template is displayed on the tag templates page
+    When I create 3 'single' choice 'mixed' tags which are 'available' for editors
+    Then created tag template is displayed on the tag templates page
+    When I create 3 'single' choice 'dataset' tags which are 'unavailable' for editors
+    Then created tag template is displayed on the tag templates page
+    When I create 3 'single' choice 'content' tags which are 'unavailable' for editors
+    Then created tag template is displayed on the tag templates page
+    When I create 3 'single' choice 'mixed' tags which are 'unavailable' for editors
+    Then created tag template is displayed on the tag templates page
+    When I create 3 'multi' choice 'dataset' tags which are 'available' for editors
+    Then created tag template is displayed on the tag templates page
+    When I create 3 'multi' choice 'content' tags which are 'available' for editors
+    Then created tag template is displayed on the tag templates page
+    When I create 3 'multi' choice 'mixed' tags which are 'available' for editors
+    Then created tag template is displayed on the tag templates page
+    When I create 3 'multi' choice 'dataset' tags which are 'unavailable' for editors
+    Then created tag template is displayed on the tag templates page
+    When I create 3 'multi' choice 'content' tags which are 'unavailable' for editors
+    Then created tag template is displayed on the tag templates page
+    When I create 3 'multi' choice 'mixed' tags which are 'unavailable' for editors
+    Then created tag template is displayed on the tag templates page
+    When I leave tag templates page
+    Then I am on 'templates' page
     # CMS-26: creating a data source
     Given I have entered 'sources' tab
     When I choose to upload a 'valid' CSV file

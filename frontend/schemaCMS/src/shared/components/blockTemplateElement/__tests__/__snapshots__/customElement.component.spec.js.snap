@@ -9,6 +9,7 @@ exports[`CustomElement: Component should render correctly 1`] = `
   >
     <div
       className="sc-fzqARJ cFaRpH"
+      id="tagsCounter"
     />
     1 Element
     <div
@@ -473,6 +474,10 @@ exports[`CustomElement: Component should render correctly 1`] = `
                 }
               />
             </div>
+            <div
+              className="sc-fzolEj ijhUkE"
+              id="valuePath.0.nameError"
+            />
           </div>
         </div>
         <div

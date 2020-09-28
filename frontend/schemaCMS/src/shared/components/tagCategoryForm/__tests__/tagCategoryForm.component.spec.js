@@ -36,7 +36,7 @@ describe('TagCategoryForm: Component', () => {
     jest.spyOn(propsWithTags, 'setFieldValue');
 
     const wrapper = await render(propsWithTags);
-    wrapper.root.findByProps({ name: 'tags.0' }).props.onChange({ target: { value: 'new value' } });
+    wrapper.root.findByProps({ name: 'tags-0' }).props.onChange({ target: { value: 'new value' } });
 
     expect(propsWithTags.setFieldValue).toHaveBeenCalledWith('tags.0', { id: 1, value: 'new value' });
   });
@@ -48,7 +48,7 @@ describe('TagCategoryForm: Component', () => {
 
     act(() => {
       wrapper.root
-        .findByProps({ name: 'tags.0' })
+        .findByProps({ name: 'tags-0' })
         .props.onKeyDown({ target: { value: 'new value' }, keyCode: 13, preventDefault: Function.prototype });
     });
 
@@ -77,7 +77,7 @@ describe('TagCategoryForm: Component', () => {
 
     act(() => {
       wrapper.root
-        .findByProps({ name: 'tags.2' })
+        .findByProps({ name: 'tags-2' })
         .props.onKeyDown({ target: { value: '' }, keyCode: 8, preventDefault: Function.prototype });
     });
 
@@ -103,7 +103,7 @@ describe('TagCategoryForm: Component', () => {
 
     act(() => {
       wrapper.root
-        .findByProps({ name: 'tags.0' })
+        .findByProps({ name: 'tags-0' })
         .props.onBlur({ target: { value: '' }, keyCode: 8, preventDefault: Function.prototype });
     });
 
@@ -127,7 +127,7 @@ describe('TagCategoryForm: Component', () => {
     const wrapper = await makeContextRenderer(<TagComponent {...tagProps} />);
 
     act(() => {
-      wrapper.root.findByProps({ name: 'tags.0' }).props.onFocus();
+      wrapper.root.findByProps({ name: 'tags-0' }).props.onFocus();
     });
 
     expect(tagProps.setFocusInputIndex).toBeCalledWith(0);

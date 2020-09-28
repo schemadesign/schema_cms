@@ -101,7 +101,8 @@ export const TagComponent = ({
   const invalidValueError = path(['errors', TAG_CATEGORY_TAGS, index, 'value'], restFormikProps);
   const duplicateValueError = path(['errors', TAG_CATEGORY_TAGS, index], restFormikProps);
 
-  const renderError = error => renderWhenTrue(always(<Error>{error}</Error>))(!!error);
+  const renderError = error =>
+    renderWhenTrue(always(<Error id={`tagValidationError-${index}`}>{error}</Error>))(!!error);
 
   return (
     <TagContainer>
@@ -109,7 +110,7 @@ export const TagComponent = ({
         <TextField
           value={value}
           onChange={e => handleTagChange({ e, id, index })}
-          name={`${[TAG_CATEGORY_TAGS]}.${index}`}
+          name={`${[TAG_CATEGORY_TAGS]}-${index}`}
           fullWidth
           customStyles={{ paddingBottom: 0, width: '100%' }}
           isEdit
@@ -119,7 +120,11 @@ export const TagComponent = ({
           onKeyDown={handleKeyDown(index)}
           {...restFormikProps}
         />
-        <CloseIcon customStyles={removeIconStyles} onClick={() => handleRemoveTag({ index, resetIndex: true })} />
+        <CloseIcon
+          id={`deleteTagBtn-${index}`}
+          customStyles={removeIconStyles}
+          onClick={() => handleRemoveTag({ index, resetIndex: true })}
+        />
       </Tag>
       {renderError(invalidValueError || duplicateValueError)}
     </TagContainer>
@@ -207,7 +212,7 @@ export const TagCategoryForm = ({
         count={values[TAG_CATEGORY_TAGS].length}
         right={
           <PlusContainer>
-            <PlusButton customStyles={mobilePlusStyles} onClick={handleAddTag} type="button" />
+            <PlusButton id="addTagBtn" customStyles={mobilePlusStyles} onClick={handleAddTag} type="button" />
           </PlusContainer>
         }
       />
@@ -231,7 +236,7 @@ export const TagCategoryForm = ({
       </AddNewTagContainer>
       <Switches>
         <SwitchContainer>
-          <Switch value={values[TAG_CATEGORY_IS_AVAILABLE]} id={TAG_CATEGORY_IS_AVAILABLE} onChange={handleChange} />
+          <Switch id={TAG_CATEGORY_IS_AVAILABLE} value={values[TAG_CATEGORY_IS_AVAILABLE]} onChange={handleChange} />
           <SwitchCopy>
             <SwitchLabel htmlFor={TAG_CATEGORY_IS_AVAILABLE}>
               <FormattedMessage {...messages[TAG_CATEGORY_IS_AVAILABLE]} />
@@ -249,8 +254,8 @@ export const TagCategoryForm = ({
         </SwitchContainer>
         <SwitchContainer>
           <Switch
-            value={values[TAG_CATEGORY_IS_SINGLE_SELECT]}
             id={TAG_CATEGORY_IS_SINGLE_SELECT}
+            value={values[TAG_CATEGORY_IS_SINGLE_SELECT]}
             onChange={handleChange}
           />
           <SwitchCopy>

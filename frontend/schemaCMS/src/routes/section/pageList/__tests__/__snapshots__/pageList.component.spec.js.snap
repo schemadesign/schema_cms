@@ -624,6 +624,10 @@ exports[`PageList: Component should render correctly 1`] = `
                   }
                 />
               </div>
+              <div
+                className="sc-fzowVh keVQqm"
+                id="nameError"
+              />
             </div>
             <div
               className="sc-fzoJMP kSMXoG"
@@ -785,6 +789,10 @@ exports[`PageList: Component should render correctly 1`] = `
             </div>
           </div>
         </div>
+        <div
+          className="sc-fzowVh keVQqm"
+          id="nameError"
+        />
       </div>
     </div>
     <div
@@ -901,6 +909,7 @@ exports[`PageList: Component should render correctly 1`] = `
     >
       <div
         className="sc-fzoXWK jhgDpI"
+        id="tagsCounter"
       />
       3 pages
       <div

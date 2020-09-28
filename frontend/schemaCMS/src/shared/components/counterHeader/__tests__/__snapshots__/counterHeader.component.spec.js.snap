@@ -5,6 +5,7 @@ exports[`CounterHeader: Component should render correctly 1`] = `
   moveToTop={false}
 >
   <styled.div
+    id="tagsCounter"
     renderElement={true}
   />
   <FormattedMessage

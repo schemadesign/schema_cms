@@ -117,6 +117,10 @@ exports[`PageTemplateForm: Component should render correctly 1`] = `
                 }
               />
             </div>
+            <div
+              className="sc-fzoyTs rbfWl"
+              id="nameError"
+            />
           </div>
           <div
             className="sc-fzoLag ktZVJj"
@@ -297,6 +301,10 @@ exports[`PageTemplateForm: Component should render correctly 1`] = `
           </div>
         </div>
       </div>
+      <div
+        className="sc-fzoyTs rbfWl"
+        id="nameError"
+      />
     </div>
   </div>
   <div
@@ -304,6 +312,7 @@ exports[`PageTemplateForm: Component should render correctly 1`] = `
   >
     <div
       className="sc-fzoXWK jhgDpI"
+      id="tagsCounter"
     />
     1 Block
     <div

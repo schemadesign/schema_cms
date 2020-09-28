@@ -16,4 +16,13 @@ export default {
   tags: 'Tags - Schema CMS',
   states: 'States - Schema CMS',
   metadata: 'Metadata - Schema CMS',
+  templates: 'Templates - Schema CMS',
+  tagTemplates: 'Tag Categories - Schema CMS',
+  createTagTemplate: 'Schema CMS',
+  get settings() {
+    return this.projectDetails;
+  },
+  get sources() {
+    return this.datasource;
+  },
 };
