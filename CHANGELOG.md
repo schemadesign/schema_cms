@@ -1,14 +1,22 @@
 ## [Unreleased]
 
 ### Fixes
-- Editor was able to see unavailable templates
 
 ### Changes
 
 ### Features
-- Okta authentication backend added
 
-## 1.7.4 (September 17, 2020) - Release
+## 1.8.0 (September 28, 2020) - Release
+
+### Fixes
+- Editor was able to see unavailable templates
+- Tags ordering in datasource 
+
+### Features
+- Okta authentication backend added
+- List of draft pages in projects endpoint added
+
+## 1.7.4 (September 17, 2020) - Hotfix
 
 ### Fixes
 
@@ -16,13 +24,13 @@
 - PublicApi endpoints error when owner or created_by fields are empty
 - Removing page template cosing pages removal
 
-## 1.7.3 (September 11, 2020) - Release
+## 1.7.3 (September 11, 2020) - Hotfix
 
 ### Changes
 
 - Migrations merging
 
-## 1.7.2 (September 10, 2020) - Release
+## 1.7.2 (September 10, 2020) - Hotfix
 
 ### Changes
 
