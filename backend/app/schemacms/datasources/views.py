@@ -226,7 +226,7 @@ class DataSourceViewSet(BaseDataSourceView, ActionSerializerViewSetMixin, viewse
         ds = self.get_object()
 
         if request.method == "GET":
-            serializer = self.get_serializer(ds.tags, many=True)
+            serializer = self.get_serializer(ds.tags.order_by("id"), many=True)
 
         if request.method in ["POST", "PATCH"]:
             tags = request.data

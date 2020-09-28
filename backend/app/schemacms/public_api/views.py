@@ -82,26 +82,22 @@ class PAProjectView(
         "datasources": serializers.PADataSourceListSerializer,
         "pages": serializers.PAPageDetailSerializer,
     }
+    page_select_related_fields = ["created_by", "published_version", "draft_version", "template"]
     queryset = (
-        Project.objects.select_related("owner",)
+        Project.objects.select_related("owner")
         .prefetch_related(
             Prefetch("data_sources", queryset=DataSource.objects.all().order_by("-created")),
             Prefetch(
                 "sections",
-                queryset=(
-                    Section.objects.prefetch_related(
-                        Prefetch(
-                            "pages",
-                            queryset=Page.objects.filter(
-                                is_public=True,
-                                is_draft=False,
-                                state__in=[PageState.PUBLISHED, PageState.WAITING_TO_REPUBLISH],
-                            ),
-                        )
-                    ).filter(is_public=True)
+                queryset=Section.objects.filter(is_public=True).prefetch_related(
+                    Prefetch(
+                        "pages",
+                        queryset=Page.objects.select_related(*page_select_related_fields).filter(
+                            is_public=True
+                        ),
+                    )
                 ),
             ),
-            "sections__pages__created_by",
         )
         .all()
         .order_by("id")
@@ -130,12 +126,19 @@ class PAProjectView(
     @decorators.action(detail=True, url_path="pages", methods=["get"])
     def pages(self, request, **kwargs):
         ordering = request.query_params.get("ordering")
+        show_drafts = self.request.query_params.get("show_drafts")
 
         if ordering not in ["created", "modified", "name", "-created", "-modified", "-name"]:
             ordering = "-created"
 
         pages = Page.objects.filter(
-            section__project=self.get_object(), section__is_public=True, is_public=True
+            section__project=self.get_object(),
+            section__is_public=True,
+            is_public=True,
+            state__in=[PageState.DRAFT]
+            if show_drafts == "true"
+            else [PageState.PUBLISHED, PageState.WAITING_TO_REPUBLISH],
+            is_draft=True if show_drafts == "true" else False,
         ).order_by(ordering)
 
         page = self.paginate_queryset(pages)
@@ -289,6 +292,10 @@ class PADataSourceView(
     @decorators.action(detail=True, url_path="records", methods=["get"])
     def records(self, request, **kwargs):
         page = int(request.query_params.get("page", 1))
+
+        if page == 0:
+            page = 1
+
         page_size = int(request.query_params.get("page_size", 2000))
         columns_list_as_string = request.query_params.get("columns", None)
         orient = records_reader.get_data_format(request.query_params.get("orient", "index"))
