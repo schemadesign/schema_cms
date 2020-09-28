@@ -47,7 +47,7 @@ class PADataSourceListSerializer(ReadOnlySerializer):
     def get_tags(self, obj):
         res = {}
 
-        for category, tag in obj.tags.values_list("category__name", "value"):
+        for category, tag in obj.tags.values_list("category__name", "value").order_by("id"):
             if category not in res:
                 res[category] = [tag]
             else:
