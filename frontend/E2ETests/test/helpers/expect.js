@@ -1,11 +1,9 @@
+import { camelize } from 'humps';
 import PAGE_URL from '../pages/Constants/pageURL.constants';
 import PAGE_TITLE from '../pages/Constants/pageTitle.constants';
 import { waitForTitle, waitForUrl } from './waitFor';
-import { convertToCamelCase } from './utils';
 
-export const expectToBeDisplayed = obj => {
-  Object.keys(obj).forEach(key => expect(obj[key]()).toBeDisplayed());
-};
+export const expectToBeDisplayed = obj => Object.keys(obj).forEach(key => expect(obj[key]()).toBeDisplayed());
 
 export const expectElemsToHaveText = (obj, labelsArr) =>
   Object.keys(obj).forEach((key, index) => {
@@ -27,11 +25,11 @@ export const expectElemsNotToBeEmpty = obj =>
   });
 
 export const expectPageToHaveTitle = pageName => {
-  waitForTitle(PAGE_TITLE[convertToCamelCase(pageName)]);
-  expect(browser).toHaveTitle(PAGE_TITLE[convertToCamelCase(pageName)]);
+  waitForTitle(PAGE_TITLE[camelize(pageName)]);
+  expect(browser).toHaveTitle(PAGE_TITLE[camelize(pageName)]);
 };
 
 export const expectPageToHaveUrl = pageName => {
-  waitForUrl(PAGE_URL[convertToCamelCase(pageName)]);
-  expect(browser.getUrl()).toMatch(PAGE_URL[convertToCamelCase(pageName)]);
+  waitForUrl(PAGE_URL[camelize(pageName)]);
+  expect(browser.getUrl()).toMatch(PAGE_URL[camelize(pageName)]);
 };

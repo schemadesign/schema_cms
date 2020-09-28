@@ -1,9 +1,12 @@
 import { clickElement } from '../../../helpers/actions';
 import { expectToBeDisplayed } from '../../../helpers/expect';
 import { createSelectors } from '../../../helpers/utils';
+import { waitForElement } from '../../../helpers/waitFor';
 
 const singleSelectors = {
   projectName: '#desktopTopHeaderProjectTitle',
+  confirmLogoutModal: '#confirmLogoutModal',
+  confirmLogoutBtn: '#confirmLogoutBtn',
 };
 
 const multiSelectors = {};
@@ -21,7 +24,11 @@ const openMenu = TopHeader => () => clickElement(TopHeader.menuBtn());
 
 const openProfile = TopHeader => () => clickElement(TopHeader.settingsBtn());
 
-const logOut = TopHeader => () => clickElement(TopHeader.logoutBtn());
+const logOut = TopHeader => () => {
+  clickElement(TopHeader.logoutBtn());
+  waitForElement(TopHeader.confirmLogoutModal());
+  clickElement(TopHeader.confirmLogoutBtn());
+};
 
 const expectTopHeaderToBeDisplayed = () => () => {
   expectToBeDisplayed(convertedCtaSelectors);

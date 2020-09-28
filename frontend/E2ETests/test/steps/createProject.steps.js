@@ -13,10 +13,10 @@ import {
   CREATE_PROJECT_INVALID_DOMAIN_ERROR,
 } from '../pages/CreateProject/createProject.constants';
 
-Given('I cho(o)se to create new project', () => {
+Given('I cho(o)se to create new project as an {string}', userRole => {
   clickElement(Homepage.createProjectBtn());
   expect(browser).toHaveUrl(CREATE_PROJECT_URL);
-  CreateProject.expectCreateProjectPageToMatchDesign();
+  CreateProject.expectCreateProjectPageToMatchDesign(userRole);
   TopHeader.expectTopHeaderToBeDisplayed();
 });
 
@@ -25,11 +25,12 @@ When('required fields are empty', () => {
   expect(CreateProject.descriptionInput()).toHaveValue('');
 });
 
-When('I select {string} from dropdown', status => {
+When('I select {string} status from dropdown', status => {
   CreateProject.setProjectStatus(status);
 });
 
 When('I create new project', () => {
+  browser.refresh();
   CreateProject.createProject();
   clickElement(CreateProject.finishBtn());
 });
@@ -48,7 +49,7 @@ When(/^I enter title and description longer than required$/, () => {
   clickElement(CreateProject.finishBtn());
 });
 
-Then('{string} is displayed', status => {
+Then('{string} status is displayed', status => {
   expect(CreateProject.statusDropdown()).toHaveText(status);
 });
 

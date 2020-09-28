@@ -1,9 +1,10 @@
+import { camelize } from 'humps';
 import { waitForText } from '../../helpers/waitFor';
 import { createSelectors } from '../../helpers/utils';
 import { setValue, clickElement } from '../../helpers/actions';
-import { USERS, DJANGO } from '../Constants/credentials.constants';
-import { DELETE } from '../Constants/general.constants';
-import { DJANGO_FIRST_NAME, DJANGO_LAST_NAME } from './django.constants';
+import { USERS } from '../Constants/credentials.constants';
+import { DELETE, INVITED_ADMIN, RANDOM, VALID } from '../Constants/general.constants';
+import { DJANGO_FIRST_NAME } from './django.constants';
 import PAGE_URL from '../Constants/pageURL.constants';
 
 const singleSelectors = {
@@ -34,57 +35,60 @@ const singleSelectors = {
   deactivateSelectedUser: '[value="deactivate_users"]',
   performActionBtn: '[title="Run the selected action"]',
   confirmUserDeletion: '[value="Yes, I\'m sure"]',
+  debugToolBar: '#djDebugToolBar',
+  hideToolBarBtn: '#djHideToolBarButton',
 };
 
 const multiSelectors = {
   usersLink: '.model-user > td',
 };
 
-const open = () => () => browser.url(PAGE_URL.django);
+const open = () => () => browser.url(process.env[`DJANGO_${process.env.ENV}`]);
 
 const logInToDjango = Django => () => {
-  setValue(Django.userNameInput(), DJANGO.userName);
-  setValue(Django.passwordInput(), DJANGO.password);
+  setValue(Django.userNameInput(), process.env[`DJANGO_${process.env.ENV}_LOGIN`]);
+  setValue(Django.passwordInput(), process.env[`DJANGO_${process.env.ENV}_PASSWORD`]);
   clickElement(Django.logInBtn());
+};
+
+const isToolBarPresent = Django => () => Django.debugToolBar().isExisting();
+
+const hideDebugToolBar = Django => () => {
+  if (isToolBarPresent(Django)()) {
+    clickElement(Django.hideToolBarBtn());
+  }
 };
 
 const navigateToUsersPage = () => () => browser.url(PAGE_URL.djangoUsers);
 
-const setUserRoleInDjango = Django => role => {
+const extractUserRole = () => str => (str.includes('existing') ? str.split('existing ')[1] : str.split('invited ')[1]);
+
+const setUserRoleInDjango = Django => userRole => {
   clickElement(Django.roleDropdown());
-  clickElement(Django[role]());
+  clickElement(Django[`${extractUserRole()(userRole)}Role`]());
 };
 
-const setAdminRoleInDjango = Django => () => {
-  clickElement(Django.roleDropdown());
-  clickElement(Django.adminRole());
+const setUserNameInDjango = Django => userRole => {
+  setValue(Django.firstNameInput(), DJANGO_FIRST_NAME[userRole]);
+  setValue(Django.lastNameInput(), process.env.DJANGO_LAST_NAME);
 };
 
-const setEditorRoleInDjango = Django => () => {
-  clickElement(Django.roleDropdown());
-  clickElement(Django.editorRole());
-};
+const setUserEmailInDjango = Django => userRole =>
+  setValue(Django.emailInput(), USERS[userRole].login[userRole === camelize(INVITED_ADMIN) ? RANDOM : VALID]);
 
-const setUserNameInDjango = Django => () => {
-  setValue(Django.firstNameInput(), DJANGO_FIRST_NAME);
-  setValue(Django.lastNameInput(), DJANGO_LAST_NAME);
-};
-
-const setUserEmailInDjango = Django => (email = USERS.invited.login.random) => setValue(Django.emailInput(), email);
-
-const inviteUserFromDjango = Django => (role, email) => {
+const inviteUserFromDjango = Django => userRole => {
   navigateToUsersPage(Django)();
   clickElement(Django.inviteUserLink());
-  setUserEmailInDjango(Django)(email);
-  setUserNameInDjango(Django)();
-  setUserRoleInDjango(Django)(role);
+  setUserEmailInDjango(Django)(camelize(userRole));
+  setUserNameInDjango(Django)(camelize(userRole));
+  setUserRoleInDjango(Django)(userRole);
   clickElement(Django.saveBtn());
 };
 
-const searchForInvitedUser = Django => () => {
-  setValue(Django.searchInput(), USERS.invited.login.random);
+const searchForInvitedUser = Django => userRole => {
+  setValue(Django.searchInput(), USERS[userRole].login.random);
   clickElement(Django.searchBtn());
-  waitForText(Django.userEmail(), USERS.invited.login.random);
+  waitForText(Django.userEmail(), USERS[userRole].login.random);
 };
 
 const selectFoundUser = Django => () => clickElement(Django.userCheckbox());
@@ -109,9 +113,7 @@ const deleteInvitedUser = Django => () => {
 const getFunctions = Django => ({
   open: open(Django),
   logInToDjango: logInToDjango(Django),
-  navigateToUsersPage: navigateToUsersPage(Django),
-  setAdminRoleInDjango: setAdminRoleInDjango(Django),
-  setEditorRoleInDjango: setEditorRoleInDjango(Django),
+  navigateToUsersPage: navigateToUsersPage(),
   setUserNameInDjango: setUserNameInDjango(Django),
   setUserEmailInDjango: setUserEmailInDjango(Django),
   setUserRoleInDjango: setUserRoleInDjango(Django),
@@ -122,6 +124,8 @@ const getFunctions = Django => ({
   selectDropdownAction: selectDropdownAction(Django),
   performSelectedAction: performSelectedAction(Django),
   deleteInvitedUser: deleteInvitedUser(Django),
+  hideDebugToolBar: hideDebugToolBar(Django),
+  extractUserRole: extractUserRole(),
 });
 
 const convertedSelectors = createSelectors([singleSelectors], [multiSelectors]);

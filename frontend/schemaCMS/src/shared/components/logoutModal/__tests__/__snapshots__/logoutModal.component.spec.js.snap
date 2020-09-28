@@ -3,6 +3,7 @@
 exports[`LogoutModal: Component should be hidden 1`] = `
 <Styled(Modal)
   contentLabel="Confirm Logout"
+  id="confirmLogoutModal"
   isOpen={false}
   style={
     Object {
@@ -53,6 +54,7 @@ exports[`LogoutModal: Component should be hidden 1`] = `
       />
     </BackButton>
     <ConfirmLink
+      id="confirmLogoutBtn"
       onClick={[Function]}
       to="redirectUrl"
     >
@@ -68,6 +70,7 @@ exports[`LogoutModal: Component should be hidden 1`] = `
 exports[`LogoutModal: Component should render correctly 1`] = `
 <Styled(Modal)
   contentLabel="Confirm Logout"
+  id="confirmLogoutModal"
   isOpen={true}
   style={
     Object {
@@ -118,6 +121,7 @@ exports[`LogoutModal: Component should render correctly 1`] = `
       />
     </BackButton>
     <ConfirmLink
+      id="confirmLogoutBtn"
       onClick={[Function]}
       to="redirectUrl"
     >

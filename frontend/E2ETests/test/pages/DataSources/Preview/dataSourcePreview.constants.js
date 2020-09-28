@@ -1,5 +1,5 @@
 export const DATA_SOURCE_PREVIEW_FIELDS_LABEL = '7 Fields';
-export const UPPER_CASED = 'upper cased';
+export const UPPER_CASED = 'uppercase';
 
 export const FIRST_FIELD = [
   'Field',

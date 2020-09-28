@@ -1,81 +1,64 @@
 import { randomizeEmail, generateRandomString } from '../../helpers/utils';
-import {
-  DJANGO_STAGE_LOGIN,
-  DJANGO_STAGE_PASSWORD,
-  SCHEMA_ADMIN_FIRST_NAME,
-  SCHEMA_ADMIN_INVALID_NAME,
-  SCHEMA_ADMIN_LAST_NAME,
-  SCHEMA_ADMIN_VALID_NAME,
-  SCHEMA_ADMIN_VALID_PASSWORD,
-  SCHEMA_EDITOR_FIRST_NAME,
-  SCHEMA_EDITOR_INVALID_NAME,
-  SCHEMA_EDITOR_LAST_NAME,
-  SCHEMA_EDITOR_VALID_NAME,
-  SCHEMA_EDITOR_VALID_PASSWORD,
-  SCHEMA_EXISTING_VALID_LOGIN,
-  SCHEMA_INVALID_PASSWORD,
-  SCHEMA_INVITED_EMAIL_DOMAIN,
-  SCHEMA_INVITED_EMAIL_LOCAL_PART,
-  SCHEMA_INVITED_INVALID_EMAIL,
-  SCHEMA_INVITED_VALID_EMAIL,
-} from '../../credentials/credentials';
 
 export const USERS = {
-  admin: {
+  existingAdmin: {
     login: {
-      valid: SCHEMA_ADMIN_VALID_NAME,
-      invalid: SCHEMA_ADMIN_INVALID_NAME,
+      valid: process.env.SCHEMA_ADMIN_VALID_NAME,
+      invalid: process.env.SCHEMA_ADMIN_INVALID_NAME,
       empty: '',
     },
     password: {
-      valid: { enter: SCHEMA_ADMIN_VALID_PASSWORD },
-      invalid: { enter: SCHEMA_INVALID_PASSWORD },
+      valid: { enter: process.env.SCHEMA_ADMIN_VALID_PASSWORD },
+      invalid: { enter: process.env.SCHEMA_INVALID_PASSWORD },
       empty: { enter: '' },
     },
-    firstName: SCHEMA_ADMIN_FIRST_NAME,
-    lastName: SCHEMA_ADMIN_LAST_NAME,
+    firstName: process.env.SCHEMA_ADMIN_FIRST_NAME,
+    lastName: process.env.SCHEMA_ADMIN_LAST_NAME,
   },
-  editor: {
+  existingEditor: {
     login: {
-      valid: SCHEMA_EDITOR_VALID_NAME,
-      invalid: SCHEMA_EDITOR_INVALID_NAME,
+      valid: process.env.SCHEMA_EDITOR_VALID_NAME,
+      invalid: process.env.SCHEMA_EDITOR_INVALID_NAME,
       empty: '',
     },
     password: {
-      valid: { enter: SCHEMA_EDITOR_VALID_PASSWORD },
-      invalid: { enter: SCHEMA_INVALID_PASSWORD },
+      valid: { enter: process.env.SCHEMA_EDITOR_VALID_PASSWORD },
+      invalid: { enter: process.env.SCHEMA_INVALID_PASSWORD },
       empty: { enter: '' },
     },
-    firstName: SCHEMA_EDITOR_FIRST_NAME,
-    lastName: SCHEMA_EDITOR_LAST_NAME,
+    firstName: process.env.SCHEMA_EDITOR_FIRST_NAME,
+    lastName: process.env.SCHEMA_EDITOR_LAST_NAME,
   },
-  invited: {
+  invitedAdmin: {
     login: {
-      valid: SCHEMA_INVITED_VALID_EMAIL,
-      random: randomizeEmail(SCHEMA_INVITED_EMAIL_LOCAL_PART, SCHEMA_INVITED_EMAIL_DOMAIN).toLowerCase(),
+      valid: process.env.SCHEMA_INVITED_VALID_EMAIL,
+      random: randomizeEmail(
+        process.env.SCHEMA_INVITED_EMAIL_LOCAL_PART,
+        process.env.SCHEMA_INVITED_EMAIL_DOMAIN
+      ).toLowerCase(),
+      invalid: process.env.SCHEMA_ADMIN_INVALID_NAME,
+      empty: '',
     },
     password: {
-      invalid: { enter: SCHEMA_INVALID_PASSWORD, confirm: `X1!${generateRandomString(8)}` },
+      invalid: { enter: process.env.SCHEMA_INVALID_PASSWORD, confirm: `X1!${generateRandomString(8)}` },
       valid: {
-        enter: `X1!${generateRandomString(10)}`,
+        enter: process.env.SCHEMA_ADMIN_VALID_PASSWORD,
         get confirm() {
           return this.enter;
         },
       },
+      empty: { enter: '' },
     },
-  },
-  existing: {
-    login: {
-      valid: SCHEMA_EXISTING_VALID_LOGIN,
-    },
+    firstName: process.env.DJANGO_FIRST_NAME_ADMIN,
+    lastName: process.env.DJANGO_LAST_NAME,
   },
   reset: {
     login: {
-      valid: SCHEMA_INVITED_VALID_EMAIL,
-      invalid: SCHEMA_INVITED_INVALID_EMAIL,
+      valid: process.env.SCHEMA_INVITED_VALID_EMAIL,
+      invalid: process.env.SCHEMA_INVITED_INVALID_EMAIL,
     },
     password: {
-      invalid: { enter: SCHEMA_INVALID_PASSWORD, confirm: `X1!${generateRandomString(8)}` },
+      invalid: { enter: process.env.SCHEMA_INVALID_PASSWORD, confirm: `X1!${generateRandomString(8)}` },
       valid: {
         enter: `X1!${generateRandomString(8)}`,
         get confirm() {
@@ -86,4 +69,4 @@ export const USERS = {
   },
 };
 
-export const DJANGO = { userName: DJANGO_STAGE_LOGIN, password: DJANGO_STAGE_PASSWORD };
+export const DJANGO = { userName: process.env.DJANGO_STAGE_LOGIN, password: process.env.DJANGO_STAGE_PASSWORD };

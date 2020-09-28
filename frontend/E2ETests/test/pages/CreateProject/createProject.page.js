@@ -1,5 +1,6 @@
+import { camelize } from 'humps';
 import SubHeader from '../Components/SubHeader/subHeader.component';
-import { createSelectors, convertToCamelCase } from '../../helpers/utils';
+import { createSelectors } from '../../helpers/utils';
 import { clickElement, setValue } from '../../helpers/actions';
 import { waitForElement } from '../../helpers/waitFor';
 import { expectElemsToHaveAttribute, expectElemsToHaveText } from '../../helpers/expect';
@@ -10,6 +11,7 @@ import {
   CREATE_PROJECT_DEFAULT_STATUS,
   CREATE_PROJECT_ELEMENT_VALUES,
   ATTRIBUTE_VALUES,
+  CREATE_PROJECT_OWNER_VALUE,
 } from './createProject.constants';
 
 const { title, description, domain } = CREATE_PROJECT;
@@ -24,6 +26,7 @@ const singleSelectors = {
   titleErrorText: 'form > div:nth-child(1) > div:nth-child(2)',
   descriptionErrorText: 'form > div:nth-child(2) > div:nth-child(2)',
   domainErrorText: 'form > div:nth-child(3) > div:nth-child(2)',
+  ownerInput: '#owner',
 };
 
 const multiSelectors = {};
@@ -33,7 +36,6 @@ const textSelectors = {
   descriptionLabel: '[for="description"]',
   domainLabel: '[for="domain"]',
   ownerLabel: '[for="owner"]',
-  ownerInput: '#owner',
   statusLabel: '#fieldProjectStatusLabel',
   statusDropdown: '#fieldProjectStatus',
   cancelBtn: '#cancelBtn',
@@ -51,7 +53,7 @@ const convertedAttributeSelectors = createSelectors([attributeSelectors], []);
 const setProjectStatus = CreateProject => (status = CREATE_PROJECT_DEFAULT_STATUS) => {
   clickElement(CreateProject.statusDropdown());
   waitForElement(CreateProject.statusList());
-  clickElement(CreateProject[convertToCamelCase(status)]());
+  clickElement(CreateProject[camelize(status)]());
 };
 
 const createProject = CreateProject => (titleState = VALID, descriptionState = VALID, domainState = VALID) => {
@@ -61,9 +63,10 @@ const createProject = CreateProject => (titleState = VALID, descriptionState = V
   setProjectStatus(CreateProject)();
 };
 
-const expectCreateProjectPageToMatchDesign = () => () => {
+const expectCreateProjectPageToMatchDesign = CreateProject => userRole => {
   SubHeader.expectSubHeaderToMatchPageUrl(browser.getUrl());
   expectElemsToHaveText(convertedTextSelectors, CREATE_PROJECT_ELEMENT_VALUES);
+  expect(CreateProject.ownerInput()).toHaveValue(CREATE_PROJECT_OWNER_VALUE[camelize(userRole)]);
   expectElemsToHaveAttribute(convertedAttributeSelectors, ATTRIBUTE_VALUES, CREATE_PROJECT_ATTRIBUTE_VALUES);
 };
 

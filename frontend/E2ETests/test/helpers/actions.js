@@ -27,11 +27,13 @@ export const clickElement = (selector, index) => {
 
 const setValueForSingleElement = (selector, value) => {
   selector.waitForDisplayed();
+  selector.clearValue();
   selector.setValue(value);
 };
 
 const setValueForMultiElement = (selector, value, index) => {
   selector[index].waitForDisplayed();
+  selector[index].clearValue();
   selector[index].setValue(value);
 };
 
