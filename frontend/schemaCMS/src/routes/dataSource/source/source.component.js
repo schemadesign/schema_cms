@@ -6,7 +6,7 @@ import Helmet from 'react-helmet';
 
 import { Form, Link } from './source.styles';
 import messages from './source.messages';
-import { DATA_SOURCE_RUN_LAST_JOB } from '../../../modules/dataSource/dataSource.constants';
+import { DATA_SOURCE_GOOGLE_SHEET, DATA_SOURCE_RUN_LAST_JOB } from '../../../modules/dataSource/dataSource.constants';
 import { filterMenuOptions, getMatchParam } from '../../../shared/utils/helpers';
 import { renderWhenTrue } from '../../../shared/utils/rendering';
 import browserHistory from '../../../shared/utils/history';
@@ -75,7 +75,7 @@ export class Source extends PureComponent {
       ifElse(isEmpty, always(true), complement(is(Array)))
     )(this.props);
 
-    if (this.props.values.file && !isFakeJob) {
+    if ((this.props.values.file || this.props.values[DATA_SOURCE_GOOGLE_SHEET]) && !isFakeJob) {
       e.preventDefault();
       this.handleOpenModal('confirmationRunJobModalOpen');
     }
@@ -125,13 +125,20 @@ export class Source extends PureComponent {
         </ContextHeader>
         <Form onSubmit={handleSubmit}>
           <Fragment>
-            <SourceForm intl={intl} dataSource={dataSource} values={values} {...restProps} />
+            <SourceForm
+              intl={intl}
+              dataSource={dataSource}
+              values={values}
+              isSubmitting={isSubmitting}
+              handleSubmit={handleSubmit}
+              {...restProps}
+            />
             {this.renderLinks(!!dataSource.id)}
             <NavigationContainer right fixed padding="10px 0 70px">
               <NextButton
                 type="submit"
                 onClick={this.handleShowRunModal()}
-                disabled={!values.fileName || isSubmitting || !dirty}
+                disabled={(!values.fileName && !values[DATA_SOURCE_GOOGLE_SHEET]) || isSubmitting || !dirty}
                 loading={isSubmitting}
               >
                 <FormattedMessage {...messages.save} />

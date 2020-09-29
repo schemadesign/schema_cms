@@ -66,7 +66,10 @@ export class App extends PureComponent {
               <Container>
                 <ScrollToTop />
                 <FormattedMessage {...messages.pageTitle}>
-                  {pageTitle => <Helmet titleTemplate={`%s - ${pageTitle}`} defaultTitle={pageTitle} />}
+                  {pageTitle => {
+                    const title = Array.isArray(pageTitle) ? pageTitle[0] : pageTitle;
+                    return <Helmet titleTemplate={`%s - ${title}`} defaultTitle={title} />;
+                  }}
                 </FormattedMessage>
                 <GlobalStyle />
                 <DesktopHeader userRole={userRole} userId={userId} title={projectTitle} />

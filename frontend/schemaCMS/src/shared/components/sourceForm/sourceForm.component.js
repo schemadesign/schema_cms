@@ -13,6 +13,9 @@ import {
   WarningWrapper,
   ErrorWrapper,
   SourceButtonWrapper,
+  SpreadsheetContainer,
+  SpreadsheetReimport,
+  SpreadsheetInput,
 } from './sourceForm.styles';
 import messages from './sourceForm.messages';
 import { TextInput } from '../form/inputs/textInput';
@@ -25,9 +28,14 @@ import {
   SOURCE_TYPE_FILE,
   SOURCE_TYPE_GOOGLE_SHEET,
   DATA_SOURCE_GOOGLE_SHEET,
+  DATA_SOURCE_REIMPORT,
+  DATA_SOURCE_RUN_LAST_JOB,
 } from '../../../modules/dataSource/dataSource.constants';
 import { Uploader } from '../form/uploader';
 import { getEventFiles, isProcessingData } from '../../utils/helpers';
+import { renderWhenTrue } from '../../utils/rendering';
+import { BackButton, NextButton } from '../navigation';
+import { Modal, ModalActions, modalStyles, ModalTitle } from '../modal/modal.styles';
 
 const { RadioGroup, RadioBaseComponent, Label } = Form;
 const { CsvIcon, GoogleSpreadsheetIcon } = Icons;
@@ -40,11 +48,18 @@ export class SourceFormComponent extends PureComponent {
     handleChange: PropTypes.func.isRequired,
     values: PropTypes.object.isRequired,
     uploadingDataSources: PropTypes.array,
+    isSubmitting: PropTypes.bool,
+    handleSubmit: PropTypes.func,
+    setFieldValue: PropTypes.func,
   };
 
   static defaultProps = {
     dataSource: {},
     uploadingDataSources: [],
+  };
+
+  state = {
+    confirmationRunReimport: false,
   };
 
   handleUploadChange = (data, { setFieldValue }) => {
@@ -55,6 +70,20 @@ export class SourceFormComponent extends PureComponent {
 
     setFieldValue('file', uploadFile[0]);
     setFieldValue('fileName', pathOr('', ['name'], uploadFile[0]));
+  };
+
+  handleReimport = () => {
+    this.setState({ confirmationRunReimport: false });
+    this.props.setFieldValue(DATA_SOURCE_RUN_LAST_JOB, true);
+    this.props.setFieldValue(DATA_SOURCE_REIMPORT, true);
+
+    setTimeout(() => {
+      this.props.handleSubmit();
+    });
+  };
+  //
+  handleShowReimportModal = () => {
+    this.setState({ confirmationRunReimport: true });
   };
 
   renderProcessingMessage = cond([
@@ -101,7 +130,7 @@ export class SourceFormComponent extends PureComponent {
     />
   );
 
-  renderSpreadsheetInput = ({ setFieldValue, disabled, googleSheet, ...restProps }) => {
+  renderSpreadsheetInput = ({ googleSheet, ...restProps }) => {
     const { handleChange } = this.props;
     return (
       <TextInput
@@ -116,6 +145,18 @@ export class SourceFormComponent extends PureComponent {
         {...restProps}
       />
     );
+  };
+
+  renderReimportButton = ({ isProcessing }) => {
+    const { isSubmitting, dataSource } = this.props;
+
+    return renderWhenTrue(
+      always(
+        <NextButton type="button" onClick={this.handleShowReimportModal} disabled={isSubmitting || isProcessing}>
+          <FormattedMessage {...messages.reimport} />
+        </NextButton>
+      )
+    )(!!dataSource[DATA_SOURCE_GOOGLE_SHEET]);
   };
 
   renderSourceUpload = ({ type, isProcessing, fileUploadingError, fileUploading, ...restProps }) =>
@@ -138,10 +179,15 @@ export class SourceFormComponent extends PureComponent {
         equals(SOURCE_TYPE_GOOGLE_SHEET),
         () => (
           <Fragment>
-            {this.renderSpreadsheetInput({
-              ...restProps,
-              disabled: isProcessing || fileUploading,
-            })}
+            <SpreadsheetContainer>
+              <SpreadsheetInput>
+                {this.renderSpreadsheetInput({
+                  ...restProps,
+                  disabled: isProcessing || fileUploading,
+                })}
+              </SpreadsheetInput>
+              <SpreadsheetReimport>{this.renderReimportButton({ isProcessing })}</SpreadsheetReimport>
+            </SpreadsheetContainer>
             {this.renderProcessingMessage({ isProcessing, fileUploadingError, fileUploading })}
           </Fragment>
         ),
@@ -185,6 +231,7 @@ export class SourceFormComponent extends PureComponent {
 
   render() {
     const { dataSource, handleChange, values, uploadingDataSources, ...restProps } = this.props;
+    const { confirmationRunReimport } = this.state;
     const { jobsState, id, metaData } = dataSource;
     const { isProcessing } = isProcessingData({ jobsState, metaData });
     const uploadingDataSource = find(propEq('id', id), uploadingDataSources);
@@ -223,11 +270,28 @@ export class SourceFormComponent extends PureComponent {
           type,
           fileName,
           googleSheet,
-          isProcessing: isProcessing && (!!dataSource.fileName || !!dataSource.googleSheet),
+          isProcessing: isProcessing && (!!dataSource.fileName || !!dataSource[DATA_SOURCE_GOOGLE_SHEET]),
           fileUploadingError,
           fileUploading,
           ...restProps,
         })}
+        <Modal isOpen={confirmationRunReimport} contentLabel="Confirm Run Last Job" style={modalStyles}>
+          <ModalTitle>
+            <FormattedMessage {...messages.reimportTitle} />
+          </ModalTitle>
+          <ModalActions>
+            <BackButton
+              id="declineRunLastJob"
+              type="button"
+              onClick={() => this.setState({ confirmationRunReimport: false })}
+            >
+              <FormattedMessage {...messages.cancelReimport} />
+            </BackButton>
+            <NextButton id="confirmRunLastJob" type="button" onClick={this.handleReimport}>
+              <FormattedMessage {...messages.confirmReimport} />
+            </NextButton>
+          </ModalActions>
+        </Modal>
       </Fragment>
     );
   }

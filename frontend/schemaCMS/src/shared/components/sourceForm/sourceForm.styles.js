@@ -1,6 +1,7 @@
 import styled, { css } from 'styled-components';
 import { colors } from '../../../theme/styled';
 import { Link as LinkTypography } from '../../../theme/typography';
+import { media } from '../../../theme/media';
 
 export const Container = styled.div``;
 
@@ -42,6 +43,28 @@ export const WarningWrapper = styled.div`
 export const ErrorWrapper = styled.div`
   color: ${colors.red};
   ${informationWrapperStyles};
+`;
+
+export const SpreadsheetContainer = styled.div`
+  display: flex;
+  flex-direction: column;
+
+  ${media.desktop`
+    flex-direction: row;
+  `};
+`;
+
+export const SpreadsheetInput = styled.div`
+  width: 100%;
+`;
+
+export const SpreadsheetReimport = styled.div`
+  height: 48px;
+  margin: -10px 0 20px;
+
+  ${media.desktop`
+    margin: 0 0 0 20px;
+  `};
 `;
 
 export const Link = styled(LinkTypography)`

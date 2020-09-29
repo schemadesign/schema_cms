@@ -9,6 +9,7 @@ export const DATA_SOURCE_FILE = 'file';
 export const DATA_SOURCE_GOOGLE_SHEET = 'googleSheet';
 export const DATA_SOURCE_TYPE = 'type';
 export const DATA_SOURCE_RUN_LAST_JOB = 'runLastJob';
+export const DATA_SOURCE_REIMPORT = 'reimport';
 
 export const SOURCE_TYPE_FILE = 'file';
 export const SOURCE_TYPE_API = 'api';
@@ -29,7 +30,7 @@ export const META_PROCESSING = 'processing';
 export const META_FAILED = 'failed';
 export const META_SUCCESS = 'success';
 
-export const DATA_SOURCE_FIELDS = ['fileName', 'type', 'name'];
+export const DATA_SOURCE_FIELDS = ['fileName', 'type', 'name', 'googleSheet'];
 
 const FILE_SIZE = 900000000;
 

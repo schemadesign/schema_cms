@@ -25,6 +25,9 @@ import {
   path,
   when,
   is,
+  isNil,
+  complement,
+  prop,
 } from 'ramda';
 import { eventChannel } from 'redux-saga';
 
@@ -39,6 +42,8 @@ import {
   META_SUCCESS,
   RESULT_PAGE,
   PREVIEW_PAGE,
+  DATA_SOURCE_REIMPORT,
+  DATA_SOURCE_GOOGLE_SHEET,
 } from './dataSource.constants';
 import { formatFormData } from '../../shared/utils/helpers';
 import { ProjectRoutines } from '../project';
@@ -111,7 +116,7 @@ function* create({ payload }) {
         dataSource: {
           id,
           fileName: payload.requestData.file ? payload.requestData.file.name : '',
-          googleSheet: payload.requestData.googleSheet,
+          [DATA_SOURCE_GOOGLE_SHEET]: payload.requestData[DATA_SOURCE_GOOGLE_SHEET],
           progress: 0,
         },
         isUpload: true,
@@ -165,7 +170,16 @@ const getIfAllDataSourceProcessed = ({ data, uploadingDataSources }) =>
     isEmpty,
     ramdaAll(
       both(
-        ({ id }) => !any(propEq('id', id))(uploadingDataSources),
+        either(
+          ({ id }) => !any(propEq('id', id))(uploadingDataSources),
+          !any(
+            pipe(
+              prop(DATA_SOURCE_GOOGLE_SHEET),
+              isNil,
+              complement
+            )
+          )
+        ),
         either(
           both(
             pipe(
@@ -177,7 +191,7 @@ const getIfAllDataSourceProcessed = ({ data, uploadingDataSources }) =>
               status => includes(status, [JOB_STATE_FAILURE, JOB_STATE_SUCCESS, null])
             )
           ),
-          propEq('fileName', null)
+          both(propEq('fileName', null), propEq(DATA_SOURCE_GOOGLE_SHEET, null))
         )
       )
     )
@@ -193,6 +207,7 @@ function* fetchListLoop({ projectId, rawList = false }) {
       );
 
       yield put(DataSourceRoutines.fetchList.success(data.results));
+
       const uploadingDataSources = yield select(selectUploadingDataSources);
       const isDataSourceProcessed = getIfAllDataSourceProcessed({ data: data.results, uploadingDataSources });
 
@@ -228,6 +243,17 @@ function* updateOne({ payload: { requestData, dataSource } }) {
     if (requestData.name) {
       const { data } = yield api.patch(`${DATA_SOURCES_PATH}/${dataSource.id}`, { name: requestData.name });
       response.data = data;
+    }
+
+    if (requestData[DATA_SOURCE_REIMPORT] || requestData[DATA_SOURCE_GOOGLE_SHEET]) {
+      const { data } = yield api.patch(`${DATA_SOURCES_PATH}/${dataSource.id}`, {
+        [DATA_SOURCE_GOOGLE_SHEET]: requestData[DATA_SOURCE_GOOGLE_SHEET] || dataSource[DATA_SOURCE_GOOGLE_SHEET],
+        [DATA_SOURCE_RUN_LAST_JOB]: requestData[DATA_SOURCE_RUN_LAST_JOB],
+      });
+
+      browserHistory.push(`/project/${dataSource.project.id}/datasource`);
+      yield put(DataSourceRoutines.updateOne.success({ dataSource: data }));
+      return;
     }
 
     if (requestData.file) {

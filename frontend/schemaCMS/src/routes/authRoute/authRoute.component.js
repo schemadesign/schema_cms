@@ -23,7 +23,7 @@ export class AuthRoute extends PureComponent {
     isUserFetched: PropTypes.bool,
     isAuth0Backend: PropTypes.bool,
     isOktaBckend: PropTypes.bool,
-    authBackend: PropTypes.oneOfType(PropTypes.bool, PropTypes.string),
+    authBackend: PropTypes.oneOfType([PropTypes.bool, PropTypes.string]),
     fetchCurrentUser: PropTypes.func.isRequired,
   };
 

@@ -198,13 +198,16 @@ export class DataSourceList extends PureComponent {
       [T, always(this.renderCreatedInformation([whenCreated, `${firstName} ${lastName}`]))],
     ])({ metaFailed, jobProcessing, metaProcessing, isUploading, fileUploadingError, jobFailed, noDataSourceUploaded });
 
-  renderItem = ({ name, created, createdBy, id, tags, metaData, activeJob, jobsState = {}, fileName }, index) => {
+  renderItem = (
+    { name, created, createdBy, id, tags, metaData, activeJob, jobsState = {}, fileName, googleSheet },
+    index
+  ) => {
     const { firstName = '—', lastName = '' } = createdBy || {};
     const whenCreated = extendedDayjs(created, BASE_DATE_FORMAT).fromNow();
     const jobFailed = propEq('lastJobStatus', JOB_STATE_FAILURE)(jobsState);
     const metaFailed = propEq('status', META_FAILED)(metaData);
     const { metaProcessing, jobProcessing } = isProcessingData({ jobsState, metaData });
-    const noDataSourceUploaded = !fileName;
+    const noDataSourceUploaded = !fileName && !googleSheet;
     const fileUploading = find(propEq('id', id), this.props.uploadingDataSources);
     const fileUploadingError = !!propOr(false, 'error', fileUploading);
     const isUploading = !!fileUploading;

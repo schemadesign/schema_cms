@@ -120,8 +120,9 @@ export const AddBlockForm = ({ fetchBlockTemplates, projectId, backUrl, blockTem
     if (!customLocation && !goToLocation.pathname !== match.url) {
       setCustomLocation(goToLocation);
       setLeavingPageModalOpen(true);
-      return false;
     }
+
+    return false;
   };
 
   const handleBackButtonClick = () => {
