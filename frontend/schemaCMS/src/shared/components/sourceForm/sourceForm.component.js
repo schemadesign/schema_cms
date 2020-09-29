@@ -139,7 +139,6 @@ export class SourceFormComponent extends PureComponent {
         name={DATA_SOURCE_GOOGLE_SHEET}
         placeholder={this.props.intl.formatMessage(messages.googleSpreadSheetPlaceholder)}
         fullWidth
-        checkOnlyErrors
         label={this.props.intl.formatMessage(messages.name)}
         isEdit
         {...restProps}
@@ -247,7 +246,6 @@ export class SourceFormComponent extends PureComponent {
           onChange={handleChange}
           name={DATA_SOURCE_NAME}
           fullWidth
-          checkOnlyErrors
           label={this.props.intl.formatMessage(messages.name)}
           isEdit
           {...restProps}

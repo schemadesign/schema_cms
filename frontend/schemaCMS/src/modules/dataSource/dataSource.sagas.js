@@ -25,9 +25,6 @@ import {
   path,
   when,
   is,
-  isNil,
-  complement,
-  prop,
 } from 'ramda';
 import { eventChannel } from 'redux-saga';
 
@@ -44,6 +41,10 @@ import {
   PREVIEW_PAGE,
   DATA_SOURCE_REIMPORT,
   DATA_SOURCE_GOOGLE_SHEET,
+  DATA_SOURCE_TYPE,
+  DATA_SOURCE_FILE,
+  DATA_SOURCE_FILE_NAME,
+  SOURCE_TYPE_GOOGLE_SHEET,
 } from './dataSource.constants';
 import { formatFormData } from '../../shared/utils/helpers';
 import { ProjectRoutines } from '../project';
@@ -105,8 +106,12 @@ function* uploadProgressWatcher(channel, id) {
 function* create({ payload }) {
   try {
     yield put(DataSourceRoutines.create.request());
-    const requestData = { project: payload.projectId, ...omit(['file'], payload.requestData) };
-    const formData = formatFormData({ file: payload.requestData.file });
+    const isFileFlow = payload.requestData[DATA_SOURCE_TYPE] === DATA_SOURCE_FILE;
+    const omitFields = isFileFlow
+      ? [DATA_SOURCE_FILE, DATA_SOURCE_GOOGLE_SHEET]
+      : [DATA_SOURCE_FILE, DATA_SOURCE_FILE_NAME];
+    const requestData = { project: payload.projectId, ...omit(omitFields, payload.requestData) };
+
     const {
       data: { id },
     } = yield api.post(DATA_SOURCES_PATH, requestData);
@@ -116,18 +121,22 @@ function* create({ payload }) {
         dataSource: {
           id,
           fileName: payload.requestData.file ? payload.requestData.file.name : '',
-          [DATA_SOURCE_GOOGLE_SHEET]: payload.requestData[DATA_SOURCE_GOOGLE_SHEET],
+          [DATA_SOURCE_GOOGLE_SHEET]: requestData[DATA_SOURCE_GOOGLE_SHEET] || null,
           progress: 0,
         },
-        isUpload: true,
+        isUpload: isFileFlow,
       })
     );
 
     yield put(ProjectRoutines.fetchOne.trigger({ projectId: payload.projectId }));
     browserHistory.push(`/project/${payload.projectId}/datasource`);
+    console.log('isFileFlow', isFileFlow);
+    if (isFileFlow) {
+      const formData = formatFormData({ file: payload.requestData.file });
 
-    const uploadChannel = yield call(createUploaderChannel, { formData, id });
-    yield fork(uploadProgressWatcher, uploadChannel, id);
+      const uploadChannel = yield call(createUploaderChannel, { formData, id });
+      yield fork(uploadProgressWatcher, uploadChannel, id);
+    }
   } catch (error) {
     reportError(error);
     yield put(DataSourceRoutines.create.failure(error));
@@ -170,16 +179,7 @@ const getIfAllDataSourceProcessed = ({ data, uploadingDataSources }) =>
     isEmpty,
     ramdaAll(
       both(
-        either(
-          ({ id }) => !any(propEq('id', id))(uploadingDataSources),
-          !any(
-            pipe(
-              prop(DATA_SOURCE_GOOGLE_SHEET),
-              isNil,
-              complement
-            )
-          )
-        ),
+        ({ id, type }) => (type === SOURCE_TYPE_GOOGLE_SHEET ? true : !any(propEq('id', id))(uploadingDataSources)),
         either(
           both(
             pipe(
@@ -218,6 +218,7 @@ function* fetchListLoop({ projectId, rawList = false }) {
       yield delay(FETCH_LIST_DELAY);
     }
   } catch (error) {
+    reportError(error);
     yield put(DataSourceRoutines.fetchList.failure(error));
   } finally {
     if (yield cancelled()) {
