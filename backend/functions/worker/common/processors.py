@@ -213,6 +213,35 @@ class GoogleSheetProcessor(SourceProcessor):
 
         return data_frame
 
+    def update(self):
+        preview_dict = self.get_preview()
+        preview_dict["source_file"] = self.get_source_file_name()
+
+        schemacms_api.update_datasource_meta(
+            datasource_pk=self.datasource.id,
+            copy_steps=self.copy_steps,
+            status=ProcessState.SUCCESS,
+            **preview_dict,
+        )
+
+        logger.info(f"Meta created - DataSource # {self.datasource.id}")
+
+    def save_source_file(self, data_frame):
+        file_name = self.get_source_file_name()
+        write_data_frame_to_csv_on_s3(data_frame, file_name)
+        write_data_frame_to_parquet_on_s3(data_frame, file_name)
+        logger.info(f"Google Sheet Source File Saved - DS # {self.datasource.id}")
+
+    def get_source_file_name(self):
+        return f"{self.datasource.id}/uploads/google_sheet_source_file.csv"
+
+    def get_preview(self) -> dict:
+        data_frame = self.read()
+        self.save_source_file(data_frame)
+        preview_data_dict = get_preview_data(data_frame)
+
+        return preview_data_dict
+
 
 processors = {"file": FileSourceProcessor, "google_sheet": GoogleSheetProcessor}
 
