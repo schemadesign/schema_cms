@@ -100,7 +100,6 @@ exports[`DataSourceStateList: Component should render correctly 1`] = `
       </button>
     </div>
     <div
-      id=""
       style={
         Object {
           "backgroundColor": "#000",
@@ -1214,7 +1213,6 @@ exports[`DataSourceStateList: Component should render correctly when no tags 1`]
       </button>
     </div>
     <div
-      id=""
       style={
         Object {
           "backgroundColor": "#000",
@@ -2277,7 +2275,6 @@ exports[`DataSourceStateList: Component should render correctly with loader 1`] 
       </button>
     </div>
     <div
-      id=""
       style={
         Object {
           "backgroundColor": "#000",

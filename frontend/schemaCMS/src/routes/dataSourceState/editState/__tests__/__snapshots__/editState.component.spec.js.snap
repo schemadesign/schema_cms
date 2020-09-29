@@ -381,7 +381,6 @@ Array [
       </button>
     </div>
     <div
-      id=""
       style={
         Object {
           "backgroundColor": "#000",

@@ -20,7 +20,11 @@ describe('DataSource: sagas', () => {
     it('should dispatch a success action', async () => {
       const payload = {
         projectId: '1',
-        requestData: { file: { file: 'file', name: 'fileName' }, name: 'name', googleSheet: 'googleSheetUrl' },
+        requestData: {
+          file: { file: 'file', name: 'fileName' },
+          type: 'file',
+          name: 'name',
+        },
       };
       const responseData = {
         id: 1,
@@ -31,9 +35,7 @@ describe('DataSource: sagas', () => {
       };
       jest.spyOn(browserHistory, 'push');
 
-      mockApi
-        .post(DATA_SOURCES_PATH, { project: '1', name: 'name', google_sheet: 'googleSheetUrl' })
-        .reply(OK, responseData);
+      mockApi.post(DATA_SOURCES_PATH, { project: '1', name: 'name', type: 'file' }).reply(OK, responseData);
       mockApi
         .patch(`${DATA_SOURCES_PATH}/${responseData.id}`, /form-data; name="file"[^]*object/m, options)
         .reply(OK, responseData);
@@ -43,7 +45,7 @@ describe('DataSource: sagas', () => {
         .put(ProjectRoutines.fetchOne.trigger({ projectId: payload.projectId }))
         .put(
           DataSourceRoutines.create.success({
-            dataSource: { id: responseData.id, fileName: 'fileName', googleSheet: 'googleSheetUrl', progress: 0 },
+            dataSource: { id: responseData.id, fileName: 'fileName', googleSheet: null, progress: 0 },
             isUpload: true,
           })
         )

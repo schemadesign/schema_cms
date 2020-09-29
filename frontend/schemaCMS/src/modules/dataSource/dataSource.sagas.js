@@ -111,7 +111,6 @@ function* create({ payload }) {
       ? [DATA_SOURCE_FILE, DATA_SOURCE_GOOGLE_SHEET]
       : [DATA_SOURCE_FILE, DATA_SOURCE_FILE_NAME];
     const requestData = { project: payload.projectId, ...omit(omitFields, payload.requestData) };
-
     const {
       data: { id },
     } = yield api.post(DATA_SOURCES_PATH, requestData);
@@ -130,7 +129,7 @@ function* create({ payload }) {
 
     yield put(ProjectRoutines.fetchOne.trigger({ projectId: payload.projectId }));
     browserHistory.push(`/project/${payload.projectId}/datasource`);
-    console.log('isFileFlow', isFileFlow);
+
     if (isFileFlow) {
       const formData = formatFormData({ file: payload.requestData.file });
 

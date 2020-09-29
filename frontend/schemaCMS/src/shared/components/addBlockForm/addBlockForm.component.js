@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import { useEffectOnce } from 'react-use';
 import { useFormik } from 'formik';
 import { FormattedMessage, useIntl } from 'react-intl';
-import { Prompt, useHistory, useLocation } from 'react-router';
+import { Prompt, useHistory, useLocation, useRouteMatch } from 'react-router';
 import { propEq, find, map, omit, pipe, prepend, always, defaultTo } from 'ramda';
 
 import { SelectContainer } from './addBlockForm.styles';
@@ -29,13 +29,14 @@ import {
 import { renderWhenTrue } from '../../utils/rendering';
 import { Modal, ModalActions, modalStyles, ModalTitle } from '../modal/modal.styles';
 
-export const AddBlockForm = ({ fetchBlockTemplates, projectId, backUrl, blockTemplates, match }) => {
+export const AddBlockForm = ({ fetchBlockTemplates, projectId, backUrl, blockTemplates }) => {
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
   const [customLocation, setCustomLocation] = useState(false);
   const [leavingPageModalOpen, setLeavingPageModalOpen] = useState(false);
   const [leavingPageLoading, setLeavingPageLoading] = useState(false);
   const history = useHistory();
+  const match = useRouteMatch();
   const intl = useIntl();
   const { state = {} } = useLocation();
   const blankMessage = intl.formatMessage(messages.blank);
@@ -219,5 +220,4 @@ AddBlockForm.propTypes = {
   blockTemplates: PropTypes.array.isRequired,
   projectId: PropTypes.number.isRequired,
   backUrl: PropTypes.string.isRequired,
-  match: PropTypes.object.isRequired,
 };

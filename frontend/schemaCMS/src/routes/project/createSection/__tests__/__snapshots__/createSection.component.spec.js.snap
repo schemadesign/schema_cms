@@ -100,7 +100,6 @@ exports[`CreateSection: Component should render correctly 1`] = `
       </button>
     </div>
     <div
-      id=""
       style={
         Object {
           "backgroundColor": "#000",

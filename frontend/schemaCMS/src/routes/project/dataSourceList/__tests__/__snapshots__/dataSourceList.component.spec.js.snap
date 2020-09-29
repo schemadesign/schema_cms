@@ -139,16 +139,9 @@ exports[`DataSourceList: Component should render correctly 1`] = `
               </ForwardRef(styled.span)>
               <ForwardRef(styled.span)
                 id="metaItemValue-0"
+                isIcon={true}
               >
-                <Unknown
-                  customStyles={
-                    Object {
-                      "fill": "#FFF",
-                      "height": 40,
-                      "width": 40,
-                    }
-                  }
-                />
+                —
               </ForwardRef(styled.span)>
             </ForwardRef(styled.div)>
             <ForwardRef(styled.div)
@@ -243,16 +236,9 @@ exports[`DataSourceList: Component should render correctly 1`] = `
               </ForwardRef(styled.span)>
               <ForwardRef(styled.span)
                 id="metaItemValue-0"
+                isIcon={true}
               >
-                <Unknown
-                  customStyles={
-                    Object {
-                      "fill": "#FFF",
-                      "height": 40,
-                      "width": 40,
-                    }
-                  }
-                />
+                —
               </ForwardRef(styled.span)>
             </ForwardRef(styled.div)>
             <ForwardRef(styled.div)
@@ -347,16 +333,9 @@ exports[`DataSourceList: Component should render correctly 1`] = `
               </ForwardRef(styled.span)>
               <ForwardRef(styled.span)
                 id="metaItemValue-0"
+                isIcon={true}
               >
-                <Unknown
-                  customStyles={
-                    Object {
-                      "fill": "#FFF",
-                      "height": 40,
-                      "width": 40,
-                    }
-                  }
-                />
+                —
               </ForwardRef(styled.span)>
             </ForwardRef(styled.div)>
             <ForwardRef(styled.div)
@@ -451,16 +430,9 @@ exports[`DataSourceList: Component should render correctly 1`] = `
               </ForwardRef(styled.span)>
               <ForwardRef(styled.span)
                 id="metaItemValue-0"
+                isIcon={true}
               >
-                <Unknown
-                  customStyles={
-                    Object {
-                      "fill": "#FFF",
-                      "height": 40,
-                      "width": 40,
-                    }
-                  }
-                />
+                —
               </ForwardRef(styled.span)>
             </ForwardRef(styled.div)>
             <ForwardRef(styled.div)
@@ -555,16 +527,9 @@ exports[`DataSourceList: Component should render correctly 1`] = `
               </ForwardRef(styled.span)>
               <ForwardRef(styled.span)
                 id="metaItemValue-0"
+                isIcon={true}
               >
-                <Unknown
-                  customStyles={
-                    Object {
-                      "fill": "#71737e",
-                      "height": 40,
-                      "width": 40,
-                    }
-                  }
-                />
+                —
               </ForwardRef(styled.span)>
             </ForwardRef(styled.div)>
             <ForwardRef(styled.div)
@@ -659,16 +624,9 @@ exports[`DataSourceList: Component should render correctly 1`] = `
               </ForwardRef(styled.span)>
               <ForwardRef(styled.span)
                 id="metaItemValue-0"
+                isIcon={true}
               >
-                <Unknown
-                  customStyles={
-                    Object {
-                      "fill": "#71737e",
-                      "height": 40,
-                      "width": 40,
-                    }
-                  }
-                />
+                —
               </ForwardRef(styled.span)>
             </ForwardRef(styled.div)>
             <ForwardRef(styled.div)
@@ -763,16 +721,9 @@ exports[`DataSourceList: Component should render correctly 1`] = `
               </ForwardRef(styled.span)>
               <ForwardRef(styled.span)
                 id="metaItemValue-0"
+                isIcon={true}
               >
-                <Unknown
-                  customStyles={
-                    Object {
-                      "fill": "#FFF",
-                      "height": 40,
-                      "width": 40,
-                    }
-                  }
-                />
+                —
               </ForwardRef(styled.span)>
             </ForwardRef(styled.div)>
             <ForwardRef(styled.div)
@@ -867,16 +818,9 @@ exports[`DataSourceList: Component should render correctly 1`] = `
               </ForwardRef(styled.span)>
               <ForwardRef(styled.span)
                 id="metaItemValue-0"
+                isIcon={true}
               >
-                <Unknown
-                  customStyles={
-                    Object {
-                      "fill": "#71737e",
-                      "height": 40,
-                      "width": 40,
-                    }
-                  }
-                />
+                —
               </ForwardRef(styled.span)>
             </ForwardRef(styled.div)>
             <ForwardRef(styled.div)
@@ -971,16 +915,9 @@ exports[`DataSourceList: Component should render correctly 1`] = `
               </ForwardRef(styled.span)>
               <ForwardRef(styled.span)
                 id="metaItemValue-0"
+                isIcon={true}
               >
-                <Unknown
-                  customStyles={
-                    Object {
-                      "fill": "#71737e",
-                      "height": 40,
-                      "width": 40,
-                    }
-                  }
-                />
+                —
               </ForwardRef(styled.span)>
             </ForwardRef(styled.div)>
             <ForwardRef(styled.div)
@@ -1080,16 +1017,9 @@ exports[`DataSourceList: Component should render correctly 1`] = `
               </ForwardRef(styled.span)>
               <ForwardRef(styled.span)
                 id="metaItemValue-0"
+                isIcon={true}
               >
-                <Unknown
-                  customStyles={
-                    Object {
-                      "fill": "#71737e",
-                      "height": 40,
-                      "width": 40,
-                    }
-                  }
-                />
+                —
               </ForwardRef(styled.span)>
             </ForwardRef(styled.div)>
             <ForwardRef(styled.div)

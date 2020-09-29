@@ -150,9 +150,9 @@ exports[`CreateDataSource: Component should render correctly 1`] = `
         "_exclusive": Object {},
         "_mutate": undefined,
         "_nodes": Array [
+          "type",
           "googleSheet",
           "file",
-          "type",
           "name",
         ],
         "_options": Object {
@@ -194,36 +194,44 @@ exports[`CreateDataSource: Component should render correctly 1`] = `
             ],
             "transforms": Array [],
           },
-          "googleSheet": StringSchema {
+          "googleSheet": SchemaType {
             "_blacklist": RefSet {
               "list": Set {},
               "refs": Map {},
             },
-            "_conditions": Array [],
-            "_deps": Array [],
-            "_exclusive": Object {
-              "trim": false,
-              "undefined": false,
-            },
+            "_conditions": Array [
+              Condition {
+                "fn": [Function],
+                "refs": Array [
+                  Reference {
+                    "getter": [Function],
+                    "isContext": false,
+                    "isSibling": true,
+                    "isValue": false,
+                    "key": "type",
+                    "map": undefined,
+                    "path": "type",
+                  },
+                ],
+              },
+            ],
+            "_deps": Array [
+              "type",
+            ],
+            "_exclusive": Object {},
             "_mutate": undefined,
             "_options": Object {
               "abortEarly": true,
               "recursive": true,
             },
-            "_type": "string",
+            "_type": "mixed",
             "_typeError": [Function],
             "_whitelist": RefSet {
               "list": Set {},
               "refs": Map {},
             },
-            "tests": Array [
-              [Function],
-              [Function],
-            ],
-            "transforms": Array [
-              [Function],
-              [Function],
-            ],
+            "tests": Array [],
+            "transforms": Array [],
           },
           "name": StringSchema {
             "_blacklist": RefSet {
