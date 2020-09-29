@@ -37,7 +37,9 @@ def write_data_frame_to_csv_on_s3(data_frame, filename):
     csv_buffer = StringIO()
 
     csv_buffer.write(data_frame.to_csv(index=False))
-    s3_resource.Object(settings.AWS_STORAGE_BUCKET_NAME, filename).put(Body=csv_buffer.getvalue())
+    s3_resource.Object(settings.AWS_STORAGE_BUCKET_NAME, filename).put(
+        Body=csv_buffer.getvalue(), ACL="public-read"
+    )
 
 
 def write_data_frame_to_parquet_on_s3(data_frame, file_name):
