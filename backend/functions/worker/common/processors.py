@@ -6,6 +6,7 @@ except Exception:
 
 import json
 import logging
+from urllib.parse import urlparse
 from dataclasses import dataclass
 from io import StringIO, BytesIO
 
@@ -190,16 +191,24 @@ class FileSourceProcessor(SourceProcessor):
 @dataclass
 class GoogleSheetProcessor(SourceProcessor):
     def read(self):
-        url, params = self.datasource.google_sheet.rsplit("/", 1)
 
-        if params.find("gid=") != -1:
-            gid = params.rsplit("gid=", 1)[1]
+        parsed_url = urlparse(self.datasource.google_sheet)
+
+        fragment = parsed_url.fragment
+
+        if fragment.find("gid=") != -1:
+            gid = fragment.rsplit("gid=", 1)[1]
         else:
-            gid = "0"
+            gid = None
 
-        extra_params = f"export?format=csv&gid={gid}"
+        url = f"https://{parsed_url.netloc}/{parsed_url.path}"
+
+        if url.endswith("edit"):
+            url = url[:-5]
+
+        extra_params = f"export?format=csv&gid={gid}" if gid else "export?format=csv"
+
         sheet_url = url + "/" + extra_params
-
         data_frame = read_file_to_data_frame(sheet_url)
 
         return data_frame
