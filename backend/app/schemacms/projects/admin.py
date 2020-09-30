@@ -39,6 +39,8 @@ class ProjectImportForm(forms.Form):
                 )
                 raise forms.ValidationError(message)
 
+        return input_zip
+
     @transaction.atomic()
     def save(self):
         import_time = timezone.now()
