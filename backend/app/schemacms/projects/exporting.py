@@ -1,5 +1,6 @@
 import io
 import zipfile
+import json
 
 from django.contrib.admin.utils import NestedObjects
 from django.core import serializers
@@ -54,7 +55,9 @@ def export_project(pk, using=DEFAULT_DB_ALIAS, output_format="json"):
         output_format, sorted_flatten, use_natural_foreign_keys=True, use_natural_primary_keys=True,
     )
 
+    extra_data = {"project_title": root_project[0].title, "schema_cms_version": "1.0.0"}
     zip_file.writestr(f"objects.{output_format}", serialized)
+    zip_file.writestr("extra_data.json", json.dumps(extra_data))
     zip_file.close()
 
     return zip_stream

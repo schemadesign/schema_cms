@@ -1,5 +1,5 @@
 import zipfile
-
+import json
 from django import forms
 from django import http as dj_http
 from django.contrib import admin
@@ -26,15 +26,25 @@ class ProjectImportForm(forms.Form):
     zip_file = forms.FileField()
     owner = forms.ModelChoiceField(queryset=User.objects.all())
 
-    @staticmethod
-    def get_file_base_name(name):
-        return
+    def clean_zip_file(self):
+        input_zip = self.cleaned_data["zip_file"]
+
+        with zipfile.ZipFile(input_zip, "r") as zip_file:
+            extra_data = json.loads(zip_file.read("extra_data.json"))
+
+            if models.Project.objects.filter(title=extra_data["project_title"]).exists():
+                message = (
+                    "Project with same title already exist in SchemaCMS"
+                    "please rename existing project before import."
+                )
+                raise forms.ValidationError(message)
 
     @transaction.atomic()
     def save(self):
         import_time = timezone.now()
 
         input_zip = self.cleaned_data["zip_file"]
+
         with zipfile.ZipFile(input_zip, "r") as zip_file:
 
             objs_with_deferred_fields = []
@@ -42,7 +52,6 @@ class ProjectImportForm(forms.Form):
             for deserialized_object in serializers.deserialize(
                 "json", zip_file.read("objects.json"), handle_forward_references=True, ignorenonexistent=True
             ):
-
                 print(deserialized_object)
 
                 object_fields = [f.name for f in deserialized_object.object._meta.get_fields()]
