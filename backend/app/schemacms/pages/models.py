@@ -63,8 +63,6 @@ class BlockTemplate(Content):
     def natural_key(self):
         return self.project.title, self.name
 
-    natural_key.dependencies = ["pages.page"]
-
     def delete_elements(self, elements):
         self.elements.filter(id__in=elements).delete()
 
@@ -77,8 +75,6 @@ class BlockTemplateElement(Element):
 
     def natural_key(self):
         return self.template.project.title, self.template.name, self.name, self.order
-
-    natural_key.dependencies = ["pages.blocktemplate"]
 
 
 class Section(SoftDeleteObject, TimeStampedModel):
@@ -302,8 +298,6 @@ class PageBlockElement(Element):
 
     def natural_key(self):
         return self.block.page.project.title, self.block.page.name, self.block.name, self.order
-
-    natural_key.dependencies = ["pages.pageblock"]
 
     def relative_path_to_save(self, filename):
         base_path = self.image.storage.location

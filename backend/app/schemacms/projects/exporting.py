@@ -45,6 +45,7 @@ def export_project(pk, using=DEFAULT_DB_ALIAS, output_format="json"):
         "filter",
         "state",
         "instatefilter",
+        "statetag",
     ]
 
     flatten = [instance for cls, instances in object_tree.items() for instance in instances]

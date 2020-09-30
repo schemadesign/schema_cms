@@ -78,8 +78,6 @@ class DataSource(MetaGeneratorMixin, SoftDeleteObject, TimeStampedModel):
     def natural_key(self):
         return self.project.natural_key() + (self.name,)
 
-    natural_key.dependencies = ["projects.project"]
-
     def get_source_file(self):
         return self.file
 
