@@ -319,17 +319,18 @@ class PublicApiDataSourceJobStateSerializer(serializers.ModelSerializer):
         choices=[ProcessingState.PROCESSING, ProcessingState.SUCCESS, ProcessingState.FAILED]
     )
     result = serializers.CharField()
+    result_parquet = serializers.CharField()
 
     class Meta:
         model = ds_models.DataSourceJob
-        fields = ("job_state", "result", "error")
+        fields = ("job_state", "result", "result_parquet", "error")
 
     def __init__(self, *args, **kwargs):
         super().__init__(*args, **kwargs)
         job_state = self.initial_data.get("job_state")
         job_state_available_fields = {
             ProcessingState.PROCESSING: [],
-            ProcessingState.SUCCESS: ["result"],
+            ProcessingState.SUCCESS: ["result", "result_parquet"],
             ProcessingState.FAILED: ["error"],
         }
         available_fields = job_state_available_fields.get(job_state, []) + ["job_state"]

@@ -63,6 +63,8 @@ class BlockTemplate(Content):
     def natural_key(self):
         return self.project.title, self.name
 
+    natural_key.dependencies = ["pages.page"]
+
     def delete_elements(self, elements):
         self.elements.filter(id__in=elements).delete()
 
@@ -75,6 +77,8 @@ class BlockTemplateElement(Element):
 
     def natural_key(self):
         return self.template.project.title, self.template.name, self.name, self.order
+
+    natural_key.dependencies = ["pages.blocktemplate"]
 
 
 class Section(SoftDeleteObject, TimeStampedModel):
@@ -256,8 +260,8 @@ class PageTemplate(Page):
 
 
 class PageBlock(CloneMixin, SoftDeleteObject):
-    block = models.ForeignKey("BlockTemplate", on_delete=models.CASCADE, null=True)
     page = models.ForeignKey("Page", on_delete=models.CASCADE, related_name="page_blocks")
+    block = models.ForeignKey("BlockTemplate", on_delete=models.CASCADE, null=True)
     name = models.CharField(max_length=constants.TEMPLATE_NAME_MAX_LENGTH, blank=True, default="")
     order = models.PositiveIntegerField(default=0)
 
@@ -268,8 +272,6 @@ class PageBlock(CloneMixin, SoftDeleteObject):
 
     def natural_key(self):
         return self.page.natural_key() + (self.name, self.order)
-
-    natural_key.dependencies = ["pages.page"]
 
 
 class PageBlockElement(Element):

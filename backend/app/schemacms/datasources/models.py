@@ -262,8 +262,13 @@ class DataSourceDescription(SoftDeleteObject):
     datasource = models.OneToOneField(DataSource, on_delete=models.CASCADE, related_name="description")
     data = pg_fields.ArrayField(pg_fields.JSONField(), default=list, blank=True)
 
+    objects = managers.DataSourceDescriptionManager()
+
     def __str__(self):
         return f"{self.id}"
+
+    def natural_key(self):
+        return self.datasource.natural_key()
 
 
 class DataSourceMeta(SoftDeleteObject, MetaDataModel):
@@ -330,6 +335,7 @@ class DataSourceJob(MetaGeneratorMixin, SoftDeleteObject, TimeStampedModel, fsm.
     source_file_path = models.CharField(max_length=255, editable=False)
     source_file_version = models.CharField(max_length=36, editable=False)
     result = models.FileField(upload_to=file_upload_path, null=True, blank=True)
+    result_parquet = models.FileField(upload_to=file_upload_path, null=True, blank=True)
     error = models.TextField(blank=True, default="")
 
     objects = managers.DataSourceJobManager()
@@ -459,6 +465,8 @@ class Filter(MetaGeneratorMixin, SoftDeleteObject, TimeStampedModel):
     unique_items = models.IntegerField(null=True)
     is_active = models.BooleanField(default=True)
 
+    objects = managers.FilterManager()
+
     def __str__(self):
         return str(self.id)
 
@@ -470,6 +478,9 @@ class Filter(MetaGeneratorMixin, SoftDeleteObject, TimeStampedModel):
                 condition=models.Q(deleted_at=None),
             )
         ]
+
+    def natural_key(self):
+        return self.datasource.natural_key() + (self.name,)
 
     @functional.cached_property
     def project_info(self):
@@ -495,5 +506,10 @@ class DataSourceTag(SoftDeleteObject):
     category = models.ForeignKey("tags.TagCategory", on_delete=models.SET_NULL, null=True)
     value = models.CharField(max_length=150)
 
+    objects = managers.DataSourceTagManager()
+
     def __str__(self):
         return f"{self.id}"
+
+    def natural_key(self):
+        return self.datasource.natural_key() + (self.category.name, self.value)

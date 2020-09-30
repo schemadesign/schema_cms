@@ -357,6 +357,7 @@ class DataSourceJobDetailViewSet(
         serializer = self.get_serializer(instance=job, data=request.data)
         serializer.is_valid(raise_exception=True)
         serializer.save()
+
         return response.Response(status=status.HTTP_204_NO_CONTENT)
 
     @decorators.action(

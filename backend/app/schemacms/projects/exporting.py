@@ -26,12 +26,32 @@ def export_project(pk, using=DEFAULT_DB_ALIAS, output_format="json"):
                     if file_field.name:
                         zip_file.writestr(f"files/{file_field.name}", file_field.read())
 
+    keyorder = [
+        "project",
+        "blocktemplate",
+        "blocktemplateelement",
+        "page",
+        "pageblock",
+        "tagcategory",
+        "tag",
+        "datasource",
+        "datasourcemeta",
+        "datasourcejob",
+        "datasourcejobmetadata",
+        "datasourcejobstep",
+        "datasourcetag",
+        "datasourcedescription",
+        "filter",
+        "state",
+        "instatefilter",
+    ]
+
     flatten = [instance for cls, instances in object_tree.items() for instance in instances]
+
+    sorted_flatten = sorted(flatten, key=lambda i: keyorder.index(i._meta.model_name))
+
     serialized = serializers.serialize(
-        output_format,
-        flatten,
-        use_natural_foreign_keys=True,
-        use_natural_primary_keys=True,
+        output_format, sorted_flatten, use_natural_foreign_keys=True, use_natural_primary_keys=True,
     )
 
     zip_file.writestr(f"objects.{output_format}", serialized)

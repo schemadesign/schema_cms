@@ -8,6 +8,7 @@ from django.shortcuts import render
 from django.db import transaction
 from django.template.loader import render_to_string
 from django.urls import path
+from django.conf import settings
 from django.utils import safestring, timezone
 from django.core.files import File
 from . import models, exporting
@@ -15,7 +16,10 @@ from ..users.models import User
 from ..utils import admin as utils_admin
 import os
 
-from ..datasources.models import DataSource
+
+from ..utils.services import s3
+
+from ..datasources.models import DataSource, DataSourceJob, DataSourceJobMetaData, DataSourceMeta
 
 
 class ProjectImportForm(forms.Form):
@@ -36,14 +40,22 @@ class ProjectImportForm(forms.Form):
             objs_with_deferred_fields = []
 
             for deserialized_object in serializers.deserialize(
-                "json", zip_file.read("objects.json"), handle_forward_references=True
+                "json", zip_file.read("objects.json"), handle_forward_references=True, ignorenonexistent=True
             ):
+
+                print(deserialized_object)
+
                 object_fields = [f.name for f in deserialized_object.object._meta.get_fields()]
+
                 if isinstance(deserialized_object.object, models.Project):
                     self.import_project_model(zip_file, deserialized_object)
 
                 if isinstance(deserialized_object.object, DataSource):
-                    self.import_data_source_model(zip_file, deserialized_object)
+                    self.import_files(zip_file, deserialized_object, ("file",))
+                if isinstance(deserialized_object.object, (DataSourceMeta, DataSourceJobMetaData)):
+                    self.import_files(zip_file, deserialized_object, ("preview",))
+                if isinstance(deserialized_object.object, DataSourceJob):
+                    self.import_files(zip_file, deserialized_object, ("result", "result_parquet"))
 
                 if "created" in object_fields and "modified" in object_fields:
                     deserialized_object.object.created = import_time
@@ -69,8 +81,25 @@ class ProjectImportForm(forms.Form):
             file = File(file, name=file_name)
             deserialized_object.object.xml_file = file
 
-    def import_data_source_model(self, zip_file, deserialized_object):
-        deserialized_object.object.active_job = None
+            s3.put_object(
+                Body=file, Bucket=settings.AWS_STORAGE_BUCKET_NAME, Key=file_name, ACL="public-read",
+            )
+
+    @staticmethod
+    def import_files(zip_file, deserialized_object, file_attrs):
+        deserialized_object.save()
+
+        for file_attr in file_attrs:
+            if object_file := getattr(deserialized_object.object, file_attr):
+                with zip_file.open(f"files/{object_file.name}", "r") as file:
+                    file_name = deserialized_object.object.relative_path_to_save(os.path.basename(file.name))
+                    file = File(file, name=file_name)
+
+                    setattr(deserialized_object.object, file_attr, file)
+
+                    s3.put_object(
+                        Body=file, Bucket=settings.AWS_STORAGE_BUCKET_NAME, Key=file_name, ACL="public-read",
+                    )
 
 
 @admin.register(models.Project)

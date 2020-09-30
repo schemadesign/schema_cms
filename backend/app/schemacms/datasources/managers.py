@@ -36,8 +36,20 @@ class DataSourceTagManager(models.Manager):
         return self.get(
             datasource__project__title=project_title,
             datasource__name=datasource_name,
-            category_name=category_name,
+            category__name=category_name,
             value=value,
+        )
+
+
+class DataSourceDescriptionManager(models.Manager):
+    def get_by_natural_key(self, project_title, datasource_name):
+        return self.get(datasource__project__title=project_title, datasource__name=datasource_name,)
+
+
+class FilterManager(models.Manager):
+    def get_by_natural_key(self, project_title, datasource_name, filter_name):
+        return self.get(
+            datasource__project__title=project_title, datasource__name=datasource_name, name=filter_name,
         )
 
 

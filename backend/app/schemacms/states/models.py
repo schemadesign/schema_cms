@@ -4,6 +4,8 @@ from django.contrib.postgres import fields as pg_fields
 from django.db import models
 from django_extensions.db.models import TimeStampedModel
 
+from . import managers
+
 
 class State(SoftDeleteObject, TimeStampedModel):
     FILTER_TYPES_MAPPING = {"value": "equals", "checkbox": "in", "select": "equals", "range": "range"}
@@ -21,6 +23,8 @@ class State(SoftDeleteObject, TimeStampedModel):
     filters = models.ManyToManyField("datasources.Filter", through="InStateFilter")
     fields = pg_fields.ArrayField(models.TextField(), blank=True, default=list)
 
+    objects = managers.StateManager()
+
     def __str__(self):
         return self.name or str(self.pk)
 
@@ -31,6 +35,9 @@ class State(SoftDeleteObject, TimeStampedModel):
             )
         ]
         ordering = ("created",)
+
+    def natural_key(self):
+        return self.datasource.natural_key() + (self.name,)
 
     @property
     def formatted_meta(self):
@@ -82,8 +89,18 @@ class InStateFilter(SoftDeleteObject):
     field_type = models.CharField(max_length=100)
     condition = pg_fields.JSONField(blank=True, default=dict)
 
+    objects = managers.FilterManager()
+
+    def natural_key(self):
+        return self.state.natural_key() + (self.filter.name,)
+
 
 class StateTag(SoftDeleteObject):
     state = models.ForeignKey(State, on_delete=models.CASCADE, related_name="tags")
     category = models.ForeignKey("tags.TagCategory", on_delete=models.SET_NULL, null=True)
     value = models.CharField(max_length=150)
+
+    objects = managers.StateTagManager()
+
+    def natural_key(self):
+        return self.state.natural_key() + (self.category.name, self.value)
