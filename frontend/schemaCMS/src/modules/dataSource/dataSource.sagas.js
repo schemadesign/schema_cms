@@ -249,6 +249,7 @@ function* updateOne({ payload: { requestData, dataSource } }) {
       const { data } = yield api.patch(`${DATA_SOURCES_PATH}/${dataSource.id}`, {
         [DATA_SOURCE_GOOGLE_SHEET]: requestData[DATA_SOURCE_GOOGLE_SHEET] || dataSource[DATA_SOURCE_GOOGLE_SHEET],
         [DATA_SOURCE_RUN_LAST_JOB]: requestData[DATA_SOURCE_RUN_LAST_JOB],
+        [DATA_SOURCE_TYPE]: requestData[DATA_SOURCE_TYPE],
       });
 
       browserHistory.push(`/project/${dataSource.project.id}/datasource`);
