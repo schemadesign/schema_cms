@@ -116,6 +116,7 @@ class ProjectAdmin(utils_admin.SoftDeleteObjectAdmin):
     list_display = ("title", "owner", "status", "get_editors", "deleted_at")
     fields = ("title", "description", "owner", "editors", "deleted_at")
     filter_horizontal = ("editors",)
+    change_list_template = "admin/projects/project/change_list.html"
 
     def get_urls(self):
         urls = super().get_urls()
