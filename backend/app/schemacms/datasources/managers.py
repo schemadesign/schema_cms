@@ -1,4 +1,4 @@
-from softdelete.models import SoftDeleteQuerySet
+from softdelete.models import SoftDeleteQuerySet, SoftDeleteManager
 from django.db import models, transaction
 
 from .constants import ProcessingState
@@ -6,12 +6,12 @@ from ..authorization.authentication import LambdaUser
 from ..utils.managers import generate_soft_delete_manager
 
 
-class DataSourceMetaManager(models.Manager):
+class DataSourceMetaManager(SoftDeleteManager):
     def get_by_natural_key(self, project_title, data_source_name):
         return self.get(datasource__name=data_source_name, datasource__project__title=project_title)
 
 
-class DataSourceJobManager(models.Manager):
+class DataSourceJobManager(SoftDeleteManager):
     def get_by_natural_key(self, project_title, data_source_name, source_file_path, source_file_version):
         return self.get(
             source_file_path=source_file_path,
@@ -21,7 +21,7 @@ class DataSourceJobManager(models.Manager):
         )
 
 
-class DataSourceJobMetaManager(models.Manager):
+class DataSourceJobMetaManager(SoftDeleteManager):
     def get_by_natural_key(self, project_title, data_source_name, source_file_path, source_file_version):
         return self.get(
             job__source_file_path=source_file_path,
@@ -31,7 +31,7 @@ class DataSourceJobMetaManager(models.Manager):
         )
 
 
-class DataSourceTagManager(models.Manager):
+class DataSourceTagManager(SoftDeleteManager):
     def get_by_natural_key(self, project_title, datasource_name, category_name, value):
         return self.get(
             datasource__project__title=project_title,
@@ -41,15 +41,31 @@ class DataSourceTagManager(models.Manager):
         )
 
 
-class DataSourceDescriptionManager(models.Manager):
+class DataSourceDescriptionManager(SoftDeleteManager):
     def get_by_natural_key(self, project_title, datasource_name):
         return self.get(datasource__project__title=project_title, datasource__name=datasource_name,)
 
 
-class FilterManager(models.Manager):
+class FilterManager(SoftDeleteManager):
     def get_by_natural_key(self, project_title, datasource_name, filter_name):
         return self.get(
             datasource__project__title=project_title, datasource__name=datasource_name, name=filter_name,
+        )
+
+
+class WranglingScriptManager(SoftDeleteManager):
+    def get_by_natural_key(self, project_title, datasource_name, script_name):
+        return self.get(
+            datasource__project__title=project_title, datasource__name=datasource_name, name=script_name,
+        )
+
+
+class DataSourceJobStepManager(SoftDeleteManager):
+    def get_by_natural_key(self, project_title, datasource_name, script_name, order):
+        return self.get(
+            datasource_job__datasource__project__title=project_title,
+            datasource_job__datasource__name=datasource_name,
+            name=script_name,
         )
 
 

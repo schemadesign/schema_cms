@@ -37,6 +37,7 @@ def export_project(pk, using=DEFAULT_DB_ALIAS, output_format="json"):
         "tag",
         "datasource",
         "datasourcemeta",
+        "wranglingscript",
         "datasourcejob",
         "datasourcejobmetadata",
         "datasourcejobstep",

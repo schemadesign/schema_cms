@@ -20,7 +20,6 @@ class State(SoftDeleteObject, TimeStampedModel):
         settings.AUTH_USER_MODEL, on_delete=models.SET_NULL, related_name="states", null=True
     )
     is_public = models.BooleanField(default=True)
-    filters = models.ManyToManyField("datasources.Filter", through="InStateFilter")
     fields = pg_fields.ArrayField(models.TextField(), blank=True, default=list)
 
     objects = managers.StateManager()
@@ -38,6 +37,8 @@ class State(SoftDeleteObject, TimeStampedModel):
 
     def natural_key(self):
         return self.datasource.natural_key() + (self.name,)
+
+    natural_key.dependencies = ["datasources.datasource", "users.user"]
 
     @property
     def formatted_meta(self):
@@ -58,7 +59,7 @@ class State(SoftDeleteObject, TimeStampedModel):
 
     def build_filters_query_params(self) -> str:
         params = []
-        for filter_ in self.instatefilter_set.all():
+        for filter_ in self.filters.all():
             key = filter_.field
             operator = self.FILTER_TYPES_MAPPING[filter_.filter_type]
             values = filter_.condition.get("values")
@@ -81,18 +82,20 @@ class State(SoftDeleteObject, TimeStampedModel):
         return res
 
 
-class InStateFilter(SoftDeleteObject):
-    filter = models.ForeignKey("datasources.Filter", on_delete=models.CASCADE)
-    state = models.ForeignKey(State, on_delete=models.CASCADE)
+class StateFilter(SoftDeleteObject):
+    filter = models.ForeignKey("datasources.Filter", on_delete=models.CASCADE, related_name="state_filters")
+    state = models.ForeignKey(State, on_delete=models.CASCADE, related_name="filters")
     filter_type = models.CharField(max_length=100)
     field = models.TextField()
     field_type = models.CharField(max_length=100)
     condition = pg_fields.JSONField(blank=True, default=dict)
 
-    objects = managers.FilterManager()
+    objects = managers.StateFilterManager()
 
     def natural_key(self):
         return self.state.natural_key() + (self.filter.name,)
+
+    natural_key.dependencies = ["states.state", "datasources.filter"]
 
 
 class StateTag(SoftDeleteObject):
@@ -104,3 +107,5 @@ class StateTag(SoftDeleteObject):
 
     def natural_key(self):
         return self.state.natural_key() + (self.category.name, self.value)
+
+    natural_key.dependencies = ["states.state", "datasources.datasourcetag", "tags.tagcategory"]

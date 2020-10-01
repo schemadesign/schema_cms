@@ -1,7 +1,7 @@
-from django.db import models
+from softdelete.models import SoftDeleteManager
 
 
-class StateTagManager(models.Manager):
+class StateTagManager(SoftDeleteManager):
     def get_by_natural_key(self, project_title, datasource_name, state_name, cat_name, value):
         return self.get(
             state__datasource__project__title=project_title,
@@ -12,7 +12,7 @@ class StateTagManager(models.Manager):
         )
 
 
-class FilterManager(models.Manager):
+class StateFilterManager(SoftDeleteManager):
     def get_by_natural_key(self, project_title, datasource_name, state_name, filter_name):
         return self.get(
             state__datasource__project__title=project_title,
@@ -22,7 +22,7 @@ class FilterManager(models.Manager):
         )
 
 
-class StateManager(models.Manager):
+class StateManager(SoftDeleteManager):
     def get_by_natural_key(self, project_title, datasource_name, name):
         return self.get(
             datasource__project__title=project_title, datasource__name=datasource_name, name=name,

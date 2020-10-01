@@ -413,7 +413,10 @@ class TestDataSourceJobUpdateState:
         job = job_factory(job_state=ds_constants.ProcessingState.PROCESSING, result=None, error="")
         default_storage.save(name="path/to/result.csv", content=base.ContentFile("test,1,2".encode()))
         payload = dict(
-            job_state=ds_constants.ProcessingState.SUCCESS, result="path/to/result.csv", error="test"
+            job_state=ds_constants.ProcessingState.SUCCESS,
+            result="path/to/result.csv",
+            result_parquet="path/to/result.csv",
+            error="test",
         )
         set_active_job_mock = mocker.patch("schemacms.datasources.models.DataSource.set_active_job")
 

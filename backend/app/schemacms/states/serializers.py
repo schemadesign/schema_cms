@@ -8,11 +8,11 @@ from ..utils.serializers import NestedRelatedModelSerializer, ReadOnlySerializer
 from ..datasources.serializers import RawDataSourceSerializer
 
 
-class InStateFilterSerializer(serializers.ModelSerializer):
+class StateFilterSerializer(serializers.ModelSerializer):
     values = serializers.SerializerMethodField(read_only=True)
 
     class Meta:
-        model = models.InStateFilter
+        model = models.StateFilter
         fields = ("filter", "values")
 
     def get_values(self, filter_):
@@ -66,18 +66,20 @@ class StateSerializer(serializers.ModelSerializer):
             obj.add_tags(tags)
 
         if "filters" in self.initial_data:
-            obj.filters.clear()
+            obj.filters.all().delete()
             filters = self.initial_data.pop("filters")
+
             for filter_ in filters:
                 filter_instance = ds_models.Filter.objects.get(pk=filter_["filter"])
-                obj.filters.add(
-                    filter_instance,
-                    through_defaults={
+                models.StateFilter.objects.create(
+                    **{
+                        "state": obj,
+                        "filter": filter_instance,
                         "filter_type": filter_instance.filter_type,
                         "field": filter_instance.field,
                         "field_type": filter_instance.field_type,
                         "condition": {"values": filter_["values"]},
-                    },
+                    }
                 )
 
         return obj
@@ -86,8 +88,8 @@ class StateSerializer(serializers.ModelSerializer):
         return state.author.get_full_name()
 
     def get_filters(self, state):
-        state_filters = models.InStateFilter.objects.filter(state=state)
-        return InStateFilterSerializer(state_filters, many=True).data
+        state_filters = models.StateFilter.objects.filter(state=state)
+        return StateFilterSerializer(state_filters, many=True).data
 
 
 class StatePageAdditionalDataSerializer(ReadOnlySerializer):

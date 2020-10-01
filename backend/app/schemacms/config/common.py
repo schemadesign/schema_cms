@@ -43,8 +43,8 @@ class Common(Configuration):
         "softdelete",
         # Your apps
         "schemacms.authorization",
-        "schemacms.datasources",
         "schemacms.projects",
+        "schemacms.datasources",
         "schemacms.states",
         "schemacms.users",
         "schemacms.pages",

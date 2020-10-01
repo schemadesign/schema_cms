@@ -103,6 +103,8 @@ class Section(SoftDeleteObject, TimeStampedModel):
     def natural_key(self):
         return self.project.title, self.name
 
+    natural_key.dependencies = ["projects.project"]
+
     @functional.cached_property
     def project_info(self):
         return self.project.project_info
@@ -140,8 +142,8 @@ class Page(Content):
     class Meta:
         ordering = ("-created",)
 
-    def natural_key(self):
-        return self.project.title, self.name, self.is_template, self.is_draft
+    # def natural_key(self):
+    #     return self.project.title, self.name, self.is_template, self.is_draft
 
     @property
     def is_published(self):
@@ -269,6 +271,8 @@ class PageBlock(CloneMixin, SoftDeleteObject):
     def natural_key(self):
         return self.page.natural_key() + (self.name, self.order)
 
+    natural_key.dependencies = ["pages.blocktemplate", "pages.page"]
+
 
 class PageBlockElement(Element):
     block = models.ForeignKey(PageBlock, on_delete=models.CASCADE, related_name="elements")
@@ -298,6 +302,8 @@ class PageBlockElement(Element):
 
     def natural_key(self):
         return self.block.page.project.title, self.block.page.name, self.block.name, self.order
+
+    natural_key.dependencies = ["pages.pageblock", "states.state"]
 
     def relative_path_to_save(self, filename):
         base_path = self.image.storage.location
@@ -429,6 +435,8 @@ class CustomElementSet(CloneMixin, SoftDeleteObject):
     def natural_key(self):
         return self.custom_element.natural_key() + (self.order,)
 
+    natural_key.dependencies = ["pages.pageblockelement"]
+
 
 class PageBlockObservableElement(CloneMixin, SoftDeleteObject):
     observable_user = models.TextField(blank=True, default="", max_length=1000)
@@ -458,3 +466,5 @@ class PageTag(CloneMixin, SoftDeleteObject):
 
     def natural_key(self):
         return self.page.project.natural_key() + (self.page.name, self.category.name, self.value)
+
+    natural_key.dependencies = ["pages.page", "tags.tagcategory"]

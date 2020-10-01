@@ -78,6 +78,8 @@ class DataSource(MetaGeneratorMixin, SoftDeleteObject, TimeStampedModel):
     def natural_key(self):
         return self.project.natural_key() + (self.name,)
 
+    natural_key.dependencies = ["projects.project", "tags.tagcategory"]
+
     def get_source_file(self):
         return self.file
 
@@ -268,6 +270,8 @@ class DataSourceDescription(SoftDeleteObject):
     def natural_key(self):
         return self.datasource.natural_key()
 
+    natural_key.dependencies = ["datasources.datasource"]
+
 
 class DataSourceMeta(SoftDeleteObject, MetaDataModel):
     datasource = models.OneToOneField(DataSource, on_delete=models.CASCADE, related_name="meta_data")
@@ -283,6 +287,8 @@ class DataSourceMeta(SoftDeleteObject, MetaDataModel):
 
     def natural_key(self):
         return self.datasource.natural_key()
+
+    natural_key.dependencies = ["datasources.datasource"]
 
     def relative_path_to_save(self, filename):
         base_path = self.preview.storage.location
@@ -306,8 +312,18 @@ class WranglingScript(SoftDeleteObject, TimeStampedModel):
     last_file_modification = models.DateTimeField(null=True)
     specs = pg_fields.JSONField(default=dict, blank=True, editable=False)
 
+    objects = managers.WranglingScriptManager()
+
     def __str__(self):
         return self.name
+
+    def natural_key(self):
+        if self.datasource:
+            return self.datasource.natural_key() + (self.name,)
+        else:
+            return (self.name,)
+
+    natural_key.dependencies = ["datasources.datasource"]
 
     def save(self, *args, **kwargs):
         if not self.body:
@@ -341,8 +357,9 @@ class DataSourceJob(MetaGeneratorMixin, SoftDeleteObject, TimeStampedModel, fsm.
     def __str__(self):
         return f"DataSource Job #{self.pk}"
 
-    def natural_key(self):
-        return self.datasource.natural_key() + (self.source_file_path, self.source_file_version)
+    # def natural_key(self):
+    #     return self.datasource.natural_key() + (self.source_file_path, self.source_file_version)
+    # natural_key.dependencies = ['datasources.datasource']
 
     @property
     def get_source_file(self):
@@ -430,6 +447,8 @@ class DataSourceJobMetaData(SoftDeleteObject, MetaDataModel):
     def natural_key(self):
         return self.job.natural_key()
 
+    natural_key.dependencies = ["datasources.datasourcejob"]
+
     def relative_path_to_save(self, filename):
         base_path = self.preview.storage.location
 
@@ -452,6 +471,14 @@ class DataSourceJobStep(SoftDeleteObject, models.Model):
             "options": self.options,
         }
         return data
+
+    def natural_key(self):
+        return (self.datasource_job.project.title, self.datasource_job.datasource.name) + (
+            self.script.name,
+            self.exec_order,
+        )
+
+    natural_key.dependencies = ["datasources.datasourcejob", "datasources.wranglingscript"]
 
 
 class Filter(MetaGeneratorMixin, SoftDeleteObject, TimeStampedModel):
@@ -479,6 +506,8 @@ class Filter(MetaGeneratorMixin, SoftDeleteObject, TimeStampedModel):
 
     def natural_key(self):
         return self.datasource.natural_key() + (self.name,)
+
+    natural_key.dependencies = ["datasources.datasource"]
 
     @functional.cached_property
     def project_info(self):
@@ -511,3 +540,5 @@ class DataSourceTag(SoftDeleteObject):
 
     def natural_key(self):
         return self.datasource.natural_key() + (self.category.name, self.value)
+
+    natural_key.dependencies = ["datasources.datasource"]
