@@ -347,11 +347,13 @@ exports[`SourceComponent: Component should render correctly 1`] = `
         }
       }
       handleChange={[Function]}
+      handleSubmit={[Function]}
       intl={
         Object {
           "formatMessage": [Function],
         }
       }
+      isSubmitting={false}
       match={
         Object {
           "params": Object {
@@ -1272,11 +1274,13 @@ exports[`SourceComponent: Component should render file uploader 1`] = `
         }
       }
       handleChange={[Function]}
+      handleSubmit={[Function]}
       intl={
         Object {
           "formatMessage": [Function],
         }
       }
+      isSubmitting={false}
       match={
         Object {
           "params": Object {

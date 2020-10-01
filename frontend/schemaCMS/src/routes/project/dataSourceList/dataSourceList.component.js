@@ -25,7 +25,14 @@ import {
 import messages from './dataSourceList.messages';
 import extendedDayjs, { BASE_DATE_FORMAT } from '../../../shared/utils/extendedDayjs';
 import { HeaderItem, HeaderList } from '../list/list.styles';
-import { META_FAILED, PREVIEW_PAGE, RESULT_PAGE, SOURCE_PAGE } from '../../../modules/dataSource/dataSource.constants';
+import {
+  META_FAILED,
+  PREVIEW_PAGE,
+  RESULT_PAGE,
+  SOURCE_PAGE,
+  SOURCE_TYPE_FILE,
+  SOURCE_TYPE_GOOGLE_SHEET,
+} from '../../../modules/dataSource/dataSource.constants';
 import { filterMenuOptions, getMatchParam, isProcessingData } from '../../../shared/utils/helpers';
 import { formatPrefixedNumber } from '../../../shared/utils/numberFormating';
 import reportError from '../../../shared/utils/reportError';
@@ -34,7 +41,7 @@ import { getProjectMenuOptions, PROJECT_DATASOURCE_ID } from '../project.constan
 import { renderWhenTrue } from '../../../shared/utils/rendering';
 import { JOB_STATE_FAILURE } from '../../../modules/job/job.constants';
 
-const { CsvIcon, IntersectIcon } = Icons;
+const { CsvIcon, GoogleSpreadsheetIcon, IntersectIcon } = Icons;
 const DEFAULT_VALUE = '—';
 
 export class DataSourceList extends PureComponent {
@@ -115,26 +122,40 @@ export class DataSourceList extends PureComponent {
     </Header>
   );
 
-  renderMetaData = ({ metaData: { items, fields, filters }, metaProcessing, tags }) => {
+  renderSourceIcon = metaProcessing =>
+    cond([
+      [
+        equals(SOURCE_TYPE_FILE),
+        always(<CsvIcon customStyles={getSourceIconStyles(this.props.theme, metaProcessing)} />),
+      ],
+      [
+        equals(SOURCE_TYPE_GOOGLE_SHEET),
+        always(<GoogleSpreadsheetIcon customStyles={getSourceIconStyles(this.props.theme, metaProcessing, 30)} />),
+      ],
+    ]);
+
+  renderMetaData = ({ metaData: { items, fields, filters }, metaProcessing, tags, type }) => {
     const {
       intl: { formatMessage },
-      theme,
     } = this.props;
 
     const list = [
       {
         name: formatMessage(messages.source),
-        value: <CsvIcon customStyles={getSourceIconStyles(theme, metaProcessing)} />,
+        value: this.renderSourceIcon(metaProcessing)(type),
+        isIcon: true,
       },
       { name: formatMessage(messages.items), value: formatPrefixedNumber(items) },
       { name: formatMessage(messages.fields), value: fields },
       { name: formatMessage(messages.filters), value: filters },
       { name: formatMessage(messages.tags), value: tags ? tags.length : '0' },
     ];
-    const elements = list.map(({ name, value }, index) => (
+    const elements = list.map(({ name, value, isIcon }, index) => (
       <MetaData key={index} metaProcessing={metaProcessing}>
         <MetaDataName id={`metaItem-${index}`}>{name}</MetaDataName>
-        <MetaDataValue id={`metaItemValue-${index}`}>{value || DEFAULT_VALUE}</MetaDataValue>
+        <MetaDataValue id={`metaItemValue-${index}`} isIcon={isIcon}>
+          {value || DEFAULT_VALUE}
+        </MetaDataValue>
       </MetaData>
     ));
 
@@ -198,13 +219,16 @@ export class DataSourceList extends PureComponent {
       [T, always(this.renderCreatedInformation([whenCreated, `${firstName} ${lastName}`]))],
     ])({ metaFailed, jobProcessing, metaProcessing, isUploading, fileUploadingError, jobFailed, noDataSourceUploaded });
 
-  renderItem = ({ name, created, createdBy, id, tags, metaData, activeJob, jobsState = {}, fileName }, index) => {
+  renderItem = (
+    { name, created, createdBy, id, tags, metaData, activeJob, jobsState = {}, fileName, googleSheet, type },
+    index
+  ) => {
     const { firstName = '—', lastName = '' } = createdBy || {};
     const whenCreated = extendedDayjs(created, BASE_DATE_FORMAT).fromNow();
     const jobFailed = propEq('lastJobStatus', JOB_STATE_FAILURE)(jobsState);
     const metaFailed = propEq('status', META_FAILED)(metaData);
     const { metaProcessing, jobProcessing } = isProcessingData({ jobsState, metaData });
-    const noDataSourceUploaded = !fileName;
+    const noDataSourceUploaded = !fileName && !googleSheet;
     const fileUploading = find(propEq('id', id), this.props.uploadingDataSources);
     const fileUploadingError = !!propOr(false, 'error', fileUploading);
     const isUploading = !!fileUploading;
@@ -224,7 +248,7 @@ export class DataSourceList extends PureComponent {
       noDataSourceUploaded,
     });
 
-    const footer = this.renderMetaData({ metaData, metaProcessing, tags });
+    const footer = this.renderMetaData({ metaData, metaProcessing, tags, type });
     return (
       <ListItem id="dataSourceContainer" key={index} headerComponent={header} footerComponent={footer}>
         <ListItemTitle id="dataSourceTitle" onClick={() => this.handleShowDataSource({ id, activeJob })}>

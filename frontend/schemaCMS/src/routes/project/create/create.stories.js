@@ -21,6 +21,7 @@ export const defaultProps = {
   errors: {},
   isAdmin: true,
   isValid: true,
+  dirty: true,
   isSubmitting: false,
   history,
   intl,

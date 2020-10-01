@@ -93,7 +93,7 @@ export class CreateDataSource extends PureComponent {
                   <NextButton
                     id="createDataSourceSaveBtn"
                     onClick={submitForm}
-                    disabled={this.validateFile(values) || !isValid || isSubmitting}
+                    disabled={this.validateFile(values) || !isValid || !dirty || isSubmitting}
                     loading={isSubmitting}
                   >
                     <FormattedMessage {...messages.save} />

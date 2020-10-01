@@ -35,6 +35,7 @@ export class Create extends PureComponent {
     userRole: PropTypes.string,
     isAdmin: PropTypes.bool.isRequired,
     isValid: PropTypes.bool.isRequired,
+    dirty: PropTypes.bool.isRequired,
     isSubmitting: PropTypes.bool.isRequired,
   };
 
@@ -57,7 +58,17 @@ export class Create extends PureComponent {
   };
 
   render() {
-    const { values, handleChange, handleSubmit, setFieldValue, intl, isValid, isSubmitting, userRole } = this.props;
+    const {
+      values,
+      handleChange,
+      handleSubmit,
+      setFieldValue,
+      intl,
+      isValid,
+      dirty,
+      isSubmitting,
+      userRole,
+    } = this.props;
     const headerTitle = <FormattedMessage {...messages.pageTitle} />;
     const headerSubtitle = <FormattedMessage {...messages.pageSubTitle} />;
     const projectId = getMatchParam(this.props, 'projectId');
@@ -124,7 +135,12 @@ export class Create extends PureComponent {
             <BackButton type="button" id="cancelBtn" onClick={this.handleCancelClick}>
               <FormattedMessage {...messages.cancel} />
             </BackButton>
-            <NextButton type="submit" id="finishBtn" loading={isSubmitting} disabled={!isValid || isSubmitting}>
+            <NextButton
+              type="submit"
+              id="finishBtn"
+              loading={isSubmitting}
+              disabled={!isValid || !dirty || isSubmitting}
+            >
               <FormattedMessage {...messages.finish} />
             </NextButton>
           </NavigationContainer>

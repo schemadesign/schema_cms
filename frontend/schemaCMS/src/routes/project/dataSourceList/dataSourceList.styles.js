@@ -37,11 +37,12 @@ export const MetaDataValue = styled.span`
   font-weight: 600;
   font-size: 24px;
   line-height: 36px;
+  text-align: ${({ isIcon }) => (isIcon ? 'center' : 'left')};
 `;
 
-export const getSourceIconStyles = ({ card }, loading) => ({
-  width: 40,
-  height: 40,
+export const getSourceIconStyles = ({ card }, loading, size) => ({
+  width: size || 40,
+  height: size || 40,
   fill: setColor(loading, card),
 });
 

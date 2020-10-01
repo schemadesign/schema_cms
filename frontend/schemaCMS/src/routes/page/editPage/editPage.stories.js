@@ -25,6 +25,9 @@ export const defaultProps = {
     pageTemplates,
     states: [],
   },
+  match: {
+    url: 'url',
+  },
 };
 
 storiesOf('EditPage', module)

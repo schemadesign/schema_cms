@@ -14,6 +14,10 @@ export default defineMessages({
     id: 'shared.components.sourceForm.csv',
     defaultMessage: 'CSV',
   },
+  reimport: {
+    id: 'shared.components.sourceForm.reimport',
+    defaultMessage: 'Reimport',
+  },
   googleSpreadSheet: {
     id: 'shared.components.sourceForm.googleSpreadSheet',
     defaultMessage: 'Spreadsheet',
@@ -49,5 +53,17 @@ export default defineMessages({
   fileMaxLengthError: {
     id: 'shared.components.sourceForm.fileMaxLengthError',
     defaultMessage: "File Name shouldn't be longer than 100 characters",
+  },
+  reimportTitle: {
+    id: 'shared.components.sourceForm.reimportTitle',
+    defaultMessage: 'Re-importing could change the current values. Are you sure you want to proceed? ',
+  },
+  cancelReimport: {
+    id: 'shared.components.sourceForm.cancelReimport',
+    defaultMessage: 'Cancel',
+  },
+  confirmReimport: {
+    id: 'shared.components.sourceForm.confirmReimport',
+    defaultMessage: 'Yes',
   },
 });

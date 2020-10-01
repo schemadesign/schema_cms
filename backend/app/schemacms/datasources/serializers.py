@@ -2,7 +2,7 @@ from django.db import transaction
 from rest_framework import serializers, exceptions
 
 from . import models as ds_models
-from .constants import ProcessingState
+from .constants import ProcessingState, DataSourceType
 from ..users.models import User
 from ..utils.serializers import NestedRelatedModelSerializer, UserSerializer
 from ..utils.validators import CustomUniqueTogetherValidator
@@ -178,6 +178,24 @@ class DataSourceDetailSerializer(DataSourceSerializer):
 
     def get_project(self, obj):
         return obj.project_info
+
+    @transaction.atomic()
+    def update(self, instance, validated_data):
+
+        self.clean_type_assets(instance, validated_data)
+
+        return super().update(instance, validated_data)
+
+    @staticmethod
+    def clean_type_assets(instance: ds_models.DataSource, validated_data):
+        if (type_ := validated_data.get("type")) and type_ != instance.type:
+            if type_ == DataSourceType.FILE:
+                instance.google_sheet = ""
+
+            if type_ == DataSourceType.GOOGLE_SHEET:
+                instance.file = None
+
+            instance.save()
 
 
 class WranglingScriptSerializer(serializers.ModelSerializer):
