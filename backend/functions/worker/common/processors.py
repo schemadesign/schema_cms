@@ -147,7 +147,7 @@ class SourceProcessor:
     datasource: DataSource
     copy_steps: bool = False
 
-    def read(self):
+    def read(self, script_process=False):
         pass
 
     def get_preview(self) -> dict:
@@ -180,7 +180,7 @@ class SourceProcessor:
 
 @dataclass
 class FileSourceProcessor(SourceProcessor):
-    def read(self):
+    def read(self, script_process=False):
         s3obj = get_s3_object(self.datasource.file)
         data_frame = read_file_to_data_frame(s3obj["Body"])
 
@@ -192,26 +192,30 @@ class FileSourceProcessor(SourceProcessor):
 
 @dataclass
 class GoogleSheetProcessor(SourceProcessor):
-    def read(self):
+    def read(self, script_process=False):
 
-        parsed_url = urlparse(self.datasource.google_sheet)
+        if not script_process:
+            parsed_url = urlparse(self.datasource.google_sheet)
 
-        fragment = parsed_url.fragment
+            fragment = parsed_url.fragment
 
-        if fragment.find("gid=") != -1:
-            gid = fragment.rsplit("gid=", 1)[1]
+            if fragment.find("gid=") != -1:
+                gid = fragment.rsplit("gid=", 1)[1]
+            else:
+                gid = None
+
+            url = f"https://{parsed_url.netloc}/{parsed_url.path}"
+
+            if url.endswith("edit"):
+                url = url[:-5]
+
+            extra_params = f"export?format=csv&gid={gid}" if gid else "export?format=csv"
+
+            sheet_url = url + "/" + extra_params
+            data_frame = read_file_to_data_frame(sheet_url)
         else:
-            gid = None
-
-        url = f"https://{parsed_url.netloc}/{parsed_url.path}"
-
-        if url.endswith("edit"):
-            url = url[:-5]
-
-        extra_params = f"export?format=csv&gid={gid}" if gid else "export?format=csv"
-
-        sheet_url = url + "/" + extra_params
-        data_frame = read_file_to_data_frame(sheet_url)
+            s3obj = get_s3_object(self.datasource.file)
+            data_frame = read_file_to_data_frame(s3obj["Body"])
 
         return data_frame
 
@@ -252,10 +256,10 @@ processors = {"file": FileSourceProcessor, "google_sheet": GoogleSheetProcessor}
 class JobProcessor:
     job: Job
 
-    def read(self):
+    def read(self, script_process=False):
         source_processor = self.get_source_processor()
 
-        return source_processor.read()
+        return source_processor.read(script_process)
 
     @staticmethod
     def get_preview(data_frame) -> dict:

@@ -71,7 +71,7 @@ def process_job(job_data: dict):
         processor = JobProcessor(job=current_job)
 
         try:
-            df = processor.read()
+            df = processor.read(script_process=True)
         except Exception as e:
             raise errors.JobLoadingSourceFileError(f"{e} @ loading source file")
 
