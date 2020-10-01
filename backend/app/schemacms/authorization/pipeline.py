@@ -47,18 +47,14 @@ def update_external_id(backend, details, user=None, *args, **kwargs):
     if not user:
         return None
 
+    backends = {"okta-oauth2": constants.UserSource.OKTA, "auth0": constants.UserSource.AUTH0}
+
     if not user.last_login and details.get("email_verified"):
         user.is_active = True
 
-    if backend.name == "okta-oauth2":
-        user.source = constants.UserSource.OKTA
-        user.external_id = details.get("user_id")
-        backend.strategy.storage.user.changed(user)
-
-    if backend.name == "auth0" and details["user_id"].startswith("auth0"):
-        user.source = constants.UserSource.AUTH0
-        user.external_id = details.get("user_id")
-        backend.strategy.storage.user.changed(user)
+    user.source = backends[backend.name]
+    user.external_id = details.get("user_id")
+    backend.strategy.storage.user.changed(user)
 
 
 def user_is_active(backend, user=None, *args, **kwargs):
