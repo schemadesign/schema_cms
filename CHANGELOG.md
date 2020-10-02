@@ -6,6 +6,17 @@
 
 ### Features
 
+## 1.8.1 (October 02, 2020) - Fixes
+
+### Fixes
+- First time login via Google
+- Google Sheets uploading
+- Google Sheets scripts running
+- Result and sources files download
+
+### Features
+- Google Sheets reimport button
+
 ## 1.8.0 (September 28, 2020) - Release
 
 ### Fixes
