@@ -107,7 +107,7 @@ async def column_image_scraping(df, current_step, column):
     """Fetch images from url in the data frame column, upload them to s3 and return new image url"""
 
     boto_session = aiobotocore.get_session()
-    async with boto_session.create_client("s3", endpoint_url=settings.AWS_S3_ENDPOINT_URL) as s3_client:
+    async with boto_session.create_client("s3", endpoint_url=settings.AWS_ENDPOINT_URL) as s3_client:
         async with aiohttp.ClientSession() as http_session:
             return await asyncio.gather(
                 *(

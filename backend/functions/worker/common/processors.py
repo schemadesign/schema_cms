@@ -37,7 +37,9 @@ def write_data_frame_to_csv_on_s3(data_frame, filename):
     csv_buffer = StringIO()
 
     csv_buffer.write(data_frame.to_csv(index=False))
-    s3_resource.Object(settings.AWS_STORAGE_BUCKET_NAME, filename).put(Body=csv_buffer.getvalue())
+    s3_resource.Object(settings.AWS_STORAGE_BUCKET_NAME, filename).put(
+        Body=csv_buffer.getvalue(), ACL="public-read"
+    )
 
 
 def write_data_frame_to_parquet_on_s3(data_frame, file_name):
@@ -145,7 +147,7 @@ class SourceProcessor:
     datasource: DataSource
     copy_steps: bool = False
 
-    def read(self):
+    def read(self, script_process=False):
         pass
 
     def get_preview(self) -> dict:
@@ -178,7 +180,7 @@ class SourceProcessor:
 
 @dataclass
 class FileSourceProcessor(SourceProcessor):
-    def read(self):
+    def read(self, script_process=False):
         s3obj = get_s3_object(self.datasource.file)
         data_frame = read_file_to_data_frame(s3obj["Body"])
 
@@ -190,28 +192,61 @@ class FileSourceProcessor(SourceProcessor):
 
 @dataclass
 class GoogleSheetProcessor(SourceProcessor):
-    def read(self):
+    def read(self, script_process=False):
 
-        parsed_url = urlparse(self.datasource.google_sheet)
+        if not script_process:
+            parsed_url = urlparse(self.datasource.google_sheet)
 
-        fragment = parsed_url.fragment
+            fragment = parsed_url.fragment
 
-        if fragment.find("gid=") != -1:
-            gid = fragment.rsplit("gid=", 1)[1]
+            if fragment.find("gid=") != -1:
+                gid = fragment.rsplit("gid=", 1)[1]
+            else:
+                gid = None
+
+            url = f"https://{parsed_url.netloc}/{parsed_url.path}"
+
+            if url.endswith("edit"):
+                url = url[:-5]
+
+            extra_params = f"export?format=csv&gid={gid}" if gid else "export?format=csv"
+
+            sheet_url = url + "/" + extra_params
+            data_frame = read_file_to_data_frame(sheet_url)
         else:
-            gid = None
-
-        url = f"https://{parsed_url.netloc}/{parsed_url.path}"
-
-        if url.endswith("edit"):
-            url = url[:-5]
-
-        extra_params = f"export?format=csv&gid={gid}" if gid else "export?format=csv"
-
-        sheet_url = url + "/" + extra_params
-        data_frame = read_file_to_data_frame(sheet_url)
+            s3obj = get_s3_object(self.datasource.file)
+            data_frame = read_file_to_data_frame(s3obj["Body"])
 
         return data_frame
+
+    def update(self):
+        preview_dict = self.get_preview()
+        preview_dict["source_file"] = self.get_source_file_name()
+
+        schemacms_api.update_datasource_meta(
+            datasource_pk=self.datasource.id,
+            copy_steps=self.copy_steps,
+            status=ProcessState.SUCCESS,
+            **preview_dict,
+        )
+
+        logger.info(f"Meta created - DataSource # {self.datasource.id}")
+
+    def save_source_file(self, data_frame):
+        file_name = self.get_source_file_name()
+        write_data_frame_to_csv_on_s3(data_frame, file_name)
+        write_data_frame_to_parquet_on_s3(data_frame, file_name)
+        logger.info(f"Google Sheet Source File Saved - DS # {self.datasource.id}")
+
+    def get_source_file_name(self):
+        return f"{self.datasource.id}/uploads/google_sheet_source_file.csv"
+
+    def get_preview(self) -> dict:
+        data_frame = self.read()
+        self.save_source_file(data_frame)
+        preview_data_dict = get_preview_data(data_frame)
+
+        return preview_data_dict
 
 
 processors = {"file": FileSourceProcessor, "google_sheet": GoogleSheetProcessor}
@@ -221,10 +256,10 @@ processors = {"file": FileSourceProcessor, "google_sheet": GoogleSheetProcessor}
 class JobProcessor:
     job: Job
 
-    def read(self):
+    def read(self, script_process=False):
         source_processor = self.get_source_processor()
 
-        return source_processor.read()
+        return source_processor.read(script_process)
 
     @staticmethod
     def get_preview(data_frame) -> dict:

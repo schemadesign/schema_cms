@@ -287,6 +287,7 @@ class DataSourceViewSet(BaseDataSourceView, ActionSerializerViewSetMixin, viewse
     def update_meta(self, request, *args, **kwargs):
         data_source = self.get_object()
         copy_steps = request.data.pop("copy_steps", None)
+
         status_ = request.data.get("status")
 
         serializer = self.get_serializer(data=request.data, context=data_source.meta_data)
@@ -295,6 +296,8 @@ class DataSourceViewSet(BaseDataSourceView, ActionSerializerViewSetMixin, viewse
         data_source.update_meta(**serializer.validated_data)
 
         if status_ == constants.ProcessingState.SUCCESS:
+            source_file = request.data.pop("source_file", None)
+
             with transaction.atomic():
                 fake_job = data_source.create_job(description=f"DataSource {data_source.id} file upload")
 
@@ -303,6 +306,10 @@ class DataSourceViewSet(BaseDataSourceView, ActionSerializerViewSetMixin, viewse
 
                     data_source.active_job = None
                     data_source.save(update_fields=["active_job"])
+
+                if data_source.google_sheet and source_file:
+                    data_source.file = source_file
+                    data_source.save(update_fields=["file"])
 
                 transaction.on_commit(fake_job.schedule)
 
@@ -360,6 +367,7 @@ class DataSourceJobDetailViewSet(
     )
     def update_meta(self, request, *args, **kwargs):
         job = self.get_object()
+
         serializer = self.get_serializer(data=request.data, context=job)
         serializer.is_valid(raise_exception=True)
         job.update_meta(**serializer.validated_data)
