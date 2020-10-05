@@ -2,24 +2,24 @@
 
 exports[`TagSearch: Component should render correctly 1`] = `
 <div
-  className="sc-AxjAm brQPEM"
+  className="sc-bdnylx hNPpjF"
 >
   <div
-    className="sc-AxhCb fNqLoA"
+    className="sc-hKFyIo fDdDXB"
   >
     <div
-      className="sc-AxirZ gMFktb"
+      className="sc-gtssRu keTtVk"
       title="Colors"
     >
       <span
-        className="sc-AxiKw jMeOOO"
+        className="sc-dlnjPT gyNzNF"
       >
         Category: 
       </span>
       Colors
     </div>
     <div
-      className="sc-AxgMl fFPQpl"
+      className="sc-jSFkmK"
     >
       <div
         className=" css-2b097c-container"
@@ -117,18 +117,18 @@ exports[`TagSearch: Component should render correctly 1`] = `
       </div>
     </div>
     <div
-      className="sc-AxirZ gMFktb"
+      className="sc-gtssRu keTtVk"
       title="Countries"
     >
       <span
-        className="sc-AxiKw jMeOOO"
+        className="sc-dlnjPT gyNzNF"
       >
         Category: 
       </span>
       Countries
     </div>
     <div
-      className="sc-AxgMl fFPQpl"
+      className="sc-jSFkmK"
     >
       <div
         className=" css-2b097c-container"
@@ -231,7 +231,7 @@ exports[`TagSearch: Component should render correctly 1`] = `
 
 exports[`TagSearch: Component should render correctly with no tag categories 1`] = `
 <div
-  className="sc-AxmLO ebBnYJ"
+  className="sc-fujyUd bXuLlE"
 >
   No Tags available
 </div>

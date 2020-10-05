@@ -2,10 +2,10 @@
 
 exports[`DataSourceStateList: Component should render correctly 1`] = `
 <div
-  className="sc-AxjAm eyXBQq"
+  className="sc-bdnylx bjiSkD"
 >
   <div
-    className="sc-fzqNJr gSkTZh"
+    className="sc-fnVYJo iyGUzP"
   >
     <div
       style={
@@ -22,10 +22,10 @@ exports[`DataSourceStateList: Component should render correctly 1`] = `
     >
       <div>
         <div
-          className="sc-fzoyAV lgNqAT"
+          className="sc-fFSRdu"
         >
           <h2
-            className="sc-fzoiQi cXcBhp"
+            className="sc-fKgIGh egBmWs"
             id="headerTitle"
             style={
               Object {
@@ -39,7 +39,7 @@ exports[`DataSourceStateList: Component should render correctly 1`] = `
             States
           </h2>
           <h1
-            className="sc-fzqARJ hkkDqn"
+            className="sc-bCwgka gPjBpj"
             id="headerSubtitle"
             style={
               Object {
@@ -121,16 +121,16 @@ exports[`DataSourceStateList: Component should render correctly 1`] = `
       }
     >
       <div
-        className="sc-fzoXzr hWWZOu"
+        className="sc-iemXMA cbmBLr"
       >
         <div
-          className="sc-fzoLag jcLfOH"
+          className="sc-bkbjAj etTmzb"
         >
           <div
-            className="sc-fzoyAV lgNqAT"
+            className="sc-fFSRdu"
           >
             <h2
-              className="sc-fzoiQi cXcBhp"
+              className="sc-fKgIGh egBmWs"
               id="headerTitle"
               style={
                 Object {
@@ -144,7 +144,7 @@ exports[`DataSourceStateList: Component should render correctly 1`] = `
               States
             </h2>
             <h1
-              className="sc-fzqARJ hkkDqn"
+              className="sc-bCwgka gPjBpj"
               id="headerSubtitle"
               style={
                 Object {
@@ -162,10 +162,10 @@ exports[`DataSourceStateList: Component should render correctly 1`] = `
           </div>
         </div>
         <div
-          className="sc-fzpjYC iUtPla"
+          className="sc-dIvqjp jHNMnZ"
         >
           <div
-            className="sc-fznxsB fnKkxe"
+            className="sc-hHEjAm jXFNyp"
           >
             <a
               href="/project/"
@@ -176,7 +176,7 @@ exports[`DataSourceStateList: Component should render correctly 1`] = `
             </a>
           </div>
           <div
-            className="sc-fznxsB fnKkxe"
+            className="sc-hHEjAm jXFNyp"
           >
             <a
               href="/user/"
@@ -187,7 +187,7 @@ exports[`DataSourceStateList: Component should render correctly 1`] = `
             </a>
           </div>
           <div
-            className="sc-fznxsB fnKkxe"
+            className="sc-hHEjAm jXFNyp"
           >
             <a
               href="/project/1"
@@ -198,7 +198,7 @@ exports[`DataSourceStateList: Component should render correctly 1`] = `
             </a>
           </div>
           <div
-            className="sc-fznxsB fnKkxe"
+            className="sc-hHEjAm jXFNyp"
           >
             <a
               href="/project/1/datasource"
@@ -209,7 +209,7 @@ exports[`DataSourceStateList: Component should render correctly 1`] = `
             </a>
           </div>
           <div
-            className="sc-fznxsB fnKkxe"
+            className="sc-hHEjAm jXFNyp"
           >
             <a
               href="/project/1/user"
@@ -220,7 +220,7 @@ exports[`DataSourceStateList: Component should render correctly 1`] = `
             </a>
           </div>
           <div
-            className="sc-fznxsB fnKkxe"
+            className="sc-hHEjAm jXFNyp"
           >
             <a
               href="/project/1/content"
@@ -231,7 +231,7 @@ exports[`DataSourceStateList: Component should render correctly 1`] = `
             </a>
           </div>
           <div
-            className="sc-fznxsB fnKkxe"
+            className="sc-hHEjAm jXFNyp"
           >
             <a
               href="/project/1/templates"
@@ -243,10 +243,10 @@ exports[`DataSourceStateList: Component should render correctly 1`] = `
           </div>
         </div>
         <div
-          className="sc-fzpjYC iUtPla"
+          className="sc-dIvqjp jHNMnZ"
         >
           <div
-            className="sc-fznxsB fnKkxe"
+            className="sc-hHEjAm jXFNyp"
           >
             <a
               href="/settings"
@@ -257,7 +257,7 @@ exports[`DataSourceStateList: Component should render correctly 1`] = `
             </a>
           </div>
           <div
-            className="sc-fznxsB fnKkxe"
+            className="sc-hHEjAm jXFNyp"
           >
             <div
               onClick={[Function]}
@@ -267,10 +267,10 @@ exports[`DataSourceStateList: Component should render correctly 1`] = `
           </div>
         </div>
         <div
-          className="sc-fznJRM dVCLTz"
+          className="sc-dlMBXb igfEaa"
         >
           <a
-            className="sc-fznWqX chwiPQ"
+            className="sc-kfYqjs juzpvf"
             href="/"
             id="aboutNavBtn"
             onClick={[Function]}
@@ -278,7 +278,7 @@ exports[`DataSourceStateList: Component should render correctly 1`] = `
             About Schema CMS
           </a>
           <a
-            className="sc-fznWqX chwiPQ"
+            className="sc-kfYqjs juzpvf"
             href="/"
             id="apiNavBtn"
             onClick={[Function]}
@@ -286,7 +286,7 @@ exports[`DataSourceStateList: Component should render correctly 1`] = `
             API Doc
           </a>
           <a
-            className="sc-fznWqX chwiPQ"
+            className="sc-kfYqjs juzpvf"
             href="/"
             id="repositoryNavBtn"
             onClick={[Function]}
@@ -340,13 +340,13 @@ exports[`DataSourceStateList: Component should render correctly 1`] = `
     </div>
   </div>
   <div
-    className="sc-AxmLO ezXQtR"
+    className="sc-fujyUd hUGKVk"
   >
     <div
-      className="sc-fzozJi gfgfVR"
+      className="sc-pNWxx feDhhx"
     >
       <h2
-        className="sc-fzoLsD EtCaA"
+        className="sc-jrsJCI jWarXk"
         id="desktopHeaderTitle"
         style={
           Object {
@@ -360,7 +360,7 @@ exports[`DataSourceStateList: Component should render correctly 1`] = `
         States
       </h2>
       <h1
-        className="sc-fzpans bvmaro"
+        className="sc-kEqYlL hEwDiZ"
         id="desktopHeaderSubtitle"
         style={
           Object {
@@ -377,19 +377,19 @@ exports[`DataSourceStateList: Component should render correctly 1`] = `
       </h1>
     </div>
     <div
-      className="sc-fzplWN kfkaqr"
+      className="sc-iqAbSa"
     >
       <div
-        className="sc-fznyAO gIedFz"
+        className="sc-crzoUp bCFbtA"
       >
         <div
-          className="sc-fznKkj fnWcEx"
+          className="sc-dIsAE jOTkjg"
         >
           <div
-            className="sc-fzokOt gAtMcM"
+            className="sc-ksluoS YJsJl"
           >
             <div
-              className="sc-fznZeY iXVIUH"
+              className="sc-bqGHjH dzsXnW"
               disabled={false}
               onClick={[Function]}
             >
@@ -410,16 +410,16 @@ exports[`DataSourceStateList: Component should render correctly 1`] = `
               </svg>
             </div>
             <div
-              className="sc-fzqBZW fOtemn"
+              className="sc-hBMVcZ fIReqG"
             >
               Source
             </div>
           </div>
           <div
-            className="sc-fzokOt gAtMcM"
+            className="sc-ksluoS YJsJl"
           >
             <div
-              className="sc-fznZeY iXVIUH"
+              className="sc-bqGHjH dzsXnW"
               disabled={false}
               onClick={[Function]}
             >
@@ -441,16 +441,16 @@ exports[`DataSourceStateList: Component should render correctly 1`] = `
               </svg>
             </div>
             <div
-              className="sc-fzqBZW fOtemn"
+              className="sc-hBMVcZ fIReqG"
             >
               Fields
             </div>
           </div>
           <div
-            className="sc-fzokOt gAtMcM"
+            className="sc-ksluoS YJsJl"
           >
             <div
-              className="sc-fznZeY iXVIUH"
+              className="sc-bqGHjH dzsXnW"
               disabled={false}
               onClick={[Function]}
             >
@@ -491,16 +491,16 @@ exports[`DataSourceStateList: Component should render correctly 1`] = `
               </svg>
             </div>
             <div
-              className="sc-fzqBZW fOtemn"
+              className="sc-hBMVcZ fIReqG"
             >
               Steps
             </div>
           </div>
           <div
-            className="sc-fzokOt gAtMcM"
+            className="sc-ksluoS YJsJl"
           >
             <div
-              className="sc-fznZeY iXVIUH"
+              className="sc-bqGHjH dzsXnW"
               disabled={false}
               onClick={[Function]}
             >
@@ -541,16 +541,16 @@ exports[`DataSourceStateList: Component should render correctly 1`] = `
               </svg>
             </div>
             <div
-              className="sc-fzqBZW fOtemn"
+              className="sc-hBMVcZ fIReqG"
             >
               Results
             </div>
           </div>
           <div
-            className="sc-fzokOt gAtMcM"
+            className="sc-ksluoS YJsJl"
           >
             <div
-              className="sc-fznZeY iXVIUH"
+              className="sc-bqGHjH dzsXnW"
               disabled={false}
               onClick={[Function]}
             >
@@ -574,16 +574,16 @@ exports[`DataSourceStateList: Component should render correctly 1`] = `
               </svg>
             </div>
             <div
-              className="sc-fzqBZW fOtemn"
+              className="sc-hBMVcZ fIReqG"
             >
               Filters
             </div>
           </div>
           <div
-            className="sc-fzokOt gAtMcM"
+            className="sc-ksluoS YJsJl"
           >
             <div
-              className="sc-fznZeY iXVIUH"
+              className="sc-bqGHjH dzsXnW"
               disabled={false}
               onClick={[Function]}
             >
@@ -618,16 +618,16 @@ exports[`DataSourceStateList: Component should render correctly 1`] = `
               </svg>
             </div>
             <div
-              className="sc-fzqBZW fOtemn"
+              className="sc-hBMVcZ fIReqG"
             >
               Tags
             </div>
           </div>
           <div
-            className="sc-fzokOt gAtMcM"
+            className="sc-ksluoS YJsJl"
           >
             <div
-              className="sc-fznZeY iXVIUH"
+              className="sc-bqGHjH dzsXnW"
               disabled={false}
               onClick={[Function]}
             >
@@ -648,16 +648,16 @@ exports[`DataSourceStateList: Component should render correctly 1`] = `
               </svg>
             </div>
             <div
-              className="sc-fzqBZW fOtemn"
+              className="sc-hBMVcZ fIReqG"
             >
               States
             </div>
           </div>
           <div
-            className="sc-fzokOt gAtMcM"
+            className="sc-ksluoS YJsJl"
           >
             <div
-              className="sc-fznZeY iXVIUH"
+              className="sc-bqGHjH dzsXnW"
               disabled={false}
               onClick={[Function]}
             >
@@ -678,7 +678,7 @@ exports[`DataSourceStateList: Component should render correctly 1`] = `
               </svg>
             </div>
             <div
-              className="sc-fzqBZW fOtemn"
+              className="sc-hBMVcZ fIReqG"
             >
               Metadata
             </div>
@@ -688,21 +688,21 @@ exports[`DataSourceStateList: Component should render correctly 1`] = `
     </div>
   </div>
   <div
-    className="sc-fzqPZZ hOPNKe"
+    className="sc-hiKfjK eALEwl"
   >
     <div
-      className="sc-fzoxKX jNWnEP"
+      className="sc-gXfWUo gZQoJo"
       id="tagsCounter"
     />
     2 states
     <div
-      className="sc-fzoxKX jNWnEP"
+      className="sc-gXfWUo gZQoJo"
     >
       <div
-        className="sc-fzoJMP cHHiiW"
+        className="sc-bBjRzc gvilNM"
       >
         <div
-          className="sc-fzqBkg kWPsqE"
+          className="sc-jJMGHv fzgotI"
         >
           <button
             disabled={false}
@@ -751,14 +751,14 @@ exports[`DataSourceStateList: Component should render correctly 1`] = `
     </div>
   </div>
   <div
-    className="sc-AxirZ gQtaEc"
+    className="sc-gtssRu gZvzhL"
   >
     <div
-      className="sc-AxiKw iVAWOC"
+      className="sc-dlnjPT bzbJRd"
       onClick={[Function]}
     >
       <div
-        className="sc-AxhCb jvjoIm"
+        className="sc-hKFyIo fzdKKz"
         title="name 1"
       >
         name 1
@@ -780,11 +780,11 @@ exports[`DataSourceStateList: Component should render correctly 1`] = `
       </svg>
     </div>
     <div
-      className="sc-AxiKw iVAWOC"
+      className="sc-dlnjPT bzbJRd"
       onClick={[Function]}
     >
       <div
-        className="sc-AxhCb jvjoIm"
+        className="sc-hKFyIo fzdKKz"
         title="name 2"
       >
         name 2
@@ -807,16 +807,16 @@ exports[`DataSourceStateList: Component should render correctly 1`] = `
     </div>
   </div>
   <div
-    className="sc-fznyAO bOucDf"
+    className="sc-crzoUp fAvqwc"
   >
     <div
-      className="sc-fznKkj fnWcEx"
+      className="sc-dIsAE jOTkjg"
     >
       <div
-        className="sc-fzokOt gAtMcM"
+        className="sc-ksluoS YJsJl"
       >
         <div
-          className="sc-fznZeY iXVIUH"
+          className="sc-bqGHjH dzsXnW"
           disabled={false}
           onClick={[Function]}
         >
@@ -837,16 +837,16 @@ exports[`DataSourceStateList: Component should render correctly 1`] = `
           </svg>
         </div>
         <div
-          className="sc-fzqBZW fOtemn"
+          className="sc-hBMVcZ fIReqG"
         >
           Source
         </div>
       </div>
       <div
-        className="sc-fzokOt gAtMcM"
+        className="sc-ksluoS YJsJl"
       >
         <div
-          className="sc-fznZeY iXVIUH"
+          className="sc-bqGHjH dzsXnW"
           disabled={false}
           onClick={[Function]}
         >
@@ -868,16 +868,16 @@ exports[`DataSourceStateList: Component should render correctly 1`] = `
           </svg>
         </div>
         <div
-          className="sc-fzqBZW fOtemn"
+          className="sc-hBMVcZ fIReqG"
         >
           Fields
         </div>
       </div>
       <div
-        className="sc-fzokOt gAtMcM"
+        className="sc-ksluoS YJsJl"
       >
         <div
-          className="sc-fznZeY iXVIUH"
+          className="sc-bqGHjH dzsXnW"
           disabled={false}
           onClick={[Function]}
         >
@@ -918,16 +918,16 @@ exports[`DataSourceStateList: Component should render correctly 1`] = `
           </svg>
         </div>
         <div
-          className="sc-fzqBZW fOtemn"
+          className="sc-hBMVcZ fIReqG"
         >
           Steps
         </div>
       </div>
       <div
-        className="sc-fzokOt gAtMcM"
+        className="sc-ksluoS YJsJl"
       >
         <div
-          className="sc-fznZeY iXVIUH"
+          className="sc-bqGHjH dzsXnW"
           disabled={false}
           onClick={[Function]}
         >
@@ -968,16 +968,16 @@ exports[`DataSourceStateList: Component should render correctly 1`] = `
           </svg>
         </div>
         <div
-          className="sc-fzqBZW fOtemn"
+          className="sc-hBMVcZ fIReqG"
         >
           Results
         </div>
       </div>
       <div
-        className="sc-fzokOt gAtMcM"
+        className="sc-ksluoS YJsJl"
       >
         <div
-          className="sc-fznZeY iXVIUH"
+          className="sc-bqGHjH dzsXnW"
           disabled={false}
           onClick={[Function]}
         >
@@ -1001,16 +1001,16 @@ exports[`DataSourceStateList: Component should render correctly 1`] = `
           </svg>
         </div>
         <div
-          className="sc-fzqBZW fOtemn"
+          className="sc-hBMVcZ fIReqG"
         >
           Filters
         </div>
       </div>
       <div
-        className="sc-fzokOt gAtMcM"
+        className="sc-ksluoS YJsJl"
       >
         <div
-          className="sc-fznZeY iXVIUH"
+          className="sc-bqGHjH dzsXnW"
           disabled={false}
           onClick={[Function]}
         >
@@ -1045,16 +1045,16 @@ exports[`DataSourceStateList: Component should render correctly 1`] = `
           </svg>
         </div>
         <div
-          className="sc-fzqBZW fOtemn"
+          className="sc-hBMVcZ fIReqG"
         >
           Tags
         </div>
       </div>
       <div
-        className="sc-fzokOt gAtMcM"
+        className="sc-ksluoS YJsJl"
       >
         <div
-          className="sc-fznZeY iXVIUH"
+          className="sc-bqGHjH dzsXnW"
           disabled={false}
           onClick={[Function]}
         >
@@ -1075,16 +1075,16 @@ exports[`DataSourceStateList: Component should render correctly 1`] = `
           </svg>
         </div>
         <div
-          className="sc-fzqBZW fOtemn"
+          className="sc-hBMVcZ fIReqG"
         >
           States
         </div>
       </div>
       <div
-        className="sc-fzokOt gAtMcM"
+        className="sc-ksluoS YJsJl"
       >
         <div
-          className="sc-fznZeY iXVIUH"
+          className="sc-bqGHjH dzsXnW"
           disabled={false}
           onClick={[Function]}
         >
@@ -1105,7 +1105,7 @@ exports[`DataSourceStateList: Component should render correctly 1`] = `
           </svg>
         </div>
         <div
-          className="sc-fzqBZW fOtemn"
+          className="sc-hBMVcZ fIReqG"
         >
           Metadata
         </div>
@@ -1117,10 +1117,10 @@ exports[`DataSourceStateList: Component should render correctly 1`] = `
 
 exports[`DataSourceStateList: Component should render correctly when no tags 1`] = `
 <div
-  className="sc-AxjAm eyXBQq"
+  className="sc-bdnylx bjiSkD"
 >
   <div
-    className="sc-fzqNJr gSkTZh"
+    className="sc-fnVYJo iyGUzP"
   >
     <div
       style={
@@ -1137,10 +1137,10 @@ exports[`DataSourceStateList: Component should render correctly when no tags 1`]
     >
       <div>
         <div
-          className="sc-fzoyAV lgNqAT"
+          className="sc-fFSRdu"
         >
           <h2
-            className="sc-fzoiQi cXcBhp"
+            className="sc-fKgIGh egBmWs"
             id="headerTitle"
             style={
               Object {
@@ -1154,7 +1154,7 @@ exports[`DataSourceStateList: Component should render correctly when no tags 1`]
             States
           </h2>
           <h1
-            className="sc-fzqARJ hkkDqn"
+            className="sc-bCwgka gPjBpj"
             id="headerSubtitle"
             style={
               Object {
@@ -1236,16 +1236,16 @@ exports[`DataSourceStateList: Component should render correctly when no tags 1`]
       }
     >
       <div
-        className="sc-fzoXzr hWWZOu"
+        className="sc-iemXMA cbmBLr"
       >
         <div
-          className="sc-fzoLag jcLfOH"
+          className="sc-bkbjAj etTmzb"
         >
           <div
-            className="sc-fzoyAV lgNqAT"
+            className="sc-fFSRdu"
           >
             <h2
-              className="sc-fzoiQi cXcBhp"
+              className="sc-fKgIGh egBmWs"
               id="headerTitle"
               style={
                 Object {
@@ -1259,7 +1259,7 @@ exports[`DataSourceStateList: Component should render correctly when no tags 1`]
               States
             </h2>
             <h1
-              className="sc-fzqARJ hkkDqn"
+              className="sc-bCwgka gPjBpj"
               id="headerSubtitle"
               style={
                 Object {
@@ -1277,10 +1277,10 @@ exports[`DataSourceStateList: Component should render correctly when no tags 1`]
           </div>
         </div>
         <div
-          className="sc-fzpjYC iUtPla"
+          className="sc-dIvqjp jHNMnZ"
         >
           <div
-            className="sc-fznxsB fnKkxe"
+            className="sc-hHEjAm jXFNyp"
           >
             <a
               href="/project/"
@@ -1291,7 +1291,7 @@ exports[`DataSourceStateList: Component should render correctly when no tags 1`]
             </a>
           </div>
           <div
-            className="sc-fznxsB fnKkxe"
+            className="sc-hHEjAm jXFNyp"
           >
             <a
               href="/user/"
@@ -1302,7 +1302,7 @@ exports[`DataSourceStateList: Component should render correctly when no tags 1`]
             </a>
           </div>
           <div
-            className="sc-fznxsB fnKkxe"
+            className="sc-hHEjAm jXFNyp"
           >
             <a
               href="/project/1"
@@ -1313,7 +1313,7 @@ exports[`DataSourceStateList: Component should render correctly when no tags 1`]
             </a>
           </div>
           <div
-            className="sc-fznxsB fnKkxe"
+            className="sc-hHEjAm jXFNyp"
           >
             <a
               href="/project/1/datasource"
@@ -1324,7 +1324,7 @@ exports[`DataSourceStateList: Component should render correctly when no tags 1`]
             </a>
           </div>
           <div
-            className="sc-fznxsB fnKkxe"
+            className="sc-hHEjAm jXFNyp"
           >
             <a
               href="/project/1/user"
@@ -1335,7 +1335,7 @@ exports[`DataSourceStateList: Component should render correctly when no tags 1`]
             </a>
           </div>
           <div
-            className="sc-fznxsB fnKkxe"
+            className="sc-hHEjAm jXFNyp"
           >
             <a
               href="/project/1/content"
@@ -1346,7 +1346,7 @@ exports[`DataSourceStateList: Component should render correctly when no tags 1`]
             </a>
           </div>
           <div
-            className="sc-fznxsB fnKkxe"
+            className="sc-hHEjAm jXFNyp"
           >
             <a
               href="/project/1/templates"
@@ -1358,10 +1358,10 @@ exports[`DataSourceStateList: Component should render correctly when no tags 1`]
           </div>
         </div>
         <div
-          className="sc-fzpjYC iUtPla"
+          className="sc-dIvqjp jHNMnZ"
         >
           <div
-            className="sc-fznxsB fnKkxe"
+            className="sc-hHEjAm jXFNyp"
           >
             <a
               href="/settings"
@@ -1372,7 +1372,7 @@ exports[`DataSourceStateList: Component should render correctly when no tags 1`]
             </a>
           </div>
           <div
-            className="sc-fznxsB fnKkxe"
+            className="sc-hHEjAm jXFNyp"
           >
             <div
               onClick={[Function]}
@@ -1382,10 +1382,10 @@ exports[`DataSourceStateList: Component should render correctly when no tags 1`]
           </div>
         </div>
         <div
-          className="sc-fznJRM dVCLTz"
+          className="sc-dlMBXb igfEaa"
         >
           <a
-            className="sc-fznWqX chwiPQ"
+            className="sc-kfYqjs juzpvf"
             href="/"
             id="aboutNavBtn"
             onClick={[Function]}
@@ -1393,7 +1393,7 @@ exports[`DataSourceStateList: Component should render correctly when no tags 1`]
             About Schema CMS
           </a>
           <a
-            className="sc-fznWqX chwiPQ"
+            className="sc-kfYqjs juzpvf"
             href="/"
             id="apiNavBtn"
             onClick={[Function]}
@@ -1401,7 +1401,7 @@ exports[`DataSourceStateList: Component should render correctly when no tags 1`]
             API Doc
           </a>
           <a
-            className="sc-fznWqX chwiPQ"
+            className="sc-kfYqjs juzpvf"
             href="/"
             id="repositoryNavBtn"
             onClick={[Function]}
@@ -1455,13 +1455,13 @@ exports[`DataSourceStateList: Component should render correctly when no tags 1`]
     </div>
   </div>
   <div
-    className="sc-AxmLO ezXQtR"
+    className="sc-fujyUd hUGKVk"
   >
     <div
-      className="sc-fzozJi gfgfVR"
+      className="sc-pNWxx feDhhx"
     >
       <h2
-        className="sc-fzoLsD EtCaA"
+        className="sc-jrsJCI jWarXk"
         id="desktopHeaderTitle"
         style={
           Object {
@@ -1475,7 +1475,7 @@ exports[`DataSourceStateList: Component should render correctly when no tags 1`]
         States
       </h2>
       <h1
-        className="sc-fzpans bvmaro"
+        className="sc-kEqYlL hEwDiZ"
         id="desktopHeaderSubtitle"
         style={
           Object {
@@ -1492,19 +1492,19 @@ exports[`DataSourceStateList: Component should render correctly when no tags 1`]
       </h1>
     </div>
     <div
-      className="sc-fzplWN kfkaqr"
+      className="sc-iqAbSa"
     >
       <div
-        className="sc-fznyAO gIedFz"
+        className="sc-crzoUp bCFbtA"
       >
         <div
-          className="sc-fznKkj fnWcEx"
+          className="sc-dIsAE jOTkjg"
         >
           <div
-            className="sc-fzokOt gAtMcM"
+            className="sc-ksluoS YJsJl"
           >
             <div
-              className="sc-fznZeY iXVIUH"
+              className="sc-bqGHjH dzsXnW"
               disabled={false}
               onClick={[Function]}
             >
@@ -1525,16 +1525,16 @@ exports[`DataSourceStateList: Component should render correctly when no tags 1`]
               </svg>
             </div>
             <div
-              className="sc-fzqBZW fOtemn"
+              className="sc-hBMVcZ fIReqG"
             >
               Source
             </div>
           </div>
           <div
-            className="sc-fzokOt gAtMcM"
+            className="sc-ksluoS YJsJl"
           >
             <div
-              className="sc-fznZeY iXVIUH"
+              className="sc-bqGHjH dzsXnW"
               disabled={false}
               onClick={[Function]}
             >
@@ -1556,16 +1556,16 @@ exports[`DataSourceStateList: Component should render correctly when no tags 1`]
               </svg>
             </div>
             <div
-              className="sc-fzqBZW fOtemn"
+              className="sc-hBMVcZ fIReqG"
             >
               Fields
             </div>
           </div>
           <div
-            className="sc-fzokOt gAtMcM"
+            className="sc-ksluoS YJsJl"
           >
             <div
-              className="sc-fznZeY iXVIUH"
+              className="sc-bqGHjH dzsXnW"
               disabled={false}
               onClick={[Function]}
             >
@@ -1606,16 +1606,16 @@ exports[`DataSourceStateList: Component should render correctly when no tags 1`]
               </svg>
             </div>
             <div
-              className="sc-fzqBZW fOtemn"
+              className="sc-hBMVcZ fIReqG"
             >
               Steps
             </div>
           </div>
           <div
-            className="sc-fzokOt gAtMcM"
+            className="sc-ksluoS YJsJl"
           >
             <div
-              className="sc-fznZeY iXVIUH"
+              className="sc-bqGHjH dzsXnW"
               disabled={false}
               onClick={[Function]}
             >
@@ -1656,16 +1656,16 @@ exports[`DataSourceStateList: Component should render correctly when no tags 1`]
               </svg>
             </div>
             <div
-              className="sc-fzqBZW fOtemn"
+              className="sc-hBMVcZ fIReqG"
             >
               Results
             </div>
           </div>
           <div
-            className="sc-fzokOt gAtMcM"
+            className="sc-ksluoS YJsJl"
           >
             <div
-              className="sc-fznZeY iXVIUH"
+              className="sc-bqGHjH dzsXnW"
               disabled={false}
               onClick={[Function]}
             >
@@ -1689,16 +1689,16 @@ exports[`DataSourceStateList: Component should render correctly when no tags 1`]
               </svg>
             </div>
             <div
-              className="sc-fzqBZW fOtemn"
+              className="sc-hBMVcZ fIReqG"
             >
               Filters
             </div>
           </div>
           <div
-            className="sc-fzokOt gAtMcM"
+            className="sc-ksluoS YJsJl"
           >
             <div
-              className="sc-fznZeY iXVIUH"
+              className="sc-bqGHjH dzsXnW"
               disabled={false}
               onClick={[Function]}
             >
@@ -1733,16 +1733,16 @@ exports[`DataSourceStateList: Component should render correctly when no tags 1`]
               </svg>
             </div>
             <div
-              className="sc-fzqBZW fOtemn"
+              className="sc-hBMVcZ fIReqG"
             >
               Tags
             </div>
           </div>
           <div
-            className="sc-fzokOt gAtMcM"
+            className="sc-ksluoS YJsJl"
           >
             <div
-              className="sc-fznZeY iXVIUH"
+              className="sc-bqGHjH dzsXnW"
               disabled={false}
               onClick={[Function]}
             >
@@ -1763,16 +1763,16 @@ exports[`DataSourceStateList: Component should render correctly when no tags 1`]
               </svg>
             </div>
             <div
-              className="sc-fzqBZW fOtemn"
+              className="sc-hBMVcZ fIReqG"
             >
               States
             </div>
           </div>
           <div
-            className="sc-fzokOt gAtMcM"
+            className="sc-ksluoS YJsJl"
           >
             <div
-              className="sc-fznZeY iXVIUH"
+              className="sc-bqGHjH dzsXnW"
               disabled={false}
               onClick={[Function]}
             >
@@ -1793,7 +1793,7 @@ exports[`DataSourceStateList: Component should render correctly when no tags 1`]
               </svg>
             </div>
             <div
-              className="sc-fzqBZW fOtemn"
+              className="sc-hBMVcZ fIReqG"
             >
               Metadata
             </div>
@@ -1803,21 +1803,21 @@ exports[`DataSourceStateList: Component should render correctly when no tags 1`]
     </div>
   </div>
   <div
-    className="sc-fzqPZZ hOPNKe"
+    className="sc-hiKfjK eALEwl"
   >
     <div
-      className="sc-fzoxKX jNWnEP"
+      className="sc-gXfWUo gZQoJo"
       id="tagsCounter"
     />
     0 states
     <div
-      className="sc-fzoxKX jNWnEP"
+      className="sc-gXfWUo gZQoJo"
     >
       <div
-        className="sc-fzoJMP cHHiiW"
+        className="sc-bBjRzc gvilNM"
       >
         <div
-          className="sc-fzqBkg kWPsqE"
+          className="sc-jJMGHv fzgotI"
         >
           <button
             disabled={false}
@@ -1866,21 +1866,21 @@ exports[`DataSourceStateList: Component should render correctly when no tags 1`]
     </div>
   </div>
   <div
-    className="sc-Axmtr gaMKzQ"
+    className="sc-iCoHVE fjQDMD"
   >
     No States
   </div>
   <div
-    className="sc-fznyAO bOucDf"
+    className="sc-crzoUp fAvqwc"
   >
     <div
-      className="sc-fznKkj fnWcEx"
+      className="sc-dIsAE jOTkjg"
     >
       <div
-        className="sc-fzokOt gAtMcM"
+        className="sc-ksluoS YJsJl"
       >
         <div
-          className="sc-fznZeY iXVIUH"
+          className="sc-bqGHjH dzsXnW"
           disabled={false}
           onClick={[Function]}
         >
@@ -1901,16 +1901,16 @@ exports[`DataSourceStateList: Component should render correctly when no tags 1`]
           </svg>
         </div>
         <div
-          className="sc-fzqBZW fOtemn"
+          className="sc-hBMVcZ fIReqG"
         >
           Source
         </div>
       </div>
       <div
-        className="sc-fzokOt gAtMcM"
+        className="sc-ksluoS YJsJl"
       >
         <div
-          className="sc-fznZeY iXVIUH"
+          className="sc-bqGHjH dzsXnW"
           disabled={false}
           onClick={[Function]}
         >
@@ -1932,16 +1932,16 @@ exports[`DataSourceStateList: Component should render correctly when no tags 1`]
           </svg>
         </div>
         <div
-          className="sc-fzqBZW fOtemn"
+          className="sc-hBMVcZ fIReqG"
         >
           Fields
         </div>
       </div>
       <div
-        className="sc-fzokOt gAtMcM"
+        className="sc-ksluoS YJsJl"
       >
         <div
-          className="sc-fznZeY iXVIUH"
+          className="sc-bqGHjH dzsXnW"
           disabled={false}
           onClick={[Function]}
         >
@@ -1982,16 +1982,16 @@ exports[`DataSourceStateList: Component should render correctly when no tags 1`]
           </svg>
         </div>
         <div
-          className="sc-fzqBZW fOtemn"
+          className="sc-hBMVcZ fIReqG"
         >
           Steps
         </div>
       </div>
       <div
-        className="sc-fzokOt gAtMcM"
+        className="sc-ksluoS YJsJl"
       >
         <div
-          className="sc-fznZeY iXVIUH"
+          className="sc-bqGHjH dzsXnW"
           disabled={false}
           onClick={[Function]}
         >
@@ -2032,16 +2032,16 @@ exports[`DataSourceStateList: Component should render correctly when no tags 1`]
           </svg>
         </div>
         <div
-          className="sc-fzqBZW fOtemn"
+          className="sc-hBMVcZ fIReqG"
         >
           Results
         </div>
       </div>
       <div
-        className="sc-fzokOt gAtMcM"
+        className="sc-ksluoS YJsJl"
       >
         <div
-          className="sc-fznZeY iXVIUH"
+          className="sc-bqGHjH dzsXnW"
           disabled={false}
           onClick={[Function]}
         >
@@ -2065,16 +2065,16 @@ exports[`DataSourceStateList: Component should render correctly when no tags 1`]
           </svg>
         </div>
         <div
-          className="sc-fzqBZW fOtemn"
+          className="sc-hBMVcZ fIReqG"
         >
           Filters
         </div>
       </div>
       <div
-        className="sc-fzokOt gAtMcM"
+        className="sc-ksluoS YJsJl"
       >
         <div
-          className="sc-fznZeY iXVIUH"
+          className="sc-bqGHjH dzsXnW"
           disabled={false}
           onClick={[Function]}
         >
@@ -2109,16 +2109,16 @@ exports[`DataSourceStateList: Component should render correctly when no tags 1`]
           </svg>
         </div>
         <div
-          className="sc-fzqBZW fOtemn"
+          className="sc-hBMVcZ fIReqG"
         >
           Tags
         </div>
       </div>
       <div
-        className="sc-fzokOt gAtMcM"
+        className="sc-ksluoS YJsJl"
       >
         <div
-          className="sc-fznZeY iXVIUH"
+          className="sc-bqGHjH dzsXnW"
           disabled={false}
           onClick={[Function]}
         >
@@ -2139,16 +2139,16 @@ exports[`DataSourceStateList: Component should render correctly when no tags 1`]
           </svg>
         </div>
         <div
-          className="sc-fzqBZW fOtemn"
+          className="sc-hBMVcZ fIReqG"
         >
           States
         </div>
       </div>
       <div
-        className="sc-fzokOt gAtMcM"
+        className="sc-ksluoS YJsJl"
       >
         <div
-          className="sc-fznZeY iXVIUH"
+          className="sc-bqGHjH dzsXnW"
           disabled={false}
           onClick={[Function]}
         >
@@ -2169,7 +2169,7 @@ exports[`DataSourceStateList: Component should render correctly when no tags 1`]
           </svg>
         </div>
         <div
-          className="sc-fzqBZW fOtemn"
+          className="sc-hBMVcZ fIReqG"
         >
           Metadata
         </div>
@@ -2181,10 +2181,10 @@ exports[`DataSourceStateList: Component should render correctly when no tags 1`]
 
 exports[`DataSourceStateList: Component should render correctly with loader 1`] = `
 <div
-  className="sc-AxjAm eyXBQq"
+  className="sc-bdnylx bjiSkD"
 >
   <div
-    className="sc-fzqNJr gSkTZh"
+    className="sc-fnVYJo iyGUzP"
   >
     <div
       style={
@@ -2201,10 +2201,10 @@ exports[`DataSourceStateList: Component should render correctly with loader 1`] 
     >
       <div>
         <div
-          className="sc-fzoyAV lgNqAT"
+          className="sc-fFSRdu"
         >
           <h2
-            className="sc-fzoiQi cXcBhp"
+            className="sc-fKgIGh egBmWs"
             id="headerTitle"
             style={
               Object {
@@ -2218,7 +2218,7 @@ exports[`DataSourceStateList: Component should render correctly with loader 1`] 
             States
           </h2>
           <h1
-            className="sc-fzqARJ hkkDqn"
+            className="sc-bCwgka gPjBpj"
             id="headerSubtitle"
             style={
               Object {
@@ -2300,16 +2300,16 @@ exports[`DataSourceStateList: Component should render correctly with loader 1`] 
       }
     >
       <div
-        className="sc-fzoXzr hWWZOu"
+        className="sc-iemXMA cbmBLr"
       >
         <div
-          className="sc-fzoLag jcLfOH"
+          className="sc-bkbjAj etTmzb"
         >
           <div
-            className="sc-fzoyAV lgNqAT"
+            className="sc-fFSRdu"
           >
             <h2
-              className="sc-fzoiQi cXcBhp"
+              className="sc-fKgIGh egBmWs"
               id="headerTitle"
               style={
                 Object {
@@ -2323,7 +2323,7 @@ exports[`DataSourceStateList: Component should render correctly with loader 1`] 
               States
             </h2>
             <h1
-              className="sc-fzqARJ hkkDqn"
+              className="sc-bCwgka gPjBpj"
               id="headerSubtitle"
               style={
                 Object {
@@ -2341,10 +2341,10 @@ exports[`DataSourceStateList: Component should render correctly with loader 1`] 
           </div>
         </div>
         <div
-          className="sc-fzpjYC iUtPla"
+          className="sc-dIvqjp jHNMnZ"
         >
           <div
-            className="sc-fznxsB fnKkxe"
+            className="sc-hHEjAm jXFNyp"
           >
             <a
               href="/project/"
@@ -2355,7 +2355,7 @@ exports[`DataSourceStateList: Component should render correctly with loader 1`] 
             </a>
           </div>
           <div
-            className="sc-fznxsB fnKkxe"
+            className="sc-hHEjAm jXFNyp"
           >
             <a
               href="/user/"
@@ -2366,7 +2366,7 @@ exports[`DataSourceStateList: Component should render correctly with loader 1`] 
             </a>
           </div>
           <div
-            className="sc-fznxsB fnKkxe"
+            className="sc-hHEjAm jXFNyp"
           >
             <a
               href="/project/1"
@@ -2377,7 +2377,7 @@ exports[`DataSourceStateList: Component should render correctly with loader 1`] 
             </a>
           </div>
           <div
-            className="sc-fznxsB fnKkxe"
+            className="sc-hHEjAm jXFNyp"
           >
             <a
               href="/project/1/datasource"
@@ -2388,7 +2388,7 @@ exports[`DataSourceStateList: Component should render correctly with loader 1`] 
             </a>
           </div>
           <div
-            className="sc-fznxsB fnKkxe"
+            className="sc-hHEjAm jXFNyp"
           >
             <a
               href="/project/1/user"
@@ -2399,7 +2399,7 @@ exports[`DataSourceStateList: Component should render correctly with loader 1`] 
             </a>
           </div>
           <div
-            className="sc-fznxsB fnKkxe"
+            className="sc-hHEjAm jXFNyp"
           >
             <a
               href="/project/1/content"
@@ -2410,7 +2410,7 @@ exports[`DataSourceStateList: Component should render correctly with loader 1`] 
             </a>
           </div>
           <div
-            className="sc-fznxsB fnKkxe"
+            className="sc-hHEjAm jXFNyp"
           >
             <a
               href="/project/1/templates"
@@ -2422,10 +2422,10 @@ exports[`DataSourceStateList: Component should render correctly with loader 1`] 
           </div>
         </div>
         <div
-          className="sc-fzpjYC iUtPla"
+          className="sc-dIvqjp jHNMnZ"
         >
           <div
-            className="sc-fznxsB fnKkxe"
+            className="sc-hHEjAm jXFNyp"
           >
             <a
               href="/settings"
@@ -2436,7 +2436,7 @@ exports[`DataSourceStateList: Component should render correctly with loader 1`] 
             </a>
           </div>
           <div
-            className="sc-fznxsB fnKkxe"
+            className="sc-hHEjAm jXFNyp"
           >
             <div
               onClick={[Function]}
@@ -2446,10 +2446,10 @@ exports[`DataSourceStateList: Component should render correctly with loader 1`] 
           </div>
         </div>
         <div
-          className="sc-fznJRM dVCLTz"
+          className="sc-dlMBXb igfEaa"
         >
           <a
-            className="sc-fznWqX chwiPQ"
+            className="sc-kfYqjs juzpvf"
             href="/"
             id="aboutNavBtn"
             onClick={[Function]}
@@ -2457,7 +2457,7 @@ exports[`DataSourceStateList: Component should render correctly with loader 1`] 
             About Schema CMS
           </a>
           <a
-            className="sc-fznWqX chwiPQ"
+            className="sc-kfYqjs juzpvf"
             href="/"
             id="apiNavBtn"
             onClick={[Function]}
@@ -2465,7 +2465,7 @@ exports[`DataSourceStateList: Component should render correctly with loader 1`] 
             API Doc
           </a>
           <a
-            className="sc-fznWqX chwiPQ"
+            className="sc-kfYqjs juzpvf"
             href="/"
             id="repositoryNavBtn"
             onClick={[Function]}
@@ -2519,13 +2519,13 @@ exports[`DataSourceStateList: Component should render correctly with loader 1`] 
     </div>
   </div>
   <div
-    className="sc-AxmLO ezXQtR"
+    className="sc-fujyUd hUGKVk"
   >
     <div
-      className="sc-fzozJi gfgfVR"
+      className="sc-pNWxx feDhhx"
     >
       <h2
-        className="sc-fzoLsD EtCaA"
+        className="sc-jrsJCI jWarXk"
         id="desktopHeaderTitle"
         style={
           Object {
@@ -2539,7 +2539,7 @@ exports[`DataSourceStateList: Component should render correctly with loader 1`] 
         States
       </h2>
       <h1
-        className="sc-fzpans bvmaro"
+        className="sc-kEqYlL hEwDiZ"
         id="desktopHeaderSubtitle"
         style={
           Object {
@@ -2556,19 +2556,19 @@ exports[`DataSourceStateList: Component should render correctly with loader 1`] 
       </h1>
     </div>
     <div
-      className="sc-fzplWN kfkaqr"
+      className="sc-iqAbSa"
     >
       <div
-        className="sc-fznyAO gIedFz"
+        className="sc-crzoUp bCFbtA"
       >
         <div
-          className="sc-fznKkj fnWcEx"
+          className="sc-dIsAE jOTkjg"
         >
           <div
-            className="sc-fzokOt gAtMcM"
+            className="sc-ksluoS YJsJl"
           >
             <div
-              className="sc-fznZeY iXVIUH"
+              className="sc-bqGHjH dzsXnW"
               disabled={false}
               onClick={[Function]}
             >
@@ -2589,16 +2589,16 @@ exports[`DataSourceStateList: Component should render correctly with loader 1`] 
               </svg>
             </div>
             <div
-              className="sc-fzqBZW fOtemn"
+              className="sc-hBMVcZ fIReqG"
             >
               Source
             </div>
           </div>
           <div
-            className="sc-fzokOt gAtMcM"
+            className="sc-ksluoS YJsJl"
           >
             <div
-              className="sc-fznZeY iXVIUH"
+              className="sc-bqGHjH dzsXnW"
               disabled={false}
               onClick={[Function]}
             >
@@ -2620,16 +2620,16 @@ exports[`DataSourceStateList: Component should render correctly with loader 1`] 
               </svg>
             </div>
             <div
-              className="sc-fzqBZW fOtemn"
+              className="sc-hBMVcZ fIReqG"
             >
               Fields
             </div>
           </div>
           <div
-            className="sc-fzokOt gAtMcM"
+            className="sc-ksluoS YJsJl"
           >
             <div
-              className="sc-fznZeY iXVIUH"
+              className="sc-bqGHjH dzsXnW"
               disabled={false}
               onClick={[Function]}
             >
@@ -2670,16 +2670,16 @@ exports[`DataSourceStateList: Component should render correctly with loader 1`] 
               </svg>
             </div>
             <div
-              className="sc-fzqBZW fOtemn"
+              className="sc-hBMVcZ fIReqG"
             >
               Steps
             </div>
           </div>
           <div
-            className="sc-fzokOt gAtMcM"
+            className="sc-ksluoS YJsJl"
           >
             <div
-              className="sc-fznZeY iXVIUH"
+              className="sc-bqGHjH dzsXnW"
               disabled={false}
               onClick={[Function]}
             >
@@ -2720,16 +2720,16 @@ exports[`DataSourceStateList: Component should render correctly with loader 1`] 
               </svg>
             </div>
             <div
-              className="sc-fzqBZW fOtemn"
+              className="sc-hBMVcZ fIReqG"
             >
               Results
             </div>
           </div>
           <div
-            className="sc-fzokOt gAtMcM"
+            className="sc-ksluoS YJsJl"
           >
             <div
-              className="sc-fznZeY iXVIUH"
+              className="sc-bqGHjH dzsXnW"
               disabled={false}
               onClick={[Function]}
             >
@@ -2753,16 +2753,16 @@ exports[`DataSourceStateList: Component should render correctly with loader 1`] 
               </svg>
             </div>
             <div
-              className="sc-fzqBZW fOtemn"
+              className="sc-hBMVcZ fIReqG"
             >
               Filters
             </div>
           </div>
           <div
-            className="sc-fzokOt gAtMcM"
+            className="sc-ksluoS YJsJl"
           >
             <div
-              className="sc-fznZeY iXVIUH"
+              className="sc-bqGHjH dzsXnW"
               disabled={false}
               onClick={[Function]}
             >
@@ -2797,16 +2797,16 @@ exports[`DataSourceStateList: Component should render correctly with loader 1`] 
               </svg>
             </div>
             <div
-              className="sc-fzqBZW fOtemn"
+              className="sc-hBMVcZ fIReqG"
             >
               Tags
             </div>
           </div>
           <div
-            className="sc-fzokOt gAtMcM"
+            className="sc-ksluoS YJsJl"
           >
             <div
-              className="sc-fznZeY iXVIUH"
+              className="sc-bqGHjH dzsXnW"
               disabled={false}
               onClick={[Function]}
             >
@@ -2827,16 +2827,16 @@ exports[`DataSourceStateList: Component should render correctly with loader 1`] 
               </svg>
             </div>
             <div
-              className="sc-fzqBZW fOtemn"
+              className="sc-hBMVcZ fIReqG"
             >
               States
             </div>
           </div>
           <div
-            className="sc-fzokOt gAtMcM"
+            className="sc-ksluoS YJsJl"
           >
             <div
-              className="sc-fznZeY iXVIUH"
+              className="sc-bqGHjH dzsXnW"
               disabled={false}
               onClick={[Function]}
             >
@@ -2857,7 +2857,7 @@ exports[`DataSourceStateList: Component should render correctly with loader 1`] 
               </svg>
             </div>
             <div
-              className="sc-fzqBZW fOtemn"
+              className="sc-hBMVcZ fIReqG"
             >
               Metadata
             </div>
@@ -2867,21 +2867,21 @@ exports[`DataSourceStateList: Component should render correctly with loader 1`] 
     </div>
   </div>
   <div
-    className="sc-fzqPZZ hOPNKe"
+    className="sc-hiKfjK eALEwl"
   >
     <div
-      className="sc-fzoxKX jNWnEP"
+      className="sc-gXfWUo gZQoJo"
       id="tagsCounter"
     />
     2 states
     <div
-      className="sc-fzoxKX jNWnEP"
+      className="sc-gXfWUo gZQoJo"
     >
       <div
-        className="sc-fzoJMP cHHiiW"
+        className="sc-bBjRzc gvilNM"
       >
         <div
-          className="sc-fzqBkg kWPsqE"
+          className="sc-jJMGHv fzgotI"
         >
           <button
             disabled={false}
@@ -2930,14 +2930,14 @@ exports[`DataSourceStateList: Component should render correctly with loader 1`] 
     </div>
   </div>
   <div
-    className="sc-AxirZ gQtaEc"
+    className="sc-gtssRu gZvzhL"
   >
     <div
-      className="sc-AxiKw iVAWOC"
+      className="sc-dlnjPT bzbJRd"
       onClick={[Function]}
     >
       <div
-        className="sc-AxhCb jvjoIm"
+        className="sc-hKFyIo fzdKKz"
         title="name 1"
       >
         name 1
@@ -2959,11 +2959,11 @@ exports[`DataSourceStateList: Component should render correctly with loader 1`] 
       </svg>
     </div>
     <div
-      className="sc-AxiKw iVAWOC"
+      className="sc-dlnjPT bzbJRd"
       onClick={[Function]}
     >
       <div
-        className="sc-AxhCb jvjoIm"
+        className="sc-hKFyIo fzdKKz"
         title="name 2"
       >
         name 2
@@ -2986,16 +2986,16 @@ exports[`DataSourceStateList: Component should render correctly with loader 1`] 
     </div>
   </div>
   <div
-    className="sc-fznyAO bOucDf"
+    className="sc-crzoUp fAvqwc"
   >
     <div
-      className="sc-fznKkj fnWcEx"
+      className="sc-dIsAE jOTkjg"
     >
       <div
-        className="sc-fzokOt gAtMcM"
+        className="sc-ksluoS YJsJl"
       >
         <div
-          className="sc-fznZeY iXVIUH"
+          className="sc-bqGHjH dzsXnW"
           disabled={false}
           onClick={[Function]}
         >
@@ -3016,16 +3016,16 @@ exports[`DataSourceStateList: Component should render correctly with loader 1`] 
           </svg>
         </div>
         <div
-          className="sc-fzqBZW fOtemn"
+          className="sc-hBMVcZ fIReqG"
         >
           Source
         </div>
       </div>
       <div
-        className="sc-fzokOt gAtMcM"
+        className="sc-ksluoS YJsJl"
       >
         <div
-          className="sc-fznZeY iXVIUH"
+          className="sc-bqGHjH dzsXnW"
           disabled={false}
           onClick={[Function]}
         >
@@ -3047,16 +3047,16 @@ exports[`DataSourceStateList: Component should render correctly with loader 1`] 
           </svg>
         </div>
         <div
-          className="sc-fzqBZW fOtemn"
+          className="sc-hBMVcZ fIReqG"
         >
           Fields
         </div>
       </div>
       <div
-        className="sc-fzokOt gAtMcM"
+        className="sc-ksluoS YJsJl"
       >
         <div
-          className="sc-fznZeY iXVIUH"
+          className="sc-bqGHjH dzsXnW"
           disabled={false}
           onClick={[Function]}
         >
@@ -3097,16 +3097,16 @@ exports[`DataSourceStateList: Component should render correctly with loader 1`] 
           </svg>
         </div>
         <div
-          className="sc-fzqBZW fOtemn"
+          className="sc-hBMVcZ fIReqG"
         >
           Steps
         </div>
       </div>
       <div
-        className="sc-fzokOt gAtMcM"
+        className="sc-ksluoS YJsJl"
       >
         <div
-          className="sc-fznZeY iXVIUH"
+          className="sc-bqGHjH dzsXnW"
           disabled={false}
           onClick={[Function]}
         >
@@ -3147,16 +3147,16 @@ exports[`DataSourceStateList: Component should render correctly with loader 1`] 
           </svg>
         </div>
         <div
-          className="sc-fzqBZW fOtemn"
+          className="sc-hBMVcZ fIReqG"
         >
           Results
         </div>
       </div>
       <div
-        className="sc-fzokOt gAtMcM"
+        className="sc-ksluoS YJsJl"
       >
         <div
-          className="sc-fznZeY iXVIUH"
+          className="sc-bqGHjH dzsXnW"
           disabled={false}
           onClick={[Function]}
         >
@@ -3180,16 +3180,16 @@ exports[`DataSourceStateList: Component should render correctly with loader 1`] 
           </svg>
         </div>
         <div
-          className="sc-fzqBZW fOtemn"
+          className="sc-hBMVcZ fIReqG"
         >
           Filters
         </div>
       </div>
       <div
-        className="sc-fzokOt gAtMcM"
+        className="sc-ksluoS YJsJl"
       >
         <div
-          className="sc-fznZeY iXVIUH"
+          className="sc-bqGHjH dzsXnW"
           disabled={false}
           onClick={[Function]}
         >
@@ -3224,16 +3224,16 @@ exports[`DataSourceStateList: Component should render correctly with loader 1`] 
           </svg>
         </div>
         <div
-          className="sc-fzqBZW fOtemn"
+          className="sc-hBMVcZ fIReqG"
         >
           Tags
         </div>
       </div>
       <div
-        className="sc-fzokOt gAtMcM"
+        className="sc-ksluoS YJsJl"
       >
         <div
-          className="sc-fznZeY iXVIUH"
+          className="sc-bqGHjH dzsXnW"
           disabled={false}
           onClick={[Function]}
         >
@@ -3254,16 +3254,16 @@ exports[`DataSourceStateList: Component should render correctly with loader 1`] 
           </svg>
         </div>
         <div
-          className="sc-fzqBZW fOtemn"
+          className="sc-hBMVcZ fIReqG"
         >
           States
         </div>
       </div>
       <div
-        className="sc-fzokOt gAtMcM"
+        className="sc-ksluoS YJsJl"
       >
         <div
-          className="sc-fznZeY iXVIUH"
+          className="sc-bqGHjH dzsXnW"
           disabled={false}
           onClick={[Function]}
         >
@@ -3284,7 +3284,7 @@ exports[`DataSourceStateList: Component should render correctly with loader 1`] 
           </svg>
         </div>
         <div
-          className="sc-fzqBZW fOtemn"
+          className="sc-hBMVcZ fIReqG"
         >
           Metadata
         </div>

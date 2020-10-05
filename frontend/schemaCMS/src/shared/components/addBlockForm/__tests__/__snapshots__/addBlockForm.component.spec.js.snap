@@ -5,10 +5,10 @@ exports[`AddBlockForm: Component should render a block template with added eleme
   onSubmit={[Function]}
 >
   <div
-    className="sc-AxjAm evKEwj"
+    className="sc-bdnylx dXFUsK"
   >
     <div
-      className="sc-fznWqX cSlXnJ"
+      className="sc-kfYqjs elwnLC"
       onClick={[Function]}
     >
       <label
@@ -179,7 +179,7 @@ exports[`AddBlockForm: Component should render a block template with added eleme
         </div>
       </div>
       <div
-        className="sc-fzoiQi dwYCde"
+        className="sc-fKgIGh ljENwX"
       >
         <svg
           style={
@@ -200,21 +200,21 @@ exports[`AddBlockForm: Component should render a block template with added eleme
     </div>
   </div>
   <div
-    className="sc-fzoxKX kyReib"
+    className="sc-gXfWUo hLlOFo"
   >
     <div
-      className="sc-fzoKki jXYIlx"
+      className="sc-cBoprd ZtrY"
       id="tagsCounter"
     />
     0 Elements
     <div
-      className="sc-fzoKki jXYIlx"
+      className="sc-cBoprd ZtrY"
     >
       <div
-        className="sc-fzoLag edhcrz"
+        className="sc-bkbjAj jRAeWP"
       >
         <div
-          className="sc-fzozJi bjSKTZ"
+          className="sc-pNWxx hdHMB"
         >
           <button
             disabled={false}
@@ -266,16 +266,16 @@ exports[`AddBlockForm: Component should render a block template with added eleme
      
   </span>
   <div
-    className="sc-AxhUy htqvZZ"
+    className="sc-eCApGN iaXPZF"
   >
     <div
-      className="sc-AxheI cQyJnn"
+      className="sc-gKAblj gLiqJM"
     >
       <div
-        className="sc-AxgMl kpSYiw"
+        className="sc-jSFkmK cqXTMK"
       >
         <button
-          className="sc-Axmtr ippoUD"
+          className="sc-iCoHVE hVCdpY"
           disabled={false}
           id="backBtn"
           onClick={[Function]}
@@ -301,7 +301,7 @@ exports[`AddBlockForm: Component should render a block template with added eleme
           Back
         </button>
         <button
-          className="sc-Axmtr ippoUD"
+          className="sc-iCoHVE hVCdpY"
           disabled={true}
           id="addBlock"
           style={
@@ -336,10 +336,10 @@ exports[`AddBlockForm: Component should render correctly 1`] = `
   onSubmit={[Function]}
 >
   <div
-    className="sc-AxjAm evKEwj"
+    className="sc-bdnylx dXFUsK"
   >
     <div
-      className="sc-fznWqX cSlXnJ"
+      className="sc-kfYqjs elwnLC"
       onClick={[Function]}
     >
       <label
@@ -509,7 +509,7 @@ exports[`AddBlockForm: Component should render correctly 1`] = `
         </div>
       </div>
       <div
-        className="sc-fzoiQi dwYCde"
+        className="sc-fKgIGh ljENwX"
       >
         <svg
           style={
@@ -530,16 +530,16 @@ exports[`AddBlockForm: Component should render correctly 1`] = `
     </div>
   </div>
   <div
-    className="sc-AxhUy htqvZZ"
+    className="sc-eCApGN iaXPZF"
   >
     <div
-      className="sc-AxheI cQyJnn"
+      className="sc-gKAblj gLiqJM"
     >
       <div
-        className="sc-AxgMl kpSYiw"
+        className="sc-jSFkmK cqXTMK"
       >
         <button
-          className="sc-Axmtr ippoUD"
+          className="sc-iCoHVE hVCdpY"
           disabled={false}
           id="backBtn"
           onClick={[Function]}
@@ -565,7 +565,7 @@ exports[`AddBlockForm: Component should render correctly 1`] = `
           Back
         </button>
         <button
-          className="sc-Axmtr ippoUD"
+          className="sc-iCoHVE hVCdpY"
           disabled={true}
           id="addBlock"
           style={

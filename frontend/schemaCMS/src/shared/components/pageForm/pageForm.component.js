@@ -149,6 +149,9 @@ export const PageForm = ({
     setBlocks(temporaryPageTemplate);
     setFieldValue(PAGE_TEMPLATE, temporaryPageTemplate);
   };
+
+  const handleAddBlock = () => history.push(`${url}/add-block`, { page: values });
+
   const copyPageFunc = async () => {
     try {
       setLoading(true);
@@ -210,12 +213,7 @@ export const PageForm = ({
     propOr(values[PAGE_TEMPLATE] === 0, 'allowEdit')
   )(pageTemplates);
   const plusButton = allowEdit ? (
-    <PlusButton
-      customStyles={mobilePlusStyles}
-      id="addBlock"
-      onClick={() => history.push(`${url}/add-block`, { page: values })}
-      type="button"
-    />
+    <PlusButton customStyles={mobilePlusStyles} id="addBlock" onClick={handleAddBlock} type="button" />
   ) : null;
   const removeBlock = index => {
     const removedElement = values[PAGE_BLOCKS][index];

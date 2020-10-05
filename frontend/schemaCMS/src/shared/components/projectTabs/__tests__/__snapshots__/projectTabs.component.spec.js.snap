@@ -2,17 +2,17 @@
 
 exports[`ProjectTabs: Component should render correctly 1`] = `
 <div
-  className="sc-AxhCb ccMvAG"
+  className="sc-hKFyIo"
   id="tabsContainer"
 >
   <div
-    className="sc-AxjAm eSjBJw"
+    className="sc-bdnylx jTZORZ"
   >
     <div
-      className="sc-AxirZ jwwwmF"
+      className="sc-gtssRu kTutTa"
     >
       <a
-        className="sc-AxiKw caTYgO"
+        className="sc-dlnjPT etwDqJ"
         href="/project/1"
         id="settingsTab"
         onClick={[Function]}
@@ -21,10 +21,10 @@ exports[`ProjectTabs: Component should render correctly 1`] = `
       </a>
     </div>
     <div
-      className="sc-AxirZ eteeke"
+      className="sc-gtssRu dbYoKN"
     >
       <a
-        className="sc-AxiKw caTYgO"
+        className="sc-dlnjPT etwDqJ"
         href="/project/1/datasource"
         id="sourcesTab"
         onClick={[Function]}
@@ -33,10 +33,10 @@ exports[`ProjectTabs: Component should render correctly 1`] = `
       </a>
     </div>
     <div
-      className="sc-AxirZ eteeke"
+      className="sc-gtssRu dbYoKN"
     >
       <a
-        className="sc-AxiKw caTYgO"
+        className="sc-dlnjPT etwDqJ"
         href="/project/1/content"
         id="contentTab"
         onClick={[Function]}
@@ -45,10 +45,10 @@ exports[`ProjectTabs: Component should render correctly 1`] = `
       </a>
     </div>
     <div
-      className="sc-AxirZ eteeke"
+      className="sc-gtssRu dbYoKN"
     >
       <a
-        className="sc-AxiKw caTYgO"
+        className="sc-dlnjPT etwDqJ"
         href="/project/1/templates"
         id="templatesTab"
         onClick={[Function]}
@@ -57,10 +57,10 @@ exports[`ProjectTabs: Component should render correctly 1`] = `
       </a>
     </div>
     <div
-      className="sc-AxirZ eteeke"
+      className="sc-gtssRu dbYoKN"
     >
       <a
-        className="sc-AxiKw caTYgO"
+        className="sc-dlnjPT etwDqJ"
         href="/project/1/user"
         id="usersTab"
         onClick={[Function]}

@@ -14,7 +14,8 @@ import { IconWrapper, menuIconStyles, mobilePlusStyles, PlusContainer } from '..
 import { Draggable } from '../draggable';
 import { CounterHeader } from '../counterHeader';
 import { PlusButton } from '../navigation';
-import { getElementComponent } from './blockElement.component';
+// eslint-disable-next-line import/no-cycle
+import getElementComponent from '../../utils/getElement';
 import { SetElement, SetElementContent, RemoveContainer, AccordionWrapper } from './blockElement.styles';
 import messages from './blockElement.messages';
 

@@ -81,6 +81,8 @@ export const CreateBlockTemplate = ({ userRole, createBlockTemplate, project }) 
     },
   });
 
+  const handleBackClick = () => history.push(`/project/${projectId}/block-templates`);
+
   const title = <FormattedMessage {...messages.title} />;
   const subtitle = <FormattedMessage {...messages.subtitle} />;
   const menuOptions = getProjectMenuOptions(projectId);
@@ -93,11 +95,7 @@ export const CreateBlockTemplate = ({ userRole, createBlockTemplate, project }) 
       <form onSubmit={handleSubmit}>
         <BlockTemplateForm title={title} isValid={isValid} {...restFormikProps} />
         <NavigationContainer fixed>
-          <BackButton
-            id="cancelBtn"
-            type="button"
-            onClick={() => history.push(`/project/${projectId}/block-templates`)}
-          >
+          <BackButton id="cancelBtn" type="button" onClick={handleBackClick}>
             <FormattedMessage {...messages.cancel} />
           </BackButton>
           <NextButton

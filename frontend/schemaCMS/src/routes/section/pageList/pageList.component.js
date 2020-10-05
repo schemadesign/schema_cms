@@ -94,6 +94,7 @@ export const Page = ({
   const active = mainPage === id;
   const setMainPage = () => setFieldValue(SECTIONS_MAIN_PAGE, active ? null : id);
   const templateCopy = templateName || intl.formatMessage(messages.blankTemplate);
+  const handlePageClick = () => history.push(`/page/${id}`);
 
   const copyPageAction = async () => {
     try {
@@ -133,7 +134,7 @@ export const Page = ({
 
   return (
     <ListItem headerComponent={header} footerComponent={renderFooterComponent()}>
-      <ListItemTitle id={`page-${id}`} onClick={() => history.push(`/page/${id}`)}>
+      <ListItemTitle id={`page-${id}`} onClick={handlePageClick}>
         {name}
       </ListItemTitle>
     </ListItem>
@@ -228,6 +229,9 @@ export const PageList = ({
     },
   });
 
+  const handleCreateClick = () => history.push(`/section/${sectionId}/create-page`);
+  const handleBackClick = () => history.push(`/project/${projectId}/content`);
+
   const pageCount = pages.count / INITIAL_PAGE_SIZE;
 
   const fetchSectionFunc = async () => {
@@ -309,7 +313,7 @@ export const PageList = ({
       <ProjectBreadcrumbs items={getBreadcrumbsItems({ id: projectId, title: projectTitle }, section)} />
       <Form onSubmit={handleSubmit}>
         <ContextHeader title={title} subtitle={nameInput}>
-          <PlusButton id="createPage" type="button" onClick={() => history.push(`/section/${sectionId}/create-page`)} />
+          <PlusButton id="createPage" type="button" onClick={handleCreateClick} />
         </ContextHeader>
         <MobileInputName>
           <TextInput
@@ -332,7 +336,7 @@ export const PageList = ({
                 <PlusButton
                   customStyles={mobilePlusStyles}
                   id="createPageMobile"
-                  onClick={() => history.push(`/section/${sectionId}/create-page`)}
+                  onClick={handleCreateClick}
                   type="button"
                 />
               </MobilePlusContainer>
@@ -398,7 +402,7 @@ export const PageList = ({
             </SwitchContainer>
           </Switches>
           <NavigationContainer fixed>
-            <BackArrowButton id="backBtn" type="button" onClick={() => history.push(`/project/${projectId}/content`)} />
+            <BackArrowButton id="backBtn" type="button" onClick={handleBackClick} />
             <NextButton
               id="updateSection"
               type="submit"

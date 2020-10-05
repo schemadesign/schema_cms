@@ -67,6 +67,8 @@ const BlockTemplate = ({ copyBlockTemplate, created, createdBy, name, id, elemen
     }
   };
 
+  const handlePageClick = () => history.push(`/block-template/${id}`);
+
   const header = (
     <CardHeader
       list={list}
@@ -84,7 +86,7 @@ const BlockTemplate = ({ copyBlockTemplate, created, createdBy, name, id, elemen
 
   return (
     <ListItem headerComponent={header} footerComponent={footer}>
-      <ListItemTitle id={`blockTemplateTitle-${id}`} onClick={() => history.push(`/block-template/${id}`)}>
+      <ListItemTitle id={`blockTemplateTitle-${id}`} onClick={handlePageClick}>
         {name}
       </ListItemTitle>
     </ListItem>
@@ -124,16 +126,16 @@ export const BlockTemplates = ({ fetchBlockTemplates, copyBlockTemplate, blockTe
     })();
   });
 
+  const handleBackClick = () => history.push(`/project/${projectId}/templates`);
+  const handleCreateClick = () => () => history.push(`/project/${projectId}/block-templates/create`);
+
   return (
     <Container>
       <Helmet title={intl.formatMessage(messages.title)} />
       <MobileMenu headerTitle={title} headerSubtitle={subtitle} options={filterMenuOptions(menuOptions, userRole)} />
       <ProjectBreadcrumbs items={getBreadcrumbsItems(project)} />
       <ContextHeader title={title} subtitle={subtitle}>
-        <PlusButton
-          id="createBlockTemplate"
-          onClick={() => history.push(`/project/${projectId}/block-templates/create`)}
-        />
+        <PlusButton id="createBlockTemplate" onClick={handleCreateClick()} />
       </ContextHeader>
       <LoadingWrapper loading={loading} error={error} noDataContent={noData} noData={!blockTemplates.length}>
         {() => (
@@ -148,12 +150,8 @@ export const BlockTemplates = ({ fetchBlockTemplates, copyBlockTemplate, blockTe
         )}
       </LoadingWrapper>
       <NavigationContainer fixed>
-        <BackArrowButton id="backBtn" onClick={() => history.push(`/project/${projectId}/templates`)} />
-        <PlusButton
-          hideOnDesktop
-          id="createBlockTemplateMobile"
-          onClick={() => history.push(`/project/${projectId}/block-templates/create`)}
-        />
+        <BackArrowButton id="backBtn" onClick={handleBackClick} />
+        <PlusButton hideOnDesktop id="createBlockTemplateMobile" onClick={handleCreateClick} />
       </NavigationContainer>
     </Container>
   );

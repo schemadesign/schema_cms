@@ -3,21 +3,21 @@
 exports[`BlockElement: Component should render correctly custom element 1`] = `
 Array [
   <div
-    className="sc-fzqBkg bYZLzw"
+    className="sc-jJMGHv lgueRE"
   >
     <div
-      className="sc-fzqPZZ etcPdO"
+      className="sc-hiKfjK eLOJLF"
       id="tagsCounter"
     />
     3 Sets
     <div
-      className="sc-fzqPZZ etcPdO"
+      className="sc-hiKfjK eLOJLF"
     >
       <div
-        className="sc-fzpmMD kmLmQu"
+        className="sc-giAqnE gkvihQ"
       >
         <div
-          className="sc-fznMnq jJaEfz"
+          className="sc-iTVIwl csUgGZ"
         >
           <button
             disabled={false}
@@ -81,11 +81,11 @@ Array [
       }
     >
       <div
-        className="sc-fzozJi fLuvkP"
+        className="sc-pNWxx cKeDLH"
       >
         <div>
           <div
-            className="sc-fznWOq bBLgKi"
+            className="sc-kLokih dBjrEo"
           >
             <svg
               style={
@@ -106,10 +106,10 @@ Array [
           </div>
         </div>
         <div
-          className="sc-fznKkj jgnVxN"
+          className="sc-dIsAE iWEloo"
         >
           <div
-            className="sc-fzoLsD iTliBB"
+            className="sc-jrsJCI idQzsl"
           >
             <div
               onClick={[Function]}
@@ -337,7 +337,7 @@ Array [
           </div>
         </div>
         <div
-          className="sc-fzpans jgrUZw"
+          className="sc-kEqYlL dUDPHV"
         >
           <svg
             id="remove-blockPath.elements.0.value.0"
@@ -374,11 +374,11 @@ Array [
       }
     >
       <div
-        className="sc-fzozJi fLuvkP"
+        className="sc-pNWxx cKeDLH"
       >
         <div>
           <div
-            className="sc-fznWOq bBLgKi"
+            className="sc-kLokih dBjrEo"
           >
             <svg
               style={
@@ -399,10 +399,10 @@ Array [
           </div>
         </div>
         <div
-          className="sc-fznKkj jgnVxN"
+          className="sc-dIsAE iWEloo"
         >
           <div
-            className="sc-fzoLsD iTliBB"
+            className="sc-jrsJCI idQzsl"
           >
             <div
               onClick={[Function]}
@@ -630,7 +630,7 @@ Array [
           </div>
         </div>
         <div
-          className="sc-fzpans jgrUZw"
+          className="sc-kEqYlL dUDPHV"
         >
           <svg
             id="remove-blockPath.elements.0.value.1"
@@ -667,11 +667,11 @@ Array [
       }
     >
       <div
-        className="sc-fzozJi fLuvkP"
+        className="sc-pNWxx cKeDLH"
       >
         <div>
           <div
-            className="sc-fznWOq bBLgKi"
+            className="sc-kLokih dBjrEo"
           >
             <svg
               style={
@@ -692,10 +692,10 @@ Array [
           </div>
         </div>
         <div
-          className="sc-fznKkj jgnVxN"
+          className="sc-dIsAE iWEloo"
         >
           <div
-            className="sc-fzoLsD iTliBB"
+            className="sc-jrsJCI idQzsl"
           >
             <div
               onClick={[Function]}
@@ -923,7 +923,7 @@ Array [
           </div>
         </div>
         <div
-          className="sc-fzpans jgrUZw"
+          className="sc-kEqYlL dUDPHV"
         >
           <svg
             id="remove-blockPath.elements.0.value.2"
@@ -974,10 +974,10 @@ exports[`BlockElement: Component should render correctly embed video element 1`]
     }
   >
     <div
-      className="sc-AxirZ hbEXBE"
+      className="sc-gtssRu eMStLD"
     >
       <div
-        className="sc-AxmLO kVgHCK"
+        className="sc-fujyUd dRGyiv"
       >
         <svg
           style={
@@ -996,7 +996,7 @@ exports[`BlockElement: Component should render correctly embed video element 1`]
         </svg>
       </div>
       <div
-        className="sc-fzqBZW jwxHtQ"
+        className="sc-bqGHjH ikPUof"
       >
         <div
           style={
@@ -1069,12 +1069,12 @@ exports[`BlockElement: Component should render correctly embed video element 1`]
           />
         </div>
         <div
-          className="sc-fzoyAV iHApfx"
+          className="sc-hBMVcZ ghyOBT"
           id="blockPath.elements.0.nameError"
         />
       </div>
       <div
-        className="sc-AxmLO kVgHCK"
+        className="sc-fujyUd dRGyiv"
       >
         <svg
           style={
@@ -1149,10 +1149,10 @@ exports[`BlockElement: Component should render correctly file element 1`] = `
     }
   >
     <div
-      className="sc-AxirZ hbEXBE"
+      className="sc-gtssRu eMStLD"
     >
       <div
-        className="sc-AxmLO kVgHCK"
+        className="sc-fujyUd dRGyiv"
       >
         <svg
           style={
@@ -1171,7 +1171,7 @@ exports[`BlockElement: Component should render correctly file element 1`] = `
         </svg>
       </div>
       <div
-        className="sc-fzqBZW jwxHtQ"
+        className="sc-bqGHjH ikPUof"
       >
         <div
           style={
@@ -1244,12 +1244,12 @@ exports[`BlockElement: Component should render correctly file element 1`] = `
           />
         </div>
         <div
-          className="sc-fzoyAV iHApfx"
+          className="sc-hBMVcZ ghyOBT"
           id="blockPath.elements.0.nameError"
         />
       </div>
       <div
-        className="sc-AxmLO kVgHCK"
+        className="sc-fujyUd dRGyiv"
       >
         <svg
           style={
@@ -1324,10 +1324,10 @@ exports[`BlockElement: Component should render correctly image element 1`] = `
     }
   >
     <div
-      className="sc-AxirZ hbEXBE"
+      className="sc-gtssRu eMStLD"
     >
       <div
-        className="sc-AxmLO kVgHCK"
+        className="sc-fujyUd dRGyiv"
       >
         <svg
           style={
@@ -1346,7 +1346,7 @@ exports[`BlockElement: Component should render correctly image element 1`] = `
         </svg>
       </div>
       <div
-        className="sc-fzqBZW jwxHtQ"
+        className="sc-bqGHjH ikPUof"
       >
         <div
           style={
@@ -1419,12 +1419,12 @@ exports[`BlockElement: Component should render correctly image element 1`] = `
           />
         </div>
         <div
-          className="sc-fzoyAV iHApfx"
+          className="sc-hBMVcZ ghyOBT"
           id="blockPath.elements.0.nameError"
         />
       </div>
       <div
-        className="sc-AxmLO kVgHCK"
+        className="sc-fujyUd dRGyiv"
       >
         <svg
           style={
@@ -1499,10 +1499,10 @@ exports[`BlockElement: Component should render correctly internal connection ele
     }
   >
     <div
-      className="sc-AxirZ hbEXBE"
+      className="sc-gtssRu eMStLD"
     >
       <div
-        className="sc-AxmLO kVgHCK"
+        className="sc-fujyUd dRGyiv"
       >
         <svg
           style={
@@ -1521,7 +1521,7 @@ exports[`BlockElement: Component should render correctly internal connection ele
         </svg>
       </div>
       <div
-        className="sc-fzqBZW jwxHtQ"
+        className="sc-bqGHjH ikPUof"
       >
         <div
           style={
@@ -1594,12 +1594,12 @@ exports[`BlockElement: Component should render correctly internal connection ele
           />
         </div>
         <div
-          className="sc-fzoyAV iHApfx"
+          className="sc-hBMVcZ ghyOBT"
           id="blockPath.elements.0.nameError"
         />
       </div>
       <div
-        className="sc-AxmLO kVgHCK"
+        className="sc-fujyUd dRGyiv"
       >
         <svg
           style={
@@ -1674,10 +1674,10 @@ exports[`BlockElement: Component should render correctly internal connection ele
     }
   >
     <div
-      className="sc-AxirZ hbEXBE"
+      className="sc-gtssRu eMStLD"
     >
       <div
-        className="sc-AxmLO kVgHCK"
+        className="sc-fujyUd dRGyiv"
       >
         <svg
           style={
@@ -1696,7 +1696,7 @@ exports[`BlockElement: Component should render correctly internal connection ele
         </svg>
       </div>
       <div
-        className="sc-fzqBZW jwxHtQ"
+        className="sc-bqGHjH ikPUof"
       >
         <div
           style={
@@ -1769,12 +1769,12 @@ exports[`BlockElement: Component should render correctly internal connection ele
           />
         </div>
         <div
-          className="sc-fzoyAV iHApfx"
+          className="sc-hBMVcZ ghyOBT"
           id="blockPath.elements.0.nameError"
         />
       </div>
       <div
-        className="sc-AxmLO kVgHCK"
+        className="sc-fujyUd dRGyiv"
       >
         <svg
           style={
@@ -1849,10 +1849,10 @@ exports[`BlockElement: Component should render correctly markdown element 1`] = 
     }
   >
     <div
-      className="sc-AxirZ hbEXBE"
+      className="sc-gtssRu eMStLD"
     >
       <div
-        className="sc-AxmLO kVgHCK"
+        className="sc-fujyUd dRGyiv"
       >
         <svg
           style={
@@ -1871,7 +1871,7 @@ exports[`BlockElement: Component should render correctly markdown element 1`] = 
         </svg>
       </div>
       <div
-        className="sc-fzqBZW jwxHtQ"
+        className="sc-bqGHjH ikPUof"
       >
         <div
           style={
@@ -1944,12 +1944,12 @@ exports[`BlockElement: Component should render correctly markdown element 1`] = 
           />
         </div>
         <div
-          className="sc-fzoyAV iHApfx"
+          className="sc-hBMVcZ ghyOBT"
           id="blockPath.elements.0.nameError"
         />
       </div>
       <div
-        className="sc-AxmLO kVgHCK"
+        className="sc-fujyUd dRGyiv"
       >
         <svg
           style={
@@ -2024,10 +2024,10 @@ exports[`BlockElement: Component should render correctly observable element 1`] 
     }
   >
     <div
-      className="sc-AxirZ hbEXBE"
+      className="sc-gtssRu eMStLD"
     >
       <div
-        className="sc-AxmLO kVgHCK"
+        className="sc-fujyUd dRGyiv"
       >
         <svg
           style={
@@ -2046,7 +2046,7 @@ exports[`BlockElement: Component should render correctly observable element 1`] 
         </svg>
       </div>
       <div
-        className="sc-fzqBZW jwxHtQ"
+        className="sc-bqGHjH ikPUof"
       >
         <div
           style={
@@ -2119,12 +2119,12 @@ exports[`BlockElement: Component should render correctly observable element 1`] 
           />
         </div>
         <div
-          className="sc-fzoyAV iHApfx"
+          className="sc-hBMVcZ ghyOBT"
           id="blockPath.elements.0.nameError"
         />
       </div>
       <div
-        className="sc-AxmLO kVgHCK"
+        className="sc-fujyUd dRGyiv"
       >
         <svg
           style={
@@ -2199,10 +2199,10 @@ exports[`BlockElement: Component should render correctly text element 1`] = `
     }
   >
     <div
-      className="sc-AxirZ hbEXBE"
+      className="sc-gtssRu eMStLD"
     >
       <div
-        className="sc-AxmLO kVgHCK"
+        className="sc-fujyUd dRGyiv"
       >
         <svg
           style={
@@ -2221,7 +2221,7 @@ exports[`BlockElement: Component should render correctly text element 1`] = `
         </svg>
       </div>
       <div
-        className="sc-fzqBZW jwxHtQ"
+        className="sc-bqGHjH ikPUof"
       >
         <div
           style={
@@ -2294,12 +2294,12 @@ exports[`BlockElement: Component should render correctly text element 1`] = `
           />
         </div>
         <div
-          className="sc-fzoyAV iHApfx"
+          className="sc-hBMVcZ ghyOBT"
           id="blockPath.elements.0.nameError"
         />
       </div>
       <div
-        className="sc-AxmLO kVgHCK"
+        className="sc-fujyUd dRGyiv"
       >
         <svg
           style={

@@ -71,7 +71,7 @@ Array [
         }
       >
         <div
-          className="sc-AxhCb iniznJ"
+          className="sc-hKFyIo ftZtcs"
           id="filterName-0"
           onClick={[Function]}
           title="Filter First Name"
@@ -169,7 +169,7 @@ Array [
         }
       >
         <div
-          className="sc-AxhCb iniznJ"
+          className="sc-hKFyIo ftZtcs"
           id="filterName-1"
           onClick={[Function]}
           title="Filter Last Name"
@@ -256,7 +256,7 @@ Array [
         }
       >
         <div
-          className="sc-AxhCb iniznJ"
+          className="sc-hKFyIo ftZtcs"
           id="filterName-2"
           onClick={[Function]}
           title="Filter Birthday"

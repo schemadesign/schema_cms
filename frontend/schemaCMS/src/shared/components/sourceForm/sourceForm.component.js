@@ -238,6 +238,7 @@ export class SourceFormComponent extends PureComponent {
     const fileUploadingError = !!propOr(false, 'error', uploadingDataSource);
     const fileUploading = !!uploadingDataSource && !fileUploadingError;
     const fileName = ifElse(isNil, () => pathOr('', ['fileName'], values), prop('fileName'))(uploadingDataSource);
+    const handleBackClick = () => this.setState({ confirmationRunReimport: false });
 
     return (
       <Fragment>
@@ -278,11 +279,7 @@ export class SourceFormComponent extends PureComponent {
             <FormattedMessage {...messages.reimportTitle} />
           </ModalTitle>
           <ModalActions>
-            <BackButton
-              id="declineRunLastJob"
-              type="button"
-              onClick={() => this.setState({ confirmationRunReimport: false })}
-            >
+            <BackButton id="declineRunLastJob" type="button" onClick={handleBackClick}>
               <FormattedMessage {...messages.cancelReimport} />
             </BackButton>
             <NextButton id="confirmRunLastJob" type="button" onClick={this.handleReimport}>
