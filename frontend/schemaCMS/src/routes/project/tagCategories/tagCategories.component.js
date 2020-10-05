@@ -2,6 +2,7 @@ import React, { Fragment, PureComponent } from 'react';
 import PropTypes from 'prop-types';
 import { FormattedMessage } from 'react-intl';
 import Helmet from 'react-helmet';
+import { camelize } from 'humps';
 
 import messages from './tagCategories.messages';
 import { LoadingWrapper } from '../../../shared/components/loadingWrapper';
@@ -93,8 +94,8 @@ export class TagCategories extends PureComponent {
     const footer = <FormattedMessage {...messages.tagsCounter} values={{ count: tags.length }} />;
 
     return (
-      <ListItem headerComponent={header} footerComponent={footer} key={index}>
-        <ListItemTitle id={`tag-category-${id}`} onClick={() => history.push(`/tag-category/${id}`)}>
+      <ListItem id="tagContainer" headerComponent={header} footerComponent={footer} key={index}>
+        <ListItemTitle id={`tag-category-${camelize(name)}`} onClick={() => history.push(`/tag-category/${id}`)}>
           {name}
         </ListItemTitle>
       </ListItem>
@@ -132,7 +133,7 @@ export class TagCategories extends PureComponent {
           options={filterMenuOptions(menuOptions, userRole)}
         />
         <ContextHeader title={headerTitle} subtitle={headerSubtitle}>
-          <PlusButton onClick={this.handleCreateTag} />
+          <PlusButton id="addTagCategoryBtn" onClick={this.handleCreateTag} />
         </ContextHeader>
         <LoadingWrapper loading={loading} error={error}>
           {this.renderContent()}

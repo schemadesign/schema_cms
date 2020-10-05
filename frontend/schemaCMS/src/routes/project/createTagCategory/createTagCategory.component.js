@@ -78,10 +78,10 @@ export class CreateTagCategory extends PureComponent {
         <ProjectBreadcrumbs items={getBreadcrumbsItems(project)} />
         <TagCategoryForm {...this.props} />
         <NavigationContainer fixed>
-          <BackButton onClick={this.handleBack} type="button">
+          <BackButton id="cancelBtn" onClick={this.handleBack} type="button">
             <FormattedMessage {...messages.cancel} />
           </BackButton>
-          <NextButton loading={isSubmitting} disabled={!dirty || !isValid || isSubmitting} type="submit">
+          <NextButton id="saveBtn" loading={isSubmitting} disabled={!dirty || !isValid || isSubmitting} type="submit">
             <FormattedMessage {...messages.saveTag} />
           </NextButton>
         </NavigationContainer>

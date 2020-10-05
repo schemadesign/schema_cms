@@ -93,8 +93,12 @@ Then('my user status as an {string} is set to {string}', (userRole, status) => {
 
 Then('I/Admin can see a message in {string} that {string} with this email already exists', (appType, userRole) => {
   expect(Django.userExistsMsg()).toHaveText(
-    `The user with email "${USERS[camelize(userRole)].login.valid.app[camelize(appType)]}" already exists`
+    `The user with email ${USERS[camelize(userRole)].login.valid.app[camelize(appType)]} already exists.`
   );
+});
+
+Then('Admin can see a message in Schema CMS that user with this email already exists', () => {
+  expect(Users.emailErrorText()).toHaveText(USER_EXISTS_ERROR);
 });
 
 Then('I can log in to Schema CMS as an {string} {string} from {string}', (userRole, userType, appType) => {
@@ -112,10 +116,6 @@ Given('I was/am invited to Schema CMS as an {string} by {string} admin', (userRo
 
   Users.inviteUserFromApp(userRole, appType);
   TopHeader.logOut();
-});
-
-Then('Admin can see a message that user with that email already exists', () => {
-  expect(Users.emailErrorText()).toHaveText(USER_EXISTS_ERROR);
 });
 
 When(

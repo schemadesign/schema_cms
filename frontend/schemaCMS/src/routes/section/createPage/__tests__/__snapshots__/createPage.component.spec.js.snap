@@ -684,6 +684,10 @@ exports[`CreatePage: Component should render correctly 1`] = `
                     }
                   />
                 </div>
+                <div
+                  className="sc-fzoLag dERyBZ"
+                  id="nameError"
+                />
               </div>
               <div
                 className="sc-fzpans MoQu"
@@ -799,6 +803,10 @@ exports[`CreatePage: Component should render correctly 1`] = `
               </div>
             </div>
           </div>
+          <div
+            className="sc-fzoLag dERyBZ"
+            id="nameError"
+          />
         </div>
       </div>
       <div
@@ -885,6 +893,10 @@ exports[`CreatePage: Component should render correctly 1`] = `
             </div>
           </div>
         </div>
+        <div
+          className="sc-fzoLag dERyBZ"
+          id="displayNameError"
+        />
       </div>
       <div
         className="sc-fzqNJr ijtzun"
@@ -988,6 +1000,10 @@ exports[`CreatePage: Component should render correctly 1`] = `
             </div>
           </div>
         </div>
+        <div
+          className="sc-fzoLag dERyBZ"
+          id="descriptionError"
+        />
       </div>
       <div
         className="sc-fzqNJr ijtzun"
@@ -1073,6 +1089,10 @@ exports[`CreatePage: Component should render correctly 1`] = `
             </div>
           </div>
         </div>
+        <div
+          className="sc-fzoLag dERyBZ"
+          id="keywordsError"
+        />
       </div>
       <div
         className="sc-fzqNJr ijtzun"
@@ -1158,6 +1178,10 @@ exports[`CreatePage: Component should render correctly 1`] = `
             </div>
           </div>
         </div>
+        <div
+          className="sc-fzoLag dERyBZ"
+          id="linkError"
+        />
       </div>
       <label
         style={
@@ -1581,6 +1605,7 @@ exports[`CreatePage: Component should render correctly 1`] = `
       >
         <div
           className="sc-fzqMdD dQscoX"
+          id="tagsCounter"
         />
         0 Blocks
         <div

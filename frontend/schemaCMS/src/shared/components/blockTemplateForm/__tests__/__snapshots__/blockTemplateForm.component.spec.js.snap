@@ -117,6 +117,10 @@ exports[`BlockTemplateForm: Component should render correctly 1`] = `
                 }
               />
             </div>
+            <div
+              className="sc-fzoyTs rbfWl"
+              id="nameError"
+            />
           </div>
           <div
             className="sc-AxmLO jZWyjN"
@@ -277,6 +281,10 @@ exports[`BlockTemplateForm: Component should render correctly 1`] = `
           }
         />
       </div>
+      <div
+        className="sc-fzoyTs rbfWl"
+        id="nameError"
+      />
     </div>
   </div>
   <div
@@ -284,6 +292,7 @@ exports[`BlockTemplateForm: Component should render correctly 1`] = `
   >
     <div
       className="sc-fzoXWK jhgDpI"
+      id="tagsCounter"
     />
     2 Elements
     <div
@@ -512,6 +521,10 @@ exports[`BlockTemplateForm: Component should render correctly 1`] = `
                   }
                 />
               </div>
+              <div
+                className="sc-fzoyTs rbfWl"
+                id="elements.0.nameError"
+              />
             </div>
             <div
               className="sc-fznMAR guOnZI"
@@ -759,6 +772,10 @@ exports[`BlockTemplateForm: Component should render correctly 1`] = `
                   }
                 />
               </div>
+              <div
+                className="sc-fzoyTs rbfWl"
+                id="elements.1.nameError"
+              />
             </div>
             <div
               className="sc-fznMAR guOnZI"

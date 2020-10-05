@@ -618,6 +618,10 @@ exports[`CreateSection: Component should render correctly 1`] = `
           }
         />
       </div>
+      <div
+        className="sc-fzoyTs rbfWl"
+        id="nameError"
+      />
     </div>
     <div
       className="sc-fzokOt taSPn"

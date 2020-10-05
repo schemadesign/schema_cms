@@ -33,8 +33,9 @@ When('I cho(o)se to see a list of data sources', () => {
 });
 
 Given('I have entered {string} tab', tabName => {
-  clickElement(Tabs[`${tabName}`]());
-  expect(browser).toHaveTitle(TAB_PAGE_TITLE[tabName]);
+  Tabs.clickOnTab(tabName);
+  expectPageToHaveTitle(tabName);
+  expectPageToHaveUrl(tabName);
 });
 
 When('I cho(o)se to upload a {string} CSV file', fileState => {

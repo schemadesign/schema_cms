@@ -684,6 +684,10 @@ exports[`CreatePageTemplate: Component should render correctly 1`] = `
                     }
                   />
                 </div>
+                <div
+                  className="sc-fzqAbL fomoQS"
+                  id="nameError"
+                />
               </div>
               <div
                 className="sc-fzqPZZ drHiuH"
@@ -845,6 +849,10 @@ exports[`CreatePageTemplate: Component should render correctly 1`] = `
               </div>
             </div>
           </div>
+          <div
+            className="sc-fzqAbL fomoQS"
+            id="nameError"
+          />
         </div>
       </div>
       <div
@@ -852,6 +860,7 @@ exports[`CreatePageTemplate: Component should render correctly 1`] = `
       >
         <div
           className="sc-fzoydu kXdSvU"
+          id="tagsCounter"
         />
         1 Block
         <div

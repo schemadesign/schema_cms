@@ -90,7 +90,7 @@ export class TextInput extends PureComponent {
           iconComponent={this.renderEditIcon(isEdit)}
           {...restProps}
         />
-        {this.renderError({ error, errorMessage })}
+        <ErrorWrapper id={`${restProps.name}Error`}>{this.renderError({ error, errorMessage })}</ErrorWrapper>
       </Container>
     );
   }

@@ -499,6 +499,7 @@ exports[`Content: Component should render correctly 1`] = `
   >
     <div
       className="sc-fznMnq eNWOpn"
+      id="tagsCounter"
     />
     2 sections
     <div

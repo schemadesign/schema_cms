@@ -684,6 +684,10 @@ exports[`BlockTemplate: Component should render correctly 1`] = `
                     }
                   />
                 </div>
+                <div
+                  className="sc-fznMnq fueBrY"
+                  id="nameError"
+                />
               </div>
               <div
                 className="sc-fzoyTs gWZBLT"
@@ -845,6 +849,10 @@ exports[`BlockTemplate: Component should render correctly 1`] = `
               }
             />
           </div>
+          <div
+            className="sc-fznMnq fueBrY"
+            id="nameError"
+          />
         </div>
       </div>
       <div
@@ -852,6 +860,7 @@ exports[`BlockTemplate: Component should render correctly 1`] = `
       >
         <div
           className="sc-fzomME brMdOp"
+          id="tagsCounter"
         />
         2 Elements
         <div
@@ -1081,6 +1090,10 @@ exports[`BlockTemplate: Component should render correctly 1`] = `
                       }
                     />
                   </div>
+                  <div
+                    className="sc-fznMnq fueBrY"
+                    id="elements.0.nameError"
+                  />
                 </div>
                 <div
                   className="sc-fzoydu cpCKP"
@@ -1329,6 +1342,10 @@ exports[`BlockTemplate: Component should render correctly 1`] = `
                       }
                     />
                   </div>
+                  <div
+                    className="sc-fznMnq fueBrY"
+                    id="elements.1.nameError"
+                  />
                 </div>
                 <div
                   className="sc-fzoydu cpCKP"

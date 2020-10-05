@@ -684,6 +684,10 @@ exports[`EditPage: Component should render correctly 1`] = `
                     }
                   />
                 </div>
+                <div
+                  className="sc-fznzOf bMeOCN"
+                  id="nameError"
+                />
               </div>
               <div
                 className="sc-fznMAR cfFHiW"
@@ -819,6 +823,10 @@ exports[`EditPage: Component should render correctly 1`] = `
               </div>
             </div>
           </div>
+          <div
+            className="sc-fznzOf bMeOCN"
+            id="nameError"
+          />
         </div>
       </div>
       <div
@@ -906,6 +914,10 @@ exports[`EditPage: Component should render correctly 1`] = `
             </div>
           </div>
         </div>
+        <div
+          className="sc-fznzOf bMeOCN"
+          id="displayNameError"
+        />
       </div>
       <div
         className="sc-fzoYkl esRVnN"
@@ -1010,6 +1022,10 @@ exports[`EditPage: Component should render correctly 1`] = `
             </div>
           </div>
         </div>
+        <div
+          className="sc-fznzOf bMeOCN"
+          id="descriptionError"
+        />
       </div>
       <div
         className="sc-fzoYkl esRVnN"
@@ -1096,6 +1112,10 @@ exports[`EditPage: Component should render correctly 1`] = `
             </div>
           </div>
         </div>
+        <div
+          className="sc-fznzOf bMeOCN"
+          id="keywordsError"
+        />
       </div>
       <div
         className="sc-fzoYkl esRVnN"
@@ -1182,6 +1202,10 @@ exports[`EditPage: Component should render correctly 1`] = `
             </div>
           </div>
         </div>
+        <div
+          className="sc-fznzOf bMeOCN"
+          id="linkError"
+        />
       </div>
       <label
         style={
@@ -1605,6 +1629,7 @@ exports[`EditPage: Component should render correctly 1`] = `
       >
         <div
           className="sc-fzplgP bCwKPk"
+          id="tagsCounter"
         />
         1 Block
         <div
@@ -1812,6 +1837,10 @@ exports[`EditPage: Component should render correctly 1`] = `
                       }
                     />
                   </div>
+                  <div
+                    className="sc-fznzOf bMeOCN"
+                    id="blocks.0.nameError"
+                  />
                 </div>
                 <div
                   className="sc-fzpkqZ knrwlY"

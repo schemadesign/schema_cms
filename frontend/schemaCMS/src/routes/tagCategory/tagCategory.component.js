@@ -131,7 +131,12 @@ export class TagCategory extends PureComponent {
               <BackButton onClick={this.handleBack} type="button">
                 <FormattedMessage {...messages.back} />
               </BackButton>
-              <NextButton loading={isSubmitting} disabled={!dirty || !isValid || isSubmitting} type="submit">
+              <NextButton
+                id="saveBtn"
+                loading={isSubmitting}
+                disabled={!dirty || !isValid || isSubmitting}
+                type="submit"
+              >
                 <FormattedMessage {...messages.saveTagCategory} />
               </NextButton>
             </NavigationContainer>

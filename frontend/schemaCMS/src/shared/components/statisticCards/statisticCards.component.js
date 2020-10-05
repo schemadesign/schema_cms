@@ -16,13 +16,13 @@ export class StatisticCards extends PureComponent {
 
   renderText = ifElse(is(String), identity, text => <FormattedMessage {...text} />);
 
-  renderStatisticHeader = text => <CardHeader>{this.renderText(text)}</CardHeader>;
+  renderStatisticHeader = (text, id) => <CardHeader id={`${id}Header`}>{this.renderText(text)}</CardHeader>;
 
   renderStatistic = ({ header, value, to, id }, index) => (
     <CardWrapper key={index}>
       <Card
         id={id}
-        headerComponent={this.renderStatisticHeader(header)}
+        headerComponent={this.renderStatisticHeader(header, id)}
         onClick={this.handleGoTo(to)}
         customStyles={statisticsCardStyles}
       >

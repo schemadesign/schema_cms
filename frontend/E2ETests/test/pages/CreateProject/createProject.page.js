@@ -56,8 +56,8 @@ const setProjectStatus = CreateProject => (status = CREATE_PROJECT_DEFAULT_STATU
   clickElement(CreateProject[camelize(status)]());
 };
 
-const createProject = CreateProject => (titleState = VALID, descriptionState = VALID, domainState = VALID) => {
-  setValue(CreateProject.titleInput(), title[titleState]);
+const createProject = CreateProject => (projectName, descriptionState = VALID, domainState = VALID) => {
+  setValue(CreateProject.titleInput(), projectName);
   setValue(CreateProject.descriptionInput(), description[descriptionState]);
   setValue(CreateProject.domainInput(), domain[domainState]);
   setProjectStatus(CreateProject)();

@@ -25,7 +25,7 @@ export class LogoutModal extends PureComponent {
           <BackButton onClick={handleAction}>
             <FormattedMessage {...messages.cancel} />
           </BackButton>
-          <ConfirmLink id={'confirmLogoutBtn'} to={redirectUrl} onClick={handleAction}>
+          <ConfirmLink id="confirmLogoutBtn" to={redirectUrl} onClick={handleAction}>
             <FormattedMessage {...messages.confirm} />
           </ConfirmLink>
         </ModalActions>
