@@ -30,6 +30,7 @@ import {
   DATA_SOURCE_GOOGLE_SHEET,
   DATA_SOURCE_REIMPORT,
   DATA_SOURCE_RUN_LAST_JOB,
+  DATA_SOURCE_FILE_NAME,
 } from '../../../modules/dataSource/dataSource.constants';
 import { Uploader } from '../form/uploader';
 import { getEventFiles, isProcessingData } from '../../utils/helpers';
@@ -51,6 +52,8 @@ export class SourceFormComponent extends PureComponent {
     isSubmitting: PropTypes.bool,
     handleSubmit: PropTypes.func,
     setFieldValue: PropTypes.func,
+    validateForm: PropTypes.func.isRequired,
+    dirty: PropTypes.bool,
   };
 
   static defaultProps = {
@@ -62,14 +65,36 @@ export class SourceFormComponent extends PureComponent {
     confirmationRunReimport: false,
   };
 
+  handleTypeChange = event => {
+    const { handleChange, setFieldValue, dataSource } = this.props;
+    const type = event.target.value;
+
+    handleChange(event);
+
+    if (type === SOURCE_TYPE_FILE) {
+      setFieldValue(DATA_SOURCE_GOOGLE_SHEET, dataSource[DATA_SOURCE_GOOGLE_SHEET] || '');
+    }
+
+    if (type === SOURCE_TYPE_GOOGLE_SHEET) {
+      setFieldValue(
+        DATA_SOURCE_FILE_NAME,
+        (dataSource[DATA_SOURCE_TYPE] === SOURCE_TYPE_FILE && dataSource[DATA_SOURCE_FILE_NAME]) || null
+      );
+    }
+
+    setTimeout(() => this.props.validateForm());
+  };
+
   handleUploadChange = (data, { setFieldValue }) => {
     const uploadFile = getEventFiles(data);
     if (!uploadFile.length) {
       return;
     }
 
-    setFieldValue('file', uploadFile[0]);
-    setFieldValue('fileName', pathOr('', ['name'], uploadFile[0]));
+    setFieldValue(DATA_SOURCE_FILE, uploadFile[0]);
+    setFieldValue(DATA_SOURCE_FILE_NAME, pathOr('', ['name'], uploadFile[0]));
+
+    setTimeout(() => this.props.validateForm());
   };
 
   handleReimport = () => {
@@ -147,11 +172,15 @@ export class SourceFormComponent extends PureComponent {
   };
 
   renderReimportButton = ({ isProcessing }) => {
-    const { isSubmitting, dataSource } = this.props;
+    const { isSubmitting, dataSource, dirty } = this.props;
 
     return renderWhenTrue(
       always(
-        <NextButton type="button" onClick={this.handleShowReimportModal} disabled={isSubmitting || isProcessing}>
+        <NextButton
+          type="button"
+          onClick={this.handleShowReimportModal}
+          disabled={isSubmitting || isProcessing || dirty}
+        >
           <FormattedMessage {...messages.reimport} />
         </NextButton>
       )
@@ -259,7 +288,7 @@ export class SourceFormComponent extends PureComponent {
           customStyles={customRadioGroupStyles}
           customLabelStyles={customRadioButtonStyles}
           value={type}
-          onChange={handleChange}
+          onChange={this.handleTypeChange}
         >
           <SourceButtonWrapper>{this.renderRadioButton(type)}</SourceButtonWrapper>
           <SourceButtonWrapper>{this.renderSpreadsheetButton(type)}</SourceButtonWrapper>

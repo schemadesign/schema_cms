@@ -18,6 +18,9 @@ import {
   DATA_SOURCE_FORM,
   DATA_SOURCE_SCHEMA,
   DATA_SOURCE_RUN_LAST_JOB,
+  DATA_SOURCE_FILE_NAME,
+  DATA_SOURCE_TYPE,
+  SOURCE_TYPE_FILE,
 } from '../../../modules/dataSource/dataSource.constants';
 
 const mapStateToProps = createStructuredSelector({
@@ -51,6 +54,8 @@ export default compose(
     enableReinitialize: true,
     mapPropsToValues: ({ dataSource }) => ({
       ...pick(DATA_SOURCE_FIELDS, dataSource),
+      [DATA_SOURCE_FILE_NAME]:
+        dataSource[DATA_SOURCE_TYPE] === SOURCE_TYPE_FILE ? dataSource[DATA_SOURCE_FILE_NAME] : null,
       [DATA_SOURCE_RUN_LAST_JOB]: false,
     }),
     validationSchema: () => DATA_SOURCE_SCHEMA,

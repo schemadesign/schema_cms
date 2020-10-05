@@ -178,7 +178,9 @@ const getIfAllDataSourceProcessed = ({ data, uploadingDataSources }) =>
     isEmpty,
     ramdaAll(
       both(
-        ({ id, type }) => (type === SOURCE_TYPE_GOOGLE_SHEET ? true : !any(propEq('id', id))(uploadingDataSources)),
+        ({ id, type }) =>
+          (type === SOURCE_TYPE_GOOGLE_SHEET && isEmpty(uploadingDataSources)) ||
+          !any(propEq('id', id))(uploadingDataSources),
         either(
           both(
             pipe(
@@ -266,7 +268,12 @@ function* updateOne({ payload: { requestData, dataSource } }) {
 
       yield put(
         DataSourceRoutines.updateOne.success({
-          dataSource: { ...dataSource, fileName: requestData.file.name, progress: 0 },
+          dataSource: {
+            ...dataSource,
+            [DATA_SOURCE_TYPE]: requestData[DATA_SOURCE_TYPE],
+            [DATA_SOURCE_FILE_NAME]: requestData.file.name,
+            progress: 0,
+          },
           isUpload: true,
         })
       );
