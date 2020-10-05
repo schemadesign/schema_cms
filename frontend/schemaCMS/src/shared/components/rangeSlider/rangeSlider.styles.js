@@ -12,13 +12,13 @@ export const Container = styled.div`
 
 export const Slider = styled.div`
   height: 3px;
-  background: #1d1d20;
+  background: ${({ theme }) => theme.slider.background};
   width: 100%;
 `;
 
 export const SelectedSlider = styled.div`
   height: 3px;
-  background: #71737e;
+  background: ${({ theme }) => theme.slider.selectedBackground};
   position: absolute;
   top: 50%;
   transform: translateY(-50%);
@@ -29,7 +29,7 @@ export const SelectedSlider = styled.div`
 export const slideStyles = css`
   width: ${SLIDE_SIZE};
   height: ${SLIDE_SIZE};
-  background: #fff;
+  background: ${({ theme }) => theme.slider.thumb};
   border-radius: 50%;
   cursor: pointer;
   pointer-events: all;
