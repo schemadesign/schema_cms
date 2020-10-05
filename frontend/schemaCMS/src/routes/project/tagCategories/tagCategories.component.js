@@ -92,10 +92,11 @@ export class TagCategories extends PureComponent {
     const list = [whenCreated, createdBy];
     const header = <CardHeader list={list} />;
     const footer = <FormattedMessage {...messages.tagsCounter} values={{ count: tags.length }} />;
+    const handlePageClick = () => history.push(`/tag-category/${id}`);
 
     return (
       <ListItem id="tagContainer" headerComponent={header} footerComponent={footer} key={index}>
-        <ListItemTitle id={`tag-category-${camelize(name)}`} onClick={() => history.push(`/tag-category/${id}`)}>
+        <ListItemTitle id={`tag-category-${camelize(name)}`} onClick={handlePageClick}>
           {name}
         </ListItemTitle>
       </ListItem>

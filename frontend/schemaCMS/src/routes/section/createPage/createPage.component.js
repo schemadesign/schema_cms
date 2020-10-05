@@ -93,6 +93,8 @@ export const CreatePage = ({
     },
   });
 
+  const handleCancelClick = () => history.push(`/section/${sectionId}`);
+
   useEffectOnce(() => {
     (async () => {
       try {
@@ -137,7 +139,7 @@ export const CreatePage = ({
             {...restFormikProps}
           />
           <NavigationContainer fixed>
-            <BackButton id="cancelBtn" type="button" onClick={() => history.push(`/section/${sectionId}`)}>
+            <BackButton id="cancelBtn" type="button" onClick={handleCancelClick}>
               <FormattedMessage {...messages.cancel} />
             </BackButton>
             <NextButton

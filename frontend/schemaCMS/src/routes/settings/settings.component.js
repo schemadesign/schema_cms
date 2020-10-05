@@ -51,10 +51,12 @@ export class Settings extends PureComponent {
     this.props.history.goBack();
   };
 
+  handleResetPasswordClick = () => this.props.history.push('/reset-password');
+
   renderResetPasswordLink = renderWhenTrue(
     always(
       <LinkContainer>
-        <Link id="resetPasswordLink" onClick={() => this.props.history.push('/reset-password')}>
+        <Link id="resetPasswordLink" onClick={this.handleResetPasswordClick}>
           <FormattedMessage {...messages.resetPassword} />
         </Link>
       </LinkContainer>

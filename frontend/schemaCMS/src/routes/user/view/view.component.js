@@ -82,11 +82,13 @@ export class View extends PureComponent {
   };
 
   handleBack = () => this.props.history.push('/user');
+  handleOpenRemoveModal = () => this.setState({ userRemoveModalOpen: true });
+  handleMakeAdminOpenModal = () => () => this.setState({ makeAdminModalOpen: true });
 
   renderUserContent = userData => renderWhenTrue(() => <UserProfile values={userData} />)(!!userData.id);
 
   renderMakeAdmin = renderWhenTrue(() => (
-    <Link onClick={() => this.setState({ makeAdminModalOpen: true })}>
+    <Link onClick={this.handleMakeAdminOpenModal}>
       <FormattedMessage {...messages.makeAdmin} />
     </Link>
   ));
@@ -95,7 +97,7 @@ export class View extends PureComponent {
     <Fragment>
       {this.renderUserContent(userData)}
       <LinkContainer>
-        <Link onClick={() => this.setState({ userRemoveModalOpen: true })}>
+        <Link onClick={this.handleOpenRemoveModal}>
           <FormattedMessage {...messages.removeUser} />
         </Link>
         {this.renderMakeAdmin(isEditor && isAdmin)}

@@ -129,6 +129,8 @@ export const PageTemplate = memo(
       },
     });
 
+    const handleCancelButton = () => history.push(`/project/${project.id}/page-templates`);
+
     useEffectOnce(() => {
       (async () => {
         try {
@@ -164,11 +166,7 @@ export const PageTemplate = memo(
               {...restFormikProps}
             />
             <NavigationContainer fixed>
-              <BackButton
-                id="cancelBtn"
-                type="button"
-                onClick={() => history.push(`/project/${project.id}/page-templates`)}
-              >
+              <BackButton id="cancelBtn" type="button" onClick={handleCancelButton}>
                 <FormattedMessage {...messages.cancel} />
               </BackButton>
               <NextButton

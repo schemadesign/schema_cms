@@ -95,6 +95,8 @@ export const CreatePageTemplate = ({ userRole, createPageTemplate, fetchBlockTem
       }
     },
   });
+
+  const handleOnClick = () => history.push(`/project/${projectId}/page-templates`);
   const title = <FormattedMessage {...messages.title} />;
   const subtitle = <FormattedMessage {...messages.subtitle} />;
   const menuOptions = getProjectMenuOptions(projectId);
@@ -120,11 +122,7 @@ export const CreatePageTemplate = ({ userRole, createPageTemplate, fetchBlockTem
         <form onSubmit={handleSubmit}>
           <PageTemplateForm title={title} blockTemplates={blockTemplates} isValid={isValid} {...restFormikProps} />
           <NavigationContainer fixed>
-            <BackButton
-              id="cancelBtn"
-              type="button"
-              onClick={() => history.push(`/project/${projectId}/page-templates`)}
-            >
+            <BackButton id="cancelBtn" type="button" onClick={handleOnClick}>
               <FormattedMessage {...messages.cancel} />
             </BackButton>
             <NextButton

@@ -69,12 +69,14 @@ export class UserDetails extends PureComponent {
 
   handleBack = () => this.props.history.push(`/project/${getMatchParam(this.props, 'projectId')}/user`);
 
+  handleOpenModal = () => this.setState({ userRemoveModalOpen: true });
+
   renderContent = userData => renderWhenTrue(() => <UserProfile values={userData} />)(!!userData.id);
 
   renderRemoveUserButton = renderWhenTrue(
     always(
       <LinkContainer>
-        <Link onClick={() => this.setState({ userRemoveModalOpen: true })}>
+        <Link onClick={this.handleOpenModal}>
           <FormattedMessage {...messages.removeEditorFromProject} />
         </Link>
       </LinkContainer>

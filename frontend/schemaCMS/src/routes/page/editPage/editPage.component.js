@@ -176,6 +176,8 @@ export const EditPage = ({
     setCustomLocation(false);
   };
 
+  const handleBackClick = () => history.push(`/section/${page.section.id}`);
+
   useEffectOnce(() => {
     (async () => {
       try {
@@ -223,7 +225,7 @@ export const EditPage = ({
             {...restFormikProps}
           />
           <NavigationContainer fixed>
-            <BackButton id="backBtn" type="button" onClick={() => history.push(`/section/${page.section.id}`)}>
+            <BackButton id="backBtn" type="button" onClick={handleBackClick}>
               <FormattedMessage {...messages.back} />
             </BackButton>
             <NextButton

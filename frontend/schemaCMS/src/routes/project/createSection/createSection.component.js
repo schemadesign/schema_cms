@@ -71,6 +71,8 @@ export const CreateSection = ({ userRole, createSection, project }) => {
     },
   });
 
+  const handleBackClick = () => history.push(`/project/${projectId}/content`);
+
   return (
     <Container>
       <Helmet title={intl.formatMessage(messages.title)} />
@@ -93,7 +95,7 @@ export const CreateSection = ({ userRole, createSection, project }) => {
           {...restFormikProps}
         />
         <NavigationContainer fixed>
-          <BackButton id="cancelBtn" type="button" onClick={() => history.push(`/project/${projectId}/content`)}>
+          <BackButton id="cancelBtn" type="button" onClick={handleBackClick}>
             <FormattedMessage {...messages.cancel} />
           </BackButton>
           <NextButton

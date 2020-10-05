@@ -27,10 +27,11 @@ const Section = ({ created, createdBy, name, id, pagesCount = 0 }) => {
   const list = [whenCreated, createdBy];
   const header = <CardHeader list={list} />;
   const footer = <FormattedMessage {...messages.pagesCounter} values={{ pagesCount }} />;
+  const handlePageClick = () => history.push(`/section/${id}`);
 
   return (
     <ListItem headerComponent={header} footerComponent={footer}>
-      <ListItemTitle id={`section-${id}`} onClick={() => history.push(`/section/${id}`)}>
+      <ListItemTitle id={`section-${id}`} onClick={handlePageClick}>
         {name}
       </ListItemTitle>
     </ListItem>
@@ -54,6 +55,9 @@ export const Content = ({ userRole, fetchSections, sections }) => {
   const title = <FormattedMessage {...messages.title} />;
   const subtitle = <FormattedMessage {...messages.subtitle} />;
   const menuOptions = getProjectMenuOptions(projectId);
+
+  const handleBackClick = () => history.push(`/project/${projectId}`);
+  const handleAddClick = () => history.push(`/project/${projectId}/section/create`);
 
   useEffectOnce(() => {
     (async () => {
@@ -79,7 +83,7 @@ export const Content = ({ userRole, fetchSections, sections }) => {
       />
       <ProjectTabs active={CONTENT} url={`/project/${projectId}`} />
       <ContextHeader title={title} subtitle={subtitle}>
-        <PlusButton id="createSection" onClick={() => history.push(`/project/${projectId}/section/create`)} />
+        <PlusButton id="createSection" onClick={handleAddClick} />
       </ContextHeader>
       <LoadingWrapper loading={loading} error={error}>
         <Fragment>
@@ -92,12 +96,8 @@ export const Content = ({ userRole, fetchSections, sections }) => {
         </Fragment>
       </LoadingWrapper>
       <NavigationContainer fixed>
-        <BackArrowButton id="backBtn" onClick={() => history.push(`/project/${projectId}`)} />
-        <PlusButton
-          hideOnDesktop
-          id="creatSectionMobile"
-          onClick={() => history.push(`/project/${projectId}/section/create`)}
-        />
+        <BackArrowButton id="backBtn" onClick={handleBackClick} />
+        <PlusButton hideOnDesktop id="creatSectionMobile" onClick={handleAddClick} />
       </NavigationContainer>
     </Container>
   );

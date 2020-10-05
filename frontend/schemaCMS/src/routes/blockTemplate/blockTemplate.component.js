@@ -90,6 +90,8 @@ export const BlockTemplate = memo(
       }
     };
 
+    const handleBackClick = () => history.push(`/project/${project.id}/block-templates`);
+
     const menuOptions = getProjectMenuOptions(project.id);
     const { handleSubmit, isValid, dirty, ...restFormikProps } = useFormik({
       initialValues: {
@@ -161,11 +163,7 @@ export const BlockTemplate = memo(
               {...restFormikProps}
             />
             <NavigationContainer fixed>
-              <BackButton
-                id="cancelBtn"
-                type="button"
-                onClick={() => history.push(`/project/${project.id}/block-templates`)}
-              >
+              <BackButton id="cancelBtn" type="button" onClick={handleBackClick}>
                 <FormattedMessage {...messages.cancel} />
               </BackButton>
               <NextButton

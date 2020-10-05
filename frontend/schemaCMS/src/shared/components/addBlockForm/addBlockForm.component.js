@@ -131,6 +131,8 @@ export const AddBlockForm = ({ fetchBlockTemplates, projectId, backUrl, blockTem
     setCustomLocation(false);
   };
 
+  const handleBackClick = () => history.push(backUrl, { page: state.page });
+
   const renderBlockTemplateElements = blockType =>
     renderWhenTrue(
       always(
@@ -179,7 +181,7 @@ export const AddBlockForm = ({ fetchBlockTemplates, projectId, backUrl, blockTem
         </SelectContainer>
         {renderBlockTemplateElements(values[BLOCK_TYPE])}
         <NavigationContainer fixed>
-          <BackButton id="backBtn" type="button" onClick={() => history.push(backUrl, { page: state.page })}>
+          <BackButton id="backBtn" type="button" onClick={handleBackClick}>
             <FormattedMessage {...messages.back} />
           </BackButton>
           <NextButton id="addBlock" type="submit" disabled={!isValid || !dirty}>

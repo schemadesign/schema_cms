@@ -66,6 +66,8 @@ const PageTemplate = ({ created, createdBy, name, id, blocks, copyPageTemplate, 
     }
   };
 
+  const handlePageClick = () => history.push(`/page-template/${id}`);
+
   const header = (
     <CardHeader
       list={list}
@@ -83,7 +85,7 @@ const PageTemplate = ({ created, createdBy, name, id, blocks, copyPageTemplate, 
 
   return (
     <ListItem headerComponent={header} footerComponent={footer}>
-      <ListItemTitle id={`pageTemplateTitle-${id}`} onClick={() => history.push(`/page-template/${id}`)}>
+      <ListItemTitle id={`pageTemplateTitle-${id}`} onClick={handlePageClick}>
         {name}
       </ListItemTitle>
     </ListItem>
@@ -111,6 +113,9 @@ export const PageTemplates = ({ fetchPageTemplates, pageTemplates, userRole, pro
   const subtitle = <FormattedMessage {...messages.subtitle} />;
   const noData = <FormattedMessage {...messages.noData} />;
 
+  const handleAddTemplateClick = () => history.push(`/project/${projectId}/page-templates/create`);
+  const handleBackClick = () => history.push(`/project/${projectId}/templates`);
+
   useEffectOnce(() => {
     (async () => {
       try {
@@ -130,10 +135,7 @@ export const PageTemplates = ({ fetchPageTemplates, pageTemplates, userRole, pro
       <MobileMenu headerTitle={title} headerSubtitle={subtitle} options={filterMenuOptions(menuOptions, userRole)} />
       <ProjectBreadcrumbs items={getBreadcrumbsItems(project)} />
       <ContextHeader title={title} subtitle={subtitle}>
-        <PlusButton
-          id="createPageTemplate"
-          onClick={() => history.push(`/project/${projectId}/page-templates/create`)}
-        />
+        <PlusButton id="createPageTemplate" onClick={handleAddTemplateClick} />
       </ContextHeader>
       <LoadingWrapper loading={loading} error={error} noDataContent={noData} noData={!pageTemplates.length}>
         <Fragment>
@@ -146,12 +148,8 @@ export const PageTemplates = ({ fetchPageTemplates, pageTemplates, userRole, pro
         </Fragment>
       </LoadingWrapper>
       <NavigationContainer fixed>
-        <BackArrowButton id="backBtn" onClick={() => history.push(`/project/${projectId}/templates`)} />
-        <PlusButton
-          hideOnDesktop
-          id="createPageTemplateMobile"
-          onClick={() => history.push(`/project/${projectId}/page-templates/create`)}
-        />
+        <BackArrowButton id="backBtn" onClick={handleBackClick} />
+        <PlusButton hideOnDesktop id="createPageTemplateMobile" onClick={handleAddTemplateClick} />
       </NavigationContainer>
     </Container>
   );
