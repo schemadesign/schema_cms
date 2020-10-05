@@ -210,6 +210,7 @@ describe('DataSource: sagas', () => {
       requestData: {
         data: 'data',
         name: 'name',
+        type: 'type',
         camelizeData: 'camelizeData',
       },
     };
@@ -255,7 +256,7 @@ describe('DataSource: sagas', () => {
           .dispatch(DataSourceRoutines.updateOne(payload))
           .put(
             DataSourceRoutines.updateOne.success({
-              dataSource: { ...payload.dataSource, progress: 0, fileName: 'fileName' },
+              dataSource: { ...payload.dataSource, progress: 0, type: 'type', fileName: 'fileName' },
               isUpload: true,
             })
           )

@@ -33,6 +33,7 @@ export const defaultProps = {
   },
   isSubmitting: false,
   dirty: false,
+  isValid: false,
   values: {
     [DATA_SOURCE_NAME]: 'name',
     [DATA_SOURCE_TYPE]: 'file',

@@ -137,6 +137,7 @@ exports[`SourceComponent: Component should render correctly 1`] = `
         }
       }
       isSubmitting={false}
+      isValid={false}
       match={
         Object {
           "params": Object {
@@ -346,6 +347,7 @@ exports[`SourceComponent: Component should render correctly 1`] = `
           },
         }
       }
+      dirty={false}
       handleChange={[Function]}
       handleSubmit={[Function]}
       intl={
@@ -607,6 +609,7 @@ exports[`SourceComponent: Component should render correctly 1`] = `
       }
     }
     isSubmitting={false}
+    isValid={false}
     match={
       Object {
         "params": Object {
@@ -1067,6 +1070,7 @@ exports[`SourceComponent: Component should render file uploader 1`] = `
         }
       }
       isSubmitting={false}
+      isValid={false}
       match={
         Object {
           "params": Object {
@@ -1273,6 +1277,7 @@ exports[`SourceComponent: Component should render file uploader 1`] = `
           "type": "file",
         }
       }
+      dirty={false}
       handleChange={[Function]}
       handleSubmit={[Function]}
       intl={
@@ -1512,6 +1517,7 @@ exports[`SourceComponent: Component should render file uploader 1`] = `
       }
     }
     isSubmitting={false}
+    isValid={false}
     match={
       Object {
         "params": Object {

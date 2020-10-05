@@ -164,7 +164,7 @@ export class SourceFormComponent extends PureComponent {
         name={DATA_SOURCE_GOOGLE_SHEET}
         placeholder={this.props.intl.formatMessage(messages.googleSpreadSheetPlaceholder)}
         fullWidth
-        label={this.props.intl.formatMessage(messages.name)}
+        label={this.props.intl.formatMessage(messages.url)}
         isEdit
         {...restProps}
       />
