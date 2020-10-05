@@ -189,7 +189,7 @@ exports[`App: Component should not render App when language is not set 1`] = `
         }
       }
     >
-      <ThemeProvider
+      <Component
         theme={
           Object {
             "accordion": Object {
@@ -368,7 +368,7 @@ exports[`App: Component should not render App when language is not set 1`] = `
           >
             <Component />
           </FormattedMessage>
-          <Memo(GlobalStyleComponent) />
+          <Memo(l) />
           <DesktopHeader
             userRole="editor"
           />
@@ -387,7 +387,7 @@ exports[`App: Component should not render App when language is not set 1`] = `
             </LoadingWrapper>
           </styled.div>
         </styled.div>
-      </ThemeProvider>
+      </Component>
     </ThemeProvider>
   </ContextProvider>
 </IntlProvider>
@@ -582,7 +582,7 @@ exports[`App: Component should render App when language is set 1`] = `
         }
       }
     >
-      <ThemeProvider
+      <Component
         theme={
           Object {
             "accordion": Object {
@@ -761,7 +761,7 @@ exports[`App: Component should render App when language is set 1`] = `
           >
             <Component />
           </FormattedMessage>
-          <Memo(GlobalStyleComponent) />
+          <Memo(l) />
           <DesktopHeader
             userRole="editor"
           />
@@ -780,7 +780,7 @@ exports[`App: Component should render App when language is set 1`] = `
             </LoadingWrapper>
           </styled.div>
         </styled.div>
-      </ThemeProvider>
+      </Component>
     </ThemeProvider>
   </ContextProvider>
 </IntlProvider>

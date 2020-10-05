@@ -2,20 +2,20 @@
 
 exports[`PageBlockTemplate: Component should render correctly 1`] = `
 <div
-  className="sc-AxirZ gCweXQ"
+  className="sc-gtssRu exmALH"
 >
   <div
-    className="sc-AxiKw dPWazA"
+    className="sc-dlnjPT kinLDj"
   >
     <span>
       icon
     </span>
   </div>
   <div
-    className="sc-AxhCb bFTrZ"
+    className="sc-hKFyIo fzmmAc"
   >
     <div
-      className="sc-AxhUy fkYdcS"
+      className="sc-eCApGN bUhzeW"
       onClick={[Function]}
     >
       <input
@@ -109,7 +109,7 @@ exports[`PageBlockTemplate: Component should render correctly 1`] = `
         </div>
       </div>
       <div
-        className="sc-AxgMl eZgdJj"
+        className="sc-jSFkmK gzfWxd"
       >
         <svg
           style={
@@ -130,7 +130,7 @@ exports[`PageBlockTemplate: Component should render correctly 1`] = `
     </div>
   </div>
   <div
-    className="sc-AxiKw dPWazA"
+    className="sc-dlnjPT kinLDj"
   >
     <svg
       style={

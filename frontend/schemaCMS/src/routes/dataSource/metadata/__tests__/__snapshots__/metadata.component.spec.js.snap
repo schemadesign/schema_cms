@@ -2,10 +2,10 @@
 
 exports[`Metadata: Component should render correctly 1`] = `
 <div
-  className="sc-AxjAm StDqN"
+  className="sc-bdnylx"
 >
   <div
-    className="sc-AxgMl kEUmFl"
+    className="sc-jSFkmK fOnWDj"
   >
     <div
       style={
@@ -22,10 +22,10 @@ exports[`Metadata: Component should render correctly 1`] = `
     >
       <div>
         <div
-          className="sc-AxheI fniENP"
+          className="sc-gKAblj"
         >
           <h2
-            className="sc-fznyAO dFXsby"
+            className="sc-crzoUp hGYdip"
             id="headerTitle"
             style={
               Object {
@@ -37,7 +37,7 @@ exports[`Metadata: Component should render correctly 1`] = `
             }
           />
           <h1
-            className="sc-fznKkj hlIEaX"
+            className="sc-dIsAE exJHSK"
             id="headerSubtitle"
             style={
               Object {
@@ -119,16 +119,16 @@ exports[`Metadata: Component should render correctly 1`] = `
       }
     >
       <div
-        className="sc-AxmLO dvTVuW"
+        className="sc-fujyUd gEHBTT"
       >
         <div
-          className="sc-Axmtr bwYVDg"
+          className="sc-iCoHVE gmeCWb"
         >
           <div
-            className="sc-AxheI fniENP"
+            className="sc-gKAblj"
           >
             <h2
-              className="sc-fznyAO dFXsby"
+              className="sc-crzoUp hGYdip"
               id="headerTitle"
               style={
                 Object {
@@ -140,7 +140,7 @@ exports[`Metadata: Component should render correctly 1`] = `
               }
             />
             <h1
-              className="sc-fznKkj hlIEaX"
+              className="sc-dIsAE exJHSK"
               id="headerSubtitle"
               style={
                 Object {
@@ -158,10 +158,10 @@ exports[`Metadata: Component should render correctly 1`] = `
           </div>
         </div>
         <div
-          className="sc-fzozJi cXstQc"
+          className="sc-pNWxx bAQKCE"
         >
           <div
-            className="sc-fzoLsD kppjAR"
+            className="sc-jrsJCI hEdsDt"
           >
             <a
               href="/project/"
@@ -172,7 +172,7 @@ exports[`Metadata: Component should render correctly 1`] = `
             </a>
           </div>
           <div
-            className="sc-fzoLsD kppjAR"
+            className="sc-jrsJCI hEdsDt"
           >
             <a
               href="/user/"
@@ -183,7 +183,7 @@ exports[`Metadata: Component should render correctly 1`] = `
             </a>
           </div>
           <div
-            className="sc-fzoLsD kppjAR"
+            className="sc-jrsJCI hEdsDt"
           >
             <a
               href="/project/1"
@@ -194,7 +194,7 @@ exports[`Metadata: Component should render correctly 1`] = `
             </a>
           </div>
           <div
-            className="sc-fzoLsD kppjAR"
+            className="sc-jrsJCI hEdsDt"
           >
             <a
               href="/project/1/datasource"
@@ -205,7 +205,7 @@ exports[`Metadata: Component should render correctly 1`] = `
             </a>
           </div>
           <div
-            className="sc-fzoLsD kppjAR"
+            className="sc-jrsJCI hEdsDt"
           >
             <a
               href="/project/1/user"
@@ -216,7 +216,7 @@ exports[`Metadata: Component should render correctly 1`] = `
             </a>
           </div>
           <div
-            className="sc-fzoLsD kppjAR"
+            className="sc-jrsJCI hEdsDt"
           >
             <a
               href="/project/1/content"
@@ -227,7 +227,7 @@ exports[`Metadata: Component should render correctly 1`] = `
             </a>
           </div>
           <div
-            className="sc-fzoLsD kppjAR"
+            className="sc-jrsJCI hEdsDt"
           >
             <a
               href="/project/1/templates"
@@ -239,10 +239,10 @@ exports[`Metadata: Component should render correctly 1`] = `
           </div>
         </div>
         <div
-          className="sc-fzozJi cXstQc"
+          className="sc-pNWxx bAQKCE"
         >
           <div
-            className="sc-fzoLsD kppjAR"
+            className="sc-jrsJCI hEdsDt"
           >
             <a
               href="/settings"
@@ -253,7 +253,7 @@ exports[`Metadata: Component should render correctly 1`] = `
             </a>
           </div>
           <div
-            className="sc-fzoLsD kppjAR"
+            className="sc-jrsJCI hEdsDt"
           >
             <div
               onClick={[Function]}
@@ -263,10 +263,10 @@ exports[`Metadata: Component should render correctly 1`] = `
           </div>
         </div>
         <div
-          className="sc-fzpans cCWWfw"
+          className="sc-kEqYlL isgfvN"
         >
           <a
-            className="sc-fzplWN jUkJod"
+            className="sc-iqAbSa kJREqS"
             href="/"
             id="aboutNavBtn"
             onClick={[Function]}
@@ -274,7 +274,7 @@ exports[`Metadata: Component should render correctly 1`] = `
             About Schema CMS
           </a>
           <a
-            className="sc-fzplWN jUkJod"
+            className="sc-iqAbSa kJREqS"
             href="/"
             id="apiNavBtn"
             onClick={[Function]}
@@ -282,7 +282,7 @@ exports[`Metadata: Component should render correctly 1`] = `
             API Doc
           </a>
           <a
-            className="sc-fzplWN jUkJod"
+            className="sc-iqAbSa kJREqS"
             href="/"
             id="repositoryNavBtn"
             onClick={[Function]}
@@ -336,13 +336,13 @@ exports[`Metadata: Component should render correctly 1`] = `
     </div>
   </div>
   <div
-    className="sc-fznWqX VKSem"
+    className="sc-kfYqjs jVUIpp"
   >
     <div
-      className="sc-fzoiQi kVjVJJ"
+      className="sc-fKgIGh ePACvs"
     >
       <h2
-        className="sc-fzqARJ euGmLc"
+        className="sc-bCwgka bBdQKU"
         id="desktopHeaderTitle"
         style={
           Object {
@@ -354,7 +354,7 @@ exports[`Metadata: Component should render correctly 1`] = `
         }
       />
       <h1
-        className="sc-fzqNqU cSnCDr"
+        className="sc-iwaifL fAJgQr"
         id="desktopHeaderSubtitle"
         style={
           Object {
@@ -371,19 +371,19 @@ exports[`Metadata: Component should render correctly 1`] = `
       </h1>
     </div>
     <div
-      className="sc-fzoyTs crHzLr"
+      className="sc-cxNIbT"
     >
       <div
-        className="sc-fzoNJl jVCYyl"
+        className="sc-lmgQde bHBFHT"
       >
         <div
-          className="sc-fzoXWK kRPIuW"
+          className="sc-iJCRLp iRDTFs"
         >
           <div
-            className="sc-fznxKY ffjPon"
+            className="sc-ezzayL kFGdbN"
           >
             <div
-              className="sc-fzpmMD hAqLKL"
+              className="sc-giAqnE dbLqMx"
               disabled={false}
               onClick={[Function]}
             >
@@ -404,16 +404,16 @@ exports[`Metadata: Component should render correctly 1`] = `
               </svg>
             </div>
             <div
-              className="sc-fznMAR gNmxGd"
+              className="sc-bYwzba ehAxEv"
             >
               Source
             </div>
           </div>
           <div
-            className="sc-fznxKY ffjPon"
+            className="sc-ezzayL kFGdbN"
           >
             <div
-              className="sc-fzpmMD hAqLKL"
+              className="sc-giAqnE dbLqMx"
               disabled={false}
               onClick={[Function]}
             >
@@ -435,16 +435,16 @@ exports[`Metadata: Component should render correctly 1`] = `
               </svg>
             </div>
             <div
-              className="sc-fznMAR gNmxGd"
+              className="sc-bYwzba ehAxEv"
             >
               Fields
             </div>
           </div>
           <div
-            className="sc-fznxKY ffjPon"
+            className="sc-ezzayL kFGdbN"
           >
             <div
-              className="sc-fzpmMD hAqLKL"
+              className="sc-giAqnE dbLqMx"
               disabled={false}
               onClick={[Function]}
             >
@@ -485,16 +485,16 @@ exports[`Metadata: Component should render correctly 1`] = `
               </svg>
             </div>
             <div
-              className="sc-fznMAR gNmxGd"
+              className="sc-bYwzba ehAxEv"
             >
               Steps
             </div>
           </div>
           <div
-            className="sc-fznxKY ffjPon"
+            className="sc-ezzayL kFGdbN"
           >
             <div
-              className="sc-fzpmMD hAqLKL"
+              className="sc-giAqnE dbLqMx"
               disabled={false}
               onClick={[Function]}
             >
@@ -535,16 +535,16 @@ exports[`Metadata: Component should render correctly 1`] = `
               </svg>
             </div>
             <div
-              className="sc-fznMAR gNmxGd"
+              className="sc-bYwzba ehAxEv"
             >
               Results
             </div>
           </div>
           <div
-            className="sc-fznxKY ffjPon"
+            className="sc-ezzayL kFGdbN"
           >
             <div
-              className="sc-fzpmMD hAqLKL"
+              className="sc-giAqnE dbLqMx"
               disabled={false}
               onClick={[Function]}
             >
@@ -568,16 +568,16 @@ exports[`Metadata: Component should render correctly 1`] = `
               </svg>
             </div>
             <div
-              className="sc-fznMAR gNmxGd"
+              className="sc-bYwzba ehAxEv"
             >
               Filters
             </div>
           </div>
           <div
-            className="sc-fznxKY ffjPon"
+            className="sc-ezzayL kFGdbN"
           >
             <div
-              className="sc-fzpmMD hAqLKL"
+              className="sc-giAqnE dbLqMx"
               disabled={false}
               onClick={[Function]}
             >
@@ -612,16 +612,16 @@ exports[`Metadata: Component should render correctly 1`] = `
               </svg>
             </div>
             <div
-              className="sc-fznMAR gNmxGd"
+              className="sc-bYwzba ehAxEv"
             >
               Tags
             </div>
           </div>
           <div
-            className="sc-fznxKY ffjPon"
+            className="sc-ezzayL kFGdbN"
           >
             <div
-              className="sc-fzpmMD hAqLKL"
+              className="sc-giAqnE dbLqMx"
               disabled={false}
               onClick={[Function]}
             >
@@ -642,16 +642,16 @@ exports[`Metadata: Component should render correctly 1`] = `
               </svg>
             </div>
             <div
-              className="sc-fznMAR gNmxGd"
+              className="sc-bYwzba ehAxEv"
             >
               States
             </div>
           </div>
           <div
-            className="sc-fznxKY ffjPon"
+            className="sc-ezzayL kFGdbN"
           >
             <div
-              className="sc-fzpmMD hAqLKL"
+              className="sc-giAqnE dbLqMx"
               disabled={false}
               onClick={[Function]}
             >
@@ -672,7 +672,7 @@ exports[`Metadata: Component should render correctly 1`] = `
               </svg>
             </div>
             <div
-              className="sc-fznMAR gNmxGd"
+              className="sc-bYwzba ehAxEv"
             >
               Metadata
             </div>
@@ -682,21 +682,21 @@ exports[`Metadata: Component should render correctly 1`] = `
     </div>
   </div>
   <div
-    className="sc-fzqPZZ hOPNKe"
+    className="sc-hiKfjK eALEwl"
   >
     <div
-      className="sc-fzoxKX jNWnEP"
+      className="sc-gXfWUo gZQoJo"
       id="tagsCounter"
     />
     3 Metadata
     <div
-      className="sc-fzoxKX jNWnEP"
+      className="sc-gXfWUo gZQoJo"
     >
       <div
-        className="sc-fzoJMP cHHiiW"
+        className="sc-bBjRzc gvilNM"
       >
         <div
-          className="sc-fznJRM hUAWpU"
+          className="sc-dlMBXb ePkHaN"
         >
           <button
             disabled={false}
@@ -744,7 +744,7 @@ exports[`Metadata: Component should render correctly 1`] = `
     </div>
   </div>
   <form
-    className="sc-AxirZ ktnnZK"
+    className="sc-gtssRu"
   >
     <div
       onClick={[Function]}
@@ -782,10 +782,10 @@ exports[`Metadata: Component should render correctly 1`] = `
         }
       >
         <div
-          className="sc-AxiKw hPkolu"
+          className="sc-dlnjPT cbXgVx"
         >
           <div
-            className="sc-fzoaKM iVMnFK"
+            className="sc-jgPznn eoinpO"
           >
             <div
               style={
@@ -859,12 +859,12 @@ exports[`Metadata: Component should render correctly 1`] = `
               />
             </div>
             <div
-              className="sc-fzqAui bYrwfI"
+              className="sc-laZMyp bODhMk"
               id="metadata.0.keyError"
             />
           </div>
           <div
-            className="sc-AxhCb rOoA"
+            className="sc-hKFyIo eBpsDR"
           >
             <svg
               style={
@@ -973,10 +973,10 @@ exports[`Metadata: Component should render correctly 1`] = `
         }
       >
         <div
-          className="sc-AxiKw hPkolu"
+          className="sc-dlnjPT cbXgVx"
         >
           <div
-            className="sc-fzoaKM iVMnFK"
+            className="sc-jgPznn eoinpO"
           >
             <div
               style={
@@ -1050,12 +1050,12 @@ exports[`Metadata: Component should render correctly 1`] = `
               />
             </div>
             <div
-              className="sc-fzqAui bYrwfI"
+              className="sc-laZMyp bODhMk"
               id="metadata.1.keyError"
             />
           </div>
           <div
-            className="sc-AxhCb rOoA"
+            className="sc-hKFyIo eBpsDR"
           >
             <svg
               style={
@@ -1164,10 +1164,10 @@ exports[`Metadata: Component should render correctly 1`] = `
         }
       >
         <div
-          className="sc-AxiKw hPkolu"
+          className="sc-dlnjPT cbXgVx"
         >
           <div
-            className="sc-fzoaKM iVMnFK"
+            className="sc-jgPznn eoinpO"
           >
             <div
               style={
@@ -1241,12 +1241,12 @@ exports[`Metadata: Component should render correctly 1`] = `
               />
             </div>
             <div
-              className="sc-fzqAui bYrwfI"
+              className="sc-laZMyp bODhMk"
               id="metadata.2.keyError"
             />
           </div>
           <div
-            className="sc-AxhCb rOoA"
+            className="sc-hKFyIo eBpsDR"
           >
             <svg
               style={
@@ -1333,16 +1333,16 @@ exports[`Metadata: Component should render correctly 1`] = `
     </div>
      
     <div
-      className="sc-fzoyAV jiDcgh"
+      className="sc-fFSRdu eVZQbr"
     >
       <div
-        className="sc-fzoXzr iIZPin"
+        className="sc-iemXMA yQrNG"
       >
         <div
-          className="sc-fzoLag losnNk"
+          className="sc-bkbjAj iuyGKY"
         >
           <button
-            className="sc-fzpjYC jlDbJV"
+            className="sc-dIvqjp eFQuxu"
             disabled={true}
             onClick={[Function]}
             style={
@@ -1370,16 +1370,16 @@ exports[`Metadata: Component should render correctly 1`] = `
     </div>
   </form>
   <div
-    className="sc-fzoNJl coTcmh"
+    className="sc-lmgQde epaRAv"
   >
     <div
-      className="sc-fzoXWK kRPIuW"
+      className="sc-iJCRLp iRDTFs"
     >
       <div
-        className="sc-fznxKY ffjPon"
+        className="sc-ezzayL kFGdbN"
       >
         <div
-          className="sc-fzpmMD hAqLKL"
+          className="sc-giAqnE dbLqMx"
           disabled={false}
           onClick={[Function]}
         >
@@ -1400,16 +1400,16 @@ exports[`Metadata: Component should render correctly 1`] = `
           </svg>
         </div>
         <div
-          className="sc-fznMAR gNmxGd"
+          className="sc-bYwzba ehAxEv"
         >
           Source
         </div>
       </div>
       <div
-        className="sc-fznxKY ffjPon"
+        className="sc-ezzayL kFGdbN"
       >
         <div
-          className="sc-fzpmMD hAqLKL"
+          className="sc-giAqnE dbLqMx"
           disabled={false}
           onClick={[Function]}
         >
@@ -1431,16 +1431,16 @@ exports[`Metadata: Component should render correctly 1`] = `
           </svg>
         </div>
         <div
-          className="sc-fznMAR gNmxGd"
+          className="sc-bYwzba ehAxEv"
         >
           Fields
         </div>
       </div>
       <div
-        className="sc-fznxKY ffjPon"
+        className="sc-ezzayL kFGdbN"
       >
         <div
-          className="sc-fzpmMD hAqLKL"
+          className="sc-giAqnE dbLqMx"
           disabled={false}
           onClick={[Function]}
         >
@@ -1481,16 +1481,16 @@ exports[`Metadata: Component should render correctly 1`] = `
           </svg>
         </div>
         <div
-          className="sc-fznMAR gNmxGd"
+          className="sc-bYwzba ehAxEv"
         >
           Steps
         </div>
       </div>
       <div
-        className="sc-fznxKY ffjPon"
+        className="sc-ezzayL kFGdbN"
       >
         <div
-          className="sc-fzpmMD hAqLKL"
+          className="sc-giAqnE dbLqMx"
           disabled={false}
           onClick={[Function]}
         >
@@ -1531,16 +1531,16 @@ exports[`Metadata: Component should render correctly 1`] = `
           </svg>
         </div>
         <div
-          className="sc-fznMAR gNmxGd"
+          className="sc-bYwzba ehAxEv"
         >
           Results
         </div>
       </div>
       <div
-        className="sc-fznxKY ffjPon"
+        className="sc-ezzayL kFGdbN"
       >
         <div
-          className="sc-fzpmMD hAqLKL"
+          className="sc-giAqnE dbLqMx"
           disabled={false}
           onClick={[Function]}
         >
@@ -1564,16 +1564,16 @@ exports[`Metadata: Component should render correctly 1`] = `
           </svg>
         </div>
         <div
-          className="sc-fznMAR gNmxGd"
+          className="sc-bYwzba ehAxEv"
         >
           Filters
         </div>
       </div>
       <div
-        className="sc-fznxKY ffjPon"
+        className="sc-ezzayL kFGdbN"
       >
         <div
-          className="sc-fzpmMD hAqLKL"
+          className="sc-giAqnE dbLqMx"
           disabled={false}
           onClick={[Function]}
         >
@@ -1608,16 +1608,16 @@ exports[`Metadata: Component should render correctly 1`] = `
           </svg>
         </div>
         <div
-          className="sc-fznMAR gNmxGd"
+          className="sc-bYwzba ehAxEv"
         >
           Tags
         </div>
       </div>
       <div
-        className="sc-fznxKY ffjPon"
+        className="sc-ezzayL kFGdbN"
       >
         <div
-          className="sc-fzpmMD hAqLKL"
+          className="sc-giAqnE dbLqMx"
           disabled={false}
           onClick={[Function]}
         >
@@ -1638,16 +1638,16 @@ exports[`Metadata: Component should render correctly 1`] = `
           </svg>
         </div>
         <div
-          className="sc-fznMAR gNmxGd"
+          className="sc-bYwzba ehAxEv"
         >
           States
         </div>
       </div>
       <div
-        className="sc-fznxKY ffjPon"
+        className="sc-ezzayL kFGdbN"
       >
         <div
-          className="sc-fzpmMD hAqLKL"
+          className="sc-giAqnE dbLqMx"
           disabled={false}
           onClick={[Function]}
         >
@@ -1668,7 +1668,7 @@ exports[`Metadata: Component should render correctly 1`] = `
           </svg>
         </div>
         <div
-          className="sc-fznMAR gNmxGd"
+          className="sc-bYwzba ehAxEv"
         >
           Metadata
         </div>

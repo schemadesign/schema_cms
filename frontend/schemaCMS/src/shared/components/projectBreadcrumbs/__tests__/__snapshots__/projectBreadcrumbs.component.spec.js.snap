@@ -2,7 +2,7 @@
 
 exports[`ProjectBreadcrumbs: Component should render correctly 1`] = `
 <div
-  className="sc-AxjAm cIWpwu"
+  className="sc-bdnylx fRDYPD"
 >
   <div
     style={
@@ -24,7 +24,7 @@ exports[`ProjectBreadcrumbs: Component should render correctly 1`] = `
       }
     >
       <a
-        className="sc-AxiKw jkYHCB"
+        className="sc-dlnjPT chOHIW"
         href="/project/1/"
         onClick={[Function]}
         style={
@@ -46,7 +46,7 @@ exports[`ProjectBreadcrumbs: Component should render correctly 1`] = `
           Project
         </span>
         <h3
-          className="sc-AxhCb BNUbm"
+          className="sc-hKFyIo fuYsAv"
           style={
             Object {
               "fontFamily": "Inter, \\"Helvetica Neue\\", Helvetica, Arial, sans-serif",
@@ -82,7 +82,7 @@ exports[`ProjectBreadcrumbs: Component should render correctly 1`] = `
       }
     >
       <a
-        className="sc-AxiKw jkYHCB"
+        className="sc-dlnjPT chOHIW"
         href="/project/1/templates"
         onClick={[Function]}
         style={
@@ -104,7 +104,7 @@ exports[`ProjectBreadcrumbs: Component should render correctly 1`] = `
           Tab
         </span>
         <h3
-          className="sc-AxhCb BNUbm"
+          className="sc-hKFyIo fuYsAv"
           style={
             Object {
               "fontFamily": "Inter, \\"Helvetica Neue\\", Helvetica, Arial, sans-serif",
@@ -140,7 +140,7 @@ exports[`ProjectBreadcrumbs: Component should render correctly 1`] = `
       }
     >
       <a
-        className="sc-AxiKw jkYHCB"
+        className="sc-dlnjPT chOHIW"
         href="/project/1/block-templates"
         onClick={[Function]}
         style={
@@ -162,7 +162,7 @@ exports[`ProjectBreadcrumbs: Component should render correctly 1`] = `
           Library
         </span>
         <h3
-          className="sc-AxhCb BNUbm"
+          className="sc-hKFyIo fuYsAv"
           style={
             Object {
               "fontFamily": "Inter, \\"Helvetica Neue\\", Helvetica, Arial, sans-serif",
@@ -198,7 +198,7 @@ exports[`ProjectBreadcrumbs: Component should render correctly 1`] = `
       }
     >
       <div
-        className="sc-AxirZ cGUKgB"
+        className="sc-gtssRu bGMeDK"
       >
         <span
           style={
@@ -211,7 +211,7 @@ exports[`ProjectBreadcrumbs: Component should render correctly 1`] = `
           Template
         </span>
         <h3
-          className="sc-AxhCb BNUbm"
+          className="sc-hKFyIo fuYsAv"
           style={
             Object {
               "fontFamily": "Inter, \\"Helvetica Neue\\", Helvetica, Arial, sans-serif",

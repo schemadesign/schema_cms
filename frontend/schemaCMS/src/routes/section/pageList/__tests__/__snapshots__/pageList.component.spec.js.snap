@@ -2,10 +2,10 @@
 
 exports[`PageList: Component should render correctly 1`] = `
 <div
-  className="sc-AxjAm StDqN"
+  className="sc-bdnylx"
 >
   <div
-    className="sc-AxgMl kEUmFl"
+    className="sc-jSFkmK fOnWDj"
   >
     <div
       style={
@@ -22,10 +22,10 @@ exports[`PageList: Component should render correctly 1`] = `
     >
       <div>
         <div
-          className="sc-AxheI fniENP"
+          className="sc-gKAblj"
         >
           <h2
-            className="sc-fznyAO dFXsby"
+            className="sc-crzoUp hGYdip"
             id="headerTitle"
             style={
               Object {
@@ -39,7 +39,7 @@ exports[`PageList: Component should render correctly 1`] = `
             Section
           </h2>
           <h1
-            className="sc-fznKkj hlIEaX"
+            className="sc-dIsAE exJHSK"
             id="headerSubtitle"
             style={
               Object {
@@ -121,16 +121,16 @@ exports[`PageList: Component should render correctly 1`] = `
       }
     >
       <div
-        className="sc-AxmLO dvTVuW"
+        className="sc-fujyUd gEHBTT"
       >
         <div
-          className="sc-Axmtr bwYVDg"
+          className="sc-iCoHVE gmeCWb"
         >
           <div
-            className="sc-AxheI fniENP"
+            className="sc-gKAblj"
           >
             <h2
-              className="sc-fznyAO dFXsby"
+              className="sc-crzoUp hGYdip"
               id="headerTitle"
               style={
                 Object {
@@ -144,7 +144,7 @@ exports[`PageList: Component should render correctly 1`] = `
               Section
             </h2>
             <h1
-              className="sc-fznKkj hlIEaX"
+              className="sc-dIsAE exJHSK"
               id="headerSubtitle"
               style={
                 Object {
@@ -162,10 +162,10 @@ exports[`PageList: Component should render correctly 1`] = `
           </div>
         </div>
         <div
-          className="sc-fzozJi cXstQc"
+          className="sc-pNWxx bAQKCE"
         >
           <div
-            className="sc-fzoLsD kppjAR"
+            className="sc-jrsJCI hEdsDt"
           >
             <a
               href="/project/"
@@ -176,7 +176,7 @@ exports[`PageList: Component should render correctly 1`] = `
             </a>
           </div>
           <div
-            className="sc-fzoLsD kppjAR"
+            className="sc-jrsJCI hEdsDt"
           >
             <a
               href="/user/"
@@ -187,7 +187,7 @@ exports[`PageList: Component should render correctly 1`] = `
             </a>
           </div>
           <div
-            className="sc-fzoLsD kppjAR"
+            className="sc-jrsJCI hEdsDt"
           >
             <a
               href="/project/1"
@@ -198,7 +198,7 @@ exports[`PageList: Component should render correctly 1`] = `
             </a>
           </div>
           <div
-            className="sc-fzoLsD kppjAR"
+            className="sc-jrsJCI hEdsDt"
           >
             <a
               href="/project/1/datasource"
@@ -209,7 +209,7 @@ exports[`PageList: Component should render correctly 1`] = `
             </a>
           </div>
           <div
-            className="sc-fzoLsD kppjAR"
+            className="sc-jrsJCI hEdsDt"
           >
             <a
               href="/project/1/user"
@@ -220,7 +220,7 @@ exports[`PageList: Component should render correctly 1`] = `
             </a>
           </div>
           <div
-            className="sc-fzoLsD LsguM"
+            className="sc-jrsJCI jrieOI"
           >
             <a
               href="/project/1/content"
@@ -231,7 +231,7 @@ exports[`PageList: Component should render correctly 1`] = `
             </a>
           </div>
           <div
-            className="sc-fzoLsD kppjAR"
+            className="sc-jrsJCI hEdsDt"
           >
             <a
               href="/project/1/templates"
@@ -243,10 +243,10 @@ exports[`PageList: Component should render correctly 1`] = `
           </div>
         </div>
         <div
-          className="sc-fzozJi cXstQc"
+          className="sc-pNWxx bAQKCE"
         >
           <div
-            className="sc-fzoLsD kppjAR"
+            className="sc-jrsJCI hEdsDt"
           >
             <a
               href="/settings"
@@ -257,7 +257,7 @@ exports[`PageList: Component should render correctly 1`] = `
             </a>
           </div>
           <div
-            className="sc-fzoLsD kppjAR"
+            className="sc-jrsJCI hEdsDt"
           >
             <div
               onClick={[Function]}
@@ -267,10 +267,10 @@ exports[`PageList: Component should render correctly 1`] = `
           </div>
         </div>
         <div
-          className="sc-fzpans cCWWfw"
+          className="sc-kEqYlL isgfvN"
         >
           <a
-            className="sc-fzplWN jUkJod"
+            className="sc-iqAbSa kJREqS"
             href="/"
             id="aboutNavBtn"
             onClick={[Function]}
@@ -278,7 +278,7 @@ exports[`PageList: Component should render correctly 1`] = `
             About Schema CMS
           </a>
           <a
-            className="sc-fzplWN jUkJod"
+            className="sc-iqAbSa kJREqS"
             href="/"
             id="apiNavBtn"
             onClick={[Function]}
@@ -286,7 +286,7 @@ exports[`PageList: Component should render correctly 1`] = `
             API Doc
           </a>
           <a
-            className="sc-fzplWN jUkJod"
+            className="sc-iqAbSa kJREqS"
             href="/"
             id="repositoryNavBtn"
             onClick={[Function]}
@@ -340,7 +340,7 @@ exports[`PageList: Component should render correctly 1`] = `
     </div>
   </div>
   <div
-    className="sc-fzoJus glbFDi"
+    className="sc-eJoaVz lifigH"
   >
     <div
       style={
@@ -362,7 +362,7 @@ exports[`PageList: Component should render correctly 1`] = `
         }
       >
         <a
-          className="sc-fzpisO iTPNgM"
+          className="sc-hhIhEF djezdw"
           href="/project/1/"
           onClick={[Function]}
           style={
@@ -384,7 +384,7 @@ exports[`PageList: Component should render correctly 1`] = `
             Project
           </span>
           <h3
-            className="sc-fznyYp cgEbRg"
+            className="sc-eirseW frqVju"
             style={
               Object {
                 "fontFamily": "Inter, \\"Helvetica Neue\\", Helvetica, Arial, sans-serif",
@@ -420,7 +420,7 @@ exports[`PageList: Component should render correctly 1`] = `
         }
       >
         <a
-          className="sc-fzpisO iTPNgM"
+          className="sc-hhIhEF djezdw"
           href="/project/1/content"
           onClick={[Function]}
           style={
@@ -442,7 +442,7 @@ exports[`PageList: Component should render correctly 1`] = `
             Tab
           </span>
           <h3
-            className="sc-fznyYp cgEbRg"
+            className="sc-eirseW frqVju"
             style={
               Object {
                 "fontFamily": "Inter, \\"Helvetica Neue\\", Helvetica, Arial, sans-serif",
@@ -478,7 +478,7 @@ exports[`PageList: Component should render correctly 1`] = `
         }
       >
         <div
-          className="sc-fzoVTD VHajk"
+          className="sc-oefIU bJjNUe"
         >
           <span
             style={
@@ -491,7 +491,7 @@ exports[`PageList: Component should render correctly 1`] = `
             Section
           </span>
           <h3
-            className="sc-fznyYp cgEbRg"
+            className="sc-eirseW frqVju"
             style={
               Object {
                 "fontFamily": "Inter, \\"Helvetica Neue\\", Helvetica, Arial, sans-serif",
@@ -509,17 +509,17 @@ exports[`PageList: Component should render correctly 1`] = `
     </div>
   </div>
   <form
-    className="sc-AxirZ ktnnZK"
+    className="sc-gtssRu"
     onSubmit={[Function]}
   >
     <div
-      className="sc-fznWqX VKSem"
+      className="sc-kfYqjs jVUIpp"
     >
       <div
-        className="sc-fzoiQi kVjVJJ"
+        className="sc-fKgIGh ePACvs"
       >
         <h2
-          className="sc-fzqARJ euGmLc"
+          className="sc-bCwgka bBdQKU"
           id="desktopHeaderTitle"
           style={
             Object {
@@ -533,7 +533,7 @@ exports[`PageList: Component should render correctly 1`] = `
           Section
         </h2>
         <h1
-          className="sc-fzqNqU cSnCDr"
+          className="sc-iwaifL fAJgQr"
           id="desktopHeaderSubtitle"
           style={
             Object {
@@ -547,10 +547,10 @@ exports[`PageList: Component should render correctly 1`] = `
           }
         >
           <div
-            className="sc-fzoydu gSiJlt"
+            className="sc-dPaNSN hIYXnb"
           >
             <div
-              className="sc-fzqAui lfFNfW"
+              className="sc-laZMyp lpszHm"
             >
               <div
                 style={
@@ -625,12 +625,12 @@ exports[`PageList: Component should render correctly 1`] = `
                 />
               </div>
               <div
-                className="sc-fzowVh keVQqm"
+                className="sc-jffIyK cgWYlu"
                 id="nameError"
               />
             </div>
             <div
-              className="sc-fzoJMP kSMXoG"
+              className="sc-bBjRzc gFxJzw"
             >
               <svg
                 style={
@@ -652,10 +652,10 @@ exports[`PageList: Component should render correctly 1`] = `
         </h1>
       </div>
       <div
-        className="sc-fzoyTs crHzLr"
+        className="sc-cxNIbT"
       >
         <div
-          className="sc-fznJRM hUAWpU"
+          className="sc-dlMBXb ePkHaN"
         >
           <button
             disabled={false}
@@ -702,10 +702,10 @@ exports[`PageList: Component should render correctly 1`] = `
       </div>
     </div>
     <div
-      className="sc-fzoYHE fSpNHD"
+      className="sc-cOigif kpaMmm"
     >
       <div
-        className="sc-fzqAui eUFsWg"
+        className="sc-laZMyp iutTro"
       >
         <div
           style={
@@ -769,7 +769,7 @@ exports[`PageList: Component should render correctly 1`] = `
             }
           >
             <div
-              className="sc-fzqMdD jULWmF"
+              className="sc-iNiQeE lfaeah"
             >
               <svg
                 style={
@@ -790,16 +790,16 @@ exports[`PageList: Component should render correctly 1`] = `
           </div>
         </div>
         <div
-          className="sc-fzowVh keVQqm"
+          className="sc-jffIyK cgWYlu"
           id="nameError"
         />
       </div>
     </div>
     <div
-      className="sc-fznLxA kihQkK"
+      className="sc-lbVuaH hCneRC"
     >
       <div
-        className="sc-fznXWL cYUQws"
+        className="sc-gGLyOc hDVBon"
       >
         <div
           className=" css-2b097c-container"
@@ -905,21 +905,21 @@ exports[`PageList: Component should render correctly 1`] = `
       </svg>
     </div>
     <div
-      className="sc-fzoNJl gulIXo"
+      className="sc-lmgQde bPAAoa"
     >
       <div
-        className="sc-fzoXWK jhgDpI"
+        className="sc-iJCRLp bGihsy"
         id="tagsCounter"
       />
       3 pages
       <div
-        className="sc-fzoXWK jhgDpI"
+        className="sc-iJCRLp bGihsy"
       >
         <div
-          className="sc-fznAgC laczVV"
+          className="sc-khIgXV fpPWQa"
         >
           <div
-            className="sc-fznJRM hUAWpU"
+            className="sc-dlMBXb ePkHaN"
           >
             <button
               disabled={false}
@@ -968,10 +968,10 @@ exports[`PageList: Component should render correctly 1`] = `
       </div>
     </div>
     <section
-      className="sc-fzqBkg jpEqiF"
+      className="sc-jJMGHv bExFZt"
     >
       <div
-        className="sc-fzpmMD npcgb"
+        className="sc-giAqnE eqoYKJ"
         style={
           Object {
             "backgroundColor": "#1d1d20",
@@ -1004,29 +1004,29 @@ exports[`PageList: Component should render correctly 1`] = `
             }
           >
             <div
-              className="sc-fzoKki kuKtty"
+              className="sc-cBoprd fWjBqX"
             >
               <ul
-                className="sc-fzqPZZ cRrxjq"
+                className="sc-hiKfjK dGBeZx"
               >
                 <li
-                  className="sc-fzoxKX jBtseZ"
+                  className="sc-gXfWUo hbWeTu"
                   id="headerItem-0"
                 >
                   in 3 months
                 </li>
                 <li
-                  className="sc-fzoxKX jBtseZ"
+                  className="sc-gXfWUo hbWeTu"
                   id="headerItem-1"
                 >
                   owner
                 </li>
               </ul>
               <div
-                className="sc-fzoYkl iMSPiv"
+                className="sc-ciSmjq"
               >
                 <div
-                  className="sc-AxhUy jziZFx"
+                  className="sc-eCApGN cEkex"
                 >
                   <svg
                     id="homeIcon-0"
@@ -1048,7 +1048,7 @@ exports[`PageList: Component should render correctly 1`] = `
                     />
                   </svg>
                   <div
-                    className="sc-fzoxnE JgzYg"
+                    className="sc-fXazxj fYjkCo"
                     id="pageCopyButton-0"
                     onClick={[Function]}
                   >
@@ -1072,7 +1072,7 @@ exports[`PageList: Component should render correctly 1`] = `
             </div>
           </div>
           <h1
-            className="sc-fznxKY jmDaA-d"
+            className="sc-ezzayL cEZNWf"
             id="page-1"
             onClick={[Function]}
             style={
@@ -1099,16 +1099,16 @@ exports[`PageList: Component should render correctly 1`] = `
           }
         >
           <div
-            className="sc-fzolEj gOryeK"
+            className="sc-iklIKw eTQhPK"
           >
             <div
-              className="sc-AxiKw jDtazu"
+              className="sc-dlnjPT cSNLyR"
               title="templateName"
             >
               templateName
             </div>
             <div
-              className="sc-fzomuh hcbwMY"
+              className="sc-gSYCTC XeIQF"
             >
               Draft
             </div>
@@ -1116,7 +1116,7 @@ exports[`PageList: Component should render correctly 1`] = `
         </div>
       </div>
       <div
-        className="sc-fzpmMD npcgb"
+        className="sc-giAqnE eqoYKJ"
         style={
           Object {
             "backgroundColor": "#1d1d20",
@@ -1149,29 +1149,29 @@ exports[`PageList: Component should render correctly 1`] = `
             }
           >
             <div
-              className="sc-fzoKki kuKtty"
+              className="sc-cBoprd fWjBqX"
             >
               <ul
-                className="sc-fzqPZZ cRrxjq"
+                className="sc-hiKfjK dGBeZx"
               >
                 <li
-                  className="sc-fzoxKX jBtseZ"
+                  className="sc-gXfWUo hbWeTu"
                   id="headerItem-0"
                 >
                   in 3 months
                 </li>
                 <li
-                  className="sc-fzoxKX jBtseZ"
+                  className="sc-gXfWUo hbWeTu"
                   id="headerItem-1"
                 >
                   owner
                 </li>
               </ul>
               <div
-                className="sc-fzoYkl iMSPiv"
+                className="sc-ciSmjq"
               >
                 <div
-                  className="sc-AxhUy jziZFx"
+                  className="sc-eCApGN cEkex"
                 >
                   <svg
                     id="homeIcon-1"
@@ -1193,7 +1193,7 @@ exports[`PageList: Component should render correctly 1`] = `
                     />
                   </svg>
                   <div
-                    className="sc-fzoxnE JgzYg"
+                    className="sc-fXazxj fYjkCo"
                     id="pageCopyButton-1"
                     onClick={[Function]}
                   >
@@ -1217,7 +1217,7 @@ exports[`PageList: Component should render correctly 1`] = `
             </div>
           </div>
           <h1
-            className="sc-fznxKY jmDaA-d"
+            className="sc-ezzayL cEZNWf"
             id="page-2"
             onClick={[Function]}
             style={
@@ -1244,16 +1244,16 @@ exports[`PageList: Component should render correctly 1`] = `
           }
         >
           <div
-            className="sc-fzolEj gOryeK"
+            className="sc-iklIKw eTQhPK"
           >
             <div
-              className="sc-AxiKw jDtazu"
+              className="sc-dlnjPT cSNLyR"
               title="(blank)"
             >
               (blank)
             </div>
             <div
-              className="sc-fzomuh hcbwMY"
+              className="sc-gSYCTC XeIQF"
             >
               Draft
             </div>
@@ -1261,7 +1261,7 @@ exports[`PageList: Component should render correctly 1`] = `
         </div>
       </div>
       <div
-        className="sc-fzpmMD npcgb"
+        className="sc-giAqnE eqoYKJ"
         style={
           Object {
             "backgroundColor": "#1d1d20",
@@ -1294,29 +1294,29 @@ exports[`PageList: Component should render correctly 1`] = `
             }
           >
             <div
-              className="sc-fzoKki kuKtty"
+              className="sc-cBoprd fWjBqX"
             >
               <ul
-                className="sc-fzqPZZ cRrxjq"
+                className="sc-hiKfjK dGBeZx"
               >
                 <li
-                  className="sc-fzoxKX jBtseZ"
+                  className="sc-gXfWUo hbWeTu"
                   id="headerItem-0"
                 >
                   in 3 months
                 </li>
                 <li
-                  className="sc-fzoxKX jBtseZ"
+                  className="sc-gXfWUo hbWeTu"
                   id="headerItem-1"
                 >
                   owner
                 </li>
               </ul>
               <div
-                className="sc-fzoYkl iMSPiv"
+                className="sc-ciSmjq"
               >
                 <div
-                  className="sc-AxhUy jziZFx"
+                  className="sc-eCApGN cEkex"
                 >
                   <svg
                     id="homeIcon-2"
@@ -1338,7 +1338,7 @@ exports[`PageList: Component should render correctly 1`] = `
                     />
                   </svg>
                   <div
-                    className="sc-fzoxnE JgzYg"
+                    className="sc-fXazxj fYjkCo"
                     id="pageCopyButton-2"
                     onClick={[Function]}
                   >
@@ -1362,7 +1362,7 @@ exports[`PageList: Component should render correctly 1`] = `
             </div>
           </div>
           <h1
-            className="sc-fznxKY jmDaA-d"
+            className="sc-ezzayL cEZNWf"
             id="page-3"
             onClick={[Function]}
             style={
@@ -1389,10 +1389,10 @@ exports[`PageList: Component should render correctly 1`] = `
           }
         >
           <div
-            className="sc-fzolEj gOryeK"
+            className="sc-iklIKw eTQhPK"
           >
             <div
-              className="sc-AxiKw jDtazu"
+              className="sc-dlnjPT cSNLyR"
               title="(blank)"
             >
               (blank)
@@ -1402,7 +1402,7 @@ exports[`PageList: Component should render correctly 1`] = `
       </div>
     </section>
     <div
-      className="sc-AxhCb eICEsU"
+      className="sc-hKFyIo jsTCJV"
     >
       <ul>
         <li
@@ -1410,6 +1410,7 @@ exports[`PageList: Component should render correctly 1`] = `
         >
           <a
             aria-disabled="true"
+            aria-label="Previous page"
             onClick={[Function]}
             onKeyPress={[Function]}
             role="button"
@@ -1449,6 +1450,7 @@ exports[`PageList: Component should render correctly 1`] = `
         >
           <a
             aria-disabled="false"
+            aria-label="Next page"
             onClick={[Function]}
             onKeyPress={[Function]}
             role="button"
@@ -1460,13 +1462,13 @@ exports[`PageList: Component should render correctly 1`] = `
       </ul>
     </div>
     <div
-      className="sc-fzpkJw iPtoGt"
+      className="sc-jcwofb bFQwKB"
     >
       <div
-        className="sc-fznzOf hTzoGp"
+        className="sc-carGAA hPFXxs"
       >
         <div
-          className="sc-fzomME eCbTLD"
+          className="sc-efHXLn ckwWiH"
         >
           <div>
             <input
@@ -1518,20 +1520,20 @@ exports[`PageList: Component should render correctly 1`] = `
             </label>
           </div>
           <div
-            className="sc-fzoant bxwlht"
+            className="sc-iBzFoy dgWGuH"
           >
             <label
-              className="sc-fznMnq iZIZni"
+              className="sc-iTVIwl dHaTes"
               htmlFor="isPublic"
             >
               Make it Public
             </label>
             <span
-              className="sc-fzqMAW ksxHwA"
+              className="sc-jNnnWF fFfLVA"
             >
               This Section is currently Public
               <span
-                className="sc-fznLPX cFNeVS"
+                className="sc-hTRkEk daYgSI"
               />
               Visit Page: 
               <a
@@ -1543,7 +1545,7 @@ exports[`PageList: Component should render correctly 1`] = `
           </div>
         </div>
         <div
-          className="sc-fzqAbL fAiApi"
+          className="sc-cTJmaU fUyJrb"
           id="removeSection"
           onClick={[Function]}
         >
@@ -1567,10 +1569,10 @@ exports[`PageList: Component should render correctly 1`] = `
         </div>
       </div>
       <div
-        className="sc-fznzOf hTzoGp"
+        className="sc-carGAA hPFXxs"
       >
         <div
-          className="sc-fzomME eCbTLD"
+          className="sc-efHXLn ckwWiH"
         >
           <div>
             <input
@@ -1622,20 +1624,20 @@ exports[`PageList: Component should render correctly 1`] = `
             </label>
           </div>
           <div
-            className="sc-fzoant bxwlht"
+            className="sc-iBzFoy dgWGuH"
           >
             <label
-              className="sc-fznMnq iZIZni"
+              className="sc-iTVIwl dHaTes"
               htmlFor="isRssContent"
             >
               Make it available for RSS
             </label>
             <span
-              className="sc-fzqMAW ksxHwA"
+              className="sc-jNnnWF fFfLVA"
             >
               This Section is currently disabled for RSS feed
               <span
-                className="sc-fznLPX cFNeVS"
+                className="sc-hTRkEk daYgSI"
               />
               Visit Page: 
               <a
@@ -1649,13 +1651,13 @@ exports[`PageList: Component should render correctly 1`] = `
       </div>
     </div>
     <div
-      className="sc-fzoyAV jiDcgh"
+      className="sc-fFSRdu eVZQbr"
     >
       <div
-        className="sc-fzoXzr hBAcwN"
+        className="sc-iemXMA fOmduE"
       >
         <div
-          className="sc-fzoLag dqeAwy"
+          className="sc-bkbjAj kUjVTG"
         >
           <button
             disabled={false}
@@ -1698,7 +1700,7 @@ exports[`PageList: Component should render correctly 1`] = `
             </svg>
           </button>
           <button
-            className="sc-fzpjYC jlDbJV"
+            className="sc-dIvqjp eFQuxu"
             disabled={true}
             id="updateSection"
             style={

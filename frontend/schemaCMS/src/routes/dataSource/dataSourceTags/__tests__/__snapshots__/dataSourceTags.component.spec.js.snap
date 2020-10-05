@@ -2,10 +2,10 @@
 
 exports[`DataSourceTags: Component should render correctly 1`] = `
 <div
-  className="sc-AxjAm StDqN"
+  className="sc-bdnylx"
 >
   <div
-    className="sc-fzoLsD fFscWa"
+    className="sc-jrsJCI ldfrQC"
   >
     <div
       style={
@@ -22,10 +22,10 @@ exports[`DataSourceTags: Component should render correctly 1`] = `
     >
       <div>
         <div
-          className="sc-fzpans kkFAbe"
+          className="sc-kEqYlL"
         >
           <h2
-            className="sc-fzqNJr ewLMGs"
+            className="sc-fnVYJo droJtq"
             id="headerTitle"
             style={
               Object {
@@ -37,7 +37,7 @@ exports[`DataSourceTags: Component should render correctly 1`] = `
             }
           />
           <h1
-            className="sc-fzoyAV iLlFdi"
+            className="sc-fFSRdu fxvWZs"
             id="headerSubtitle"
             style={
               Object {
@@ -119,16 +119,16 @@ exports[`DataSourceTags: Component should render correctly 1`] = `
       }
     >
       <div
-        className="sc-fznyAO hmNazU"
+        className="sc-crzoUp fWwMQj"
       >
         <div
-          className="sc-fzplWN cqllMP"
+          className="sc-iqAbSa bkNPqM"
         >
           <div
-            className="sc-fzpans kkFAbe"
+            className="sc-kEqYlL"
           >
             <h2
-              className="sc-fzqNJr ewLMGs"
+              className="sc-fnVYJo droJtq"
               id="headerTitle"
               style={
                 Object {
@@ -140,7 +140,7 @@ exports[`DataSourceTags: Component should render correctly 1`] = `
               }
             />
             <h1
-              className="sc-fzoyAV iLlFdi"
+              className="sc-fFSRdu fxvWZs"
               id="headerSubtitle"
               style={
                 Object {
@@ -158,10 +158,10 @@ exports[`DataSourceTags: Component should render correctly 1`] = `
           </div>
         </div>
         <div
-          className="sc-fznKkj iXhgXu"
+          className="sc-dIsAE hhSsgf"
         >
           <div
-            className="sc-fznZeY erzAfB"
+            className="sc-bqGHjH kKZQTE"
           >
             <a
               href="/project/"
@@ -172,7 +172,7 @@ exports[`DataSourceTags: Component should render correctly 1`] = `
             </a>
           </div>
           <div
-            className="sc-fznZeY erzAfB"
+            className="sc-bqGHjH kKZQTE"
           >
             <a
               href="/user/"
@@ -183,7 +183,7 @@ exports[`DataSourceTags: Component should render correctly 1`] = `
             </a>
           </div>
           <div
-            className="sc-fznZeY erzAfB"
+            className="sc-bqGHjH kKZQTE"
           >
             <a
               href="/project/1"
@@ -194,7 +194,7 @@ exports[`DataSourceTags: Component should render correctly 1`] = `
             </a>
           </div>
           <div
-            className="sc-fznZeY erzAfB"
+            className="sc-bqGHjH kKZQTE"
           >
             <a
               href="/project/1/datasource"
@@ -205,7 +205,7 @@ exports[`DataSourceTags: Component should render correctly 1`] = `
             </a>
           </div>
           <div
-            className="sc-fznZeY erzAfB"
+            className="sc-bqGHjH kKZQTE"
           >
             <a
               href="/project/1/user"
@@ -216,7 +216,7 @@ exports[`DataSourceTags: Component should render correctly 1`] = `
             </a>
           </div>
           <div
-            className="sc-fznZeY erzAfB"
+            className="sc-bqGHjH kKZQTE"
           >
             <a
               href="/project/1/content"
@@ -227,7 +227,7 @@ exports[`DataSourceTags: Component should render correctly 1`] = `
             </a>
           </div>
           <div
-            className="sc-fznZeY erzAfB"
+            className="sc-bqGHjH kKZQTE"
           >
             <a
               href="/project/1/templates"
@@ -239,10 +239,10 @@ exports[`DataSourceTags: Component should render correctly 1`] = `
           </div>
         </div>
         <div
-          className="sc-fznKkj iXhgXu"
+          className="sc-dIsAE hhSsgf"
         >
           <div
-            className="sc-fznZeY erzAfB"
+            className="sc-bqGHjH kKZQTE"
           >
             <a
               href="/settings"
@@ -253,7 +253,7 @@ exports[`DataSourceTags: Component should render correctly 1`] = `
             </a>
           </div>
           <div
-            className="sc-fznZeY erzAfB"
+            className="sc-bqGHjH kKZQTE"
           >
             <div
               onClick={[Function]}
@@ -263,10 +263,10 @@ exports[`DataSourceTags: Component should render correctly 1`] = `
           </div>
         </div>
         <div
-          className="sc-fzokOt kvzMUr"
+          className="sc-ksluoS dmKPPC"
         >
           <a
-            className="sc-fzqBZW hea-DJK"
+            className="sc-hBMVcZ gYWFlH"
             href="/"
             id="aboutNavBtn"
             onClick={[Function]}
@@ -274,7 +274,7 @@ exports[`DataSourceTags: Component should render correctly 1`] = `
             About Schema CMS
           </a>
           <a
-            className="sc-fzqBZW hea-DJK"
+            className="sc-hBMVcZ gYWFlH"
             href="/"
             id="apiNavBtn"
             onClick={[Function]}
@@ -282,7 +282,7 @@ exports[`DataSourceTags: Component should render correctly 1`] = `
             API Doc
           </a>
           <a
-            className="sc-fzqBZW hea-DJK"
+            className="sc-hBMVcZ gYWFlH"
             href="/"
             id="repositoryNavBtn"
             onClick={[Function]}
@@ -336,13 +336,13 @@ exports[`DataSourceTags: Component should render correctly 1`] = `
     </div>
   </div>
   <div
-    className="sc-fzoNJl enKTml"
+    className="sc-lmgQde gYpEIj"
   >
     <div
-      className="sc-fzoXWK zWYWA"
+      className="sc-iJCRLp klmHzq"
     >
       <h2
-        className="sc-fzpmMD lixGZE"
+        className="sc-giAqnE hOCsOW"
         id="desktopHeaderTitle"
         style={
           Object {
@@ -354,7 +354,7 @@ exports[`DataSourceTags: Component should render correctly 1`] = `
         }
       />
       <h1
-        className="sc-fznxKY jGiTYY"
+        className="sc-ezzayL ktdZOe"
         id="desktopHeaderSubtitle"
         style={
           Object {
@@ -371,19 +371,19 @@ exports[`DataSourceTags: Component should render correctly 1`] = `
       </h1>
     </div>
     <div
-      className="sc-fznMAR DQQGK"
+      className="sc-bYwzba"
     >
       <div
-        className="sc-fznWOq fOuIJp"
+        className="sc-kLokih dlVMGL"
       >
         <div
-          className="sc-fzolEj kLzMIF"
+          className="sc-iklIKw bcQKuR"
         >
           <div
-            className="sc-fzqPZZ jlYTEO"
+            className="sc-hiKfjK iqrKcV"
           >
             <div
-              className="sc-fzqBkg bXbGUw"
+              className="sc-jJMGHv fxQnMg"
               disabled={false}
               onClick={[Function]}
             >
@@ -404,16 +404,16 @@ exports[`DataSourceTags: Component should render correctly 1`] = `
               </svg>
             </div>
             <div
-              className="sc-fzoxKX dcVajt"
+              className="sc-gXfWUo dOHtzy"
             >
               Source
             </div>
           </div>
           <div
-            className="sc-fzqPZZ jlYTEO"
+            className="sc-hiKfjK iqrKcV"
           >
             <div
-              className="sc-fzqBkg bXbGUw"
+              className="sc-jJMGHv fxQnMg"
               disabled={false}
               onClick={[Function]}
             >
@@ -435,16 +435,16 @@ exports[`DataSourceTags: Component should render correctly 1`] = `
               </svg>
             </div>
             <div
-              className="sc-fzoxKX dcVajt"
+              className="sc-gXfWUo dOHtzy"
             >
               Fields
             </div>
           </div>
           <div
-            className="sc-fzqPZZ jlYTEO"
+            className="sc-hiKfjK iqrKcV"
           >
             <div
-              className="sc-fzqBkg bXbGUw"
+              className="sc-jJMGHv fxQnMg"
               disabled={false}
               onClick={[Function]}
             >
@@ -485,16 +485,16 @@ exports[`DataSourceTags: Component should render correctly 1`] = `
               </svg>
             </div>
             <div
-              className="sc-fzoxKX dcVajt"
+              className="sc-gXfWUo dOHtzy"
             >
               Steps
             </div>
           </div>
           <div
-            className="sc-fzqPZZ jlYTEO"
+            className="sc-hiKfjK iqrKcV"
           >
             <div
-              className="sc-fzqBkg bXbGUw"
+              className="sc-jJMGHv fxQnMg"
               disabled={false}
               onClick={[Function]}
             >
@@ -535,16 +535,16 @@ exports[`DataSourceTags: Component should render correctly 1`] = `
               </svg>
             </div>
             <div
-              className="sc-fzoxKX dcVajt"
+              className="sc-gXfWUo dOHtzy"
             >
               Results
             </div>
           </div>
           <div
-            className="sc-fzqPZZ jlYTEO"
+            className="sc-hiKfjK iqrKcV"
           >
             <div
-              className="sc-fzqBkg bXbGUw"
+              className="sc-jJMGHv fxQnMg"
               disabled={false}
               onClick={[Function]}
             >
@@ -568,16 +568,16 @@ exports[`DataSourceTags: Component should render correctly 1`] = `
               </svg>
             </div>
             <div
-              className="sc-fzoxKX dcVajt"
+              className="sc-gXfWUo dOHtzy"
             >
               Filters
             </div>
           </div>
           <div
-            className="sc-fzqPZZ jlYTEO"
+            className="sc-hiKfjK iqrKcV"
           >
             <div
-              className="sc-fzqBkg bXbGUw"
+              className="sc-jJMGHv fxQnMg"
               disabled={false}
               onClick={[Function]}
             >
@@ -612,16 +612,16 @@ exports[`DataSourceTags: Component should render correctly 1`] = `
               </svg>
             </div>
             <div
-              className="sc-fzoxKX dcVajt"
+              className="sc-gXfWUo dOHtzy"
             >
               Tags
             </div>
           </div>
           <div
-            className="sc-fzqPZZ jlYTEO"
+            className="sc-hiKfjK iqrKcV"
           >
             <div
-              className="sc-fzqBkg bXbGUw"
+              className="sc-jJMGHv fxQnMg"
               disabled={false}
               onClick={[Function]}
             >
@@ -642,16 +642,16 @@ exports[`DataSourceTags: Component should render correctly 1`] = `
               </svg>
             </div>
             <div
-              className="sc-fzoxKX dcVajt"
+              className="sc-gXfWUo dOHtzy"
             >
               States
             </div>
           </div>
           <div
-            className="sc-fzqPZZ jlYTEO"
+            className="sc-hiKfjK iqrKcV"
           >
             <div
-              className="sc-fzqBkg bXbGUw"
+              className="sc-jJMGHv fxQnMg"
               disabled={false}
               onClick={[Function]}
             >
@@ -672,7 +672,7 @@ exports[`DataSourceTags: Component should render correctly 1`] = `
               </svg>
             </div>
             <div
-              className="sc-fzoxKX dcVajt"
+              className="sc-gXfWUo dOHtzy"
             >
               Metadata
             </div>
@@ -682,24 +682,24 @@ exports[`DataSourceTags: Component should render correctly 1`] = `
     </div>
   </div>
   <div
-    className="sc-AxirZ eZNCCz"
+    className="sc-gtssRu ldmZtg"
   >
     <div
-      className="sc-AxhUy hsJwAh"
+      className="sc-eCApGN hpEJvh"
     >
       <div
-        className="sc-AxiKw jBynnv"
+        className="sc-dlnjPT bvIMrM"
         title="Colors"
       >
         <span
-          className="sc-AxhCb ixUJzq"
+          className="sc-hKFyIo koCGdT"
         >
           Category: 
         </span>
         Colors
       </div>
       <div
-        className="sc-AxheI fniENP"
+        className="sc-gKAblj"
       >
         <div
           className=" css-2b097c-container"
@@ -797,18 +797,18 @@ exports[`DataSourceTags: Component should render correctly 1`] = `
         </div>
       </div>
       <div
-        className="sc-AxiKw jBynnv"
+        className="sc-dlnjPT bvIMrM"
         title="Countries"
       >
         <span
-          className="sc-AxhCb ixUJzq"
+          className="sc-hKFyIo koCGdT"
         >
           Category: 
         </span>
         Countries
       </div>
       <div
-        className="sc-AxheI fniENP"
+        className="sc-gKAblj"
       >
         <div
           className=" css-2b097c-container"
@@ -908,16 +908,16 @@ exports[`DataSourceTags: Component should render correctly 1`] = `
     </div>
   </div>
   <div
-    className="sc-fznJRM hybuGL"
+    className="sc-dlMBXb kUBApC"
   >
     <div
-      className="sc-fzoiQi chKYny"
+      className="sc-fKgIGh klSHnX"
     >
       <div
-        className="sc-fznWqX deSwLV"
+        className="sc-kfYqjs irEOQS"
       >
         <button
-          className="sc-fzqARJ ldsCfV"
+          className="sc-bCwgka cxZGJp"
           disabled={true}
           onClick={[Function]}
           style={
@@ -944,16 +944,16 @@ exports[`DataSourceTags: Component should render correctly 1`] = `
     </div>
   </div>
   <div
-    className="sc-fznWOq TnWbJ"
+    className="sc-kLokih fINrXv"
   >
     <div
-      className="sc-fzolEj kLzMIF"
+      className="sc-iklIKw bcQKuR"
     >
       <div
-        className="sc-fzqPZZ jlYTEO"
+        className="sc-hiKfjK iqrKcV"
       >
         <div
-          className="sc-fzqBkg bXbGUw"
+          className="sc-jJMGHv fxQnMg"
           disabled={false}
           onClick={[Function]}
         >
@@ -974,16 +974,16 @@ exports[`DataSourceTags: Component should render correctly 1`] = `
           </svg>
         </div>
         <div
-          className="sc-fzoxKX dcVajt"
+          className="sc-gXfWUo dOHtzy"
         >
           Source
         </div>
       </div>
       <div
-        className="sc-fzqPZZ jlYTEO"
+        className="sc-hiKfjK iqrKcV"
       >
         <div
-          className="sc-fzqBkg bXbGUw"
+          className="sc-jJMGHv fxQnMg"
           disabled={false}
           onClick={[Function]}
         >
@@ -1005,16 +1005,16 @@ exports[`DataSourceTags: Component should render correctly 1`] = `
           </svg>
         </div>
         <div
-          className="sc-fzoxKX dcVajt"
+          className="sc-gXfWUo dOHtzy"
         >
           Fields
         </div>
       </div>
       <div
-        className="sc-fzqPZZ jlYTEO"
+        className="sc-hiKfjK iqrKcV"
       >
         <div
-          className="sc-fzqBkg bXbGUw"
+          className="sc-jJMGHv fxQnMg"
           disabled={false}
           onClick={[Function]}
         >
@@ -1055,16 +1055,16 @@ exports[`DataSourceTags: Component should render correctly 1`] = `
           </svg>
         </div>
         <div
-          className="sc-fzoxKX dcVajt"
+          className="sc-gXfWUo dOHtzy"
         >
           Steps
         </div>
       </div>
       <div
-        className="sc-fzqPZZ jlYTEO"
+        className="sc-hiKfjK iqrKcV"
       >
         <div
-          className="sc-fzqBkg bXbGUw"
+          className="sc-jJMGHv fxQnMg"
           disabled={false}
           onClick={[Function]}
         >
@@ -1105,16 +1105,16 @@ exports[`DataSourceTags: Component should render correctly 1`] = `
           </svg>
         </div>
         <div
-          className="sc-fzoxKX dcVajt"
+          className="sc-gXfWUo dOHtzy"
         >
           Results
         </div>
       </div>
       <div
-        className="sc-fzqPZZ jlYTEO"
+        className="sc-hiKfjK iqrKcV"
       >
         <div
-          className="sc-fzqBkg bXbGUw"
+          className="sc-jJMGHv fxQnMg"
           disabled={false}
           onClick={[Function]}
         >
@@ -1138,16 +1138,16 @@ exports[`DataSourceTags: Component should render correctly 1`] = `
           </svg>
         </div>
         <div
-          className="sc-fzoxKX dcVajt"
+          className="sc-gXfWUo dOHtzy"
         >
           Filters
         </div>
       </div>
       <div
-        className="sc-fzqPZZ jlYTEO"
+        className="sc-hiKfjK iqrKcV"
       >
         <div
-          className="sc-fzqBkg bXbGUw"
+          className="sc-jJMGHv fxQnMg"
           disabled={false}
           onClick={[Function]}
         >
@@ -1182,16 +1182,16 @@ exports[`DataSourceTags: Component should render correctly 1`] = `
           </svg>
         </div>
         <div
-          className="sc-fzoxKX dcVajt"
+          className="sc-gXfWUo dOHtzy"
         >
           Tags
         </div>
       </div>
       <div
-        className="sc-fzqPZZ jlYTEO"
+        className="sc-hiKfjK iqrKcV"
       >
         <div
-          className="sc-fzqBkg bXbGUw"
+          className="sc-jJMGHv fxQnMg"
           disabled={false}
           onClick={[Function]}
         >
@@ -1212,16 +1212,16 @@ exports[`DataSourceTags: Component should render correctly 1`] = `
           </svg>
         </div>
         <div
-          className="sc-fzoxKX dcVajt"
+          className="sc-gXfWUo dOHtzy"
         >
           States
         </div>
       </div>
       <div
-        className="sc-fzqPZZ jlYTEO"
+        className="sc-hiKfjK iqrKcV"
       >
         <div
-          className="sc-fzqBkg bXbGUw"
+          className="sc-jJMGHv fxQnMg"
           disabled={false}
           onClick={[Function]}
         >
@@ -1242,7 +1242,7 @@ exports[`DataSourceTags: Component should render correctly 1`] = `
           </svg>
         </div>
         <div
-          className="sc-fzoxKX dcVajt"
+          className="sc-gXfWUo dOHtzy"
         >
           Metadata
         </div>
