@@ -66,7 +66,7 @@ export default defineMessages({
   },
   visitPage: {
     id: 'shared.components.pageForm.visitPage',
-    defaultMessage: 'Visit Page: {page}',
+    defaultMessage: 'Visit Page',
   },
   blankTemplate: {
     id: 'shared.components.pageForm.blankTemplate',

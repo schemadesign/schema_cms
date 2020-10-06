@@ -1,4 +1,4 @@
-import styled from 'styled-components';
+import styled, { css } from 'styled-components';
 import { Typography } from 'schemaUI';
 import { fonts, colors } from './styled';
 
@@ -16,7 +16,7 @@ export const H2 = styled.h2`
   color: ${colors.black};
 `;
 
-export const Link = styled(SpanUI)`
+export const linkStyles = css`
   cursor: pointer;
   color: ${({ theme }) => theme.text};
   transition: border 400ms;
@@ -25,6 +25,16 @@ export const Link = styled(SpanUI)`
   &:hover {
     border-bottom: 1px solid ${({ theme }) => theme.text};
   }
+`;
+
+export const PageLink = styled.a`
+  text-decoration: none;
+  white-space: nowrap;
+  ${linkStyles};
+`;
+
+export const Link = styled(SpanUI)`
+  ${linkStyles};
 `;
 
 export const LinkContainer = styled.div`

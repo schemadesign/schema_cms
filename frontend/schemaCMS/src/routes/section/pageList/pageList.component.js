@@ -68,6 +68,7 @@ import { LoadingWrapper } from '../../../shared/components/loadingWrapper';
 import { INITIAL_PAGE_SIZE } from '../../../shared/utils/api.constants';
 import { renderWhenTrue } from '../../../shared/utils/rendering';
 import { CopyButton } from '../../../shared/components/copyButton';
+import { PageLink } from '../../../theme/typography';
 
 const { EditIcon, BinIcon, HomeIcon } = Icons;
 const { Switch } = FormUI;
@@ -206,7 +207,9 @@ export const PageList = ({
   const visitPage = domain ? (
     <Fragment>
       <CopySeparator />
-      <FormattedMessage {...messages.visitPage} values={{ page: <a href={pageUrl}>{pageUrl}</a> }} />
+      <PageLink href={pageUrl} target="_blank">
+        <FormattedMessage {...messages.visitPage} />
+      </PageLink>
     </Fragment>
   ) : null;
   const { handleSubmit, handleChange, values, isValid, dirty, ...restFormikProps } = useFormik({

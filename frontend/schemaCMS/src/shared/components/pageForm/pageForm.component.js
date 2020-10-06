@@ -72,6 +72,7 @@ import { getPropsWhenNotEmpty, getPageUrlOptions, setDefaultValue } from '../../
 import { TagSearch } from '../tagSearch';
 import { CopyButton } from '../copyButton';
 import { renderWhenTrue } from '../../utils/rendering';
+import { PageLink } from '../../../theme/typography';
 import { ROUTES } from '../../utils/routes.contants';
 
 const { EditIcon, BinIcon, MenuIcon } = Icons;
@@ -184,7 +185,9 @@ export const PageForm = ({
   const visitPage = pageUrl ? (
     <Fragment>
       <CopySeparator />
-      <FormattedMessage {...messages.visitPage} values={{ page: <a href={pageUrl}>{pageUrl}</a> }} />
+      <PageLink href={pageUrl} target="_blank">
+        <FormattedMessage {...messages.visitPage} />
+      </PageLink>
     </Fragment>
   ) : null;
   const renderCopyButton = renderWhenTrue(

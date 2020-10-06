@@ -42,12 +42,6 @@ export const BinIconContainer = styled.div`
 export const AvailableCopy = styled.span`
   color: ${({ theme }) => theme.secondaryText};
   min-width: 100%;
-
-  a {
-    color: ${({ theme }) => theme.text};
-    text-decoration: none;
-    word-break: break-all;
-  }
 `;
 
 export const Subtitle = styled.div`

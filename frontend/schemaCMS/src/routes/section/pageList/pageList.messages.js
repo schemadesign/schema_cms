@@ -77,7 +77,7 @@ export default defineMessages({
   },
   visitPage: {
     id: 'section.pageList.visitPage',
-    defaultMessage: 'Visit Page: {page}',
+    defaultMessage: 'Visit Page',
   },
   blankTemplate: {
     id: 'section.pageList.visitPage',
