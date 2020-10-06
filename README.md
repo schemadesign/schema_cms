@@ -87,6 +87,9 @@ Frontend is running on `localhost:3000`
 3. in a `Permissions` section you will find a dropdown with available roles, choose one and `SAVE`
 4. after the role was changed you need to login again
 
+# API Usage
+
+Available API calls are listed on this [page](https://github.com/schemadesign/schema_cms/blob/master/backend/app/docs/public_api/api_calls.md)
 
 # Deployment 
 
