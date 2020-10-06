@@ -91,7 +91,7 @@ export default class DataSource extends PureComponent {
     const sourcePath = `${path}/source`;
     const jobListPath = `${path}/job`;
     const hasActiveJob = pathEq(['dataSource', 'activeJob'], null, this.props);
-    const projectId = pathOr('', ['project', 'id'], dataSource);
+    const projectId = pathOr(dataSource.project || '', ['project', 'id'], dataSource);
 
     return (
       <Fragment>
