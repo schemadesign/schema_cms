@@ -103,6 +103,11 @@ exports[`ThemeProvider: Component should render correctly 1`] = `
           "background": "#f0efef",
           "border": "#FFF",
         },
+        "slider": Object {
+          "background": "#f0efef",
+          "selectedBackground": "#71737e",
+          "thumb": "#000",
+        },
         "stepper": Object {
           "active": "#1d1d20",
           "background": "#f0efef",

@@ -308,10 +308,7 @@ export const PageList = ({
           <ProjectBreadcrumbs items={getBreadcrumbsItems({ id: projectId, title: projectTitle }, section)} />
           <Form onSubmit={handleSubmit}>
             <ContextHeader title={title} subtitle={nameInput}>
-              <PlusButton
-                id="createPage"
-                type="button"
-                onClick={handleCreateClick}              />
+              <PlusButton id="createPage" type="button" onClick={handleCreateClick} />
             </ContextHeader>
             <MobileInputName>
               <TextInput
@@ -402,11 +399,7 @@ export const PageList = ({
                 </SwitchContainer>
               </Switches>
               <NavigationContainer fixed>
-                <BackArrowButton
-                  id="backBtn"
-                  type="button"
-                  onClick={handleBackClick}
-                />
+                <BackArrowButton id="backBtn" type="button" onClick={handleBackClick} />
                 <NextButton
                   id="updateSection"
                   type="submit"
