@@ -74,7 +74,7 @@ describe('SourceComponent: Component', () => {
     });
   });
 
-  it('should redurect on click past versions', () => {
+  it('should redirect on click past versions', () => {
     jest.spyOn(browserHistory, 'push');
 
     const wrapper = render();

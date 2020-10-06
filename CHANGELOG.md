@@ -1,6 +1,7 @@
 ## [Unreleased]
 
 ### Fixes
+- Google Sheets validation, uploading and toggling between CSV
 
 ### Changes
 

@@ -152,6 +152,7 @@ exports[`CreateDataSource: Component should render correctly 1`] = `
         "_nodes": Array [
           "type",
           "googleSheet",
+          "fileName",
           "file",
           "name",
         ],
@@ -171,12 +172,26 @@ exports[`CreateDataSource: Component should render correctly 1`] = `
               "list": Set {},
               "refs": Map {},
             },
-            "_conditions": Array [],
-            "_deps": Array [],
-            "_exclusive": Object {
-              "fileName": false,
-              "fileSize": false,
-            },
+            "_conditions": Array [
+              Condition {
+                "fn": [Function],
+                "refs": Array [
+                  Reference {
+                    "getter": [Function],
+                    "isContext": false,
+                    "isSibling": true,
+                    "isValue": false,
+                    "key": "type",
+                    "map": undefined,
+                    "path": "type",
+                  },
+                ],
+              },
+            ],
+            "_deps": Array [
+              "type",
+            ],
+            "_exclusive": Object {},
             "_mutate": undefined,
             "_options": Object {
               "abortEarly": true,
@@ -188,10 +203,46 @@ exports[`CreateDataSource: Component should render correctly 1`] = `
               "list": Set {},
               "refs": Map {},
             },
-            "tests": Array [
-              [Function],
-              [Function],
+            "tests": Array [],
+            "transforms": Array [],
+          },
+          "fileName": SchemaType {
+            "_blacklist": RefSet {
+              "list": Set {},
+              "refs": Map {},
+            },
+            "_conditions": Array [
+              Condition {
+                "fn": [Function],
+                "refs": Array [
+                  Reference {
+                    "getter": [Function],
+                    "isContext": false,
+                    "isSibling": true,
+                    "isValue": false,
+                    "key": "type",
+                    "map": undefined,
+                    "path": "type",
+                  },
+                ],
+              },
             ],
+            "_deps": Array [
+              "type",
+            ],
+            "_exclusive": Object {},
+            "_mutate": undefined,
+            "_options": Object {
+              "abortEarly": true,
+              "recursive": true,
+            },
+            "_type": "mixed",
+            "_typeError": [Function],
+            "_whitelist": RefSet {
+              "list": Set {},
+              "refs": Map {},
+            },
+            "tests": Array [],
             "transforms": Array [],
           },
           "googleSheet": SchemaType {

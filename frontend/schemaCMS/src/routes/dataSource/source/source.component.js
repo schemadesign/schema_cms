@@ -6,7 +6,11 @@ import Helmet from 'react-helmet';
 
 import { Form, Link } from './source.styles';
 import messages from './source.messages';
-import { DATA_SOURCE_GOOGLE_SHEET, DATA_SOURCE_RUN_LAST_JOB } from '../../../modules/dataSource/dataSource.constants';
+import {
+  DATA_SOURCE_GOOGLE_SHEET,
+  DATA_SOURCE_RUN_LAST_JOB,
+  SOURCE_TYPE_GOOGLE_SHEET,
+} from '../../../modules/dataSource/dataSource.constants';
 import { filterMenuOptions, getMatchParam } from '../../../shared/utils/helpers';
 import { renderWhenTrue } from '../../../shared/utils/rendering';
 import browserHistory from '../../../shared/utils/history';
@@ -24,6 +28,7 @@ export class Source extends PureComponent {
   static propTypes = {
     dataSource: PropTypes.object.isRequired,
     dirty: PropTypes.bool.isRequired,
+    isValid: PropTypes.bool.isRequired,
     handleChange: PropTypes.func.isRequired,
     handleSubmit: PropTypes.func.isRequired,
     intl: PropTypes.object.isRequired,
@@ -70,12 +75,17 @@ export class Source extends PureComponent {
   };
 
   handleShowRunModal = () => e => {
+    const { dataSource, values } = this.props;
     const isFakeJob = pipe(
-      path(['dataSource', 'activeJob', 'scripts']),
+      path(['activeJob', 'scripts']),
       ifElse(isEmpty, always(true), complement(is(Array)))
-    )(this.props);
+    )(dataSource);
 
-    if ((this.props.values.file || this.props.values[DATA_SOURCE_GOOGLE_SHEET]) && !isFakeJob) {
+    const isSpreadsheetChanged =
+      values.type === SOURCE_TYPE_GOOGLE_SHEET &&
+      values[DATA_SOURCE_GOOGLE_SHEET] !== dataSource[DATA_SOURCE_GOOGLE_SHEET];
+
+    if ((values.file || isSpreadsheetChanged) && !isFakeJob) {
       e.preventDefault();
       this.handleOpenModal('confirmationRunJobModalOpen');
     }
@@ -106,7 +116,7 @@ export class Source extends PureComponent {
   );
 
   render() {
-    const { dataSource, intl, handleSubmit, dirty, isSubmitting, values, userRole, ...restProps } = this.props;
+    const { dataSource, intl, handleSubmit, dirty, isSubmitting, values, userRole, isValid, ...restProps } = this.props;
     const { confirmationRemoveModalOpen, confirmationRunJobModalOpen, removeLoading } = this.state;
     const headerTitle = this.props.dataSource.name;
     const headerSubtitle = <FormattedMessage {...messages.subTitle} />;
@@ -131,6 +141,7 @@ export class Source extends PureComponent {
               values={values}
               isSubmitting={isSubmitting}
               handleSubmit={handleSubmit}
+              dirty={dirty}
               {...restProps}
             />
             {this.renderLinks(!!dataSource.id)}
@@ -138,7 +149,7 @@ export class Source extends PureComponent {
               <NextButton
                 type="submit"
                 onClick={this.handleShowRunModal()}
-                disabled={(!values.fileName && !values[DATA_SOURCE_GOOGLE_SHEET]) || isSubmitting || !dirty}
+                disabled={!isValid || isSubmitting || !dirty}
                 loading={isSubmitting}
               >
                 <FormattedMessage {...messages.save} />

@@ -30,6 +30,10 @@ export default defineMessages({
     id: 'shared.components.sourceForm.fileName',
     defaultMessage: 'File Name',
   },
+  url: {
+    id: 'shared.components.sourceForm.url',
+    defaultMessage: 'URL',
+  },
   filePlaceholder: {
     id: 'shared.components.sourceForm.filePlaceholder',
     defaultMessage: 'Select file or Drag and Drop it here',

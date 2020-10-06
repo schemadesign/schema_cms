@@ -26,6 +26,7 @@ export const defaultProps = {
   uploadingDataSources: [],
   theme: Theme.dark,
   handleChange: Function.prototype,
+  validateForm: Function.prototype,
   intl,
 };
 

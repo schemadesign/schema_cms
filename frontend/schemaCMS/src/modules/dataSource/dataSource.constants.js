@@ -42,13 +42,20 @@ export const DATA_SOURCE_SCHEMA = Yup.object().shape({
     .max(100, 'Data source Name should have maximum 100 characters')
     .required('Required'),
   [DATA_SOURCE_TYPE]: Yup.string().required('Required'),
-  [DATA_SOURCE_FILE]: Yup.mixed()
-    .test('fileSize', 'File Size is too large (max 900MB)', (value = {}) => defaultTo(0, value.size) <= FILE_SIZE)
-    .test(
-      DATA_SOURCE_FILE_NAME,
-      "File Name shouldn't be longer than 100 characters.",
-      ({ name = '' } = {}) => name.length <= 100
-    ),
+  [DATA_SOURCE_FILE]: Yup.mixed().when(DATA_SOURCE_TYPE, {
+    is: SOURCE_TYPE_FILE,
+    then: Yup.mixed()
+      .test('fileSize', 'File Size is too large (max 900MB)', (value = {}) => defaultTo(0, value.size) <= FILE_SIZE)
+      .test(
+        DATA_SOURCE_FILE_NAME,
+        "File Name shouldn't be longer than 100 characters.",
+        ({ name = '' } = {}) => name.length <= 100
+      ),
+  }),
+  [DATA_SOURCE_FILE_NAME]: Yup.mixed().when(DATA_SOURCE_TYPE, {
+    is: SOURCE_TYPE_FILE,
+    then: Yup.string().required('Required'),
+  }),
   [DATA_SOURCE_GOOGLE_SHEET]: Yup.mixed().when(DATA_SOURCE_TYPE, {
     is: SOURCE_TYPE_GOOGLE_SHEET,
     then: Yup.string()

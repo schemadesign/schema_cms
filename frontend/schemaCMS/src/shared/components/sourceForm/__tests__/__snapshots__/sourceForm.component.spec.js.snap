@@ -193,6 +193,7 @@ exports[`SourceFormComponent: Component should render correctly 1`] = `
       }
     }
     touched={Object {}}
+    validateForm={[Function]}
     value="name"
   />
   <Component
@@ -480,6 +481,7 @@ exports[`SourceFormComponent: Component should render correctly 1`] = `
     }
     touched={Object {}}
     type="file"
+    validateForm={[Function]}
   />
   <Styled(Modal)
     contentLabel="Confirm Run Last Job"
@@ -752,6 +754,7 @@ exports[`SourceFormComponent: Component should render file uploader 1`] = `
       }
     }
     touched={Object {}}
+    validateForm={[Function]}
     value="name"
   />
   <Component
@@ -1039,6 +1042,7 @@ exports[`SourceFormComponent: Component should render file uploader 1`] = `
     }
     touched={Object {}}
     type="file"
+    validateForm={[Function]}
   />
   <Styled(Modal)
     contentLabel="Confirm Run Last Job"
