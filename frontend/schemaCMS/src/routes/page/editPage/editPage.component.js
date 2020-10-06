@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import PropTypes from 'prop-types';
 import { FormattedMessage, useIntl } from 'react-intl';
-import { useEffectOnce } from 'react-use';
+import { useEffectOnce, useUnmount } from 'react-use';
 import { useHistory, useParams, useLocation, Prompt } from 'react-router';
 import { useFormik } from 'formik';
 import Helmet from 'react-helmet';
@@ -40,6 +40,7 @@ import {
   sectionMessage,
   tabMessage,
 } from '../../../shared/components/projectBreadcrumbs';
+import { ROUTES } from '../../../shared/utils/routes.contants';
 
 const getBreadcrumbsItems = (project, section, page) => [
   {
@@ -163,12 +164,14 @@ export const EditPage = ({
   };
 
   const handlePromptMessage = goToLocation => {
-    if (!customLocation && goToLocation.pathname !== match.url) {
+    if (!customLocation && goToLocation.pathname !== match.url && !goToLocation.pathname.includes(ROUTES.ADD_BLOCK)) {
       setCustomLocation(goToLocation);
       setLeavingPageModalOpen(true);
+
+      return false;
     }
 
-    return false;
+    return true;
   };
 
   const handleBackButtonClick = () => {
@@ -200,6 +203,10 @@ export const EditPage = ({
         setLoading(false);
       }
     })();
+  });
+
+  useUnmount(() => {
+    return undefined;
   });
 
   return (

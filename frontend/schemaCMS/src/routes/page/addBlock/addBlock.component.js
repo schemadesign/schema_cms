@@ -21,6 +21,7 @@ import {
   pageBlockMessage,
 } from '../../../shared/components/projectBreadcrumbs';
 import { ContextHeader } from '../../../shared/components/contextHeader';
+import { ROUTES } from '../../../shared/utils/routes.contants';
 
 const getBreadcrumbsItems = (project, section, page) => [
   {
@@ -44,7 +45,7 @@ const getBreadcrumbsItems = (project, section, page) => [
     h3: page.name,
   },
   {
-    path: `/page/${page.id}/add-block`,
+    path: `/page/${page.id}${ROUTES.ADD_BLOCK}`,
     active: true,
     span: pageBlockMessage,
     h3: createMessage,

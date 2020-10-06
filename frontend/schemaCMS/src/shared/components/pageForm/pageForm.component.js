@@ -72,6 +72,7 @@ import { getPropsWhenNotEmpty, getPageUrlOptions, setDefaultValue } from '../../
 import { TagSearch } from '../tagSearch';
 import { CopyButton } from '../copyButton';
 import { renderWhenTrue } from '../../utils/rendering';
+import { ROUTES } from '../../utils/routes.contants';
 
 const { EditIcon, BinIcon, MenuIcon } = Icons;
 const { Switch, Label } = Form;
@@ -150,7 +151,7 @@ export const PageForm = ({
     setFieldValue(PAGE_TEMPLATE, temporaryPageTemplate);
   };
 
-  const handleAddBlock = () => history.push(`${url}/add-block`, { page: values });
+  const handleAddBlock = () => history.push(`${url}${ROUTES.ADD_BLOCK}`, { page: values });
 
   const copyPageFunc = async () => {
     try {

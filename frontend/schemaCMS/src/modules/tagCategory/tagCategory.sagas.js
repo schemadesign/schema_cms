@@ -6,8 +6,8 @@ import api from '../../shared/services/api';
 import { PROJECTS_PATH, TAG_CATEGORIES_PATH } from '../../shared/utils/api.constants';
 import browserHistory from '../../shared/utils/history';
 import { TAG_CATEGORIES_PAGE } from '../project/project.constants';
-import { ROUTES } from '../../routes';
 import { ProjectRoutines } from '../project';
+import { ROUTES } from '../../shared/utils/routes.contants';
 
 function* fetchTagCategories({ payload: { projectId, ...query } }) {
   try {

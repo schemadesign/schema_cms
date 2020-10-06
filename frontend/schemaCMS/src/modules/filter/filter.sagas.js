@@ -5,8 +5,8 @@ import api from '../../shared/services/api';
 import { DATA_SOURCES_PATH, FILTERS_PATH } from '../../shared/utils/api.constants';
 import browserHistory from '../../shared/utils/history';
 import { FILTERS_PAGE } from '../dataSource/dataSource.constants';
-import { ROUTES } from '../../routes';
 import { ProjectRoutines } from '../project';
+import { ROUTES } from '../../shared/utils/routes.contants';
 
 function* fetchList({ payload: { dataSourceId } }) {
   try {
