@@ -788,7 +788,7 @@ exports[`CreateDataSourceState: Component should render correctly 1`] = `
               Make it Public
             </label>
             <span
-              className="sc-cTJmaU DzbQp"
+              className="sc-cTJmaU hBzeJT"
             >
               This State is currently Private
             </span>

@@ -1237,7 +1237,7 @@ exports[`CreatePageTemplate: Component should render correctly 1`] = `
                 Make it Available
               </label>
               <span
-                className="sc-iklIKw gasZTK"
+                className="sc-iklIKw klDozI"
               >
                 This Template is currently unavailable for Editors
               </span>

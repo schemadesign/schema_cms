@@ -684,7 +684,7 @@ exports[`PageTemplateForm: Component should render correctly 1`] = `
             Make it Available
           </label>
           <span
-            className="sc-fnVYJo jMktoz"
+            className="sc-fnVYJo huOJvB"
           >
             This Template is currently available for Editors
           </span>

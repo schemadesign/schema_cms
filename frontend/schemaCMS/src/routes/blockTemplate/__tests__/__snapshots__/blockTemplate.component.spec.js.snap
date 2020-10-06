@@ -1511,7 +1511,7 @@ exports[`BlockTemplate: Component should render correctly 1`] = `
                 Make it Available
               </label>
               <span
-                className="sc-bCwgka jjEEre"
+                className="sc-bCwgka blHjQE"
               >
                 This Template is currently available for Editors
               </span>
