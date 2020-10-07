@@ -1,7 +1,7 @@
 import React, { PureComponent, Fragment } from 'react';
 import { Redirect, Route, Switch } from 'react-router-dom';
 import PropTypes from 'prop-types';
-import { always, pathEq, pathOr } from 'ramda';
+import { always, pathEq, pathSatisfies, propIs, is, T, cond, prop, path as ramdaPath } from 'ramda';
 
 import { CreateFilter } from './createFilter';
 import { Source } from './source';
@@ -91,7 +91,11 @@ export default class DataSource extends PureComponent {
     const sourcePath = `${path}/source`;
     const jobListPath = `${path}/job`;
     const hasActiveJob = pathEq(['dataSource', 'activeJob'], null, this.props);
-    const projectId = pathOr(dataSource.project || '', ['project', 'id'], dataSource);
+    const projectId = cond([
+      [propIs(Number, 'project'), prop('project')],
+      [pathSatisfies(is(Number), ['project', 'id']), ramdaPath(['project', 'id'])],
+      [T, always('')],
+    ])(dataSource);
 
     return (
       <Fragment>
