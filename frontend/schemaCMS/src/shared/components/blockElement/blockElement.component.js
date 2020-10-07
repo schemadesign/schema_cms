@@ -12,7 +12,7 @@ import getElementComponent from '../../utils/getElement';
 const { MinusIcon, EditIcon } = Icons;
 
 export const BlockElement = props => {
-  const { element, handleChange, index, blockPath, ...restFormikProps } = props;
+  const { element, handleChange, index, blockPath, isAdmin, ...restFormikProps } = props;
   const elementPath = `${blockPath}.elements.${index}.name`;
   const intl = useIntl();
 
@@ -23,19 +23,21 @@ export const BlockElement = props => {
           <IconContainer>
             <MinusIcon />
           </IconContainer>
-          <TextInput
-            name={elementPath}
-            placeholder={intl.formatMessage(messages.elementNamePlaceholder)}
-            onChange={handleChange}
-            autoWidth
-            fullWidth
-            value={element.name}
-            customInputStyles={customInputStyles}
-            {...restFormikProps}
-          />
-          <IconContainer>
-            <EditIcon />
-          </IconContainer>
+          {isAdmin ? (
+            <TextInput
+              name={elementPath}
+              placeholder={intl.formatMessage(messages.elementNamePlaceholder)}
+              onChange={handleChange}
+              autoWidth
+              fullWidth
+              value={element.name}
+              customInputStyles={customInputStyles}
+              {...restFormikProps}
+            />
+          ) : (
+            element.name
+          )}
+          <IconContainer>{isAdmin ? <EditIcon /> : null}</IconContainer>
         </Header>
       </AccordionHeader>
       <AccordionDetails>
@@ -50,4 +52,5 @@ BlockElement.propTypes = {
   element: PropTypes.object.isRequired,
   blockPath: PropTypes.string.isRequired,
   index: PropTypes.number.isRequired,
+  isAdmin: PropTypes.bool.isRequired,
 };

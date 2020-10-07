@@ -59,6 +59,7 @@ export const CreatePage = ({
   fetchPageAdditionalData,
   pageAdditionalData,
   fetchSection,
+  isAdmin,
 }) => {
   const intl = useIntl();
   const { sectionId } = useParams();
@@ -135,6 +136,7 @@ export const CreatePage = ({
             setFieldValue={setFieldValue}
             setValues={setValues}
             values={values}
+            isAdmin={isAdmin}
             {...pageAdditionalData}
             {...restFormikProps}
           />
@@ -159,6 +161,7 @@ export const CreatePage = ({
 
 CreatePage.propTypes = {
   userRole: PropTypes.string.isRequired,
+  isAdmin: PropTypes.bool.isRequired,
   createPage: PropTypes.func.isRequired,
   project: PropTypes.object.isRequired,
   section: PropTypes.object.isRequired,

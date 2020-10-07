@@ -14,6 +14,8 @@ export const DetailsContainer = styled.div`
 export const Header = styled.div`
   display: flex;
   flex-direction: row;
+  font-size: 16px;
+  align-items: center;
 
   max-width: ${({ icons }) => `calc(100% - ${icons * ICON_SIZE}px)`};
 `;

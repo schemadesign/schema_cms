@@ -21,6 +21,7 @@ export const PageBlock = ({
   draggableIcon,
   handleChange,
   removeBlock,
+  isAdmin,
   ...restFormikProps
 }) => {
   const intl = useIntl();
@@ -33,17 +34,21 @@ export const PageBlock = ({
       <AccordionHeader>
         <Header>
           <IconsContainer>{draggableIcon}</IconsContainer>
-          <TextInput
-            name={blockName}
-            placeholder={intl.formatMessage(messages.namePlaceholder)}
-            onChange={handleChange}
-            autoWidth
-            fullWidth
-            value={block[BLOCK_NAME]}
-            {...restFormikProps}
-          />
+          {isAdmin ? (
+            <TextInput
+              name={blockName}
+              placeholder={intl.formatMessage(messages.namePlaceholder)}
+              onChange={handleChange}
+              autoWidth
+              fullWidth
+              value={block[BLOCK_NAME]}
+              {...restFormikProps}
+            />
+          ) : (
+            block[BLOCK_NAME]
+          )}
           <IconsContainer>
-            <EditIcon />
+            {isAdmin ? <EditIcon /> : null}
             {removeBlock ? (
               <BinIcon id={blockPath} customStyles={binStyles} onClick={() => removeBlock(index)} />
             ) : null}
@@ -57,6 +62,7 @@ export const PageBlock = ({
             <BlockElement
               key={index}
               index={index}
+              isAdmin={isAdmin}
               blockPath={blockPath}
               element={element}
               handleChange={handleChange}
@@ -78,4 +84,5 @@ PageBlock.propTypes = {
   removeBlock: PropTypes.func,
   handleChange: PropTypes.func.isRequired,
   formikFieldPath: PropTypes.string.isRequired,
+  isAdmin: PropTypes.bool.isRequired,
 };

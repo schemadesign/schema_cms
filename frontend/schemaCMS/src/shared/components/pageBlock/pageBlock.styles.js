@@ -8,6 +8,7 @@ export const Header = styled.div`
   display: flex;
   flex-direction: row;
   max-width: calc(100% - ${3 * ICON_SIZE}px);
+  font-size: 18px;
 
   ${media.desktop`
     max-width: calc(100% - ${20 + TYPE_MAX_WIDTH + 3 * ICON_SIZE}px);
