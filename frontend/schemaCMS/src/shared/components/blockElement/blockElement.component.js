@@ -2,12 +2,14 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { AccordionDetails, AccordionHeader, AccordionPanel, Icons } from 'schemaUI';
 import { useIntl } from 'react-intl';
+import { always } from 'ramda';
 
 import { DetailsContainer, Header, IconContainer, customInputStyles } from './blockElement.styles';
 import { TextInput } from '../form/inputs/textInput';
 import messages from './blockElement.messages';
 // eslint-disable-next-line import/no-cycle
 import getElementComponent from '../../utils/getElement';
+import { renderWhenTrueOtherwise } from '../../utils/rendering';
 
 const { MinusIcon, EditIcon } = Icons;
 
@@ -15,6 +17,21 @@ export const BlockElement = props => {
   const { element, handleChange, index, blockPath, isAdmin, ...restFormikProps } = props;
   const elementPath = `${blockPath}.elements.${index}.name`;
   const intl = useIntl();
+  const renderElementName = renderWhenTrueOtherwise(
+    always(
+      <TextInput
+        name={elementPath}
+        placeholder={intl.formatMessage(messages.elementNamePlaceholder)}
+        onChange={handleChange}
+        autoWidth
+        fullWidth
+        value={element.name}
+        customInputStyles={customInputStyles}
+        {...restFormikProps}
+      />
+    ),
+    always(element.name)
+  );
 
   return (
     <AccordionPanel id={element.id}>
@@ -23,20 +40,7 @@ export const BlockElement = props => {
           <IconContainer>
             <MinusIcon />
           </IconContainer>
-          {isAdmin ? (
-            <TextInput
-              name={elementPath}
-              placeholder={intl.formatMessage(messages.elementNamePlaceholder)}
-              onChange={handleChange}
-              autoWidth
-              fullWidth
-              value={element.name}
-              customInputStyles={customInputStyles}
-              {...restFormikProps}
-            />
-          ) : (
-            element.name
-          )}
+          {renderElementName(isAdmin)}
           <IconContainer>{isAdmin ? <EditIcon /> : null}</IconContainer>
         </Header>
       </AccordionHeader>
