@@ -1038,6 +1038,7 @@ exports[`PageTemplate: Component should render correctly 1`] = `
                             "overflow": "hidden",
                             "textOverflow": "ellipsis",
                             "whiteSpace": "nowrap",
+                            "width": "100%",
                           }
                         }
                       >

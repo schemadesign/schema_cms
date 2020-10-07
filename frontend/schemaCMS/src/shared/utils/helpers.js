@@ -211,12 +211,10 @@ export const getPageUrlOptions = ({ internalConnections, domain = '', pageId }) 
           pages: filter(complement(propEq('id', pageId))),
         }),
         ({ mainPage, pages, name: sectionName }) =>
-          map(({ displayName, name, id, isDraft, isPublished, isHidden }) => ({
+          map(({ displayName, name, id, isPublic }) => ({
             url: `${domain + getMainPageDisplayName({ mainPage, id })}/${displayName}`,
-            label: ifMainPage(
-              () => [{ name: sectionName }, mainPage.name, { name, isDraft, isPublished, isHidden }],
-              always([{ name: sectionName }, { name, isDraft, isPublished, isHidden }])
-            )({
+            isPublic,
+            label: ifMainPage(() => [sectionName, mainPage.name, name], always([sectionName, name]))({
               mainPage,
               id,
             }),

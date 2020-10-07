@@ -35,6 +35,7 @@ export const getStyles = (theme = defaultTheme) => ({
     whiteSpace: 'nowrap',
     overflow: 'hidden',
     textOverflow: 'ellipsis',
+    width: '100%',
   },
   optionListStyles: menuOpen => ({
     display: menuOpen ? 'block' : 'none',

@@ -93,7 +93,7 @@ export const internalConnections = [
     project: 2,
     name: 'Section 1',
     mainPage: null,
-    pages: [{ id: 1, displayName: 'blog', name: 'Blog' }],
+    pages: [{ id: 1, displayName: 'blog', name: 'Blog', isPublic: true }],
   },
   {
     id: 4,
@@ -101,9 +101,9 @@ export const internalConnections = [
     name: 'Section 2',
     mainPage: { id: 3, name: 'news', displayName: 'News' },
     pages: [
-      { id: 2, displayName: 'article-2', name: 'Article 2' },
-      { id: 3, displayName: 'news', name: 'News' },
-      { id: 4, displayName: 'article-1', name: 'Article 1' },
+      { id: 2, displayName: 'article-2', name: 'Article 2', isPublic: false },
+      { id: 3, displayName: 'news', name: 'News', isPublic: true },
+      { id: 4, displayName: 'article-1', name: 'Article 1', isPublic: true },
     ],
   },
 ];

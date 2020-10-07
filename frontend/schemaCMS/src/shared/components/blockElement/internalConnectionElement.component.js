@@ -2,7 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { useIntl } from 'react-intl';
 import { useTheme } from 'styled-components';
-import { cond, isEmpty, propEq, T, equals, ifElse } from 'ramda';
+import { isEmpty, equals, ifElse, always } from 'ramda';
 
 import messages from './blockElement.messages';
 import {
@@ -11,6 +11,8 @@ import {
   SelectWrapper,
   customSelectStyles,
   LabelItem,
+  LabelItems,
+  LabelStatus,
 } from './blockElement.styles';
 import { getValuePath } from '../../utils/helpers';
 import { Select } from '../form/select';
@@ -26,25 +28,17 @@ export const InternalConnectionElement = ({ blockPath, element, setFieldValue, i
     setFieldValue(params, { pageId: value });
   };
 
-  const renderOptions = (index, element) =>
-    cond([
-      [propEq('isPublished', true), () => <LabelItem key={index}>{`${element.name} (published)`}</LabelItem>],
-      [propEq('isHidden', true), () => <LabelItem key={index}>{`${element.name} (hidden)`}</LabelItem>],
-      [T, () => <LabelItem key={index}>{element.name}</LabelItem>],
-    ])(element);
-
-  const isPageLabel = equals(1);
-
-  const options = pagerUrlOptions.map(({ url, label, id }) => ({
+  const renderStatus = ifElse(equals(true), always('(Public)'), always('(Non Public)'));
+  const options = pagerUrlOptions.map(({ url, label, id, isPublic }) => ({
     value: id,
     label: (
       <SelectLabel>
-        {label.map((element, index) => {
-          return ifElse(isPageLabel, renderOptions, () => <LabelItem key={index}>{element.name}</LabelItem>)(
-            index,
-            element
-          );
-        })}
+        <LabelItems>
+          {label.map((element, index) => (
+            <LabelItem key={index}>{element}</LabelItem>
+          ))}
+        </LabelItems>
+        <LabelStatus>{renderStatus(isPublic)}</LabelStatus>
       </SelectLabel>
     ),
     url,
