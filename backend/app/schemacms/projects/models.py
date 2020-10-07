@@ -43,6 +43,8 @@ class Project(SoftDeleteObject, TitleSlugDescriptionModel, TimeStampedModel):
     def natural_key(self):
         return (self.title,)
 
+    natural_key.dependencies = ["users.user"]
+
     def relative_path_to_save(self, filename):
         base_path = self.xml_file.storage.location
         if not self.id:

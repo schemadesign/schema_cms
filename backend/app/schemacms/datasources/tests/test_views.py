@@ -817,15 +817,16 @@ class TestRevertJobView:
             3, datasource=data_source, job_state=ds_constants.ProcessingState.SUCCESS
         )
         payload = dict(id=jobs[1].id)
-        old_active_job = data_source.active_job
+        old_active_job = data_source.get_active_job()
 
         api_client.force_authenticate(admin)
         response = api_client.post(self.get_url(data_source.id), data=payload)
         data_source.refresh_from_db()
+        active_job = data_source.get_active_job()
 
         assert response.status_code == status.HTTP_200_OK
-        assert data_source.active_job != old_active_job
-        assert data_source.active_job == jobs[1]
+        assert active_job != old_active_job
+        assert active_job == jobs[1]
         assert response.data["project"] == data_source.project.project_info
 
     @staticmethod

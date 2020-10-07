@@ -246,7 +246,7 @@ class PADataSourceView(
     renderer_classes = [renderers.JSONRenderer]
     permission_classes = ()
     queryset = (
-        DataSource.objects.select_related("active_job", "meta_data")
+        DataSource.objects.select_related("meta_data")
         .prefetch_related(Prefetch("filters", queryset=Filter.objects.filter(is_active=True)), "tags")
         .order_by("created")
     )
@@ -292,9 +292,11 @@ class PADataSourceView(
         columns = records_reader.split_string_to_list(columns_list_as_string)
 
         ds = self.get_object()
-        items = ds.active_job.meta_data.shape[0]
+        job = ds.get_active_job()
 
-        fields_names = ds.active_job.meta_data.fields_names
+        items = job.meta_data.shape[0]
+
+        fields_names = job.meta_data.fields_names
         filters = records_reader.set_filters(request.query_params, fields_names)
         filter_query = records_reader.create_query_string(filters)
 

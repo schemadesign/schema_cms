@@ -44,6 +44,8 @@ class TagCategory(SoftDeleteObject, TimeStampedModel):
     def natural_key(self):
         return self.project.title, self.name
 
+    natural_key.dependencies = ["projects.project"]
+
     def update_or_create_tags(self, tags):
         for tag in tags:
             Tag.objects.update_or_create(id=tag.pop("id", None), defaults={"category": self, **tag})
@@ -67,3 +69,5 @@ class Tag(SoftDeleteObject, TimeStampedModel):
 
     def natural_key(self):
         return self.category.project.title, self.category.name, self.value
+
+    natural_key.dependencies = ["tags.tagcategory"]

@@ -2,7 +2,6 @@ import json
 import os
 
 from django.db import transaction
-from django.db.models import Prefetch
 from django.shortcuts import get_object_or_404
 from rest_framework import (
     decorators,
@@ -34,13 +33,8 @@ def copy_steps_from_active_job(steps, job):
 class BaseDataSourceView:
     serializer_class = serializers.DataSourceSerializer
     queryset = (
-        models.DataSource.objects.prefetch_related(
-            "tags",
-            "tags__category",
-            "filters",
-            Prefetch("active_job__steps", queryset=models.DataSourceJobStep.objects.order_by("exec_order")),
-        )
-        .select_related("project", "meta_data", "created_by", "active_job")
+        models.DataSource.objects.prefetch_related("tags", "tags__category", "filters", "jobs")
+        .select_related("project", "meta_data", "created_by")
         .jobs_in_process()
     )
 
@@ -182,7 +176,7 @@ class DataSourceViewSet(BaseDataSourceView, ActionSerializerViewSetMixin, viewse
         field_name = request.query_params.get("field_name", None)
 
         try:
-            preview = data_source.active_job.meta_data.preview
+            preview = data_source.get_active_job().meta_data.preview
         except Exception as e:
             return response.Response(f"No successful job found - {e}", status=status.HTTP_404_NOT_FOUND)
 
@@ -303,10 +297,11 @@ class DataSourceViewSet(BaseDataSourceView, ActionSerializerViewSetMixin, viewse
                 fake_job = data_source.create_job(description=f"DataSource {data_source.id} file upload")
 
                 if copy_steps:
-                    copy_steps_from_active_job(data_source.active_job.steps.all(), fake_job)
+                    current_active_job = data_source.get_active_job()
+                    copy_steps_from_active_job(current_active_job.steps.all(), fake_job)
 
-                    data_source.active_job = None
-                    data_source.save(update_fields=["active_job"])
+                    current_active_job.is_active = False
+                    current_active_job.save(update_fields=["is_active"])
 
                 if data_source.google_sheet and source_file:
                     data_source.file = source_file

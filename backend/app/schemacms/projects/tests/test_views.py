@@ -228,8 +228,7 @@ class TestProjectDataSourcesView:
                 datasource_job__job_state=ds_constants.ProcessingState.SUCCESS,
                 options={"columns": ["imageurl"]},
             )
-            data_source.active_job = step.datasource_job
-            data_source.save(update_fields=["active_job"])
+            data_source.set_active_job(step.datasource_job)
 
         request = rf.get(self.get_url(project.id))
         api_client.force_authenticate(admin)

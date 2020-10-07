@@ -60,8 +60,9 @@ class BlockTemplate(Content):
             )
         ]
 
-    def natural_key(self):
-        return self.project.title, self.name
+    # def natural_key(self):
+    #     return self.project.title, self.name
+    # natural_key.dependencies = ["users.user", "projects.project"]
 
     def delete_elements(self, elements):
         self.elements.filter(id__in=elements).delete()
@@ -73,8 +74,9 @@ class BlockTemplateElement(Element):
     _clone_many_to_one_or_one_to_many_fields = ["template"]
     objects = managers.BlockTemplateElementManager()
 
-    def natural_key(self):
-        return self.template.project.title, self.template.name, self.name, self.order
+    # def natural_key(self):
+    #     return self.template.project.title, self.template.name, self.name, self.order
+    # natural_key.dependencies = ["pages.blocktemplate"]
 
 
 class Section(SoftDeleteObject, TimeStampedModel):
@@ -100,10 +102,9 @@ class Section(SoftDeleteObject, TimeStampedModel):
     def __str__(self):
         return f"{self.name}"
 
-    def natural_key(self):
-        return self.project.title, self.name
-
-    natural_key.dependencies = ["projects.project"]
+    # def natural_key(self):
+    #     return self.project.title, self.name
+    # natural_key.dependencies = ["users.user", "projects.project", "pages.page"]
 
     @functional.cached_property
     def project_info(self):
@@ -144,6 +145,7 @@ class Page(Content):
 
     # def natural_key(self):
     #     return self.project.title, self.name, self.is_template, self.is_draft
+    # natural_key.dependencies = ["users.user", "projects.project", "pages.section", "pages.pagetemplate"]
 
     @property
     def is_published(self):
@@ -268,10 +270,9 @@ class PageBlock(CloneMixin, SoftDeleteObject):
     def __str__(self):
         return f"{self.name}"
 
-    def natural_key(self):
-        return self.page.natural_key() + (self.name, self.order)
-
-    natural_key.dependencies = ["pages.blocktemplate", "pages.page"]
+    # def natural_key(self):
+    #     return self.page.natural_key() + (self.name, self.order)
+    # natural_key.dependencies = ["pages.blocktemplate", "pages.page"]
 
 
 class PageBlockElement(Element):
@@ -300,10 +301,9 @@ class PageBlockElement(Element):
 
     _clone_one_to_one_fields = ["observable_hq"]
 
-    def natural_key(self):
-        return self.block.page.project.title, self.block.page.name, self.block.name, self.order
-
-    natural_key.dependencies = ["pages.pageblock", "states.state"]
+    # def natural_key(self):
+    #     return self.block.page.project.title, self.block.page.name, self.block.name, self.order
+    # natural_key.dependencies = ["states.state", "pages.pageblock", "pages.customelementset"]
 
     def relative_path_to_save(self, filename):
         base_path = self.image.storage.location
@@ -432,10 +432,9 @@ class CustomElementSet(CloneMixin, SoftDeleteObject):
     def __str__(self):
         return f"{self.id}"
 
-    def natural_key(self):
-        return self.custom_element.natural_key() + (self.order,)
-
-    natural_key.dependencies = ["pages.pageblockelement"]
+    # def natural_key(self):
+    #     return self.custom_element.natural_key() + (self.order,)
+    # natural_key.dependencies = ["pages.pageblockelement"]
 
 
 class PageBlockObservableElement(CloneMixin, SoftDeleteObject):
@@ -464,7 +463,6 @@ class PageTag(CloneMixin, SoftDeleteObject):
     def __str__(self):
         return f"{self.id}"
 
-    def natural_key(self):
-        return self.page.project.natural_key() + (self.page.name, self.category.name, self.value)
-
-    natural_key.dependencies = ["pages.page", "tags.tagcategory"]
+    # def natural_key(self):
+    #     return self.page.project.natural_key() + (self.page.name, self.category.name, self.value)
+    # natural_key.dependencies = ["pages.page", "tags.tagcategory"]

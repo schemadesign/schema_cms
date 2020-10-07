@@ -38,7 +38,7 @@ class State(SoftDeleteObject, TimeStampedModel):
     def natural_key(self):
         return self.datasource.natural_key() + (self.name,)
 
-    natural_key.dependencies = ["datasources.datasource", "users.user"]
+    natural_key.dependencies = ["users.user", "datasources.datasource"]
 
     @property
     def formatted_meta(self):
@@ -108,4 +108,4 @@ class StateTag(SoftDeleteObject):
     def natural_key(self):
         return self.state.natural_key() + (self.category.name, self.value)
 
-    natural_key.dependencies = ["states.state", "datasources.datasourcetag", "tags.tagcategory"]
+    natural_key.dependencies = ["states.state", "tags.tagcategory"]

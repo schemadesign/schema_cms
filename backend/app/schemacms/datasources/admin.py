@@ -37,7 +37,7 @@ class FilterAdmin(utils_admin.SoftDeleteObjectAdmin):
 class DataSourceAdmin(utils_admin.SoftDeleteObjectAdmin):
     actions = utils_admin.SoftDeleteObjectAdmin.actions + [update_meta]
     list_display = ("name", "project", "deleted_at")
-    fields = ("project", "name", "created_by", "type", "file", "active_job", "deleted_at")
+    fields = ("project", "name", "created_by", "type", "file", "deleted_at")
     list_filter = ("project", "type", "deleted_at")
     readonly_on_update_fields = ("project",)
 
@@ -46,13 +46,8 @@ class DataSourceAdmin(utils_admin.SoftDeleteObjectAdmin):
             request, queryset, field="name", model_name="DataSource", parent="project"
         )
 
-    def get_form(self, request, obj=None, **kwargs):
-        form = super().get_form(request, obj, **kwargs)
-        form.base_fields["active_job"].queryset = models.DataSourceJob.objects.filter(datasource=obj)
-        return form
-
     def get_queryset(self, request):
-        return super().get_queryset(request).select_related("active_job", "project", "created_by")
+        return super().get_queryset(request).select_related("project", "created_by")
 
     @transaction.atomic()
     def save_model(self, request, obj, form, change):

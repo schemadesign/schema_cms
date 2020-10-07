@@ -76,14 +76,14 @@ class DataSourceTagSerializer(serializers.ModelSerializer):
 
 class DataSourceSerializer(serializers.ModelSerializer):
     meta_data = DataSourceMetaSerializer(read_only=True)
-    file_name = serializers.SerializerMethodField(read_only=True)
+    file_name = serializers.SerializerMethodField()
     created_by = NestedRelatedModelSerializer(
         serializer=DataSourceCreatorSerializer(),
         read_only=True,
         pk_field=serializers.UUIDField(format="hex_verbose"),
     )
-    jobs_state = serializers.SerializerMethodField(read_only=True)
-    active_job = ActiveJobSerializer(read_only=True)
+    jobs_state = serializers.SerializerMethodField()
+    active_job = serializers.SerializerMethodField()
     tags = DataSourceTagSerializer(read_only=True, many=True)
 
     class Meta:
@@ -141,6 +141,12 @@ class DataSourceSerializer(serializers.ModelSerializer):
         if obj.file:
             _, file_name = obj.get_original_file_name()
             return file_name
+
+    def get_active_job(self, obj: ds_models.DataSource):
+        if job := obj.get_active_job():
+            return ActiveJobSerializer(job, read_only=True).data
+        else:
+            return None
 
     def get_jobs_state(self, obj):
         last_job = obj.last_job

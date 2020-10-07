@@ -83,7 +83,7 @@ def create_query_string(filters_dict: dict):
 
 
 def read_parquet_file(data_source, columns=None):
-    file_name = data_source.active_job.result.name.replace(".csv", ".parquet")
+    file_name = data_source.get_active_job().result.name.replace(".csv", ".parquet")
     result_file = get_s3_object(file_name)
 
     file = pq.read_table(BufferReader(result_file["Body"].read()), columns=columns)

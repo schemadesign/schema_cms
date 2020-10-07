@@ -69,10 +69,10 @@ class PADataSourceDetailNoRecordsSerializer(PADataSourceListSerializer):
         fields = ("meta", "shape", "fields", "filters", "tags")
 
     def get_shape(self, obj):
-        return obj.active_job.meta_data.shape
+        return obj.get_active_job().meta_data.shape
 
     def get_ds_fields(self, obj):
-        fields = json.loads(obj.active_job.meta_data.preview.read())["fields"]
+        fields = json.loads(obj.get_active_job().meta_data.preview.read())["fields"]
         data = {
             str(num): {"name": key, "type": value["dtype"]} for num, (key, value) in enumerate(fields.items())
         }
