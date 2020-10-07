@@ -9,10 +9,15 @@ export const Header = styled.div`
   flex-direction: row;
   max-width: calc(100% - ${3 * ICON_SIZE}px);
   font-size: 18px;
+  align-items: center;
 
   ${media.desktop`
     max-width: calc(100% - ${20 + TYPE_MAX_WIDTH + 3 * ICON_SIZE}px);
   `};
+`;
+
+export const BlockName = styled.div`
+  margin-right: 35px;
 `;
 
 export const IconsContainer = styled.div`
