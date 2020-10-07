@@ -28,6 +28,7 @@ export const defaultProps = {
   match: {
     url: 'url',
   },
+  isAdmin: true,
 };
 
 storiesOf('EditPage', module)

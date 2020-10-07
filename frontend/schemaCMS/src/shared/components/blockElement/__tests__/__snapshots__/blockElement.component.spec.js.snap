@@ -974,7 +974,7 @@ exports[`BlockElement: Component should render correctly embed video element 1`]
     }
   >
     <div
-      className="sc-gtssRu eMStLD"
+      className="sc-gtssRu dyZBMG"
     >
       <div
         className="sc-fujyUd dRGyiv"
@@ -1149,7 +1149,7 @@ exports[`BlockElement: Component should render correctly file element 1`] = `
     }
   >
     <div
-      className="sc-gtssRu eMStLD"
+      className="sc-gtssRu dyZBMG"
     >
       <div
         className="sc-fujyUd dRGyiv"
@@ -1324,7 +1324,7 @@ exports[`BlockElement: Component should render correctly image element 1`] = `
     }
   >
     <div
-      className="sc-gtssRu eMStLD"
+      className="sc-gtssRu dyZBMG"
     >
       <div
         className="sc-fujyUd dRGyiv"
@@ -1499,7 +1499,7 @@ exports[`BlockElement: Component should render correctly internal connection ele
     }
   >
     <div
-      className="sc-gtssRu eMStLD"
+      className="sc-gtssRu dyZBMG"
     >
       <div
         className="sc-fujyUd dRGyiv"
@@ -1674,7 +1674,7 @@ exports[`BlockElement: Component should render correctly internal connection ele
     }
   >
     <div
-      className="sc-gtssRu eMStLD"
+      className="sc-gtssRu dyZBMG"
     >
       <div
         className="sc-fujyUd dRGyiv"
@@ -1849,7 +1849,7 @@ exports[`BlockElement: Component should render correctly markdown element 1`] = 
     }
   >
     <div
-      className="sc-gtssRu eMStLD"
+      className="sc-gtssRu dyZBMG"
     >
       <div
         className="sc-fujyUd dRGyiv"
@@ -2024,7 +2024,7 @@ exports[`BlockElement: Component should render correctly observable element 1`] 
     }
   >
     <div
-      className="sc-gtssRu eMStLD"
+      className="sc-gtssRu dyZBMG"
     >
       <div
         className="sc-fujyUd dRGyiv"
@@ -2199,7 +2199,7 @@ exports[`BlockElement: Component should render correctly text element 1`] = `
     }
   >
     <div
-      className="sc-gtssRu eMStLD"
+      className="sc-gtssRu dyZBMG"
     >
       <div
         className="sc-fujyUd dRGyiv"

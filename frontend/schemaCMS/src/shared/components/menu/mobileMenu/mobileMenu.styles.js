@@ -1,6 +1,5 @@
 import styled, { css } from 'styled-components';
 import { Typography } from 'schemaUI';
-import { Link } from 'react-router-dom';
 import { ifElse, equals } from 'ramda';
 
 import { media } from '../../../../theme/media';
@@ -77,7 +76,7 @@ export const HelperList = styled.div`
   flex-direction: column;
 `;
 
-export const HelperLink = styled(Link)`
+export const HelperLink = styled.a`
   color: ${({ theme }) => theme.text};
   font-size: 14px;
   text-decoration: none;

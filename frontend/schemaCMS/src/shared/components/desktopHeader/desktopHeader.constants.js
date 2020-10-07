@@ -2,7 +2,7 @@ import React from 'react';
 import { FormattedMessage } from 'react-intl';
 
 import { ROLES } from '../../../modules/userProfile/userProfile.constants';
-import { HELPER_LINK, LINK_ITEM } from '../menu/mobileMenu/mobileMenu.constants';
+import { API_DOC_URL, HELPER_LINK, LINK_ITEM, REPOSITORY_URL } from '../menu/mobileMenu/mobileMenu.constants';
 import messages from './desktopHeader.messages';
 import { PROJECTS_ID, USERS_PAGE_ID } from '../../../routes/project/project.constants';
 
@@ -27,6 +27,11 @@ export const PRIMARY_OPTIONS = [
 
 export const SECONDARY_OPTIONS = [
   { label: <FormattedMessage {...messages.about} />, to: '/', id: 'aboutNavBtn', type: HELPER_LINK },
-  { label: <FormattedMessage {...messages.api} />, to: '/', id: 'apiNavBtn', type: HELPER_LINK },
-  { label: <FormattedMessage {...messages.repository} />, to: '/', id: 'repositoryNavBtn', type: HELPER_LINK },
+  { label: <FormattedMessage {...messages.api} />, to: API_DOC_URL, id: 'apiNavBtn', type: HELPER_LINK },
+  {
+    label: <FormattedMessage {...messages.repository} />,
+    to: REPOSITORY_URL,
+    id: 'repositoryNavBtn',
+    type: HELPER_LINK,
+  },
 ];

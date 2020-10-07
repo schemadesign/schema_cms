@@ -18,6 +18,7 @@ export const defaultProps = {
   formikFieldPath: 'formikFieldPath',
   pagerUrlOptions,
   stateOptions: [],
+  isAdmin: true,
 };
 
 storiesOf('PageBlock', module)

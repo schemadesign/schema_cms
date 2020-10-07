@@ -15,6 +15,7 @@ export const defaultProps = {
   validateForm: Function.prototype,
   pagerUrlOptions,
   stateOptions,
+  isAdmin: true,
 };
 
 storiesOf('BlockElement', module)

@@ -126,46 +126,49 @@ exports[`DesktopTopHeader: Component should render correctly 1`] = `
               active={true}
               key="0"
             >
-              <Link
+              <a
+                href="/"
                 id="aboutNavBtn"
-                onClick={[Function]}
-                to="/"
+                rel="noreferrer"
+                target="_blank"
               >
                 <FormattedMessage
                   defaultMessage="About Schema CMS"
                   id="shared.components.desktopHeader.about"
                 />
-              </Link>
+              </a>
             </Styled(styled.div)>
             <Styled(styled.div)
               active={true}
               key="1"
             >
-              <Link
+              <a
+                href="https://github.com/schemadesign/schema_cms/blob/master/backend/app/docs/public_api/api_calls.md"
                 id="apiNavBtn"
-                onClick={[Function]}
-                to="/"
+                rel="noreferrer"
+                target="_blank"
               >
                 <FormattedMessage
                   defaultMessage="API Doc"
                   id="shared.components.desktopHeader.api"
                 />
-              </Link>
+              </a>
             </Styled(styled.div)>
             <Styled(styled.div)
               active={true}
               key="2"
             >
-              <Link
+              <a
+                href="https://github.com/schemadesign/schema_cms"
                 id="repositoryNavBtn"
-                onClick={[Function]}
-                to="/"
+                rel="noreferrer"
+                target="_blank"
               >
                 <FormattedMessage
                   defaultMessage="GitHub Repository"
                   id="shared.components.desktopHeader.repository"
                 />
-              </Link>
+              </a>
             </Styled(styled.div)>
           </styled.div>
         </styled.div>
@@ -258,46 +261,49 @@ exports[`DesktopTopHeader: Component should render correctly when no user 1`] = 
               active={true}
               key="0"
             >
-              <Link
+              <a
+                href="/"
                 id="aboutNavBtn"
-                onClick={[Function]}
-                to="/"
+                rel="noreferrer"
+                target="_blank"
               >
                 <FormattedMessage
                   defaultMessage="About Schema CMS"
                   id="shared.components.desktopHeader.about"
                 />
-              </Link>
+              </a>
             </Styled(styled.div)>
             <Styled(styled.div)
               active={true}
               key="1"
             >
-              <Link
+              <a
+                href="https://github.com/schemadesign/schema_cms/blob/master/backend/app/docs/public_api/api_calls.md"
                 id="apiNavBtn"
-                onClick={[Function]}
-                to="/"
+                rel="noreferrer"
+                target="_blank"
               >
                 <FormattedMessage
                   defaultMessage="API Doc"
                   id="shared.components.desktopHeader.api"
                 />
-              </Link>
+              </a>
             </Styled(styled.div)>
             <Styled(styled.div)
               active={true}
               key="2"
             >
-              <Link
+              <a
+                href="https://github.com/schemadesign/schema_cms"
                 id="repositoryNavBtn"
-                onClick={[Function]}
-                to="/"
+                rel="noreferrer"
+                target="_blank"
               >
                 <FormattedMessage
                   defaultMessage="GitHub Repository"
                   id="shared.components.desktopHeader.repository"
                 />
-              </Link>
+              </a>
             </Styled(styled.div)>
           </styled.div>
         </styled.div>
