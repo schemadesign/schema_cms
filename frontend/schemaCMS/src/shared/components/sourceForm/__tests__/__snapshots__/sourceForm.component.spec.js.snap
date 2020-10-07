@@ -122,6 +122,11 @@ exports[`SourceFormComponent: Component should render correctly 1`] = `
           "background": "#1d1d20",
           "border": "#2F2F36",
         },
+        "slider": Object {
+          "background": "#1d1d20",
+          "selectedBackground": "#71737e",
+          "thumb": "#FFF",
+        },
         "stepper": Object {
           "active": "#FFF",
           "background": "#1d1d20",
@@ -408,6 +413,11 @@ exports[`SourceFormComponent: Component should render correctly 1`] = `
         "select": Object {
           "background": "#1d1d20",
           "border": "#2F2F36",
+        },
+        "slider": Object {
+          "background": "#1d1d20",
+          "selectedBackground": "#71737e",
+          "thumb": "#FFF",
         },
         "stepper": Object {
           "active": "#FFF",
@@ -683,6 +693,11 @@ exports[`SourceFormComponent: Component should render file uploader 1`] = `
           "background": "#1d1d20",
           "border": "#2F2F36",
         },
+        "slider": Object {
+          "background": "#1d1d20",
+          "selectedBackground": "#71737e",
+          "thumb": "#FFF",
+        },
         "stepper": Object {
           "active": "#FFF",
           "background": "#1d1d20",
@@ -969,6 +984,11 @@ exports[`SourceFormComponent: Component should render file uploader 1`] = `
         "select": Object {
           "background": "#1d1d20",
           "border": "#2F2F36",
+        },
+        "slider": Object {
+          "background": "#1d1d20",
+          "selectedBackground": "#71737e",
+          "thumb": "#FFF",
         },
         "stepper": Object {
           "active": "#FFF",

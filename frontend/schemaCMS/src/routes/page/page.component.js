@@ -8,13 +8,14 @@ import { NotFound } from '../notFound';
 import { AddBlock } from './addBlock';
 import reportError from '../../shared/utils/reportError';
 import { LoadingWrapper } from '../../shared/components/loadingWrapper';
+import { ROUTES } from '../../shared/utils/routes.contants';
 
 export const Page = ({ fetchPage }) => {
   const { path } = useRouteMatch();
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
   const { pageId } = useParams();
-  const addBlockPath = `${path}/add-block`;
+  const addBlockPath = `${path}${ROUTES.ADD_BLOCK}`;
 
   useEffectOnce(() => {
     (async () => {

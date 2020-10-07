@@ -5,11 +5,12 @@ import { NotFound } from '../notFound';
 import { PageList } from './pageList';
 import { CreatePage } from './createPage';
 import { AddBlock } from './addBlock';
+import { ROUTES } from '../../shared/utils/routes.contants';
 
 export const Section = () => {
   const { path } = useRouteMatch();
   const createPagePath = `${path}/create-page`;
-  const addBlockPath = `${createPagePath}/add-block`;
+  const addBlockPath = `${createPagePath}${ROUTES.ADD_BLOCK}`;
 
   return (
     <Switch>

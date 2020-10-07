@@ -26,31 +26,7 @@ import { BlockTemplate } from './blockTemplate';
 import { PageTemplate } from './pageTemplate';
 import { Section } from './section';
 import { Page } from './page';
-
-export const ROUTES = {
-  HOME: '/',
-  NOT_FOUND: '/404',
-  AUTH: '/auth',
-  NOT_AUTHORIZED: '/not-authorized',
-  PROJECT: '/project',
-  PROJECT_CREATE: '/project/create',
-  RESET_PASSWORD: '/reset-password',
-  LOGOUT: '/logout',
-  DATA_SOURCE: '/datasource',
-  FOLDER: '/folder',
-  BLOCK: '/block',
-  DATA_WRANGLING_SCRIPTS: '/script',
-  SETTINGS: '/settings',
-  USER: '/user',
-  FILTER: '/filter',
-  JOB_DETAIL: '/job',
-  TAG_CATEGORY: '/tag-category',
-  STATE: '/state',
-  BLOCK_TEMPLATE: '/block-template',
-  PAGE_TEMPLATE: '/page-template',
-  SECTION: '/section',
-  PAGE: '/page',
-};
+import { ROUTES } from '../shared/utils/routes.contants';
 
 export default class RootContainer extends Component {
   render() {

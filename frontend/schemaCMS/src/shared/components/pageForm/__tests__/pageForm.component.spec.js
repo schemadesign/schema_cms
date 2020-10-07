@@ -7,6 +7,7 @@ import { makeContextRenderer } from '../../../utils/testUtils';
 import { PAGE_TEMPLATES_BLOCKS } from '../../../../modules/pageTemplates/pageTemplates.constants';
 import { page } from '../../../../modules/page/page.mocks';
 import { PAGE_DISPLAY_NAME, PAGE_TAGS, PAGE_TEMPLATE } from '../../../../modules/page/page.constants';
+import { ROUTES } from '../../../utils/routes.contants';
 
 const mockPushHistory = jest.fn();
 
@@ -93,7 +94,7 @@ describe('PageForm: Component', () => {
       wrapper.root.findByProps({ id: 'addBlock' }).props.onClick();
     });
 
-    expect(mockPushHistory).toHaveBeenCalledWith('url/add-block', {
+    expect(mockPushHistory).toHaveBeenCalledWith(`url${ROUTES.ADD_BLOCK}`, {
       page: {
         blocks: [
           {

@@ -22,6 +22,7 @@ import {
 } from '../../../shared/components/projectBreadcrumbs';
 import { ContextHeader } from '../../../shared/components/contextHeader';
 import { LoadingWrapper } from '../../../shared/components/loadingWrapper';
+import { ROUTES } from '../../../shared/utils/routes.contants';
 
 const getBreadcrumbsItems = (project, { id, name }) => [
   {
@@ -45,7 +46,7 @@ const getBreadcrumbsItems = (project, { id, name }) => [
     h3: createMessage,
   },
   {
-    path: `/section/${id}/create-page/add-block`,
+    path: `/section/${id}/create-page${ROUTES.ADD_BLOCK}`,
     active: true,
     span: pageBlockMessage,
     h3: createMessage,

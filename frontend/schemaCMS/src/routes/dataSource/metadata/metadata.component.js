@@ -56,7 +56,7 @@ export const Metadata = ({ dataSource, userRole, project, fetchMetadata, updateM
     isValid,
     ...restFormikProps
   } = useFormik({
-    initialValues: { [METADATA]: metadata.map((item, index) => ({ ...item, id: index })) },
+    initialValues: { [METADATA]: metadata },
     enableReinitialize: true,
     validate: values => {
       try {
@@ -124,7 +124,7 @@ export const Metadata = ({ dataSource, userRole, project, fetchMetadata, updateM
           }
         />
         <Form>
-          <Accordion {...accordionCopyProps}>
+          <Accordion {...accordionCopyProps} newOpen>
             {values[METADATA].map(({ key, value, id }, index) => (
               <AccordionPanel key={id} id={id}>
                 <AccordionHeader>

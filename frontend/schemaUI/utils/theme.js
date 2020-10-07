@@ -130,6 +130,11 @@ const light = {
     background: colors.white,
     border: colors.black,
   },
+  slider: {
+    thumb: colors.black,
+    background: colors.veryLightPink,
+    selectedBackground: colors.lightGrey,
+  },
   background: colors.white,
   hiddenBackground: 'rgba(255, 255, 255, 0)',
   border: colors.veryLightPink,
@@ -259,6 +264,11 @@ const dark = {
   accordion: {
     background: colors.black,
     border: colors.white,
+  },
+  slider: {
+    thumb: colors.white,
+    background: colors.darkGrey,
+    selectedBackground: colors.lightGrey,
   },
   background: colors.black,
   hiddenBackground: 'rgba(0, 0, 0, 0)',

@@ -1,6 +1,5 @@
 import React, { PureComponent } from 'react';
 import PropTypes from 'prop-types';
-import { isNil } from 'ramda';
 
 import { getStyles } from './accordionPanel.styles';
 import { withStyles } from '../styles/withStyles';
