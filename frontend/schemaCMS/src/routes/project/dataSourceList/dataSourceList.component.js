@@ -96,16 +96,16 @@ export class DataSourceList extends PureComponent {
     [T, always(RESULT_PAGE)],
   ]);
 
+  getShowDataSourceUrl = ({ id, activeJob }) => {
+    const dataSourcePage = this.getDataSourcePage(activeJob);
+
+    return `/datasource/${id}/${dataSourcePage}`;
+  };
+
   handleShowProject = () => this.props.history.push(`/project/${getMatchParam(this.props, 'projectId')}`);
 
   handleCreateDataSource = () =>
     this.props.history.push(`/project/${getMatchParam(this.props, 'projectId')}/datasource/add`);
-
-  handleShowDataSource = ({ id, activeJob }) => {
-    const dataSourcePage = this.getDataSourcePage(activeJob);
-
-    this.props.history.push(`/datasource/${id}/${dataSourcePage}`);
-  };
 
   renderCreatedInformation = list => (
     <Header>
@@ -251,7 +251,7 @@ export class DataSourceList extends PureComponent {
     const footer = this.renderMetaData({ metaData, metaProcessing, tags, type });
     return (
       <ListItem id="dataSourceContainer" key={index} headerComponent={header} footerComponent={footer}>
-        <ListItemTitle id="dataSourceTitle" onClick={() => this.handleShowDataSource({ id, activeJob })}>
+        <ListItemTitle id="dataSourceTitle" to={this.getShowDataSourceUrl({ id, activeJob })}>
           {name}
         </ListItemTitle>
       </ListItem>

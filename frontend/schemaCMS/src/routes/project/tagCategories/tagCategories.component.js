@@ -87,16 +87,14 @@ export class TagCategories extends PureComponent {
   handleShowTemplates = () => this.props.history.push(`/project/${getMatchParam(this.props, 'projectId')}/templates`);
 
   renderTagCategory = ({ created, createdBy, name, id, tags }, index) => {
-    const { history } = this.props;
     const whenCreated = extendedDayjs(created, BASE_DATE_FORMAT).fromNow();
     const list = [whenCreated, createdBy];
     const header = <CardHeader list={list} />;
     const footer = <FormattedMessage {...messages.tagsCounter} values={{ count: tags.length }} />;
-    const handlePageClick = () => history.push(`/tag-category/${id}`);
 
     return (
       <ListItem id="tagContainer" headerComponent={header} footerComponent={footer} key={index}>
-        <ListItemTitle id={`tag-category-${camelize(name)}`} onClick={handlePageClick}>
+        <ListItemTitle id={`tag-category-${camelize(name)}`} to={`/tag-category/${id}`}>
           {name}
         </ListItemTitle>
       </ListItem>

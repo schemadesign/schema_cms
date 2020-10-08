@@ -22,16 +22,14 @@ import reportError from '../../../shared/utils/reportError';
 import { BackArrowButton, NavigationContainer, PlusButton } from '../../../shared/components/navigation';
 
 const Section = ({ created, createdBy, name, id, pagesCount = 0 }) => {
-  const history = useHistory();
   const whenCreated = extendedDayjs(created, BASE_DATE_FORMAT).fromNow();
   const list = [whenCreated, createdBy];
   const header = <CardHeader list={list} />;
   const footer = <FormattedMessage {...messages.pagesCounter} values={{ pagesCount }} />;
-  const handlePageClick = () => history.push(`/section/${id}`);
 
   return (
     <ListItem headerComponent={header} footerComponent={footer}>
-      <ListItemTitle id={`section-${id}`} onClick={handlePageClick}>
+      <ListItemTitle id={`section-${id}`} to={`/section/${id}`}>
         {name}
       </ListItemTitle>
     </ListItem>

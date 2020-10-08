@@ -86,7 +86,6 @@ export const Page = ({
   setFieldValue,
   index,
 }) => {
-  const history = useHistory();
   const intl = useIntl();
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState(false);
@@ -95,7 +94,6 @@ export const Page = ({
   const active = mainPage === id;
   const setMainPage = () => setFieldValue(SECTIONS_MAIN_PAGE, active ? null : id);
   const templateCopy = templateName || intl.formatMessage(messages.blankTemplate);
-  const handlePageClick = () => history.push(`/page/${id}`);
 
   const copyPageAction = async () => {
     try {
@@ -135,7 +133,7 @@ export const Page = ({
 
   return (
     <ListItem headerComponent={header} footerComponent={renderFooterComponent()}>
-      <ListItemTitle id={`page-${id}`} onClick={handlePageClick}>
+      <ListItemTitle id={`page-${id}`} to={`/page/${id}`}>
         {name}
       </ListItemTitle>
     </ListItem>

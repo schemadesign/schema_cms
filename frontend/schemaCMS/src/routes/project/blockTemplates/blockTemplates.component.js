@@ -48,7 +48,6 @@ const getBreadcrumbsItems = project => [
 ];
 
 const BlockTemplate = ({ copyBlockTemplate, created, createdBy, name, id, elements, projectId }) => {
-  const history = useHistory();
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState(false);
   const whenCreated = extendedDayjs(created, BASE_DATE_FORMAT).fromNow();
@@ -67,8 +66,6 @@ const BlockTemplate = ({ copyBlockTemplate, created, createdBy, name, id, elemen
     }
   };
 
-  const handlePageClick = () => history.push(`/block-template/${id}`);
-
   const header = (
     <CardHeader
       list={list}
@@ -86,7 +83,7 @@ const BlockTemplate = ({ copyBlockTemplate, created, createdBy, name, id, elemen
 
   return (
     <ListItem headerComponent={header} footerComponent={footer}>
-      <ListItemTitle id={`blockTemplateTitle-${id}`} onClick={handlePageClick}>
+      <ListItemTitle id={`blockTemplateTitle-${id}`} to={`/block-template/${id}`}>
         {name}
       </ListItemTitle>
     </ListItem>
