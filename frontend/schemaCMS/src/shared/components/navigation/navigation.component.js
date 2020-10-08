@@ -77,14 +77,14 @@ export const LARGE_BUTTON_SIZE = 60;
 export const SMALL_BUTTON_SIZE = 60;
 
 export const PlusLink = ({ hideOnDesktop = false, size = SMALL_BUTTON_SIZE, to = '', id = '' }) => (
-  <LinkButton inverse to={to} size={size} hideOnDesktop={hideOnDesktop}>
+  <LinkButton $inverse to={to} $size={size} $hideOnDesktop={hideOnDesktop}>
     <PlusIcon inverse customStyles={{ width: size, height: size }} id={id} />
   </LinkButton>
 );
 
 PlusLink.propTypes = {
   hideOnDesktop: PropTypes.bool,
-  size: PropTypes.object,
+  size: PropTypes.number,
   to: PropTypes.string.isRequired,
   id: PropTypes.string,
 };
@@ -119,7 +119,7 @@ export class BackButton extends PureComponent {
 }
 
 export const BackLink = ({ children, disabled = false, ...restProps }) => (
-  <NavigationLink disabled={disabled} {...restProps} inverse={false}>
+  <NavigationLink disabled={disabled} {...restProps}>
     {children || <FormattedMessage {...messages.back} />}
   </NavigationLink>
 );
@@ -166,7 +166,7 @@ export class ConfirmLink extends PureComponent {
     const { children, ...restProps } = this.props;
 
     return (
-      <NavigationLink inverse {...restProps}>
+      <NavigationLink $inverse {...restProps}>
         {children}
       </NavigationLink>
     );

@@ -50,7 +50,7 @@ const inActiveStyles = css`
 
 const statusButtonStyles = cond([
   [propEq('disabled', true), always(disabledStyles)],
-  [propEq('active', false), always(inActiveStyles)],
+  [propEq('$active', false), always(inActiveStyles)],
   [T, always(null)],
 ]);
 

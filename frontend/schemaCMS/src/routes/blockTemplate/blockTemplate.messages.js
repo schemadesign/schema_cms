@@ -10,10 +10,6 @@ export default defineMessages({
     id: 'blockTemplate.subtitle',
     defaultMessage: 'Edit',
   },
-  cancel: {
-    id: 'blockTemplate.cancel',
-    defaultMessage: 'Back',
-  },
   save: {
     id: 'blockTemplate.save',
     defaultMessage: 'Save',

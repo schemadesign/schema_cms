@@ -9,12 +9,7 @@ import { ProjectTabs } from '../../../shared/components/projectTabs';
 import { ContextHeader } from '../../../shared/components/contextHeader';
 import { LoadingWrapper } from '../../../shared/components/loadingWrapper';
 import { ListContainer, ListItem, ListItemTitle } from '../../../shared/components/listComponents';
-import {
-  BackArrowButton,
-  NavigationContainer,
-  PlusLink,
-  LARGE_BUTTON_SIZE,
-} from '../../../shared/components/navigation';
+import { BackLink, NavigationContainer, PlusLink, LARGE_BUTTON_SIZE } from '../../../shared/components/navigation';
 import { SOURCES } from '../../../shared/components/projectTabs/projectTabs.constants';
 import {
   Container,
@@ -106,8 +101,6 @@ export class DataSourceList extends PureComponent {
 
     return `/datasource/${id}/${dataSourcePage}`;
   };
-
-  handleShowProject = () => this.props.history.push(`/project/${getMatchParam(this.props, 'projectId')}`);
 
   renderCreatedInformation = list => (
     <Header>
@@ -286,9 +279,9 @@ export class DataSourceList extends PureComponent {
           <PlusLink id="createDataSourceDesktopBtn" to={addDataSourceUrl} size={LARGE_BUTTON_SIZE} />
         </ContextHeader>
         <LoadingWrapper {...loadingConfig}>{this.renderList(!loading)}</LoadingWrapper>
-        <NavigationContainer fixed hideOnDesktop>
-          <BackArrowButton id="backBtn" onClick={this.handleShowProject} />
-          <PlusLink id="createDataSourceBtn" to={addDataSourceUrl} size={LARGE_BUTTON_SIZE} />
+        <NavigationContainer fixed>
+          <BackLink id="backBtn" to={`/project/${getMatchParam(this.props, 'projectId')}`} />
+          <PlusLink hideOnDesktop id="createDataSourceBtn" to={addDataSourceUrl} size={LARGE_BUTTON_SIZE} />
         </NavigationContainer>
       </Container>
     );

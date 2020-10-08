@@ -10,7 +10,7 @@ import messages from './view.messages';
 import { Modal, ModalActions, modalStyles, ModalTitle } from '../../../shared/components/modal/modal.styles';
 import { LinkContainer } from '../../../theme/typography';
 import { ROLES } from '../../../modules/userProfile/userProfile.constants';
-import { BackButton, NavigationContainer, NextButton } from '../../../shared/components/navigation';
+import { BackButton, BackLink, NavigationContainer, NextButton } from '../../../shared/components/navigation';
 import { LoadingWrapper } from '../../../shared/components/loadingWrapper';
 import { filterMenuOptions, getMatchParam } from '../../../shared/utils/helpers';
 import { MobileMenu } from '../../../shared/components/menu/mobileMenu';
@@ -81,7 +81,6 @@ export class View extends PureComponent {
     }
   };
 
-  handleBack = () => this.props.history.push('/user');
   handleOpenRemoveModal = () => this.setState({ userRemoveModalOpen: true });
   handleMakeAdminOpenModal = () => () => this.setState({ makeAdminModalOpen: true });
 
@@ -124,7 +123,7 @@ export class View extends PureComponent {
           {this.renderContent(userData, isEditor, isAdmin)}
         </LoadingWrapper>
         <NavigationContainer fixed>
-          <BackButton type="button" onClick={this.handleBack} />
+          <BackLink to={'/user'} />
         </NavigationContainer>
         <Modal isOpen={this.state.userRemoveModalOpen} contentLabel="Confirm Removal" style={modalStyles}>
           <ModalTitle>

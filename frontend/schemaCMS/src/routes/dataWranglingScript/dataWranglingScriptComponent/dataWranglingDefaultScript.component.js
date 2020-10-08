@@ -10,7 +10,7 @@ import { STEPS_PAGE } from '../../../modules/dataSource/dataSource.constants';
 import { MobileMenu } from '../../../shared/components/menu/mobileMenu';
 import { Container, ScriptName, syntaxCustomStyles } from './dataWranglingDefaultScript.styles';
 import messages from './dataWranglingDefaultScript.messages';
-import { BackButton, NavigationContainer } from '../../../shared/components/navigation';
+import { BackLink, NavigationContainer } from '../../../shared/components/navigation';
 import { ContextHeader } from '../../../shared/components/contextHeader';
 import { getMatchParam } from '../../../shared/utils/helpers';
 import { DATA_WRANGLING_SCRIPT_MENU_OPTIONS } from '../dataWranglingScript.constants';
@@ -35,16 +35,16 @@ export class DataWranglingDefaultScript extends PureComponent {
     };
   };
 
-  handleGoToDataWranglingList = (match, history) => () => {
+  getGoToDataWranglingListUrl = () => {
     const { dataWranglingScript } = this.props;
     const dataSourceId = dataWranglingScript.datasource || getMatchParam(this.props, 'dataSourceId');
 
-    return history.push(`/datasource/${dataSourceId}/${STEPS_PAGE}`, { fromScript: true });
+    return { pathname: `/datasource/${dataSourceId}/${STEPS_PAGE}`, state: { fromScript: true } };
   };
 
   render() {
     const headerConfig = this.getHeaderAndMenuConfig();
-    const { dataWranglingScript, match, history, isAdmin } = this.props;
+    const { dataWranglingScript, isAdmin } = this.props;
     const syntaxTheme = isAdmin ? darcula : defaultStyle;
 
     return (
@@ -63,7 +63,7 @@ export class DataWranglingDefaultScript extends PureComponent {
           {dataWranglingScript.body}
         </SyntaxHighlighter>
         <NavigationContainer fixed>
-          <BackButton onClick={this.handleGoToDataWranglingList(match, history)} />
+          <BackLink to={this.getGoToDataWranglingListUrl()} />
         </NavigationContainer>
       </Container>
     );

@@ -68,8 +68,8 @@ export const NavigationButton = styled(Button)`
 export const NavigationLink = styled(Link)`
   width: calc(50% - ${BUTTON_MARGIN}px);
   max-width: 240px;
-  background-color: ${({ theme, inverse }) => (inverse ? theme.inverseButton.background : theme.button.background)};
-  color: ${({ theme, inverse }) => (inverse ? theme.inverseButton.text : theme.button.text)};
+  background-color: ${({ theme, $inverse }) => ($inverse ? theme.inverseButton.background : theme.button.background)};
+  color: ${({ theme, $inverse }) => ($inverse ? theme.inverseButton.text : theme.button.text)};
   border-radius: 48px;
   text-align: center;
   line-height: 48px;
@@ -94,12 +94,12 @@ export const buttonIconStyles = {
 
 export const LinkButton = styled(Link)`
   background-color: ${({ theme }) => theme.inverseButton.background};
-  width: ${({ size }) => size}px;
-  height: ${({ size }) => size}px;
+  width: ${({ $size }) => $size}px;
+  height: ${({ $size }) => $size}px;
   display: inline-block;
   border-radius: 50%;
 
   ${media.desktop`
-    display: ${({ hideOnDesktop }) => (hideOnDesktop ? 'none' : 'inline-block')};
+    display: ${({ $hideOnDesktop }) => ($hideOnDesktop ? 'none' : 'inline-block')};
   `};
 `;

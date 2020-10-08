@@ -7,12 +7,7 @@ import { camelize } from 'humps';
 import messages from './tagCategories.messages';
 import { LoadingWrapper } from '../../../shared/components/loadingWrapper';
 import { ContextHeader } from '../../../shared/components/contextHeader';
-import {
-  BackArrowButton,
-  NavigationContainer,
-  PlusLink,
-  LARGE_BUTTON_SIZE,
-} from '../../../shared/components/navigation';
+import { NavigationContainer, PlusLink, LARGE_BUTTON_SIZE, BackLink } from '../../../shared/components/navigation';
 import { filterMenuOptions, getMatchParam } from '../../../shared/utils/helpers';
 import reportError from '../../../shared/utils/reportError';
 import { TAG_CATEGORIES_PAGE } from '../../../modules/project/project.constants';
@@ -89,8 +84,6 @@ export class TagCategories extends PureComponent {
     return `/project/${projectId}/${TAG_CATEGORIES_PAGE}/create`;
   };
 
-  handleShowTemplates = () => this.props.history.push(`/project/${getMatchParam(this.props, 'projectId')}/templates`);
-
   renderTagCategory = ({ created, createdBy, name, id, tags }, index) => {
     const whenCreated = extendedDayjs(created, BASE_DATE_FORMAT).fromNow();
     const list = [whenCreated, createdBy];
@@ -113,7 +106,7 @@ export class TagCategories extends PureComponent {
       <Fragment>
         <ListContainer>{tagCategories.map(this.renderTagCategory)}</ListContainer>
         <NavigationContainer fixed>
-          <BackArrowButton id="backBtn" hideOnDesktop onClick={this.handleShowTemplates} />
+          <BackLink id="backBtn" to={`/project/${getMatchParam(this.props, 'projectId')}/templates`} />
           <PlusLink hideOnDesktop to={this.getCreateUrl()} size={LARGE_BUTTON_SIZE} />
         </NavigationContainer>
       </Fragment>

@@ -2,7 +2,7 @@ import React, { Fragment, useState } from 'react';
 import PropTypes from 'prop-types';
 import { FormattedMessage, useIntl } from 'react-intl';
 import Helmet from 'react-helmet';
-import { useHistory, useParams } from 'react-router';
+import { useParams } from 'react-router';
 import { useEffectOnce } from 'react-use';
 
 import { Container } from './content.styles';
@@ -19,12 +19,7 @@ import { CardHeader } from '../../../shared/components/cardHeader';
 import { ListContainer, ListItem, ListItemTitle } from '../../../shared/components/listComponents';
 import { CounterHeader } from '../../../shared/components/counterHeader';
 import reportError from '../../../shared/utils/reportError';
-import {
-  BackArrowButton,
-  NavigationContainer,
-  LARGE_BUTTON_SIZE,
-  PlusLink,
-} from '../../../shared/components/navigation';
+import { NavigationContainer, LARGE_BUTTON_SIZE, PlusLink, BackLink } from '../../../shared/components/navigation';
 
 const Section = ({ created, createdBy, name, id, pagesCount = 0 }) => {
   const whenCreated = extendedDayjs(created, BASE_DATE_FORMAT).fromNow();
@@ -53,13 +48,10 @@ export const Content = ({ userRole, fetchSections, sections }) => {
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
   const { projectId } = useParams();
-  const history = useHistory();
   const intl = useIntl();
   const title = <FormattedMessage {...messages.title} />;
   const subtitle = <FormattedMessage {...messages.subtitle} />;
   const menuOptions = getProjectMenuOptions(projectId);
-
-  const handleBackClick = () => history.push(`/project/${projectId}`);
 
   useEffectOnce(() => {
     (async () => {
@@ -98,7 +90,7 @@ export const Content = ({ userRole, fetchSections, sections }) => {
         </Fragment>
       </LoadingWrapper>
       <NavigationContainer fixed>
-        <BackArrowButton id="backBtn" onClick={handleBackClick} />
+        <BackLink id="backBtn" to={`/project/${projectId}`} />
         <PlusLink
           hideOnDesktop
           id="creatSectionMobile"

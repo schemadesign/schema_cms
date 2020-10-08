@@ -66,7 +66,7 @@ export class DataSourceNavigation extends PureComponent {
       <ButtonContainer key={index}>
         <Button
           to={`/datasource/${this.props.dataSource.id}/${page}`}
-          active={this.getIsActive(page)}
+          $active={this.getIsActive(page)}
           disabled={this.getIsDisabled({ dataSource, page })}
         >
           <Icon id={id} customStyles={iconStyles} />

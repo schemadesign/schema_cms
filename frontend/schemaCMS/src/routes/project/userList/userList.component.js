@@ -59,7 +59,7 @@ export class UserList extends PureComponent {
   handleBackClick = () => browserHistory.push(`/project/${getMatchParam(this.props, 'projectId')}`);
 
   renderCreateUserButton = ({ id, isAdmin }) =>
-    renderWhenTrue(always(<PlusLink id={id} to={this.getAddUserUrl} size={LARGE_BUTTON_SIZE} />))(isAdmin);
+    renderWhenTrue(always(<PlusLink id={id} to={this.getAddUserUrl()} size={LARGE_BUTTON_SIZE} />))(isAdmin);
 
   render() {
     const { error, loading } = this.state;

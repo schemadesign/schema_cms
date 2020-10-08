@@ -2,7 +2,7 @@ import React, { Fragment, useState } from 'react';
 import { useEffectOnce } from 'react-use';
 import PropTypes from 'prop-types';
 import { FormattedMessage, useIntl } from 'react-intl';
-import { useHistory, useParams } from 'react-router';
+import { useParams } from 'react-router';
 import Helmet from 'react-helmet';
 
 import { Container } from './blockTemplates.styles';
@@ -12,12 +12,7 @@ import { filterMenuOptions } from '../../../shared/utils/helpers';
 import { MobileMenu } from '../../../shared/components/menu/mobileMenu';
 import { getProjectMenuOptions } from '../project.constants';
 import { ContextHeader } from '../../../shared/components/contextHeader';
-import {
-  BackArrowButton,
-  NavigationContainer,
-  PlusLink,
-  LARGE_BUTTON_SIZE,
-} from '../../../shared/components/navigation';
+import { BackLink, NavigationContainer, PlusLink, LARGE_BUTTON_SIZE } from '../../../shared/components/navigation';
 import { ListContainer, ListItem, ListItemTitle } from '../../../shared/components/listComponents';
 import { CardHeader } from '../../../shared/components/cardHeader';
 import extendedDayjs, { BASE_DATE_FORMAT } from '../../../shared/utils/extendedDayjs';
@@ -109,7 +104,6 @@ export const BlockTemplates = ({ fetchBlockTemplates, copyBlockTemplate, blockTe
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
   const intl = useIntl();
-  const history = useHistory();
   const { projectId } = useParams();
   const menuOptions = getProjectMenuOptions(projectId);
   const title = <FormattedMessage {...messages.title} />;
@@ -128,7 +122,6 @@ export const BlockTemplates = ({ fetchBlockTemplates, copyBlockTemplate, blockTe
     })();
   });
 
-  const handleBackClick = () => history.push(`/project/${projectId}/templates`);
   const createUrl = `/project/${projectId}/block-templates/create`;
 
   return (
@@ -152,7 +145,7 @@ export const BlockTemplates = ({ fetchBlockTemplates, copyBlockTemplate, blockTe
         )}
       </LoadingWrapper>
       <NavigationContainer fixed>
-        <BackArrowButton id="backBtn" onClick={handleBackClick} />
+        <BackLink id="backBtn" to={`/project/${projectId}/templates`} />
         <PlusLink hideOnDesktop id="createBlockTemplateMobile" to={createUrl} size={LARGE_BUTTON_SIZE} />
       </NavigationContainer>
     </Container>

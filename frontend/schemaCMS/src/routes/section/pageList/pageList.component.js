@@ -18,12 +18,12 @@ import { MobileMenu } from '../../../shared/components/menu/mobileMenu';
 import { errorMessageParser, filterMenuOptions, getUrlParams } from '../../../shared/utils/helpers';
 import { ContextHeader } from '../../../shared/components/contextHeader';
 import {
-  BackArrowButton,
   BackButton,
   NavigationContainer,
   NextButton,
   PlusLink,
   LARGE_BUTTON_SIZE,
+  BackLink,
 } from '../../../shared/components/navigation';
 import { CounterHeader } from '../../../shared/components/counterHeader';
 import { ListContainer, ListItem, ListItemTitle, FooterContainer } from '../../../shared/components/listComponents';
@@ -231,8 +231,6 @@ export const PageList = ({
     },
   });
 
-  const handleBackClick = () => history.push(`/project/${projectId}/content`);
-
   const pageCount = pages.count / INITIAL_PAGE_SIZE;
 
   const fetchSectionFunc = async () => {
@@ -395,7 +393,7 @@ export const PageList = ({
                 </SwitchContainer>
               </Switches>
               <NavigationContainer fixed>
-                <BackArrowButton id="backBtn" type="button" onClick={handleBackClick} />
+                <BackLink id="backBtn" to={`/project/${projectId}/content`} />
                 <NextButton
                   id="updateSection"
                   type="submit"
