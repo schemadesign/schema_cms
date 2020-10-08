@@ -186,7 +186,7 @@ export const PageList = ({
   userRole,
   copyPage,
 }) => {
-  const [loading, setLoading] = useState(false);
+  const [loading, setLoading] = useState(true);
   const [page, setPage] = useState(0);
   const [error, setError] = useState(null);
   const { mainPage } = section;
@@ -242,6 +242,7 @@ export const PageList = ({
       const urlParams = getUrlParams(history);
       setLoading(true);
       await fetchPages({ sectionId, ...urlParams });
+      await fetchSection({ sectionId });
       setLoading(false);
     } catch (e) {
       reportError(e);
@@ -250,7 +251,6 @@ export const PageList = ({
   };
 
   useEffectOnce(() => {
-    fetchSection({ sectionId });
     fetchSectionFunc();
   });
 
