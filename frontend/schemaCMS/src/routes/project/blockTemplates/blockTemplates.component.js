@@ -12,7 +12,12 @@ import { filterMenuOptions } from '../../../shared/utils/helpers';
 import { MobileMenu } from '../../../shared/components/menu/mobileMenu';
 import { getProjectMenuOptions } from '../project.constants';
 import { ContextHeader } from '../../../shared/components/contextHeader';
-import { BackArrowButton, NavigationContainer, PlusButton } from '../../../shared/components/navigation';
+import {
+  BackArrowButton,
+  NavigationContainer,
+  PlusLink,
+  LARGE_BUTTON_SIZE,
+} from '../../../shared/components/navigation';
 import { ListContainer, ListItem, ListItemTitle } from '../../../shared/components/listComponents';
 import { CardHeader } from '../../../shared/components/cardHeader';
 import extendedDayjs, { BASE_DATE_FORMAT } from '../../../shared/utils/extendedDayjs';
@@ -124,7 +129,7 @@ export const BlockTemplates = ({ fetchBlockTemplates, copyBlockTemplate, blockTe
   });
 
   const handleBackClick = () => history.push(`/project/${projectId}/templates`);
-  const handleCreateClick = () => () => history.push(`/project/${projectId}/block-templates/create`);
+  const createUrl = `/project/${projectId}/block-templates/create`;
 
   return (
     <Container>
@@ -132,7 +137,7 @@ export const BlockTemplates = ({ fetchBlockTemplates, copyBlockTemplate, blockTe
       <MobileMenu headerTitle={title} headerSubtitle={subtitle} options={filterMenuOptions(menuOptions, userRole)} />
       <ProjectBreadcrumbs items={getBreadcrumbsItems(project)} />
       <ContextHeader title={title} subtitle={subtitle}>
-        <PlusButton id="createBlockTemplate" onClick={handleCreateClick()} />
+        <PlusLink id="createBlockTemplate" to={createUrl} size={LARGE_BUTTON_SIZE} />
       </ContextHeader>
       <LoadingWrapper loading={loading} error={error} noDataContent={noData} noData={!blockTemplates.length}>
         {() => (
@@ -148,7 +153,7 @@ export const BlockTemplates = ({ fetchBlockTemplates, copyBlockTemplate, blockTe
       </LoadingWrapper>
       <NavigationContainer fixed>
         <BackArrowButton id="backBtn" onClick={handleBackClick} />
-        <PlusButton hideOnDesktop id="createBlockTemplateMobile" onClick={handleCreateClick} />
+        <PlusLink hideOnDesktop id="createBlockTemplateMobile" to={createUrl} size={LARGE_BUTTON_SIZE} />
       </NavigationContainer>
     </Container>
   );

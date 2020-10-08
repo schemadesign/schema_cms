@@ -9,7 +9,12 @@ import { ProjectTabs } from '../../../shared/components/projectTabs';
 import { ContextHeader } from '../../../shared/components/contextHeader';
 import { LoadingWrapper } from '../../../shared/components/loadingWrapper';
 import { ListContainer, ListItem, ListItemTitle } from '../../../shared/components/listComponents';
-import { BackArrowButton, NavigationContainer, PlusButton } from '../../../shared/components/navigation';
+import {
+  BackArrowButton,
+  NavigationContainer,
+  PlusLink,
+  LARGE_BUTTON_SIZE,
+} from '../../../shared/components/navigation';
 import { SOURCES } from '../../../shared/components/projectTabs/projectTabs.constants';
 import {
   Container,
@@ -103,9 +108,6 @@ export class DataSourceList extends PureComponent {
   };
 
   handleShowProject = () => this.props.history.push(`/project/${getMatchParam(this.props, 'projectId')}`);
-
-  handleCreateDataSource = () =>
-    this.props.history.push(`/project/${getMatchParam(this.props, 'projectId')}/datasource/add`);
 
   renderCreatedInformation = list => (
     <Header>
@@ -268,6 +270,7 @@ export class DataSourceList extends PureComponent {
     const loadingConfig = this.getLoadingConfig(loading, error, dataSources);
     const projectId = getMatchParam(this.props, 'projectId');
     const menuOptions = getProjectMenuOptions(projectId);
+    const addDataSourceUrl = `/project/${getMatchParam(this.props, 'projectId')}/datasource/add`;
 
     return (
       <Container>
@@ -280,12 +283,12 @@ export class DataSourceList extends PureComponent {
         />
         <ProjectTabs active={SOURCES} url={`/project/${match.params.projectId}`} />
         <ContextHeader title={title} subtitle={subtitle}>
-          <PlusButton id="createDataSourceDesktopBtn" onClick={this.handleCreateDataSource} />
+          <PlusLink id="createDataSourceDesktopBtn" to={addDataSourceUrl} size={LARGE_BUTTON_SIZE} />
         </ContextHeader>
         <LoadingWrapper {...loadingConfig}>{this.renderList(!loading)}</LoadingWrapper>
         <NavigationContainer fixed hideOnDesktop>
           <BackArrowButton id="backBtn" onClick={this.handleShowProject} />
-          <PlusButton id="createDataSourceBtn" onClick={this.handleCreateDataSource} />
+          <PlusLink id="createDataSourceBtn" to={addDataSourceUrl} size={LARGE_BUTTON_SIZE} />
         </NavigationContainer>
       </Container>
     );

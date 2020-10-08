@@ -12,6 +12,7 @@ import {
   NavigationButton,
   NavigationContent,
   NavigationLink,
+  LinkButton,
 } from './navigation.styles';
 import messages from './navigation.messages';
 
@@ -72,6 +73,22 @@ export class PlusButton extends PureComponent {
   }
 }
 
+export const LARGE_BUTTON_SIZE = 60;
+export const SMALL_BUTTON_SIZE = 60;
+
+export const PlusLink = ({ hideOnDesktop = false, size = SMALL_BUTTON_SIZE, to = '', id = '' }) => (
+  <LinkButton inverse to={to} size={size} hideOnDesktop={hideOnDesktop}>
+    <PlusIcon inverse customStyles={{ width: size, height: size }} id={id} />
+  </LinkButton>
+);
+
+PlusLink.propTypes = {
+  hideOnDesktop: PropTypes.bool,
+  size: PropTypes.object,
+  to: PropTypes.string.isRequired,
+  id: PropTypes.string,
+};
+
 export class BackArrowButton extends PureComponent {
   render() {
     return (
@@ -100,6 +117,17 @@ export class BackButton extends PureComponent {
     );
   }
 }
+
+export const BackLink = ({ children, disabled = false, ...restProps }) => (
+  <NavigationLink disabled={disabled} {...restProps} inverse={false}>
+    {children || <FormattedMessage {...messages.back} />}
+  </NavigationLink>
+);
+
+BackLink.propTypes = {
+  children: PropTypes.oneOfType([PropTypes.element, PropTypes.string]),
+  disabled: PropTypes.bool,
+};
 
 export class NextButton extends PureComponent {
   static propTypes = {
@@ -137,6 +165,10 @@ export class ConfirmLink extends PureComponent {
   render() {
     const { children, ...restProps } = this.props;
 
-    return <NavigationLink {...restProps}>{children}</NavigationLink>;
+    return (
+      <NavigationLink inverse {...restProps}>
+        {children}
+      </NavigationLink>
+    );
   }
 }

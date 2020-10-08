@@ -7,7 +7,12 @@ import { camelize } from 'humps';
 import messages from './tagCategories.messages';
 import { LoadingWrapper } from '../../../shared/components/loadingWrapper';
 import { ContextHeader } from '../../../shared/components/contextHeader';
-import { BackArrowButton, NavigationContainer, PlusButton } from '../../../shared/components/navigation';
+import {
+  BackArrowButton,
+  NavigationContainer,
+  PlusLink,
+  LARGE_BUTTON_SIZE,
+} from '../../../shared/components/navigation';
 import { filterMenuOptions, getMatchParam } from '../../../shared/utils/helpers';
 import reportError from '../../../shared/utils/reportError';
 import { TAG_CATEGORIES_PAGE } from '../../../modules/project/project.constants';
@@ -79,9 +84,9 @@ export class TagCategories extends PureComponent {
     }
   }
 
-  handleCreateTag = () => {
+  getCreateUrl = () => {
     const projectId = getMatchParam(this.props, 'projectId');
-    this.props.history.push(`/project/${projectId}/${TAG_CATEGORIES_PAGE}/create`);
+    return `/project/${projectId}/${TAG_CATEGORIES_PAGE}/create`;
   };
 
   handleShowTemplates = () => this.props.history.push(`/project/${getMatchParam(this.props, 'projectId')}/templates`);
@@ -109,7 +114,7 @@ export class TagCategories extends PureComponent {
         <ListContainer>{tagCategories.map(this.renderTagCategory)}</ListContainer>
         <NavigationContainer fixed>
           <BackArrowButton id="backBtn" hideOnDesktop onClick={this.handleShowTemplates} />
-          <PlusButton hideOnDesktop onClick={this.handleCreateTag} />
+          <PlusLink hideOnDesktop to={this.getCreateUrl()} size={LARGE_BUTTON_SIZE} />
         </NavigationContainer>
       </Fragment>
     );
@@ -132,7 +137,7 @@ export class TagCategories extends PureComponent {
           options={filterMenuOptions(menuOptions, userRole)}
         />
         <ContextHeader title={headerTitle} subtitle={headerSubtitle}>
-          <PlusButton id="addTagCategoryBtn" onClick={this.handleCreateTag} />
+          <PlusLink id="addTagCategoryBtn" to={this.getCreateUrl()} size={LARGE_BUTTON_SIZE} />
         </ContextHeader>
         <LoadingWrapper loading={loading} error={error}>
           {this.renderContent()}

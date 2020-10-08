@@ -22,7 +22,8 @@ import {
   BackButton,
   NavigationContainer,
   NextButton,
-  PlusButton,
+  PlusLink,
+  LARGE_BUTTON_SIZE,
 } from '../../../shared/components/navigation';
 import { CounterHeader } from '../../../shared/components/counterHeader';
 import { ListContainer, ListItem, ListItemTitle, FooterContainer } from '../../../shared/components/listComponents';
@@ -43,7 +44,6 @@ import {
   inputStyles,
   MobileInputName,
   MobilePlusContainer,
-  mobilePlusStyles,
   Subtitle,
   SwitchContainer,
   SwitchContent,
@@ -202,6 +202,7 @@ export const PageList = ({
     propOr('', PAGE_DISPLAY_NAME)
   )(pages.results);
   const pageUrl = `${domain}${displayName ? `/${displayName}` : ''}`;
+  const addPageUrl = `/section/${sectionId}/create-page`;
   const visitPage = domain ? (
     <Fragment>
       <CopySeparator />
@@ -230,7 +231,6 @@ export const PageList = ({
     },
   });
 
-  const handleCreateClick = () => history.push(`/section/${sectionId}/create-page`);
   const handleBackClick = () => history.push(`/project/${projectId}/content`);
 
   const pageCount = pages.count / INITIAL_PAGE_SIZE;
@@ -309,7 +309,7 @@ export const PageList = ({
           <ProjectBreadcrumbs items={getBreadcrumbsItems({ id: projectId, title: projectTitle }, section)} />
           <Form onSubmit={handleSubmit}>
             <ContextHeader title={title} subtitle={nameInput}>
-              <PlusButton id="createPage" type="button" onClick={handleCreateClick} />
+              <PlusLink id="createPage" to={addPageUrl} size={LARGE_BUTTON_SIZE} />
             </ContextHeader>
             <MobileInputName>
               <TextInput
@@ -329,12 +329,7 @@ export const PageList = ({
                 count={pages.results.length}
                 right={
                   <MobilePlusContainer>
-                    <PlusButton
-                      customStyles={mobilePlusStyles}
-                      id="createPageMobile"
-                      onClick={handleCreateClick}
-                      type="button"
-                    />
+                    <PlusLink id="createPageMobile" to={addPageUrl} />
                   </MobilePlusContainer>
                 }
               />

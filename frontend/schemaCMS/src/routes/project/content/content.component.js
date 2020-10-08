@@ -19,7 +19,12 @@ import { CardHeader } from '../../../shared/components/cardHeader';
 import { ListContainer, ListItem, ListItemTitle } from '../../../shared/components/listComponents';
 import { CounterHeader } from '../../../shared/components/counterHeader';
 import reportError from '../../../shared/utils/reportError';
-import { BackArrowButton, NavigationContainer, PlusButton } from '../../../shared/components/navigation';
+import {
+  BackArrowButton,
+  NavigationContainer,
+  LARGE_BUTTON_SIZE,
+  PlusLink,
+} from '../../../shared/components/navigation';
 
 const Section = ({ created, createdBy, name, id, pagesCount = 0 }) => {
   const whenCreated = extendedDayjs(created, BASE_DATE_FORMAT).fromNow();
@@ -55,7 +60,6 @@ export const Content = ({ userRole, fetchSections, sections }) => {
   const menuOptions = getProjectMenuOptions(projectId);
 
   const handleBackClick = () => history.push(`/project/${projectId}`);
-  const handleAddClick = () => history.push(`/project/${projectId}/section/create`);
 
   useEffectOnce(() => {
     (async () => {
@@ -81,7 +85,7 @@ export const Content = ({ userRole, fetchSections, sections }) => {
       />
       <ProjectTabs active={CONTENT} url={`/project/${projectId}`} />
       <ContextHeader title={title} subtitle={subtitle}>
-        <PlusButton id="createSection" onClick={handleAddClick} />
+        <PlusLink id="createSection" to={`/project/${projectId}/section/create`} size={LARGE_BUTTON_SIZE} />
       </ContextHeader>
       <LoadingWrapper loading={loading} error={error}>
         <Fragment>
@@ -95,7 +99,12 @@ export const Content = ({ userRole, fetchSections, sections }) => {
       </LoadingWrapper>
       <NavigationContainer fixed>
         <BackArrowButton id="backBtn" onClick={handleBackClick} />
-        <PlusButton hideOnDesktop id="creatSectionMobile" onClick={handleAddClick} />
+        <PlusLink
+          hideOnDesktop
+          id="creatSectionMobile"
+          to={`/project/${projectId}/section/create`}
+          size={LARGE_BUTTON_SIZE}
+        />
       </NavigationContainer>
     </Container>
   );

@@ -16,8 +16,8 @@ import { DataSourceNavigation } from '../../../shared/components/dataSourceNavig
 import { MobileMenu } from '../../../shared/components/menu/mobileMenu';
 import { getProjectMenuOptions } from '../../project/project.constants';
 import { CounterHeader } from '../../../shared/components/counterHeader';
-import { mobilePlusStyles, PlusContainer } from '../../../shared/components/form/frequentComponents.styles';
-import { PlusButton } from '../../../shared/components/navigation';
+import { PlusContainer } from '../../../shared/components/form/frequentComponents.styles';
+import { PlusLink } from '../../../shared/components/navigation';
 
 const { EditIcon } = Icons;
 
@@ -42,11 +42,8 @@ export const DataSourceStateList = ({ states, dataSource, userRole, project, fet
     })();
   });
 
-  const handleCreateState = () => history.push(`/datasource/${dataSourceId}/state/create`);
-  const handleShowState = id => history.push(`/state/${id}`);
-
   const renderState = (item, index) => (
-    <ListItem key={index} onClick={() => handleShowState(item.id)}>
+    <ListItem key={index} to={`/state/${item.id}`}>
       <StateName title={item.name}>{item.name}</StateName>
       <EditIcon />
     </ListItem>
@@ -75,12 +72,7 @@ export const DataSourceStateList = ({ states, dataSource, userRole, project, fet
         copy={stateCopy}
         right={
           <PlusContainer>
-            <PlusButton
-              id="createStateDesktopBtn"
-              customStyles={mobilePlusStyles}
-              onClick={handleCreateState}
-              type="button"
-            />
+            <PlusLink id="createStateDesktopBtn" to={`/datasource/${dataSourceId}/state/create`} />
           </PlusContainer>
         }
       />
