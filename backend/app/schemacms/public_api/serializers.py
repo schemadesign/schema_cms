@@ -264,6 +264,34 @@ class PAPageDraftSerializer(ReadOnlySerializer):
         fields = ("id", "slug", "display_name")
 
 
+class PASectionDetailSerializer(ReadOnlySerializer):
+    meta = serializers.SerializerMethodField()
+    drafts = serializers.SerializerMethodField()
+    pages = serializers.SerializerMethodField()
+
+    class Meta:
+        model = pa_models.Section
+        fields = ("meta", "pages", "drafts")
+
+    def get_meta(self, obj: pa_models.Section):
+        return {
+            "id": obj.id,
+            "name": obj.name,
+            "slug": obj.slug,
+            "created_by": obj.created_by.get_full_name() if obj.created_by else "",
+            "project": obj.project.id,
+        }
+
+    def get_drafts(self, obj: pa_models.Section):
+        return PAPageDraftSerializer(obj.pages.filter(is_draft=True), many=True).data
+
+    def get_pages(self, obj: pa_models.Section):
+        return PAPageSerializer(
+            obj.pages.filter(is_draft=False, state__in=[PageState.PUBLISHED, PageState.WAITING_TO_REPUBLISH]),
+            many=True,
+        ).data
+
+
 class PASectionWithPagesSerializer(ReadOnlySerializer):
     pages = serializers.SerializerMethodField()
     drafts = serializers.SerializerMethodField()
