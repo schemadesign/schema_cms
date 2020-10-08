@@ -104,7 +104,14 @@ class ProjectViewSet(utils_serializers.ActionSerializerViewSetMixin, viewsets.Mo
         sections = (
             Section.objects.filter(project=project)
             .select_related("project", "created_by", "main_page")
-            .prefetch_related(Prefetch("pages", queryset=Page.objects.filter(is_draft=False, state__in=[PageState.PUBLISHED, PageState.WAITING_TO_REPUBLISH])))
+            .prefetch_related(
+                Prefetch(
+                    "pages",
+                    queryset=Page.objects.filter(
+                        is_draft=False, state__in=[PageState.PUBLISHED, PageState.WAITING_TO_REPUBLISH]
+                    ),
+                )
+            )
             .order_by("-created")
         )
 

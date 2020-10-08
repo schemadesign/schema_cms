@@ -499,7 +499,8 @@ class PageDisplayNameSerializer(ReadOnlySerializer):
         fields = ("id", "display_name", "name", "is_public")
 
     def get_id(self, obj: models.Page):
-           return obj.id if obj.is_draft else obj.draft_version.id
+        return obj.id if obj.is_draft else obj.draft_version.id
+
 
 class SectionInternalConnectionSerializer(ReadOnlySerializer):
     main_page = MainPageSerializer(read_only=True)
