@@ -346,7 +346,7 @@ exports[`EditPage: Component should render correctly 1`] = `
     </div>
   </div>
   <div
-    className="sc-jUfxsr ebwiqu"
+    className="sc-fuIRbl cSZyZw"
   >
     <div
       style={
@@ -368,7 +368,7 @@ exports[`EditPage: Component should render correctly 1`] = `
         }
       >
         <a
-          className="sc-fuIRbl jXvawo"
+          className="sc-Gvgqn bGgeCz"
           href="/project/1/"
           onClick={[Function]}
           style={
@@ -390,7 +390,7 @@ exports[`EditPage: Component should render correctly 1`] = `
             Project
           </span>
           <h3
-            className="sc-fcmNTy dhtHeS"
+            className="sc-gsWdvU cuiZkR"
             style={
               Object {
                 "fontFamily": "Inter, \\"Helvetica Neue\\", Helvetica, Arial, sans-serif",
@@ -426,7 +426,7 @@ exports[`EditPage: Component should render correctly 1`] = `
         }
       >
         <a
-          className="sc-fuIRbl jXvawo"
+          className="sc-Gvgqn bGgeCz"
           href="/project/1/content"
           onClick={[Function]}
           style={
@@ -448,7 +448,7 @@ exports[`EditPage: Component should render correctly 1`] = `
             Tab
           </span>
           <h3
-            className="sc-fcmNTy dhtHeS"
+            className="sc-gsWdvU cuiZkR"
             style={
               Object {
                 "fontFamily": "Inter, \\"Helvetica Neue\\", Helvetica, Arial, sans-serif",
@@ -484,7 +484,7 @@ exports[`EditPage: Component should render correctly 1`] = `
         }
       >
         <a
-          className="sc-fuIRbl jXvawo"
+          className="sc-Gvgqn bGgeCz"
           href="/section/sectionId"
           onClick={[Function]}
           style={
@@ -506,7 +506,7 @@ exports[`EditPage: Component should render correctly 1`] = `
             Section
           </span>
           <h3
-            className="sc-fcmNTy dhtHeS"
+            className="sc-gsWdvU cuiZkR"
             style={
               Object {
                 "fontFamily": "Inter, \\"Helvetica Neue\\", Helvetica, Arial, sans-serif",
@@ -542,7 +542,7 @@ exports[`EditPage: Component should render correctly 1`] = `
         }
       >
         <div
-          className="sc-jQAyEw eZDYGT"
+          className="sc-fcmNTy jvLuax"
         >
           <span
             style={
@@ -555,7 +555,7 @@ exports[`EditPage: Component should render correctly 1`] = `
             Page
           </span>
           <h3
-            className="sc-fcmNTy dhtHeS"
+            className="sc-gsWdvU cuiZkR"
             style={
               Object {
                 "fontFamily": "Inter, \\"Helvetica Neue\\", Helvetica, Arial, sans-serif",
@@ -714,7 +714,7 @@ exports[`EditPage: Component should render correctly 1`] = `
                   />
                 </svg>
                 <div
-                  className="sc-dsXyEt dUxgdY"
+                  className="sc-jUfxsr fdgTqz"
                   id="pageCopyButton"
                   onClick={[Function]}
                 >
@@ -1230,24 +1230,24 @@ exports[`EditPage: Component should render correctly 1`] = `
         Tags
       </label>
       <div
-        className="sc-jOFreG cSbpBj"
+        className="sc-eKYRpg hFjcyu"
       >
         <div
-          className="sc-bTDODP hYhRhq"
+          className="sc-hOPghE kAbVbu"
         >
           <div
-            className="sc-hmbsMR dPcWYr"
+            className="sc-bTDODP jnQBfh"
             title="Colors"
           >
             <span
-              className="sc-eKYRpg iQgFTn"
+              className="sc-kHWWFa ffuHHt"
             >
               Category: 
             </span>
             Colors
           </div>
           <div
-            className="sc-hOPghE"
+            className="sc-daBvwG"
           >
             <div
               className=" css-2b097c-container"
@@ -1345,18 +1345,18 @@ exports[`EditPage: Component should render correctly 1`] = `
             </div>
           </div>
           <div
-            className="sc-hmbsMR dPcWYr"
+            className="sc-bTDODP jnQBfh"
             title="Countries"
           >
             <span
-              className="sc-eKYRpg iQgFTn"
+              className="sc-kHWWFa ffuHHt"
             >
               Category: 
             </span>
             Countries
           </div>
           <div
-            className="sc-hOPghE"
+            className="sc-daBvwG"
           >
             <div
               className=" css-2b097c-container"
@@ -1522,6 +1522,7 @@ exports[`EditPage: Component should render correctly 1`] = `
                       "overflow": "hidden",
                       "textOverflow": "ellipsis",
                       "whiteSpace": "nowrap",
+                      "width": "100%",
                     }
                   }
                 >
@@ -1631,15 +1632,15 @@ exports[`EditPage: Component should render correctly 1`] = `
         </div>
       </div>
       <div
-        className="sc-jHNhIU eaqJyg"
+        className="sc-jOFreG gHSCPj"
       >
         <div
-          className="sc-amjdv geEoOQ"
+          className="sc-hmbsMR hokXyL"
           id="tagsCounter"
         />
         1 Block
         <div
-          className="sc-amjdv geEoOQ"
+          className="sc-hmbsMR hokXyL"
         >
           <div
             className="sc-iklIKw DLlLK"

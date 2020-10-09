@@ -21,8 +21,18 @@ export const Header = styled.div`
 `;
 
 export const SelectLabel = styled.div`
-  white-space: pre-wrap;
   padding: 0 30px 0 10px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+
+  ${media.desktop`
+    flex-direction: row;
+  `};
+`;
+
+export const LabelItems = styled.span`
+  white-space: pre-wrap;
   word-break: break-word;
 `;
 
@@ -31,6 +41,15 @@ export const LabelItem = styled.span`
     content: '>';
     padding: 0 15px;
   }
+`;
+
+export const LabelStatus = styled.span`
+  font-size: 16px;
+  margin-top: 10px;
+
+  ${media.desktop`
+    margin-top 0;
+  `};
 `;
 
 export const SelectWrapper = styled.div`

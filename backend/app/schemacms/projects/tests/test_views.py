@@ -10,6 +10,7 @@ from schemacms.projects import (
     models as projects_models,
 )
 from schemacms.users import constants as user_constants
+from schemacms.pages import constants as page_constants
 from schemacms.utils import error
 
 pytestmark = [pytest.mark.django_db]
@@ -366,7 +367,9 @@ class TestProjectPagesAdditionalData:
         pages = page_factory.create_batch(3, project=project, section=section)
 
         for page in pages:
-            published_version = page.copy_page(attrs={"is_draft": False})
+            published_version = page.copy_page(
+                attrs={"is_draft": False, "state": page_constants.PageState.PUBLISHED}
+            )
 
             page.published_version = published_version
             page.save()

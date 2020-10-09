@@ -5,7 +5,7 @@ exports[`CreatePage: Component should render correctly 1`] = `
   className="sc-bdnylx"
 >
   <div
-    className="sc-TtZHJ gLeasF"
+    className="sc-amjdv dUpatp"
   >
     <div
       style={
@@ -22,10 +22,10 @@ exports[`CreatePage: Component should render correctly 1`] = `
     >
       <div>
         <div
-          className="sc-jHNhIU"
+          className="sc-jOFreG"
         >
           <h2
-            className="sc-hOPghE fEEaa-d"
+            className="sc-daBvwG cwiCgN"
             id="headerTitle"
             style={
               Object {
@@ -39,7 +39,7 @@ exports[`CreatePage: Component should render correctly 1`] = `
             Create
           </h2>
           <h1
-            className="sc-dsXyEt ckEylD"
+            className="sc-jUfxsr iYIbWU"
             id="headerSubtitle"
             style={
               Object {
@@ -121,16 +121,16 @@ exports[`CreatePage: Component should render correctly 1`] = `
       }
     >
       <div
-        className="sc-jOFreG hjMfdx"
+        className="sc-eKYRpg kEQHRw"
       >
         <div
-          className="sc-amjdv dpwxUd"
+          className="sc-hmbsMR fPwoly"
         >
           <div
-            className="sc-jHNhIU"
+            className="sc-jOFreG"
           >
             <h2
-              className="sc-hOPghE fEEaa-d"
+              className="sc-daBvwG cwiCgN"
               id="headerTitle"
               style={
                 Object {
@@ -144,7 +144,7 @@ exports[`CreatePage: Component should render correctly 1`] = `
               Create
             </h2>
             <h1
-              className="sc-dsXyEt ckEylD"
+              className="sc-jUfxsr iYIbWU"
               id="headerSubtitle"
               style={
                 Object {
@@ -162,10 +162,10 @@ exports[`CreatePage: Component should render correctly 1`] = `
           </div>
         </div>
         <div
-          className="sc-hmbsMR kvjqse"
+          className="sc-bTDODP chDajA"
         >
           <div
-            className="sc-eKYRpg lhphJc"
+            className="sc-kHWWFa lbnzBS"
           >
             <a
               href="/project/"
@@ -176,7 +176,7 @@ exports[`CreatePage: Component should render correctly 1`] = `
             </a>
           </div>
           <div
-            className="sc-eKYRpg lhphJc"
+            className="sc-kHWWFa lbnzBS"
           >
             <a
               href="/user/"
@@ -187,7 +187,7 @@ exports[`CreatePage: Component should render correctly 1`] = `
             </a>
           </div>
           <div
-            className="sc-eKYRpg lhphJc"
+            className="sc-kHWWFa lbnzBS"
           >
             <a
               href="/project/1"
@@ -198,7 +198,7 @@ exports[`CreatePage: Component should render correctly 1`] = `
             </a>
           </div>
           <div
-            className="sc-eKYRpg lhphJc"
+            className="sc-kHWWFa lbnzBS"
           >
             <a
               href="/project/1/datasource"
@@ -209,7 +209,7 @@ exports[`CreatePage: Component should render correctly 1`] = `
             </a>
           </div>
           <div
-            className="sc-eKYRpg lhphJc"
+            className="sc-kHWWFa lbnzBS"
           >
             <a
               href="/project/1/user"
@@ -220,7 +220,7 @@ exports[`CreatePage: Component should render correctly 1`] = `
             </a>
           </div>
           <div
-            className="sc-eKYRpg lhphJc"
+            className="sc-kHWWFa lbnzBS"
           >
             <a
               href="/project/1/content"
@@ -231,7 +231,7 @@ exports[`CreatePage: Component should render correctly 1`] = `
             </a>
           </div>
           <div
-            className="sc-eKYRpg lhphJc"
+            className="sc-kHWWFa lbnzBS"
           >
             <a
               href="/project/1/templates"
@@ -243,10 +243,10 @@ exports[`CreatePage: Component should render correctly 1`] = `
           </div>
         </div>
         <div
-          className="sc-hmbsMR kvjqse"
+          className="sc-bTDODP chDajA"
         >
           <div
-            className="sc-eKYRpg lhphJc"
+            className="sc-kHWWFa lbnzBS"
           >
             <a
               href="/settings"
@@ -257,7 +257,7 @@ exports[`CreatePage: Component should render correctly 1`] = `
             </a>
           </div>
           <div
-            className="sc-eKYRpg lhphJc"
+            className="sc-kHWWFa lbnzBS"
           >
             <div
               onClick={[Function]}
@@ -267,10 +267,10 @@ exports[`CreatePage: Component should render correctly 1`] = `
           </div>
         </div>
         <div
-          className="sc-bTDODP ioPkzG"
+          className="sc-hOPghE kCUfVK"
         >
           <a
-            className="sc-kHWWFa dhqbn"
+            className="sc-dsXyEt bQDXZw"
             href="/"
             id="aboutNavBtn"
             onClick={[Function]}
@@ -280,7 +280,7 @@ exports[`CreatePage: Component should render correctly 1`] = `
             About Schema CMS
           </a>
           <a
-            className="sc-kHWWFa dhqbn"
+            className="sc-dsXyEt bQDXZw"
             href="https://github.com/schemadesign/schema_cms/blob/master/backend/app/docs/public_api/api_calls.md"
             id="apiNavBtn"
             onClick={[Function]}
@@ -290,7 +290,7 @@ exports[`CreatePage: Component should render correctly 1`] = `
             API Doc
           </a>
           <a
-            className="sc-kHWWFa dhqbn"
+            className="sc-dsXyEt bQDXZw"
             href="https://github.com/schemadesign/schema_cms"
             id="repositoryNavBtn"
             onClick={[Function]}
@@ -346,7 +346,7 @@ exports[`CreatePage: Component should render correctly 1`] = `
     </div>
   </div>
   <div
-    className="sc-jUfxsr ebwiqu"
+    className="sc-fuIRbl cSZyZw"
   >
     <div
       style={
@@ -368,7 +368,7 @@ exports[`CreatePage: Component should render correctly 1`] = `
         }
       >
         <a
-          className="sc-fuIRbl jXvawo"
+          className="sc-Gvgqn bGgeCz"
           href="/project/1/"
           onClick={[Function]}
           style={
@@ -390,7 +390,7 @@ exports[`CreatePage: Component should render correctly 1`] = `
             Project
           </span>
           <h3
-            className="sc-fcmNTy dhtHeS"
+            className="sc-gsWdvU cuiZkR"
             style={
               Object {
                 "fontFamily": "Inter, \\"Helvetica Neue\\", Helvetica, Arial, sans-serif",
@@ -426,7 +426,7 @@ exports[`CreatePage: Component should render correctly 1`] = `
         }
       >
         <a
-          className="sc-fuIRbl jXvawo"
+          className="sc-Gvgqn bGgeCz"
           href="/project/1/content"
           onClick={[Function]}
           style={
@@ -448,7 +448,7 @@ exports[`CreatePage: Component should render correctly 1`] = `
             Tab
           </span>
           <h3
-            className="sc-fcmNTy dhtHeS"
+            className="sc-gsWdvU cuiZkR"
             style={
               Object {
                 "fontFamily": "Inter, \\"Helvetica Neue\\", Helvetica, Arial, sans-serif",
@@ -484,7 +484,7 @@ exports[`CreatePage: Component should render correctly 1`] = `
         }
       >
         <a
-          className="sc-fuIRbl jXvawo"
+          className="sc-Gvgqn bGgeCz"
           href="/section/1"
           onClick={[Function]}
           style={
@@ -506,7 +506,7 @@ exports[`CreatePage: Component should render correctly 1`] = `
             Section
           </span>
           <h3
-            className="sc-fcmNTy dhtHeS"
+            className="sc-gsWdvU cuiZkR"
             style={
               Object {
                 "fontFamily": "Inter, \\"Helvetica Neue\\", Helvetica, Arial, sans-serif",
@@ -542,7 +542,7 @@ exports[`CreatePage: Component should render correctly 1`] = `
         }
       >
         <div
-          className="sc-jQAyEw eZDYGT"
+          className="sc-fcmNTy jvLuax"
         >
           <span
             style={
@@ -555,7 +555,7 @@ exports[`CreatePage: Component should render correctly 1`] = `
             Page
           </span>
           <h3
-            className="sc-fcmNTy dhtHeS"
+            className="sc-gsWdvU cuiZkR"
             style={
               Object {
                 "fontFamily": "Inter, \\"Helvetica Neue\\", Helvetica, Arial, sans-serif",
@@ -1206,24 +1206,24 @@ exports[`CreatePage: Component should render correctly 1`] = `
         Tags
       </label>
       <div
-        className="sc-eJoaVz iWBgsJ"
+        className="sc-hhIhEF ivJlXG"
       >
         <div
-          className="sc-eirseW cJgsuk"
+          className="sc-gGLyOc jQMvOm"
         >
           <div
-            className="sc-oefIU huAero"
+            className="sc-eirseW coVEyT"
             title="Colors"
           >
             <span
-              className="sc-hhIhEF csAYHD"
+              className="sc-lbVuaH holtmx"
             >
               Category: 
             </span>
             Colors
           </div>
           <div
-            className="sc-gGLyOc"
+            className="sc-fbIXFq"
           >
             <div
               className=" css-2b097c-container"
@@ -1321,18 +1321,18 @@ exports[`CreatePage: Component should render correctly 1`] = `
             </div>
           </div>
           <div
-            className="sc-oefIU huAero"
+            className="sc-eirseW coVEyT"
             title="Countries"
           >
             <span
-              className="sc-hhIhEF csAYHD"
+              className="sc-lbVuaH holtmx"
             >
               Category: 
             </span>
             Countries
           </div>
           <div
-            className="sc-gGLyOc"
+            className="sc-fbIXFq"
           >
             <div
               className=" css-2b097c-container"
@@ -1498,6 +1498,7 @@ exports[`CreatePage: Component should render correctly 1`] = `
                       "overflow": "hidden",
                       "textOverflow": "ellipsis",
                       "whiteSpace": "nowrap",
+                      "width": "100%",
                     }
                   }
                 >
@@ -1607,15 +1608,15 @@ exports[`CreatePage: Component should render correctly 1`] = `
         </div>
       </div>
       <div
-        className="sc-iNiQeE hofQtv"
+        className="sc-eJoaVz bqGKxx"
       >
         <div
-          className="sc-jffIyK jVIzpZ"
+          className="sc-oefIU jwijTA"
           id="tagsCounter"
         />
         0 Blocks
         <div
-          className="sc-jffIyK jVIzpZ"
+          className="sc-oefIU jwijTA"
         >
           <div
             className="sc-crzoUp kNYMDE"

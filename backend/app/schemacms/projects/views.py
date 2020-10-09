@@ -5,6 +5,7 @@ from rest_framework import decorators, filters, permissions, response, status, v
 from . import models, serializers
 from ..pages.models import Section, PageTemplate, PageBlock, Page
 from ..pages.serializers import SectionInternalConnectionSerializer, PageTemplateSerializer
+from ..pages.constants import PageState
 from ..states.models import State
 from ..states.serializers import StatePageAdditionalDataSerializer
 from ..tags.models import Tag, TagCategory
@@ -103,7 +104,14 @@ class ProjectViewSet(utils_serializers.ActionSerializerViewSetMixin, viewsets.Mo
         sections = (
             Section.objects.filter(project=project)
             .select_related("project", "created_by", "main_page")
-            .prefetch_related(Prefetch("pages", queryset=Page.objects.filter(is_draft=True)))
+            .prefetch_related(
+                Prefetch(
+                    "pages",
+                    queryset=Page.objects.filter(
+                        is_draft=False, state__in=[PageState.PUBLISHED, PageState.WAITING_TO_REPUBLISH]
+                    ),
+                )
+            )
             .order_by("-created")
         )
 
