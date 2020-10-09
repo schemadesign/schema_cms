@@ -1425,7 +1425,7 @@ exports[`PageForm: Component should render correctly 1`] = `
               className="sc-dIsAE byliSZ"
             />
             <a
-              className="sc-TtZHJ bCnUOS"
+              className="sc-jOFreG iIgpix"
               href="pageUrl"
               target="_blank"
             >
@@ -2887,7 +2887,7 @@ exports[`PageForm: Component should render with page template 1`] = `
               className="sc-dIsAE byliSZ"
             />
             <a
-              className="sc-TtZHJ bCnUOS"
+              className="sc-jOFreG iIgpix"
               href="pageUrl"
               target="_blank"
             >
