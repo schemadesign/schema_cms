@@ -274,22 +274,28 @@ exports[`PageList: Component should render correctly 1`] = `
             href="/"
             id="aboutNavBtn"
             onClick={[Function]}
+            rel="noreferrer"
+            target="_blank"
           >
             About Schema CMS
           </a>
           <a
             className="sc-iqAbSa kJREqS"
-            href="/"
+            href="https://github.com/schemadesign/schema_cms/blob/master/backend/app/docs/public_api/api_calls.md"
             id="apiNavBtn"
             onClick={[Function]}
+            rel="noreferrer"
+            target="_blank"
           >
             API Doc
           </a>
           <a
             className="sc-iqAbSa kJREqS"
-            href="/"
+            href="https://github.com/schemadesign/schema_cms"
             id="repositoryNavBtn"
             onClick={[Function]}
+            rel="noreferrer"
+            target="_blank"
           >
             GitHub Repository
           </a>
@@ -812,7 +818,7 @@ exports[`PageList: Component should render correctly 1`] = `
                     autoComplete="off"
                     autoCorrect="off"
                     disabled={false}
-                    id="react-select-3-input"
+                    id="react-select-2-input"
                     onBlur={[Function]}
                     onChange={[Function]}
                     onFocus={[Function]}
@@ -1455,17 +1461,18 @@ exports[`PageList: Component should render correctly 1`] = `
               Make it Public
             </label>
             <span
-              className="sc-dPaNSN fGSaPX"
+              className="sc-dPaNSN hbWViB"
             >
               This Section is currently Public
               <span
                 className="sc-jgPznn bdlFio"
               />
-              Visit Page: 
               <a
+                className="sc-jOFreG iIgpix"
                 href="http://project.domain"
+                target="_blank"
               >
-                http://project.domain
+                Visit Page
               </a>
             </span>
           </div>
@@ -1559,17 +1566,18 @@ exports[`PageList: Component should render correctly 1`] = `
               Make it available for RSS
             </label>
             <span
-              className="sc-dPaNSN fGSaPX"
+              className="sc-dPaNSN hbWViB"
             >
               This Section is currently disabled for RSS feed
               <span
                 className="sc-jgPznn bdlFio"
               />
-              Visit Page: 
               <a
+                className="sc-jOFreG iIgpix"
                 href="http://project.domain"
+                target="_blank"
               >
-                http://project.domain
+                Visit Page
               </a>
             </span>
           </div>

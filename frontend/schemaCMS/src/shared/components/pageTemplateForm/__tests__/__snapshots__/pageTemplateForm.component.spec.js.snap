@@ -464,6 +464,7 @@ exports[`PageTemplateForm: Component should render correctly 1`] = `
                         "overflow": "hidden",
                         "textOverflow": "ellipsis",
                         "whiteSpace": "nowrap",
+                        "width": "100%",
                       }
                     }
                   >
@@ -683,7 +684,7 @@ exports[`PageTemplateForm: Component should render correctly 1`] = `
             Make it Available
           </label>
           <span
-            className="sc-fFSRdu dKLsmd"
+            className="sc-fFSRdu hFbWnz"
           >
             This Template is currently available for Editors
           </span>

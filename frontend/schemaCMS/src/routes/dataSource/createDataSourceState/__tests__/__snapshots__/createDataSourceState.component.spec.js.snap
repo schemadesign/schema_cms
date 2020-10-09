@@ -275,22 +275,28 @@ exports[`CreateDataSourceState: Component should render correctly 1`] = `
             href="/"
             id="aboutNavBtn"
             onClick={[Function]}
+            rel="noreferrer"
+            target="_blank"
           >
             About Schema CMS
           </a>
           <a
             className="sc-dlMBXb dqipSy"
-            href="/"
+            href="https://github.com/schemadesign/schema_cms/blob/master/backend/app/docs/public_api/api_calls.md"
             id="apiNavBtn"
             onClick={[Function]}
+            rel="noreferrer"
+            target="_blank"
           >
             API Doc
           </a>
           <a
             className="sc-dlMBXb dqipSy"
-            href="/"
+            href="https://github.com/schemadesign/schema_cms"
             id="repositoryNavBtn"
             onClick={[Function]}
+            rel="noreferrer"
+            target="_blank"
           >
             GitHub Repository
           </a>
@@ -782,7 +788,7 @@ exports[`CreateDataSourceState: Component should render correctly 1`] = `
               Make it Public
             </label>
             <span
-              className="sc-jNnnWF fFfLVA"
+              className="sc-jNnnWF klmmYW"
             >
               This State is currently Private
             </span>

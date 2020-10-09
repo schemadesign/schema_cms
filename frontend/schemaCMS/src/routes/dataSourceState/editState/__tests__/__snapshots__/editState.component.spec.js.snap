@@ -553,22 +553,28 @@ Array [
             href="/"
             id="aboutNavBtn"
             onClick={[Function]}
+            rel="noreferrer"
+            target="_blank"
           >
             About Schema CMS
           </a>
           <a
             className="sc-jrsJCI laNVwM"
-            href="/"
+            href="https://github.com/schemadesign/schema_cms/blob/master/backend/app/docs/public_api/api_calls.md"
             id="apiNavBtn"
             onClick={[Function]}
+            rel="noreferrer"
+            target="_blank"
           >
             API Doc
           </a>
           <a
             className="sc-jrsJCI laNVwM"
-            href="/"
+            href="https://github.com/schemadesign/schema_cms"
             id="repositoryNavBtn"
             onClick={[Function]}
+            rel="noreferrer"
+            target="_blank"
           >
             GitHub Repository
           </a>
@@ -1054,7 +1060,7 @@ Array [
               Make it Public
             </label>
             <span
-              className="sc-efHXLn bLzaUA"
+              className="sc-efHXLn fugJjy"
             >
               This State is currently Private
             </span>
