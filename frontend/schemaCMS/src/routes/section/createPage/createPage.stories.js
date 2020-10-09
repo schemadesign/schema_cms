@@ -25,6 +25,7 @@ export const defaultProps = {
     pageTemplates,
     states: [],
   },
+  isAdmin: true,
 };
 
 storiesOf('CreatePage', module)

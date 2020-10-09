@@ -77,6 +77,7 @@ export const EditPage = ({
   copyPage,
   publishPage,
   match,
+  isAdmin,
 }) => {
   const intl = useIntl();
   const [loading, setLoading] = useState(true);
@@ -227,6 +228,7 @@ export const EditPage = ({
             setRemoveModalOpen={setRemoveModalOpen}
             values={values}
             setValues={setValues}
+            isAdmin={isAdmin}
             {...pageAdditionalData}
             setFieldValue={setFieldValue}
             {...restFormikProps}
@@ -331,6 +333,7 @@ export const EditPage = ({
 
 EditPage.propTypes = {
   userRole: PropTypes.string.isRequired,
+  isAdmin: PropTypes.bool.isRequired,
   updatePage: PropTypes.func.isRequired,
   removePage: PropTypes.func.isRequired,
   publishPage: PropTypes.func.isRequired,

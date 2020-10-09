@@ -111,12 +111,20 @@ export class DesktopHeader extends PureComponent {
       always(this.renderLogo)
     )(!!userId);
 
-  renderItem = Item => ({ label = '', to = '', id = null, page = '' }, index) => (
-    <Item key={index} active={this.getIsActive(page)}>
+  renderItem = ({ label = '', to = '', id = null, page = '' }, index) => (
+    <PrimaryItem key={index} active={this.getIsActive(page)}>
       <Link id={id} to={to} onClick={this.handleToggleMenu}>
         {label}
       </Link>
-    </Item>
+    </PrimaryItem>
+  );
+
+  renderSecondaryItem = ({ label = '', to = '', id = null, page = '' }, index) => (
+    <SecondaryItem key={index} active={this.getIsActive(page)}>
+      <a id={id} href={to} target="_blank" rel="noreferrer">
+        {label}
+      </a>
+    </SecondaryItem>
   );
 
   render() {
@@ -153,8 +161,8 @@ export class DesktopHeader extends PureComponent {
                 <FormattedMessage {...messages.subtitle} />
               </H1>
               <Content onClick={this.handleToggleMenu}>
-                <List>{mainOptions.map(this.renderItem(PrimaryItem))}</List>
-                <List>{SECONDARY_OPTIONS.map(this.renderItem(SecondaryItem))}</List>
+                <List>{mainOptions.map(this.renderItem)}</List>
+                <List>{SECONDARY_OPTIONS.map(this.renderSecondaryItem)}</List>
               </Content>
             </Menu>
           </MenuWrapper>

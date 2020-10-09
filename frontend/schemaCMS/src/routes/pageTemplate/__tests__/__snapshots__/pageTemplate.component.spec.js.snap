@@ -274,22 +274,28 @@ exports[`PageTemplate: Component should render correctly 1`] = `
             href="/"
             id="aboutNavBtn"
             onClick={[Function]}
+            rel="noreferrer"
+            target="_blank"
           >
             About Schema CMS
           </a>
           <a
             className="sc-fujyUd cmhbQC"
-            href="/"
+            href="https://github.com/schemadesign/schema_cms/blob/master/backend/app/docs/public_api/api_calls.md"
             id="apiNavBtn"
             onClick={[Function]}
+            rel="noreferrer"
+            target="_blank"
           >
             API Doc
           </a>
           <a
             className="sc-fujyUd cmhbQC"
-            href="/"
+            href="https://github.com/schemadesign/schema_cms"
             id="repositoryNavBtn"
             onClick={[Function]}
+            rel="noreferrer"
+            target="_blank"
           >
             GitHub Repository
           </a>

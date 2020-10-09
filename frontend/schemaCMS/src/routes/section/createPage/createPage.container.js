@@ -6,13 +6,14 @@ import { hot } from 'react-hot-loader';
 import { compose } from 'ramda';
 
 import { CreatePage } from './createPage.component';
-import { selectUserRole } from '../../../modules/userProfile';
+import { selectUserRole, selectIsAdmin } from '../../../modules/userProfile';
 import { PageRoutines, selectPageAdditonalData } from '../../../modules/page';
 import { selectProject } from '../../../modules/project';
 import { selectSection, SectionsRoutines } from '../../../modules/sections';
 
 const mapStateToProps = createStructuredSelector({
   userRole: selectUserRole,
+  isAdmin: selectIsAdmin,
   project: selectProject,
   section: selectSection,
   pageAdditionalData: selectPageAdditonalData,

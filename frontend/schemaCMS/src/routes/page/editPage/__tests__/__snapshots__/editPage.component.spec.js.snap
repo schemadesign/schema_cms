@@ -274,22 +274,28 @@ exports[`EditPage: Component should render correctly 1`] = `
             href="/"
             id="aboutNavBtn"
             onClick={[Function]}
+            rel="noreferrer"
+            target="_blank"
           >
             About Schema CMS
           </a>
           <a
             className="sc-fujyUd cmhbQC"
-            href="/"
+            href="https://github.com/schemadesign/schema_cms/blob/master/backend/app/docs/public_api/api_calls.md"
             id="apiNavBtn"
             onClick={[Function]}
+            rel="noreferrer"
+            target="_blank"
           >
             API Doc
           </a>
           <a
             className="sc-fujyUd cmhbQC"
-            href="/"
+            href="https://github.com/schemadesign/schema_cms"
             id="repositoryNavBtn"
             onClick={[Function]}
+            rel="noreferrer"
+            target="_blank"
           >
             GitHub Repository
           </a>
@@ -340,7 +346,7 @@ exports[`EditPage: Component should render correctly 1`] = `
     </div>
   </div>
   <div
-    className="sc-daBvwG edhlyL"
+    className="sc-jUfxsr ebwiqu"
   >
     <div
       style={
@@ -362,7 +368,7 @@ exports[`EditPage: Component should render correctly 1`] = `
         }
       >
         <a
-          className="sc-jQAyEw grcieH"
+          className="sc-fuIRbl jXvawo"
           href="/project/1/"
           onClick={[Function]}
           style={
@@ -384,7 +390,7 @@ exports[`EditPage: Component should render correctly 1`] = `
             Project
           </span>
           <h3
-            className="sc-fuIRbl gjOSab"
+            className="sc-fcmNTy dhtHeS"
             style={
               Object {
                 "fontFamily": "Inter, \\"Helvetica Neue\\", Helvetica, Arial, sans-serif",
@@ -420,7 +426,7 @@ exports[`EditPage: Component should render correctly 1`] = `
         }
       >
         <a
-          className="sc-jQAyEw grcieH"
+          className="sc-fuIRbl jXvawo"
           href="/project/1/content"
           onClick={[Function]}
           style={
@@ -442,7 +448,7 @@ exports[`EditPage: Component should render correctly 1`] = `
             Tab
           </span>
           <h3
-            className="sc-fuIRbl gjOSab"
+            className="sc-fcmNTy dhtHeS"
             style={
               Object {
                 "fontFamily": "Inter, \\"Helvetica Neue\\", Helvetica, Arial, sans-serif",
@@ -478,7 +484,7 @@ exports[`EditPage: Component should render correctly 1`] = `
         }
       >
         <a
-          className="sc-jQAyEw grcieH"
+          className="sc-fuIRbl jXvawo"
           href="/section/sectionId"
           onClick={[Function]}
           style={
@@ -500,7 +506,7 @@ exports[`EditPage: Component should render correctly 1`] = `
             Section
           </span>
           <h3
-            className="sc-fuIRbl gjOSab"
+            className="sc-fcmNTy dhtHeS"
             style={
               Object {
                 "fontFamily": "Inter, \\"Helvetica Neue\\", Helvetica, Arial, sans-serif",
@@ -536,7 +542,7 @@ exports[`EditPage: Component should render correctly 1`] = `
         }
       >
         <div
-          className="sc-jUfxsr iKWdBq"
+          className="sc-jQAyEw eZDYGT"
         >
           <span
             style={
@@ -549,7 +555,7 @@ exports[`EditPage: Component should render correctly 1`] = `
             Page
           </span>
           <h3
-            className="sc-fuIRbl gjOSab"
+            className="sc-fcmNTy dhtHeS"
             style={
               Object {
                 "fontFamily": "Inter, \\"Helvetica Neue\\", Helvetica, Arial, sans-serif",
@@ -708,7 +714,7 @@ exports[`EditPage: Component should render correctly 1`] = `
                   />
                 </svg>
                 <div
-                  className="sc-hOPghE gOPJSu"
+                  className="sc-dsXyEt dUxgdY"
                   id="pageCopyButton"
                   onClick={[Function]}
                 >
@@ -1224,24 +1230,24 @@ exports[`EditPage: Component should render correctly 1`] = `
         Tags
       </label>
       <div
-        className="sc-amjdv jtVqWY"
+        className="sc-jOFreG cSbpBj"
       >
         <div
-          className="sc-eKYRpg fqgxJR"
+          className="sc-bTDODP hYhRhq"
         >
           <div
-            className="sc-jOFreG cfxuKX"
+            className="sc-hmbsMR dPcWYr"
             title="Colors"
           >
             <span
-              className="sc-hmbsMR dTvAGy"
+              className="sc-eKYRpg iQgFTn"
             >
               Category: 
             </span>
             Colors
           </div>
           <div
-            className="sc-kHWWFa"
+            className="sc-hOPghE"
           >
             <div
               className=" css-2b097c-container"
@@ -1339,18 +1345,18 @@ exports[`EditPage: Component should render correctly 1`] = `
             </div>
           </div>
           <div
-            className="sc-jOFreG cfxuKX"
+            className="sc-hmbsMR dPcWYr"
             title="Countries"
           >
             <span
-              className="sc-hmbsMR dTvAGy"
+              className="sc-eKYRpg iQgFTn"
             >
               Category: 
             </span>
             Countries
           </div>
           <div
-            className="sc-kHWWFa"
+            className="sc-hOPghE"
           >
             <div
               className=" css-2b097c-container"
@@ -1625,15 +1631,15 @@ exports[`EditPage: Component should render correctly 1`] = `
         </div>
       </div>
       <div
-        className="sc-TtZHJ jJXvZQ"
+        className="sc-jHNhIU eaqJyg"
       >
         <div
-          className="sc-jHNhIU iPTvoE"
+          className="sc-amjdv geEoOQ"
           id="tagsCounter"
         />
         1 Block
         <div
-          className="sc-jHNhIU iPTvoE"
+          className="sc-amjdv geEoOQ"
         >
           <div
             className="sc-iklIKw DLlLK"
@@ -1738,10 +1744,10 @@ exports[`EditPage: Component should render correctly 1`] = `
               }
             >
               <div
-                className="sc-cOigif hMoVbg"
+                className="sc-cOigif bUMKun"
               >
                 <div
-                  className="sc-ArjOu cGNUns"
+                  className="sc-khIgXV kywSmM"
                 >
                   <div>
                     <div
@@ -1843,7 +1849,7 @@ exports[`EditPage: Component should render correctly 1`] = `
                   />
                 </div>
                 <div
-                  className="sc-ArjOu cGNUns"
+                  className="sc-khIgXV kywSmM"
                 >
                   <svg
                     style={
@@ -1884,7 +1890,7 @@ exports[`EditPage: Component should render correctly 1`] = `
                 </div>
               </div>
               <div
-                className="sc-khIgXV hpNQTm"
+                className="sc-hTRkEk lioPVC"
                 title="type"
               >
                 type

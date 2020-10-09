@@ -129,39 +129,45 @@ exports[`MobileMenu: Component should render correctly 1`] = `
         </styled.div>
       </styled.div>
       <styled.div>
-        <Styled(Link)
+        <styled.a
+          href="/"
           id="aboutNavBtn"
           key="0"
           onClick={[Function]}
-          to="/"
+          rel="noreferrer"
+          target="_blank"
         >
           <FormattedMessage
             defaultMessage="About Schema CMS"
             id="shared.components.mobileMenu.about"
           />
-        </Styled(Link)>
-        <Styled(Link)
+        </styled.a>
+        <styled.a
+          href="https://github.com/schemadesign/schema_cms/blob/master/backend/app/docs/public_api/api_calls.md"
           id="apiNavBtn"
           key="1"
           onClick={[Function]}
-          to="/"
+          rel="noreferrer"
+          target="_blank"
         >
           <FormattedMessage
             defaultMessage="API Doc"
             id="shared.components.mobileMenu.api"
           />
-        </Styled(Link)>
-        <Styled(Link)
+        </styled.a>
+        <styled.a
+          href="https://github.com/schemadesign/schema_cms"
           id="repositoryNavBtn"
           key="2"
           onClick={[Function]}
-          to="/"
+          rel="noreferrer"
+          target="_blank"
         >
           <FormattedMessage
             defaultMessage="GitHub Repository"
             id="shared.components.mobileMenu.repository"
           />
-        </Styled(Link)>
+        </styled.a>
       </styled.div>
     </styled.div>
   </Component>

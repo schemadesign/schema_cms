@@ -78,6 +78,7 @@ const { EditIcon, BinIcon, MenuIcon } = Icons;
 const { Switch, Label } = Form;
 
 export const PageForm = ({
+  isAdmin,
   title,
   pageUrl,
   values,
@@ -355,6 +356,7 @@ export const PageForm = ({
                   <PageBlock
                     index={index}
                     block={block}
+                    isAdmin={isAdmin}
                     formikFieldPath={PAGE_BLOCKS}
                     handleChange={handleChange}
                     setFieldValue={setFieldValue}
@@ -437,4 +439,5 @@ PageForm.propTypes = {
   tagCategories: PropTypes.array.isRequired,
   states: PropTypes.array.isRequired,
   dirty: PropTypes.bool,
+  isAdmin: PropTypes.bool.isRequired,
 };

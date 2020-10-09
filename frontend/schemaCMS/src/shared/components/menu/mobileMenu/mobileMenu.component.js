@@ -23,13 +23,23 @@ import {
 } from './mobileMenu.styles';
 import messages from './mobileMenu.messages';
 import { LogoutModal } from '../../logoutModal';
-import { DIVIDER, LINK_ITEM, HELPER_LINK, SETTINGS_ID } from './mobileMenu.constants';
+import { DIVIDER, LINK_ITEM, HELPER_LINK, SETTINGS_ID, API_DOC_URL, REPOSITORY_URL } from './mobileMenu.constants';
 import { handleToggleMenu } from '../../../utils/helpers';
 
 const HELPER_LINKS = [
   { label: <FormattedMessage {...messages.about} />, to: '/', id: 'aboutNavBtn', type: HELPER_LINK },
-  { label: <FormattedMessage {...messages.api} />, to: '/', id: 'apiNavBtn', type: HELPER_LINK },
-  { label: <FormattedMessage {...messages.repository} />, to: '/', id: 'repositoryNavBtn', type: HELPER_LINK },
+  {
+    label: <FormattedMessage {...messages.api} />,
+    to: API_DOC_URL,
+    id: 'apiNavBtn',
+    type: HELPER_LINK,
+  },
+  {
+    label: <FormattedMessage {...messages.repository} />,
+    to: REPOSITORY_URL,
+    id: 'repositoryNavBtn',
+    type: HELPER_LINK,
+  },
 ];
 
 export class MobileMenu extends PureComponent {
@@ -90,7 +100,7 @@ export class MobileMenu extends PureComponent {
   );
 
   renderHelperLink = ({ id, to, label }, index) => (
-    <HelperLink key={index} id={id} to={to} onClick={this.handleToggleMenu}>
+    <HelperLink key={index} id={id} href={to} onClick={this.handleToggleMenu} target="_blank" rel="noreferrer">
       {label}
     </HelperLink>
   );

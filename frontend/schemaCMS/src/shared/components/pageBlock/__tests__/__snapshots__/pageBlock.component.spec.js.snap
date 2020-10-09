@@ -25,17 +25,17 @@ exports[`PageBlock: Component should render correctly 1`] = `
     }
   >
     <div
-      className="sc-bdnylx fXuOUk"
+      className="sc-bdnylx deTgn"
     >
       <div
-        className="sc-gtssRu hAvyXn"
+        className="sc-dlnjPT kinLDj"
       >
         <div>
           icon
         </div>
       </div>
       <div
-        className="sc-hKFyIo eNpmYr"
+        className="sc-eCApGN hnxQpX"
       >
         <div
           style={
@@ -105,12 +105,12 @@ exports[`PageBlock: Component should render correctly 1`] = `
           />
         </div>
         <div
-          className="sc-jSFkmK jAfdWd"
+          className="sc-gKAblj GaYzu"
           id="formikFieldPath.0.nameError"
         />
       </div>
       <div
-        className="sc-gtssRu hAvyXn"
+        className="sc-dlnjPT kinLDj"
       >
         <svg
           style={
@@ -151,7 +151,7 @@ exports[`PageBlock: Component should render correctly 1`] = `
       </div>
     </div>
     <div
-      className="sc-dlnjPT iTQVUt"
+      className="sc-hKFyIo VarAX"
       title="type"
     >
       type

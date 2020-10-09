@@ -32,6 +32,7 @@ export const defaultProps = {
   internalConnections,
   tagCategories,
   states: [],
+  isAdmin: true,
 };
 
 storiesOf('PageForm', module)
