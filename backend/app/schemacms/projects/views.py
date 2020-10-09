@@ -3,7 +3,7 @@ from django.db.models import Prefetch
 from rest_framework import decorators, filters, permissions, response, status, viewsets
 
 from . import models, serializers
-from ..pages.models import Section, PageTemplate, PageBlock, Page
+from ..pages.models import Section, PageBlock, Page
 from ..pages.serializers import SectionInternalConnectionSerializer, PageTemplateSerializer
 from ..pages.constants import PageState
 from ..states.models import State
@@ -128,7 +128,7 @@ class ProjectViewSet(utils_serializers.ActionSerializerViewSetMixin, viewsets.Mo
             templates_filter_kwargs["is_available"] = True
 
         page_templates = (
-            PageTemplate.objects.filter(**templates_filter_kwargs)
+            Page.templates.filter(**templates_filter_kwargs)
             .order_by("-created")
             .select_related("project", "created_by")
             .prefetch_related(

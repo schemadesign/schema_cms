@@ -13,7 +13,7 @@ from lxml import etree
 from softdelete.models import SoftDeleteObject
 
 from . import constants, managers
-from ..pages.models import PageTemplate
+from ..pages.models import Page
 from ..pages.constants import PageState
 from ..users import constants as users_constants
 from ..utils.models import file_upload_path
@@ -88,7 +88,7 @@ class Project(SoftDeleteObject, TitleSlugDescriptionModel, TimeStampedModel):
     def templates_count(self):
         return {
             "blocks": self.blocktemplate_set.count(),
-            "pages": PageTemplate.objects.filter(project=self).count(),
+            "pages": Page.templates.filter(project=self).count(),
             "tags": self.tags_categories.count(),
             "states": 0,
         }

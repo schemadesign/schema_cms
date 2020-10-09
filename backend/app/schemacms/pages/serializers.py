@@ -159,7 +159,7 @@ class PageTemplateSerializer(CustomModelSerializer):
     is_template = serializers.HiddenField(default=True, write_only=True)
 
     class Meta:
-        model = models.PageTemplate
+        model = models.Page
         fields = (
             "id",
             "project",
@@ -174,7 +174,7 @@ class PageTemplateSerializer(CustomModelSerializer):
         )
         validators = [
             CustomUniqueTogetherValidator(
-                queryset=models.PageTemplate.objects.all(),
+                queryset=models.Page.templates.all(),
                 fields=("project", "name", "is_template"),
                 key_field_name="name",
                 code="pageTemplateNameUnique",
@@ -257,6 +257,7 @@ class PageTagSerializer(serializers.ModelSerializer):
 
 
 class PageBaseSerializer(CustomModelSerializer):
+    template = serializers.PrimaryKeyRelatedField(queryset=models.Page.templates.all(), required=False)
     tags = PageTagSerializer(read_only=True, many=True)
     is_changed = serializers.SerializerMethodField()
 

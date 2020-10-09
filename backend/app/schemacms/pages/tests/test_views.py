@@ -153,7 +153,7 @@ class TestUpdatePageTemplatesView:
 
         api_client.force_authenticate(admin)
         response = api_client.patch(self.get_url(page_template.pk), data=payload, format="json")
-        page = pages_models.PageTemplate.objects.get(id=response.data["id"])
+        page = pages_models.Page.templates.get(id=response.data["id"])
 
         assert response.status_code == status.HTTP_200_OK
         assert response.data == page_serializer.PageTemplateSerializer(page).data
@@ -185,7 +185,7 @@ class TestUpdatePageTemplatesView:
         page_template.refresh_from_db()
 
         assert response.status_code == status.HTTP_200_OK
-        assert len(page_template.blocks.through.objects.all()) == 1
+        assert len(page_template.page_blocks.all()) == 1
 
     def test_editor_can_not_update_template(self, api_client, editor, page_template):
         new_name = "New Page Name"
@@ -208,7 +208,7 @@ class TestListPageTemplatesView:
 
         api_client.force_authenticate(admin)
         response = api_client.get(self.get_url(project.pk))
-        queryset = pages_models.PageTemplate.objects.filter(project=project.pk)
+        queryset = pages_models.Page.templates.filter(project=project.pk)
 
         assert response.status_code == status.HTTP_200_OK
         assert response.data["results"] == page_serializer.PageTemplateSerializer(queryset, many=True).data
@@ -856,7 +856,7 @@ class TestCopyPageTemplate:
     def test_copy_as_admin(self, admin, api_client, page_template):
         api_client.force_authenticate(admin)
         response = api_client.post(self.get_url(page_template.id), format="json")
-        copied_template = pages_models.PageTemplate.objects.get(pk=response.data["id"])
+        copied_template = pages_models.Page.templates.get(pk=response.data["id"])
 
         assert response.status_code == status.HTTP_200_OK
         assert copied_template.id != page_template.id

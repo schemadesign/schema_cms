@@ -132,14 +132,13 @@ class Page(Content):
     section = models.ForeignKey(
         "Section", on_delete=models.CASCADE, null=True, blank=True, related_name="pages"
     )
-    template = models.ForeignKey("PageTemplate", on_delete=models.SET_NULL, null=True, blank=True)
+    template = models.ForeignKey("Page", on_delete=models.SET_NULL, null=True, blank=True)
     display_name = models.CharField(max_length=constants.PAGE_DISPLAY_NAME_MAX_LENGTH, blank=True, default="")
     description = models.TextField(blank=True, default="")
     keywords = models.TextField(blank=True, default="")
     slug = AutoSlugField(populate_from="name", allow_duplicates=True)
     is_public = models.BooleanField(default=True)
     allow_edit = models.BooleanField(default=False)
-    blocks = models.ManyToManyField(BlockTemplate, through="PageBlock")
     is_template = models.BooleanField(default=True)
     is_draft = models.BooleanField(default=True, editable=False, db_index=True)
     published_version = models.OneToOneField(
@@ -151,15 +150,17 @@ class Page(Content):
     is_main_page = models.BooleanField(default=False)
 
     objects = managers.PageManager()
+    templates = managers.PageTemplateManager()
 
     _clone_many_to_one_or_one_to_many_fields = ["tags"]
 
     class Meta:
         ordering = ("-created",)
 
-    # def natural_key(self):
-    #     return self.project.title, self.name, self.is_template, self.is_draft
-    # natural_key.dependencies = ["projects.project", "pages.section", "pages.blocktemplate"]
+    def natural_key(self):
+        return self.project.title, self.name, self.is_template, self.is_draft
+
+    natural_key.dependencies = ["projects.project", "pages.section", "pages.blocktemplate"]
 
     @property
     def is_published(self):
@@ -240,6 +241,17 @@ class Page(Content):
 
         return new_page
 
+    @transaction.atomic()
+    def copy_template(self):
+
+        copy_time = timezone.now().strftime("%Y-%m-%d, %H:%M:%S.%f")
+        new_page = self.make_clone(attrs={"name": f"Page Template ID #{self.id} copy({copy_time})"})
+
+        for block in self.page_blocks.all():
+            block.make_clone(attrs={"page": new_page})
+
+        return new_page
+
     def create_xml_item(self):
         item = etree.Element("item")
         etree.SubElement(item, "title").text = self.name
@@ -255,24 +267,6 @@ class Page(Content):
         return item
 
 
-class PageTemplate(Page):
-    objects = managers.PageTemplateManager()
-
-    class Meta:
-        proxy = True
-
-    @transaction.atomic()
-    def copy_template(self):
-
-        copy_time = timezone.now().strftime("%Y-%m-%d, %H:%M:%S.%f")
-        new_page = self.make_clone(attrs={"name": f"Page Template ID #{self.id} copy({copy_time})"})
-
-        for block in self.page_blocks.all():
-            block.make_clone(attrs={"page": new_page})
-
-        return new_page
-
-
 class PageBlock(CloneMixin, SoftDeleteObject):
     page = models.ForeignKey("Page", on_delete=models.CASCADE, related_name="page_blocks")
     block = models.ForeignKey("BlockTemplate", on_delete=models.CASCADE, null=True)
@@ -284,20 +278,21 @@ class PageBlock(CloneMixin, SoftDeleteObject):
     def __str__(self):
         return f"{self.name}"
 
-    # def natural_key(self):
-    #     if self.page:
-    #         return (
-    #             self.page.project.title,
-    #             self.page.name,
-    #             self.name,
-    #             self.order,
-    #             self.page.is_draft,
-    #             self.page.is_template,
-    #             True
-    #         )
-    #     if self.block:
-    #         return self.block.project.title, self.block.name, self.name, self.order
-    # natural_key.dependencies = ["pages.page"]
+    def natural_key(self):
+        if hasattr(self, "page"):
+            return (
+                self.page.project.title,
+                self.page.name,
+                self.name,
+                self.order,
+                self.page.is_draft,
+                self.page.is_template,
+                True,
+            )
+        if hasattr(self, "block"):
+            return self.block.project.title, self.block.name, self.name, self.order
+
+    natural_key.dependencies = ["pages.page"]
 
 
 class PageBlockElement(Element):
@@ -326,9 +321,10 @@ class PageBlockElement(Element):
 
     _clone_one_to_one_fields = ["observable_hq"]
 
-    # def natural_key(self):
-    #     return self.block.page.project.title, self.block.page.name, self.block.name, self.order
-    # natural_key.dependencies = ["states.state", "pages.pageblock"]
+    def natural_key(self):
+        return self.block.page.project.title, self.block.page.name, self.block.name, self.order
+
+    natural_key.dependencies = ["states.state", "pages.pageblock"]
 
     def relative_path_to_save(self, filename):
         base_path = self.image.storage.location

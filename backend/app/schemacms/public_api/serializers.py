@@ -183,7 +183,7 @@ class PASectionSerializer(ReadOnlySerializer):
 
 class PATemplateSerializer(ReadOnlySerializer):
     class Meta:
-        model = pa_models.PageTemplate
+        model = pa_models.Page
         fields = ("id", "name")
 
 

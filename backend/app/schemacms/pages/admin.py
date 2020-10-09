@@ -70,31 +70,31 @@ class BlockTemplateAdmin(SoftDeleteObjectAdmin):
 
 
 class BlockInline(CustomTabularInline):
-    model = models.Page.blocks.through
+    model = models.PageBlock
     formset = BlockInlineFormSet
     extra = 0
 
 
-@admin.register(models.PageTemplate)
-class PageTemplateAdmin(SoftDeleteObjectAdmin):
-    list_display = ("name", "project", "deleted_at", "is_template", "is_draft")
-    fields = ("project", "name", "deleted_at")
-    list_filter = ("project", "deleted_at")
-    readonly_on_update_fields = ("project",)
-    inlines = (BlockInline,)
-
-    def soft_undelete(self, request, queryset):
-        self.handle_unique_conflicts_on_undelete(
-            request, queryset, field="name", model_name="PageTemplate", parent="project"
-        )
-
-    def get_queryset(self, request):
-        return super().get_queryset(request).filter(is_template=True)
-
-    @transaction.atomic()
-    def save_model(self, request, obj, form, change):
-        obj.is_template = True
-        super().save_model(request, obj, form, change)
+# @admin.register(models.PageTemplate)
+# class PageTemplateAdmin(SoftDeleteObjectAdmin):
+#     list_display = ("name", "project", "deleted_at", "is_template", "is_draft")
+#     fields = ("project", "name", "deleted_at")
+#     list_filter = ("project", "deleted_at")
+#     readonly_on_update_fields = ("project",)
+#     inlines = (BlockInline,)
+#
+#     def soft_undelete(self, request, queryset):
+#         self.handle_unique_conflicts_on_undelete(
+#             request, queryset, field="name", model_name="PageTemplate", parent="project"
+#         )
+#
+#     def get_queryset(self, request):
+#         return super().get_queryset(request).filter(is_template=True)
+#
+#     @transaction.atomic()
+#     def save_model(self, request, obj, form, change):
+#         obj.is_template = True
+#         super().save_model(request, obj, form, change)
 
 
 @admin.register(models.Section)
