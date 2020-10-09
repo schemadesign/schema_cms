@@ -282,7 +282,7 @@ class PageBaseSerializer(CustomModelSerializer):
         )
         validators = [
             CustomUniqueTogetherValidator(
-                queryset=models.Page.objects.all(),
+                queryset=models.Page.only_pages.all(),
                 fields=("section", "name"),
                 key_field_name="name",
                 code="pageNameUnique",

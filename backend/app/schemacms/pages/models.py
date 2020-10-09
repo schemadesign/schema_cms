@@ -150,7 +150,8 @@ class Page(Content):
     is_main_page = models.BooleanField(default=False)
 
     objects = managers.PageManager()
-    templates = managers.PageTemplateManager()
+    only_pages = managers.PageOnlyManager()
+    templates = managers.PageOnlyTemplateManager()
 
     _clone_many_to_one_or_one_to_many_fields = ["tags"]
 

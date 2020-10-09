@@ -215,7 +215,9 @@ class SectionViewSet(DetailViewSet):
             return (
                 super()
                 .get_queryset()
-                .prefetch_related(Prefetch("pages", queryset=models.Page.objects.all().order_by(pages_order)))
+                .prefetch_related(
+                    Prefetch("pages", queryset=models.Page.only_pages.all().order_by(pages_order))
+                )
             )
 
         return super().get_queryset().prefetch_related("pages")
@@ -231,7 +233,7 @@ class PageListCreateView(
         "create": serializers.PageCreateSerializer,
     }
     queryset = (
-        models.Page.objects.all()
+        models.Page.only_pages.all()
         .select_related("project", "created_by", "template", "section")
         .prefetch_related(Prefetch("tags", queryset=models.PageTag.objects.select_related("category")))
         .filter(is_draft=True)
@@ -268,7 +270,7 @@ class PageListCreateView(
 
 class PageViewSet(DetailViewSet):
     queryset = (
-        models.Page.objects.all()
+        models.Page.only_pages.all()
         .select_related("project", "created_by", "template", "section")
         .prefetch_related(
             Prefetch("page_blocks", queryset=models.PageBlock.objects.select_related("block")),

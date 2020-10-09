@@ -4,17 +4,19 @@ from django.db import models
 from ..utils.managers import generate_soft_delete_manager
 
 
-class PageTemplateManager(softdelete.models.SoftDeleteManager):
+class PageManager(softdelete.models.SoftDeleteManager):
+    def get_by_natural_key(self, project_title, name, is_template, is_draft):
+        return self.get(project__title=project_title, name=name, is_template=is_template, is_draft=is_draft)
+
+
+class PageOnlyTemplateManager(softdelete.models.SoftDeleteManager):
     def get_queryset(self):
         return super().get_queryset().filter(is_template=True)
 
 
-class PageManager(softdelete.models.SoftDeleteManager):
+class PageOnlyManager(softdelete.models.SoftDeleteManager):
     def get_queryset(self):
         return super().get_queryset().filter(is_template=False)
-
-    def get_by_natural_key(self, project_title, name, is_template, is_draft):
-        return self.get(project__title=project_title, name=name, is_template=is_template, is_draft=is_draft)
 
 
 class PageBlockQuerySet(softdelete.models.SoftDeleteQuerySet):

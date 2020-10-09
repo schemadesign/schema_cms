@@ -107,7 +107,7 @@ class ProjectViewSet(utils_serializers.ActionSerializerViewSetMixin, viewsets.Mo
             .prefetch_related(
                 Prefetch(
                     "pages",
-                    queryset=Page.objects.filter(
+                    queryset=Page.only_pages.filter(
                         is_draft=False, state__in=[PageState.PUBLISHED, PageState.WAITING_TO_REPUBLISH]
                     ),
                 )

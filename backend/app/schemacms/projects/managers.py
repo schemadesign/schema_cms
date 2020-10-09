@@ -45,7 +45,7 @@ class ProjectQuerySet(softdelete.models.SoftDeleteQuerySet):
         from ..pages.models import Page
 
         subquery = (
-            Page.objects.order_by()
+            Page.only_pages.order_by()
             .values("project")
             .filter(project=models.OuterRef("pk"), is_draft=True)
             .annotate(count=models.Count("pk"))

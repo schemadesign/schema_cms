@@ -235,7 +235,7 @@ class TestDeletePageTemplatesView:
         response = api_client.delete(self.get_url(page_template.pk))
 
         assert response.status_code == status.HTTP_204_NO_CONTENT
-        assert not pages_models.Page.objects.filter(pk=template_id, deleted_at__isnull=True).exists()
+        assert not pages_models.Page.only_pages.filter(pk=template_id, deleted_at__isnull=True).exists()
 
     def test_editor_cant_delete_page_template(self, api_client, editor, page_template):
         api_client.force_authenticate(editor)
@@ -421,7 +421,7 @@ class TestListCreatePage:
 
         api_client.force_authenticate(user)
         response = api_client.post(self.get_url(section.id), data=payload, format="json")
-        page = pages_models.Page.objects.get(id=response.data["id"])
+        page = pages_models.Page.only_pages.get(id=response.data["id"])
 
         assert response.status_code == status.HTTP_201_CREATED
         assert response.data == page_serializer.PageDetailSerializer(page).data
@@ -470,7 +470,7 @@ class TestListCreatePage:
 
         api_client.force_authenticate(admin)
         response = api_client.post(self.get_url(section.id), data=payload, format="json")
-        page = pages_models.Page.objects.get(id=response.data["id"])
+        page = pages_models.Page.only_pages.get(id=response.data["id"])
 
         assert response.status_code == status.HTTP_201_CREATED
         assert response.data == page_serializer.PageDetailSerializer(page).data
@@ -514,7 +514,7 @@ class TestListCreatePage:
 
         api_client.force_authenticate(admin)
         response = api_client.post(self.get_url(section.id), data=payload, format="json")
-        page = pages_models.Page.objects.get(id=response.data["id"])
+        page = pages_models.Page.only_pages.get(id=response.data["id"])
 
         assert response.status_code == status.HTTP_201_CREATED
         assert response.data == page_serializer.PageDetailSerializer(page).data
@@ -591,7 +591,7 @@ class TestListCreatePage:
 
         api_client.force_authenticate(admin)
         response = api_client.post(self.get_url(section.id), data=payload, format="json")
-        page = pages_models.Page.objects.get(id=response.data["id"])
+        page = pages_models.Page.only_pages.get(id=response.data["id"])
 
         assert response.status_code == status.HTTP_201_CREATED
         assert response.data == page_serializer.PageDetailSerializer(page).data
@@ -629,7 +629,7 @@ class TestListCreatePage:
 
         api_client.force_authenticate(admin)
         response = api_client.post(self.get_url(section.id), data=payload, format="json")
-        page = pages_models.Page.objects.get(id=response.data["id"])
+        page = pages_models.Page.only_pages.get(id=response.data["id"])
 
         assert response.status_code == status.HTTP_201_CREATED
         assert response.data == page_serializer.PageDetailSerializer(page).data
@@ -668,7 +668,7 @@ class TestListCreatePage:
 
         api_client.force_authenticate(admin)
         response = api_client.post(self.get_url(section.id), data=payload, format="json")
-        page = pages_models.Page.objects.get(id=response.data["id"])
+        page = pages_models.Page.only_pages.get(id=response.data["id"])
 
         assert response.status_code == status.HTTP_201_CREATED
         assert response.data == page_serializer.PageDetailSerializer(page).data
@@ -790,8 +790,10 @@ class TestUpdateDeletePageView:
         response = api_client.delete(self.get_url(page.id))
 
         assert response.status_code == status.HTTP_204_NO_CONTENT
-        assert not pages_models.Page.objects.filter(pk=page_id, deleted_at__isnull=True).exists()
-        assert not pages_models.Page.objects.filter(pk=published_version.id, deleted_at__isnull=True).exists()
+        assert not pages_models.Page.only_pages.filter(pk=page_id, deleted_at__isnull=True).exists()
+        assert not pages_models.Page.only_pages.filter(
+            pk=published_version.id, deleted_at__isnull=True
+        ).exists()
 
     def test_delete_page_block(self, api_client, admin, page, block_template, page_block_factory):
         page_block = page_block_factory(block=block_template, page=page)
@@ -923,7 +925,7 @@ class TestCopyPage:
 
         api_client.force_authenticate(user)
         response = api_client.post(self.get_url(page.id), format="json")
-        copied_page = pages_models.Page.objects.get(pk=response.data["id"])
+        copied_page = pages_models.Page.only_pages.get(pk=response.data["id"])
 
         assert response.status_code == status.HTTP_200_OK
         assert copied_page.name == f"Page ID #{page.id} copy(2020-01-02, 10:00:00.000000)"
