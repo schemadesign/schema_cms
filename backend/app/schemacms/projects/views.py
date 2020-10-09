@@ -103,7 +103,7 @@ class ProjectViewSet(utils_serializers.ActionSerializerViewSetMixin, viewsets.Mo
 
         sections = (
             Section.objects.filter(project=project)
-            .select_related("project", "created_by", "main_page")
+            .select_related("project", "created_by")
             .prefetch_related(
                 Prefetch(
                     "pages",

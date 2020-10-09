@@ -31,8 +31,6 @@ def export_project(pk, using=DEFAULT_DB_ALIAS, output_format="json"):
         "project",
         "blocktemplate",
         "blocktemplateelement",
-        "page",
-        "pageblock",
         "tagcategory",
         "tag",
         "datasource",
@@ -45,12 +43,16 @@ def export_project(pk, using=DEFAULT_DB_ALIAS, output_format="json"):
         "datasourcedescription",
         "filter",
         "state",
-        "instatefilter",
+        "statefilter",
         "statetag",
+        "section",
+        "page",
+        "pageblock",
+        "pageblockelement",
+        "pagetag",
     ]
 
     flatten = [instance for cls, instances in object_tree.items() for instance in instances]
-
     sorted_flatten = sorted(flatten, key=lambda i: keyorder.index(i._meta.model_name))
 
     serialized = serializers.serialize(

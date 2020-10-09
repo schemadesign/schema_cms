@@ -323,7 +323,7 @@ class WranglingScript(SoftDeleteObject, TimeStampedModel):
 
     def natural_key(self):
         if self.datasource:
-            return self.datasource.natural_key() + (self.name,)
+            return (self.name,) + self.datasource.natural_key()
         else:
             return (self.name,)
 

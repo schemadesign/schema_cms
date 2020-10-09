@@ -54,7 +54,10 @@ class FilterManager(SoftDeleteManager):
 
 
 class WranglingScriptManager(SoftDeleteManager):
-    def get_by_natural_key(self, project_title, datasource_name, script_name):
+    def get_by_natural_key(self, script_name, project_title=None, datasource_name=None):
+        if not project_title and not datasource_name:
+            return self.get(name=script_name)
+
         return self.get(
             datasource__project__title=project_title, datasource__name=datasource_name, name=script_name,
         )
@@ -66,6 +69,7 @@ class DataSourceJobStepManager(SoftDeleteManager):
             datasource_job__datasource__project__title=project_title,
             datasource_job__datasource__name=datasource_name,
             name=script_name,
+            order=order,
         )
 
 
