@@ -15,7 +15,7 @@ def export_project(pk, using=DEFAULT_DB_ALIAS, output_format="json"):
     collector = NestedObjects(using=using)
     collector.collect(root_project)
     object_tree = collector.data
-
+    breakpoint()
     zip_stream = io.BytesIO()
     zip_file = zipfile.ZipFile(zip_stream, "w")
 
@@ -52,7 +52,12 @@ def export_project(pk, using=DEFAULT_DB_ALIAS, output_format="json"):
         "pagetag",
     ]
 
-    flatten = [instance for cls, instances in object_tree.items() for instance in instances]
+    flatten = [
+        instance
+        for cls, instances in object_tree.items()
+        for instance in instances
+        if instance.deleted_at is None
+    ]
     sorted_flatten = sorted(flatten, key=lambda i: keyorder.index(i._meta.model_name))
 
     serialized = serializers.serialize(
