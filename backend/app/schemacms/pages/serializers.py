@@ -257,7 +257,9 @@ class PageTagSerializer(serializers.ModelSerializer):
 
 
 class PageBaseSerializer(CustomModelSerializer):
-    template = serializers.PrimaryKeyRelatedField(queryset=models.Page.templates.all(), required=False)
+    template = serializers.PrimaryKeyRelatedField(
+        queryset=models.Page.templates.all(), allow_null=True, required=False
+    )
     tags = PageTagSerializer(read_only=True, many=True)
     is_changed = serializers.SerializerMethodField()
 
