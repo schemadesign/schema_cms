@@ -21,10 +21,11 @@ class DataSourceFilterSet(FilterSet):
 
 class PageFilterSet(FilterSet):
     id__in = NumberInFilter(field_name="draft_version", lookup_expr="in")
+    draft_id__in = NumberInFilter(field_name="id", lookup_expr="in")
 
     class Meta:
         model = Page
-        fields = ["id", "id__in", "tags__value", "tags__category__name"]
+        fields = ["id", "id__in", "draft_id__in", "tags__value", "tags__category__name"]
 
 
 class ProjectFilterSet(FilterSet):

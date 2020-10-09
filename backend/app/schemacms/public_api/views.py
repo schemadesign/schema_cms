@@ -151,23 +151,10 @@ class PAProjectView(
 
 
 class PASectionView(mixins.RetrieveModelMixin, viewsets.GenericViewSet):
-    serializer_class = serializers.PASectionSerializer
+    serializer_class = serializers.PASectionDetailSerializer
     renderer_classes = [renderers.JSONRenderer]
     permission_classes = ()
-    queryset = (
-        Section.objects.filter(is_public=True)
-        .prefetch_related(
-            Prefetch(
-                "pages",
-                queryset=Page.objects.select_related("created_by").filter(
-                    is_public=True,
-                    is_draft=False,
-                    state__in=[PageState.PUBLISHED, PageState.WAITING_TO_REPUBLISH],
-                ),
-            )
-        )
-        .order_by("created")
-    )
+    queryset = Section.objects.filter(is_public=True).prefetch_related("pages").order_by("created")
 
     filter_backends = [DjangoFilterBackend, drf_filters.OrderingFilter]
     filterset_class = filters.SectionFilterSet
@@ -210,10 +197,13 @@ class PAPageView(mixins.ListModelMixin, mixins.RetrieveModelMixin, viewsets.Gene
 
     def get_queryset(self):
         if self.action == "list":
+            show_drafts = self.request.query_params.get("show_drafts")
             self.queryset = self.queryset.filter(
                 is_public=True,
-                is_draft=False,
-                state__in=[PageState.PUBLISHED, PageState.WAITING_TO_REPUBLISH],
+                is_draft=True if show_drafts == "true" else False,
+                state__in=[PageState.DRAFT]
+                if show_drafts == "true"
+                else [PageState.PUBLISHED, PageState.WAITING_TO_REPUBLISH],
             )
 
         if self.action in ["retrieve", "html"]:
