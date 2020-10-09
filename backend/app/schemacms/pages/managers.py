@@ -18,15 +18,19 @@ class PageManager(softdelete.models.SoftDeleteManager):
 
 
 class PageBlockQuerySet(softdelete.models.SoftDeleteQuerySet):
-    def get_by_natural_key(self, project_title, page_name, is_template, is_draft, name, order):
-        return self.get(
-            page__project__title=project_title,
-            page__name=page_name,
-            page__is_template=is_template,
-            page__is_draft=is_draft,
-            name=name,
-            order=order,
-        )
+    def get_by_natural_key(
+        self, project_title, block_name, name, order, is_draft=None, is_template=None, is_page=False
+    ):
+        if is_page:
+            return self.get(
+                page__project__title=project_title,
+                page__name=block_name,
+                name=name,
+                order=order,
+                page__is_draft=is_draft,
+                page__is_template=is_template,
+            )
+        return self.get(block__project__title=project_title, block__name=block_name, name=name, order=order)
 
 
 class SectionQuerySet(softdelete.models.SoftDeleteQuerySet):
@@ -42,6 +46,18 @@ class SectionQuerySet(softdelete.models.SoftDeleteQuerySet):
                 ),
                 distinct=True,
             )
+        )
+
+
+class PageTagManager(softdelete.models.SoftDeleteManager):
+    def get_by_natural_key(self, project_title, page_name, is_template, is_draft, category_name, value):
+        return self.get(
+            page__project__title=project_title,
+            page__name=page_name,
+            page__is_template=is_template,
+            page__is_draft=is_draft,
+            category__name=category_name,
+            value=value,
         )
 
 

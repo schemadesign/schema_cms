@@ -608,7 +608,7 @@ class TestDataSourceScriptUploadView:
     def test_response(self, api_client, admin, data_source_factory, faker):
         data_source = data_source_factory()
         code = b"df = df.head(5)"
-        payload = dict(file=faker.python_upload_file(filename="test.py", code=code))
+        payload = dict(file=faker.python_upload_file(filename="test_new.py", code=code))
         script_name = os.path.splitext(payload["file"].name)[0]
 
         api_client.force_authenticate(admin)

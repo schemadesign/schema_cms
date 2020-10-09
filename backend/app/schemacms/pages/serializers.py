@@ -234,11 +234,18 @@ class MainPageSerializer(serializers.ModelSerializer):
 
 
 class PageSectionSerializer(serializers.ModelSerializer):
-    main_page = MainPageSerializer(read_only=True)
+    main_page = serializers.SerializerMethodField()
 
     class Meta:
         model = models.Section
         fields = ("id", "name", "main_page")
+
+    def get_main_page(self, obj: models.Section):
+        main_page = obj.get_main_page()
+
+        if main_page:
+            return MainPageSerializer(main_page, read_only=True).data
+        return None
 
 
 class PageTagSerializer(serializers.ModelSerializer):
@@ -503,12 +510,19 @@ class PageDisplayNameSerializer(ReadOnlySerializer):
 
 
 class SectionInternalConnectionSerializer(ReadOnlySerializer):
-    main_page = MainPageSerializer(read_only=True)
+    main_page = serializers.SerializerMethodField()
     pages = PageDisplayNameSerializer(read_only=True, many=True)
 
     class Meta:
         model = models.Section
         fields = ("id", "name", "main_page", "pages")
+
+    def get_main_page(self, obj: models.Section):
+        main_page = obj.get_main_page()
+
+        if main_page:
+            return MainPageSerializer(main_page, read_only=True).data
+        return None
 
 
 class SectionPageListView(CustomModelSerializer):
@@ -534,6 +548,7 @@ class SectionPageListView(CustomModelSerializer):
 
 
 class SectionDetailSerializer(CustomModelSerializer):
+    main_page = serializers.SerializerMethodField()
     pages = SectionPageListView(read_only=True, many=True)
 
     class Meta:
@@ -568,7 +583,19 @@ class SectionDetailSerializer(CustomModelSerializer):
 
     @transaction.atomic()
     def update(self, instance, validated_data):
+        main_page_id = self.initial_data.get("main_page")
+
         section = super().update(instance, validated_data)
         section.project.create_xml_file()
 
+        if main_page_id:
+            section.set_main_page(main_page_id)
+
         return section
+
+    def get_main_page(self, obj: models.Section):
+        main_page = obj.get_main_page()
+
+        if main_page:
+            return main_page.id
+        return None

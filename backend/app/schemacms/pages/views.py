@@ -172,7 +172,7 @@ class SectionListCreateView(mixins.ListModelMixin, mixins.CreateModelMixin, view
 class SectionInternalConnectionView(generics.ListAPIView):
     queryset = (
         models.Section.objects.all()
-        .select_related("project", "created_by", "main_page")
+        .select_related("project", "created_by")
         .prefetch_related("pages")
         .order_by("-created")
     )
@@ -280,12 +280,6 @@ class PageViewSet(DetailViewSet):
     permission_classes = (permissions.IsAuthenticated, IsAdminOrIsEditor)
 
     def perform_destroy(self, instance: models.Page):
-        section = instance.section
-
-        if section.main_page == instance:
-            section.main_page = None
-            section.save()
-
         super().perform_destroy(instance.published_version)
 
     @decorators.action(detail=True, url_path="copy", methods=["post"])

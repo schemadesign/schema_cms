@@ -216,15 +216,6 @@ class WranglingScriptSerializer(serializers.ModelSerializer):
         model = ds_models.WranglingScript
         fields = ("id", "datasource", "name", "is_predefined", "created_by", "file", "body", "specs")
         extra_kwargs = {"name": {"required": False, "allow_null": True}}
-        validators = [
-            CustomUniqueTogetherValidator(
-                queryset=ds_models.WranglingScript.objects.all(),
-                fields=("datasource", "name"),
-                key_field_name="name",
-                code="scriptNameNotUnique",
-                message="Script with this name already exist in data source.",
-            )
-        ]
 
     def create(self, validated_data):
         datasource = self.initial_data["datasource"]
