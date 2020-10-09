@@ -41,10 +41,10 @@ exports[`PageTemplateForm: Component should render correctly 1`] = `
         }
       >
         <div
-          className="sc-fFSRdu itzvkl"
+          className="sc-bkbjAj KGWtD"
         >
           <div
-            className="sc-bCwgka XWcZC"
+            className="sc-iwaifL hrOozR"
           >
             <div
               style={
@@ -118,12 +118,12 @@ exports[`PageTemplateForm: Component should render correctly 1`] = `
               />
             </div>
             <div
-              className="sc-cxNIbT kLlQfh"
+              className="sc-lmgQde dGvbQF"
               id="nameError"
             />
           </div>
           <div
-            className="sc-bkbjAj gPkFdf"
+            className="sc-iemXMA bQeCqo"
           >
             <svg
               style={
@@ -141,7 +141,7 @@ exports[`PageTemplateForm: Component should render correctly 1`] = `
               />
             </svg>
             <div
-              className="sc-ciSmjq hvejIU"
+              className="sc-jcwofb jGJgbO"
               id="pageTemplateCopyButton"
               onClick={[Function]}
             >
@@ -215,10 +215,10 @@ exports[`PageTemplateForm: Component should render correctly 1`] = `
     </div>
   </div>
   <div
-    className="sc-iemXMA jrPNNO"
+    className="sc-dIvqjp vkXIj"
   >
     <div
-      className="sc-bCwgka kmMkxo"
+      className="sc-iwaifL iBtTLj"
     >
       <div
         style={
@@ -281,7 +281,7 @@ exports[`PageTemplateForm: Component should render correctly 1`] = `
           }
         >
           <div
-            className="sc-iwaifL jhFrOu"
+            className="sc-cxNIbT cgUnwQ"
           >
             <svg
               style={
@@ -302,24 +302,24 @@ exports[`PageTemplateForm: Component should render correctly 1`] = `
         </div>
       </div>
       <div
-        className="sc-cxNIbT kLlQfh"
+        className="sc-lmgQde dGvbQF"
         id="nameError"
       />
     </div>
   </div>
   <div
-    className="sc-lmgQde kbQhGt"
+    className="sc-iJCRLp hOmxV"
   >
     <div
-      className="sc-iJCRLp bGihsy"
+      className="sc-giAqnE jEMelV"
       id="tagsCounter"
     />
     1 Block
     <div
-      className="sc-iJCRLp bGihsy"
+      className="sc-giAqnE jEMelV"
     >
       <div
-        className="sc-hHEjAm lgKrTu"
+        className="sc-dlMBXb eaNbbY"
       >
         <div
           className="sc-kEqYlL bzTLXi"
@@ -386,14 +386,14 @@ exports[`PageTemplateForm: Component should render correctly 1`] = `
       }
     >
       <div
-        className="sc-ezzayL dECJMy"
+        className="sc-bYwzba gkWjPa"
       >
         <div
-          className="sc-bYwzba iKTiUi"
+          className="sc-kLokih gOMSzJ"
         >
           <div>
             <div
-              className="sc-kfYqjs cIqTnu"
+              className="sc-fKgIGh dlUpMW"
             >
               <svg
                 style={
@@ -415,10 +415,10 @@ exports[`PageTemplateForm: Component should render correctly 1`] = `
           </div>
         </div>
         <div
-          className="sc-kLokih fBJmfo"
+          className="sc-iklIKw ftNFOB"
         >
           <div
-            className="sc-iklIKw jmBlHr"
+            className="sc-jJMGHv WYKrM"
             onClick={[Function]}
           >
             <input
@@ -553,7 +553,7 @@ exports[`PageTemplateForm: Component should render correctly 1`] = `
               </div>
             </div>
             <div
-              className="sc-jJMGHv kZMqZT"
+              className="sc-hiKfjK PllbS"
             >
               <svg
                 style={
@@ -574,7 +574,7 @@ exports[`PageTemplateForm: Component should render correctly 1`] = `
           </div>
         </div>
         <div
-          className="sc-bYwzba iKTiUi"
+          className="sc-kLokih gOMSzJ"
         >
           <svg
             style={
@@ -617,13 +617,13 @@ exports[`PageTemplateForm: Component should render correctly 1`] = `
     </div>
   </span>
   <div
-    className="sc-iqAbSa dBffjZ"
+    className="sc-crzoUp AvPFd"
   >
     <div
-      className="sc-crzoUp eDPCVm"
+      className="sc-dIsAE iociTF"
     >
       <div
-        className="sc-ksluoS jYvrjj"
+        className="sc-hBMVcZ fDCJSy"
       >
         <div>
           <input
@@ -675,23 +675,23 @@ exports[`PageTemplateForm: Component should render correctly 1`] = `
           </label>
         </div>
         <div
-          className="sc-bqGHjH jlfeYM"
+          className="sc-ksluoS gOzAaT"
         >
           <label
-            className="sc-dIsAE jvSkVf"
+            className="sc-bqGHjH hTAmED"
             htmlFor="isAvailable"
           >
             Make it Available
           </label>
           <span
-            className="sc-fnVYJo huOJvB"
+            className="sc-fFSRdu dKLsmd"
           >
             This Template is currently available for Editors
           </span>
         </div>
       </div>
       <div
-        className="sc-hBMVcZ dxbunL"
+        className="sc-fnVYJo daTqzp"
         id="removePage"
         onClick={[Function]}
       >
@@ -715,7 +715,7 @@ exports[`PageTemplateForm: Component should render correctly 1`] = `
       </div>
     </div>
     <div
-      className="sc-crzoUp eDPCVm"
+      className="sc-dIsAE iociTF"
     >
       <div>
         <input
@@ -767,10 +767,10 @@ exports[`PageTemplateForm: Component should render correctly 1`] = `
         </label>
       </div>
       <div
-        className="sc-bqGHjH jlfeYM"
+        className="sc-ksluoS gOzAaT"
       >
         <label
-          className="sc-dIsAE jvSkVf"
+          className="sc-bqGHjH hTAmED"
           htmlFor="allowEdit"
         >
           Allow editing the Page Template

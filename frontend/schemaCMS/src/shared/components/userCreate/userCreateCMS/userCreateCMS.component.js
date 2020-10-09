@@ -2,7 +2,7 @@ import React, { PureComponent } from 'react';
 import PropTypes from 'prop-types';
 import { Formik } from 'formik';
 import { USER_CREATE_CMS_FORM, USER_CREATE_CMS_SCHEME, USER_ROLE } from '../../../../modules/user/user.constants';
-import { UserCreate } from '..';
+import { UserCreate } from '../userCreateComponent/userCreate.component';
 import messages from '../userCreateComponent/userCreate.messages';
 import { EMAIL, FIRST_NAME, LAST_NAME, ROLES } from '../../../../modules/userProfile/userProfile.constants';
 import { errorMessageParser } from '../../../utils/helpers';

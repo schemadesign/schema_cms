@@ -127,11 +127,10 @@ exports[`UserList: Component should render correctly 1`] = `
       />
     }
   >
-    <PlusButton
-      customStyles={Object {}}
-      hideOnDesktop={false}
+    <PlusLink
       id="addUserDesktopBtn"
-      onClick={[Function]}
+      size={60}
+      to="/project/1/user/add"
     />
   </ContextHeader>
   <LoadingWrapper
@@ -156,19 +155,18 @@ exports[`UserList: Component should render correctly 1`] = `
     hideOnDesktop={true}
     right={false}
   >
-    <BackArrowButton
-      onClick={[Function]}
+    <BackLink
+      to="/project/1"
     >
       <FormattedMessage
         defaultMessage="Back"
         id="project.userList.back"
       />
-    </BackArrowButton>
-    <PlusButton
-      customStyles={Object {}}
-      hideOnDesktop={false}
+    </BackLink>
+    <PlusLink
       id="addUserBtn"
-      onClick={[Function]}
+      size={60}
+      to="/project/1/user/add"
     />
   </NavigationContainer>
 </Fragment>

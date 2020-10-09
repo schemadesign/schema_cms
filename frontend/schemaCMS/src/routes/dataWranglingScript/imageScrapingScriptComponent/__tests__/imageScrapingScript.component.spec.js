@@ -3,8 +3,7 @@ import { shallow } from 'enzyme';
 
 import { ImageScrapingScript } from '../imageScrapingScript.component';
 import { defaultProps } from '../imageScrapingScript.stories';
-import { BackButton, NextButton } from '../../../../shared/components/navigation';
-import { STEPS_PAGE } from '../../../../modules/dataSource/dataSource.constants';
+import { NextButton } from '../../../../shared/components/navigation';
 
 describe('DataWranglingScript: Component', () => {
   defaultProps.fetchDataSource = jest.fn().mockReturnValue(
@@ -45,17 +44,6 @@ describe('DataWranglingScript: Component', () => {
     await Promise.resolve();
     await Promise.resolve();
     expect(defaultProps.fetchDataWranglingScripts).toHaveBeenCalledWith({ dataSourceId: '1' });
-  });
-
-  it('should go to data wrangling step', async () => {
-    jest.spyOn(defaultProps.history, 'push');
-
-    const wrapper = render();
-    await Promise.resolve();
-    await Promise.resolve();
-    wrapper.find(BackButton).simulate('click');
-
-    expect(defaultProps.history.push).toHaveBeenCalledWith(`/datasource/1/${STEPS_PAGE}`, { fromScript: true });
   });
 
   it('should call setImageScrapingFields', async () => {

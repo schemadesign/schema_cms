@@ -2,8 +2,9 @@
 
 exports[`StatisticCards: Component should render correctly 1`] = `
 <styled.ul>
-  <styled.li
+  <Styled(Link)
     key="0"
+    to="/link/to"
   >
     <Component
       customStyles={
@@ -20,7 +21,6 @@ exports[`StatisticCards: Component should render correctly 1`] = `
         </ForwardRef(styled.span)>
       }
       id="id"
-      onClick={[Function]}
     >
       <styled.span
         id="idValue"
@@ -28,6 +28,6 @@ exports[`StatisticCards: Component should render correctly 1`] = `
         2
       </styled.span>
     </Component>
-  </styled.li>
+  </Styled(Link)>
 </styled.ul>
 `;

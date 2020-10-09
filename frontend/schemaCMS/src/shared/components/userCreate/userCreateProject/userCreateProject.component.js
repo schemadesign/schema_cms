@@ -10,7 +10,7 @@ import {
   USER_ROLE,
 } from '../../../../modules/user/user.constants';
 import { ROLES } from '../../../../modules/userProfile/userProfile.constants';
-import { UserCreate } from '..';
+import { UserCreate } from '../userCreateComponent/userCreate.component';
 import { errorMessageParser } from '../../../utils/helpers';
 import reportError from '../../../utils/reportError';
 import { LoadingWrapper } from '../../loadingWrapper';

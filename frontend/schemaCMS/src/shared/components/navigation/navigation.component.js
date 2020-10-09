@@ -16,7 +16,7 @@ import {
 } from './navigation.styles';
 import messages from './navigation.messages';
 
-const { PlusIcon, ArrowLeftIcon } = Icons;
+const { PlusIcon } = Icons;
 
 export class NavigationContainer extends PureComponent {
   static propTypes = {
@@ -88,16 +88,6 @@ PlusLink.propTypes = {
   to: PropTypes.string.isRequired,
   id: PropTypes.string,
 };
-
-export class BackArrowButton extends PureComponent {
-  render() {
-    return (
-      <Button customStyles={buttonIconStyles} {...this.props}>
-        <ArrowLeftIcon />
-      </Button>
-    );
-  }
-}
 
 export class BackButton extends PureComponent {
   static propTypes = {

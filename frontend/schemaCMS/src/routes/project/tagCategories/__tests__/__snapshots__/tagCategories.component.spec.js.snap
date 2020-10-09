@@ -164,11 +164,10 @@ exports[`TagCategories: Component should render correctly 1`] = `
       />
     }
   >
-    <PlusButton
-      customStyles={Object {}}
-      hideOnDesktop={false}
+    <PlusLink
       id="addTagCategoryBtn"
-      onClick={[Function]}
+      size={60}
+      to="/project/1/tag-templates/create"
     />
   </ContextHeader>
   <LoadingWrapper
@@ -203,12 +202,12 @@ exports[`TagCategories: Component should render correctly 1`] = `
         id="tagContainer"
         key="0"
       >
-        <Styled(H1)
+        <Styled(Link)
           id="tag-category-colors"
-          onClick={[Function]}
+          to="/tag-category/1"
         >
           Colors
-        </Styled(H1)>
+        </Styled(Link)>
       </Styled(Component)>
       <Styled(Component)
         footerComponent={
@@ -235,12 +234,12 @@ exports[`TagCategories: Component should render correctly 1`] = `
         id="tagContainer"
         key="1"
       >
-        <Styled(H1)
+        <Styled(Link)
           id="tag-category-countries"
-          onClick={[Function]}
+          to="/tag-category/2"
         >
           Countries
-        </Styled(H1)>
+        </Styled(Link)>
       </Styled(Component)>
     </styled.section>
     <NavigationContainer
@@ -249,15 +248,14 @@ exports[`TagCategories: Component should render correctly 1`] = `
       hideOnDesktop={false}
       right={false}
     >
-      <BackArrowButton
-        hideOnDesktop={true}
+      <BackLink
         id="backBtn"
-        onClick={[Function]}
+        to="/project/1/templates"
       />
-      <PlusButton
-        customStyles={Object {}}
+      <PlusLink
         hideOnDesktop={true}
-        onClick={[Function]}
+        size={60}
+        to="/project/1/tag-templates/create"
       />
     </NavigationContainer>
   </LoadingWrapper>
@@ -428,11 +426,10 @@ exports[`TagCategories: Component should render correctly when no categories 1`]
       />
     }
   >
-    <PlusButton
-      customStyles={Object {}}
-      hideOnDesktop={false}
+    <PlusLink
       id="addTagCategoryBtn"
-      onClick={[Function]}
+      size={60}
+      to="/project/1/tag-templates/create"
     />
   </ContextHeader>
   <LoadingWrapper
@@ -467,12 +464,12 @@ exports[`TagCategories: Component should render correctly when no categories 1`]
         id="tagContainer"
         key="0"
       >
-        <Styled(H1)
+        <Styled(Link)
           id="tag-category-colors"
-          onClick={[Function]}
+          to="/tag-category/1"
         >
           Colors
-        </Styled(H1)>
+        </Styled(Link)>
       </Styled(Component)>
       <Styled(Component)
         footerComponent={
@@ -499,12 +496,12 @@ exports[`TagCategories: Component should render correctly when no categories 1`]
         id="tagContainer"
         key="1"
       >
-        <Styled(H1)
+        <Styled(Link)
           id="tag-category-countries"
-          onClick={[Function]}
+          to="/tag-category/2"
         >
           Countries
-        </Styled(H1)>
+        </Styled(Link)>
       </Styled(Component)>
     </styled.section>
     <NavigationContainer
@@ -513,15 +510,14 @@ exports[`TagCategories: Component should render correctly when no categories 1`]
       hideOnDesktop={false}
       right={false}
     >
-      <BackArrowButton
-        hideOnDesktop={true}
+      <BackLink
         id="backBtn"
-        onClick={[Function]}
+        to="/project/1/templates"
       />
-      <PlusButton
-        customStyles={Object {}}
+      <PlusLink
         hideOnDesktop={true}
-        onClick={[Function]}
+        size={60}
+        to="/project/1/tag-templates/create"
       />
     </NavigationContainer>
   </LoadingWrapper>
@@ -692,11 +688,10 @@ exports[`TagCategories: Component should render correctly with loader 1`] = `
       />
     }
   >
-    <PlusButton
-      customStyles={Object {}}
-      hideOnDesktop={false}
+    <PlusLink
       id="addTagCategoryBtn"
-      onClick={[Function]}
+      size={60}
+      to="/project/1/tag-templates/create"
     />
   </ContextHeader>
   <LoadingWrapper
@@ -731,12 +726,12 @@ exports[`TagCategories: Component should render correctly with loader 1`] = `
         id="tagContainer"
         key="0"
       >
-        <Styled(H1)
+        <Styled(Link)
           id="tag-category-colors"
-          onClick={[Function]}
+          to="/tag-category/1"
         >
           Colors
-        </Styled(H1)>
+        </Styled(Link)>
       </Styled(Component)>
       <Styled(Component)
         footerComponent={
@@ -763,12 +758,12 @@ exports[`TagCategories: Component should render correctly with loader 1`] = `
         id="tagContainer"
         key="1"
       >
-        <Styled(H1)
+        <Styled(Link)
           id="tag-category-countries"
-          onClick={[Function]}
+          to="/tag-category/2"
         >
           Countries
-        </Styled(H1)>
+        </Styled(Link)>
       </Styled(Component)>
     </styled.section>
     <NavigationContainer
@@ -777,15 +772,14 @@ exports[`TagCategories: Component should render correctly with loader 1`] = `
       hideOnDesktop={false}
       right={false}
     >
-      <BackArrowButton
-        hideOnDesktop={true}
+      <BackLink
         id="backBtn"
-        onClick={[Function]}
+        to="/project/1/templates"
       />
-      <PlusButton
-        customStyles={Object {}}
+      <PlusLink
         hideOnDesktop={true}
-        onClick={[Function]}
+        size={60}
+        to="/project/1/tag-templates/create"
       />
     </NavigationContainer>
   </LoadingWrapper>

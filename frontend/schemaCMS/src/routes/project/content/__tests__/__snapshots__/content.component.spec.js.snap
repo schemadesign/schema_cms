@@ -346,17 +346,17 @@ exports[`Content: Component should render correctly 1`] = `
     </div>
   </div>
   <div
-    className="sc-dlMBXb"
+    className="sc-kfYqjs"
     id="tabsContainer"
   >
     <div
-      className="sc-iemXMA kqihBt"
+      className="sc-dIvqjp bDzKAY"
     >
       <div
-        className="sc-dIvqjp ivtJqJ"
+        className="sc-hHEjAm gxtZXC"
       >
         <a
-          className="sc-hHEjAm gnYnne"
+          className="sc-dlMBXb gXhpVk"
           href="/project/projectId"
           id="settingsTab"
           onClick={[Function]}
@@ -365,10 +365,10 @@ exports[`Content: Component should render correctly 1`] = `
         </a>
       </div>
       <div
-        className="sc-dIvqjp ivtJqJ"
+        className="sc-hHEjAm gxtZXC"
       >
         <a
-          className="sc-hHEjAm gnYnne"
+          className="sc-dlMBXb gXhpVk"
           href="/project/projectId/datasource"
           id="sourcesTab"
           onClick={[Function]}
@@ -377,10 +377,10 @@ exports[`Content: Component should render correctly 1`] = `
         </a>
       </div>
       <div
-        className="sc-dIvqjp fWKyea"
+        className="sc-hHEjAm eGSwlh"
       >
         <a
-          className="sc-hHEjAm gnYnne"
+          className="sc-dlMBXb gXhpVk"
           href="/project/projectId/content"
           id="contentTab"
           onClick={[Function]}
@@ -389,10 +389,10 @@ exports[`Content: Component should render correctly 1`] = `
         </a>
       </div>
       <div
-        className="sc-dIvqjp ivtJqJ"
+        className="sc-hHEjAm gxtZXC"
       >
         <a
-          className="sc-hHEjAm gnYnne"
+          className="sc-dlMBXb gXhpVk"
           href="/project/projectId/templates"
           id="templatesTab"
           onClick={[Function]}
@@ -401,10 +401,10 @@ exports[`Content: Component should render correctly 1`] = `
         </a>
       </div>
       <div
-        className="sc-dIvqjp ivtJqJ"
+        className="sc-hHEjAm gxtZXC"
       >
         <a
-          className="sc-hHEjAm gnYnne"
+          className="sc-dlMBXb gXhpVk"
           href="/project/projectId/user"
           id="usersTab"
           onClick={[Function]}
@@ -415,13 +415,13 @@ exports[`Content: Component should render correctly 1`] = `
     </div>
   </div>
   <div
-    className="sc-kfYqjs jVUIpp"
+    className="sc-fKgIGh iDRmPx"
   >
     <div
-      className="sc-fKgIGh ePACvs"
+      className="sc-bCwgka jNlFsP"
     >
       <h2
-        className="sc-bCwgka bBdQKU"
+        className="sc-iwaifL fAJgQr"
         id="desktopHeaderTitle"
         style={
           Object {
@@ -435,7 +435,7 @@ exports[`Content: Component should render correctly 1`] = `
         Content
       </h2>
       <h1
-        className="sc-iwaifL fAJgQr"
+        className="sc-cxNIbT eQmLRd"
         id="desktopHeaderSubtitle"
         style={
           Object {
@@ -452,71 +452,49 @@ exports[`Content: Component should render correctly 1`] = `
       </h1>
     </div>
     <div
-      className="sc-cxNIbT"
+      className="sc-lmgQde"
     >
-      <div
-        className="sc-bkbjAj iFdJhe"
+      <a
+        className="sc-iemXMA cjIsuA"
+        href="/project/projectId/section/create"
+        onClick={[Function]}
       >
-        <button
-          disabled={false}
+        <svg
           id="createSection"
-          onClick={[Function]}
           style={
             Object {
-              "backgroundColor": "#FFF",
-              "border": "none",
-              "borderRadius": "48px",
-              "color": "#000",
-              "cursor": "pointer",
-              "display": "inline-block",
-              "fill": "#FFF",
-              "fontSize": "18px",
-              "height": "60px",
-              "margin": "0",
-              "minHeight": "48px",
-              "outline": "none",
-              "padding": "0",
-              "transition": "background 0.25s ease-in-out, color 0.25s ease-in-out",
-              "width": "60px",
+              "fill": "#000",
+              "height": 60,
+              "shapeRendering": "crispEdges",
+              "width": 60,
             }
           }
+          viewBox="0 0 60 60"
         >
-          <svg
-            style={
-              Object {
-                "fill": "#000",
-                "height": "60px",
-                "shapeRendering": "crispEdges",
-                "width": "60px",
-              }
-            }
-            viewBox="0 0 60 60"
-          >
-            <path
-              d="M32 15v13h13v4H32v13h-4V32H15v-4h13V15h4z"
-            />
-          </svg>
-        </button>
-      </div>
+          <path
+            d="M32 15v13h13v4H32v13h-4V32H15v-4h13V15h4z"
+          />
+        </svg>
+      </a>
     </div>
   </div>
   <div
-    className="sc-carGAA gboThg"
+    className="sc-iTVIwl ktxhbO"
   >
     <div
-      className="sc-iTVIwl hdqpZR"
+      className="sc-iBzFoy jhjgfR"
       id="tagsCounter"
     />
     2 sections
     <div
-      className="sc-iTVIwl hdqpZR"
+      className="sc-iBzFoy jhjgfR"
     />
   </div>
   <section
-    className="sc-jcwofb jtoYEM"
+    className="sc-carGAA bqYEFW"
   >
     <div
-      className="sc-jJMGHv eEpJM"
+      className="sc-hiKfjK kxPnAt"
       style={
         Object {
           "backgroundColor": "#1d1d20",
@@ -549,19 +527,19 @@ exports[`Content: Component should render correctly 1`] = `
           }
         >
           <div
-            className="sc-kLokih kyLnhp"
+            className="sc-iklIKw djnpac"
           >
             <ul
-              className="sc-ezzayL cXKYxJ"
+              className="sc-bYwzba duZefh"
             >
               <li
-                className="sc-bYwzba kTXKgH"
+                className="sc-kLokih flDwLQ"
                 id="headerItem-0"
               >
                 in 3 months
               </li>
               <li
-                className="sc-bYwzba kTXKgH"
+                className="sc-kLokih flDwLQ"
                 id="headerItem-1"
               >
                 owner
@@ -569,23 +547,14 @@ exports[`Content: Component should render correctly 1`] = `
             </ul>
           </div>
         </div>
-        <h1
-          className="sc-hiKfjK iqLpn"
+        <a
+          className="sc-gXfWUo irCIKP"
+          href="/section/1"
           id="section-1"
           onClick={[Function]}
-          style={
-            Object {
-              "fontFamily": "Inter, \\"Helvetica Neue\\", Helvetica, Arial, sans-serif",
-              "fontSize": "24px",
-              "fontWeight": 600,
-              "letterSpacing": "-0.12px",
-              "lineHight": 1.25,
-              "margin": 0,
-            }
-          }
         >
           Section name
-        </h1>
+        </a>
       </div>
       <div
         style={
@@ -600,7 +569,7 @@ exports[`Content: Component should render correctly 1`] = `
       </div>
     </div>
     <div
-      className="sc-jJMGHv eEpJM"
+      className="sc-hiKfjK kxPnAt"
       style={
         Object {
           "backgroundColor": "#1d1d20",
@@ -633,19 +602,19 @@ exports[`Content: Component should render correctly 1`] = `
           }
         >
           <div
-            className="sc-kLokih kyLnhp"
+            className="sc-iklIKw djnpac"
           >
             <ul
-              className="sc-ezzayL cXKYxJ"
+              className="sc-bYwzba duZefh"
             >
               <li
-                className="sc-bYwzba kTXKgH"
+                className="sc-kLokih flDwLQ"
                 id="headerItem-0"
               >
                 in 3 months
               </li>
               <li
-                className="sc-bYwzba kTXKgH"
+                className="sc-kLokih flDwLQ"
                 id="headerItem-1"
               >
                 owner 2
@@ -653,23 +622,14 @@ exports[`Content: Component should render correctly 1`] = `
             </ul>
           </div>
         </div>
-        <h1
-          className="sc-hiKfjK iqLpn"
+        <a
+          className="sc-gXfWUo irCIKP"
+          href="/section/2"
           id="section-2"
           onClick={[Function]}
-          style={
-            Object {
-              "fontFamily": "Inter, \\"Helvetica Neue\\", Helvetica, Arial, sans-serif",
-              "fontSize": "24px",
-              "fontWeight": 600,
-              "letterSpacing": "-0.12px",
-              "lineHight": 1.25,
-              "margin": 0,
-            }
-          }
         >
           Section name 2
-        </h1>
+        </a>
       </div>
       <div
         style={
@@ -693,89 +653,37 @@ exports[`Content: Component should render correctly 1`] = `
       <div
         className="sc-ksluoS hnruJh"
       >
-        <button
+        <a
+          className="sc-fFSRdu ixzilk"
           disabled={false}
+          href="/project/projectId"
           id="backBtn"
           onClick={[Function]}
-          style={
-            Object {
-              "backgroundColor": "#1d1d20",
-              "border": "none",
-              "borderRadius": "48px",
-              "color": "#FFF",
-              "cursor": "pointer",
-              "display": "inline-block",
-              "fill": "#FFF",
-              "fontSize": "18px",
-              "height": "60px",
-              "margin": "0",
-              "minHeight": "48px",
-              "outline": "none",
-              "padding": "0",
-              "transition": "background 0.25s ease-in-out, color 0.25s ease-in-out",
-              "width": "60px",
-            }
-          }
+        >
+          Back
+        </a>
+        <a
+          className="sc-iemXMA fCxdnz"
+          href="/project/projectId/section/create"
+          onClick={[Function]}
         >
           <svg
+            id="creatSectionMobile"
             style={
               Object {
-                "fill": "#FFF",
-                "height": "60px",
-                "width": "60px",
+                "fill": "#000",
+                "height": 60,
+                "shapeRendering": "crispEdges",
+                "width": 60,
               }
             }
             viewBox="0 0 60 60"
           >
             <path
-              d="M25.857 17L28 19.083 18.828 28H45v3H18.828L28 39.917 25.857 42 13 29.5 25.857 17z"
+              d="M32 15v13h13v4H32v13h-4V32H15v-4h13V15h4z"
             />
           </svg>
-        </button>
-        <div
-          className="sc-bkbjAj bEVLyt"
-        >
-          <button
-            disabled={false}
-            id="creatSectionMobile"
-            onClick={[Function]}
-            style={
-              Object {
-                "backgroundColor": "#FFF",
-                "border": "none",
-                "borderRadius": "48px",
-                "color": "#000",
-                "cursor": "pointer",
-                "display": "inline-block",
-                "fill": "#FFF",
-                "fontSize": "18px",
-                "height": "60px",
-                "margin": "0",
-                "minHeight": "48px",
-                "outline": "none",
-                "padding": "0",
-                "transition": "background 0.25s ease-in-out, color 0.25s ease-in-out",
-                "width": "60px",
-              }
-            }
-          >
-            <svg
-              style={
-                Object {
-                  "fill": "#000",
-                  "height": "60px",
-                  "shapeRendering": "crispEdges",
-                  "width": "60px",
-                }
-              }
-              viewBox="0 0 60 60"
-            >
-              <path
-                d="M32 15v13h13v4H32v13h-4V32H15v-4h13V15h4z"
-              />
-            </svg>
-          </button>
-        </div>
+        </a>
       </div>
     </div>
   </div>

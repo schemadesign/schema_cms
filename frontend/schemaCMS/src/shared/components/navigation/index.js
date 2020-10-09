@@ -1,6 +1,5 @@
 export {
   NavigationContainer,
-  BackArrowButton,
   PlusButton,
   BackButton,
   NextButton,

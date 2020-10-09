@@ -406,7 +406,7 @@ exports[`CustomElement: Component should render correctly 1`] = `
             </div>
           </div>
           <div
-            className="sc-bYwzba cJqpZQ"
+            className="sc-kLokih bfeYDD"
           >
             <div
               style={
@@ -476,7 +476,7 @@ exports[`CustomElement: Component should render correctly 1`] = `
               />
             </div>
             <div
-              className="sc-iklIKw cDnmGA"
+              className="sc-jJMGHv dZRdTb"
               id="valuePath.0.nameError"
             />
           </div>

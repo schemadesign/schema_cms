@@ -274,28 +274,22 @@ exports[`BlockTemplate: Component should render correctly 1`] = `
             href="/"
             id="aboutNavBtn"
             onClick={[Function]}
-            rel="noreferrer"
-            target="_blank"
           >
             About Schema CMS
           </a>
           <a
             className="sc-fujyUd cmhbQC"
-            href="https://github.com/schemadesign/schema_cms/blob/master/backend/app/docs/public_api/api_calls.md"
+            href="/"
             id="apiNavBtn"
             onClick={[Function]}
-            rel="noreferrer"
-            target="_blank"
           >
             API Doc
           </a>
           <a
             className="sc-fujyUd cmhbQC"
-            href="https://github.com/schemadesign/schema_cms"
+            href="/"
             id="repositoryNavBtn"
             onClick={[Function]}
-            rel="noreferrer"
-            target="_blank"
           >
             GitHub Repository
           </a>
@@ -346,7 +340,7 @@ exports[`BlockTemplate: Component should render correctly 1`] = `
     </div>
   </div>
   <div
-    className="sc-eirseW gwKqnh"
+    className="sc-lbVuaH gVgDRK"
   >
     <div
       style={
@@ -368,7 +362,7 @@ exports[`BlockTemplate: Component should render correctly 1`] = `
         }
       >
         <a
-          className="sc-gGLyOc dKFLzv"
+          className="sc-ckTRkR hVaVwp"
           href="/project/1/"
           onClick={[Function]}
           style={
@@ -390,7 +384,7 @@ exports[`BlockTemplate: Component should render correctly 1`] = `
             Project
           </span>
           <h3
-            className="sc-ckTRkR gwWYAO"
+            className="sc-fbIXFq ijAnMD"
             style={
               Object {
                 "fontFamily": "Inter, \\"Helvetica Neue\\", Helvetica, Arial, sans-serif",
@@ -426,7 +420,7 @@ exports[`BlockTemplate: Component should render correctly 1`] = `
         }
       >
         <a
-          className="sc-gGLyOc dKFLzv"
+          className="sc-ckTRkR hVaVwp"
           href="/project/1/templates"
           onClick={[Function]}
           style={
@@ -448,7 +442,7 @@ exports[`BlockTemplate: Component should render correctly 1`] = `
             Tab
           </span>
           <h3
-            className="sc-ckTRkR gwWYAO"
+            className="sc-fbIXFq ijAnMD"
             style={
               Object {
                 "fontFamily": "Inter, \\"Helvetica Neue\\", Helvetica, Arial, sans-serif",
@@ -484,7 +478,7 @@ exports[`BlockTemplate: Component should render correctly 1`] = `
         }
       >
         <a
-          className="sc-gGLyOc dKFLzv"
+          className="sc-ckTRkR hVaVwp"
           href="/project/1/block-templates"
           onClick={[Function]}
           style={
@@ -506,7 +500,7 @@ exports[`BlockTemplate: Component should render correctly 1`] = `
             Library
           </span>
           <h3
-            className="sc-ckTRkR gwWYAO"
+            className="sc-fbIXFq ijAnMD"
             style={
               Object {
                 "fontFamily": "Inter, \\"Helvetica Neue\\", Helvetica, Arial, sans-serif",
@@ -542,7 +536,7 @@ exports[`BlockTemplate: Component should render correctly 1`] = `
         }
       >
         <div
-          className="sc-lbVuaH fYCXJS"
+          className="sc-gGLyOc idsrnr"
         >
           <span
             style={
@@ -555,7 +549,7 @@ exports[`BlockTemplate: Component should render correctly 1`] = `
             Template
           </span>
           <h3
-            className="sc-ckTRkR gwWYAO"
+            className="sc-fbIXFq ijAnMD"
             style={
               Object {
                 "fontFamily": "Inter, \\"Helvetica Neue\\", Helvetica, Arial, sans-serif",
@@ -576,16 +570,16 @@ exports[`BlockTemplate: Component should render correctly 1`] = `
     onSubmit={[Function]}
   >
     <div
-      className="sc-iklIKw jTAzuB"
+      className="sc-jJMGHv fVskba"
     >
       <div
-        className="sc-jJMGHv cuLahh"
+        className="sc-hiKfjK fkOTlE"
       >
         <div
-          className="sc-hiKfjK jXYnnJ"
+          className="sc-gXfWUo fIDrtI"
         >
           <h2
-            className="sc-gXfWUo llQRtL"
+            className="sc-cBoprd eErWUv"
             id="desktopHeaderTitle"
             style={
               Object {
@@ -599,7 +593,7 @@ exports[`BlockTemplate: Component should render correctly 1`] = `
             Block Template
           </h2>
           <h1
-            className="sc-cBoprd eErWUv"
+            className="sc-ciSmjq jGYlpo"
             id="desktopHeaderSubtitle"
             style={
               Object {
@@ -613,10 +607,10 @@ exports[`BlockTemplate: Component should render correctly 1`] = `
             }
           >
             <div
-              className="sc-iwaifL eQTAkN"
+              className="sc-cxNIbT etZTuz"
             >
               <div
-                className="sc-jcwofb jRevJQ"
+                className="sc-carGAA dcSVrW"
               >
                 <div
                   style={
@@ -691,12 +685,12 @@ exports[`BlockTemplate: Component should render correctly 1`] = `
                   />
                 </div>
                 <div
-                  className="sc-iTVIwl jPDUAq"
+                  className="sc-iBzFoy kiMlWq"
                   id="nameError"
                 />
               </div>
               <div
-                className="sc-cxNIbT fVgRQz"
+                className="sc-lmgQde cBfMfP"
               >
                 <svg
                   style={
@@ -714,7 +708,7 @@ exports[`BlockTemplate: Component should render correctly 1`] = `
                   />
                 </svg>
                 <div
-                  className="sc-iNiQeE clNdVA"
+                  className="sc-jffIyK cvvZQa"
                   id="blockTemplateCopyButton"
                   onClick={[Function]}
                 >
@@ -738,7 +732,7 @@ exports[`BlockTemplate: Component should render correctly 1`] = `
           </h1>
         </div>
         <div
-          className="sc-ciSmjq"
+          className="sc-jcwofb"
         >
           <div
             className="sc-bkbjAj iFdJhe"
@@ -788,10 +782,10 @@ exports[`BlockTemplate: Component should render correctly 1`] = `
         </div>
       </div>
       <div
-        className="sc-lmgQde ggpnCN"
+        className="sc-iJCRLp bOYzWV"
       >
         <div
-          className="sc-jcwofb hwjkIm"
+          className="sc-carGAA dZtKqw"
         >
           <div
             style={
@@ -856,24 +850,24 @@ exports[`BlockTemplate: Component should render correctly 1`] = `
             />
           </div>
           <div
-            className="sc-iTVIwl jPDUAq"
+            className="sc-iBzFoy kiMlWq"
             id="nameError"
           />
         </div>
       </div>
       <div
-        className="sc-iBzFoy imNLie"
+        className="sc-efHXLn jVOFoC"
       >
         <div
-          className="sc-efHXLn eqQaLR"
+          className="sc-cTJmaU bsxmQs"
           id="tagsCounter"
         />
         2 Elements
         <div
-          className="sc-efHXLn eqQaLR"
+          className="sc-cTJmaU bsxmQs"
         >
           <div
-            className="sc-giAqnE bzskBI"
+            className="sc-ezzayL ehyycY"
           >
             <div
               className="sc-bkbjAj iFdJhe"
@@ -975,14 +969,14 @@ exports[`BlockTemplate: Component should render correctly 1`] = `
               }
             >
               <div
-                className="sc-jNnnWF kYUclw"
+                className="sc-dPaNSN KknpL"
               >
                 <div
-                  className="sc-dPaNSN fGYIph"
+                  className="sc-bBjRzc bJmnTa"
                 >
                   <div>
                     <div
-                      className="sc-bYwzba hpEWqb"
+                      className="sc-kLokih dBjrEo"
                     >
                       <svg
                         style={
@@ -1003,7 +997,7 @@ exports[`BlockTemplate: Component should render correctly 1`] = `
                     </div>
                   </div>
                   <div
-                    className="sc-hTRkEk jdYmFm"
+                    className="sc-jgPznn dfhxwm"
                   >
                     <svg
                       style={
@@ -1023,7 +1017,7 @@ exports[`BlockTemplate: Component should render correctly 1`] = `
                   </div>
                 </div>
                 <div
-                  className="sc-jcwofb jRevJQ"
+                  className="sc-carGAA dcSVrW"
                 >
                   <div
                     style={
@@ -1097,12 +1091,12 @@ exports[`BlockTemplate: Component should render correctly 1`] = `
                     />
                   </div>
                   <div
-                    className="sc-iTVIwl jPDUAq"
+                    className="sc-iBzFoy kiMlWq"
                     id="elements.0.nameError"
                   />
                 </div>
                 <div
-                  className="sc-dPaNSN fGYIph"
+                  className="sc-bBjRzc bJmnTa"
                 >
                   <svg
                     style={
@@ -1227,14 +1221,14 @@ exports[`BlockTemplate: Component should render correctly 1`] = `
               }
             >
               <div
-                className="sc-jNnnWF kYUclw"
+                className="sc-dPaNSN KknpL"
               >
                 <div
-                  className="sc-dPaNSN fGYIph"
+                  className="sc-bBjRzc bJmnTa"
                 >
                   <div>
                     <div
-                      className="sc-bYwzba hpEWqb"
+                      className="sc-kLokih dBjrEo"
                     >
                       <svg
                         style={
@@ -1255,7 +1249,7 @@ exports[`BlockTemplate: Component should render correctly 1`] = `
                     </div>
                   </div>
                   <div
-                    className="sc-hTRkEk jdYmFm"
+                    className="sc-jgPznn dfhxwm"
                   >
                     <svg
                       style={
@@ -1275,7 +1269,7 @@ exports[`BlockTemplate: Component should render correctly 1`] = `
                   </div>
                 </div>
                 <div
-                  className="sc-jcwofb jRevJQ"
+                  className="sc-carGAA dcSVrW"
                 >
                   <div
                     style={
@@ -1349,12 +1343,12 @@ exports[`BlockTemplate: Component should render correctly 1`] = `
                     />
                   </div>
                   <div
-                    className="sc-iTVIwl jPDUAq"
+                    className="sc-iBzFoy kiMlWq"
                     id="elements.1.nameError"
                   />
                 </div>
                 <div
-                  className="sc-dPaNSN fGYIph"
+                  className="sc-bBjRzc bJmnTa"
                 >
                   <svg
                     style={
@@ -1444,13 +1438,13 @@ exports[`BlockTemplate: Component should render correctly 1`] = `
          
       </span>
       <div
-        className="sc-iemXMA isfLVp"
+        className="sc-dIvqjp jXrriE"
       >
         <div
-          className="sc-dIvqjp InZjL"
+          className="sc-hHEjAm jmhRkI"
         >
           <div
-            className="sc-kfYqjs caQOWm"
+            className="sc-fKgIGh koAony"
           >
             <div>
               <input
@@ -1502,23 +1496,23 @@ exports[`BlockTemplate: Component should render correctly 1`] = `
               </label>
             </div>
             <div
-              className="sc-dlMBXb kPDVdH"
+              className="sc-kfYqjs kXdbGC"
             >
               <label
-                className="sc-hHEjAm ljULGy"
+                className="sc-dlMBXb ijxLiM"
                 htmlFor="isAvailable"
               >
                 Make it Available
               </label>
               <span
-                className="sc-bCwgka blHjQE"
+                className="sc-iwaifL cuPxiV"
               >
                 This Template is currently available for Editors
               </span>
             </div>
           </div>
           <div
-            className="sc-fKgIGh dGUztb"
+            className="sc-bCwgka fDpsc"
             id="removeBlock"
             onClick={[Function]}
           >
@@ -1552,32 +1546,15 @@ exports[`BlockTemplate: Component should render correctly 1`] = `
         <div
           className="sc-ksluoS hnruJh"
         >
-          <button
-            className="sc-fnVYJo lmnryI"
+          <a
+            className="sc-fFSRdu ixzilk"
             disabled={false}
+            href="/project/1/block-templates"
             id="cancelBtn"
             onClick={[Function]}
-            style={
-              Object {
-                "backgroundColor": "#1d1d20",
-                "border": "none",
-                "borderRadius": "48px",
-                "color": "#FFF",
-                "cursor": "pointer",
-                "display": "inline-block",
-                "fill": "#FFF",
-                "fontSize": "18px",
-                "margin": "0",
-                "minHeight": "48px",
-                "outline": "none",
-                "padding": "0",
-                "transition": "background 0.25s ease-in-out, color 0.25s ease-in-out",
-              }
-            }
-            type="button"
           >
             Back
-          </button>
+          </a>
           <button
             className="sc-fnVYJo lmnryI"
             disabled={true}
