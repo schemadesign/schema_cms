@@ -1,7 +1,7 @@
 import React, { PureComponent, Fragment } from 'react';
 import { Redirect, Route, Switch } from 'react-router-dom';
 import PropTypes from 'prop-types';
-import { always, pathEq, pathSatisfies, propIs, is, T, cond, prop, path as ramdaPath } from 'ramda';
+import { always, pathEq } from 'ramda';
 
 import { CreateFilter } from './createFilter';
 import { Source } from './source';
@@ -33,9 +33,8 @@ import { CreateDataSourceState } from './createDataSourceState';
 
 export default class DataSource extends PureComponent {
   static propTypes = {
-    dataSource: PropTypes.object.isRequired,
+    project: PropTypes.object.isRequired,
     fetchDataSource: PropTypes.func.isRequired,
-    fetchProject: PropTypes.func.isRequired,
     match: PropTypes.shape({
       path: PropTypes.string.isRequired,
       params: PropTypes.shape({
@@ -54,7 +53,6 @@ export default class DataSource extends PureComponent {
       const dataSourceId = getMatchParam(this.props, 'dataSourceId');
 
       await this.props.fetchDataSource({ dataSourceId });
-      await this.props.fetchProject({ projectId: this.props.dataSource.project.id });
     } catch (error) {
       reportError(error);
       this.setState({ error });
@@ -86,20 +84,15 @@ export default class DataSource extends PureComponent {
     const { loading, error } = this.state;
     const {
       match: { path },
-      dataSource,
+      project,
     } = this.props;
     const sourcePath = `${path}/source`;
     const jobListPath = `${path}/job`;
     const hasActiveJob = pathEq(['dataSource', 'activeJob'], null, this.props);
-    const projectId = cond([
-      [propIs(Number, 'project'), prop('project')],
-      [pathSatisfies(is(Number), ['project', 'id']), ramdaPath(['project', 'id'])],
-      [T, always('')],
-    ])(dataSource);
 
     return (
       <Fragment>
-        <ProjectTabs active={SOURCES} url={`/project/${projectId}`} />
+        <ProjectTabs active={SOURCES} url={`/project/${project.id}`} />
         <LoadingWrapper loading={loading} error={error}>
           <Switch>
             <Redirect exact path={path} to={sourcePath} />

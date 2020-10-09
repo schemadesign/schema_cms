@@ -9,6 +9,7 @@ import { watchDataWranglingScripts } from '../dataWranglingScripts.sagas';
 import { DataWranglingScriptsRoutines } from '../dataWranglingScripts.redux';
 import { selectDataSource } from '../../dataSource';
 import { selectDataWranglingScripts } from '../dataWranglingScripts.selectors';
+import { selectProject } from '../../project';
 
 describe('DataWranglingScripts: sagas', () => {
   const defaultState = Immutable({});
@@ -68,7 +69,7 @@ describe('DataWranglingScripts: sagas', () => {
   describe('sendList', () => {
     it('should dispatch a success action', async () => {
       const payload = { dataSourceId: '1', steps: ['data 1', 'data 2'] };
-      const selectedProject = { id: 1, project: 1 };
+      const selectedProject = { id: 1, name: 1 };
       const response = {
         project: {
           id: 1,
@@ -79,7 +80,7 @@ describe('DataWranglingScripts: sagas', () => {
 
       await expectSaga(watchDataWranglingScripts)
         .withState(defaultState)
-        .provide([[select(selectDataSource), selectedProject]])
+        .provide([[select(selectProject), selectedProject]])
         .put(DataWranglingScriptsRoutines.sendList.success())
         .dispatch(DataWranglingScriptsRoutines.sendList(payload))
         .silentRun();

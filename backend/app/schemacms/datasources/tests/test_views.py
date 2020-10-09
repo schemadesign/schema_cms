@@ -823,6 +823,7 @@ class TestRevertJobView:
         assert response.status_code == status.HTTP_200_OK
         assert data_source.active_job != old_active_job
         assert data_source.active_job == jobs[1]
+        assert response.data['project'] == data_source.project.project_info
 
     @staticmethod
     def get_url(pk):

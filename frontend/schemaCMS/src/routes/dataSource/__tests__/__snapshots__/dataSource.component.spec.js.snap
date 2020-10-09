@@ -8,7 +8,7 @@ exports[`DataSource: Component should render correctly 1`] = `
   />
   <LoadingWrapper
     error={null}
-    loading={true}
+    loading={false}
     noData={false}
     noDataContent={null}
   >
@@ -93,7 +93,7 @@ exports[`DataSource: Component should render without rest steps 1`] = `
   />
   <LoadingWrapper
     error={null}
-    loading={true}
+    loading={false}
     noData={false}
     noDataContent={null}
   >
@@ -113,10 +113,58 @@ exports[`DataSource: Component should render without rest steps 1`] = `
         exact={true}
         path="path/job"
       />
-      <Redirect
-        path="path"
-        to="path/source"
-      />
+      <Switch>
+        <Route
+          component={[Function]}
+          exact={true}
+          path="path/preview"
+        />
+        <Route
+          component={[Function]}
+          exact={true}
+          path="path/steps"
+        />
+        <Route
+          component={[Function]}
+          exact={true}
+          path="path/filters/add"
+        />
+        <Route
+          component={[Function]}
+          exact={true}
+          path="path/filters"
+        />
+        <Route
+          component={[Function]}
+          exact={true}
+          path="path/result"
+        />
+        <Route
+          component={[Function]}
+          exact={true}
+          path="path/tag"
+        />
+        <Route
+          component={[Function]}
+          exact={true}
+          path="path/metadata"
+        />
+        <Route
+          component={[Function]}
+          exact={true}
+          path="path/state/create"
+        />
+        <Route
+          component={[Function]}
+          exact={true}
+          path="path/state"
+        />
+        <Route
+          component={[Function]}
+          exact={true}
+          path="path/*"
+        />
+      </Switch>
     </Switch>
   </LoadingWrapper>
 </Fragment>
@@ -150,10 +198,58 @@ exports[`DataSource: Component should render without routing 1`] = `
         exact={true}
         path="path/job"
       />
-      <Redirect
-        path="path"
-        to="path/source"
-      />
+      <Switch>
+        <Route
+          component={[Function]}
+          exact={true}
+          path="path/preview"
+        />
+        <Route
+          component={[Function]}
+          exact={true}
+          path="path/steps"
+        />
+        <Route
+          component={[Function]}
+          exact={true}
+          path="path/filters/add"
+        />
+        <Route
+          component={[Function]}
+          exact={true}
+          path="path/filters"
+        />
+        <Route
+          component={[Function]}
+          exact={true}
+          path="path/result"
+        />
+        <Route
+          component={[Function]}
+          exact={true}
+          path="path/tag"
+        />
+        <Route
+          component={[Function]}
+          exact={true}
+          path="path/metadata"
+        />
+        <Route
+          component={[Function]}
+          exact={true}
+          path="path/state/create"
+        />
+        <Route
+          component={[Function]}
+          exact={true}
+          path="path/state"
+        />
+        <Route
+          component={[Function]}
+          exact={true}
+          path="path/*"
+        />
+      </Switch>
     </Switch>
   </LoadingWrapper>
 </Fragment>

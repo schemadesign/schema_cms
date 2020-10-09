@@ -331,7 +331,8 @@ describe('DataSource: sagas', () => {
 
       const scripts = [{ id: 1, options: {}, execOrder: 0 }];
       const payload = { jobId: '1', dataSourceId: '1' };
-      const response = { id: '1', activeJob: { scripts } };
+      const project = { id: 1, name: 'name' };
+      const response = { results: { id: '1', activeJob: { scripts } }, project };
 
       mockApi
         .post(`${DATA_SOURCES_PATH}/${payload.dataSourceId}/revert-job`, { id: payload.jobId })
@@ -339,7 +340,8 @@ describe('DataSource: sagas', () => {
 
       await expectSaga(watchDataSource)
         .withState(defaultState)
-        .put(DataSourceRoutines.revertToJob.success(response))
+        .put(ProjectRoutines.setProject.trigger(response.project))
+        .put(DataSourceRoutines.revertToJob.success(response.results))
         .dispatch(DataSourceRoutines.revertToJob(payload))
         .silentRun();
       expect(browserHistory.push).toBeCalledWith('/datasource/1/result');
@@ -351,14 +353,16 @@ describe('DataSource: sagas', () => {
 
       const scripts = [];
       const payload = { jobId: '1', dataSourceId: '1' };
-      const response = { id: '1', activeJob: { scripts } };
+      const project = { id: 1, name: 'name' };
+      const response = { results: { id: '1', activeJob: { scripts } }, project };
 
       mockApi
         .post(`${DATA_SOURCES_PATH}/${payload.dataSourceId}/revert-job`, { id: payload.jobId })
         .reply(OK, response);
       await expectSaga(watchDataSource)
         .withState(defaultState)
-        .put(DataSourceRoutines.revertToJob.success(response))
+        .put(ProjectRoutines.setProject.trigger(response.project))
+        .put(DataSourceRoutines.revertToJob.success(response.results))
         .dispatch(DataSourceRoutines.revertToJob(payload))
         .silentRun();
       expect(browserHistory.push).toBeCalledWith('/datasource/1/preview');
