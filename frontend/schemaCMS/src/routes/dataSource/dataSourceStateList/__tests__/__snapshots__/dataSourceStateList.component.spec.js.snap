@@ -47,7 +47,7 @@ exports[`DataSourceStateList: Component should render correctly 1`] = `
                 "fontSize": "24px",
                 "fontWeight": 600,
                 "letterSpacing": "-0.12px",
-                "lineHight": 1.25,
+                "lineHeight": 1.25,
                 "margin": 0,
               }
             }
@@ -152,7 +152,7 @@ exports[`DataSourceStateList: Component should render correctly 1`] = `
                   "fontSize": "24px",
                   "fontWeight": 600,
                   "letterSpacing": "-0.12px",
-                  "lineHight": 1.25,
+                  "lineHeight": 1.25,
                   "margin": 0,
                 }
               }
@@ -374,7 +374,7 @@ exports[`DataSourceStateList: Component should render correctly 1`] = `
             "fontSize": "24px",
             "fontWeight": 600,
             "letterSpacing": "-0.12px",
-            "lineHight": 1.25,
+            "lineHeight": 1.25,
             "margin": 0,
           }
         }
@@ -1162,7 +1162,7 @@ exports[`DataSourceStateList: Component should render correctly when no tags 1`]
                 "fontSize": "24px",
                 "fontWeight": 600,
                 "letterSpacing": "-0.12px",
-                "lineHight": 1.25,
+                "lineHeight": 1.25,
                 "margin": 0,
               }
             }
@@ -1267,7 +1267,7 @@ exports[`DataSourceStateList: Component should render correctly when no tags 1`]
                   "fontSize": "24px",
                   "fontWeight": 600,
                   "letterSpacing": "-0.12px",
-                  "lineHight": 1.25,
+                  "lineHeight": 1.25,
                   "margin": 0,
                 }
               }
@@ -1489,7 +1489,7 @@ exports[`DataSourceStateList: Component should render correctly when no tags 1`]
             "fontSize": "24px",
             "fontWeight": 600,
             "letterSpacing": "-0.12px",
-            "lineHight": 1.25,
+            "lineHeight": 1.25,
             "margin": 0,
           }
         }
@@ -2224,7 +2224,7 @@ exports[`DataSourceStateList: Component should render correctly with loader 1`] 
                 "fontSize": "24px",
                 "fontWeight": 600,
                 "letterSpacing": "-0.12px",
-                "lineHight": 1.25,
+                "lineHeight": 1.25,
                 "margin": 0,
               }
             }
@@ -2329,7 +2329,7 @@ exports[`DataSourceStateList: Component should render correctly with loader 1`] 
                   "fontSize": "24px",
                   "fontWeight": 600,
                   "letterSpacing": "-0.12px",
-                  "lineHight": 1.25,
+                  "lineHeight": 1.25,
                   "margin": 0,
                 }
               }
@@ -2551,7 +2551,7 @@ exports[`DataSourceStateList: Component should render correctly with loader 1`] 
             "fontSize": "24px",
             "fontWeight": 600,
             "letterSpacing": "-0.12px",
-            "lineHight": 1.25,
+            "lineHeight": 1.25,
             "margin": 0,
           }
         }

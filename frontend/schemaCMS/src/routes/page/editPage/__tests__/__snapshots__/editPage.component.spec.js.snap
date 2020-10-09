@@ -47,7 +47,7 @@ exports[`EditPage: Component should render correctly 1`] = `
                 "fontSize": "24px",
                 "fontWeight": 600,
                 "letterSpacing": "-0.12px",
-                "lineHight": 1.25,
+                "lineHeight": 1.25,
                 "margin": 0,
               }
             }
@@ -152,7 +152,7 @@ exports[`EditPage: Component should render correctly 1`] = `
                   "fontSize": "24px",
                   "fontWeight": 600,
                   "letterSpacing": "-0.12px",
-                  "lineHight": 1.25,
+                  "lineHeight": 1.25,
                   "margin": 0,
                 }
               }
@@ -601,7 +601,7 @@ exports[`EditPage: Component should render correctly 1`] = `
                 "fontSize": "24px",
                 "fontWeight": 600,
                 "letterSpacing": "-0.12px",
-                "lineHight": 1.25,
+                "lineHeight": 1.25,
                 "margin": 0,
               }
             }
@@ -1516,7 +1516,6 @@ exports[`EditPage: Component should render correctly 1`] = `
                       "overflow": "hidden",
                       "textOverflow": "ellipsis",
                       "whiteSpace": "nowrap",
-                      "width": "100%",
                     }
                   }
                 >

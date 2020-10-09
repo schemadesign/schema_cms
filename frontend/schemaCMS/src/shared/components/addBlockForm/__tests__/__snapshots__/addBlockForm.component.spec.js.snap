@@ -71,7 +71,6 @@ exports[`AddBlockForm: Component should render a block template with added eleme
                   "overflow": "hidden",
                   "textOverflow": "ellipsis",
                   "whiteSpace": "nowrap",
-                  "width": "100%",
                 }
               }
             >
@@ -403,7 +402,6 @@ exports[`AddBlockForm: Component should render correctly 1`] = `
                   "overflow": "hidden",
                   "textOverflow": "ellipsis",
                   "whiteSpace": "nowrap",
-                  "width": "100%",
                 }
               }
             >
