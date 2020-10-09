@@ -841,7 +841,7 @@ exports[`PageList: Component should render correctly 1`] = `
                     autoComplete="off"
                     autoCorrect="off"
                     disabled={false}
-                    id="react-select-3-input"
+                    id="react-select-2-input"
                     onBlur={[Function]}
                     onChange={[Function]}
                     onFocus={[Function]}
@@ -1535,17 +1535,18 @@ exports[`PageList: Component should render correctly 1`] = `
               Make it Public
             </label>
             <span
-              className="sc-jNnnWF fFfLVA"
+              className="sc-jNnnWF klmmYW"
             >
               This Section is currently Public
               <span
                 className="sc-hTRkEk daYgSI"
               />
-              Visit Page: 
               <a
+                className="sc-amjdv kCIzyq"
                 href="http://project.domain"
+                target="_blank"
               >
-                http://project.domain
+                Visit Page
               </a>
             </span>
           </div>
@@ -1639,17 +1640,18 @@ exports[`PageList: Component should render correctly 1`] = `
               Make it available for RSS
             </label>
             <span
-              className="sc-jNnnWF fFfLVA"
+              className="sc-jNnnWF klmmYW"
             >
               This Section is currently disabled for RSS feed
               <span
                 className="sc-hTRkEk daYgSI"
               />
-              Visit Page: 
               <a
+                className="sc-amjdv kCIzyq"
                 href="http://project.domain"
+                target="_blank"
               >
-                http://project.domain
+                Visit Page
               </a>
             </span>
           </div>

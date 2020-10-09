@@ -5,12 +5,8 @@ import DataSource from './dataSource.component';
 import { withTheme } from '../../.storybook/decorators';
 
 export const defaultProps = {
-  dataSource: {
-    project: { id: '2' },
-    activeJob: null,
-  },
+  project: { id: 2 },
   fetchDataSource: Function.prototype,
-  fetchProject: Function.prototype,
   unmountDataSource: Function.prototype,
   match: {
     params: {
@@ -23,7 +19,6 @@ export const defaultProps = {
 export const propsWithActiveJob = {
   ...defaultProps,
   dataSource: {
-    project: { id: '2' },
     activeJob: {
       id: 1,
       scripts: [1],

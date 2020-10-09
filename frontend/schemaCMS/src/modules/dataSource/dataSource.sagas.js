@@ -331,13 +331,15 @@ function* revertToJob({ payload: { dataSourceId, jobId } }) {
 
     const { data } = yield api.post(`${DATA_SOURCES_PATH}/${dataSourceId}/revert-job`, { id: jobId });
 
-    yield put(DataSourceRoutines.revertToJob.success(data));
-    if (data.activeJob.scripts.length) {
+    yield put(ProjectRoutines.setProject.trigger(data.project));
+    yield put(DataSourceRoutines.revertToJob.success(data.results));
+    if (data.results.activeJob.scripts.length) {
       browserHistory.push(`/datasource/${dataSourceId}/${RESULT_PAGE}`);
     } else {
       browserHistory.push(`/datasource/${dataSourceId}/${PREVIEW_PAGE}`);
     }
   } catch (error) {
+    reportError(error);
     yield put(DataSourceRoutines.revertToJob.failure(error));
   } finally {
     yield put(DataSourceRoutines.revertToJob.fulfill());

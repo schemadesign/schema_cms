@@ -7,18 +7,17 @@ import { compose } from 'ramda';
 import { injectIntl } from 'react-intl';
 
 import DataSource from './dataSource.component';
-import { DataSourceRoutines, selectDataSource } from '../../modules/dataSource';
-import { ProjectRoutines } from '../../modules/project';
+import { DataSourceRoutines } from '../../modules/dataSource';
+import { selectProject } from '../../modules/project';
 
 const mapStateToProps = createStructuredSelector({
-  dataSource: selectDataSource,
+  project: selectProject,
 });
 
 export const mapDispatchToProps = dispatch => ({
   ...bindPromiseCreators(
     {
       fetchDataSource: promisifyRoutine(DataSourceRoutines.fetchOne),
-      fetchProject: promisifyRoutine(ProjectRoutines.fetchOne),
     },
     dispatch
   ),

@@ -1027,7 +1027,7 @@ exports[`DataSourceStateForm: Component should render correctly 1`] = `
             Make it Public
           </label>
           <span
-            className="sc-bkbjAj fzKSZT"
+            className="sc-bkbjAj hjwsvd"
           >
             This State is currently Private
           </span>

@@ -1418,17 +1418,18 @@ exports[`PageForm: Component should render correctly 1`] = `
             Make it Public
           </label>
           <span
-            className="sc-fujyUd bCoXQA"
+            className="sc-fujyUd dFHmEe"
           >
             This Page is currently Private
             <span
               className="sc-dIsAE byliSZ"
             />
-            Visit Page: 
             <a
+              className="sc-jOFreG iIgpix"
               href="pageUrl"
+              target="_blank"
             >
-              pageUrl
+              Visit Page
             </a>
           </span>
         </div>
@@ -2879,17 +2880,18 @@ exports[`PageForm: Component should render with page template 1`] = `
             Make it Public
           </label>
           <span
-            className="sc-fujyUd bCoXQA"
+            className="sc-fujyUd dFHmEe"
           >
             This Page is currently Private
             <span
               className="sc-dIsAE byliSZ"
             />
-            Visit Page: 
             <a
+              className="sc-jOFreG iIgpix"
               href="pageUrl"
+              target="_blank"
             >
-              pageUrl
+              Visit Page
             </a>
           </span>
         </div>

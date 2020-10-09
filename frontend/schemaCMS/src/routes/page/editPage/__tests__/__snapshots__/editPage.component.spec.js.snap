@@ -346,7 +346,7 @@ exports[`EditPage: Component should render correctly 1`] = `
     </div>
   </div>
   <div
-    className="sc-fuIRbl cSZyZw"
+    className="sc-eGJXgd hnUZUF"
   >
     <div
       style={
@@ -368,7 +368,7 @@ exports[`EditPage: Component should render correctly 1`] = `
         }
       >
         <a
-          className="sc-Gvgqn bGgeCz"
+          className="sc-dFRpvv cfgLmG"
           href="/project/1/"
           onClick={[Function]}
           style={
@@ -390,7 +390,7 @@ exports[`EditPage: Component should render correctly 1`] = `
             Project
           </span>
           <h3
-            className="sc-gsWdvU cuiZkR"
+            className="sc-bsatbK ldTXBE"
             style={
               Object {
                 "fontFamily": "Inter, \\"Helvetica Neue\\", Helvetica, Arial, sans-serif",
@@ -426,7 +426,7 @@ exports[`EditPage: Component should render correctly 1`] = `
         }
       >
         <a
-          className="sc-Gvgqn bGgeCz"
+          className="sc-dFRpvv cfgLmG"
           href="/project/1/content"
           onClick={[Function]}
           style={
@@ -448,7 +448,7 @@ exports[`EditPage: Component should render correctly 1`] = `
             Tab
           </span>
           <h3
-            className="sc-gsWdvU cuiZkR"
+            className="sc-bsatbK ldTXBE"
             style={
               Object {
                 "fontFamily": "Inter, \\"Helvetica Neue\\", Helvetica, Arial, sans-serif",
@@ -484,7 +484,7 @@ exports[`EditPage: Component should render correctly 1`] = `
         }
       >
         <a
-          className="sc-Gvgqn bGgeCz"
+          className="sc-dFRpvv cfgLmG"
           href="/section/sectionId"
           onClick={[Function]}
           style={
@@ -506,7 +506,7 @@ exports[`EditPage: Component should render correctly 1`] = `
             Section
           </span>
           <h3
-            className="sc-gsWdvU cuiZkR"
+            className="sc-bsatbK ldTXBE"
             style={
               Object {
                 "fontFamily": "Inter, \\"Helvetica Neue\\", Helvetica, Arial, sans-serif",
@@ -542,7 +542,7 @@ exports[`EditPage: Component should render correctly 1`] = `
         }
       >
         <div
-          className="sc-fcmNTy jvLuax"
+          className="sc-csTaMs iVsSux"
         >
           <span
             style={
@@ -555,7 +555,7 @@ exports[`EditPage: Component should render correctly 1`] = `
             Page
           </span>
           <h3
-            className="sc-gsWdvU cuiZkR"
+            className="sc-bsatbK ldTXBE"
             style={
               Object {
                 "fontFamily": "Inter, \\"Helvetica Neue\\", Helvetica, Arial, sans-serif",
@@ -2013,17 +2013,18 @@ exports[`EditPage: Component should render correctly 1`] = `
                 Make it Public
               </label>
               <span
-                className="sc-giAqnE EnCfY"
+                className="sc-giAqnE jQTtBS"
               >
                 This Page is currently Private
                 <span
                   className="sc-hiKfjK bCTQty"
                 />
-                Visit Page: 
                 <a
+                  className="sc-Gvgqn ijQYFr"
                   href="http://project.domain/page-name-2/page-name"
+                  target="_blank"
                 >
-                  http://project.domain/page-name-2/page-name
+                  Visit Page
                 </a>
               </span>
             </div>

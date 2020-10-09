@@ -935,7 +935,7 @@ exports[`BlockTemplateForm: Component should render correctly 1`] = `
             Make it Available
           </label>
           <span
-            className="sc-gKAblj dgJboc"
+            className="sc-gKAblj bbfmPW"
           >
             This Template is currently available for Editors
           </span>

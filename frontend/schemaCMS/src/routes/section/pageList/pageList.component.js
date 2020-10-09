@@ -68,6 +68,7 @@ import { LoadingWrapper } from '../../../shared/components/loadingWrapper';
 import { INITIAL_PAGE_SIZE } from '../../../shared/utils/api.constants';
 import { renderWhenTrue } from '../../../shared/utils/rendering';
 import { CopyButton } from '../../../shared/components/copyButton';
+import { PageLink } from '../../../theme/typography';
 
 const { EditIcon, BinIcon, HomeIcon } = Icons;
 const { Switch } = FormUI;
@@ -185,7 +186,7 @@ export const PageList = ({
   userRole,
   copyPage,
 }) => {
-  const [loading, setLoading] = useState(false);
+  const [loading, setLoading] = useState(true);
   const [page, setPage] = useState(0);
   const [error, setError] = useState(null);
   const { mainPage } = section;
@@ -206,7 +207,9 @@ export const PageList = ({
   const visitPage = domain ? (
     <Fragment>
       <CopySeparator />
-      <FormattedMessage {...messages.visitPage} values={{ page: <a href={pageUrl}>{pageUrl}</a> }} />
+      <PageLink href={pageUrl} target="_blank">
+        <FormattedMessage {...messages.visitPage} />
+      </PageLink>
     </Fragment>
   ) : null;
   const { handleSubmit, handleChange, values, isValid, dirty, ...restFormikProps } = useFormik({
@@ -239,6 +242,7 @@ export const PageList = ({
       const urlParams = getUrlParams(history);
       setLoading(true);
       await fetchPages({ sectionId, ...urlParams });
+      await fetchSection({ sectionId });
       setLoading(false);
     } catch (e) {
       reportError(e);
@@ -247,7 +251,6 @@ export const PageList = ({
   };
 
   useEffectOnce(() => {
-    fetchSection({ sectionId });
     fetchSectionFunc();
   });
 

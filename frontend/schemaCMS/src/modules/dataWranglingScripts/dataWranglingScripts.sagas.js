@@ -13,6 +13,7 @@ import browserHistory from '../../shared/utils/history';
 import { selectDataSource } from '../dataSource';
 import { STEPS_PAGE } from '../dataSource/dataSource.constants';
 import { selectDataWranglingScripts } from './dataWranglingScripts.selectors';
+import { selectProject } from '../project';
 
 function* fetchList({ payload: { dataSourceId, fromScript = false, uploadScript = false } }) {
   try {
@@ -46,9 +47,9 @@ function* sendList({ payload: { steps, dataSourceId } }) {
 
     yield api.post(`${DATA_SOURCES_PATH}/${dataSourceId}${DATA_WRANGLING_JOB_PATH}`, { steps });
 
-    const dataSource = yield select(selectDataSource);
+    const project = yield select(selectProject);
 
-    browserHistory.push(`/project/${dataSource.project.id}/datasource/`);
+    browserHistory.push(`/project/${project.id}/datasource/`);
     yield put(DataWranglingScriptsRoutines.sendList.success());
   } catch (e) {
     yield put(DataWranglingScriptsRoutines.sendList.failure());
