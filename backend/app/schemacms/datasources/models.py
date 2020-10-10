@@ -363,7 +363,7 @@ class DataSourceJob(MetaGeneratorMixin, SoftDeleteObject, TimeStampedModel, fsm.
         return f"DataSource Job #{self.pk}"
 
     def natural_key(self):
-        return self.datasource.natural_key() + (self.source_file_path, self.source_file_version)
+        return self.datasource.natural_key() + (self.is_active,)
 
     natural_key.dependencies = ["datasources.datasource", "datasources.wranglingscript"]
 

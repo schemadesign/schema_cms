@@ -54,7 +54,6 @@ class ProjectImportForm(forms.Form):
             for deserialized_object in serializers.deserialize(
                 "json", zip_file.read("objects.json"), handle_forward_references=True
             ):
-                print(deserialized_object)
                 object_fields = [f.name for f in deserialized_object.object._meta.get_fields()]
 
                 if isinstance(deserialized_object.object, models.Project):
