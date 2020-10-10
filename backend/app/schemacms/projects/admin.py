@@ -57,7 +57,8 @@ class ProjectImportForm(forms.Form):
                 object_fields = [f.name for f in deserialized_object.object._meta.get_fields()]
 
                 if isinstance(deserialized_object.object, models.Project):
-                    self.import_project_model(zip_file, deserialized_object)
+                    self.import_project_model(zip_file, deserialized_object, import_time)
+                    continue
 
                 if isinstance(deserialized_object.object, DataSource):
                     self.import_files(zip_file, deserialized_object, ("file",))
@@ -81,16 +82,21 @@ class ProjectImportForm(forms.Form):
             for obj in objs_with_deferred_fields:
                 obj.save_deferred_fields()
 
-    def import_project_model(self, zip_file, deserialized_object):
-        deserialized_object.object.owner = self.cleaned_data["owner"]
-        deserialized_object.save()
+    def import_project_model(self, zip_file, deserialized_object, import_time):
+        new_project = models.Project()
+        new_project.title = deserialized_object.object.title
+        new_project.owner = self.cleaned_data["owner"]
+        new_project.created = import_time
+        new_project.modified = import_time
+        new_project.status = deserialized_object.object.status
+        new_project.slug = deserialized_object.object.slug
 
-        project = deserialized_object.object
+        new_project.save()
 
         with zip_file.open(f"files/{deserialized_object.object.xml_file.name}", "r") as file:
-            key = f"rss/{project.id}/{project.title.lower().replace(' ', '-')}-rss.xml"
+            key = f"rss/{new_project.id}/{new_project.title.lower().replace(' ', '-')}-rss.xml"
             file = File(file, name=key)
-            deserialized_object.object.xml_file = file
+            new_project.xml_file = file
 
             s3.put_object(
                 Body=file,
@@ -99,6 +105,8 @@ class ProjectImportForm(forms.Form):
                 ACL="public-read",
                 ContentType="application/rss+xml",
             )
+
+            new_project.save(update_fields=["xml_file"])
 
     @staticmethod
     def import_files(zip_file, deserialized_object, file_attrs):
