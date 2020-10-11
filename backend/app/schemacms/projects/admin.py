@@ -20,6 +20,7 @@ import os
 from ..utils.services import s3
 
 from ..datasources.models import DataSource, DataSourceJob, DataSourceJobMetaData, DataSourceMeta
+from ..pages.models import PageBlockElement, CustomElementSet
 
 
 class ProjectImportForm(forms.Form):
@@ -50,12 +51,12 @@ class ProjectImportForm(forms.Form):
         with zipfile.ZipFile(input_zip, "r") as zip_file:
 
             objs_with_deferred_fields = []
+            custom_element_sets = {}
 
             for deserialized_object in serializers.deserialize(
                 "json", zip_file.read("objects.json"), handle_forward_references=True
             ):
                 object_fields = [f.name for f in deserialized_object.object._meta.get_fields()]
-
                 if isinstance(deserialized_object.object, models.Project):
                     self.import_project_model(zip_file, deserialized_object, import_time)
                     continue
@@ -66,6 +67,14 @@ class ProjectImportForm(forms.Form):
                     self.import_files(zip_file, deserialized_object, ("preview",))
                 if isinstance(deserialized_object.object, DataSourceJob):
                     self.import_files(zip_file, deserialized_object, ("result", "result_parquet"))
+                if isinstance(deserialized_object.object, PageBlockElement):
+                    if c_set := deserialized_object.object.custom_element_set:
+                        id_ = custom_element_sets.get(str(c_set.id))
+                        new_set, _ = CustomElementSet.objects.get_or_create(
+                            id=id_, defaults=dict(order=c_set.order)
+                        )
+                        custom_element_sets[str(c_set.id)] = new_set.id
+                        deserialized_object.object.custom_element_set = new_set
 
                 if "created" in object_fields and "modified" in object_fields:
                     deserialized_object.object.created = import_time
@@ -76,7 +85,7 @@ class ProjectImportForm(forms.Form):
 
                 deserialized_object.save()
 
-                if deserialized_object.deferred_fields:
+                if deserialized_object.deferred_fields is not None:
                     objs_with_deferred_fields.append(deserialized_object)
 
             for obj in objs_with_deferred_fields:

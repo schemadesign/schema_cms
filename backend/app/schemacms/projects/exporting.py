@@ -55,8 +55,9 @@ def export_project(pk, using=DEFAULT_DB_ALIAS, output_format="json"):
     non_active_jobs = get_non_active_jobs(flatten)
     non_active_jobs_steps = get_non_active_jobs_steps(flatten, non_active_jobs)
     non_active_jobs_metas = get_non_active_jobs_metas(flatten, non_active_jobs)
+    custom_element_sets = get_custom_element_set(flatten)
 
-    elements_to_remove = non_active_jobs | non_active_jobs_steps | non_active_jobs_metas
+    elements_to_remove = non_active_jobs | non_active_jobs_steps | non_active_jobs_metas | custom_element_sets
     flatten = flatten - elements_to_remove
 
     sorted_flatten = sorted(flatten, key=lambda i: keyorder.index(i._meta.model_name))
@@ -96,3 +97,7 @@ def get_non_active_jobs_metas(data, non_active_jobs):
     return set(
         filter(lambda x: x._meta.model_name == "datasourcejobmetadata" and x.job in non_active_jobs, data)
     )
+
+
+def get_custom_element_set(data):
+    return set(filter(lambda x: x._meta.model_name == "customelementset", data))

@@ -4,6 +4,7 @@ from django.core.files.base import ContentFile
 
 from . import constants
 from ..states.models import State
+from ..pages.models import CustomElementSet
 
 
 class BaseElement:
@@ -78,8 +79,7 @@ class CustomElement(BaseElement):
     def get_attribute(self, instance):
         from .serializers import PageBlockElementSerializer
 
-        elements_sets = instance.elements_sets.all().order_by("order")
-
+        elements_sets_ids = instance.sets_elements.values_list("custom_element_set", flat=True).distinct()
         res = [
             {
                 "id": elements_set.id,
@@ -88,7 +88,7 @@ class CustomElement(BaseElement):
                     elements_set.elements.order_by("order"), many=True
                 ).data,
             }
-            for elements_set in elements_sets
+            for elements_set in CustomElementSet.objects.filter(id__in=elements_sets_ids).order_by("order")
         ]
 
         return res

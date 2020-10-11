@@ -177,10 +177,13 @@ class Page(Content):
     def delete_blocks(self, blocks: list = None):
         if not blocks:
             self.page_blocks.all().delete()
+            self.page_blocks.all_with_deleted().delete()
         else:
             self.page_blocks.filter(id__in=blocks).delete()
+            self.page_blocks.all_with_deleted().filter(id__in=blocks).delete()
 
     def add_tags(self, tags_list):
+        self.tags.all().delete()
         self.tags.all().delete()
 
         for tag in tags_list:
@@ -205,6 +208,7 @@ class Page(Content):
         self.publish_date = now
 
         self.delete_blocks()
+        self.tags.all().delete()
         self.tags.all().delete()
 
         for block in draft.page_blocks.all():
@@ -314,6 +318,9 @@ class PageBlockElement(Element):
         storage=S3Boto3Storage(bucket=settings.AWS_STORAGE_PAGES_BUCKET_NAME),
         upload_to=file_upload_path,
     )
+    parent = models.ForeignKey(
+        "PageBlockElement", on_delete=models.CASCADE, related_name="sets_elements", null=True
+    )
     custom_element_set = models.ForeignKey(
         "CustomElementSet", on_delete=models.CASCADE, related_name="elements", null=True
     )
@@ -322,8 +329,13 @@ class PageBlockElement(Element):
 
     _clone_one_to_one_fields = ["observable_hq"]
 
+    objects = managers.PageBlockElementManager()
+
     def natural_key(self):
-        return self.block.page.project.title, self.block.page.name, self.block.name, self.order
+        if hasattr(self.block, "page"):
+            return (self.name, self.order, self.custom_element_set, self.parent) + self.block.natural_key()
+        if hasattr(self.block, "block"):
+            return self.name, self.order + self.block.project.title, self.block.name
 
     natural_key.dependencies = ["states.state", "pages.pageblock"]
 
@@ -346,7 +358,7 @@ class PageBlockElement(Element):
             element_set_order = elements_set.get("order")
 
             custom_element_set, _ = CustomElementSet.objects.update_or_create(
-                id=elements_set.pop("id", None), defaults=dict(custom_element=self, order=element_set_order),
+                id=elements_set.pop("id", None), defaults=dict(order=element_set_order),
             )
 
             set_elements = elements_set.get("elements", [])
@@ -377,14 +389,16 @@ class PageBlockElement(Element):
 
             element, _ = PageBlockElement.objects.update_or_create(
                 id=element.pop("id", None),
-                defaults=dict(block=self.block, custom_element_set=custom_element_set, **element),
+                defaults=dict(
+                    block=self.block, parent=self, custom_element_set=custom_element_set, **element
+                ),
             )
 
             if element_type == constants.ElementType.OBSERVABLE_HQ:
                 self.create_update_observable_element(element_value, element)
 
     def delete_custom_elements_sets(self, ids_to_delete):
-        self.elements_sets.filter(id__in=ids_to_delete).delete()
+        CustomElementSet.objects.filter(id__in=ids_to_delete).delete()
 
     def create_update_observable_element(self, value, element=None):
         element_instance = element if element else self
@@ -410,22 +424,24 @@ class PageBlockElement(Element):
         else:
             return self.clone_simple_element(block)
 
-    def clone_simple_element(self, block=None, elements_set=None):
+    def clone_simple_element(self, block=None, parent=None, elements_set=None):
 
         attrs = {"block": block}
 
-        if elements_set:
+        if elements_set and parent:
             attrs["custom_element_set"] = elements_set
+            attrs["parent"] = parent
 
         return self.make_clone(attrs=attrs)
 
-    def clone_observable_element(self, block=None, elements_set=None):
+    def clone_observable_element(self, block=None, parent=None, elements_set=None):
         new_obs = self.observable_hq.make_clone()
 
         attrs = {"block": block, "observable_hq": new_obs}
 
-        if elements_set:
+        if elements_set and parent:
             attrs["custom_element_set"] = elements_set
+            attrs["parent"] = parent
 
         return self.make_clone(attrs=attrs)
 
@@ -433,30 +449,25 @@ class PageBlockElement(Element):
         block = block if block else self.block
         new_ele = self.make_clone(attrs={"block": block})
 
-        for element_set in self.elements_sets.all():
-            new_set = element_set.make_clone(attrs={"custom_element": new_ele})
+        elements_sets = {element.custom_element_set for element in self.sets_elements.all()}
+
+        for element_set in elements_sets:
+            new_set = element_set.make_clone()
 
             for set_element in element_set.elements.all():
                 if set_element.type == constants.ElementType.OBSERVABLE_HQ:
-                    set_element.clone_observable_element(block=block, elements_set=new_set)
+                    set_element.clone_observable_element(block=block, parent=new_ele, elements_set=new_set)
                 else:
-                    set_element.clone_simple_element(block=block, elements_set=new_set)
+                    set_element.clone_simple_element(block=block, parent=new_ele, elements_set=new_set)
 
         return new_ele
 
 
 class CustomElementSet(CloneMixin, SoftDeleteObject):
-    custom_element = models.ForeignKey(
-        PageBlockElement, on_delete=models.CASCADE, related_name="elements_sets"
-    )
     order = models.PositiveIntegerField(default=0)
 
     def __str__(self):
         return f"{self.id}"
-
-    # def natural_key(self):
-    #     return self.custom_element.natural_key() + (self.order,)
-    # natural_key.dependencies = []
 
 
 class PageBlockObservableElement(CloneMixin, SoftDeleteObject):

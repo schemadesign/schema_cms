@@ -149,7 +149,18 @@ class PABlockElementSerializer(ReadOnlySerializer):
     def custom_element_data(custom_element):
         elements = []
 
-        for element_set in custom_element.elements_sets.all():
+        elements_sets_ids = custom_element.sets_elements.values_list(
+            "custom_element_set", flat=True
+        ).distinct()
+        element_sets = (
+            pa_models.CustomElementSet.objects.filter(id__in=elements_sets_ids)
+            .prefetch_related(
+                Prefetch("elements", queryset=pa_models.PageBlockElement.objects.order_by("order"))
+            )
+            .order_by("order")
+        )
+
+        for element_set in element_sets:
             data = {
                 "id": element_set.id,
                 "order": element_set.order,
@@ -244,13 +255,7 @@ class PAPageDetailSerializer(PAPageSerializer):
                     queryset=pa_models.PageBlockElement.objects.all()
                     .order_by("order")
                     .exclude(custom_element_set__isnull=False),
-                ),
-                Prefetch(
-                    "elements__elements_sets",
-                    queryset=pa_models.CustomElementSet.objects.prefetch_related(
-                        Prefetch("elements", queryset=pa_models.PageBlockElement.objects.order_by("order"))
-                    ).order_by("order"),
-                ),
+                )
             )
             .order_by("order")
         )
