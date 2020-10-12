@@ -89,12 +89,13 @@ class ProjectImportForm(forms.Form):
                     deserialized_object.object.created = import_time
                     deserialized_object.object.modified = import_time
 
-                if "created_by" in object_fields:
-                    deserialized_object.object.created_by = self.cleaned_data["owner"]
-
                 deserialized_object.save()
 
-                if deserialized_object.deferred_fields is not None:
+                if deserialized_object.deferred_fields:
+                    for field in deserialized_object.deferred_fields.keys():
+                        if field.name in ["author", "created_by"]:
+                            deserialized_object.deferred_fields[field] = self.cleaned_data["owner"].id
+
                     objs_with_deferred_fields.append(deserialized_object)
 
             for obj in objs_with_deferred_fields:

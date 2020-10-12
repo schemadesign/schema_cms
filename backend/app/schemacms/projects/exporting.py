@@ -21,8 +21,6 @@ def export_project(pk, using=DEFAULT_DB_ALIAS, output_format="json"):
 
     keyorder = [
         "project",
-        "blocktemplate",
-        "blocktemplateelement",
         "tagcategory",
         "tag",
         "datasource",
@@ -37,6 +35,8 @@ def export_project(pk, using=DEFAULT_DB_ALIAS, output_format="json"):
         "state",
         "statefilter",
         "statetag",
+        "blocktemplate",
+        "blocktemplateelement",
         "section",
         "page",
         "pageblock",

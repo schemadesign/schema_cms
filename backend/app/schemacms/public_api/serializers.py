@@ -136,7 +136,16 @@ class PABlockElementSerializer(ReadOnlySerializer):
             return self.custom_element_data(obj)
 
         if obj.type == ElementType.INTERNAL_CONNECTION:
-            return {"url": getattr(obj, obj.type).display_name, "page_id": obj.id}
+            page = getattr(obj, obj.type)
+
+            url = f"/{page.display_name}"
+
+            if main_page := page.section.get_main_page():
+                url = f"/{main_page.display_name}" + url
+            if page.project.domain:
+                url = f"{page.project.domain}" + url
+
+            return {"url": url, "page_id": page.id}
 
         return getattr(obj, obj.type)
 
