@@ -122,7 +122,7 @@ class Section(SoftDeleteObject, TimeStampedModel):
 
     def get_main_page(self):
         try:
-            main_page = self.pages.get(is_main_page=True, is_draft=True)
+            main_page = Page.only_pages.get(section=self, is_main_page=True, is_draft=True)
             return main_page
         except Page.DoesNotExist:
             return None

@@ -71,9 +71,7 @@ class TestPageBlockElementClone:
         assert copied_observable.observable_cell == observable_element.observable_cell
         assert copied_observable.observable_params == observable_element.observable_params
 
-    @pytest.mark.parametrize(
-        "element_type", ["plain_text", "code", "connection", "markdown", "internal_connection"]
-    )
+    @pytest.mark.parametrize("element_type", ["plain_text", "code", "connection", "markdown"])
     def test_clone_text_elements(self, page_block_factory, page_block_element_factory, element_type):
         block_1 = page_block_factory()
         block_2 = page_block_factory()

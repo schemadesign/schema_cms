@@ -25,7 +25,8 @@ def connection_in_html(element):
 def internal_connection_in_html(element):
     html_value = (
         f"<div id='internal-connection-{element.id}' class='element internal-connection'>"
-        f"<a href='{element.internal_connection}' target='_element'>{element.internal_connection}</a>"
+        f"<a href='{element.internal_connection.display_name}' "
+        f"target='_element'>{element.internal_connection.display_name}</a>"
         f"</div>"
     )
 

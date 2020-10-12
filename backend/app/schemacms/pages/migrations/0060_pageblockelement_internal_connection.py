@@ -12,9 +12,13 @@ def set_internal_connection(apps, schema_editor):
 
     with transaction.atomic():
         for element in PageBlockElement.objects.using(db_alias).filter(type="internal_connection"):
-            page = Page.objects.get(pk=element.params.get("page_id"))
-            element.internal_connection = page
-            element.save(update_fields=["internal_connection"])
+            try:
+                page = Page.objects.get(pk=element.params.get("page_id"))
+                element.internal_connection = page
+                element.save(update_fields=["internal_connection"])
+            except Page.DoesNotExist:
+                element.internal_connection = None
+                element.save(update_fields=["internal_connection"])
 
 
 class Migration(migrations.Migration):
