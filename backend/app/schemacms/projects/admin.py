@@ -21,6 +21,7 @@ from ..utils.services import s3
 
 from ..datasources.models import DataSource, DataSourceJob, DataSourceJobMetaData, DataSourceMeta
 from ..pages.models import PageBlockElement, CustomElementSet
+from ..pages.constants import ElementType
 
 
 class ProjectImportForm(forms.Form):
@@ -76,6 +77,14 @@ class ProjectImportForm(forms.Form):
                         custom_element_sets[str(c_set.id)] = new_set.id
                         deserialized_object.object.custom_element_set = new_set
 
+                    if deserialized_object.object.type in [ElementType.IMAGE, ElementType.FILE]:
+                        self.import_files(
+                            zip_file,
+                            deserialized_object,
+                            (deserialized_object.object.type,),
+                            settings.AWS_STORAGE_PAGES_BUCKET_NAME,
+                        )
+
                 if "created" in object_fields and "modified" in object_fields:
                     deserialized_object.object.created = import_time
                     deserialized_object.object.modified = import_time
@@ -118,7 +127,7 @@ class ProjectImportForm(forms.Form):
             new_project.save(update_fields=["xml_file"])
 
     @staticmethod
-    def import_files(zip_file, deserialized_object, file_attrs):
+    def import_files(zip_file, deserialized_object, file_attrs, bucket=settings.AWS_STORAGE_BUCKET_NAME):
         deserialized_object.save()
 
         for file_attr in file_attrs:
@@ -130,7 +139,7 @@ class ProjectImportForm(forms.Form):
                     setattr(deserialized_object.object, file_attr, file)
 
                     s3.put_object(
-                        Body=file, Bucket=settings.AWS_STORAGE_BUCKET_NAME, Key=file_name, ACL="public-read",
+                        Body=file, Bucket=bucket, Key=file_name, ACL="public-read",
                     )
 
 
