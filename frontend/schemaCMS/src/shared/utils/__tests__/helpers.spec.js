@@ -70,19 +70,16 @@ describe('Helpers', () => {
       {
         label: ['Section 1', 'Blog'],
         isPublic: true,
-        url: 'http://domain.com/blog',
         id: 1,
       },
       {
         label: ['Section 2', 'news', 'Article 2'],
         isPublic: false,
-        url: 'http://domain.com/News/article-2',
         id: 2,
       },
       {
         label: ['Section 2', 'News'],
         isPublic: true,
-        url: 'http://domain.com/news',
         id: 3,
       },
     ]);

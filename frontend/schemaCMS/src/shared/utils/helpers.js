@@ -25,7 +25,6 @@ import {
   T,
   mergeRight,
   flatten,
-  concat,
   propEq,
   both,
   prop,
@@ -194,16 +193,7 @@ export const setDefaultValue = element => mergeRight(element, { value: getDefaul
 const ifMainPage = (then, otherwise) => ({ mainPage, id }) =>
   ifElse(both(complement(isNil), complement(propEq('id', id))), then, otherwise)(mainPage);
 
-const getMainPageDisplayName = ({ mainPage, id }) =>
-  ifMainPage(
-    pipe(
-      prop('displayName'),
-      concat('/')
-    ),
-    always('')
-  )({ mainPage, id });
-
-export const getPageUrlOptions = ({ internalConnections, domain = '', pageId }) =>
+export const getPageUrlOptions = ({ internalConnections, pageId }) =>
   pipe(
     map(
       pipe(
@@ -211,8 +201,7 @@ export const getPageUrlOptions = ({ internalConnections, domain = '', pageId }) 
           pages: filter(complement(propEq('id', pageId))),
         }),
         ({ mainPage, pages, name: sectionName }) =>
-          map(({ displayName, name, id, isPublic }) => ({
-            url: `${domain + getMainPageDisplayName({ mainPage, id })}/${displayName}`,
+          map(({ name, id, isPublic }) => ({
             isPublic,
             label: ifMainPage(() => [sectionName, mainPage.name, name], always([sectionName, name]))({
               mainPage,
