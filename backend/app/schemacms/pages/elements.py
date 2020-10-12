@@ -4,7 +4,7 @@ from django.core.files.base import ContentFile
 
 from . import constants
 from ..states.models import State
-from ..pages.models import CustomElementSet
+from ..pages.models import CustomElementSet, Page
 
 
 class BaseElement:
@@ -40,7 +40,22 @@ class ConnectionElement(BaseElement):
 
 
 class InternalElement(BaseElement):
-    pass
+    def __init__(self, element_type):
+        self.element_type = element_type
+
+    @staticmethod
+    def to_representation(value: Page):
+        return value.id
+
+    def get_attribute(self, instance):
+        return getattr(instance, self.element_type)
+
+    @staticmethod
+    def to_internal_value(data):
+        if not data:
+            return None
+
+        return Page.objects.get(pk=data)
 
 
 class EmbedVideoElement(BaseElement):

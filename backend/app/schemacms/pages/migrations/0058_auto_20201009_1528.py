@@ -11,7 +11,7 @@ def set_parent(apps, schema_editor):
 
     with transaction.atomic():
         for set_ in CustomElementSet.objects.using(db_alias).all():
-            for element in set_.elementsa.all():
+            for element in set_.elements.all():
                 element.parent = set_.custom_element
                 element.save(update_fields=["parent"])
 
