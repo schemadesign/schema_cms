@@ -23,10 +23,22 @@ def connection_in_html(element):
 
 
 def internal_connection_in_html(element):
+    if not element.internal_connection:
+        return ""
+
+    page = element.internal_connection
+
+    url = f"/{page.display_name}"
+
+    if main_page := page.section.get_main_page():
+        url = f"/{main_page.display_name}" + url
+    if page.project.domain:
+        url = f"{page.project.domain}" + url
+
     html_value = (
         f"<div id='internal-connection-{element.id}' class='element internal-connection'>"
-        f"<a href='{element.internal_connection.display_name}' "
-        f"target='_element'>{element.internal_connection.display_name}</a>"
+        f"<a href='{url}' "
+        f"target='_element'>{url}</a>"
         f"</div>"
     )
 

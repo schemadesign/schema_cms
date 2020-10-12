@@ -138,6 +138,9 @@ class PABlockElementSerializer(ReadOnlySerializer):
         if obj.type == ElementType.INTERNAL_CONNECTION:
             page = getattr(obj, obj.type)
 
+            if not page:
+                return None
+
             url = f"/{page.display_name}"
 
             if main_page := page.section.get_main_page():

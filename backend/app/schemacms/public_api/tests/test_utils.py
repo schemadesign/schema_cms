@@ -38,7 +38,7 @@ class TestElementsHtmlFormat:
 
         assert utils.internal_connection_in_html(element) == (
             f"<div id='internal-connection-{element.id}' class='element internal-connection'>"
-            f"<a href='{page.display_name}' target='_element'>{page.display_name}</a>"
+            f"<a href='/{page.display_name}' target='_element'>/{page.display_name}</a>"
             f"</div>"
         )
 

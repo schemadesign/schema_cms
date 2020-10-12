@@ -8,7 +8,13 @@ from . import managers
 
 
 class State(SoftDeleteObject, TimeStampedModel):
-    FILTER_TYPES_MAPPING = {"value": "equals", "checkbox": "in", "select": "equals", "range": "range"}
+    FILTER_TYPES_MAPPING = {
+        "value": "equals",
+        "checkbox": "in",
+        "select": "equals",
+        "range": "range",
+        "bool": "equals",
+    }
 
     name = models.CharField(max_length=100)
     datasource = models.ForeignKey(
