@@ -33,13 +33,12 @@ class TestElementsHtmlFormat:
             f"</div>"
         )
 
-    def test_internal_connection_element_html_format(self, faker, page_block_element_factory):
-        value = faker.pystr()
-        element = page_block_element_factory(type=ElementType.INTERNAL_CONNECTION, internal_connection=value)
+    def test_internal_connection_element_html_format(self, faker, page, page_block_element_factory):
+        element = page_block_element_factory(type=ElementType.INTERNAL_CONNECTION, internal_connection=page)
 
         assert utils.internal_connection_in_html(element) == (
             f"<div id='internal-connection-{element.id}' class='element internal-connection'>"
-            f"<a href='{value}' target='_element'>{value}</a>"
+            f"<a href='/{page.display_name}' target='_element'>/{page.display_name}</a>"
             f"</div>"
         )
 

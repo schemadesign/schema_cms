@@ -92,7 +92,7 @@ class PAProjectView(
                 queryset=Section.objects.filter(is_public=True).prefetch_related(
                     Prefetch(
                         "pages",
-                        queryset=Page.objects.select_related(*page_select_related_fields).filter(
+                        queryset=Page.only_pages.select_related(*page_select_related_fields).filter(
                             is_public=True
                         ),
                     )
@@ -131,7 +131,7 @@ class PAProjectView(
         if ordering not in ["created", "modified", "name", "-created", "-modified", "-name"]:
             ordering = "-created"
 
-        pages = Page.objects.filter(
+        pages = Page.only_pages.filter(
             section__project=self.get_object(),
             section__is_public=True,
             is_public=True,
@@ -190,7 +190,7 @@ class PAPageView(mixins.ListModelMixin, mixins.RetrieveModelMixin, viewsets.Gene
     serializer_class = serializers.PAPageDetailSerializer
     renderer_classes = [renderers.JSONRenderer]
     permission_classes = ()
-    queryset = Page.objects.select_related("created_by").prefetch_related("tags").order_by("created")
+    queryset = Page.only_pages.select_related("created_by").prefetch_related("tags").order_by("created")
     filter_backends = [DjangoFilterBackend, drf_filters.OrderingFilter]
     filterset_class = filters.PageFilterSet
     ordering_fields = ["created", "modified", "name"]
@@ -246,7 +246,7 @@ class PADataSourceView(
     renderer_classes = [renderers.JSONRenderer]
     permission_classes = ()
     queryset = (
-        DataSource.objects.select_related("active_job", "meta_data")
+        DataSource.objects.select_related("meta_data")
         .prefetch_related(Prefetch("filters", queryset=Filter.objects.filter(is_active=True)), "tags")
         .order_by("created")
     )
@@ -292,9 +292,11 @@ class PADataSourceView(
         columns = records_reader.split_string_to_list(columns_list_as_string)
 
         ds = self.get_object()
-        items = ds.active_job.meta_data.shape[0]
+        job = ds.get_active_job()
 
-        fields_names = ds.active_job.meta_data.fields_names
+        items = job.meta_data.shape[0]
+
+        fields_names = job.meta_data.fields_names
         filters = records_reader.set_filters(request.query_params, fields_names)
         filter_query = records_reader.create_query_string(filters)
 

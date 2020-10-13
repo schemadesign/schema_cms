@@ -1,0 +1,14 @@
+{% extends "admin/base_site.html" %}
+
+{% block title %}Project import{% endblock %}
+
+{% block content %}
+<div id="content-main">
+     <p>Use your previously exported ZIP here</p>
+     <form method="post" enctype="multipart/form-data">
+          {% csrf_token %}
+          {{ form.as_p }}
+          <input type="submit" value="Import" />
+     </form>
+</div>
+{% endblock %}

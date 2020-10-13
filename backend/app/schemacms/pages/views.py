@@ -86,7 +86,7 @@ class BlockTemplateViewSet(DetailViewSet):
 class PageTemplateListCreteView(BaseListCreateView):
     serializer_class = serializers.PageTemplateSerializer
     queryset = (
-        models.PageTemplate.objects.all()
+        models.Page.templates.all()
         .order_by("-created")
         .select_related("project", "created_by")
         .prefetch_related(
@@ -103,7 +103,7 @@ class PageTemplateListCreteView(BaseListCreateView):
 
 class PageTemplateViewSet(DetailViewSet):
     queryset = (
-        models.PageTemplate.objects.all()
+        models.Page.templates.all()
         .select_related("project", "created_by")
         .prefetch_related(
             Prefetch(
@@ -172,7 +172,7 @@ class SectionListCreateView(mixins.ListModelMixin, mixins.CreateModelMixin, view
 class SectionInternalConnectionView(generics.ListAPIView):
     queryset = (
         models.Section.objects.all()
-        .select_related("project", "created_by", "main_page")
+        .select_related("project", "created_by")
         .prefetch_related("pages")
         .order_by("-created")
     )
@@ -215,7 +215,9 @@ class SectionViewSet(DetailViewSet):
             return (
                 super()
                 .get_queryset()
-                .prefetch_related(Prefetch("pages", queryset=models.Page.objects.all().order_by(pages_order)))
+                .prefetch_related(
+                    Prefetch("pages", queryset=models.Page.only_pages.all().order_by(pages_order))
+                )
             )
 
         return super().get_queryset().prefetch_related("pages")
@@ -231,7 +233,7 @@ class PageListCreateView(
         "create": serializers.PageCreateSerializer,
     }
     queryset = (
-        models.Page.objects.all()
+        models.Page.only_pages.all()
         .select_related("project", "created_by", "template", "section")
         .prefetch_related(Prefetch("tags", queryset=models.PageTag.objects.select_related("category")))
         .filter(is_draft=True)
@@ -268,7 +270,7 @@ class PageListCreateView(
 
 class PageViewSet(DetailViewSet):
     queryset = (
-        models.Page.objects.all()
+        models.Page.only_pages.all()
         .select_related("project", "created_by", "template", "section")
         .prefetch_related(
             Prefetch("page_blocks", queryset=models.PageBlock.objects.select_related("block")),
@@ -280,12 +282,6 @@ class PageViewSet(DetailViewSet):
     permission_classes = (permissions.IsAuthenticated, IsAdminOrIsEditor)
 
     def perform_destroy(self, instance: models.Page):
-        section = instance.section
-
-        if section.main_page == instance:
-            section.main_page = None
-            section.save()
-
         super().perform_destroy(instance.published_version)
 
     @decorators.action(detail=True, url_path="copy", methods=["post"])

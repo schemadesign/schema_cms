@@ -277,7 +277,11 @@ class JobProcessor:
     def update_state(self, state, error=""):
         if state == ProcessState.SUCCESS:
             schemacms_api.update_job_state(
-                job_pk=self.job.id, state=state, result=self.get_result_file_name(), error="",
+                job_pk=self.job.id,
+                state=state,
+                result=self.get_result_file_name(),
+                result_parquet=self.get_result_file_name().replace(".csv", ".parquet"),
+                error="",
             )
         else:
             schemacms_api.update_job_state(

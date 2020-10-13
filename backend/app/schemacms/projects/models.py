@@ -13,7 +13,7 @@ from lxml import etree
 from softdelete.models import SoftDeleteObject
 
 from . import constants, managers
-from ..pages.models import PageTemplate
+from ..pages.models import Page
 from ..pages.constants import PageState
 from ..users import constants as users_constants
 from ..utils.models import file_upload_path
@@ -40,9 +40,14 @@ class Project(SoftDeleteObject, TitleSlugDescriptionModel, TimeStampedModel):
     def __str__(self):
         return self.title
 
+    def natural_key(self):
+        return (self.title,)
+
+    natural_key.dependencies = ["users.user"]
+
     def relative_path_to_save(self, filename):
-        base_path = self.file.storage.location
-        if not (self.id and self.project_id):
+        base_path = self.xml_file.storage.location
+        if not self.id:
             raise ValueError("Project is not set")
         return os.path.join(base_path, f"/rss/{self.id}/{filename}")
 
@@ -83,7 +88,7 @@ class Project(SoftDeleteObject, TitleSlugDescriptionModel, TimeStampedModel):
     def templates_count(self):
         return {
             "blocks": self.blocktemplate_set.count(),
-            "pages": PageTemplate.objects.filter(project=self).count(),
+            "pages": Page.templates.filter(project=self).count(),
             "tags": self.tags_categories.count(),
             "states": 0,
         }

@@ -3,6 +3,7 @@ import pytest
 from django.utils import timezone
 
 from ..constants import ElementType
+from schemacms.pages.models import CustomElementSet
 
 
 pytestmark = [pytest.mark.django_db]
@@ -70,9 +71,7 @@ class TestPageBlockElementClone:
         assert copied_observable.observable_cell == observable_element.observable_cell
         assert copied_observable.observable_params == observable_element.observable_params
 
-    @pytest.mark.parametrize(
-        "element_type", ["plain_text", "code", "connection", "markdown", "internal_connection"]
-    )
+    @pytest.mark.parametrize("element_type", ["plain_text", "code", "connection", "markdown"])
     def test_clone_text_elements(self, page_block_factory, page_block_element_factory, element_type):
         block_1 = page_block_factory()
         block_2 = page_block_factory()
@@ -94,23 +93,33 @@ class TestPageBlockElementClone:
 
         element = page_block_element_factory(block=block_1, type=ElementType.CUSTOM_ELEMENT)
 
-        custom_element_set_1 = custom_element_set_factory(custom_element=element)
-        custom_element_set_2 = custom_element_set_factory(custom_element=element)
+        custom_element_set_1 = custom_element_set_factory(order=0)
+        custom_element_set_2 = custom_element_set_factory(order=1)
 
-        page_block_element_factory.create_batch(3, block=block_1, custom_element_set=custom_element_set_1)
-        page_block_element_factory.create_batch(2, block=block_1, custom_element_set=custom_element_set_2)
+        page_block_element_factory.create_batch(
+            3, block=block_1, parent=element, custom_element_set=custom_element_set_1
+        )
+        page_block_element_factory.create_batch(
+            2, block=block_1, parent=element, custom_element_set=custom_element_set_2
+        )
 
         copied_element = element.clone(block_2)
-        copied_element_sets = copied_element.elements_sets.all()
+        copied_elements_sets_ids = copied_element.sets_elements.values_list(
+            "custom_element_set", flat=True
+        ).distinct()
+        copied_element_sets = CustomElementSet.objects.filter(id__in=copied_elements_sets_ids).order_by(
+            "order"
+        )
         element.refresh_from_db()
-        element_sets = element.elements_sets.all()
+
+        elements_sets_ids = element.sets_elements.values_list("custom_element_set", flat=True).distinct()
+        element_sets = CustomElementSet.objects.filter(id__in=elements_sets_ids).order_by("order")
 
         assert copied_element.id != element.id
         assert copied_element.type == element.type
         assert copied_element.block != element.block
         assert len(copied_element_sets) == len(element_sets)
         assert copied_element_sets[0].elements.count() == 3
-        assert element.elements_sets.all()[1].elements.count() == 2
         assert element_sets[0].elements.count() == 3
         assert element_sets[1].elements.count() == 2
 
@@ -122,19 +131,23 @@ class TestPageBlockElementClone:
 
         element = page_block_element_factory(block=block_1, type=ElementType.CUSTOM_ELEMENT)
 
-        custom_element_set = custom_element_set_factory(custom_element=element)
+        custom_element_set = custom_element_set_factory()
 
         set_element = page_block_element_factory(
             block=block_1,
+            parent=element,
             type=ElementType.OBSERVABLE_HQ,
             custom_element_set=custom_element_set,
             observable_hq=observable_element,
         )
 
         copied_element = element.clone(block_2)
-        copied_element_set = copied_element.elements_sets.all()[0]
-        element.refresh_from_db()
+        elements_sets_ids = copied_element.sets_elements.values_list(
+            "custom_element_set", flat=True
+        ).distinct()
 
+        copied_element_set = CustomElementSet.objects.filter(id__in=elements_sets_ids).order_by("order")[0]
+        element.refresh_from_db()
         copied_observable = copied_element_set.elements.all()[0]
 
         assert copied_observable.type == set_element.type

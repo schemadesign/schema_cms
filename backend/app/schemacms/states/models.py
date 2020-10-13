@@ -4,9 +4,17 @@ from django.contrib.postgres import fields as pg_fields
 from django.db import models
 from django_extensions.db.models import TimeStampedModel
 
+from . import managers
+
 
 class State(SoftDeleteObject, TimeStampedModel):
-    FILTER_TYPES_MAPPING = {"value": "equals", "checkbox": "in", "select": "equals", "range": "range"}
+    FILTER_TYPES_MAPPING = {
+        "value": "equals",
+        "checkbox": "in",
+        "select": "equals",
+        "range": "range",
+        "bool": "equals",
+    }
 
     name = models.CharField(max_length=100)
     datasource = models.ForeignKey(
@@ -18,8 +26,9 @@ class State(SoftDeleteObject, TimeStampedModel):
         settings.AUTH_USER_MODEL, on_delete=models.SET_NULL, related_name="states", null=True
     )
     is_public = models.BooleanField(default=True)
-    filters = models.ManyToManyField("datasources.Filter", through="InStateFilter")
     fields = pg_fields.ArrayField(models.TextField(), blank=True, default=list)
+
+    objects = managers.StateManager()
 
     def __str__(self):
         return self.name or str(self.pk)
@@ -31,6 +40,11 @@ class State(SoftDeleteObject, TimeStampedModel):
             )
         ]
         ordering = ("created",)
+
+    def natural_key(self):
+        return self.datasource.natural_key() + (self.name,)
+
+    natural_key.dependencies = ["users.user", "datasources.datasource"]
 
     @property
     def formatted_meta(self):
@@ -51,7 +65,7 @@ class State(SoftDeleteObject, TimeStampedModel):
 
     def build_filters_query_params(self) -> str:
         params = []
-        for filter_ in self.instatefilter_set.all():
+        for filter_ in self.filters.all():
             key = filter_.field
             operator = self.FILTER_TYPES_MAPPING[filter_.filter_type]
             values = filter_.condition.get("values")
@@ -74,16 +88,30 @@ class State(SoftDeleteObject, TimeStampedModel):
         return res
 
 
-class InStateFilter(SoftDeleteObject):
-    filter = models.ForeignKey("datasources.Filter", on_delete=models.CASCADE)
-    state = models.ForeignKey(State, on_delete=models.CASCADE)
+class StateFilter(SoftDeleteObject):
+    filter = models.ForeignKey("datasources.Filter", on_delete=models.CASCADE, related_name="state_filters")
+    state = models.ForeignKey(State, on_delete=models.CASCADE, related_name="filters")
     filter_type = models.CharField(max_length=100)
     field = models.TextField()
     field_type = models.CharField(max_length=100)
     condition = pg_fields.JSONField(blank=True, default=dict)
+
+    objects = managers.StateFilterManager()
+
+    def natural_key(self):
+        return self.state.natural_key() + (self.filter.name,)
+
+    natural_key.dependencies = ["states.state", "datasources.filter"]
 
 
 class StateTag(SoftDeleteObject):
     state = models.ForeignKey(State, on_delete=models.CASCADE, related_name="tags")
     category = models.ForeignKey("tags.TagCategory", on_delete=models.SET_NULL, null=True)
     value = models.CharField(max_length=150)
+
+    objects = managers.StateTagManager()
+
+    def natural_key(self):
+        return self.state.natural_key() + (self.category.name, self.value)
+
+    natural_key.dependencies = ["states.state", "tags.tagcategory"]

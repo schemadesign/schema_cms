@@ -69,10 +69,10 @@ class PADataSourceDetailNoRecordsSerializer(PADataSourceListSerializer):
         fields = ("meta", "shape", "fields", "filters", "tags")
 
     def get_shape(self, obj):
-        return obj.active_job.meta_data.shape
+        return obj.get_active_job().meta_data.shape
 
     def get_ds_fields(self, obj):
-        fields = json.loads(obj.active_job.meta_data.preview.read())["fields"]
+        fields = json.loads(obj.get_active_job().meta_data.preview.read())["fields"]
         data = {
             str(num): {"name": key, "type": value["dtype"]} for num, (key, value) in enumerate(fields.items())
         }
@@ -136,7 +136,19 @@ class PABlockElementSerializer(ReadOnlySerializer):
             return self.custom_element_data(obj)
 
         if obj.type == ElementType.INTERNAL_CONNECTION:
-            return {"url": getattr(obj, obj.type), "page_id": obj.params.get("page_id")}
+            page = getattr(obj, obj.type)
+
+            if not page:
+                return None
+
+            url = f"/{page.display_name}"
+
+            if main_page := page.section.get_main_page():
+                url = f"/{main_page.display_name}" + url
+            if page.project.domain:
+                url = f"{page.project.domain}" + url
+
+            return {"url": url, "page_id": page.id}
 
         return getattr(obj, obj.type)
 
@@ -149,7 +161,18 @@ class PABlockElementSerializer(ReadOnlySerializer):
     def custom_element_data(custom_element):
         elements = []
 
-        for element_set in custom_element.elements_sets.all():
+        elements_sets_ids = custom_element.sets_elements.values_list(
+            "custom_element_set", flat=True
+        ).distinct()
+        element_sets = (
+            pa_models.CustomElementSet.objects.filter(id__in=elements_sets_ids)
+            .prefetch_related(
+                Prefetch("elements", queryset=pa_models.PageBlockElement.objects.order_by("order"))
+            )
+            .order_by("order")
+        )
+
+        for element_set in element_sets:
             data = {
                 "id": element_set.id,
                 "order": element_set.order,
@@ -183,7 +206,7 @@ class PASectionSerializer(ReadOnlySerializer):
 
 class PATemplateSerializer(ReadOnlySerializer):
     class Meta:
-        model = pa_models.PageTemplate
+        model = pa_models.Page
         fields = ("id", "name")
 
 
@@ -244,13 +267,7 @@ class PAPageDetailSerializer(PAPageSerializer):
                     queryset=pa_models.PageBlockElement.objects.all()
                     .order_by("order")
                     .exclude(custom_element_set__isnull=False),
-                ),
-                Prefetch(
-                    "elements__elements_sets",
-                    queryset=pa_models.CustomElementSet.objects.prefetch_related(
-                        Prefetch("elements", queryset=pa_models.PageBlockElement.objects.order_by("order"))
-                    ).order_by("order"),
-                ),
+                )
             )
             .order_by("order")
         )

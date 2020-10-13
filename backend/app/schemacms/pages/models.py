@@ -49,6 +49,8 @@ class Content(CloneMixin, SoftDeleteObject, TimeStampedModel):
 class BlockTemplate(Content):
     _clone_many_to_one_or_one_to_many_fields = ["elements", "project", "created_by"]
 
+    objects = managers.BlockTemplateManager()
+
     class Meta:
         constraints = [
             models.UniqueConstraint(
@@ -58,6 +60,11 @@ class BlockTemplate(Content):
             )
         ]
 
+    def natural_key(self):
+        return self.project.title, self.name
+
+    natural_key.dependencies = ["projects.project"]
+
     def delete_elements(self, elements):
         self.elements.filter(id__in=elements).delete()
 
@@ -66,6 +73,12 @@ class BlockTemplateElement(Element):
     template = models.ForeignKey(BlockTemplate, on_delete=models.CASCADE, related_name="elements")
 
     _clone_many_to_one_or_one_to_many_fields = ["template"]
+    objects = managers.BlockTemplateElementManager()
+
+    def natural_key(self):
+        return self.template.project.title, self.template.name, self.name, self.order
+
+    natural_key.dependencies = ["pages.blocktemplate"]
 
 
 class Section(SoftDeleteObject, TimeStampedModel):
@@ -75,14 +88,23 @@ class Section(SoftDeleteObject, TimeStampedModel):
     created_by = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete=models.SET_NULL, null=True)
     is_public = models.BooleanField(default=True)
     is_rss_content = models.BooleanField(default=False)
-    main_page = models.OneToOneField(
-        "pages.Page", on_delete=models.SET_NULL, null=True, related_name="main_page"
-    )
 
     objects = managers.SectionManager()
 
+    class Meta:
+        constraints = [
+            models.UniqueConstraint(
+                fields=["project", "name"], name="unique_section_name", condition=models.Q(deleted_at=None),
+            )
+        ]
+
     def __str__(self):
         return f"{self.name}"
+
+    def natural_key(self):
+        return self.project.title, self.name
+
+    natural_key.dependencies = ["projects.project"]
 
     @functional.cached_property
     def project_info(self):
@@ -92,26 +114,31 @@ class Section(SoftDeleteObject, TimeStampedModel):
     def pages_count(self):
         return self.pages.count()
 
-    class Meta:
-        constraints = [
-            models.UniqueConstraint(
-                fields=["project", "name"], name="unique_section_name", condition=models.Q(deleted_at=None),
-            )
-        ]
+    def set_main_page(self, page_id):
+        self.pages.filter(is_main_page=True, is_draft=True).update(is_main_page=False)
+        main_page = self.pages.get(id=page_id)
+        main_page.is_main_page = True
+        main_page.save()
+
+    def get_main_page(self):
+        try:
+            main_page = Page.only_pages.get(section=self, is_main_page=True, is_draft=True)
+            return main_page
+        except Page.DoesNotExist:
+            return None
 
 
 class Page(Content):
     section = models.ForeignKey(
         "Section", on_delete=models.CASCADE, null=True, blank=True, related_name="pages"
     )
-    template = models.ForeignKey("PageTemplate", on_delete=models.SET_NULL, null=True, blank=True)
+    template = models.ForeignKey("Page", on_delete=models.SET_NULL, null=True, blank=True)
     display_name = models.CharField(max_length=constants.PAGE_DISPLAY_NAME_MAX_LENGTH, blank=True, default="")
     description = models.TextField(blank=True, default="")
     keywords = models.TextField(blank=True, default="")
     slug = AutoSlugField(populate_from="name", allow_duplicates=True)
     is_public = models.BooleanField(default=True)
     allow_edit = models.BooleanField(default=False)
-    blocks = models.ManyToManyField(BlockTemplate, through="PageBlock")
     is_template = models.BooleanField(default=True)
     is_draft = models.BooleanField(default=True, editable=False, db_index=True)
     published_version = models.OneToOneField(
@@ -120,13 +147,21 @@ class Page(Content):
     publish_date = models.DateTimeField(null=True, blank=True)
     state = FSMField(choices=constants.PAGE_STATE_CHOICES, default=constants.PageState.DRAFT)
     link = models.URLField(blank=True, default="")
+    is_main_page = models.BooleanField(default=False)
 
     objects = managers.PageManager()
+    only_pages = managers.PageOnlyManager()
+    templates = managers.PageOnlyTemplateManager()
 
     _clone_many_to_one_or_one_to_many_fields = ["tags"]
 
     class Meta:
         ordering = ("-created",)
+
+    def natural_key(self):
+        return self.project.title, self.name, self.is_template, self.is_draft
+
+    natural_key.dependencies = ["projects.project", "pages.section", "pages.blocktemplate"]
 
     @property
     def is_published(self):
@@ -142,10 +177,13 @@ class Page(Content):
     def delete_blocks(self, blocks: list = None):
         if not blocks:
             self.page_blocks.all().delete()
+            self.page_blocks.all_with_deleted().delete()
         else:
             self.page_blocks.filter(id__in=blocks).delete()
+            self.page_blocks.all_with_deleted().filter(id__in=blocks).delete()
 
     def add_tags(self, tags_list):
+        self.tags.all().delete()
         self.tags.all().delete()
 
         for tag in tags_list:
@@ -170,6 +208,7 @@ class Page(Content):
         self.publish_date = now
 
         self.delete_blocks()
+        self.tags.all().delete()
         self.tags.all().delete()
 
         for block in draft.page_blocks.all():
@@ -207,6 +246,17 @@ class Page(Content):
 
         return new_page
 
+    @transaction.atomic()
+    def copy_template(self):
+
+        copy_time = timezone.now().strftime("%Y-%m-%d, %H:%M:%S.%f")
+        new_page = self.make_clone(attrs={"name": f"Page Template ID #{self.id} copy({copy_time})"})
+
+        for block in self.page_blocks.all():
+            block.make_clone(attrs={"page": new_page})
+
+        return new_page
+
     def create_xml_item(self):
         item = etree.Element("item")
         etree.SubElement(item, "title").text = self.name
@@ -222,39 +272,41 @@ class Page(Content):
         return item
 
 
-class PageTemplate(Page):
-    objects = managers.PageTemplateManager()
-
-    class Meta:
-        proxy = True
-
-    @transaction.atomic()
-    def copy_template(self):
-
-        copy_time = timezone.now().strftime("%Y-%m-%d, %H:%M:%S.%f")
-        new_page = self.make_clone(attrs={"name": f"Page Template ID #{self.id} copy({copy_time})"})
-
-        for block in self.page_blocks.all():
-            block.make_clone(attrs={"page": new_page})
-
-        return new_page
-
-
 class PageBlock(CloneMixin, SoftDeleteObject):
-    block = models.ForeignKey("BlockTemplate", on_delete=models.CASCADE, null=True)
     page = models.ForeignKey("Page", on_delete=models.CASCADE, related_name="page_blocks")
+    block = models.ForeignKey("BlockTemplate", on_delete=models.CASCADE, null=True)
     name = models.CharField(max_length=constants.TEMPLATE_NAME_MAX_LENGTH, blank=True, default="")
     order = models.PositiveIntegerField(default=0)
 
+    objects = managers.PageBlockManager()
+
     def __str__(self):
         return f"{self.name}"
+
+    def natural_key(self):
+        if hasattr(self, "page"):
+            return (
+                self.page.project.title,
+                self.page.name,
+                self.name,
+                self.order,
+                self.page.is_draft,
+                self.page.is_template,
+                True,
+            )
+        if hasattr(self, "block"):
+            return self.block.project.title, self.block.name, self.name, self.order
+
+    natural_key.dependencies = ["pages.page"]
 
 
 class PageBlockElement(Element):
     block = models.ForeignKey(PageBlock, on_delete=models.CASCADE, related_name="elements")
     markdown = models.TextField(blank=True, default="")
     connection = models.URLField(blank=True, default="", max_length=1000)
-    internal_connection = models.TextField(blank=True, default="", max_length=1000)
+    internal_connection = models.ForeignKey(
+        Page, on_delete=models.SET_NULL, null=True, related_name="connections"
+    )
     plain_text = models.TextField(blank=True, default="", max_length=1000)
     code = models.TextField(blank=True, default="", max_length=1000)
     embed_video = models.TextField(blank=True, default="", max_length=1000)
@@ -268,6 +320,9 @@ class PageBlockElement(Element):
         storage=S3Boto3Storage(bucket=settings.AWS_STORAGE_PAGES_BUCKET_NAME),
         upload_to=file_upload_path,
     )
+    parent = models.ForeignKey(
+        "PageBlockElement", on_delete=models.CASCADE, related_name="sets_elements", null=True
+    )
     custom_element_set = models.ForeignKey(
         "CustomElementSet", on_delete=models.CASCADE, related_name="elements", null=True
     )
@@ -275,6 +330,16 @@ class PageBlockElement(Element):
     state = models.ForeignKey("states.State", null=True, related_name="elements", on_delete=models.SET_NULL)
 
     _clone_one_to_one_fields = ["observable_hq"]
+
+    objects = managers.PageBlockElementManager()
+
+    def natural_key(self):
+        if hasattr(self.block, "page"):
+            return (self.name, self.order, self.custom_element_set, self.parent) + self.block.natural_key()
+        if hasattr(self.block, "block"):
+            return self.name, self.order + self.block.project.title, self.block.name
+
+    natural_key.dependencies = ["states.state", "pages.pageblock"]
 
     def relative_path_to_save(self, filename):
         base_path = self.image.storage.location
@@ -295,7 +360,7 @@ class PageBlockElement(Element):
             element_set_order = elements_set.get("order")
 
             custom_element_set, _ = CustomElementSet.objects.update_or_create(
-                id=elements_set.pop("id", None), defaults=dict(custom_element=self, order=element_set_order),
+                id=elements_set.pop("id", None), defaults=dict(order=element_set_order),
             )
 
             set_elements = elements_set.get("elements", [])
@@ -326,14 +391,16 @@ class PageBlockElement(Element):
 
             element, _ = PageBlockElement.objects.update_or_create(
                 id=element.pop("id", None),
-                defaults=dict(block=self.block, custom_element_set=custom_element_set, **element),
+                defaults=dict(
+                    block=self.block, parent=self, custom_element_set=custom_element_set, **element
+                ),
             )
 
             if element_type == constants.ElementType.OBSERVABLE_HQ:
                 self.create_update_observable_element(element_value, element)
 
     def delete_custom_elements_sets(self, ids_to_delete):
-        self.elements_sets.filter(id__in=ids_to_delete).delete()
+        CustomElementSet.objects.filter(id__in=ids_to_delete).delete()
 
     def create_update_observable_element(self, value, element=None):
         element_instance = element if element else self
@@ -359,22 +426,24 @@ class PageBlockElement(Element):
         else:
             return self.clone_simple_element(block)
 
-    def clone_simple_element(self, block=None, elements_set=None):
+    def clone_simple_element(self, block=None, parent=None, elements_set=None):
 
         attrs = {"block": block}
 
-        if elements_set:
+        if elements_set and parent:
             attrs["custom_element_set"] = elements_set
+            attrs["parent"] = parent
 
         return self.make_clone(attrs=attrs)
 
-    def clone_observable_element(self, block=None, elements_set=None):
+    def clone_observable_element(self, block=None, parent=None, elements_set=None):
         new_obs = self.observable_hq.make_clone()
 
         attrs = {"block": block, "observable_hq": new_obs}
 
-        if elements_set:
+        if elements_set and parent:
             attrs["custom_element_set"] = elements_set
+            attrs["parent"] = parent
 
         return self.make_clone(attrs=attrs)
 
@@ -382,22 +451,21 @@ class PageBlockElement(Element):
         block = block if block else self.block
         new_ele = self.make_clone(attrs={"block": block})
 
-        for element_set in self.elements_sets.all():
-            new_set = element_set.make_clone(attrs={"custom_element": new_ele})
+        elements_sets = {element.custom_element_set for element in self.sets_elements.all()}
+
+        for element_set in elements_sets:
+            new_set = element_set.make_clone()
 
             for set_element in element_set.elements.all():
                 if set_element.type == constants.ElementType.OBSERVABLE_HQ:
-                    set_element.clone_observable_element(block=block, elements_set=new_set)
+                    set_element.clone_observable_element(block=block, parent=new_ele, elements_set=new_set)
                 else:
-                    set_element.clone_simple_element(block=block, elements_set=new_set)
+                    set_element.clone_simple_element(block=block, parent=new_ele, elements_set=new_set)
 
         return new_ele
 
 
 class CustomElementSet(CloneMixin, SoftDeleteObject):
-    custom_element = models.ForeignKey(
-        PageBlockElement, on_delete=models.CASCADE, related_name="elements_sets"
-    )
     order = models.PositiveIntegerField(default=0)
 
     def __str__(self):
@@ -427,5 +495,12 @@ class PageTag(CloneMixin, SoftDeleteObject):
     category = models.ForeignKey("tags.TagCategory", on_delete=models.SET_NULL, null=True)
     value = models.CharField(max_length=150)
 
+    objects = managers.PageTagManager()
+
     def __str__(self):
         return f"{self.id}"
+
+    def natural_key(self):
+        return self.page.natural_key() + (self.category.name, self.value)
+
+    natural_key.dependencies = ["tags.tagcategory", "tags.tag", "pages.page"]

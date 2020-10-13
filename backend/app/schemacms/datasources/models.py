@@ -52,13 +52,6 @@ class DataSource(MetaGeneratorMixin, SoftDeleteObject, TimeStampedModel):
     created_by = models.ForeignKey(
         settings.AUTH_USER_MODEL, on_delete=models.SET_NULL, related_name="data_sources", null=True
     )
-    active_job = models.ForeignKey(
-        "datasources.DataSourceJob",
-        blank=True,
-        on_delete=models.CASCADE,
-        related_name="data_sources",
-        null=True,
-    )
 
     objects = managers.DataSourceManager()
 
@@ -75,6 +68,11 @@ class DataSource(MetaGeneratorMixin, SoftDeleteObject, TimeStampedModel):
     def __str__(self):
         return self.name or str(self.id)
 
+    def natural_key(self):
+        return self.project.natural_key() + (self.name,)
+
+    natural_key.dependencies = ["users.user", "projects.project"]
+
     def get_source_file(self):
         return self.file
 
@@ -83,6 +81,7 @@ class DataSource(MetaGeneratorMixin, SoftDeleteObject, TimeStampedModel):
         custom_data = (
             {d["key"]: d["value"] for d in self.description.data} if hasattr(self, "description") else {}
         )
+        active_job = self.get_active_job()
 
         return {
             "id": self.id,
@@ -92,7 +91,7 @@ class DataSource(MetaGeneratorMixin, SoftDeleteObject, TimeStampedModel):
             "updated": self.modified.strftime("%Y-%m-%d"),
             "custom_data": custom_data,
             "source_file": self.file.url if self.file else None,
-            "result_file": self.active_job.result.url if self.active_job and self.active_job.result else None,
+            "result_file": active_job.result.url if active_job and active_job.result else None,
         }
 
     @property
@@ -134,6 +133,13 @@ class DataSource(MetaGeneratorMixin, SoftDeleteObject, TimeStampedModel):
     @functional.cached_property
     def project_info(self):
         return dict(id=self.project.id, title=self.project.title)
+
+    def get_active_job(self):
+        try:
+            active_job = self.jobs.get(is_active=True)
+            return active_job
+        except DataSourceJob.DoesNotExist:
+            return None
 
     def schedule_update_meta(self, copy_steps):
         if not self.file and not self.google_sheet:
@@ -187,13 +193,16 @@ class DataSource(MetaGeneratorMixin, SoftDeleteObject, TimeStampedModel):
             **job_kwargs,
         )
 
+    @transaction.atomic()
     def set_active_job(self, job):
-        self.active_job = job
-        self.save(update_fields=["active_job"])
+        self.jobs.filter(is_active=True).update(is_active=False)
+
+        job.is_active = True
+        job.save()
 
     def result_fields_info(self):
         try:
-            preview = self.active_job.meta_data.preview
+            preview = self.get_active_job().meta_data.preview
             fields = json.loads(preview.read())["fields"]
         except (DataSourceJobMetaData.DoesNotExist, json.JSONDecodeError, KeyError, OSError):
             return []
@@ -237,12 +246,12 @@ class DataSource(MetaGeneratorMixin, SoftDeleteObject, TimeStampedModel):
             "tags": [],
         }
 
-        if self.active_job:
-            job_meta = getattr(self.active_job, "meta_data", None)
+        if job := self.get_active_job():
+            job_meta = getattr(job, "meta_data", None)
             data.update(
                 {
                     "shape": job_meta.shape if job_meta else [],
-                    "result": self.active_job.result.name or None,
+                    "result": job.result.name or None,
                     "fields": self.result_fields_info(),
                 }
             )
@@ -257,8 +266,15 @@ class DataSourceDescription(SoftDeleteObject):
     datasource = models.OneToOneField(DataSource, on_delete=models.CASCADE, related_name="description")
     data = pg_fields.ArrayField(pg_fields.JSONField(), default=list, blank=True)
 
+    objects = managers.DataSourceDescriptionManager()
+
     def __str__(self):
         return f"{self.id}"
+
+    def natural_key(self):
+        return self.datasource.natural_key()
+
+    natural_key.dependencies = ["datasources.datasource"]
 
 
 class DataSourceMeta(SoftDeleteObject, MetaDataModel):
@@ -268,8 +284,15 @@ class DataSourceMeta(SoftDeleteObject, MetaDataModel):
     )
     error = models.TextField(blank=True, default="")
 
+    objects = managers.DataSourceMetaManager()
+
     def __str__(self):
         return f"DataSource {self.datasource} meta"
+
+    def natural_key(self):
+        return self.datasource.natural_key()
+
+    natural_key.dependencies = ["datasources.datasource"]
 
     def relative_path_to_save(self, filename):
         base_path = self.preview.storage.location
@@ -293,8 +316,18 @@ class WranglingScript(SoftDeleteObject, TimeStampedModel):
     last_file_modification = models.DateTimeField(null=True)
     specs = pg_fields.JSONField(default=dict, blank=True, editable=False)
 
+    objects = managers.WranglingScriptManager()
+
     def __str__(self):
         return self.name
+
+    def natural_key(self):
+        if self.datasource:
+            return (self.name,) + self.datasource.natural_key()
+        else:
+            return (self.name,)
+
+    natural_key.dependencies = ["users.user", "datasources.datasource"]
 
     def save(self, *args, **kwargs):
         if not self.body:
@@ -320,10 +353,19 @@ class DataSourceJob(MetaGeneratorMixin, SoftDeleteObject, TimeStampedModel, fsm.
     source_file_path = models.CharField(max_length=255, editable=False)
     source_file_version = models.CharField(max_length=36, editable=False)
     result = models.FileField(upload_to=file_upload_path, null=True, blank=True)
+    result_parquet = models.FileField(upload_to=file_upload_path, null=True, blank=True)
     error = models.TextField(blank=True, default="")
+    is_active = models.BooleanField(default=False)
+
+    objects = managers.DataSourceJobManager()
 
     def __str__(self):
         return f"DataSource Job #{self.pk}"
+
+    def natural_key(self):
+        return self.datasource.natural_key() + (self.is_active,)
+
+    natural_key.dependencies = ["datasources.datasource", "datasources.wranglingscript"]
 
     @property
     def get_source_file(self):
@@ -403,8 +445,15 @@ class DataSourceJobMetaData(SoftDeleteObject, MetaDataModel):
         DataSourceJob, on_delete=models.CASCADE, related_name="meta_data"
     )
 
+    objects = managers.DataSourceJobMetaManager()
+
     def __str__(self):
         return f"Job {self.job} meta"
+
+    def natural_key(self):
+        return self.job.natural_key()
+
+    natural_key.dependencies = ["datasources.datasourcejob"]
 
     def relative_path_to_save(self, filename):
         base_path = self.preview.storage.location
@@ -429,6 +478,14 @@ class DataSourceJobStep(SoftDeleteObject, models.Model):
         }
         return data
 
+    def natural_key(self):
+        return (self.datasource_job.project.title, self.datasource_job.datasource.name) + (
+            self.script.name,
+            self.exec_order,
+        )
+
+    natural_key.dependencies = ["datasources.datasourcejob", "datasources.wranglingscript"]
+
 
 class Filter(MetaGeneratorMixin, SoftDeleteObject, TimeStampedModel):
     datasource = models.ForeignKey(DataSource, on_delete=models.CASCADE, related_name="filters")
@@ -438,6 +495,8 @@ class Filter(MetaGeneratorMixin, SoftDeleteObject, TimeStampedModel):
     field_type = models.CharField(max_length=25, choices=constants.FIELD_TYPE_CHOICES)
     unique_items = models.IntegerField(null=True)
     is_active = models.BooleanField(default=True)
+
+    objects = managers.FilterManager()
 
     def __str__(self):
         return str(self.id)
@@ -451,13 +510,18 @@ class Filter(MetaGeneratorMixin, SoftDeleteObject, TimeStampedModel):
             )
         ]
 
+    def natural_key(self):
+        return self.datasource.natural_key() + (self.name,)
+
+    natural_key.dependencies = ["datasources.datasource"]
+
     @functional.cached_property
     def project_info(self):
         project = self.datasource.project
         return dict(id=project.id, title=project.title)
 
     def get_fields_info(self):
-        last_job = self.datasource.active_job
+        last_job = self.datasource.get_active_job()
         return json.loads(last_job.meta_data.preview.read())
 
     def meta_file_serialization(self):
@@ -475,5 +539,12 @@ class DataSourceTag(SoftDeleteObject):
     category = models.ForeignKey("tags.TagCategory", on_delete=models.SET_NULL, null=True)
     value = models.CharField(max_length=150)
 
+    objects = managers.DataSourceTagManager()
+
     def __str__(self):
         return f"{self.id}"
+
+    def natural_key(self):
+        return self.datasource.natural_key() + (self.category.name, self.value)
+
+    natural_key.dependencies = ["tags.tagcategory", "tags.tag", "datasources.datasource"]

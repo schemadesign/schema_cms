@@ -46,11 +46,11 @@ class SchemaCMSAPI:
         return response
 
     @check_response
-    def update_job_state(self, job_pk, state, result=None, error=None):
+    def update_job_state(self, job_pk, state, result=None, result_parquet=None, error=None):
         url = os.path.join(self._job_url(job_pk), "update-state")
         response = requests.post(
             url,
-            json={"job_state": state, "result": result, "error": error},
+            json={"job_state": state, "result": result, "result_parquet": result_parquet, "error": error},
             headers=self.get_headers(),
             timeout=self.timeout,
         )

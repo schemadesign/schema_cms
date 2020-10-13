@@ -1,4 +1,4 @@
-from softdelete.models import SoftDeleteQuerySet
+from softdelete.models import SoftDeleteQuerySet, SoftDeleteManager
 from django.db import models, transaction
 
 from .constants import ProcessingState
@@ -6,7 +6,73 @@ from ..authorization.authentication import LambdaUser
 from ..utils.managers import generate_soft_delete_manager
 
 
+class DataSourceMetaManager(SoftDeleteManager):
+    def get_by_natural_key(self, project_title, data_source_name):
+        return self.get(datasource__name=data_source_name, datasource__project__title=project_title)
+
+
+class DataSourceJobManager(SoftDeleteManager):
+    def get_by_natural_key(self, project_title, data_source_name, is_active):
+        return self.get(
+            datasource__name=data_source_name, datasource__project__title=project_title, is_active=is_active,
+        )
+
+
+class DataSourceJobMetaManager(SoftDeleteManager):
+    def get_by_natural_key(self, project_title, data_source_name, is_active):
+        return self.get(
+            job__datasource__name=data_source_name,
+            job__datasource__project__title=project_title,
+            job__is_active=is_active,
+        )
+
+
+class DataSourceTagManager(SoftDeleteManager):
+    def get_by_natural_key(self, project_title, datasource_name, category_name, value):
+        return self.get(
+            datasource__project__title=project_title,
+            datasource__name=datasource_name,
+            category__name=category_name,
+            value=value,
+        )
+
+
+class DataSourceDescriptionManager(SoftDeleteManager):
+    def get_by_natural_key(self, project_title, datasource_name):
+        return self.get(datasource__project__title=project_title, datasource__name=datasource_name,)
+
+
+class FilterManager(SoftDeleteManager):
+    def get_by_natural_key(self, project_title, datasource_name, filter_name):
+        return self.get(
+            datasource__project__title=project_title, datasource__name=datasource_name, name=filter_name,
+        )
+
+
+class WranglingScriptManager(SoftDeleteManager):
+    def get_by_natural_key(self, script_name, project_title=None, datasource_name=None):
+        if not project_title and not datasource_name:
+            return self.get(name=script_name)
+
+        return self.get(
+            datasource__project__title=project_title, datasource__name=datasource_name, name=script_name,
+        )
+
+
+class DataSourceJobStepManager(SoftDeleteManager):
+    def get_by_natural_key(self, project_title, datasource_name, script_name, order):
+        return self.get(
+            datasource_job__datasource__project__title=project_title,
+            datasource_job__datasource__name=datasource_name,
+            name=script_name,
+            order=order,
+        )
+
+
 class DataSourceQuerySet(SoftDeleteQuerySet):
+    def get_by_natural_key(self, project_title, name):
+        return self.get(name=name, project__title=project_title)
+
     @transaction.atomic()
     def create(self, *args, **kwargs):
         from .models import DataSourceMeta

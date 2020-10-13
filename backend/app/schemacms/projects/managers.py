@@ -6,6 +6,9 @@ from ..utils.managers import generate_soft_delete_manager
 
 
 class ProjectQuerySet(softdelete.models.SoftDeleteQuerySet):
+    def get_by_natural_key(self, title):
+        return self.get(title=title)
+
     def annotate_data_source_count(self):
         from ..datasources.models import DataSource
 
@@ -42,7 +45,7 @@ class ProjectQuerySet(softdelete.models.SoftDeleteQuerySet):
         from ..pages.models import Page
 
         subquery = (
-            Page.objects.order_by()
+            Page.only_pages.order_by()
             .values("project")
             .filter(project=models.OuterRef("pk"), is_draft=True)
             .annotate(count=models.Count("pk"))

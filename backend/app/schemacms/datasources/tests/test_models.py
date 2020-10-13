@@ -61,7 +61,7 @@ class TestDataSource:
         job = job_factory(datasource=ds)
         job.result = ds.file
         job.save()
-        ds.active_job = job
+        ds.set_active_job(job)
         preview_data = {
             "fields": {
                 "col_0": {"dtype": "boolean"},
@@ -69,11 +69,8 @@ class TestDataSource:
                 "col_2": {"dtype": "number"},
             }
         }
-        ds.active_job.update_meta(
-            preview=preview_data, items=0, fields=0, fields_names=[], fields_with_urls=[]
-        )
+        job.update_meta(preview=preview_data, items=0, fields=0, fields_names=[], fields_with_urls=[])
 
-        ds.save(update_fields=["active_job"])
         ds.refresh_from_db()
         ret = ds.meta_file_serialization()
 

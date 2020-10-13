@@ -16,16 +16,14 @@ import {
 } from './blockElement.styles';
 import { getValuePath } from '../../utils/helpers';
 import { Select } from '../form/select';
-import { ELEMENT_PARAMS, INTERNAL_CONNECTION_TYPE } from '../../../modules/blockTemplates/blockTemplates.constants';
+import { INTERNAL_CONNECTION_TYPE } from '../../../modules/blockTemplates/blockTemplates.constants';
 
 export const InternalConnectionElement = ({ blockPath, element, setFieldValue, index, pagerUrlOptions }) => {
   const intl = useIntl();
   const theme = useTheme();
   const name = getValuePath({ blockPath, index });
-  const params = getValuePath({ blockPath, index, elementValue: ELEMENT_PARAMS });
-  const handleSelectPageUrl = ({ value, url }) => {
-    setFieldValue(name, url);
-    setFieldValue(params, { pageId: value });
+  const handleSelectPageUrl = ({ value }) => {
+    setFieldValue(name, value);
   };
 
   const renderStatus = ifElse(equals(true), always('(Public)'), always('(Non Public)'));
@@ -50,7 +48,7 @@ export const InternalConnectionElement = ({ blockPath, element, setFieldValue, i
     <SelectWrapper>
       <Select
         name={name}
-        value={element.params ? element.params.pageId : 0}
+        value={element.value}
         options={options}
         onSelect={handleSelectPageUrl}
         placeholder={placeholder}

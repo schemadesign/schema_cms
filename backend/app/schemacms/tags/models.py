@@ -5,6 +5,7 @@ from django.utils.translation import ugettext as _
 from django_extensions.db.models import TimeStampedModel
 
 from django.contrib.postgres.fields import JSONField
+from . import managers
 
 
 def default_category_type():
@@ -23,8 +24,7 @@ class TagCategory(SoftDeleteObject, TimeStampedModel):
         settings.AUTH_USER_MODEL, on_delete=models.SET_NULL, related_name="tags_categories", null=True
     )
 
-    def __str__(self):
-        return f"{self.name}"
+    objects = managers.TagCategoryManager()
 
     class Meta:
         verbose_name = _("Tag Category")
@@ -37,6 +37,14 @@ class TagCategory(SoftDeleteObject, TimeStampedModel):
             )
         ]
         ordering = ("name",)
+
+    def __str__(self):
+        return f"{self.name}"
+
+    def natural_key(self):
+        return self.project.title, self.name
+
+    natural_key.dependencies = ["projects.project"]
 
     def update_or_create_tags(self, tags):
         for tag in tags:
@@ -51,8 +59,15 @@ class Tag(SoftDeleteObject, TimeStampedModel):
     value = models.CharField(max_length=150)
     order = models.PositiveIntegerField(default=0)
 
-    def __str__(self):
-        return f"{self.value}"
+    objects = managers.TagManager()
 
     class Meta:
         ordering = ("created",)
+
+    def __str__(self):
+        return f"{self.value}"
+
+    def natural_key(self):
+        return self.category.project.title, self.category.name, self.value
+
+    natural_key.dependencies = ["tags.tagcategory"]
