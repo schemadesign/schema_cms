@@ -7,9 +7,12 @@ Array [
   >
     <div
       className="sc-cBoprd ZtrY"
-      id="tagsCounter"
     />
-    3 Sets
+    <div
+      id="elementsCounter"
+    >
+      3 Sets
+    </div>
     <div
       className="sc-cBoprd ZtrY"
     >
@@ -112,6 +115,7 @@ Array [
             className="sc-iqAbSa eTimPT"
           >
             <div
+              id=""
               onClick={[Function]}
               style={
                 Object {
@@ -405,6 +409,7 @@ Array [
             className="sc-iqAbSa eTimPT"
           >
             <div
+              id=""
               onClick={[Function]}
               style={
                 Object {
@@ -698,6 +703,7 @@ Array [
             className="sc-iqAbSa eTimPT"
           >
             <div
+              id=""
               onClick={[Function]}
               style={
                 Object {

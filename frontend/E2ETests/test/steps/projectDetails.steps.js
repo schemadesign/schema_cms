@@ -1,10 +1,8 @@
 import { When, Then } from 'cucumber';
-import Tabs from '../pages/Components/Tabs/tabs.component';
 import Homepage from '../pages/Homepage/homepage.page';
 import ProjectSettings from '../pages/ProjectSettings/projectSettings.page';
 import TopHeader from '../pages/Components/TopHeader/topHeader.component';
 import { clickElement } from '../helpers/actions';
-
 
 When('I cho(o)se to see project settings', () => {
   Homepage.tileCreationDate = Homepage.projectCreationDate().getText();
@@ -32,4 +30,3 @@ Then('project settings match the data on the tile', () => {
   ];
   ProjectSettings.expectProjectTileToHaveProperData(projectTileValues);
 });
-

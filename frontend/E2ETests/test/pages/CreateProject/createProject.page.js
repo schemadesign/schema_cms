@@ -18,11 +18,11 @@ const { title, description, domain } = CREATE_PROJECT;
 
 const singleSelectors = {
   domainInput: '#domain',
-  statusList: '#fieldProjectStatus > div:nth-child(2)',
-  inProgress: '#select-item-0',
-  done: '#select-item-1',
-  hold: '#select-item-2',
-  published: '#select-item-3',
+  statusList: '#fieldProjectStatus > div:nth-child(1)',
+  inProgress: '#status-inProgress',
+  done: '#status-done',
+  hold: '#status-hold',
+  published: '#status-published',
   titleErrorText: 'form > div:nth-child(1) > div:nth-child(2)',
   descriptionErrorText: 'form > div:nth-child(2) > div:nth-child(2)',
   domainErrorText: 'form > div:nth-child(3) > div:nth-child(2)',

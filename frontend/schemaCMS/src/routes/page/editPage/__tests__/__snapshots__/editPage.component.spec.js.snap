@@ -1227,7 +1227,7 @@ exports[`EditPage: Component should render correctly 1`] = `
           }
         }
       >
-        Tags
+        TagTemplates
       </label>
       <div
         className="sc-eKYRpg hFjcyu"
@@ -1486,6 +1486,7 @@ exports[`EditPage: Component should render correctly 1`] = `
             value={1}
           />
           <div
+            id="pageTemplateSelect"
             style={
               Object {
                 "color": "#FFF",
@@ -1495,7 +1496,6 @@ exports[`EditPage: Component should render correctly 1`] = `
             }
           >
             <div
-              id="pageTemplateSelect"
               style={
                 Object {
                   "cursor": "pointer",
@@ -1547,7 +1547,6 @@ exports[`EditPage: Component should render correctly 1`] = `
                 }
               >
                 <div
-                  id="select-item-0"
                   onClick={[Function]}
                   onMouseOut={[Function]}
                   onMouseOver={[Function]}
@@ -1567,7 +1566,6 @@ exports[`EditPage: Component should render correctly 1`] = `
                   (blank)
                 </div>
                 <div
-                  id="select-item-1"
                   onClick={[Function]}
                   onMouseOut={[Function]}
                   onMouseOver={[Function]}
@@ -1588,7 +1586,6 @@ exports[`EditPage: Component should render correctly 1`] = `
                   Page template
                 </div>
                 <div
-                  id="select-item-2"
                   onClick={[Function]}
                   onMouseOut={[Function]}
                   onMouseOver={[Function]}
@@ -1636,9 +1633,12 @@ exports[`EditPage: Component should render correctly 1`] = `
       >
         <div
           className="sc-hmbsMR hokXyL"
-          id="tagsCounter"
         />
-        1 Block
+        <div
+          id="elementsCounter"
+        >
+          1 Block
+        </div>
         <div
           className="sc-hmbsMR hokXyL"
         >
@@ -1696,6 +1696,7 @@ exports[`EditPage: Component should render correctly 1`] = `
       </div>
       <span>
         <div
+          id=""
           onClick={[Function]}
           style={
             Object {

@@ -18,6 +18,8 @@ export default {
   templates: new RegExp(`${browser.config.baseUrl}/project/([0-9]*)/templates`),
   tagTemplates: new RegExp(`${browser.config.baseUrl}/project/([0-9]*)/tag-templates`),
   createTagTemplate: new RegExp(`${browser.config.baseUrl}/project/([0-9]*)/tag-templates/create`),
+  blockTemplates: new RegExp(`${browser.config.baseUrl}/project/([0-9]*)/block-templates`),
+  createBlockTemplate: new RegExp(`${browser.config.baseUrl}/project/([0-9]*)/block-templates/create`),
   get settings() {
     return this.projectDetails;
   },

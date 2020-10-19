@@ -620,7 +620,7 @@ exports[`Metadata: Component should render correctly 1`] = `
             <div
               className="sc-bYwzba ehAxEv"
             >
-              Tags
+              TagTemplates
             </div>
           </div>
           <div
@@ -692,9 +692,12 @@ exports[`Metadata: Component should render correctly 1`] = `
   >
     <div
       className="sc-gXfWUo gZQoJo"
-      id="tagsCounter"
     />
-    3 Metadata
+    <div
+      id="elementsCounter"
+    >
+      3 Metadata
+    </div>
     <div
       className="sc-gXfWUo gZQoJo"
     >
@@ -753,6 +756,7 @@ exports[`Metadata: Component should render correctly 1`] = `
     className="sc-gtssRu"
   >
     <div
+      id=""
       onClick={[Function]}
       style={
         Object {
@@ -1616,7 +1620,7 @@ exports[`Metadata: Component should render correctly 1`] = `
         <div
           className="sc-bYwzba ehAxEv"
         >
-          Tags
+          TagTemplates
         </div>
       </div>
       <div

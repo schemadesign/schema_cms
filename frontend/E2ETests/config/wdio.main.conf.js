@@ -27,7 +27,7 @@ exports.config = {
   logLevel: 'info',
   bail: process.env.BAIL || 3,
   baseUrl: process.env[`${process.env.ENV}`] || process.env.STAGE,
-  waitforTimeout: 30000,
+  waitforTimeout: 40000,
   waitforInterval: 500,
   connectionRetryTimeout: 90000,
   connectionRetryCount: 3,
@@ -66,7 +66,7 @@ exports.config = {
     profile: [],
     strict: false,
     tagExpression: '',
-    timeout: 35000,
+    timeout: 45000,
     ignoreUndefinedDefinitions: true,
   },
   beforeScenario() {

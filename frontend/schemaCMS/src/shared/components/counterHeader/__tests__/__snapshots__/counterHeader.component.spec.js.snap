@@ -5,19 +5,22 @@ exports[`CounterHeader: Component should render correctly 1`] = `
   moveToTop={false}
 >
   <styled.div
-    id="tagsCounter"
     renderElement={true}
   />
-  <FormattedMessage
-    defaultMessage="{count, plural,one {# {copy}} other {# {copy}s}}"
-    id="shared.components.counterHeader.counter"
-    values={
-      Object {
-        "copy": "copy",
-        "count": 3,
+  <div
+    id="elementsCounter"
+  >
+    <FormattedMessage
+      defaultMessage="{count, plural,one {# {copy}} other {# {copy}s}}"
+      id="shared.components.counterHeader.counter"
+      values={
+        Object {
+          "copy": "copy",
+          "count": 3,
+        }
       }
-    }
-  />
+    />
+  </div>
   <styled.div
     renderElement={true}
   >

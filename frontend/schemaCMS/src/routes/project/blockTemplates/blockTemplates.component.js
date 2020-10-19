@@ -4,6 +4,7 @@ import PropTypes from 'prop-types';
 import { FormattedMessage, useIntl } from 'react-intl';
 import { useHistory, useParams } from 'react-router';
 import Helmet from 'react-helmet';
+import { camelize } from 'humps';
 
 import { Container } from './blockTemplates.styles';
 import messages from './blockTemplates.messages';
@@ -85,8 +86,8 @@ const BlockTemplate = ({ copyBlockTemplate, created, createdBy, name, id, elemen
   const footer = <FormattedMessage {...messages.elementsCounter} values={{ elements: elements.length }} />;
 
   return (
-    <ListItem headerComponent={header} footerComponent={footer}>
-      <ListItemTitle id={`blockTemplateTitle-${id}`} onClick={handlePageClick}>
+    <ListItem id={`blockTemplateCard-${camelize(name)}`} headerComponent={header} footerComponent={footer}>
+      <ListItemTitle id={`blockTemplateTitle-${camelize(name)}`} onClick={handlePageClick}>
         {name}
       </ListItemTitle>
     </ListItem>

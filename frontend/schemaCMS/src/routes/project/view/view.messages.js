@@ -23,7 +23,7 @@ export default defineMessages({
   },
   tags: {
     id: 'project.view.tags',
-    defaultMessage: 'Tags',
+    defaultMessage: 'TagTemplates',
   },
   pages: {
     id: 'project.view.pages',

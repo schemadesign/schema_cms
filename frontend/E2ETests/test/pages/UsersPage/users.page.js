@@ -19,7 +19,7 @@ import {
 import { EMPTY, INVALID, RANDOM, TOO_SHORT, VALID } from '../Constants/general.constants';
 import { isTextDisplayed } from '../../helpers/check';
 import { USERS } from '../Constants/credentials.constants';
-import { EXISTING } from '../Templates/Tags/tags.constants';
+import { EXISTING } from '../Templates/Tags/tagTemplates.constants';
 
 const singleSelectors = {
   addUserBtn: '#addUserBtn',

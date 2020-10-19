@@ -19,6 +19,7 @@
     "sourceType": "module"
   },
   "rules": {
+    "arrow-parens": [2, "as-needed"],
     "template-curly-spacing": "off",
     "import/extensions": "off",
     "prettier/prettier": "error",

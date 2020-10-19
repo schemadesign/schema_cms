@@ -2,6 +2,7 @@ import { camelize } from 'humps';
 import PAGE_URL from '../pages/Constants/pageURL.constants';
 import PAGE_TITLE from '../pages/Constants/pageTitle.constants';
 import { waitForTitle, waitForUrl } from './waitFor';
+import { EMPTY_INPUT_ERROR } from '../pages/Constants/validation.constants';
 
 export const expectToBeDisplayed = obj => Object.keys(obj).forEach(key => expect(obj[key]()).toBeDisplayed());
 
@@ -33,3 +34,13 @@ export const expectPageToHaveUrl = pageName => {
   waitForUrl(PAGE_URL[camelize(pageName)]);
   expect(browser.getUrl()).toMatch(PAGE_URL[camelize(pageName)]);
 };
+
+export const expectInputNameToBeValid = inputErrorSelector => expect(inputErrorSelector.isDisplayed()).toBe(false);
+
+export const expectInputNameToBeEmpty = inputErrorSelector => expect(inputErrorSelector).toHaveText(EMPTY_INPUT_ERROR);
+
+export const expectInputNameToBeTooLong = (inputErrorSelector, elementName) =>
+  expect(inputErrorSelector).toHaveText(`${elementName} should have maximum 100 characters`);
+
+export const expectInputNameToExist = (inputErrorSelector, elementName) =>
+  expect(inputErrorSelector).toHaveText(`A ${elementName} with this name already exists in project`);

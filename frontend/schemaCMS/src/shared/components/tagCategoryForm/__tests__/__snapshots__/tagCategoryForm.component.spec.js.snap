@@ -292,9 +292,12 @@ Array [
   >
     <div
       className="sc-bCwgka gQWYQD"
-      id="tagsCounter"
     />
-    2 Tags
+    <div
+      id="elementsCounter"
+    >
+      2 Tags
+    </div>
     <div
       className="sc-bCwgka gQWYQD"
     >
@@ -945,9 +948,12 @@ Array [
   >
     <div
       className="sc-bCwgka gQWYQD"
-      id="tagsCounter"
     />
-    0 Tags
+    <div
+      id="elementsCounter"
+    >
+      0 Tags
+    </div>
     <div
       className="sc-bCwgka gQWYQD"
     >

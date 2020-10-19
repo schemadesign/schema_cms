@@ -38,7 +38,7 @@ export const TAG_CATEGORY_SCHEMA = Yup.object().shape({
             .min(1, 'Tag should have at least 1 character')
             .max(150, 'Tag should have maximum 150 characters'),
         })
-        .test('unique', 'Tags must be unique', function({ value }) {
+        .test('unique', 'TagTemplates must be unique', function({ value }) {
           // eslint-disable-next-line babel/no-invalid-this
           const { parent } = this;
           return pipe(

@@ -15,8 +15,8 @@ export const CounterHeader = ({ copy, count, right = null, moveToTop = false, cu
 
   return (
     <Container moveToTop={moveToTop}>
-      <Element id="tagsCounter" renderElement={!!right} />
-      {renderCopy(customPlural)}
+      <Element renderElement={!!right} />
+      <div id="elementsCounter">{renderCopy(customPlural)}</div>
       <Element renderElement={!!right}>{right}</Element>
     </Container>
   );

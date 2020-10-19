@@ -44,3 +44,10 @@ export const setValue = (selector, value, index) => {
   }
   return setValueForSingleElement(selector, value);
 };
+
+export const clearValue = selector => {
+  while (selector.getValue() !== '') {
+    selector.doubleClick();
+    browser.keys('Backspace');
+  }
+};

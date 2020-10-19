@@ -19,7 +19,7 @@ Feature: CMS-798
     And I am on 'tag templates' page
 
 
-  Scenario Outline: User can create every type of template
+  Scenario Outline: User can create every type of tag template
     When I create <numOfTags> <choiceType> choice <applicability> tags which are <availability> for editors
     Then created tag template is displayed on the tag templates page
 
@@ -42,7 +42,7 @@ Feature: CMS-798
   Scenario Outline: Creating tag template with empty or too long name is not possible
     When I want to create a tag template with <nameState> name
     Then I can see a warning that tag template name is <nameState>
-    And Submit button is inactive
+    And button for creating tag template is inactive
 
     Examples:
       | nameState  |
@@ -53,7 +53,7 @@ Feature: CMS-798
   Scenario Outline: Creating tag template with duplicated or too long tag names is not possible
     When I want to create a tag template with <tagState> tag name
     Then I can see a warning that tag name is <tagState>
-    And Submit button is inactive
+    And button for creating tag template is inactive
 
     Examples:
       | tagState     |

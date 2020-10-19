@@ -605,9 +605,12 @@ exports[`BlockTemplates: Component should render correctly 1`] = `
   >
     <div
       className="sc-cBoprd ePeCXs"
-      id="tagsCounter"
     />
-    3 Block Templates
+    <div
+      id="elementsCounter"
+    >
+      3 Block Templates
+    </div>
     <div
       className="sc-cBoprd ePeCXs"
     />
@@ -617,6 +620,7 @@ exports[`BlockTemplates: Component should render correctly 1`] = `
   >
     <div
       className="sc-cxNIbT jLLsEu"
+      id="blockTemplateCard-blockName"
       style={
         Object {
           "backgroundColor": "#1d1d20",
@@ -695,7 +699,7 @@ exports[`BlockTemplates: Component should render correctly 1`] = `
         </div>
         <h1
           className="sc-lmgQde hvuaFM"
-          id="blockTemplateTitle-1"
+          id="blockTemplateTitle-blockName"
           onClick={[Function]}
           style={
             Object {
@@ -725,6 +729,7 @@ exports[`BlockTemplates: Component should render correctly 1`] = `
     </div>
     <div
       className="sc-cxNIbT jLLsEu"
+      id="blockTemplateCard-blockName2"
       style={
         Object {
           "backgroundColor": "#1d1d20",
@@ -803,7 +808,7 @@ exports[`BlockTemplates: Component should render correctly 1`] = `
         </div>
         <h1
           className="sc-lmgQde hvuaFM"
-          id="blockTemplateTitle-2"
+          id="blockTemplateTitle-blockName2"
           onClick={[Function]}
           style={
             Object {
@@ -833,6 +838,7 @@ exports[`BlockTemplates: Component should render correctly 1`] = `
     </div>
     <div
       className="sc-cxNIbT jLLsEu"
+      id="blockTemplateCard-blockName3"
       style={
         Object {
           "backgroundColor": "#1d1d20",
@@ -911,7 +917,7 @@ exports[`BlockTemplates: Component should render correctly 1`] = `
         </div>
         <h1
           className="sc-lmgQde hvuaFM"
-          id="blockTemplateTitle-3"
+          id="blockTemplateTitle-blockName3"
           onClick={[Function]}
           style={
             Object {

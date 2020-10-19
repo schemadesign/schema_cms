@@ -233,6 +233,6 @@ exports[`TagSearch: Component should render correctly with no tag categories 1`]
 <div
   className="sc-fujyUd bXuLlE"
 >
-  No Tags available
+  No TagTemplates available
 </div>
 `;

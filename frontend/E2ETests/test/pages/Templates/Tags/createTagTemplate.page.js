@@ -1,5 +1,5 @@
 import { cond, equals } from 'ramda';
-import { camelize, pascalize } from 'humps';
+import { pascalize } from 'humps';
 import { createSelectors, generateRandomString, getTranslateXvalueFromMatrix } from '../../../helpers/utils';
 import { clickElement, setValue } from '../../../helpers/actions';
 import {
@@ -12,7 +12,7 @@ import {
   SINGLE,
   TAG_TEMPLATE_NAME_STATE,
   UNAVAILABLE,
-} from './tags.constants';
+} from './tagTemplates.constants';
 import { TOO_LONG, TRANSFORM, VALID } from '../../Constants/general.constants';
 import { waitForElement } from '../../../helpers/waitFor';
 
@@ -21,7 +21,7 @@ const singleSelectors = {
   nameValidationError: '#nameError',
   contentCheckbox: '[for="content"] > svg',
   datasetCheckbox: '[for="dataset"] > svg',
-  tagsCounter: '#tagsCounter',
+  tagsCounter: '#elementsCounter',
   addTagBtn: '#addTagBtn',
   availabilitySwitch: '[for="isAvailable"] > div > div',
   choiceSwitch: '[for="isSingleSelect"] > div > div',
@@ -239,10 +239,6 @@ const expectTagTemplateToHaveProperData = CreateTagTemplate => (
   expect(CreateTagTemplate.nameInput()).toHaveValue(tagTemplateName);
 };
 
-const getTagsCounter = () => numOfTags => (numOfTags > 1 ? `${numOfTags} Tags` : `${numOfTags} Tag`);
-
-const openTagTemplateByName = () => tagTemplateName => clickElement($(`#tag-category-${camelize(tagTemplateName)}`));
-
 const deleteTagTemplate = CreateTagTemplate => () => {
   clickElement(CreateTagTemplate.deleteTagTemplateBtn());
   waitForElement(CreateTagTemplate.tagTemplateRemovalModal());
@@ -251,8 +247,6 @@ const deleteTagTemplate = CreateTagTemplate => () => {
 
 const getFunctions = CreateTagTemplate => ({
   createTagTemplate: createTagTemplate(CreateTagTemplate),
-  getTagsCounter: getTagsCounter(CreateTagTemplate),
-  openTagTemplateByName: openTagTemplateByName(CreateTagTemplate),
   createTagNames: createTagNames(CreateTagTemplate),
   expectTagTemplateToHaveProperData: expectTagTemplateToHaveProperData(CreateTagTemplate),
   deleteTagTemplate: deleteTagTemplate(CreateTagTemplate),

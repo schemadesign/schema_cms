@@ -96,6 +96,11 @@ class PageTagManager(softdelete.models.SoftDeleteManager):
         )
 
 
+class CustomElementManager(softdelete.models.SoftDeleteManager):
+    def get_by_natural_key(self, id_, order):
+        return self.get(id=id_, order=order)
+
+
 class BlockTemplateQuerySet(softdelete.models.SoftDeleteQuerySet):
     def get_by_natural_key(self, project_title, name):
         return self.get(project__title=project_title, name=name)

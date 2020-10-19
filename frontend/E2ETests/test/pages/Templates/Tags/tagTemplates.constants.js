@@ -23,5 +23,5 @@ export const TAG_TEMPLATE_NAME_STATE = {
 
 export const TAG_NAME_ERROR = {
   tooLong: 'Tag should have maximum 150 characters',
-  existing: 'Tags must be unique',
+  existing: 'TagTemplates must be unique',
 };

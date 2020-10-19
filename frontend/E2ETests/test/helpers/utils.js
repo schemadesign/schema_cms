@@ -48,3 +48,8 @@ export const getTranslateXvalueFromMatrix = selector => {
 
   return parseInt(matrix[4], 10);
 };
+
+export const toTitleCase = str => {
+  const re = /(\b[a-z](?!\s))/g;
+  return str.replace(re, x => x.toUpperCase()).replace(/,/g, '');
+};

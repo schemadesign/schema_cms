@@ -692,12 +692,12 @@ exports[`CreateDataSourceState: Component should render correctly 1`] = `
         }
       }
     >
-      Tags
+      TagTemplates
     </label>
     <div
       className="sc-bqGHjH hKSHgD"
     >
-      No Tags available
+      No TagTemplates available
     </div>
     <label
       style={

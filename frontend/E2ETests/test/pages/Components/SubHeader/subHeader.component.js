@@ -49,7 +49,7 @@ const dataSourceTextSelectors = {
   stepsBtnLabel: 'div=Steps',
   resultsBtnLabel: 'div=Results',
   filtersBtnLabel: 'div=Filters',
-  tagsBtnLabel: 'div=Tags',
+  tagsBtnLabel: 'div=TagTemplates',
   statesBtnLabel: 'div=States',
   metaDataBtnLabel: 'div=Metadata',
 };

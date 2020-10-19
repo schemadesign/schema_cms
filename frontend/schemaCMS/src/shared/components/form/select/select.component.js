@@ -30,7 +30,10 @@ export const Select = memo(
         </Label>
       )
     )(!!label);
-    const updatedOptions = options.map(option => ({ ...option, selected: option.value === value }));
+    const updatedOptions = options.map(option => ({
+      ...option,
+      selected: option.value === value,
+    }));
 
     return (
       <Container customStyles={customStyles} onClick={() => setOpen(!open)}>

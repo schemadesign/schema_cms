@@ -626,7 +626,7 @@ exports[`DataSourceStateList: Component should render correctly 1`] = `
             <div
               className="sc-hBMVcZ fIReqG"
             >
-              Tags
+              TagTemplates
             </div>
           </div>
           <div
@@ -698,9 +698,12 @@ exports[`DataSourceStateList: Component should render correctly 1`] = `
   >
     <div
       className="sc-gXfWUo gZQoJo"
-      id="tagsCounter"
     />
-    2 states
+    <div
+      id="elementsCounter"
+    >
+      2 states
+    </div>
     <div
       className="sc-gXfWUo gZQoJo"
     >
@@ -1053,7 +1056,7 @@ exports[`DataSourceStateList: Component should render correctly 1`] = `
         <div
           className="sc-hBMVcZ fIReqG"
         >
-          Tags
+          TagTemplates
         </div>
       </div>
       <div
@@ -1747,7 +1750,7 @@ exports[`DataSourceStateList: Component should render correctly when no tags 1`]
             <div
               className="sc-hBMVcZ fIReqG"
             >
-              Tags
+              TagTemplates
             </div>
           </div>
           <div
@@ -1819,9 +1822,12 @@ exports[`DataSourceStateList: Component should render correctly when no tags 1`]
   >
     <div
       className="sc-gXfWUo gZQoJo"
-      id="tagsCounter"
     />
-    0 states
+    <div
+      id="elementsCounter"
+    >
+      0 states
+    </div>
     <div
       className="sc-gXfWUo gZQoJo"
     >
@@ -2123,7 +2129,7 @@ exports[`DataSourceStateList: Component should render correctly when no tags 1`]
         <div
           className="sc-hBMVcZ fIReqG"
         >
-          Tags
+          TagTemplates
         </div>
       </div>
       <div
@@ -2817,7 +2823,7 @@ exports[`DataSourceStateList: Component should render correctly with loader 1`] 
             <div
               className="sc-hBMVcZ fIReqG"
             >
-              Tags
+              TagTemplates
             </div>
           </div>
           <div
@@ -2889,9 +2895,12 @@ exports[`DataSourceStateList: Component should render correctly with loader 1`] 
   >
     <div
       className="sc-gXfWUo gZQoJo"
-      id="tagsCounter"
     />
-    2 states
+    <div
+      id="elementsCounter"
+    >
+      2 states
+    </div>
     <div
       className="sc-gXfWUo gZQoJo"
     >
@@ -3244,7 +3253,7 @@ exports[`DataSourceStateList: Component should render correctly with loader 1`] 
         <div
           className="sc-hBMVcZ fIReqG"
         >
-          Tags
+          TagTemplates
         </div>
       </div>
       <div

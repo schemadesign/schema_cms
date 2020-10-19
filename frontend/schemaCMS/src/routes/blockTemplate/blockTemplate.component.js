@@ -167,7 +167,7 @@ export const BlockTemplate = memo(
                 <FormattedMessage {...messages.cancel} />
               </BackButton>
               <NextButton
-                id="createTemplateBlockMobile"
+                id="createBlockTemplate"
                 type="submit"
                 loading={updateLoading}
                 disabled={!isValid || !dirty || updateLoading}

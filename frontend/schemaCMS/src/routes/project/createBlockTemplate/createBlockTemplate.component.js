@@ -99,7 +99,7 @@ export const CreateBlockTemplate = ({ userRole, createBlockTemplate, project }) 
             <FormattedMessage {...messages.cancel} />
           </BackButton>
           <NextButton
-            id="createTemplateBlock"
+            id="createBlockTemplateMobile"
             type="submit"
             loading={createLoading}
             disabled={!isValid || !dirty || createLoading}

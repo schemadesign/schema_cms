@@ -5,7 +5,7 @@ export const SOURCE_LABEL = 'Source';
 export const ITEMS_LABEL = 'Items';
 export const FIELDS_LABEL = 'Fields';
 export const FILTERS_LABEL = 'Filters';
-export const TAGS_LABEL = 'Tags';
+export const TAGS_LABEL = 'TagTemplates';
 
 const DATA_SOURCE_CREATION_DATE = 'a few seconds ago';
 export const DATA_SOURCE_CREATOR_NAME = {

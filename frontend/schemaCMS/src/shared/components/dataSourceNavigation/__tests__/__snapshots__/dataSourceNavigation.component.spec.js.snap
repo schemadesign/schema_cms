@@ -152,7 +152,7 @@ exports[`DataSourceNavigation: Component should render correctly 1`] = `
       </styled.div>
       <styled.div>
         <FormattedMessage
-          defaultMessage="Tags"
+          defaultMessage="TagTemplates"
           id="shared.components.dataSourceNavigation.tag"
         />
       </styled.div>
@@ -363,7 +363,7 @@ exports[`DataSourceNavigation: Component should render correctly with fake job 1
       </styled.div>
       <styled.div>
         <FormattedMessage
-          defaultMessage="Tags"
+          defaultMessage="TagTemplates"
           id="shared.components.dataSourceNavigation.tag"
         />
       </styled.div>
@@ -574,7 +574,7 @@ exports[`DataSourceNavigation: Component should render correctly with job 1`] = 
       </styled.div>
       <styled.div>
         <FormattedMessage
-          defaultMessage="Tags"
+          defaultMessage="TagTemplates"
           id="shared.components.dataSourceNavigation.tag"
         />
       </styled.div>

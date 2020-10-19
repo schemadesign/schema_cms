@@ -886,9 +886,12 @@ exports[`PageTemplate: Component should render correctly 1`] = `
       >
         <div
           className="sc-dPaNSN ibUrzu"
-          id="tagsCounter"
         />
-        1 Block
+        <div
+          id="elementsCounter"
+        >
+          1 Block
+        </div>
         <div
           className="sc-dPaNSN ibUrzu"
         >
@@ -1002,6 +1005,7 @@ exports[`PageTemplate: Component should render correctly 1`] = `
                   value={1}
                 />
                 <div
+                  id="blockTypeSelect"
                   style={
                     Object {
                       "color": "#FFF",
@@ -1011,7 +1015,6 @@ exports[`PageTemplate: Component should render correctly 1`] = `
                   }
                 >
                   <div
-                    id="blockTypeSelect"
                     style={
                       Object {
                         "cursor": "pointer",
@@ -1063,7 +1066,6 @@ exports[`PageTemplate: Component should render correctly 1`] = `
                       }
                     >
                       <div
-                        id="select-item-0"
                         onClick={[Function]}
                         onMouseOut={[Function]}
                         onMouseOver={[Function]}
@@ -1084,7 +1086,6 @@ exports[`PageTemplate: Component should render correctly 1`] = `
                         block name
                       </div>
                       <div
-                        id="select-item-1"
                         onClick={[Function]}
                         onMouseOut={[Function]}
                         onMouseOver={[Function]}
@@ -1104,7 +1105,6 @@ exports[`PageTemplate: Component should render correctly 1`] = `
                         block name 2
                       </div>
                       <div
-                        id="select-item-2"
                         onClick={[Function]}
                         onMouseOut={[Function]}
                         onMouseOver={[Function]}

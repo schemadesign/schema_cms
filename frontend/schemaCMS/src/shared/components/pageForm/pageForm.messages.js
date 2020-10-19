@@ -46,7 +46,7 @@ export default defineMessages({
   },
   [PAGE_TAGS]: {
     id: `shared.components.pageForm.${PAGE_TAGS}`,
-    defaultMessage: 'Tags',
+    defaultMessage: 'TagTemplates',
   },
   [PAGE_LINK]: {
     id: `shared.components.pageForm.${PAGE_LINK}`,

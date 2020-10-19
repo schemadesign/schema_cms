@@ -30,7 +30,7 @@ export default defineMessages({
   },
   [TAGS_PAGE]: {
     id: `shared.components.dataSourceNavigation.${TAGS_PAGE}`,
-    defaultMessage: 'Tags',
+    defaultMessage: 'TagTemplates',
   },
   [FILTERS_PAGE]: {
     id: `shared.components.dataSourceNavigation.${FILTERS_PAGE}`,

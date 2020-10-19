@@ -13,12 +13,14 @@ export default {
   steps: 'Data Wrangling - Schema CMS',
   datasourceResults: 'Data Wrangling Result - Schema CMS',
   filters: 'Filters - Schema CMS',
-  tags: 'Tags - Schema CMS',
+  tags: 'TagTemplates - Schema CMS',
   states: 'States - Schema CMS',
   metadata: 'Metadata - Schema CMS',
   templates: 'Templates - Schema CMS',
   tagTemplates: 'Tag Categories - Schema CMS',
   createTagTemplate: 'Schema CMS',
+  blockTemplates: 'Block Templates - Schema CMS',
+  createBlockTemplate: 'Block Template - Schema CMS',
   get settings() {
     return this.projectDetails;
   },

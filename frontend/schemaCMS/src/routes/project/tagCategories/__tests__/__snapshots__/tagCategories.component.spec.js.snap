@@ -32,7 +32,7 @@ exports[`TagCategories: Component should render correctly 1`] = `
         Object {
           "active": true,
           "h3": Object {
-            "defaultMessage": "Tags Template",
+            "defaultMessage": "TagTemplates Template",
             "id": "shared.components.projectBreadcrumbs.tagsTemplate",
           },
           "path": "/project/1/tags-templates",
@@ -181,7 +181,7 @@ exports[`TagCategories: Component should render correctly 1`] = `
       <Styled(Component)
         footerComponent={
           <FormattedMessage
-            defaultMessage="{count, plural,one {# Tag} other {# Tags}}"
+            defaultMessage="{count, plural,one {# Tag} other {# TagTemplates}}"
             id="project.tagCategories.tagsCounter"
             values={
               Object {
@@ -213,7 +213,7 @@ exports[`TagCategories: Component should render correctly 1`] = `
       <Styled(Component)
         footerComponent={
           <FormattedMessage
-            defaultMessage="{count, plural,one {# Tag} other {# Tags}}"
+            defaultMessage="{count, plural,one {# Tag} other {# TagTemplates}}"
             id="project.tagCategories.tagsCounter"
             values={
               Object {
@@ -296,7 +296,7 @@ exports[`TagCategories: Component should render correctly when no categories 1`]
         Object {
           "active": true,
           "h3": Object {
-            "defaultMessage": "Tags Template",
+            "defaultMessage": "TagTemplates Template",
             "id": "shared.components.projectBreadcrumbs.tagsTemplate",
           },
           "path": "/project/1/tags-templates",
@@ -445,7 +445,7 @@ exports[`TagCategories: Component should render correctly when no categories 1`]
       <Styled(Component)
         footerComponent={
           <FormattedMessage
-            defaultMessage="{count, plural,one {# Tag} other {# Tags}}"
+            defaultMessage="{count, plural,one {# Tag} other {# TagTemplates}}"
             id="project.tagCategories.tagsCounter"
             values={
               Object {
@@ -477,7 +477,7 @@ exports[`TagCategories: Component should render correctly when no categories 1`]
       <Styled(Component)
         footerComponent={
           <FormattedMessage
-            defaultMessage="{count, plural,one {# Tag} other {# Tags}}"
+            defaultMessage="{count, plural,one {# Tag} other {# TagTemplates}}"
             id="project.tagCategories.tagsCounter"
             values={
               Object {
@@ -560,7 +560,7 @@ exports[`TagCategories: Component should render correctly with loader 1`] = `
         Object {
           "active": true,
           "h3": Object {
-            "defaultMessage": "Tags Template",
+            "defaultMessage": "TagTemplates Template",
             "id": "shared.components.projectBreadcrumbs.tagsTemplate",
           },
           "path": "/project/1/tags-templates",
@@ -709,7 +709,7 @@ exports[`TagCategories: Component should render correctly with loader 1`] = `
       <Styled(Component)
         footerComponent={
           <FormattedMessage
-            defaultMessage="{count, plural,one {# Tag} other {# Tags}}"
+            defaultMessage="{count, plural,one {# Tag} other {# TagTemplates}}"
             id="project.tagCategories.tagsCounter"
             values={
               Object {
@@ -741,7 +741,7 @@ exports[`TagCategories: Component should render correctly with loader 1`] = `
       <Styled(Component)
         footerComponent={
           <FormattedMessage
-            defaultMessage="{count, plural,one {# Tag} other {# Tags}}"
+            defaultMessage="{count, plural,one {# Tag} other {# TagTemplates}}"
             id="project.tagCategories.tagsCounter"
             values={
               Object {

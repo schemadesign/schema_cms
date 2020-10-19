@@ -312,9 +312,12 @@ exports[`PageTemplateForm: Component should render correctly 1`] = `
   >
     <div
       className="sc-iJCRLp bGihsy"
-      id="tagsCounter"
     />
-    1 Block
+    <div
+      id="elementsCounter"
+    >
+      1 Block
+    </div>
     <div
       className="sc-iJCRLp bGihsy"
     >
@@ -428,6 +431,7 @@ exports[`PageTemplateForm: Component should render correctly 1`] = `
               value={1}
             />
             <div
+              id="blockTypeSelect"
               style={
                 Object {
                   "color": "#FFF",
@@ -437,7 +441,6 @@ exports[`PageTemplateForm: Component should render correctly 1`] = `
               }
             >
               <div
-                id="blockTypeSelect"
                 style={
                   Object {
                     "cursor": "pointer",
@@ -489,7 +492,6 @@ exports[`PageTemplateForm: Component should render correctly 1`] = `
                   }
                 >
                   <div
-                    id="select-item-0"
                     onClick={[Function]}
                     onMouseOut={[Function]}
                     onMouseOver={[Function]}
@@ -510,7 +512,6 @@ exports[`PageTemplateForm: Component should render correctly 1`] = `
                     block name
                   </div>
                   <div
-                    id="select-item-1"
                     onClick={[Function]}
                     onMouseOut={[Function]}
                     onMouseOver={[Function]}
@@ -530,7 +531,6 @@ exports[`PageTemplateForm: Component should render correctly 1`] = `
                     block name 2
                   </div>
                   <div
-                    id="select-item-2"
                     onClick={[Function]}
                     onMouseOut={[Function]}
                     onMouseOver={[Function]}

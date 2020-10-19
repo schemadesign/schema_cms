@@ -605,9 +605,12 @@ exports[`PageTemplates: Component should render correctly 1`] = `
   >
     <div
       className="sc-cBoprd ePeCXs"
-      id="tagsCounter"
     />
-    2 Page Templates
+    <div
+      id="elementsCounter"
+    >
+      2 Page Templates
+    </div>
     <div
       className="sc-cBoprd ePeCXs"
     />

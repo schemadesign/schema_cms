@@ -866,9 +866,12 @@ exports[`CreatePageTemplate: Component should render correctly 1`] = `
       >
         <div
           className="sc-dPaNSN ibUrzu"
-          id="tagsCounter"
         />
-        1 Block
+        <div
+          id="elementsCounter"
+        >
+          1 Block
+        </div>
         <div
           className="sc-dPaNSN ibUrzu"
         >
@@ -982,6 +985,7 @@ exports[`CreatePageTemplate: Component should render correctly 1`] = `
                   value=""
                 />
                 <div
+                  id="blockTypeSelect"
                   style={
                     Object {
                       "color": "#FFF",
@@ -991,7 +995,6 @@ exports[`CreatePageTemplate: Component should render correctly 1`] = `
                   }
                 >
                   <div
-                    id="blockTypeSelect"
                     style={
                       Object {
                         "cursor": "pointer",
@@ -1043,7 +1046,6 @@ exports[`CreatePageTemplate: Component should render correctly 1`] = `
                       }
                     >
                       <div
-                        id="select-item-0"
                         onClick={[Function]}
                         onMouseOut={[Function]}
                         onMouseOver={[Function]}
@@ -1063,7 +1065,6 @@ exports[`CreatePageTemplate: Component should render correctly 1`] = `
                         block name
                       </div>
                       <div
-                        id="select-item-1"
                         onClick={[Function]}
                         onMouseOut={[Function]}
                         onMouseOver={[Function]}
@@ -1083,7 +1084,6 @@ exports[`CreatePageTemplate: Component should render correctly 1`] = `
                         block name 2
                       </div>
                       <div
-                        id="select-item-2"
                         onClick={[Function]}
                         onMouseOut={[Function]}
                         onMouseOver={[Function]}
@@ -1347,7 +1347,7 @@ exports[`CreatePageTemplate: Component should render correctly 1`] = `
           <button
             className="sc-fnVYJo lmnryI"
             disabled={true}
-            id="createTemplateBlock"
+            id="createBlockTemplateMobile"
             style={
               Object {
                 "backgroundColor": "#1d1d20",

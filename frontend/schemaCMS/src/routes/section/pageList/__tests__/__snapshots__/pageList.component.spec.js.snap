@@ -915,9 +915,12 @@ exports[`PageList: Component should render correctly 1`] = `
     >
       <div
         className="sc-iJCRLp bGihsy"
-        id="tagsCounter"
       />
-      3 pages
+      <div
+        id="elementsCounter"
+      >
+        3 pages
+      </div>
       <div
         className="sc-iJCRLp bGihsy"
       >

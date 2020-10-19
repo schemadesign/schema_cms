@@ -16,3 +16,5 @@ export const RESET = 'reset';
 export const INVITED = 'invited';
 export const RANDOM = 'random';
 export const TRANSFORM = 'transform';
+
+export const STANDARD = 'standard';

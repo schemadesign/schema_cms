@@ -137,7 +137,7 @@ exports[`CreateTagCategory: Component should render correctly 1`] = `
         },
         Object {
           "h3": Object {
-            "defaultMessage": "Tags",
+            "defaultMessage": "TagTemplates",
             "id": "shared.components.projectBreadcrumbs.tags",
           },
           "path": "/project/1/tag-categories",

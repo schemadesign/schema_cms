@@ -505,9 +505,12 @@ exports[`Content: Component should render correctly 1`] = `
   >
     <div
       className="sc-iTVIwl hdqpZR"
-      id="tagsCounter"
     />
-    2 sections
+    <div
+      id="elementsCounter"
+    >
+      2 sections
+    </div>
     <div
       className="sc-iTVIwl hdqpZR"
     />

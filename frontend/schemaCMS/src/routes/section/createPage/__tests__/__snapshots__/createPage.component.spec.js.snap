@@ -1203,7 +1203,7 @@ exports[`CreatePage: Component should render correctly 1`] = `
           }
         }
       >
-        Tags
+        TagTemplates
       </label>
       <div
         className="sc-hhIhEF ivJlXG"
@@ -1462,6 +1462,7 @@ exports[`CreatePage: Component should render correctly 1`] = `
             value={0}
           />
           <div
+            id="pageTemplateSelect"
             style={
               Object {
                 "color": "#FFF",
@@ -1471,7 +1472,6 @@ exports[`CreatePage: Component should render correctly 1`] = `
             }
           >
             <div
-              id="pageTemplateSelect"
               style={
                 Object {
                   "cursor": "pointer",
@@ -1523,7 +1523,6 @@ exports[`CreatePage: Component should render correctly 1`] = `
                 }
               >
                 <div
-                  id="select-item-0"
                   onClick={[Function]}
                   onMouseOut={[Function]}
                   onMouseOver={[Function]}
@@ -1544,7 +1543,6 @@ exports[`CreatePage: Component should render correctly 1`] = `
                   (blank)
                 </div>
                 <div
-                  id="select-item-1"
                   onClick={[Function]}
                   onMouseOut={[Function]}
                   onMouseOver={[Function]}
@@ -1564,7 +1562,6 @@ exports[`CreatePage: Component should render correctly 1`] = `
                   Page template
                 </div>
                 <div
-                  id="select-item-2"
                   onClick={[Function]}
                   onMouseOut={[Function]}
                   onMouseOver={[Function]}
@@ -1612,9 +1609,12 @@ exports[`CreatePage: Component should render correctly 1`] = `
       >
         <div
           className="sc-oefIU jwijTA"
-          id="tagsCounter"
         />
-        0 Blocks
+        <div
+          id="elementsCounter"
+        >
+          0 Blocks
+        </div>
         <div
           className="sc-oefIU jwijTA"
         >

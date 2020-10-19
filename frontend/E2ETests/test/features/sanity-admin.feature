@@ -92,6 +92,9 @@ Feature: Sanity test run for invited user with admin role
     Then created tag template is displayed on the tag templates page
     When I leave tag templates page
     Then I am on 'templates' page
+    # Creating block templates
+    When I create block template with 'all the elements'
+    Then block template with 'all the elements' is displayed on the block templates page
     # CMS-26: creating a data source
     Given I have entered 'sources' tab
     When I choose to upload a 'valid' CSV file

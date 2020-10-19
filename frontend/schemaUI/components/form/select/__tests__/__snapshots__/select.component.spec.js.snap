@@ -2,6 +2,7 @@
 
 exports[`Select: Component should render correctly 1`] = `
 <div
+  id=""
   style={
     Object {
       "color": "#FFF",
@@ -192,6 +193,7 @@ exports[`Select: Component should render correctly 1`] = `
 
 exports[`Select: Component should render correctly with native 1`] = `
 <div
+  id=""
   style={
     Object {
       "color": "#FFF",
@@ -250,6 +252,7 @@ exports[`Select: Component should render correctly with native 1`] = `
 
 exports[`Select: Component should render correctly with placeholder 1`] = `
 <div
+  id=""
   style={
     Object {
       "color": "#FFF",

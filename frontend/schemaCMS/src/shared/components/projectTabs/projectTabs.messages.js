@@ -26,6 +26,6 @@ export default defineMessages({
   },
   [TAG_CATEGORIES]: {
     id: `shared.components.projectTabs.${TAG_CATEGORIES}`,
-    defaultMessage: 'Tags',
+    defaultMessage: 'TagTemplates',
   },
 });

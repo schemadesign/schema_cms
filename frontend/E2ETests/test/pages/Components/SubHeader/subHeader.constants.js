@@ -22,7 +22,7 @@ export const SUBHEADER_DATA_SOURCES_SUBTITLE = {
   steps: 'Steps',
   results: 'Data Wrangling Result',
   filters: 'Filters',
-  tags: 'Tags',
+  tags: 'TagTemplates',
   states: 'States',
   metadata: 'Metadata',
 };
@@ -32,7 +32,7 @@ const FIELDS_SUBHEADER_LABEL = 'Fields';
 const STEPS_SUBHEADER_LABEL = 'Steps';
 const RESULTS_SUBHEADER_LABEL = 'Results';
 const FILTERS_SUBHEADER_LABEL = 'Filters';
-const TAGS_SUBHEADER_LABEL = 'Tags';
+const TAGS_SUBHEADER_LABEL = 'TagTemplates';
 const STATES_SUBHEADER_LABEL = 'States';
 const METADATA_SUBHEADER_LABEL = 'Metadata';
 

@@ -126,7 +126,7 @@ export const CreatePageTemplate = ({ userRole, createPageTemplate, fetchBlockTem
               <FormattedMessage {...messages.cancel} />
             </BackButton>
             <NextButton
-              id="createTemplateBlock"
+              id="createBlockTemplateMobile"
               type="submit"
               loading={createLoading}
               disabled={!isValid || !dirty || createLoading}

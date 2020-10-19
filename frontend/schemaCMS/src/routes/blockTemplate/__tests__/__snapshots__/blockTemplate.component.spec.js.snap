@@ -866,9 +866,12 @@ exports[`BlockTemplate: Component should render correctly 1`] = `
       >
         <div
           className="sc-efHXLn eqQaLR"
-          id="tagsCounter"
         />
-        2 Elements
+        <div
+          id="elementsCounter"
+        >
+          2 Elements
+        </div>
         <div
           className="sc-efHXLn eqQaLR"
         >
@@ -926,6 +929,7 @@ exports[`BlockTemplate: Component should render correctly 1`] = `
       </div>
       <span>
         <div
+          id="accordionToggle"
           onClick={[Function]}
           style={
             Object {
@@ -1581,7 +1585,7 @@ exports[`BlockTemplate: Component should render correctly 1`] = `
           <button
             className="sc-fnVYJo lmnryI"
             disabled={true}
-            id="createTemplateBlockMobile"
+            id="createBlockTemplate"
             style={
               Object {
                 "backgroundColor": "#1d1d20",

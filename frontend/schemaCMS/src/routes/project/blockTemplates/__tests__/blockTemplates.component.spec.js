@@ -43,7 +43,7 @@ describe('BlockTemplates: Component', () => {
 
   it('should redirect to create block template on mobile', async () => {
     const wrapper = await render();
-    wrapper.root.findByProps({ id: 'createBlockTemplateMobile' }).props.onClick();
+    wrapper.root.findByProps({ id: 'createBlockTemplate' }).props.onClick();
 
     expect(mockPushHistory).toHaveBeenCalledWith('/project/projectId/block-templates/create');
   });
@@ -57,7 +57,7 @@ describe('BlockTemplates: Component', () => {
 
   it('should redirect to block template', async () => {
     const wrapper = await render();
-    wrapper.root.findByProps({ id: 'blockTemplateTitle-1' }).props.onClick();
+    wrapper.root.findByProps({ id: 'blockTemplateTitle-blockName' }).props.onClick();
 
     expect(mockPushHistory).toHaveBeenCalledWith('/block-template/1');
   });

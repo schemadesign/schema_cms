@@ -61,7 +61,7 @@ exports[`TagCategory: Component should render correctly 1`] = `
           },
           Object {
             "h3": Object {
-              "defaultMessage": "Tags Template",
+              "defaultMessage": "TagTemplates Template",
               "id": "shared.components.projectBreadcrumbs.tagsTemplate",
             },
             "path": "/project/1/tag-templates",
@@ -316,7 +316,7 @@ exports[`TagCategory: Component should render correctly with loader 1`] = `
           },
           Object {
             "h3": Object {
-              "defaultMessage": "Tags Template",
+              "defaultMessage": "TagTemplates Template",
               "id": "shared.components.projectBreadcrumbs.tagsTemplate",
             },
             "path": "/project/1/tag-templates",

@@ -292,9 +292,12 @@ exports[`BlockTemplateForm: Component should render correctly 1`] = `
   >
     <div
       className="sc-iJCRLp bGihsy"
-      id="tagsCounter"
     />
-    2 Elements
+    <div
+      id="elementsCounter"
+    >
+      2 Elements
+    </div>
     <div
       className="sc-iJCRLp bGihsy"
     >
@@ -352,6 +355,7 @@ exports[`BlockTemplateForm: Component should render correctly 1`] = `
   </div>
   <span>
     <div
+      id="accordionToggle"
       onClick={[Function]}
       style={
         Object {

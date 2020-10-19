@@ -35,6 +35,7 @@ exports[`AddBlockForm: Component should render a block template with added eleme
         value={0}
       />
       <div
+        id="blockTypeSelect"
         style={
           Object {
             "color": "#FFF",
@@ -44,7 +45,6 @@ exports[`AddBlockForm: Component should render a block template with added eleme
         }
       >
         <div
-          id="blockTypeSelect"
           style={
             Object {
               "cursor": "pointer",
@@ -96,7 +96,6 @@ exports[`AddBlockForm: Component should render a block template with added eleme
             }
           >
             <div
-              id="select-item-0"
               onClick={[Function]}
               onMouseOut={[Function]}
               onMouseOver={[Function]}
@@ -117,7 +116,6 @@ exports[`AddBlockForm: Component should render a block template with added eleme
               (blank)
             </div>
             <div
-              id="select-item-1"
               onClick={[Function]}
               onMouseOut={[Function]}
               onMouseOver={[Function]}
@@ -137,7 +135,6 @@ exports[`AddBlockForm: Component should render a block template with added eleme
               block name
             </div>
             <div
-              id="select-item-2"
               onClick={[Function]}
               onMouseOut={[Function]}
               onMouseOver={[Function]}
@@ -157,7 +154,6 @@ exports[`AddBlockForm: Component should render a block template with added eleme
               block name 2
             </div>
             <div
-              id="select-item-3"
               onClick={[Function]}
               onMouseOut={[Function]}
               onMouseOver={[Function]}
@@ -205,9 +201,12 @@ exports[`AddBlockForm: Component should render a block template with added eleme
   >
     <div
       className="sc-cBoprd ZtrY"
-      id="tagsCounter"
     />
-    0 Elements
+    <div
+      id="elementsCounter"
+    >
+      0 Elements
+    </div>
     <div
       className="sc-cBoprd ZtrY"
     >
@@ -367,6 +366,7 @@ exports[`AddBlockForm: Component should render correctly 1`] = `
         value=""
       />
       <div
+        id="blockTypeSelect"
         style={
           Object {
             "color": "#FFF",
@@ -376,7 +376,6 @@ exports[`AddBlockForm: Component should render correctly 1`] = `
         }
       >
         <div
-          id="blockTypeSelect"
           style={
             Object {
               "cursor": "pointer",
@@ -428,7 +427,6 @@ exports[`AddBlockForm: Component should render correctly 1`] = `
             }
           >
             <div
-              id="select-item-0"
               onClick={[Function]}
               onMouseOut={[Function]}
               onMouseOver={[Function]}
@@ -448,7 +446,6 @@ exports[`AddBlockForm: Component should render correctly 1`] = `
               (blank)
             </div>
             <div
-              id="select-item-1"
               onClick={[Function]}
               onMouseOut={[Function]}
               onMouseOver={[Function]}
@@ -468,7 +465,6 @@ exports[`AddBlockForm: Component should render correctly 1`] = `
               block name
             </div>
             <div
-              id="select-item-2"
               onClick={[Function]}
               onMouseOut={[Function]}
               onMouseOver={[Function]}
@@ -488,7 +484,6 @@ exports[`AddBlockForm: Component should render correctly 1`] = `
               block name 2
             </div>
             <div
-              id="select-item-3"
               onClick={[Function]}
               onMouseOut={[Function]}
               onMouseOver={[Function]}

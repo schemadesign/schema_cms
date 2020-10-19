@@ -37,7 +37,7 @@ export default defineMessages({
   },
   [DATA_SOURCE_STATE_TAGS]: {
     id: `shared.components.dataSourceStateForm.${DATA_SOURCE_STATE_TAGS}`,
-    defaultMessage: 'Tags',
+    defaultMessage: 'TagTemplates',
   },
   [DATA_SOURCE_STATE_IS_PUBLIC]: {
     id: `shared.components.dataSourceStateForm.${DATA_SOURCE_STATE_IS_PUBLIC}`,

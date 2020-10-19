@@ -28,6 +28,6 @@ export default defineMessages({
   },
   tagsCounter: {
     id: 'project.tagCategories.tagsCounter',
-    defaultMessage: '{count, plural,one {# Tag} other {# Tags}}',
+    defaultMessage: '{count, plural,one {# Tag} other {# TagTemplates}}',
   },
 });

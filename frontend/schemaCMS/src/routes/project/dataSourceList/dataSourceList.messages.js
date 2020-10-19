@@ -68,7 +68,7 @@ export default defineMessages({
   },
   tags: {
     id: 'project.dataSourceList.tags',
-    defaultMessage: 'Tags',
+    defaultMessage: 'TagTemplates',
   },
   noData: {
     id: 'project.dataSourceList.noData',

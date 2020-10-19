@@ -25,6 +25,7 @@ exports[`PageBlockTemplate: Component should render correctly 1`] = `
         value={1}
       />
       <div
+        id="blockTypeSelect"
         style={
           Object {
             "color": "#FFF",
@@ -34,7 +35,6 @@ exports[`PageBlockTemplate: Component should render correctly 1`] = `
         }
       >
         <div
-          id="blockTypeSelect"
           style={
             Object {
               "cursor": "pointer",
@@ -86,7 +86,6 @@ exports[`PageBlockTemplate: Component should render correctly 1`] = `
             }
           >
             <div
-              id="select-item-0"
               onClick={[Function]}
               onMouseOut={[Function]}
               onMouseOver={[Function]}

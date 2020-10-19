@@ -60,11 +60,11 @@ export default defineMessages({
   },
   tags: {
     id: 'shared.components.projectBreadcrumbs.tags',
-    defaultMessage: 'Tags',
+    defaultMessage: 'TagTemplates',
   },
   tagsTemplate: {
     id: 'shared.components.projectBreadcrumbs.tagsTemplate',
-    defaultMessage: 'Tags Template',
+    defaultMessage: 'TagTemplates Template',
   },
   dataSource: {
     id: 'shared.components.projectBreadcrumbs.dataSource',

@@ -29,6 +29,7 @@ exports[`Select: Component should render correctly 1`] = `
     value="one"
   />
   <div
+    id=""
     style={
       Object {
         "color": "#FFF",
@@ -89,7 +90,6 @@ exports[`Select: Component should render correctly 1`] = `
         }
       >
         <div
-          id="select-item-0"
           onClick={[Function]}
           onMouseOut={[Function]}
           onMouseOver={[Function]}
@@ -110,7 +110,6 @@ exports[`Select: Component should render correctly 1`] = `
           One
         </div>
         <div
-          id="select-item-1"
           onClick={[Function]}
           onMouseOut={[Function]}
           onMouseOver={[Function]}
@@ -130,7 +129,6 @@ exports[`Select: Component should render correctly 1`] = `
           Two
         </div>
         <div
-          id="select-item-2"
           onClick={[Function]}
           onMouseOut={[Function]}
           onMouseOver={[Function]}
