@@ -57,6 +57,7 @@ class ProjectImportForm(forms.Form):
             for deserialized_object in serializers.deserialize(
                 "json", zip_file.read("objects.json"), handle_forward_references=True
             ):
+
                 object_fields = [f.name for f in deserialized_object.object._meta.get_fields()]
                 if isinstance(deserialized_object.object, models.Project):
                     self.import_project_model(zip_file, deserialized_object, import_time)
@@ -69,13 +70,24 @@ class ProjectImportForm(forms.Form):
                 if isinstance(deserialized_object.object, DataSourceJob):
                     self.import_files(zip_file, deserialized_object, ("result", "result_parquet"))
                 if isinstance(deserialized_object.object, PageBlockElement):
-                    if c_set := deserialized_object.object.custom_element_set:
-                        id_ = custom_element_sets.get(str(c_set.id))
-                        new_set, _ = CustomElementSet.objects.get_or_create(
-                            id=id_, defaults=dict(order=c_set.order)
-                        )
-                        custom_element_sets[str(c_set.id)] = new_set.id
-                        deserialized_object.object.custom_element_set = new_set
+                    if deserialized_object.deferred_fields:
+                        deferred_to_remove = []
+
+                        for field, value in deserialized_object.deferred_fields.items():
+                            if field.name == "custom_element_set":
+                                c_set_id = value[0]
+                                c_set_order = value[1]
+
+                                id_ = custom_element_sets.get(str(c_set_id))
+                                new_set, _ = CustomElementSet.objects.get_or_create(
+                                    id=id_, defaults=dict(order=c_set_order)
+                                )
+                                custom_element_sets[str(c_set_id)] = new_set.id
+                                deserialized_object.object.custom_element_set = new_set
+                                deferred_to_remove.append(field)
+
+                        for field in deferred_to_remove:
+                            del deserialized_object.deferred_fields[field]
 
                     if deserialized_object.object.type in [ElementType.IMAGE, ElementType.FILE]:
                         self.import_files(
@@ -92,7 +104,7 @@ class ProjectImportForm(forms.Form):
                 deserialized_object.save()
 
                 if deserialized_object.deferred_fields:
-                    for field in deserialized_object.deferred_fields.keys():
+                    for field, value in deserialized_object.deferred_fields.items():
                         if field.name in ["author", "created_by"]:
                             deserialized_object.deferred_fields[field] = self.cleaned_data["owner"].id
 

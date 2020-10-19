@@ -468,8 +468,13 @@ class PageBlockElement(Element):
 class CustomElementSet(CloneMixin, SoftDeleteObject):
     order = models.PositiveIntegerField(default=0)
 
+    objects = managers.CustomElementManager()
+
     def __str__(self):
         return f"{self.id}"
+
+    def natural_key(self):
+        return self.id, self.order
 
 
 class PageBlockObservableElement(CloneMixin, SoftDeleteObject):
