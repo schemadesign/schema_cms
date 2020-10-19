@@ -104,6 +104,7 @@ class ProjectImportForm(forms.Form):
     def import_project_model(self, zip_file, deserialized_object, import_time):
         new_project = models.Project()
         new_project.title = deserialized_object.object.title
+        new_project.description = deserialized_object.object.description
         new_project.owner = self.cleaned_data["owner"]
         new_project.created = import_time
         new_project.modified = import_time
