@@ -113,20 +113,21 @@ class ProjectImportForm(forms.Form):
 
         new_project.save()
 
-        with zip_file.open(f"files/{deserialized_object.object.xml_file.name}", "r") as file:
-            key = f"rss/{new_project.id}/{new_project.title.lower().replace(' ', '-')}-rss.xml"
-            file = File(file, name=key)
-            new_project.xml_file = file
+        if deserialized_object.object.xml_file:
+            with zip_file.open(f"files/{deserialized_object.object.xml_file.name}", "r") as file:
+                key = f"rss/{new_project.id}/{new_project.title.lower().replace(' ', '-')}-rss.xml"
+                file = File(file, name=key)
+                new_project.xml_file = file
 
-            s3.put_object(
-                Body=file,
-                Bucket=settings.AWS_STORAGE_BUCKET_NAME,
-                Key=key,
-                ACL="public-read",
-                ContentType="application/rss+xml",
-            )
+                s3.put_object(
+                    Body=file,
+                    Bucket=settings.AWS_STORAGE_BUCKET_NAME,
+                    Key=key,
+                    ACL="public-read",
+                    ContentType="application/rss+xml",
+                )
 
-            new_project.save(update_fields=["xml_file"])
+                new_project.save(update_fields=["xml_file"])
 
     @staticmethod
     def import_files(zip_file, deserialized_object, file_attrs, bucket=settings.AWS_STORAGE_BUCKET_NAME):
