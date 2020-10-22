@@ -764,7 +764,6 @@ Array [
               }
             >
               <div
-                id="select-item-0"
                 onClick={[Function]}
                 onMouseOut={[Function]}
                 onMouseOver={[Function]}
@@ -784,7 +783,6 @@ Array [
                 (blank)
               </div>
               <div
-                id="select-item-1"
                 onClick={[Function]}
                 onMouseOut={[Function]}
                 onMouseOver={[Function]}
@@ -804,7 +802,6 @@ Array [
                 block name
               </div>
               <div
-                id="select-item-2"
                 onClick={[Function]}
                 onMouseOut={[Function]}
                 onMouseOver={[Function]}
@@ -824,7 +821,6 @@ Array [
                 block name 2
               </div>
               <div
-                id="select-item-3"
                 onClick={[Function]}
                 onMouseOut={[Function]}
                 onMouseOver={[Function]}

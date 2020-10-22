@@ -952,7 +952,6 @@ exports[`PageForm: Component should render correctly 1`] = `
             }
           >
             <div
-              id="select-item-0"
               onClick={[Function]}
               onMouseOut={[Function]}
               onMouseOver={[Function]}
@@ -972,7 +971,6 @@ exports[`PageForm: Component should render correctly 1`] = `
               (blank)
             </div>
             <div
-              id="select-item-1"
               onClick={[Function]}
               onMouseOut={[Function]}
               onMouseOver={[Function]}
@@ -993,7 +991,6 @@ exports[`PageForm: Component should render correctly 1`] = `
               Page template
             </div>
             <div
-              id="select-item-2"
               onClick={[Function]}
               onMouseOut={[Function]}
               onMouseOver={[Function]}
@@ -1101,6 +1098,7 @@ exports[`PageForm: Component should render correctly 1`] = `
   </div>
   <span>
     <div
+      id=""
       onClick={[Function]}
       style={
         Object {
@@ -2414,7 +2412,6 @@ exports[`PageForm: Component should render with page template 1`] = `
             }
           >
             <div
-              id="select-item-0"
               onClick={[Function]}
               onMouseOut={[Function]}
               onMouseOver={[Function]}
@@ -2434,7 +2431,6 @@ exports[`PageForm: Component should render with page template 1`] = `
               (blank)
             </div>
             <div
-              id="select-item-1"
               onClick={[Function]}
               onMouseOut={[Function]}
               onMouseOver={[Function]}
@@ -2455,7 +2451,6 @@ exports[`PageForm: Component should render with page template 1`] = `
               Page template
             </div>
             <div
-              id="select-item-2"
               onClick={[Function]}
               onMouseOut={[Function]}
               onMouseOver={[Function]}
@@ -2563,6 +2558,7 @@ exports[`PageForm: Component should render with page template 1`] = `
   </div>
   <span>
     <div
+      id=""
       onClick={[Function]}
       style={
         Object {

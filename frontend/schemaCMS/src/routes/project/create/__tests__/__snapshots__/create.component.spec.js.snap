@@ -315,18 +315,22 @@ exports[`Create: Component should render correctly 1`] = `
       options={
         Array [
           Object {
+            "id": "status-inProgress",
             "label": "In Progress",
             "value": "in_progress",
           },
           Object {
+            "id": "status-done",
             "label": "Done",
             "value": "done",
           },
           Object {
+            "id": "status-hold",
             "label": "Hold",
             "value": "hold",
           },
           Object {
+            "id": "status-published",
             "label": "Published",
             "value": "published",
           },

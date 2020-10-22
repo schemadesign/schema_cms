@@ -55,7 +55,7 @@ export const BlockTemplateElements = ({ handleChange, setValues, setFieldValue, 
 
   return (
     <DndProvider backend={MultiBackend} options={HTML5toTouch}>
-      <Accordion {...accordionCopyProps} newOpen>
+      <Accordion id="accordionToggle" {...accordionCopyProps} newOpen>
         {values[BLOCK_TEMPLATES_ELEMENTS].map((element, index) => (
           <Draggable
             accept="box"

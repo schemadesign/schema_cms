@@ -1063,7 +1063,6 @@ exports[`PageTemplate: Component should render correctly 1`] = `
                       }
                     >
                       <div
-                        id="select-item-0"
                         onClick={[Function]}
                         onMouseOut={[Function]}
                         onMouseOver={[Function]}
@@ -1084,7 +1083,6 @@ exports[`PageTemplate: Component should render correctly 1`] = `
                         block name
                       </div>
                       <div
-                        id="select-item-1"
                         onClick={[Function]}
                         onMouseOut={[Function]}
                         onMouseOver={[Function]}
@@ -1104,7 +1102,6 @@ exports[`PageTemplate: Component should render correctly 1`] = `
                         block name 2
                       </div>
                       <div
-                        id="select-item-2"
                         onClick={[Function]}
                         onMouseOut={[Function]}
                         onMouseOver={[Function]}

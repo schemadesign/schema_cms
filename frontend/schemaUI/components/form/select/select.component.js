@@ -63,7 +63,7 @@ export class SelectComponent extends PureComponent {
 
   renderSelectedOption = ({ selectedOptionStyles }, label) => <div style={selectedOptionStyles}>{label}</div>;
 
-  renderOptions = ({ value, label, selected }, index, { customOptionStyle, hoverStyles }) => {
+  renderOption = ({ value, label, selected, id }, index, { customOptionStyle, hoverStyles }) => {
     const eventObj = {
       target: {
         value: value,
@@ -75,7 +75,7 @@ export class SelectComponent extends PureComponent {
     return (
       <div
         key={index}
-        id={`select-item-${index}`}
+        id={id}
         style={{ ...customOptionStyle(index), ...actionStyles }}
         onMouseOver={() => this.setState({ hoverIndex: index })}
         onMouseOut={() => this.setState({ hoverIndex: null })}
@@ -86,8 +86,8 @@ export class SelectComponent extends PureComponent {
     );
   };
 
-  renderNativeOptions = ({ value, label, selected }, index) => (
-    <option key={index} value={value}>
+  renderNativeOptions = ({ value, label, selected, id }, index) => (
+    <option id={id} key={index} value={value}>
       {label}
     </option>
   );
@@ -122,7 +122,7 @@ export class SelectComponent extends PureComponent {
           {this.renderSelectedOption(restStyles, label)}
         </div>
         <div style={optionListStyles(isMenuOpen)}>
-          {this.props.options.map((item, index) => this.renderOptions(item, index, restStyles))}
+          {this.props.options.map((item, index) => this.renderOption(item, index, restStyles))}
         </div>
       </div>
     );

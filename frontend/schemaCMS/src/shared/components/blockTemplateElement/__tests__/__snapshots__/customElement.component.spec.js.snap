@@ -17,6 +17,7 @@ exports[`CustomElement: Component should render correctly 1`] = `
     >
       <div
         className="sc-iemXMA drkvag"
+        id="addCustomElementBtnContainer"
       >
         <div
           className="sc-ezzayL jchpWR"
@@ -84,6 +85,7 @@ exports[`CustomElement: Component should render correctly 1`] = `
     >
       <div
         className="sc-jSFkmK hvPggO"
+        id="custom-element-container-0"
       >
         <div>
           <div
@@ -182,7 +184,7 @@ exports[`CustomElement: Component should render correctly 1`] = `
                   }
                 >
                   <div
-                    id="select-item-0"
+                    id="custom-element-markdown-0"
                     onClick={[Function]}
                     onMouseOut={[Function]}
                     onMouseOver={[Function]}
@@ -202,7 +204,7 @@ exports[`CustomElement: Component should render correctly 1`] = `
                     Markdown
                   </div>
                   <div
-                    id="select-item-1"
+                    id="custom-element-plainText-1"
                     onClick={[Function]}
                     onMouseOut={[Function]}
                     onMouseOver={[Function]}
@@ -223,7 +225,7 @@ exports[`CustomElement: Component should render correctly 1`] = `
                     Plain text
                   </div>
                   <div
-                    id="select-item-2"
+                    id="custom-element-file-2"
                     onClick={[Function]}
                     onMouseOut={[Function]}
                     onMouseOver={[Function]}
@@ -243,7 +245,7 @@ exports[`CustomElement: Component should render correctly 1`] = `
                     File
                   </div>
                   <div
-                    id="select-item-3"
+                    id="custom-element-image-3"
                     onClick={[Function]}
                     onMouseOut={[Function]}
                     onMouseOver={[Function]}
@@ -263,7 +265,7 @@ exports[`CustomElement: Component should render correctly 1`] = `
                     Image
                   </div>
                   <div
-                    id="select-item-4"
+                    id="custom-element-code-4"
                     onClick={[Function]}
                     onMouseOut={[Function]}
                     onMouseOver={[Function]}
@@ -283,7 +285,7 @@ exports[`CustomElement: Component should render correctly 1`] = `
                     Code
                   </div>
                   <div
-                    id="select-item-5"
+                    id="custom-element-connection-5"
                     onClick={[Function]}
                     onMouseOut={[Function]}
                     onMouseOver={[Function]}
@@ -303,7 +305,7 @@ exports[`CustomElement: Component should render correctly 1`] = `
                     Connection
                   </div>
                   <div
-                    id="select-item-6"
+                    id="custom-element-internalConnection-6"
                     onClick={[Function]}
                     onMouseOut={[Function]}
                     onMouseOver={[Function]}
@@ -323,7 +325,7 @@ exports[`CustomElement: Component should render correctly 1`] = `
                     Internal Connection
                   </div>
                   <div
-                    id="select-item-7"
+                    id="custom-element-observableHq-7"
                     onClick={[Function]}
                     onMouseOut={[Function]}
                     onMouseOver={[Function]}
@@ -343,7 +345,7 @@ exports[`CustomElement: Component should render correctly 1`] = `
                     ObservableHQ
                   </div>
                   <div
-                    id="select-item-8"
+                    id="custom-element-embedVideo-8"
                     onClick={[Function]}
                     onMouseOut={[Function]}
                     onMouseOver={[Function]}
@@ -363,7 +365,7 @@ exports[`CustomElement: Component should render correctly 1`] = `
                     Embed Video
                   </div>
                   <div
-                    id="select-item-9"
+                    id="custom-element-state-9"
                     onClick={[Function]}
                     onMouseOut={[Function]}
                     onMouseOver={[Function]}
