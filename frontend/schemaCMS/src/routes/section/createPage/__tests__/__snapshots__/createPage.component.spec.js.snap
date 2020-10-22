@@ -1524,7 +1524,6 @@ exports[`CreatePage: Component should render correctly 1`] = `
                 }
               >
                 <div
-                  id="select-item-0"
                   onClick={[Function]}
                   onMouseOut={[Function]}
                   onMouseOver={[Function]}
@@ -1545,7 +1544,6 @@ exports[`CreatePage: Component should render correctly 1`] = `
                   (blank)
                 </div>
                 <div
-                  id="select-item-1"
                   onClick={[Function]}
                   onMouseOut={[Function]}
                   onMouseOver={[Function]}
@@ -1565,7 +1563,6 @@ exports[`CreatePage: Component should render correctly 1`] = `
                   Page template
                 </div>
                 <div
-                  id="select-item-2"
                   onClick={[Function]}
                   onMouseOut={[Function]}
                   onMouseOver={[Function]}

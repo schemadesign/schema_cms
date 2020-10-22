@@ -907,6 +907,7 @@ exports[`CreateBlockTemplate: Component should render correctly 1`] = `
       </div>
       <span>
         <div
+          id="accordionToggle"
           onClick={[Function]}
           style={
             Object {

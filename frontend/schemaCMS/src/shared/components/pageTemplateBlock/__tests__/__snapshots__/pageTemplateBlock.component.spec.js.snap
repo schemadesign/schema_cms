@@ -86,7 +86,6 @@ exports[`PageBlockTemplate: Component should render correctly 1`] = `
             }
           >
             <div
-              id="select-item-0"
               onClick={[Function]}
               onMouseOut={[Function]}
               onMouseOver={[Function]}

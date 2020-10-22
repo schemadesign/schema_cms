@@ -81,7 +81,6 @@ exports[`Select: Component should render correctly 1`] = `
         Dolphin
       </div>
       <div
-        id="select-item-1"
         key="1"
         onClick={[Function]}
         onMouseOut={[Function]}
@@ -102,7 +101,6 @@ exports[`Select: Component should render correctly 1`] = `
         Dog
       </div>
       <div
-        id="select-item-2"
         key="2"
         onClick={[Function]}
         onMouseOut={[Function]}
@@ -123,7 +121,6 @@ exports[`Select: Component should render correctly 1`] = `
         Parrot
       </div>
       <div
-        id="select-item-3"
         key="3"
         onClick={[Function]}
         onMouseOut={[Function]}
@@ -144,7 +141,6 @@ exports[`Select: Component should render correctly 1`] = `
         Cat
       </div>
       <div
-        id="select-item-4"
         key="4"
         onClick={[Function]}
         onMouseOut={[Function]}
@@ -165,7 +161,6 @@ exports[`Select: Component should render correctly 1`] = `
         Alligator
       </div>
       <div
-        id="select-item-5"
         key="5"
         onClick={[Function]}
         onMouseOut={[Function]}
@@ -209,6 +204,7 @@ exports[`Select: Component should render correctly with native 1`] = `
     }
   >
     <option
+      id="select-item-0"
       key="0"
       value="dolphin"
     >
@@ -331,7 +327,6 @@ exports[`Select: Component should render correctly with placeholder 1`] = `
         Dolphin
       </div>
       <div
-        id="select-item-1"
         key="1"
         onClick={[Function]}
         onMouseOut={[Function]}
@@ -352,7 +347,6 @@ exports[`Select: Component should render correctly with placeholder 1`] = `
         Dog
       </div>
       <div
-        id="select-item-2"
         key="2"
         onClick={[Function]}
         onMouseOut={[Function]}
@@ -373,7 +367,6 @@ exports[`Select: Component should render correctly with placeholder 1`] = `
         Parrot
       </div>
       <div
-        id="select-item-3"
         key="3"
         onClick={[Function]}
         onMouseOut={[Function]}
@@ -394,7 +387,6 @@ exports[`Select: Component should render correctly with placeholder 1`] = `
         Cat
       </div>
       <div
-        id="select-item-4"
         key="4"
         onClick={[Function]}
         onMouseOut={[Function]}
@@ -415,7 +407,6 @@ exports[`Select: Component should render correctly with placeholder 1`] = `
         Alligator
       </div>
       <div
-        id="select-item-5"
         key="5"
         onClick={[Function]}
         onMouseOut={[Function]}

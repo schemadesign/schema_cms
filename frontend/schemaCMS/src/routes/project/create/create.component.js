@@ -1,6 +1,7 @@
 import React, { PureComponent } from 'react';
 import PropTypes from 'prop-types';
 import { FormattedMessage } from 'react-intl';
+import { camelize } from 'humps';
 
 import { TextInput } from '../../../shared/components/form/inputs/textInput';
 import { Select } from '../../../shared/components/form/select';
@@ -49,6 +50,7 @@ export class Create extends PureComponent {
     PROJECT_STATUSES_LIST.map(status => ({
       value: status,
       label: intl.formatMessage(messages[status]),
+      id: `status-${camelize(status)}`,
     }));
 
   handleCancelClick = () => this.props.history.push('/');
@@ -129,7 +131,7 @@ export class Create extends PureComponent {
             value={values[PROJECT_STATUS]}
             options={this.getStatusOptions(intl)}
             onSelect={this.handleSelectStatus(setFieldValue)}
-            id="fieldProjectStatus"
+            id="projectStatusSelect"
           />
           <NavigationContainer fixed>
             <BackButton type="button" id="cancelBtn" onClick={this.handleCancelClick}>

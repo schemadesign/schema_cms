@@ -3,6 +3,7 @@ import PropTypes from 'prop-types';
 import Helmet from 'react-helmet';
 import { always, cond, identity, path, propEq, T } from 'ramda';
 import { FormattedMessage } from 'react-intl';
+import { camelize } from 'humps';
 
 import { renderWhenTrue } from '../../../shared/utils/rendering';
 import { filterMenuOptions, getMatchParam } from '../../../shared/utils/helpers';
@@ -78,6 +79,7 @@ export class View extends PureComponent {
     PROJECT_STATUSES_LIST.map(status => ({
       value: status,
       label: intl.formatMessage(messages[status]),
+      id: `status-${camelize(status)}`,
     }));
 
   formatMessage = value => this.props.intl.formatMessage(value);
@@ -281,6 +283,7 @@ export class View extends PureComponent {
     renderWhenTrue(
       always(
         <NextButton
+          id="saveBtn"
           onClick={this.props.handleSubmit}
           loading={this.props.isSubmitting}
           disabled={!this.props.dirty || this.props.isSubmitting || !this.props.isValid}

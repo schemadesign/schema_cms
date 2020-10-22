@@ -6,7 +6,7 @@ import { expect } from 'chai';
 import { SelectComponent } from '../select.component';
 
 const options = [
-  { value: 'dolphin', label: 'Dolphin' },
+  { value: 'dolphin', label: 'Dolphin', id: 'select-item-0' },
   { value: 'dog', label: 'Dog' },
   { value: 'parrot', label: 'Parrot' },
   { value: 'cat', label: 'Cat' },
@@ -40,7 +40,7 @@ describe('Select: Component', () => {
   });
 
   it('should call onSelect on item select for non native', () => {
-    const expected = { value: 'dolphin', label: 'Dolphin' };
+    const expected = { value: 'dolphin', label: 'Dolphin', id: 'select-item-0' };
     const onSelect = spy();
     const wrapper = render({ onSelect });
     wrapper.find('#select-item-0').simulate('click');
@@ -49,7 +49,7 @@ describe('Select: Component', () => {
   });
 
   it('should call onSelect on select change for native', () => {
-    const expected = { value: 'dolphin', label: 'Dolphin' };
+    const expected = { value: 'dolphin', label: 'Dolphin', id: 'select-item-0' };
     const onSelect = spy();
     const wrapper = render({ onSelect, native: true });
     wrapper.find('select').simulate('change', {
