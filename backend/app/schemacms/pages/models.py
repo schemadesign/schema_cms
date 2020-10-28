@@ -483,8 +483,19 @@ class PageBlockObservableElement(CloneMixin, SoftDeleteObject):
     observable_cell = models.TextField(blank=True, default="", max_length=1000)
     observable_params = models.TextField(blank=True, default="", max_length=1000)
 
+    objects = managers.ObservableElementManager()
+
     def __str__(self):
         return f"{self.id}"
+
+    def natural_key(self):
+        return (
+            self.id,
+            self.observable_user,
+            self.observable_notebook,
+            self.observable_cell,
+            self.observable_params,
+        )
 
     def as_dict(self):
         return {
