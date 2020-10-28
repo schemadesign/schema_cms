@@ -101,6 +101,17 @@ class CustomElementManager(softdelete.models.SoftDeleteManager):
         return self.get(id=id_, order=order)
 
 
+class ObservableElementManager(softdelete.models.SoftDeleteManager):
+    def get_by_natural_key(self, id_, user, notebook, cell, params):
+        return self.get(
+            id=id_,
+            observable_user=user,
+            observable_notebook=notebook,
+            observable_cell=cell,
+            observable_params=params,
+        )
+
+
 class BlockTemplateQuerySet(softdelete.models.SoftDeleteQuerySet):
     def get_by_natural_key(self, project_title, name):
         return self.get(project__title=project_title, name=name)

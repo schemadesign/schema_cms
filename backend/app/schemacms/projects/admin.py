@@ -20,7 +20,7 @@ import os
 from ..utils.services import s3
 
 from ..datasources.models import DataSource, DataSourceJob, DataSourceJobMetaData, DataSourceMeta
-from ..pages.models import PageBlockElement, CustomElementSet
+from ..pages.models import PageBlockElement, CustomElementSet, PageBlockObservableElement
 from ..pages.constants import ElementType
 
 
@@ -70,6 +70,16 @@ class ProjectImportForm(forms.Form):
                 if isinstance(deserialized_object.object, DataSourceJob):
                     self.import_files(zip_file, deserialized_object, ("result", "result_parquet"))
                 if isinstance(deserialized_object.object, PageBlockElement):
+                    if obs_ele := deserialized_object.object.observable_hq:
+
+                        obs_ele = PageBlockObservableElement.objects.create(
+                            observable_user=obs_ele.observable_user,
+                            observable_notebook=obs_ele.observable_notebook,
+                            observable_cell=obs_ele.observable_cell,
+                            observable_params=obs_ele.observable_params,
+                        )
+                        deserialized_object.object.observable_hq = obs_ele
+
                     if deserialized_object.deferred_fields:
                         deferred_to_remove = []
 
@@ -84,6 +94,18 @@ class ProjectImportForm(forms.Form):
                                 )
                                 custom_element_sets[str(c_set_id)] = new_set.id
                                 deserialized_object.object.custom_element_set = new_set
+                                deferred_to_remove.append(field)
+
+                            if field.name == "observable_hq":
+                                data = dict(
+                                    observable_user=value[1],
+                                    observable_notebook=value[2],
+                                    observable_cell=value[3],
+                                    observable_params=value[4],
+                                )
+
+                                obs_ele = PageBlockObservableElement.objects.create(**data)
+                                deserialized_object.object.observable_hq = obs_ele
                                 deferred_to_remove.append(field)
 
                         for field in deferred_to_remove:
