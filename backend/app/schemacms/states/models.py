@@ -69,7 +69,11 @@ class State(SoftDeleteObject, TimeStampedModel):
             key = filter_.field
             operator = self.FILTER_TYPES_MAPPING[filter_.filter_type]
             values = filter_.condition.get("values")
-            params.append(f"{key}={operator},{','.join([str(v) for v in values])}")
+
+            if filter_.filter_type == "bool":
+                params.append(f"{key}={operator},{int(values)}")
+            else:
+                params.append(f"{key}={operator},{','.join([str(v) for v in values])}")
 
         if self.fields:
             params.append(f"columns={','.join(self.fields)}")
