@@ -1,3 +1,4 @@
+from django.conf import settings
 from rest_framework import serializers
 
 from . import models
@@ -16,6 +17,7 @@ class ProjectSerializer(serializers.ModelSerializer):
         serializer=UserSerializer(),
     )
     meta = serializers.SerializerMethodField()
+    api_url = serializers.SerializerMethodField()
 
     class Meta:
         model = models.Project
@@ -31,6 +33,7 @@ class ProjectSerializer(serializers.ModelSerializer):
             "created",
             "modified",
             "meta",
+            "api_url",
         )
         extra_kwargs = {
             "title": {
@@ -59,3 +62,7 @@ class ProjectSerializer(serializers.ModelSerializer):
             "users": project.users_count,
             "charts": project.charts_count,
         }
+
+    @staticmethod
+    def get_api_url(project: models.Project):
+        return f"{settings.PUBLIC_API_URL}projects/{project.id}"
