@@ -58,6 +58,7 @@ class ProjectImportForm(forms.Form):
                 "json", zip_file.read("objects.json"), handle_forward_references=True
             ):
 
+                print(deserialized_object)
                 object_fields = [f.name for f in deserialized_object.object._meta.get_fields()]
                 if isinstance(deserialized_object.object, models.Project):
                     self.import_project_model(zip_file, deserialized_object, import_time)
@@ -133,7 +134,10 @@ class ProjectImportForm(forms.Form):
                     objs_with_deferred_fields.append(deserialized_object)
 
             for obj in objs_with_deferred_fields:
-                obj.save_deferred_fields()
+                try:
+                    obj.save_deferred_fields()
+                except Exception:
+                    continue
 
     def import_project_model(self, zip_file, deserialized_object, import_time):
         new_project = models.Project()
