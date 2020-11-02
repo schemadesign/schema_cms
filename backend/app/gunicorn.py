@@ -11,4 +11,4 @@ max_requests = 1000
 accesslog = "-"
 errorlog = "-"
 workers = max_workers()
-timeout = 600
+timeout = 300
