@@ -1,6 +1,8 @@
 ## [Unreleased]
 
 ### Fixes
+- add delay for updating uploaded data source in the data source list
+
 
 ### Changes
 
