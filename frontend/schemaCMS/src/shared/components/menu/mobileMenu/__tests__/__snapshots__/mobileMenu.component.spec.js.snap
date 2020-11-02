@@ -119,6 +119,7 @@ exports[`MobileMenu: Component should render correctly 1`] = `
           key="1"
         >
           <div
+            id="logoutNavBtn"
             onClick={[Function]}
           >
             <FormattedMessage

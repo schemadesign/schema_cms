@@ -68,6 +68,7 @@ export class MobileMenu extends PureComponent {
 
   handleLogout = () => {
     this.setState({
+      isMenuOpen: false,
       logoutModalOpen: true,
     });
   };
@@ -89,7 +90,11 @@ export class MobileMenu extends PureComponent {
     <Item key={index} active={id === this.props.active}>
       {ifElse(
         isEmpty,
-        always(<div onClick={onClick}>{label}</div>),
+        always(
+          <div id={id} onClick={onClick}>
+            {label}
+          </div>
+        ),
         always(
           <Link id={id} to={to} onClick={onClick}>
             {label}
