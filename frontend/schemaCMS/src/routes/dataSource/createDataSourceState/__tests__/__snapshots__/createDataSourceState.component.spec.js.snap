@@ -261,6 +261,7 @@ exports[`CreateDataSourceState: Component should render correctly 1`] = `
             className="sc-iemXMA BWvrL"
           >
             <div
+              id="logoutNavBtn"
               onClick={[Function]}
             >
               Log out

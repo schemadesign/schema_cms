@@ -260,6 +260,7 @@ exports[`PageTemplates: Component should render correctly 1`] = `
             className="sc-pNWxx jTwiFP"
           >
             <div
+              id="logoutNavBtn"
               onClick={[Function]}
             >
               Log out

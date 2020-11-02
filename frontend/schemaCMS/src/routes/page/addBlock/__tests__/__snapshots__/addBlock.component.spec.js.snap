@@ -260,6 +260,7 @@ exports[`AddBlock: Component should render correctly 1`] = `
             className="sc-gKAblj giqbFz"
           >
             <div
+              id="logoutNavBtn"
               onClick={[Function]}
             >
               Log out
