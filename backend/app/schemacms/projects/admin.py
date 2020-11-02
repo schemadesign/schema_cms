@@ -133,7 +133,10 @@ class ProjectImportForm(forms.Form):
                     objs_with_deferred_fields.append(deserialized_object)
 
             for obj in objs_with_deferred_fields:
-                obj.save_deferred_fields()
+                try:
+                    obj.save_deferred_fields()
+                except Exception:
+                    continue
 
     def import_project_model(self, zip_file, deserialized_object, import_time):
         new_project = models.Project()

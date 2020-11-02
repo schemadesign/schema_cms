@@ -133,7 +133,7 @@ class PageAdmin(SoftDeleteObjectAdmin):
             super()
             .get_queryset(request)
             .select_related("project", "section")
-            .filter(is_template=False, is_draft=False)
+            .filter(is_template=False, is_draft=True)
         )
 
     @transaction.atomic()
@@ -144,7 +144,7 @@ class PageAdmin(SoftDeleteObjectAdmin):
     def get_form(self, request, obj=None, **kwargs):
         form = super().get_form(request, obj, **kwargs)
         if obj:
-            form.base_fields["template"].queryset = models.PageTemplate.objects.filter(project=obj.project)
+            form.base_fields["template"].queryset = models.Page.templates.filter(project=obj.project)
             form.base_fields["section"].queryset = models.Section.objects.filter(project=obj.project)
 
         return form

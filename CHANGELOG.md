@@ -1,11 +1,34 @@
 ## [Unreleased]
 
 ### Fixes
-- Google Sheets validation, uploading and toggling between CSV
 
 ### Changes
 
 ### Features
+
+
+## 1.9.3 (October 22, 2020) - Fixes
+#### Fixes
+- handle observable element during import/export
+- django admin fix for pages details view
+
+
+## 1.9.2 (October 22, 2020) - Fixes
+#### Changes
+- timeout for django admin increased
+
+
+## 1.9.1 (October 19, 2020) - Fixes
+#### Fixes
+- pages custom elements import/export fixes
+
+
+## 1.9.0 (October 13, 2020) - Release
+#### Fixes
+- Google Sheets validation, uploading and toggling between CSV
+
+### Features
+- import/export project functionality
 
 ## 1.8.1 (October 02, 2020) - Fixes
 

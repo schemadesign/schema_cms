@@ -314,11 +314,13 @@ class PageBlockElement(Element):
         null=True,
         storage=S3Boto3Storage(bucket=settings.AWS_STORAGE_PAGES_BUCKET_NAME),
         upload_to=file_upload_path,
+        max_length=200,
     )
     image = models.ImageField(
         null=True,
         storage=S3Boto3Storage(bucket=settings.AWS_STORAGE_PAGES_BUCKET_NAME),
         upload_to=file_upload_path,
+        max_length=200,
     )
     parent = models.ForeignKey(
         "PageBlockElement", on_delete=models.CASCADE, related_name="sets_elements", null=True
