@@ -429,6 +429,7 @@ class PageCreateSerializer(PageBaseSerializer):
     class Meta:
         model = models.Page
         fields = PageBaseSerializer.Meta.fields + ("blocks",)
+        validators = PageBaseSerializer.Meta.validators
 
     @transaction.atomic()
     def save(self, *args, **kwargs):
