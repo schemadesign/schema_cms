@@ -215,6 +215,7 @@ exports[`View: Component should render content correctly 1`] = `
                 onChange={[Function]}
                 project={
                   Object {
+                    "apiUrl": "apiUrl",
                     "created": "2019-08-26T11:05:12+0000",
                     "description": "Description",
                     "editors": Array [
@@ -322,6 +323,7 @@ exports[`View: Component should render content correctly 1`] = `
                 onChange={[Function]}
                 project={
                   Object {
+                    "apiUrl": "apiUrl",
                     "created": "2019-08-26T11:05:12+0000",
                     "description": "Description",
                     "editors": Array [
@@ -477,6 +479,7 @@ exports[`View: Component should render content correctly 1`] = `
                 onChange={[Function]}
                 project={
                   Object {
+                    "apiUrl": "apiUrl",
                     "created": "2019-08-26T11:05:12+0000",
                     "description": "Description",
                     "editors": Array [
@@ -574,7 +577,7 @@ exports[`View: Component should render content correctly 1`] = `
             <styled.span
               id="fieldSlugValue"
             >
-              schemacms/api/project_title
+              apiUrl
             </styled.span>
           </styled.div>
         </styled.li>
@@ -1036,7 +1039,7 @@ exports[`View: Component should render content correctly for editor 1`] = `
             <styled.span
               id="fieldSlugValue"
             >
-              schemacms/api/project_title
+              apiUrl
             </styled.span>
           </styled.div>
         </styled.li>
@@ -1408,6 +1411,7 @@ exports[`View: Component should render correctly 1`] = `
                 onChange={[Function]}
                 project={
                   Object {
+                    "apiUrl": "apiUrl",
                     "created": "2019-08-26T11:05:12+0000",
                     "description": "Description",
                     "editors": Array [
@@ -1515,6 +1519,7 @@ exports[`View: Component should render correctly 1`] = `
                 onChange={[Function]}
                 project={
                   Object {
+                    "apiUrl": "apiUrl",
                     "created": "2019-08-26T11:05:12+0000",
                     "description": "Description",
                     "editors": Array [
@@ -1670,6 +1675,7 @@ exports[`View: Component should render correctly 1`] = `
                 onChange={[Function]}
                 project={
                   Object {
+                    "apiUrl": "apiUrl",
                     "created": "2019-08-26T11:05:12+0000",
                     "description": "Description",
                     "editors": Array [
@@ -1767,7 +1773,7 @@ exports[`View: Component should render correctly 1`] = `
             <styled.span
               id="fieldSlugValue"
             >
-              schemacms/api/project_title
+              apiUrl
             </styled.span>
           </styled.div>
         </styled.li>

@@ -3,6 +3,7 @@
 ### Fixes
 
 ### Changes
+- add api url from the backend on the project view and projects list
 
 ### Features
 
