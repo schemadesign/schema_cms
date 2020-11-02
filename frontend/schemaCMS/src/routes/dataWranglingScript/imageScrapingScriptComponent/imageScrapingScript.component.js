@@ -97,7 +97,7 @@ export class ImageScrapingScript extends PureComponent {
     };
   };
 
-  getGoToDataWranglingListUrl = () => {
+  getDataWranglingListPath = () => {
     const dataSourceId = getMatchParam(this.props, 'dataSourceId');
 
     return { pathname: `/datasource/${dataSourceId}/${STEPS_PAGE}`, state: { fromScript: true } };
@@ -191,7 +191,7 @@ export class ImageScrapingScript extends PureComponent {
           </LoadingWrapper>
         </Form>
         <NavigationContainer fixed>
-          <BackLink id="imageScrapingBackBtn" to={this.getGoToDataWranglingListUrl()} />
+          <BackLink id="imageScrapingBackBtn" to={this.getDataWranglingListPath()} />
           <NextButton id="imageScrapingNextBtn" onClick={this.handleSaveClick} disabled={isCleanForm || loading}>
             <FormattedMessage {...messages.save} />
           </NextButton>

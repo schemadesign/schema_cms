@@ -35,7 +35,7 @@ export class DataWranglingDefaultScript extends PureComponent {
     };
   };
 
-  getGoToDataWranglingListUrl = () => {
+  getDataWranglingListPath = () => {
     const { dataWranglingScript } = this.props;
     const dataSourceId = dataWranglingScript.datasource || getMatchParam(this.props, 'dataSourceId');
 
@@ -63,7 +63,7 @@ export class DataWranglingDefaultScript extends PureComponent {
           {dataWranglingScript.body}
         </SyntaxHighlighter>
         <NavigationContainer fixed>
-          <BackLink to={this.getGoToDataWranglingListUrl()} />
+          <BackLink to={this.getDataWranglingListPath()} />
         </NavigationContainer>
       </Container>
     );

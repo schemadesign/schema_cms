@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import { Link as RRDLink } from 'react-router-dom';
+import { Link as RouteLink } from 'react-router-dom';
 
 import { colors } from '../../../theme/styled';
 import { Link as LinkTypography } from '../../../theme/typography';
@@ -41,6 +41,6 @@ export const Button = styled(LinkTypography)`
   }
 `;
 
-export const Link = styled(Button).attrs({ as: RRDLink })`
+export const Link = styled(Button).attrs({ as: RouteLink })`
   text-decoration: none;
 `;
