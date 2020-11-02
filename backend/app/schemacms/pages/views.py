@@ -44,9 +44,7 @@ class BlockTemplateListCreteView(BaseListCreateView):
     serializer_class = serializers.BlockTemplateSerializer
     queryset = (
         models.BlockTemplate.objects.select_related("project", "created_by")
-        .prefetch_related(
-            Prefetch("elements", queryset=models.BlockTemplateElement.objects.all().order_by("order"))
-        )
+        .prefetch_related("elements")
         .order_by("-created")
     )
     permission_classes = (permissions.IsAuthenticated, IsAdminOrReadOnly)
@@ -65,7 +63,7 @@ class BlockTemplateListCreteView(BaseListCreateView):
 
 class BlockTemplateViewSet(DetailViewSet):
     queryset = models.BlockTemplate.objects.select_related("project", "created_by").prefetch_related(
-        Prefetch("elements", queryset=models.BlockTemplateElement.objects.order_by("order"))
+        "elements"
     )
     serializer_class = serializers.BlockTemplateSerializer
     permission_classes = (permissions.IsAuthenticated, IsAdmin)
