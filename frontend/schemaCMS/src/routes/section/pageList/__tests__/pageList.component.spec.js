@@ -44,34 +44,6 @@ describe('PageList: Component', () => {
     expect(defaultProps.copyPage).toHaveBeenCalledWith({ pageId: 2, sectionId: 'sectionId' });
   });
 
-  it('should go back to content', async () => {
-    const wrapper = await render();
-    wrapper.root.findByProps({ id: 'backBtn' }).props.onClick();
-
-    expect(mockPushHistory).toHaveBeenCalledWith('/project/1/content');
-  });
-
-  it('should redirect to create page', async () => {
-    const wrapper = await render();
-    wrapper.root.findByProps({ id: 'createPage' }).props.onClick();
-
-    expect(mockPushHistory).toHaveBeenCalledWith('/section/sectionId/create-page');
-  });
-
-  it('should redirect to create page on mobile', async () => {
-    const wrapper = await render();
-    wrapper.root.findByProps({ id: 'createPageMobile' }).props.onClick();
-
-    expect(mockPushHistory).toHaveBeenCalledWith('/section/sectionId/create-page');
-  });
-
-  it('should redirect to page', async () => {
-    const wrapper = await render();
-    wrapper.root.findByProps({ id: 'page-1' }).props.onClick();
-
-    expect(mockPushHistory).toHaveBeenCalledWith('/page/1');
-  });
-
   it('should set main page', async () => {
     const props = {
       ...section.pages[0],

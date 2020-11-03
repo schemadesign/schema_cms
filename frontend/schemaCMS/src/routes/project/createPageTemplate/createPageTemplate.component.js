@@ -14,7 +14,7 @@ import { getProjectMenuOptions } from '../project.constants';
 import { MobileMenu } from '../../../shared/components/menu/mobileMenu';
 import { errorMessageParser, filterMenuOptions } from '../../../shared/utils/helpers';
 import { LoadingWrapper } from '../../../shared/components/loadingWrapper';
-import { BackButton, NavigationContainer, NextButton } from '../../../shared/components/navigation';
+import { BackLink, NavigationContainer, NextButton } from '../../../shared/components/navigation';
 import {
   PAGE_TEMPLATES_SCHEMA,
   INITIAL_VALUES,
@@ -96,7 +96,6 @@ export const CreatePageTemplate = ({ userRole, createPageTemplate, fetchBlockTem
     },
   });
 
-  const handleOnClick = () => history.push(`/project/${projectId}/page-templates`);
   const title = <FormattedMessage {...messages.title} />;
   const subtitle = <FormattedMessage {...messages.subtitle} />;
   const menuOptions = getProjectMenuOptions(projectId);
@@ -122,9 +121,9 @@ export const CreatePageTemplate = ({ userRole, createPageTemplate, fetchBlockTem
         <form onSubmit={handleSubmit}>
           <PageTemplateForm title={title} blockTemplates={blockTemplates} isValid={isValid} {...restFormikProps} />
           <NavigationContainer fixed>
-            <BackButton id="cancelBtn" type="button" onClick={handleOnClick}>
+            <BackLink id="cancelBtn" to={`/project/${projectId}/page-templates`}>
               <FormattedMessage {...messages.cancel} />
-            </BackButton>
+            </BackLink>
             <NextButton
               id="createTemplateBlock"
               type="submit"

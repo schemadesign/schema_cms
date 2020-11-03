@@ -21,7 +21,7 @@ import {
 import { DATA_SOURCE_STATE_ID, getProjectMenuOptions } from '../../project/project.constants';
 import { ContextHeader } from '../../../shared/components/contextHeader';
 import { DataSourceStateForm } from '../../../shared/components/dataSourceStateForm';
-import { BackButton, NavigationContainer, NextButton } from '../../../shared/components/navigation';
+import { BackButton, BackLink, NavigationContainer, NextButton } from '../../../shared/components/navigation';
 import { Modal, ModalActions, modalStyles, ModalTitle } from '../../../shared/components/modal/modal.styles';
 import {
   DATA_SOURCE_STATE_ACTIVE_FILTERS,
@@ -139,7 +139,6 @@ export const EditState = ({
     })();
   });
 
-  const handleCancel = () => history.push(`/datasource/${dataSource.id}/state`);
   const handleRemoveState = () => setConfirmationModalOpen(true);
   const handleCancelRemove = () => setConfirmationModalOpen(false);
   const handleConfirmRemove = async () => {
@@ -175,9 +174,7 @@ export const EditState = ({
           {...restFormikProps}
         />
         <NavigationContainer fixed>
-          <BackButton type="button" onClick={handleCancel}>
-            <FormattedMessage {...messages.back} />
-          </BackButton>
+          <BackLink to={`/datasource/${dataSource.id}/state`} />
           <NextButton type="submit" onClick={handleSubmit} loading={isSubmitting} disabled={isSubmitting || !dirty}>
             <FormattedMessage {...messages.save} />
           </NextButton>

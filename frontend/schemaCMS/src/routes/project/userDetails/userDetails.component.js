@@ -9,7 +9,7 @@ import { UserProfile } from '../../../shared/components/userProfile/userProfile.
 import messages from './userDetails.messages';
 import { Modal, modalStyles, ModalActions, ModalTitle } from '../../../shared/components/modal/modal.styles';
 import { Link, LinkContainer } from '../../../theme/typography';
-import { BackButton, NavigationContainer, NextButton } from '../../../shared/components/navigation';
+import { BackButton, BackLink, NavigationContainer, NextButton } from '../../../shared/components/navigation';
 import { getMatchParam, filterMenuOptions } from '../../../shared/utils/helpers';
 import reportError from '../../../shared/utils/reportError';
 
@@ -67,8 +67,6 @@ export class UserDetails extends PureComponent {
     }
   };
 
-  handleBack = () => this.props.history.push(`/project/${getMatchParam(this.props, 'projectId')}/user`);
-
   handleOpenModal = () => this.setState({ userRemoveModalOpen: true });
 
   renderContent = userData => renderWhenTrue(() => <UserProfile values={userData} />)(!!userData.id);
@@ -104,7 +102,7 @@ export class UserDetails extends PureComponent {
           {this.renderRemoveUserButton(isAdmin)}
         </LoadingWrapper>
         <NavigationContainer fixed>
-          <BackButton type="button" onClick={this.handleBack} />
+          <BackLink to={`/project/${getMatchParam(this.props, 'projectId')}/user`} />
         </NavigationContainer>
         <Modal isOpen={this.state.userRemoveModalOpen} contentLabel="Confirm Removal" style={modalStyles}>
           <ModalTitle>

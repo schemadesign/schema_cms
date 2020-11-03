@@ -17,7 +17,7 @@ import {
   filterMenuOptions,
 } from '../../../shared/utils/helpers';
 import { ContextHeader } from '../../../shared/components/contextHeader';
-import { BackButton, NavigationContainer, NextButton } from '../../../shared/components/navigation';
+import { NavigationContainer, NextButton, BackLink } from '../../../shared/components/navigation';
 import { LoadingWrapper } from '../../../shared/components/loadingWrapper';
 import reportError from '../../../shared/utils/reportError';
 import { MobileMenu } from '../../../shared/components/menu/mobileMenu';
@@ -96,7 +96,6 @@ export const CreateDataSourceState = ({
     })();
   });
 
-  const handleCancel = () => history.push(`/datasource/${dataSourceId}/state`);
   const title = <FormattedMessage {...messages.title} />;
   const subTitle = <FormattedMessage {...messages.subTitle} />;
   const menuOptions = getProjectMenuOptions(project.id);
@@ -111,9 +110,9 @@ export const CreateDataSourceState = ({
       </LoadingWrapper>
       <NavigationContainer fixed contentStyles={contentStyles}>
         <NavigationButtons>
-          <BackButton type="button" onClick={handleCancel}>
+          <BackLink to={`/datasource/${dataSourceId}/state`}>
             <FormattedMessage {...messages.cancel} />
-          </BackButton>
+          </BackLink>
           <NextButton type="submit" loading={isSubmitting} disabled={isSubmitting || !isValid || !dirty}>
             <FormattedMessage {...messages.create} />
           </NextButton>

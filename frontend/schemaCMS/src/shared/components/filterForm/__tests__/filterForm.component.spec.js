@@ -121,18 +121,4 @@ describe('FilterForm: Component', () => {
 
     expect(wrapper.state().confirmationModalOpen).toBeFalsy();
   });
-
-  it('should go back', () => {
-    jest.spyOn(defaultProps.history, 'push');
-
-    const wrapper = render();
-
-    wrapper
-      .find(Formik)
-      .dive()
-      .find(BackButton)
-      .simulate('click');
-
-    expect(defaultProps.history.push).toHaveBeenCalledWith('/datasource/1/filters');
-  });
 });

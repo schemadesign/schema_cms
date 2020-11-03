@@ -12,20 +12,13 @@ export class StatisticCards extends PureComponent {
     history: PropTypes.object.isRequired,
   };
 
-  handleGoTo = to => () => (to ? this.props.history.push(to) : null);
-
   renderText = ifElse(is(String), identity, text => <FormattedMessage {...text} />);
 
   renderStatisticHeader = (text, id) => <CardHeader id={`${id}Header`}>{this.renderText(text)}</CardHeader>;
 
   renderStatistic = ({ header, value, to, id }, index) => (
-    <CardWrapper key={index}>
-      <Card
-        id={id}
-        headerComponent={this.renderStatisticHeader(header, id)}
-        onClick={this.handleGoTo(to)}
-        customStyles={statisticsCardStyles}
-      >
+    <CardWrapper key={index} to={to}>
+      <Card id={id} headerComponent={this.renderStatisticHeader(header, id)} customStyles={statisticsCardStyles}>
         <CardValue id={`${id}Value`}>{value}</CardValue>
       </Card>
     </CardWrapper>

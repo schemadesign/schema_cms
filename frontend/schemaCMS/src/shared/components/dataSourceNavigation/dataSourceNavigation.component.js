@@ -61,14 +61,12 @@ export class DataSourceNavigation extends PureComponent {
     both(pathEq(['dataSource', 'activeJob', 'scripts'], []), propEq('page', RESULT_PAGE))
   );
 
-  goToPage = page => () => this.props.history.push(`/datasource/${this.props.dataSource.id}/${page}`);
-
   renderButtons = ({ dataSource }) =>
     listIcons.map(({ Icon, page, id, iconStyles }, index) => (
       <ButtonContainer key={index}>
         <Button
-          onClick={this.goToPage(page)}
-          active={this.getIsActive(page)}
+          to={`/datasource/${this.props.dataSource.id}/${page}`}
+          $active={this.getIsActive(page)}
           disabled={this.getIsDisabled({ dataSource, page })}
         >
           <Icon id={id} customStyles={iconStyles} />

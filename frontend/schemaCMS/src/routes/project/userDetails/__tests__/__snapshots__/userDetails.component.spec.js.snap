@@ -158,10 +158,8 @@ exports[`UserDetails: Component should render correctly 1`] = `
     hideOnDesktop={false}
     right={false}
   >
-    <BackButton
-      disabled={false}
-      onClick={[Function]}
-      type="button"
+    <BackLink
+      to="/project/1/user"
     />
   </NavigationContainer>
   <Styled(Modal)
@@ -388,10 +386,8 @@ exports[`UserDetails: Component should render correctly with loading 1`] = `
     hideOnDesktop={false}
     right={false}
   >
-    <BackButton
-      disabled={false}
-      onClick={[Function]}
-      type="button"
+    <BackLink
+      to="/project/1/user"
     />
   </NavigationContainer>
   <Styled(Modal)

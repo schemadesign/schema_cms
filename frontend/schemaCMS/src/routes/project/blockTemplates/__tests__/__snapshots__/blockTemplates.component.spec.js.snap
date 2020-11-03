@@ -47,7 +47,7 @@ exports[`BlockTemplates: Component should render correctly 1`] = `
                 "fontSize": "24px",
                 "fontWeight": 600,
                 "letterSpacing": "-0.12px",
-                "lineHight": 1.25,
+                "lineHeight": 1.25,
                 "margin": 0,
               }
             }
@@ -152,7 +152,7 @@ exports[`BlockTemplates: Component should render correctly 1`] = `
                   "fontSize": "24px",
                   "fontWeight": 600,
                   "letterSpacing": "-0.12px",
-                  "lineHight": 1.25,
+                  "lineHeight": 1.25,
                   "margin": 0,
                 }
               }
@@ -346,7 +346,7 @@ exports[`BlockTemplates: Component should render correctly 1`] = `
     </div>
   </div>
   <div
-    className="sc-carGAA gegLDV"
+    className="sc-iTVIwl gYKNBb"
   >
     <div
       style={
@@ -368,7 +368,7 @@ exports[`BlockTemplates: Component should render correctly 1`] = `
         }
       >
         <a
-          className="sc-iBzFoy QLShv"
+          className="sc-efHXLn fHEFKr"
           href="/project/1/"
           onClick={[Function]}
           style={
@@ -390,7 +390,7 @@ exports[`BlockTemplates: Component should render correctly 1`] = `
             Project
           </span>
           <h3
-            className="sc-efHXLn gdxXMU"
+            className="sc-cTJmaU hulgGJ"
             style={
               Object {
                 "fontFamily": "Inter, \\"Helvetica Neue\\", Helvetica, Arial, sans-serif",
@@ -426,7 +426,7 @@ exports[`BlockTemplates: Component should render correctly 1`] = `
         }
       >
         <a
-          className="sc-iBzFoy QLShv"
+          className="sc-efHXLn fHEFKr"
           href="/project/1/templates"
           onClick={[Function]}
           style={
@@ -448,7 +448,7 @@ exports[`BlockTemplates: Component should render correctly 1`] = `
             Tab
           </span>
           <h3
-            className="sc-efHXLn gdxXMU"
+            className="sc-cTJmaU hulgGJ"
             style={
               Object {
                 "fontFamily": "Inter, \\"Helvetica Neue\\", Helvetica, Arial, sans-serif",
@@ -484,7 +484,7 @@ exports[`BlockTemplates: Component should render correctly 1`] = `
         }
       >
         <div
-          className="sc-iTVIwl fmkDZz"
+          className="sc-iBzFoy hhpkLz"
         >
           <span
             style={
@@ -497,7 +497,7 @@ exports[`BlockTemplates: Component should render correctly 1`] = `
             Library
           </span>
           <h3
-            className="sc-efHXLn gdxXMU"
+            className="sc-cTJmaU hulgGJ"
             style={
               Object {
                 "fontFamily": "Inter, \\"Helvetica Neue\\", Helvetica, Arial, sans-serif",
@@ -515,13 +515,13 @@ exports[`BlockTemplates: Component should render correctly 1`] = `
     </div>
   </div>
   <div
-    className="sc-dlMBXb jygUFU"
+    className="sc-kfYqjs jVUIpp"
   >
     <div
-      className="sc-kfYqjs cvqBSM"
+      className="sc-fKgIGh ePACvs"
     >
       <h2
-        className="sc-fKgIGh dOwufL"
+        className="sc-bCwgka bBdQKU"
         id="desktopHeaderTitle"
         style={
           Object {
@@ -535,7 +535,7 @@ exports[`BlockTemplates: Component should render correctly 1`] = `
         Block Templates
       </h2>
       <h1
-        className="sc-bCwgka bBdQKU"
+        className="sc-iwaifL fAJgQr"
         id="desktopHeaderSubtitle"
         style={
           Object {
@@ -543,7 +543,7 @@ exports[`BlockTemplates: Component should render correctly 1`] = `
             "fontSize": "24px",
             "fontWeight": 600,
             "letterSpacing": "-0.12px",
-            "lineHight": 1.25,
+            "lineHeight": 1.25,
             "margin": 0,
           }
         }
@@ -552,71 +552,49 @@ exports[`BlockTemplates: Component should render correctly 1`] = `
       </h1>
     </div>
     <div
-      className="sc-iwaifL"
+      className="sc-cxNIbT"
     >
-      <div
-        className="sc-hHEjAm fLukyj"
+      <a
+        className="sc-dlMBXb clkDjE"
+        href="/project/projectId/block-templates/create"
+        onClick={[Function]}
       >
-        <button
-          disabled={false}
+        <svg
           id="createBlockTemplate"
-          onClick={[Function]}
           style={
             Object {
-              "backgroundColor": "#FFF",
-              "border": "none",
-              "borderRadius": "48px",
-              "color": "#000",
-              "cursor": "pointer",
-              "display": "inline-block",
-              "fill": "#FFF",
-              "fontSize": "18px",
-              "height": "60px",
-              "margin": "0",
-              "minHeight": "48px",
-              "outline": "none",
-              "padding": "0",
-              "transition": "background 0.25s ease-in-out, color 0.25s ease-in-out",
-              "width": "60px",
+              "fill": "#000",
+              "height": 60,
+              "shapeRendering": "crispEdges",
+              "width": 60,
             }
           }
+          viewBox="0 0 60 60"
         >
-          <svg
-            style={
-              Object {
-                "fill": "#000",
-                "height": "60px",
-                "shapeRendering": "crispEdges",
-                "width": "60px",
-              }
-            }
-            viewBox="0 0 60 60"
-          >
-            <path
-              d="M32 15v13h13v4H32v13h-4V32H15v-4h13V15h4z"
-            />
-          </svg>
-        </button>
-      </div>
+          <path
+            d="M32 15v13h13v4H32v13h-4V32H15v-4h13V15h4z"
+          />
+        </svg>
+      </a>
     </div>
   </div>
   <div
-    className="sc-gXfWUo frbwBf"
+    className="sc-cBoprd gDhvdr"
   >
     <div
-      className="sc-cBoprd ePeCXs"
+      className="sc-ciSmjq eqdcj"
       id="tagsCounter"
     />
     3 Block Templates
     <div
-      className="sc-cBoprd ePeCXs"
+      className="sc-ciSmjq eqdcj"
     />
   </div>
   <section
-    className="sc-bYwzba dSxsfA"
+    className="sc-kLokih jYAEkb"
   >
     <div
-      className="sc-cxNIbT jLLsEu"
+      className="sc-lmgQde fCRagy"
       style={
         Object {
           "backgroundColor": "#1d1d20",
@@ -649,29 +627,29 @@ exports[`BlockTemplates: Component should render correctly 1`] = `
           }
         >
           <div
-            className="sc-jJMGHv hDQofz"
+            className="sc-hiKfjK ktYRHG"
           >
             <ul
-              className="sc-kLokih byyYNW"
+              className="sc-iklIKw jtswJj"
             >
               <li
-                className="sc-iklIKw hMirwp"
+                className="sc-jJMGHv RaMGy"
                 id="headerItem-0"
               >
                 in 3 months
               </li>
               <li
-                className="sc-iklIKw hMirwp"
+                className="sc-jJMGHv RaMGy"
                 id="headerItem-1"
               >
                 owner
               </li>
             </ul>
             <div
-              className="sc-hiKfjK"
+              className="sc-gXfWUo"
             >
               <div
-                className="sc-ciSmjq hvejIU"
+                className="sc-jcwofb jGJgbO"
                 id="blockTemplateCopyButton-1"
                 onClick={[Function]}
               >
@@ -693,23 +671,14 @@ exports[`BlockTemplates: Component should render correctly 1`] = `
             </div>
           </div>
         </div>
-        <h1
-          className="sc-lmgQde hvuaFM"
+        <a
+          className="sc-iJCRLp gQaZxh"
+          href="/block-template/1"
           id="blockTemplateTitle-1"
           onClick={[Function]}
-          style={
-            Object {
-              "fontFamily": "Inter, \\"Helvetica Neue\\", Helvetica, Arial, sans-serif",
-              "fontSize": "24px",
-              "fontWeight": 600,
-              "letterSpacing": "-0.12px",
-              "lineHight": 1.25,
-              "margin": 0,
-            }
-          }
         >
           block name
-        </h1>
+        </a>
       </div>
       <div
         style={
@@ -724,7 +693,7 @@ exports[`BlockTemplates: Component should render correctly 1`] = `
       </div>
     </div>
     <div
-      className="sc-cxNIbT jLLsEu"
+      className="sc-lmgQde fCRagy"
       style={
         Object {
           "backgroundColor": "#1d1d20",
@@ -757,29 +726,29 @@ exports[`BlockTemplates: Component should render correctly 1`] = `
           }
         >
           <div
-            className="sc-jJMGHv hDQofz"
+            className="sc-hiKfjK ktYRHG"
           >
             <ul
-              className="sc-kLokih byyYNW"
+              className="sc-iklIKw jtswJj"
             >
               <li
-                className="sc-iklIKw hMirwp"
+                className="sc-jJMGHv RaMGy"
                 id="headerItem-0"
               >
                 in 3 months
               </li>
               <li
-                className="sc-iklIKw hMirwp"
+                className="sc-jJMGHv RaMGy"
                 id="headerItem-1"
               >
                 owner 2
               </li>
             </ul>
             <div
-              className="sc-hiKfjK"
+              className="sc-gXfWUo"
             >
               <div
-                className="sc-ciSmjq hvejIU"
+                className="sc-jcwofb jGJgbO"
                 id="blockTemplateCopyButton-2"
                 onClick={[Function]}
               >
@@ -801,23 +770,14 @@ exports[`BlockTemplates: Component should render correctly 1`] = `
             </div>
           </div>
         </div>
-        <h1
-          className="sc-lmgQde hvuaFM"
+        <a
+          className="sc-iJCRLp gQaZxh"
+          href="/block-template/2"
           id="blockTemplateTitle-2"
           onClick={[Function]}
-          style={
-            Object {
-              "fontFamily": "Inter, \\"Helvetica Neue\\", Helvetica, Arial, sans-serif",
-              "fontSize": "24px",
-              "fontWeight": 600,
-              "letterSpacing": "-0.12px",
-              "lineHight": 1.25,
-              "margin": 0,
-            }
-          }
         >
           block name 2
-        </h1>
+        </a>
       </div>
       <div
         style={
@@ -832,7 +792,7 @@ exports[`BlockTemplates: Component should render correctly 1`] = `
       </div>
     </div>
     <div
-      className="sc-cxNIbT jLLsEu"
+      className="sc-lmgQde fCRagy"
       style={
         Object {
           "backgroundColor": "#1d1d20",
@@ -865,29 +825,29 @@ exports[`BlockTemplates: Component should render correctly 1`] = `
           }
         >
           <div
-            className="sc-jJMGHv hDQofz"
+            className="sc-hiKfjK ktYRHG"
           >
             <ul
-              className="sc-kLokih byyYNW"
+              className="sc-iklIKw jtswJj"
             >
               <li
-                className="sc-iklIKw hMirwp"
+                className="sc-jJMGHv RaMGy"
                 id="headerItem-0"
               >
                 in 3 months
               </li>
               <li
-                className="sc-iklIKw hMirwp"
+                className="sc-jJMGHv RaMGy"
                 id="headerItem-1"
               >
                 owner 3
               </li>
             </ul>
             <div
-              className="sc-hiKfjK"
+              className="sc-gXfWUo"
             >
               <div
-                className="sc-ciSmjq hvejIU"
+                className="sc-jcwofb jGJgbO"
                 id="blockTemplateCopyButton-3"
                 onClick={[Function]}
               >
@@ -909,23 +869,14 @@ exports[`BlockTemplates: Component should render correctly 1`] = `
             </div>
           </div>
         </div>
-        <h1
-          className="sc-lmgQde hvuaFM"
+        <a
+          className="sc-iJCRLp gQaZxh"
+          href="/block-template/3"
           id="blockTemplateTitle-3"
           onClick={[Function]}
-          style={
-            Object {
-              "fontFamily": "Inter, \\"Helvetica Neue\\", Helvetica, Arial, sans-serif",
-              "fontSize": "24px",
-              "fontWeight": 600,
-              "letterSpacing": "-0.12px",
-              "lineHight": 1.25,
-              "margin": 0,
-            }
-          }
         >
           block name 3
-        </h1>
+        </a>
       </div>
       <div
         style={
@@ -949,89 +900,37 @@ exports[`BlockTemplates: Component should render correctly 1`] = `
       <div
         className="sc-fFSRdu fbSARs"
       >
-        <button
+        <a
+          className="sc-dIvqjp eEKXKg"
           disabled={false}
+          href="/project/projectId/templates"
           id="backBtn"
           onClick={[Function]}
-          style={
-            Object {
-              "backgroundColor": "#1d1d20",
-              "border": "none",
-              "borderRadius": "48px",
-              "color": "#FFF",
-              "cursor": "pointer",
-              "display": "inline-block",
-              "fill": "#FFF",
-              "fontSize": "18px",
-              "height": "60px",
-              "margin": "0",
-              "minHeight": "48px",
-              "outline": "none",
-              "padding": "0",
-              "transition": "background 0.25s ease-in-out, color 0.25s ease-in-out",
-              "width": "60px",
-            }
-          }
+        >
+          Back
+        </a>
+        <a
+          className="sc-dlMBXb eGwbfr"
+          href="/project/projectId/block-templates/create"
+          onClick={[Function]}
         >
           <svg
+            id="createBlockTemplateMobile"
             style={
               Object {
-                "fill": "#FFF",
-                "height": "60px",
-                "width": "60px",
+                "fill": "#000",
+                "height": 60,
+                "shapeRendering": "crispEdges",
+                "width": 60,
               }
             }
             viewBox="0 0 60 60"
           >
             <path
-              d="M25.857 17L28 19.083 18.828 28H45v3H18.828L28 39.917 25.857 42 13 29.5 25.857 17z"
+              d="M32 15v13h13v4H32v13h-4V32H15v-4h13V15h4z"
             />
           </svg>
-        </button>
-        <div
-          className="sc-hHEjAm dsGYTg"
-        >
-          <button
-            disabled={false}
-            id="createBlockTemplateMobile"
-            onClick={[Function]}
-            style={
-              Object {
-                "backgroundColor": "#FFF",
-                "border": "none",
-                "borderRadius": "48px",
-                "color": "#000",
-                "cursor": "pointer",
-                "display": "inline-block",
-                "fill": "#FFF",
-                "fontSize": "18px",
-                "height": "60px",
-                "margin": "0",
-                "minHeight": "48px",
-                "outline": "none",
-                "padding": "0",
-                "transition": "background 0.25s ease-in-out, color 0.25s ease-in-out",
-                "width": "60px",
-              }
-            }
-          >
-            <svg
-              style={
-                Object {
-                  "fill": "#000",
-                  "height": "60px",
-                  "shapeRendering": "crispEdges",
-                  "width": "60px",
-                }
-              }
-              viewBox="0 0 60 60"
-            >
-              <path
-                d="M32 15v13h13v4H32v13h-4V32H15v-4h13V15h4z"
-              />
-            </svg>
-          </button>
-        </div>
+        </a>
       </div>
     </div>
   </div>

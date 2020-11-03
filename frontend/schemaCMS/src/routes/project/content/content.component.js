@@ -2,7 +2,7 @@ import React, { Fragment, useState } from 'react';
 import PropTypes from 'prop-types';
 import { FormattedMessage, useIntl } from 'react-intl';
 import Helmet from 'react-helmet';
-import { useHistory, useParams } from 'react-router';
+import { useParams } from 'react-router';
 import { useEffectOnce } from 'react-use';
 
 import { Container } from './content.styles';
@@ -19,19 +19,17 @@ import { CardHeader } from '../../../shared/components/cardHeader';
 import { ListContainer, ListItem, ListItemTitle } from '../../../shared/components/listComponents';
 import { CounterHeader } from '../../../shared/components/counterHeader';
 import reportError from '../../../shared/utils/reportError';
-import { BackArrowButton, NavigationContainer, PlusButton } from '../../../shared/components/navigation';
+import { NavigationContainer, LARGE_BUTTON_SIZE, PlusLink, BackLink } from '../../../shared/components/navigation';
 
 const Section = ({ created, createdBy, name, id, pagesCount = 0 }) => {
-  const history = useHistory();
   const whenCreated = extendedDayjs(created, BASE_DATE_FORMAT).fromNow();
   const list = [whenCreated, createdBy];
   const header = <CardHeader list={list} />;
   const footer = <FormattedMessage {...messages.pagesCounter} values={{ pagesCount }} />;
-  const handlePageClick = () => history.push(`/section/${id}`);
 
   return (
     <ListItem headerComponent={header} footerComponent={footer}>
-      <ListItemTitle id={`section-${id}`} onClick={handlePageClick}>
+      <ListItemTitle id={`section-${id}`} to={`/section/${id}`}>
         {name}
       </ListItemTitle>
     </ListItem>
@@ -50,14 +48,10 @@ export const Content = ({ userRole, fetchSections, sections }) => {
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
   const { projectId } = useParams();
-  const history = useHistory();
   const intl = useIntl();
   const title = <FormattedMessage {...messages.title} />;
   const subtitle = <FormattedMessage {...messages.subtitle} />;
   const menuOptions = getProjectMenuOptions(projectId);
-
-  const handleBackClick = () => history.push(`/project/${projectId}`);
-  const handleAddClick = () => history.push(`/project/${projectId}/section/create`);
 
   useEffectOnce(() => {
     (async () => {
@@ -83,7 +77,7 @@ export const Content = ({ userRole, fetchSections, sections }) => {
       />
       <ProjectTabs active={CONTENT} url={`/project/${projectId}`} />
       <ContextHeader title={title} subtitle={subtitle}>
-        <PlusButton id="createSection" onClick={handleAddClick} />
+        <PlusLink id="createSection" to={`/project/${projectId}/section/create`} size={LARGE_BUTTON_SIZE} />
       </ContextHeader>
       <LoadingWrapper loading={loading} error={error}>
         <Fragment>
@@ -96,8 +90,13 @@ export const Content = ({ userRole, fetchSections, sections }) => {
         </Fragment>
       </LoadingWrapper>
       <NavigationContainer fixed>
-        <BackArrowButton id="backBtn" onClick={handleBackClick} />
-        <PlusButton hideOnDesktop id="creatSectionMobile" onClick={handleAddClick} />
+        <BackLink id="backBtn" to={`/project/${projectId}`} />
+        <PlusLink
+          hideOnDesktop
+          id="creatSectionMobile"
+          to={`/project/${projectId}/section/create`}
+          size={LARGE_BUTTON_SIZE}
+        />
       </NavigationContainer>
     </Container>
   );

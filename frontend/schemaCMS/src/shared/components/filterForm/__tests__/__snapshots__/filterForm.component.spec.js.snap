@@ -416,16 +416,14 @@ exports[`FilterForm: Component should render create form 1`] = `
       hideOnDesktop={false}
       right={false}
     >
-      <BackButton
-        disabled={false}
-        onClick={[Function]}
-        type="button"
+      <BackLink
+        to="/datasource/1/filters"
       >
         <FormattedMessage
           defaultMessage="Cancel"
           id="shared.components.filterForm.cancel"
         />
-      </BackButton>
+      </BackLink>
       <NextButton
         disabled={true}
         loading={false}
@@ -736,16 +734,14 @@ exports[`FilterForm: Component should render edit form 1`] = `
       hideOnDesktop={false}
       right={false}
     >
-      <BackButton
-        disabled={false}
-        onClick={[Function]}
-        type="button"
+      <BackLink
+        to="/datasource/1/filters"
       >
         <FormattedMessage
           defaultMessage="Back"
           id="shared.components.filterForm.back"
         />
-      </BackButton>
+      </BackLink>
       <NextButton
         disabled={true}
         loading={false}

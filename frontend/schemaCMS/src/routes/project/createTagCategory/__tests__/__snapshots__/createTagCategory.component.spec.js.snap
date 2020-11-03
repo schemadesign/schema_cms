@@ -211,17 +211,15 @@ exports[`CreateTagCategory: Component should render correctly 1`] = `
     hideOnDesktop={false}
     right={false}
   >
-    <BackButton
-      disabled={false}
+    <BackLink
       id="cancelBtn"
-      onClick={[Function]}
-      type="button"
+      to="/project/projectId/tag-templates"
     >
       <FormattedMessage
         defaultMessage="Cancel"
         id="project.createTagCategory.cancel"
       />
-    </BackButton>
+    </BackLink>
     <NextButton
       disabled={true}
       id="saveBtn"

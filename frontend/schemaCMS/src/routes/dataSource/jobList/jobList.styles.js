@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import { Icons } from 'schemaUI';
+import { Link } from 'react-router-dom';
 
 import { media } from '../../../theme/media';
 
@@ -40,8 +40,7 @@ export const Dot = styled.div`
   background-color: ${({ theme }) => theme.text};
 `;
 
-export const Eye = styled(Icons.EyeIcon)`
-  cursor: pointer;
+export const EyeWrapper = styled(Link)`
   min-width: 30px;
 `;
 

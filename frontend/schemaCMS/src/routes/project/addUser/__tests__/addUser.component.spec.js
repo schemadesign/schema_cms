@@ -1,10 +1,8 @@
 import React from 'react';
 import { shallow } from 'enzyme';
 
-import { Button } from '../addUser.styles';
 import { AddUser } from '../addUser.component';
 import { defaultProps, propsWithUsers } from '../addUser.stories';
-import { BackButton } from '../../../../shared/components/navigation';
 
 describe('AddUser: Component', () => {
   const component = props => <AddUser {...defaultProps} {...props} />;
@@ -39,28 +37,6 @@ describe('AddUser: Component', () => {
     await render();
 
     expect(defaultProps.fetchProjectEditors).toHaveBeenCalledWith({ projectId: '1' });
-  });
-
-  it('should go back', () => {
-    jest.spyOn(defaultProps.history, 'push');
-    const wrapper = render();
-    wrapper
-      .find(BackButton)
-      .at(0)
-      .simulate('click');
-
-    expect(defaultProps.history.push).toHaveBeenCalledWith('/project/1/user');
-  });
-
-  it('should add user', () => {
-    jest.spyOn(propsWithUsers.history, 'push');
-    const wrapper = render(propsWithUsers);
-    wrapper
-      .find(Button)
-      .at(1)
-      .simulate('click');
-
-    expect(propsWithUsers.history.push).toHaveBeenCalledWith('/user/3/add/1');
   });
 
   it('should set error correctly', async () => {

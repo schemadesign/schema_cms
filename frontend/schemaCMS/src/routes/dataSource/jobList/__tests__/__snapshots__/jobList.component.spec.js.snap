@@ -148,16 +148,10 @@ exports[`JobList: Component should render correctly 1`] = `
     hideOnDesktop={false}
     right={false}
   >
-    <BackButton
-      disabled={false}
+    <BackLink
       id="cancelBtn"
-      onClick={[Function]}
-    >
-      <FormattedMessage
-        defaultMessage="Cancel"
-        id="dataSource.jobList.cancel"
-      />
-    </BackButton>
+      to="/datasource/1"
+    />
     <NextButton
       disabled={true}
       id="revertBtn"
@@ -349,9 +343,11 @@ exports[`JobList: Component should render correctly with list of jobs 1`] = `
               </styled.div>
             </styled.label>
           </styled.div>
-          <Styled(Component)
-            onClick={[Function]}
-          />
+          <Styled(Link)
+            to="/job/1"
+          >
+            <Component />
+          </Styled(Link)>
         </styled.div>
         <styled.div
           key="1"
@@ -394,9 +390,11 @@ exports[`JobList: Component should render correctly with list of jobs 1`] = `
               </styled.div>
             </styled.label>
           </styled.div>
-          <Styled(Component)
-            onClick={[Function]}
-          />
+          <Styled(Link)
+            to="/job/2"
+          >
+            <Component />
+          </Styled(Link)>
         </styled.div>
         <styled.div
           key="2"
@@ -439,9 +437,11 @@ exports[`JobList: Component should render correctly with list of jobs 1`] = `
               </styled.div>
             </styled.label>
           </styled.div>
-          <Styled(Component)
-            onClick={[Function]}
-          />
+          <Styled(Link)
+            to="/job/3"
+          >
+            <Component />
+          </Styled(Link)>
         </styled.div>
       </styled.div>
     </RadioGroup>
@@ -452,16 +452,10 @@ exports[`JobList: Component should render correctly with list of jobs 1`] = `
     hideOnDesktop={false}
     right={false}
   >
-    <BackButton
-      disabled={false}
+    <BackLink
       id="cancelBtn"
-      onClick={[Function]}
-    >
-      <FormattedMessage
-        defaultMessage="Cancel"
-        id="dataSource.jobList.cancel"
-      />
-    </BackButton>
+      to="/datasource/1"
+    />
     <NextButton
       disabled={true}
       id="revertBtn"
@@ -625,16 +619,10 @@ exports[`JobList: Component should render correctly with no data 1`] = `
     hideOnDesktop={false}
     right={false}
   >
-    <BackButton
-      disabled={false}
+    <BackLink
       id="cancelBtn"
-      onClick={[Function]}
-    >
-      <FormattedMessage
-        defaultMessage="Cancel"
-        id="dataSource.jobList.cancel"
-      />
-    </BackButton>
+      to="/datasource/1"
+    />
     <NextButton
       disabled={true}
       id="revertBtn"

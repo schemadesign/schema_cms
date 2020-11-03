@@ -3,7 +3,7 @@
 exports[`EditState: Component should render correctly 1`] = `
 Array [
   <div
-    className="sc-hTRkEk gtvkuV"
+    className="sc-jgPznn bqAAed"
   >
     <div
       style={
@@ -25,7 +25,7 @@ Array [
         }
       >
         <a
-          className="sc-gSYCTC cYScwH"
+          className="sc-laZMyp ezgTvF"
           href="/project/1/"
           onClick={[Function]}
           style={
@@ -47,7 +47,7 @@ Array [
             Project
           </span>
           <h3
-            className="sc-laZMyp hdRMxi"
+            className="sc-iNiQeE ccDdTK"
             style={
               Object {
                 "fontFamily": "Inter, \\"Helvetica Neue\\", Helvetica, Arial, sans-serif",
@@ -83,7 +83,7 @@ Array [
         }
       >
         <a
-          className="sc-gSYCTC cYScwH"
+          className="sc-laZMyp ezgTvF"
           href="/project/1/datasource"
           onClick={[Function]}
           style={
@@ -105,7 +105,7 @@ Array [
             Tab
           </span>
           <h3
-            className="sc-laZMyp hdRMxi"
+            className="sc-iNiQeE ccDdTK"
             style={
               Object {
                 "fontFamily": "Inter, \\"Helvetica Neue\\", Helvetica, Arial, sans-serif",
@@ -141,7 +141,7 @@ Array [
         }
       >
         <a
-          className="sc-gSYCTC cYScwH"
+          className="sc-laZMyp ezgTvF"
           href="/datasource/1"
           onClick={[Function]}
           style={
@@ -163,7 +163,7 @@ Array [
             Data Source
           </span>
           <h3
-            className="sc-laZMyp hdRMxi"
+            className="sc-iNiQeE ccDdTK"
             style={
               Object {
                 "fontFamily": "Inter, \\"Helvetica Neue\\", Helvetica, Arial, sans-serif",
@@ -199,7 +199,7 @@ Array [
         }
       >
         <a
-          className="sc-gSYCTC cYScwH"
+          className="sc-laZMyp ezgTvF"
           href="/datasource/1/state"
           onClick={[Function]}
           style={
@@ -221,7 +221,7 @@ Array [
             Tab
           </span>
           <h3
-            className="sc-laZMyp hdRMxi"
+            className="sc-iNiQeE ccDdTK"
             style={
               Object {
                 "fontFamily": "Inter, \\"Helvetica Neue\\", Helvetica, Arial, sans-serif",
@@ -257,7 +257,7 @@ Array [
         }
       >
         <div
-          className="sc-jgPznn fTfTOR"
+          className="sc-gSYCTC gfqDcn"
         >
           <span
             style={
@@ -270,7 +270,7 @@ Array [
             State
           </span>
           <h3
-            className="sc-laZMyp hdRMxi"
+            className="sc-iNiQeE ccDdTK"
             style={
               Object {
                 "fontFamily": "Inter, \\"Helvetica Neue\\", Helvetica, Arial, sans-serif",
@@ -328,7 +328,7 @@ Array [
                 "fontSize": "24px",
                 "fontWeight": 600,
                 "letterSpacing": "-0.12px",
-                "lineHight": 1.25,
+                "lineHeight": 1.25,
                 "margin": 0,
               }
             }
@@ -431,7 +431,7 @@ Array [
                   "fontSize": "24px",
                   "fontWeight": 600,
                   "letterSpacing": "-0.12px",
-                  "lineHight": 1.25,
+                  "lineHeight": 1.25,
                   "margin": 0,
                 }
               }
@@ -625,13 +625,13 @@ Array [
     </div>
   </div>,
   <div
-    className="sc-hHEjAm IVnVi"
+    className="sc-dlMBXb jygUFU"
   >
     <div
-      className="sc-dlMBXb hBQOnd"
+      className="sc-kfYqjs cvqBSM"
     >
       <h2
-        className="sc-kfYqjs jyVZHv"
+        className="sc-fKgIGh dOwufL"
         id="desktopHeaderTitle"
         style={
           Object {
@@ -643,7 +643,7 @@ Array [
         }
       />
       <h1
-        className="sc-fKgIGh dOwufL"
+        className="sc-bCwgka bBdQKU"
         id="desktopHeaderSubtitle"
         style={
           Object {
@@ -651,7 +651,7 @@ Array [
             "fontSize": "24px",
             "fontWeight": 600,
             "letterSpacing": "-0.12px",
-            "lineHight": 1.25,
+            "lineHeight": 1.25,
             "margin": 0,
           }
         }
@@ -660,14 +660,14 @@ Array [
       </h1>
     </div>
     <div
-      className="sc-bCwgka"
+      className="sc-iwaifL"
     />
   </div>,
   <div
-    className="sc-iwaifL cFapPy"
+    className="sc-cxNIbT fanCMY"
   >
     <div
-      className="sc-cxNIbT dxskWl"
+      className="sc-lmgQde cgzwxR"
     >
       <div
         style={
@@ -730,7 +730,7 @@ Array [
           }
         >
           <div
-            className="sc-lmgQde bGsGIg"
+            className="sc-iJCRLp kLvrzs"
           >
             <svg
               style={
@@ -751,12 +751,12 @@ Array [
         </div>
       </div>
       <div
-        className="sc-iJCRLp bWFzJd"
+        className="sc-giAqnE gKmdVy"
         id="nameError"
       />
     </div>
     <div
-      className="sc-cxNIbT dxskWl"
+      className="sc-lmgQde cgzwxR"
     >
       <div
         style={
@@ -837,7 +837,7 @@ Array [
           }
         >
           <div
-            className="sc-lmgQde bGsGIg"
+            className="sc-iJCRLp kLvrzs"
           >
             <svg
               style={
@@ -858,12 +858,12 @@ Array [
         </div>
       </div>
       <div
-        className="sc-iJCRLp bWFzJd"
+        className="sc-giAqnE gKmdVy"
         id="descriptionError"
       />
     </div>
     <div
-      className="sc-cxNIbT dxskWl"
+      className="sc-lmgQde cgzwxR"
     >
       <div
         style={
@@ -926,7 +926,7 @@ Array [
           }
         >
           <div
-            className="sc-lmgQde bGsGIg"
+            className="sc-iJCRLp kLvrzs"
           >
             <svg
               style={
@@ -947,7 +947,7 @@ Array [
         </div>
       </div>
       <div
-        className="sc-iJCRLp bWFzJd"
+        className="sc-giAqnE gKmdVy"
         id="sourceUrlError"
       />
     </div>
@@ -994,13 +994,13 @@ Array [
       No Filters available
     </div>
     <div
-      className="sc-gXfWUo ikKSdU"
+      className="sc-cBoprd eZJDNA"
     >
       <div
-        className="sc-cBoprd dBFdab"
+        className="sc-ciSmjq jukrfc"
       >
         <div
-          className="sc-carGAA dJySQF"
+          className="sc-iTVIwl jjWxdD"
         >
           <div>
             <input
@@ -1051,23 +1051,23 @@ Array [
             </label>
           </div>
           <div
-            className="sc-jcwofb gxJVWv"
+            className="sc-carGAA hnBnVR"
           >
             <label
-              className="sc-ciSmjq eECFZy"
+              className="sc-jcwofb hbUPLQ"
               htmlFor="isPublic"
             >
               Make it Public
             </label>
             <span
-              className="sc-iBzFoy isJZgK"
+              className="sc-efHXLn fugJjy"
             >
               This State is currently Private
             </span>
           </div>
         </div>
         <div
-          className="sc-iTVIwl LcfxC"
+          className="sc-iBzFoy bjbpWW"
           id="removeState"
           onClick={[Function]}
         >
@@ -1101,31 +1101,14 @@ Array [
       <div
         className="sc-fnVYJo lcUbTO"
       >
-        <button
-          className="sc-bkbjAj eMzpTM"
+        <a
+          className="sc-iemXMA jJqiqd"
           disabled={false}
+          href="/datasource/1/state"
           onClick={[Function]}
-          style={
-            Object {
-              "backgroundColor": "#1d1d20",
-              "border": "none",
-              "borderRadius": "48px",
-              "color": "#FFF",
-              "cursor": "pointer",
-              "display": "inline-block",
-              "fill": "#FFF",
-              "fontSize": "18px",
-              "margin": "0",
-              "minHeight": "48px",
-              "outline": "none",
-              "padding": "0",
-              "transition": "background 0.25s ease-in-out, color 0.25s ease-in-out",
-            }
-          }
-          type="button"
         >
           Back
-        </button>
+        </a>
         <button
           className="sc-bkbjAj eMzpTM"
           disabled={true}

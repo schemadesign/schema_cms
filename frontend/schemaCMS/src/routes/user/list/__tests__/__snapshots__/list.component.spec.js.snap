@@ -59,11 +59,10 @@ exports[`User List: Component should render correctly with loader 1`] = `
       />
     }
   >
-    <PlusButton
-      customStyles={Object {}}
-      hideOnDesktop={false}
+    <PlusLink
       id="addUserBtn"
-      onClick={[Function]}
+      size={60}
+      to="/user/add"
     />
   </ContextHeader>
   <LoadingWrapper
@@ -79,23 +78,22 @@ exports[`User List: Component should render correctly with loader 1`] = `
   <NavigationContainer
     contentStyles={null}
     fixed={true}
-    hideOnDesktop={true}
+    hideOnDesktop={false}
     right={false}
   >
-    <BackButton
-      disabled={false}
-      onClick={[Function]}
+    <BackLink
+      to="/"
     >
       <FormattedMessage
-        defaultMessage="Cancel"
-        id="userList.cancel"
+        defaultMessage="Back"
+        id="userList.back"
       />
-    </BackButton>
-    <PlusButton
-      customStyles={Object {}}
-      hideOnDesktop={false}
+    </BackLink>
+    <PlusLink
+      hideOnDesktop={true}
       id="addUserBtn"
-      onClick={[Function]}
+      size={60}
+      to="/user/add"
     />
   </NavigationContainer>
 </styled.div>
@@ -160,11 +158,10 @@ exports[`User List: Component should render correctly with users data 1`] = `
       />
     }
   >
-    <PlusButton
-      customStyles={Object {}}
-      hideOnDesktop={false}
+    <PlusLink
       id="addUserBtn"
-      onClick={[Function]}
+      size={60}
+      to="/user/add"
     />
   </ContextHeader>
   <LoadingWrapper
@@ -191,23 +188,22 @@ exports[`User List: Component should render correctly with users data 1`] = `
   <NavigationContainer
     contentStyles={null}
     fixed={true}
-    hideOnDesktop={true}
+    hideOnDesktop={false}
     right={false}
   >
-    <BackButton
-      disabled={false}
-      onClick={[Function]}
+    <BackLink
+      to="/"
     >
       <FormattedMessage
-        defaultMessage="Cancel"
-        id="userList.cancel"
+        defaultMessage="Back"
+        id="userList.back"
       />
-    </BackButton>
-    <PlusButton
-      customStyles={Object {}}
-      hideOnDesktop={false}
+    </BackLink>
+    <PlusLink
+      hideOnDesktop={true}
       id="addUserBtn"
-      onClick={[Function]}
+      size={60}
+      to="/user/add"
     />
   </NavigationContainer>
 </styled.div>
