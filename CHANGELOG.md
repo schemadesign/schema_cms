@@ -1,6 +1,8 @@
 ## [Unreleased]
 
 ### Fixes
+- add delay for updating uploaded data source in the data source list
+
 
 ### Changes
 - make elements with on click handler to normal link with href
