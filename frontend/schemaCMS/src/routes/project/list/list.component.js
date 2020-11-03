@@ -5,7 +5,7 @@ import { always, isEmpty } from 'ramda';
 import { Typography } from 'schemaUI';
 
 import extendedDayjs, { BASE_DATE_FORMAT } from '../../../shared/utils/extendedDayjs';
-import { generateApiUrl, filterMenuOptions } from '../../../shared/utils/helpers';
+import { filterMenuOptions } from '../../../shared/utils/helpers';
 import { renderWhenTrue } from '../../../shared/utils/rendering';
 import { LoadingWrapper } from '../../../shared/components/loadingWrapper';
 import { ContextHeader } from '../../../shared/components/contextHeader';
@@ -73,7 +73,7 @@ export class List extends PureComponent {
     </Footer>
   );
 
-  renderItem({ id, title = '', description = '', slug = '', created = '', status = '', owner }, index) {
+  renderItem({ id, title = '', description = '', slug = '', created = '', status = '', owner, apiUrl = '' }, index) {
     const { firstName = '—', lastName = '' } = owner || {};
     const user = isEmpty(firstName) ? lastName : `${firstName} ${lastName}`;
     const whenCreated = extendedDayjs(created, BASE_DATE_FORMAT).fromNow();
@@ -82,8 +82,7 @@ export class List extends PureComponent {
 
     const handleShowProject = this.handleShowProject(id);
     const header = this.renderHeader([whenCreated, statusValue, user]);
-    const url = generateApiUrl(slug);
-    const footer = this.renderFooter(index, url);
+    const footer = this.renderFooter(index, apiUrl);
 
     return (
       <ListItem key={index} headerComponent={header} footerComponent={footer}>

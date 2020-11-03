@@ -5,8 +5,8 @@
 
 
 ### Changes
+- add api url from the backend on the project view and projects list
 - make elements with on click handler to normal link with href
-
 
 ### Features
 

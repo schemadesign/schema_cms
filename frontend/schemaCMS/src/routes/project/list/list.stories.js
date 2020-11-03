@@ -26,6 +26,7 @@ export const defaultProps = {
       slug: 'project_title',
       created: '2019-08-26T11:05:12+0000',
       status: PROJECT_STATUSES.IN_PROGRESS,
+      apiUrl: 'apiUrl1',
       owner: {
         id: '1',
         firstName: 'Sed sed risus a nibh',
@@ -38,6 +39,7 @@ export const defaultProps = {
         'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed molestie fermentum dictum. In id posuere nibh.',
       slug: 'wuwhonec-sodales-libero-non-fermentum-aliquam-honec-sodales-libero-non-fermentum-aliquam',
       created: '2019-08-26T11:05:12+0000',
+      apiUrl: 'apiUrl2',
       status: PROJECT_STATUSES.PUBLISHED,
       owner: {
         id: '2',

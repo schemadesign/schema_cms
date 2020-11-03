@@ -63,9 +63,9 @@ exports[`List: Component should render correctly 1`] = `
         footerComponent={
           <ForwardRef(styled.div)
             id="apiPath-0"
-            title="schemacms/api/project_title"
+            title="apiUrl1"
           >
-            schemacms/api/project_title
+            apiUrl1
           </ForwardRef(styled.div)>
         }
         headerComponent={
@@ -120,9 +120,9 @@ exports[`List: Component should render correctly 1`] = `
         footerComponent={
           <ForwardRef(styled.div)
             id="apiPath-1"
-            title="schemacms/api/wuwhonec-sodales-libero-non-fermentum-aliquam-honec-sodales-libero-non-fermentum-aliquam"
+            title="apiUrl2"
           >
-            schemacms/api/wuwhonec-sodales-libero-non-fermentum-aliquam-honec-sodales-libero-non-fermentum-aliquam
+            apiUrl2
           </ForwardRef(styled.div)>
         }
         headerComponent={
@@ -254,9 +254,9 @@ exports[`List: Component should render correctly with loading 1`] = `
         footerComponent={
           <ForwardRef(styled.div)
             id="apiPath-0"
-            title="schemacms/api/project_title"
+            title="apiUrl1"
           >
-            schemacms/api/project_title
+            apiUrl1
           </ForwardRef(styled.div)>
         }
         headerComponent={
@@ -311,9 +311,9 @@ exports[`List: Component should render correctly with loading 1`] = `
         footerComponent={
           <ForwardRef(styled.div)
             id="apiPath-1"
-            title="schemacms/api/wuwhonec-sodales-libero-non-fermentum-aliquam-honec-sodales-libero-non-fermentum-aliquam"
+            title="apiUrl2"
           >
-            schemacms/api/wuwhonec-sodales-libero-non-fermentum-aliquam-honec-sodales-libero-non-fermentum-aliquam
+            apiUrl2
           </ForwardRef(styled.div)>
         }
         headerComponent={
