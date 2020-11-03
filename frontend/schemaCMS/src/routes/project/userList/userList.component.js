@@ -4,12 +4,11 @@ import { FormattedMessage } from 'react-intl';
 import { always } from 'ramda';
 
 import { UserList as UserListComponent } from '../../../shared/components/userList';
-import { BackArrowButton, NavigationContainer, PlusButton } from '../../../shared/components/navigation';
+import { NavigationContainer, PlusLink, LARGE_BUTTON_SIZE, BackLink } from '../../../shared/components/navigation';
 import { ProjectTabs } from '../../../shared/components/projectTabs';
 import { USERS } from '../../../shared/components/projectTabs/projectTabs.constants';
 import { ContextHeader } from '../../../shared/components/contextHeader';
 import messages from './userList.messages';
-import browserHistory from '../../../shared/utils/history';
 import { renderWhenTrue } from '../../../shared/utils/rendering';
 import { LoadingWrapper } from '../../../shared/components/loadingWrapper';
 import { getMatchParam, filterMenuOptions } from '../../../shared/utils/helpers';
@@ -46,15 +45,13 @@ export class UserList extends PureComponent {
     }
   }
 
-  handleAddUser = () => {
+  getAddUserUrl = () => {
     const projectId = getMatchParam(this.props, 'projectId');
-    return browserHistory.push(`/project/${projectId}/user/add`);
+    return `/project/${projectId}/user/add`;
   };
 
-  handleBackClick = () => browserHistory.push(`/project/${getMatchParam(this.props, 'projectId')}`);
-
   renderCreateUserButton = ({ id, isAdmin }) =>
-    renderWhenTrue(always(<PlusButton id={id} onClick={this.handleAddUser} />))(isAdmin);
+    renderWhenTrue(always(<PlusLink id={id} to={this.getAddUserUrl()} size={LARGE_BUTTON_SIZE} />))(isAdmin);
 
   render() {
     const { error, loading } = this.state;
@@ -85,9 +82,9 @@ export class UserList extends PureComponent {
           <UserListComponent users={this.props.users} projectId={getMatchParam(this.props, 'projectId')} />
         </LoadingWrapper>
         <NavigationContainer fixed hideOnDesktop>
-          <BackArrowButton onClick={this.handleBackClick}>
+          <BackLink to={`/project/${getMatchParam(this.props, 'projectId')}`}>
             <FormattedMessage {...messages.back} />
-          </BackArrowButton>
+          </BackLink>
           {this.renderCreateUserButton({ id: 'addUserBtn', isAdmin })}
         </NavigationContainer>
       </Fragment>

@@ -33,7 +33,7 @@ exports[`PageForm: Component should render correctly 1`] = `
             "fontSize": "24px",
             "fontWeight": 600,
             "letterSpacing": "-0.12px",
-            "lineHight": 1.25,
+            "lineHeight": 1.25,
             "margin": 0,
           }
         }
@@ -635,24 +635,24 @@ exports[`PageForm: Component should render correctly 1`] = `
     Tags
   </label>
   <div
-    className="sc-oefIU ezTZZk"
+    className="sc-hhIhEF ivJlXG"
   >
     <div
-      className="sc-lbVuaH hrtoxv"
+      className="sc-gGLyOc jQMvOm"
     >
       <div
-        className="sc-hhIhEF kjDOua"
+        className="sc-eirseW coVEyT"
         title="Colors"
       >
         <span
-          className="sc-eirseW itqGeC"
+          className="sc-lbVuaH holtmx"
         >
           Category: 
         </span>
         Colors
       </div>
       <div
-        className="sc-ckTRkR"
+        className="sc-fbIXFq"
       >
         <div
           className=" css-2b097c-container"
@@ -750,18 +750,18 @@ exports[`PageForm: Component should render correctly 1`] = `
         </div>
       </div>
       <div
-        className="sc-hhIhEF kjDOua"
+        className="sc-eirseW coVEyT"
         title="Countries"
       >
         <span
-          className="sc-eirseW itqGeC"
+          className="sc-lbVuaH holtmx"
         >
           Category: 
         </span>
         Countries
       </div>
       <div
-        className="sc-ckTRkR"
+        className="sc-fbIXFq"
       >
         <div
           className=" css-2b097c-container"
@@ -1037,15 +1037,15 @@ exports[`PageForm: Component should render correctly 1`] = `
     </div>
   </div>
   <div
-    className="sc-jffIyK fXjaBd"
+    className="sc-eJoaVz bqGKxx"
   >
     <div
-      className="sc-eJoaVz ktMcat"
+      className="sc-oefIU jwijTA"
       id="tagsCounter"
     />
     1 Block
     <div
-      className="sc-eJoaVz ktMcat"
+      className="sc-oefIU jwijTA"
     >
       <div
         className="sc-iqAbSa hbmCwY"
@@ -1150,10 +1150,10 @@ exports[`PageForm: Component should render correctly 1`] = `
           }
         >
           <div
-            className="sc-iklIKw jlBcYd"
+            className="sc-jJMGHv kfgOjW"
           >
             <div
-              className="sc-hiKfjK bNuKhS"
+              className="sc-gXfWUo dcEwer"
             >
               <div>
                 <div
@@ -1255,7 +1255,7 @@ exports[`PageForm: Component should render correctly 1`] = `
               />
             </div>
             <div
-              className="sc-hiKfjK bNuKhS"
+              className="sc-gXfWUo dcEwer"
             >
               <svg
                 style={
@@ -1296,7 +1296,7 @@ exports[`PageForm: Component should render correctly 1`] = `
             </div>
           </div>
           <div
-            className="sc-gXfWUo hVCiTd"
+            className="sc-cBoprd lkQazN"
             title="type"
           >
             type
@@ -1425,7 +1425,7 @@ exports[`PageForm: Component should render correctly 1`] = `
               className="sc-dIsAE byliSZ"
             />
             <a
-              className="sc-jOFreG iIgpix"
+              className="sc-hmbsMR fSxnsN"
               href="pageUrl"
               target="_blank"
             >
@@ -1495,7 +1495,7 @@ exports[`PageForm: Component should render with page template 1`] = `
             "fontSize": "24px",
             "fontWeight": 600,
             "letterSpacing": "-0.12px",
-            "lineHight": 1.25,
+            "lineHeight": 1.25,
             "margin": 0,
           }
         }
@@ -2097,24 +2097,24 @@ exports[`PageForm: Component should render with page template 1`] = `
     Tags
   </label>
   <div
-    className="sc-oefIU ezTZZk"
+    className="sc-hhIhEF ivJlXG"
   >
     <div
-      className="sc-lbVuaH hrtoxv"
+      className="sc-gGLyOc jQMvOm"
     >
       <div
-        className="sc-hhIhEF kjDOua"
+        className="sc-eirseW coVEyT"
         title="Colors"
       >
         <span
-          className="sc-eirseW itqGeC"
+          className="sc-lbVuaH holtmx"
         >
           Category: 
         </span>
         Colors
       </div>
       <div
-        className="sc-ckTRkR"
+        className="sc-fbIXFq"
       >
         <div
           className=" css-2b097c-container"
@@ -2212,18 +2212,18 @@ exports[`PageForm: Component should render with page template 1`] = `
         </div>
       </div>
       <div
-        className="sc-hhIhEF kjDOua"
+        className="sc-eirseW coVEyT"
         title="Countries"
       >
         <span
-          className="sc-eirseW itqGeC"
+          className="sc-lbVuaH holtmx"
         >
           Category: 
         </span>
         Countries
       </div>
       <div
-        className="sc-ckTRkR"
+        className="sc-fbIXFq"
       >
         <div
           className=" css-2b097c-container"
@@ -2499,15 +2499,15 @@ exports[`PageForm: Component should render with page template 1`] = `
     </div>
   </div>
   <div
-    className="sc-jffIyK fXjaBd"
+    className="sc-eJoaVz bqGKxx"
   >
     <div
-      className="sc-eJoaVz ktMcat"
+      className="sc-oefIU jwijTA"
       id="tagsCounter"
     />
     1 Block
     <div
-      className="sc-eJoaVz ktMcat"
+      className="sc-oefIU jwijTA"
     >
       <div
         className="sc-iqAbSa hbmCwY"
@@ -2612,10 +2612,10 @@ exports[`PageForm: Component should render with page template 1`] = `
           }
         >
           <div
-            className="sc-iklIKw jlBcYd"
+            className="sc-jJMGHv kfgOjW"
           >
             <div
-              className="sc-hiKfjK bNuKhS"
+              className="sc-gXfWUo dcEwer"
             >
               <div>
                 <div
@@ -2717,7 +2717,7 @@ exports[`PageForm: Component should render with page template 1`] = `
               />
             </div>
             <div
-              className="sc-hiKfjK bNuKhS"
+              className="sc-gXfWUo dcEwer"
             >
               <svg
                 style={
@@ -2758,7 +2758,7 @@ exports[`PageForm: Component should render with page template 1`] = `
             </div>
           </div>
           <div
-            className="sc-gXfWUo hVCiTd"
+            className="sc-cBoprd lkQazN"
             title="type"
           >
             type
@@ -2887,7 +2887,7 @@ exports[`PageForm: Component should render with page template 1`] = `
               className="sc-dIsAE byliSZ"
             />
             <a
-              className="sc-jOFreG iIgpix"
+              className="sc-hmbsMR fSxnsN"
               href="pageUrl"
               target="_blank"
             >

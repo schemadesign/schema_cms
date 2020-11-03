@@ -9,7 +9,7 @@ import { ProjectTabs } from '../../../shared/components/projectTabs';
 import { ContextHeader } from '../../../shared/components/contextHeader';
 import { LoadingWrapper } from '../../../shared/components/loadingWrapper';
 import { ListContainer, ListItem, ListItemTitle } from '../../../shared/components/listComponents';
-import { BackArrowButton, NavigationContainer, PlusButton } from '../../../shared/components/navigation';
+import { BackLink, NavigationContainer, PlusLink, LARGE_BUTTON_SIZE } from '../../../shared/components/navigation';
 import { SOURCES } from '../../../shared/components/projectTabs/projectTabs.constants';
 import {
   Container,
@@ -96,15 +96,10 @@ export class DataSourceList extends PureComponent {
     [T, always(RESULT_PAGE)],
   ]);
 
-  handleShowProject = () => this.props.history.push(`/project/${getMatchParam(this.props, 'projectId')}`);
-
-  handleCreateDataSource = () =>
-    this.props.history.push(`/project/${getMatchParam(this.props, 'projectId')}/datasource/add`);
-
-  handleShowDataSource = ({ id, activeJob }) => {
+  getShowDataSourceUrl = ({ id, activeJob }) => {
     const dataSourcePage = this.getDataSourcePage(activeJob);
 
-    this.props.history.push(`/datasource/${id}/${dataSourcePage}`);
+    return `/datasource/${id}/${dataSourcePage}`;
   };
 
   renderCreatedInformation = list => (
@@ -251,7 +246,7 @@ export class DataSourceList extends PureComponent {
     const footer = this.renderMetaData({ metaData, metaProcessing, tags, type });
     return (
       <ListItem id="dataSourceContainer" key={index} headerComponent={header} footerComponent={footer}>
-        <ListItemTitle id="dataSourceTitle" onClick={() => this.handleShowDataSource({ id, activeJob })}>
+        <ListItemTitle id="dataSourceTitle" to={this.getShowDataSourceUrl({ id, activeJob })}>
           {name}
         </ListItemTitle>
       </ListItem>
@@ -268,6 +263,7 @@ export class DataSourceList extends PureComponent {
     const loadingConfig = this.getLoadingConfig(loading, error, dataSources);
     const projectId = getMatchParam(this.props, 'projectId');
     const menuOptions = getProjectMenuOptions(projectId);
+    const addDataSourceUrl = `/project/${getMatchParam(this.props, 'projectId')}/datasource/add`;
 
     return (
       <Container>
@@ -280,12 +276,12 @@ export class DataSourceList extends PureComponent {
         />
         <ProjectTabs active={SOURCES} url={`/project/${match.params.projectId}`} />
         <ContextHeader title={title} subtitle={subtitle}>
-          <PlusButton id="createDataSourceDesktopBtn" onClick={this.handleCreateDataSource} />
+          <PlusLink id="createDataSourceDesktopBtn" to={addDataSourceUrl} size={LARGE_BUTTON_SIZE} />
         </ContextHeader>
         <LoadingWrapper {...loadingConfig}>{this.renderList(!loading)}</LoadingWrapper>
-        <NavigationContainer fixed hideOnDesktop>
-          <BackArrowButton id="backBtn" onClick={this.handleShowProject} />
-          <PlusButton id="createDataSourceBtn" onClick={this.handleCreateDataSource} />
+        <NavigationContainer fixed>
+          <BackLink id="backBtn" to={`/project/${getMatchParam(this.props, 'projectId')}`} />
+          <PlusLink hideOnDesktop id="createDataSourceBtn" to={addDataSourceUrl} size={LARGE_BUTTON_SIZE} />
         </NavigationContainer>
       </Container>
     );

@@ -90,6 +90,7 @@ function* uploadProgressWatcher(channel, id) {
       }
 
       if (data || error) {
+        yield delay(FETCH_LIST_DELAY);
         yield put(DataSourceRoutines.updateUploadingDataSourceStatus({ data, error }));
       }
     } catch (error) {

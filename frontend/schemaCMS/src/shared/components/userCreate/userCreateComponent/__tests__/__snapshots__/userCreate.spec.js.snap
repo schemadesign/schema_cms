@@ -75,6 +75,7 @@ exports[`UserCreate: Component should render correctly 1`] = `
   >
     <TextInput
       autoWidth={false}
+      cancelUrl="cancelUrl"
       checkOnlyErrors={false}
       disabled={true}
       errors={Object {}}
@@ -92,7 +93,6 @@ exports[`UserCreate: Component should render correctly 1`] = `
       isValid={true}
       label="Name"
       name="firstName"
-      onCancelClick={[Function]}
       onChange={[Function]}
       setFieldValue={[Function]}
       touched={Object {}}
@@ -100,6 +100,7 @@ exports[`UserCreate: Component should render correctly 1`] = `
     />
     <TextInput
       autoWidth={false}
+      cancelUrl="cancelUrl"
       checkOnlyErrors={false}
       disabled={true}
       errors={Object {}}
@@ -117,7 +118,6 @@ exports[`UserCreate: Component should render correctly 1`] = `
       isValid={true}
       label="Last name"
       name="lastName"
-      onCancelClick={[Function]}
       onChange={[Function]}
       setFieldValue={[Function]}
       touched={Object {}}
@@ -153,17 +153,15 @@ exports[`UserCreate: Component should render correctly 1`] = `
       hideOnDesktop={false}
       right={false}
     >
-      <BackButton
-        disabled={false}
+      <BackLink
         id="inviteUserBackBtn"
-        onClick={[Function]}
-        type="button"
+        to="cancelUrl"
       >
         <FormattedMessage
           defaultMessage="Cancel"
           id="userCreate.cancel"
         />
-      </BackButton>
+      </BackLink>
       <NextButton
         disabled={false}
         id="inviteUserSubmitBtn"

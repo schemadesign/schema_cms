@@ -3,7 +3,6 @@ import { shallow } from 'enzyme';
 
 import { CreateTagCategory } from '../createTagCategory.component';
 import { defaultProps } from '../createTagCategory.stories';
-import { BackButton } from '../../../../shared/components/navigation';
 
 describe('CreateTagCategory: Component', () => {
   const component = props => <CreateTagCategory {...defaultProps} {...props} />;
@@ -13,15 +12,5 @@ describe('CreateTagCategory: Component', () => {
   it('should render correctly', () => {
     const wrapper = render();
     global.expect(wrapper).toMatchSnapshot();
-  });
-
-  it('should go back', () => {
-    jest.spyOn(defaultProps.history, 'push');
-
-    const wrapper = render();
-
-    wrapper.find(BackButton).simulate('click');
-
-    expect(defaultProps.history.push).toHaveBeenCalledWith('/project/projectId/tag-templates');
   });
 });

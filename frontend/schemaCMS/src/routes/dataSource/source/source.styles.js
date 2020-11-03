@@ -1,4 +1,6 @@
 import styled from 'styled-components';
+import { Link as RouteLink } from 'react-router-dom';
+
 import { colors } from '../../../theme/styled';
 import { Link as LinkTypography } from '../../../theme/typography';
 
@@ -31,10 +33,14 @@ export const WarningWrapper = styled.div`
   margin-bottom: 40px;
 `;
 
-export const Link = styled(LinkTypography)`
+export const Button = styled(LinkTypography)`
   margin-bottom: 30px;
 
   &:last-child {
     margin-bottom: 0;
   }
+`;
+
+export const Link = styled(Button).attrs({ as: RouteLink })`
+  text-decoration: none;
 `;

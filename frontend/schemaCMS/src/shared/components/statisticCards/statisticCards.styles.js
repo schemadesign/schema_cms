@@ -1,4 +1,6 @@
 import styled from 'styled-components';
+import { Link } from 'react-router-dom';
+
 import { media } from '../../../theme/media';
 
 const desktopMargin = 15;
@@ -14,11 +16,12 @@ export const Statistics = styled.ul`
   `};
 `;
 
-export const CardWrapper = styled.li`
+export const CardWrapper = styled(Link)`
   font-size: 12px;
   display: inline-block;
   width: calc(50% - ${mobileMargin}px);
   margin-bottom: ${mobileMargin * 2}px;
+  text-decoration: none;
 
   &:nth-child(2n + 1) {
     margin-right: ${mobileMargin}px;

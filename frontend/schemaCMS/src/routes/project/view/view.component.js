@@ -5,7 +5,7 @@ import { always, cond, identity, path, propEq, T } from 'ramda';
 import { FormattedMessage } from 'react-intl';
 
 import { renderWhenTrue } from '../../../shared/utils/rendering';
-import { filterMenuOptions, generateApiUrl, getMatchParam } from '../../../shared/utils/helpers';
+import { filterMenuOptions, getMatchParam } from '../../../shared/utils/helpers';
 import extendedDayjs, { BASE_DATE_FORMAT } from '../../../shared/utils/extendedDayjs';
 import reportError from '../../../shared/utils/reportError';
 import { MobileMenu } from '../../../shared/components/menu/mobileMenu';
@@ -25,7 +25,7 @@ import {
   selectContainerStyles,
   InputContainer,
 } from './view.styles';
-import { BackArrowButton, BackButton, NavigationContainer, NextButton } from '../../../shared/components/navigation';
+import { BackButton, BackLink, NavigationContainer, NextButton } from '../../../shared/components/navigation';
 
 import { Modal, ModalActions, modalStyles, ModalTitle } from '../../../shared/components/modal/modal.styles';
 import { Link, LinkContainer } from '../../../theme/typography';
@@ -81,8 +81,6 @@ export class View extends PureComponent {
     }));
 
   formatMessage = value => this.props.intl.formatMessage(value);
-
-  handleGoTo = to => () => (to ? this.props.history.push(to) : null);
 
   handleDeleteClick = () => this.setState({ confirmationModalOpen: true });
 
@@ -171,7 +169,7 @@ export class View extends PureComponent {
     </DetailItem>
   );
 
-  renderProject = ({ id: projectId, owner, slug, created, meta, status } = {}) => {
+  renderProject = ({ id: projectId, owner, created, meta, status, apiUrl } = {}) => {
     const statistics = [
       {
         header: messages.dataSources,
@@ -254,7 +252,7 @@ export class View extends PureComponent {
       {
         label: this.formatMessage(messages.api),
         field: 'slug',
-        value: generateApiUrl(slug),
+        value: apiUrl,
         id: 'fieldSlug',
         order: 5,
         mobileOrder: 7,
@@ -318,7 +316,7 @@ export class View extends PureComponent {
           </Fragment>
         </div>
         <NavigationContainer fixed>
-          <BackArrowButton id="backProjectBtn" onClick={this.handleGoTo('/project')} />
+          <BackLink id="backProjectBtn" to="/project" />
           {this.renderSaveButton(isAdmin)}
         </NavigationContainer>
         <Modal

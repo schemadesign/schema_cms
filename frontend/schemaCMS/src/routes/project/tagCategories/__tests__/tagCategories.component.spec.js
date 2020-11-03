@@ -55,13 +55,4 @@ describe('TagCategories: Component', () => {
     expect(loading).toBeFalsy();
     expect(error).toBe(errorResponse);
   });
-
-  it('should go to tag category', async () => {
-    jest.spyOn(defaultProps.history, 'push');
-    const fetchTagCategories = jest.fn().mockReturnValue(Promise.resolve());
-    const wrapper = await render({ fetchTagCategories });
-    wrapper.find('#tag-category-countries').simulate('click');
-
-    expect(defaultProps.history.push).toBeCalledWith('/tag-category/2');
-  });
 });

@@ -6,10 +6,6 @@ export default defineMessages({
     id: 'dataSourceState.editState.subTitle',
     defaultMessage: 'Edit State',
   },
-  back: {
-    id: 'dataSourceState.editState.back',
-    defaultMessage: 'Back',
-  },
   deleteState: {
     id: 'dataSourceState.editState.deleteState',
     defaultMessage: 'Remove State',

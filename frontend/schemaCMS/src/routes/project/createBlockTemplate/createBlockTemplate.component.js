@@ -9,7 +9,7 @@ import { Container } from './createBlockTemplate.styles';
 import messages from './createBlockTemplate.messages';
 import { MobileMenu } from '../../../shared/components/menu/mobileMenu';
 import { errorMessageParser, filterMenuOptions } from '../../../shared/utils/helpers';
-import { NavigationContainer, NextButton, BackButton } from '../../../shared/components/navigation';
+import { NavigationContainer, NextButton, BackLink } from '../../../shared/components/navigation';
 import { getProjectMenuOptions } from '../project.constants';
 import {
   BLOCK_TEMPLATES_ELEMENTS,
@@ -81,8 +81,6 @@ export const CreateBlockTemplate = ({ userRole, createBlockTemplate, project }) 
     },
   });
 
-  const handleBackClick = () => history.push(`/project/${projectId}/block-templates`);
-
   const title = <FormattedMessage {...messages.title} />;
   const subtitle = <FormattedMessage {...messages.subtitle} />;
   const menuOptions = getProjectMenuOptions(projectId);
@@ -95,9 +93,9 @@ export const CreateBlockTemplate = ({ userRole, createBlockTemplate, project }) 
       <form onSubmit={handleSubmit}>
         <BlockTemplateForm title={title} isValid={isValid} {...restFormikProps} />
         <NavigationContainer fixed>
-          <BackButton id="cancelBtn" type="button" onClick={handleBackClick}>
+          <BackLink id="cancelBtn" to={`/project/${projectId}/block-templates`}>
             <FormattedMessage {...messages.cancel} />
-          </BackButton>
+          </BackLink>
           <NextButton
             id="createTemplateBlock"
             type="submit"

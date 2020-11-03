@@ -1,23 +1,7 @@
-import {
-  errorMessageParser,
-  generateApiUrl,
-  getPageUrlOptions,
-  getPropsWhenNotEmpty,
-  handleToggleMenu,
-} from '../helpers';
+import { errorMessageParser, getPageUrlOptions, getPropsWhenNotEmpty, handleToggleMenu } from '../helpers';
 import { internalConnections } from '../../../modules/sections/sections.mocks';
 
 describe('Helpers', () => {
-  describe('generateApiUrl', () => {
-    it('should generate api url', () => {
-      expect(generateApiUrl('slug')).toEqual('schemacms/api/slug');
-    });
-
-    it('should generate empty string', () => {
-      expect(generateApiUrl()).toEqual('');
-    });
-  });
-
   describe('errorMessageParser', () => {
     it('should parse error messages', () => {
       const errors = [{ code: 'unique', name: 'name' }, { code: 'unique', name: 'data' }];

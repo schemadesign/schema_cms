@@ -2,7 +2,7 @@ import React, { Fragment, useState } from 'react';
 import { useEffectOnce } from 'react-use';
 import PropTypes from 'prop-types';
 import { FormattedMessage, useIntl } from 'react-intl';
-import { useHistory, useParams } from 'react-router';
+import { useParams } from 'react-router';
 import Helmet from 'react-helmet';
 
 import { Container } from './pageTemplates.styles';
@@ -12,7 +12,7 @@ import { filterMenuOptions } from '../../../shared/utils/helpers';
 import { MobileMenu } from '../../../shared/components/menu/mobileMenu';
 import { getProjectMenuOptions } from '../project.constants';
 import { ContextHeader } from '../../../shared/components/contextHeader';
-import { BackArrowButton, NavigationContainer, PlusButton } from '../../../shared/components/navigation';
+import { BackLink, NavigationContainer, PlusLink, LARGE_BUTTON_SIZE } from '../../../shared/components/navigation';
 import { ListContainer, ListItem, ListItemTitle } from '../../../shared/components/listComponents';
 import { CardHeader } from '../../../shared/components/cardHeader';
 import extendedDayjs, { BASE_DATE_FORMAT } from '../../../shared/utils/extendedDayjs';
@@ -48,7 +48,6 @@ const getBreadcrumbsItems = project => [
 ];
 
 const PageTemplate = ({ created, createdBy, name, id, blocks, copyPageTemplate, projectId }) => {
-  const history = useHistory();
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState(false);
   const whenCreated = extendedDayjs(created, BASE_DATE_FORMAT).fromNow();
@@ -65,8 +64,6 @@ const PageTemplate = ({ created, createdBy, name, id, blocks, copyPageTemplate, 
       setLoading(false);
     }
   };
-
-  const handlePageClick = () => history.push(`/page-template/${id}`);
 
   const header = (
     <CardHeader
@@ -85,7 +82,7 @@ const PageTemplate = ({ created, createdBy, name, id, blocks, copyPageTemplate, 
 
   return (
     <ListItem headerComponent={header} footerComponent={footer}>
-      <ListItemTitle id={`pageTemplateTitle-${id}`} onClick={handlePageClick}>
+      <ListItemTitle id={`pageTemplateTitle-${id}`} to={`/page-template/${id}`}>
         {name}
       </ListItemTitle>
     </ListItem>
@@ -106,15 +103,13 @@ export const PageTemplates = ({ fetchPageTemplates, pageTemplates, userRole, pro
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
   const intl = useIntl();
-  const history = useHistory();
   const { projectId } = useParams();
   const menuOptions = getProjectMenuOptions(projectId);
   const title = <FormattedMessage {...messages.title} />;
   const subtitle = <FormattedMessage {...messages.subtitle} />;
   const noData = <FormattedMessage {...messages.noData} />;
 
-  const handleAddTemplateClick = () => history.push(`/project/${projectId}/page-templates/create`);
-  const handleBackClick = () => history.push(`/project/${projectId}/templates`);
+  const addTemplateUrl = `/project/${projectId}/page-templates/create`;
 
   useEffectOnce(() => {
     (async () => {
@@ -135,7 +130,7 @@ export const PageTemplates = ({ fetchPageTemplates, pageTemplates, userRole, pro
       <MobileMenu headerTitle={title} headerSubtitle={subtitle} options={filterMenuOptions(menuOptions, userRole)} />
       <ProjectBreadcrumbs items={getBreadcrumbsItems(project)} />
       <ContextHeader title={title} subtitle={subtitle}>
-        <PlusButton id="createPageTemplate" onClick={handleAddTemplateClick} />
+        <PlusLink id="createPageTemplate" to={addTemplateUrl} size={LARGE_BUTTON_SIZE} />
       </ContextHeader>
       <LoadingWrapper loading={loading} error={error} noDataContent={noData} noData={!pageTemplates.length}>
         <Fragment>
@@ -148,8 +143,8 @@ export const PageTemplates = ({ fetchPageTemplates, pageTemplates, userRole, pro
         </Fragment>
       </LoadingWrapper>
       <NavigationContainer fixed>
-        <BackArrowButton id="backBtn" onClick={handleBackClick} />
-        <PlusButton hideOnDesktop id="createPageTemplateMobile" onClick={handleAddTemplateClick} />
+        <BackLink id="backBtn" to={`/project/${projectId}/templates`} />
+        <PlusLink hideOnDesktop id="createPageTemplateMobile" to={addTemplateUrl} size={LARGE_BUTTON_SIZE} />
       </NavigationContainer>
     </Container>
   );

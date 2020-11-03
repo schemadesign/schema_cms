@@ -158,10 +158,16 @@ exports[`DataWranglingScript: Component should render correctly 1`] = `
     hideOnDesktop={false}
     right={false}
   >
-    <BackButton
-      disabled={false}
+    <BackLink
       id="imageScrapingBackBtn"
-      onClick={[Function]}
+      to={
+        Object {
+          "pathname": "/datasource/1/steps",
+          "state": Object {
+            "fromScript": true,
+          },
+        }
+      }
     />
     <NextButton
       disabled={true}
@@ -336,10 +342,16 @@ exports[`DataWranglingScript: Component should render correctly with loader 1`] 
     hideOnDesktop={false}
     right={false}
   >
-    <BackButton
-      disabled={false}
+    <BackLink
       id="imageScrapingBackBtn"
-      onClick={[Function]}
+      to={
+        Object {
+          "pathname": "/datasource/1/steps",
+          "state": Object {
+            "fromScript": true,
+          },
+        }
+      }
     />
     <NextButton
       disabled={true}

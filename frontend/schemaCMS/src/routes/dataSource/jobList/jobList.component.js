@@ -1,22 +1,22 @@
 import React, { Fragment, PureComponent } from 'react';
 import PropTypes from 'prop-types';
 import { always, findLast, isEmpty, path, pipe, propEq } from 'ramda';
-import { Form, Typography } from 'schemaUI';
+import { Form, Typography, Icons } from 'schemaUI';
 import { FormattedMessage } from 'react-intl';
 
 import {
   Container,
   customRadioGroupStyles,
   Dot,
-  Eye,
   JobItem,
   JobItemWrapper,
   ListWrapper,
   RadioLabel,
   JobInformation,
+  EyeWrapper,
 } from './jobList.styles';
 import extendedDayjs, { BASE_DATE_FORMAT } from '../../../shared/utils/extendedDayjs';
-import { BackButton, NavigationContainer, NextButton } from '../../../shared/components/navigation';
+import { BackLink, NavigationContainer, NextButton } from '../../../shared/components/navigation';
 
 import messages from './jobList.messages';
 import { LoadingWrapper } from '../../../shared/components/loadingWrapper';
@@ -29,7 +29,7 @@ import { MobileMenu } from '../../../shared/components/menu/mobileMenu';
 import { getProjectMenuOptions } from '../../project/project.constants';
 
 const { RadioGroup, RadioStyled } = Form;
-
+const { EyeIcon } = Icons;
 const { Span } = Typography;
 
 export class JobList extends PureComponent {
@@ -82,10 +82,6 @@ export class JobList extends PureComponent {
     this.setState({ selectedJob, canRevert });
   };
 
-  handleCancelClick = () => this.props.history.push(`/datasource/${getMatchParam(this.props, 'dataSourceId')}`);
-
-  handleIconClick = jobId => this.props.history.push(`/job/${jobId}`);
-
   handleRevertClick = () =>
     this.props.revertToJob({
       dataSourceId: getMatchParam(this.props, 'dataSourceId'),
@@ -128,7 +124,9 @@ export class JobList extends PureComponent {
             </JobInformation>
           </RadioLabel>
         </JobItem>
-        <Eye onClick={() => this.handleIconClick(job.id)} />
+        <EyeWrapper to={`/job/${job.id}`}>
+          <EyeIcon />
+        </EyeWrapper>
       </JobItemWrapper>
     );
   };
@@ -146,9 +144,7 @@ export class JobList extends PureComponent {
         </RadioGroup>
       </LoadingWrapper>
       <NavigationContainer fixed>
-        <BackButton id="cancelBtn" onClick={this.handleCancelClick}>
-          <FormattedMessage {...messages.cancel} />
-        </BackButton>
+        <BackLink id="cancelBtn" to={`/datasource/${getMatchParam(this.props, 'dataSourceId')}`} />
         <NextButton id="revertBtn" onClick={this.handleRevertClick} disabled={!canRevert}>
           <FormattedMessage {...messages.revert} />
         </NextButton>

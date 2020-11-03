@@ -16,7 +16,7 @@ import {
   UserItemDescription,
 } from './addUser.styles';
 import messages from './addUser.messages';
-import { BackButton, NavigationContainer } from '../../../shared/components/navigation';
+import { BackLink, NavigationContainer } from '../../../shared/components/navigation';
 import { LoadingWrapper } from '../../../shared/components/loadingWrapper';
 import { getMatchParam, filterMenuOptions } from '../../../shared/utils/helpers';
 import reportError from '../../../shared/utils/reportError';
@@ -66,8 +66,6 @@ export class AddUser extends PureComponent {
 
   handleAddUser = userId => this.props.history.push(`/user/${userId}/add/${getMatchParam(this.props, 'projectId')}`);
 
-  handleBackClick = () => this.props.history.push(`/project/${getMatchParam(this.props, 'projectId')}/user`);
-
   renderUser = (user, index) => (
     <UserItem key={index}>
       <UserItemDescription>
@@ -108,9 +106,7 @@ export class AddUser extends PureComponent {
           {usersToInvite.map(this.renderUser)}
         </LoadingWrapper>
         <NavigationContainer fixed>
-          <BackButton onClick={this.handleBackClick}>
-            <FormattedMessage {...messages.back} />
-          </BackButton>
+          <BackLink to={`/project/${getMatchParam(this.props, 'projectId')}/user`} />
         </NavigationContainer>
       </Container>
     );

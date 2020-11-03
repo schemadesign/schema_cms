@@ -64,7 +64,6 @@ import { FILTER_TYPE_RANGE, FILTER_TYPE_BOOL } from '../../modules/filter/filter
 export const ASCENDING = 'ascending';
 export const DESCENDING = 'descending';
 
-export const generateApiUrl = (slug = '') => (isEmpty(slug) ? '' : `schemacms/api/${slug}`);
 export const addOrder = (item, index) => assoc('order', index, item);
 export const mapIndexed = addIndex(map);
 export const mapAndAddOrder = mapIndexed(addOrder);

@@ -46,11 +46,4 @@ describe('CreatePage: Component', () => {
     await render({ section: {} });
     expect(defaultProps.fetchSection).toHaveBeenCalledWith({ sectionId: 'sectionId' });
   });
-
-  it('should go back to section', async () => {
-    const wrapper = await render();
-    wrapper.root.findByProps({ id: 'cancelBtn' }).props.onClick();
-
-    expect(mockPushHistory).toHaveBeenCalledWith('/section/sectionId');
-  });
 });

@@ -47,7 +47,7 @@ exports[`DataSourceStateList: Component should render correctly 1`] = `
                 "fontSize": "24px",
                 "fontWeight": 600,
                 "letterSpacing": "-0.12px",
-                "lineHight": 1.25,
+                "lineHeight": 1.25,
                 "margin": 0,
               }
             }
@@ -152,7 +152,7 @@ exports[`DataSourceStateList: Component should render correctly 1`] = `
                   "fontSize": "24px",
                   "fontWeight": 600,
                   "letterSpacing": "-0.12px",
-                  "lineHight": 1.25,
+                  "lineHeight": 1.25,
                   "margin": 0,
                 }
               }
@@ -375,7 +375,7 @@ exports[`DataSourceStateList: Component should render correctly 1`] = `
             "fontSize": "24px",
             "fontWeight": 600,
             "letterSpacing": "-0.12px",
-            "lineHight": 1.25,
+            "lineHeight": 1.25,
             "margin": 0,
           }
         }
@@ -395,9 +395,10 @@ exports[`DataSourceStateList: Component should render correctly 1`] = `
           <div
             className="sc-ksluoS YJsJl"
           >
-            <div
+            <a
               className="sc-bqGHjH dzsXnW"
               disabled={false}
+              href="/datasource/1/source"
               onClick={[Function]}
             >
               <svg
@@ -415,7 +416,7 @@ exports[`DataSourceStateList: Component should render correctly 1`] = `
                   d="M16 42V32h3v7h23v-7h3v10H16zm14.5-30.121l9.06 9.06-2.12 2.122-5.441-5.441L32 33h-3l-.001-15.378-5.438 5.439-2.122-2.122 9.061-9.06z"
                 />
               </svg>
-            </div>
+            </a>
             <div
               className="sc-hBMVcZ fIReqG"
             >
@@ -425,9 +426,10 @@ exports[`DataSourceStateList: Component should render correctly 1`] = `
           <div
             className="sc-ksluoS YJsJl"
           >
-            <div
+            <a
               className="sc-bqGHjH dzsXnW"
               disabled={false}
+              href="/datasource/1/preview"
               onClick={[Function]}
             >
               <svg
@@ -446,7 +448,7 @@ exports[`DataSourceStateList: Component should render correctly 1`] = `
                   fillRule="evenodd"
                 />
               </svg>
-            </div>
+            </a>
             <div
               className="sc-hBMVcZ fIReqG"
             >
@@ -456,9 +458,10 @@ exports[`DataSourceStateList: Component should render correctly 1`] = `
           <div
             className="sc-ksluoS YJsJl"
           >
-            <div
+            <a
               className="sc-bqGHjH dzsXnW"
               disabled={false}
+              href="/datasource/1/steps"
               onClick={[Function]}
             >
               <svg
@@ -496,7 +499,7 @@ exports[`DataSourceStateList: Component should render correctly 1`] = `
                   />
                 </g>
               </svg>
-            </div>
+            </a>
             <div
               className="sc-hBMVcZ fIReqG"
             >
@@ -506,9 +509,10 @@ exports[`DataSourceStateList: Component should render correctly 1`] = `
           <div
             className="sc-ksluoS YJsJl"
           >
-            <div
+            <a
               className="sc-bqGHjH dzsXnW"
               disabled={false}
+              href="/datasource/1/result"
               onClick={[Function]}
             >
               <svg
@@ -546,7 +550,7 @@ exports[`DataSourceStateList: Component should render correctly 1`] = `
                   />
                 </g>
               </svg>
-            </div>
+            </a>
             <div
               className="sc-hBMVcZ fIReqG"
             >
@@ -556,9 +560,10 @@ exports[`DataSourceStateList: Component should render correctly 1`] = `
           <div
             className="sc-ksluoS YJsJl"
           >
-            <div
+            <a
               className="sc-bqGHjH dzsXnW"
               disabled={false}
+              href="/datasource/1/filters"
               onClick={[Function]}
             >
               <svg
@@ -579,7 +584,7 @@ exports[`DataSourceStateList: Component should render correctly 1`] = `
                   strokeWidth={2}
                 />
               </svg>
-            </div>
+            </a>
             <div
               className="sc-hBMVcZ fIReqG"
             >
@@ -589,9 +594,10 @@ exports[`DataSourceStateList: Component should render correctly 1`] = `
           <div
             className="sc-ksluoS YJsJl"
           >
-            <div
+            <a
               className="sc-bqGHjH dzsXnW"
               disabled={false}
+              href="/datasource/1/tag"
               onClick={[Function]}
             >
               <svg
@@ -623,7 +629,7 @@ exports[`DataSourceStateList: Component should render correctly 1`] = `
                   />
                 </g>
               </svg>
-            </div>
+            </a>
             <div
               className="sc-hBMVcZ fIReqG"
             >
@@ -633,9 +639,10 @@ exports[`DataSourceStateList: Component should render correctly 1`] = `
           <div
             className="sc-ksluoS YJsJl"
           >
-            <div
+            <a
               className="sc-bqGHjH dzsXnW"
               disabled={false}
+              href="/datasource/1/state"
               onClick={[Function]}
             >
               <svg
@@ -653,7 +660,7 @@ exports[`DataSourceStateList: Component should render correctly 1`] = `
                   d="M39.56 65.62C29.1 70.75 20.69 78.74 15.36 89c-4.1 7.59-4.51 11.89-5.13 50.24-.62 26.66 0 45.93 1.64 52.7 2.67 12.3 14.56 27.27 26.86 33.42 7.59 4.1 14.15 4.1 343.68 4.1H718.3l10.25-5.95c11.07-6.36 20.3-17.84 23.58-29.12 2.87-10.05 2.67-88.79-.41-98.63-3.08-10.46-15.79-24.81-26.86-30.14l-8.82-4.31H381.8c-328.5.2-334.25.2-342.24 4.31zm677.71 34.44c3.08 5.95 2.67 89-.41 92.07-1.84 1.85-79.15 2.46-335.27 2.46-326.86 0-332.6 0-334.86-3.9-1.23-2.46-2.05-20.92-2.05-46.14 0-35.48.41-42.45 3.28-45.11 2.87-2.87 36.09-3.28 335.06-3.28 326.25.01 332 .01 334.25 3.9zM63.14 542.17c0 230.28.41 281.13 2.67 286.67 4.1 9.84 12.92 19.28 23.79 25.63l9.43 5.54 55.98.61 55.78.62v-34.86l-54.34-.61c-45.73-.62-54.75-1.03-56.39-3.69-1.23-1.85-2.05-43.27-2.05-102.12v-98.84h112.78v-34.86H98V385.3h112.78v-34.86H98v-88.18H63.14v279.91zM274.14 302.87c-14.15 7.38-23.38 19.48-26.45 34.45-1.64 7.18-2.05 26.25-1.64 51.67.61 36.5 1.03 41.22 5.13 48.6 5.12 9.64 15.17 19.48 25.22 24.81 6.97 3.69 19.89 3.9 335.27 4.51 231.51.41 331.37-.2 338.96-1.85 14.15-2.87 26.45-12.51 33.63-26.25l5.74-10.87V381.6c0-42.65-.41-46.96-4.31-55.16-5.33-11.07-19.69-23.79-30.14-26.86-5.95-1.85-91.25-2.46-339.37-2.46H285.01l-10.87 5.75zm677.1 31.17c3.69 2.05 3.9 4.72 3.9 46.75 0 24.4-.82 45.73-1.64 47.16-1.44 2.05-69.93 2.46-335.88 2.05l-334.04-.62-.61-45.93c-.41-31.99.2-46.75 1.85-48.6 2.05-2.46 54.75-2.87 332.4-2.87 223.5.01 331.36.62 334.02 2.06zM281.73 534.99c-9.23 2.87-20.92 11.89-26.66 20.71-8.2 12.3-9.84 24.61-9.02 69.1.82 45.52 1.85 50.04 16.61 64.18 15.58 15.17-10.66 14.35 359.26 13.74l332.19-.61 8.41-4.51c10.87-5.74 21.94-18.66 25.02-29.12 3.28-10.66 3.28-90.23 0-100.89-3.08-10.46-14.15-23.38-25.02-29.12l-8.41-4.51-333.21-.4c-183.33-.21-335.89.41-339.17 1.43zm670.13 36.09c4.92 4.72 4.92 89.2 0 93.92-2.87 2.87-35.88 3.28-332.19 3.28-223.1 0-330.55-.61-333.22-2.05-3.69-2.05-3.9-4.71-3.9-48.19 0-41.63.41-46.14 3.69-47.98 2.26-1.43 112.99-2.05 333.01-2.26 296.72 0 329.74.41 332.61 3.28zM282.14 771.22c-9.64 2.46-25.02 15.99-30.96 27.07-4.1 7.58-4.51 11.89-5.13 48.8-.41 24.81.2 44.5 1.64 51.47 2.87 13.94 11.89 26.45 24.2 33.83l9.64 5.54 332.19.61c248.53.41 334.45 0 341.01-1.84 10.87-3.08 25.43-15.59 30.96-27.07 3.89-8.2 4.31-12.51 4.31-54.96 0-43.88-.21-46.34-4.92-56.19-4.72-10.66-12.92-18.87-24.61-25.22-5.95-3.28-29.12-3.49-338.55-3.9-214.69-.19-334.86.42-339.78 1.86zm670.95 36.5c1.03 1.64 2.05 23.17 2.05 47.57 0 42.04-.2 44.7-3.9 46.75-6.15 3.28-662.95 2.87-666.23-.41-1.85-1.84-2.46-15.38-2.46-48.19 0-45.73 0-45.93 4.72-47.78 2.67-1.03 140.05-1.64 334.24-1.44 290.57.42 329.94.83 331.58 3.5z"
                 />
               </svg>
-            </div>
+            </a>
             <div
               className="sc-hBMVcZ fIReqG"
             >
@@ -663,9 +670,10 @@ exports[`DataSourceStateList: Component should render correctly 1`] = `
           <div
             className="sc-ksluoS YJsJl"
           >
-            <div
+            <a
               className="sc-bqGHjH dzsXnW"
               disabled={false}
+              href="/datasource/1/metadata"
               onClick={[Function]}
             >
               <svg
@@ -683,7 +691,7 @@ exports[`DataSourceStateList: Component should render correctly 1`] = `
                   d="M980.8 521.1L783.2 718.5c-12.2 12.2-32 12.2-44.2 0-12.2-12.2-12.2-31.9 0-44.1L914.6 499 739 323.7c-12.2-12.2-12.2-31.9 0-44.1 12.2-12.2 32-12.2 44.2 0L980.8 477c12.3 12.2 12.3 31.9 0 44.1zM332.9 906.5c-9 15.7-28.9 21.1-44.5 12-15.6-9-20.9-29.1-11.9-44.8L667.1 93.5c9-15.7 28.9-21.1 44.5-12 15.6 9.1 20.9 29.1 11.9 44.8L332.9 906.5zm-71.9-188c-12.2 12.2-32 12.2-44.2 0L19.1 521.1C7 508.9 7 489.2 19.1 477l197.7-197.4c12.2-12.2 32-12.2 44.2 0 12.2 12.2 12.2 31.9 0 44.1L85.4 499 261 674.4c12.2 12.2 12.2 31.9 0 44.1z"
                 />
               </svg>
-            </div>
+            </a>
             <div
               className="sc-hBMVcZ fIReqG"
             >
@@ -695,73 +703,50 @@ exports[`DataSourceStateList: Component should render correctly 1`] = `
     </div>
   </div>
   <div
-    className="sc-hiKfjK eALEwl"
+    className="sc-gXfWUo hLlOFo"
   >
     <div
-      className="sc-gXfWUo gZQoJo"
+      className="sc-cBoprd ZtrY"
       id="tagsCounter"
     />
     2 states
     <div
-      className="sc-gXfWUo gZQoJo"
+      className="sc-cBoprd ZtrY"
     >
       <div
-        className="sc-bBjRzc gvilNM"
+        className="sc-cOigif fpTIUw"
       >
-        <div
-          className="sc-jJMGHv fzgotI"
+        <a
+          className="sc-hiKfjK kGzIYQ"
+          href="/datasource/undefined/state/create"
+          onClick={[Function]}
         >
-          <button
-            disabled={false}
+          <svg
             id="createStateDesktopBtn"
-            onClick={[Function]}
             style={
               Object {
-                "backgroundColor": "#FFF",
-                "border": "none",
-                "borderRadius": "48px",
-                "color": "#000",
-                "cursor": "pointer",
-                "display": "inline-block",
-                "fill": "#FFF",
-                "fontSize": "18px",
-                "height": 40,
-                "margin": "0",
-                "minHeight": 40,
-                "outline": "none",
-                "padding": "0",
-                "transition": "background 0.25s ease-in-out, color 0.25s ease-in-out",
-                "width": 40,
+                "fill": "#000",
+                "height": 60,
+                "shapeRendering": "crispEdges",
+                "width": 60,
               }
             }
-            type="button"
+            viewBox="0 0 60 60"
           >
-            <svg
-              style={
-                Object {
-                  "fill": "#000",
-                  "height": 40,
-                  "minHeight": 40,
-                  "shapeRendering": "crispEdges",
-                  "width": 40,
-                }
-              }
-              viewBox="0 0 60 60"
-            >
-              <path
-                d="M32 15v13h13v4H32v13h-4V32H15v-4h13V15h4z"
-              />
-            </svg>
-          </button>
-        </div>
+            <path
+              d="M32 15v13h13v4H32v13h-4V32H15v-4h13V15h4z"
+            />
+          </svg>
+        </a>
       </div>
     </div>
   </div>
   <div
     className="sc-gtssRu gZvzhL"
   >
-    <div
-      className="sc-dlnjPT bzbJRd"
+    <a
+      className="sc-dlnjPT dLGlGF"
+      href="/state/1"
       onClick={[Function]}
     >
       <div
@@ -785,9 +770,10 @@ exports[`DataSourceStateList: Component should render correctly 1`] = `
           fillRule="evenodd"
         />
       </svg>
-    </div>
-    <div
-      className="sc-dlnjPT bzbJRd"
+    </a>
+    <a
+      className="sc-dlnjPT dLGlGF"
+      href="/state/2"
       onClick={[Function]}
     >
       <div
@@ -811,7 +797,7 @@ exports[`DataSourceStateList: Component should render correctly 1`] = `
           fillRule="evenodd"
         />
       </svg>
-    </div>
+    </a>
   </div>
   <div
     className="sc-crzoUp fAvqwc"
@@ -822,9 +808,10 @@ exports[`DataSourceStateList: Component should render correctly 1`] = `
       <div
         className="sc-ksluoS YJsJl"
       >
-        <div
+        <a
           className="sc-bqGHjH dzsXnW"
           disabled={false}
+          href="/datasource/1/source"
           onClick={[Function]}
         >
           <svg
@@ -842,7 +829,7 @@ exports[`DataSourceStateList: Component should render correctly 1`] = `
               d="M16 42V32h3v7h23v-7h3v10H16zm14.5-30.121l9.06 9.06-2.12 2.122-5.441-5.441L32 33h-3l-.001-15.378-5.438 5.439-2.122-2.122 9.061-9.06z"
             />
           </svg>
-        </div>
+        </a>
         <div
           className="sc-hBMVcZ fIReqG"
         >
@@ -852,9 +839,10 @@ exports[`DataSourceStateList: Component should render correctly 1`] = `
       <div
         className="sc-ksluoS YJsJl"
       >
-        <div
+        <a
           className="sc-bqGHjH dzsXnW"
           disabled={false}
+          href="/datasource/1/preview"
           onClick={[Function]}
         >
           <svg
@@ -873,7 +861,7 @@ exports[`DataSourceStateList: Component should render correctly 1`] = `
               fillRule="evenodd"
             />
           </svg>
-        </div>
+        </a>
         <div
           className="sc-hBMVcZ fIReqG"
         >
@@ -883,9 +871,10 @@ exports[`DataSourceStateList: Component should render correctly 1`] = `
       <div
         className="sc-ksluoS YJsJl"
       >
-        <div
+        <a
           className="sc-bqGHjH dzsXnW"
           disabled={false}
+          href="/datasource/1/steps"
           onClick={[Function]}
         >
           <svg
@@ -923,7 +912,7 @@ exports[`DataSourceStateList: Component should render correctly 1`] = `
               />
             </g>
           </svg>
-        </div>
+        </a>
         <div
           className="sc-hBMVcZ fIReqG"
         >
@@ -933,9 +922,10 @@ exports[`DataSourceStateList: Component should render correctly 1`] = `
       <div
         className="sc-ksluoS YJsJl"
       >
-        <div
+        <a
           className="sc-bqGHjH dzsXnW"
           disabled={false}
+          href="/datasource/1/result"
           onClick={[Function]}
         >
           <svg
@@ -973,7 +963,7 @@ exports[`DataSourceStateList: Component should render correctly 1`] = `
               />
             </g>
           </svg>
-        </div>
+        </a>
         <div
           className="sc-hBMVcZ fIReqG"
         >
@@ -983,9 +973,10 @@ exports[`DataSourceStateList: Component should render correctly 1`] = `
       <div
         className="sc-ksluoS YJsJl"
       >
-        <div
+        <a
           className="sc-bqGHjH dzsXnW"
           disabled={false}
+          href="/datasource/1/filters"
           onClick={[Function]}
         >
           <svg
@@ -1006,7 +997,7 @@ exports[`DataSourceStateList: Component should render correctly 1`] = `
               strokeWidth={2}
             />
           </svg>
-        </div>
+        </a>
         <div
           className="sc-hBMVcZ fIReqG"
         >
@@ -1016,9 +1007,10 @@ exports[`DataSourceStateList: Component should render correctly 1`] = `
       <div
         className="sc-ksluoS YJsJl"
       >
-        <div
+        <a
           className="sc-bqGHjH dzsXnW"
           disabled={false}
+          href="/datasource/1/tag"
           onClick={[Function]}
         >
           <svg
@@ -1050,7 +1042,7 @@ exports[`DataSourceStateList: Component should render correctly 1`] = `
               />
             </g>
           </svg>
-        </div>
+        </a>
         <div
           className="sc-hBMVcZ fIReqG"
         >
@@ -1060,9 +1052,10 @@ exports[`DataSourceStateList: Component should render correctly 1`] = `
       <div
         className="sc-ksluoS YJsJl"
       >
-        <div
+        <a
           className="sc-bqGHjH dzsXnW"
           disabled={false}
+          href="/datasource/1/state"
           onClick={[Function]}
         >
           <svg
@@ -1080,7 +1073,7 @@ exports[`DataSourceStateList: Component should render correctly 1`] = `
               d="M39.56 65.62C29.1 70.75 20.69 78.74 15.36 89c-4.1 7.59-4.51 11.89-5.13 50.24-.62 26.66 0 45.93 1.64 52.7 2.67 12.3 14.56 27.27 26.86 33.42 7.59 4.1 14.15 4.1 343.68 4.1H718.3l10.25-5.95c11.07-6.36 20.3-17.84 23.58-29.12 2.87-10.05 2.67-88.79-.41-98.63-3.08-10.46-15.79-24.81-26.86-30.14l-8.82-4.31H381.8c-328.5.2-334.25.2-342.24 4.31zm677.71 34.44c3.08 5.95 2.67 89-.41 92.07-1.84 1.85-79.15 2.46-335.27 2.46-326.86 0-332.6 0-334.86-3.9-1.23-2.46-2.05-20.92-2.05-46.14 0-35.48.41-42.45 3.28-45.11 2.87-2.87 36.09-3.28 335.06-3.28 326.25.01 332 .01 334.25 3.9zM63.14 542.17c0 230.28.41 281.13 2.67 286.67 4.1 9.84 12.92 19.28 23.79 25.63l9.43 5.54 55.98.61 55.78.62v-34.86l-54.34-.61c-45.73-.62-54.75-1.03-56.39-3.69-1.23-1.85-2.05-43.27-2.05-102.12v-98.84h112.78v-34.86H98V385.3h112.78v-34.86H98v-88.18H63.14v279.91zM274.14 302.87c-14.15 7.38-23.38 19.48-26.45 34.45-1.64 7.18-2.05 26.25-1.64 51.67.61 36.5 1.03 41.22 5.13 48.6 5.12 9.64 15.17 19.48 25.22 24.81 6.97 3.69 19.89 3.9 335.27 4.51 231.51.41 331.37-.2 338.96-1.85 14.15-2.87 26.45-12.51 33.63-26.25l5.74-10.87V381.6c0-42.65-.41-46.96-4.31-55.16-5.33-11.07-19.69-23.79-30.14-26.86-5.95-1.85-91.25-2.46-339.37-2.46H285.01l-10.87 5.75zm677.1 31.17c3.69 2.05 3.9 4.72 3.9 46.75 0 24.4-.82 45.73-1.64 47.16-1.44 2.05-69.93 2.46-335.88 2.05l-334.04-.62-.61-45.93c-.41-31.99.2-46.75 1.85-48.6 2.05-2.46 54.75-2.87 332.4-2.87 223.5.01 331.36.62 334.02 2.06zM281.73 534.99c-9.23 2.87-20.92 11.89-26.66 20.71-8.2 12.3-9.84 24.61-9.02 69.1.82 45.52 1.85 50.04 16.61 64.18 15.58 15.17-10.66 14.35 359.26 13.74l332.19-.61 8.41-4.51c10.87-5.74 21.94-18.66 25.02-29.12 3.28-10.66 3.28-90.23 0-100.89-3.08-10.46-14.15-23.38-25.02-29.12l-8.41-4.51-333.21-.4c-183.33-.21-335.89.41-339.17 1.43zm670.13 36.09c4.92 4.72 4.92 89.2 0 93.92-2.87 2.87-35.88 3.28-332.19 3.28-223.1 0-330.55-.61-333.22-2.05-3.69-2.05-3.9-4.71-3.9-48.19 0-41.63.41-46.14 3.69-47.98 2.26-1.43 112.99-2.05 333.01-2.26 296.72 0 329.74.41 332.61 3.28zM282.14 771.22c-9.64 2.46-25.02 15.99-30.96 27.07-4.1 7.58-4.51 11.89-5.13 48.8-.41 24.81.2 44.5 1.64 51.47 2.87 13.94 11.89 26.45 24.2 33.83l9.64 5.54 332.19.61c248.53.41 334.45 0 341.01-1.84 10.87-3.08 25.43-15.59 30.96-27.07 3.89-8.2 4.31-12.51 4.31-54.96 0-43.88-.21-46.34-4.92-56.19-4.72-10.66-12.92-18.87-24.61-25.22-5.95-3.28-29.12-3.49-338.55-3.9-214.69-.19-334.86.42-339.78 1.86zm670.95 36.5c1.03 1.64 2.05 23.17 2.05 47.57 0 42.04-.2 44.7-3.9 46.75-6.15 3.28-662.95 2.87-666.23-.41-1.85-1.84-2.46-15.38-2.46-48.19 0-45.73 0-45.93 4.72-47.78 2.67-1.03 140.05-1.64 334.24-1.44 290.57.42 329.94.83 331.58 3.5z"
             />
           </svg>
-        </div>
+        </a>
         <div
           className="sc-hBMVcZ fIReqG"
         >
@@ -1090,9 +1083,10 @@ exports[`DataSourceStateList: Component should render correctly 1`] = `
       <div
         className="sc-ksluoS YJsJl"
       >
-        <div
+        <a
           className="sc-bqGHjH dzsXnW"
           disabled={false}
+          href="/datasource/1/metadata"
           onClick={[Function]}
         >
           <svg
@@ -1110,7 +1104,7 @@ exports[`DataSourceStateList: Component should render correctly 1`] = `
               d="M980.8 521.1L783.2 718.5c-12.2 12.2-32 12.2-44.2 0-12.2-12.2-12.2-31.9 0-44.1L914.6 499 739 323.7c-12.2-12.2-12.2-31.9 0-44.1 12.2-12.2 32-12.2 44.2 0L980.8 477c12.3 12.2 12.3 31.9 0 44.1zM332.9 906.5c-9 15.7-28.9 21.1-44.5 12-15.6-9-20.9-29.1-11.9-44.8L667.1 93.5c9-15.7 28.9-21.1 44.5-12 15.6 9.1 20.9 29.1 11.9 44.8L332.9 906.5zm-71.9-188c-12.2 12.2-32 12.2-44.2 0L19.1 521.1C7 508.9 7 489.2 19.1 477l197.7-197.4c12.2-12.2 32-12.2 44.2 0 12.2 12.2 12.2 31.9 0 44.1L85.4 499 261 674.4c12.2 12.2 12.2 31.9 0 44.1z"
             />
           </svg>
-        </div>
+        </a>
         <div
           className="sc-hBMVcZ fIReqG"
         >
@@ -1169,7 +1163,7 @@ exports[`DataSourceStateList: Component should render correctly when no tags 1`]
                 "fontSize": "24px",
                 "fontWeight": 600,
                 "letterSpacing": "-0.12px",
-                "lineHight": 1.25,
+                "lineHeight": 1.25,
                 "margin": 0,
               }
             }
@@ -1274,7 +1268,7 @@ exports[`DataSourceStateList: Component should render correctly when no tags 1`]
                   "fontSize": "24px",
                   "fontWeight": 600,
                   "letterSpacing": "-0.12px",
-                  "lineHight": 1.25,
+                  "lineHeight": 1.25,
                   "margin": 0,
                 }
               }
@@ -1497,7 +1491,7 @@ exports[`DataSourceStateList: Component should render correctly when no tags 1`]
             "fontSize": "24px",
             "fontWeight": 600,
             "letterSpacing": "-0.12px",
-            "lineHight": 1.25,
+            "lineHeight": 1.25,
             "margin": 0,
           }
         }
@@ -1517,9 +1511,10 @@ exports[`DataSourceStateList: Component should render correctly when no tags 1`]
           <div
             className="sc-ksluoS YJsJl"
           >
-            <div
+            <a
               className="sc-bqGHjH dzsXnW"
               disabled={false}
+              href="/datasource/1/source"
               onClick={[Function]}
             >
               <svg
@@ -1537,7 +1532,7 @@ exports[`DataSourceStateList: Component should render correctly when no tags 1`]
                   d="M16 42V32h3v7h23v-7h3v10H16zm14.5-30.121l9.06 9.06-2.12 2.122-5.441-5.441L32 33h-3l-.001-15.378-5.438 5.439-2.122-2.122 9.061-9.06z"
                 />
               </svg>
-            </div>
+            </a>
             <div
               className="sc-hBMVcZ fIReqG"
             >
@@ -1547,9 +1542,10 @@ exports[`DataSourceStateList: Component should render correctly when no tags 1`]
           <div
             className="sc-ksluoS YJsJl"
           >
-            <div
+            <a
               className="sc-bqGHjH dzsXnW"
               disabled={false}
+              href="/datasource/1/preview"
               onClick={[Function]}
             >
               <svg
@@ -1568,7 +1564,7 @@ exports[`DataSourceStateList: Component should render correctly when no tags 1`]
                   fillRule="evenodd"
                 />
               </svg>
-            </div>
+            </a>
             <div
               className="sc-hBMVcZ fIReqG"
             >
@@ -1578,9 +1574,10 @@ exports[`DataSourceStateList: Component should render correctly when no tags 1`]
           <div
             className="sc-ksluoS YJsJl"
           >
-            <div
+            <a
               className="sc-bqGHjH dzsXnW"
               disabled={false}
+              href="/datasource/1/steps"
               onClick={[Function]}
             >
               <svg
@@ -1618,7 +1615,7 @@ exports[`DataSourceStateList: Component should render correctly when no tags 1`]
                   />
                 </g>
               </svg>
-            </div>
+            </a>
             <div
               className="sc-hBMVcZ fIReqG"
             >
@@ -1628,9 +1625,10 @@ exports[`DataSourceStateList: Component should render correctly when no tags 1`]
           <div
             className="sc-ksluoS YJsJl"
           >
-            <div
+            <a
               className="sc-bqGHjH dzsXnW"
               disabled={false}
+              href="/datasource/1/result"
               onClick={[Function]}
             >
               <svg
@@ -1668,7 +1666,7 @@ exports[`DataSourceStateList: Component should render correctly when no tags 1`]
                   />
                 </g>
               </svg>
-            </div>
+            </a>
             <div
               className="sc-hBMVcZ fIReqG"
             >
@@ -1678,9 +1676,10 @@ exports[`DataSourceStateList: Component should render correctly when no tags 1`]
           <div
             className="sc-ksluoS YJsJl"
           >
-            <div
+            <a
               className="sc-bqGHjH dzsXnW"
               disabled={false}
+              href="/datasource/1/filters"
               onClick={[Function]}
             >
               <svg
@@ -1701,7 +1700,7 @@ exports[`DataSourceStateList: Component should render correctly when no tags 1`]
                   strokeWidth={2}
                 />
               </svg>
-            </div>
+            </a>
             <div
               className="sc-hBMVcZ fIReqG"
             >
@@ -1711,9 +1710,10 @@ exports[`DataSourceStateList: Component should render correctly when no tags 1`]
           <div
             className="sc-ksluoS YJsJl"
           >
-            <div
+            <a
               className="sc-bqGHjH dzsXnW"
               disabled={false}
+              href="/datasource/1/tag"
               onClick={[Function]}
             >
               <svg
@@ -1745,7 +1745,7 @@ exports[`DataSourceStateList: Component should render correctly when no tags 1`]
                   />
                 </g>
               </svg>
-            </div>
+            </a>
             <div
               className="sc-hBMVcZ fIReqG"
             >
@@ -1755,9 +1755,10 @@ exports[`DataSourceStateList: Component should render correctly when no tags 1`]
           <div
             className="sc-ksluoS YJsJl"
           >
-            <div
+            <a
               className="sc-bqGHjH dzsXnW"
               disabled={false}
+              href="/datasource/1/state"
               onClick={[Function]}
             >
               <svg
@@ -1775,7 +1776,7 @@ exports[`DataSourceStateList: Component should render correctly when no tags 1`]
                   d="M39.56 65.62C29.1 70.75 20.69 78.74 15.36 89c-4.1 7.59-4.51 11.89-5.13 50.24-.62 26.66 0 45.93 1.64 52.7 2.67 12.3 14.56 27.27 26.86 33.42 7.59 4.1 14.15 4.1 343.68 4.1H718.3l10.25-5.95c11.07-6.36 20.3-17.84 23.58-29.12 2.87-10.05 2.67-88.79-.41-98.63-3.08-10.46-15.79-24.81-26.86-30.14l-8.82-4.31H381.8c-328.5.2-334.25.2-342.24 4.31zm677.71 34.44c3.08 5.95 2.67 89-.41 92.07-1.84 1.85-79.15 2.46-335.27 2.46-326.86 0-332.6 0-334.86-3.9-1.23-2.46-2.05-20.92-2.05-46.14 0-35.48.41-42.45 3.28-45.11 2.87-2.87 36.09-3.28 335.06-3.28 326.25.01 332 .01 334.25 3.9zM63.14 542.17c0 230.28.41 281.13 2.67 286.67 4.1 9.84 12.92 19.28 23.79 25.63l9.43 5.54 55.98.61 55.78.62v-34.86l-54.34-.61c-45.73-.62-54.75-1.03-56.39-3.69-1.23-1.85-2.05-43.27-2.05-102.12v-98.84h112.78v-34.86H98V385.3h112.78v-34.86H98v-88.18H63.14v279.91zM274.14 302.87c-14.15 7.38-23.38 19.48-26.45 34.45-1.64 7.18-2.05 26.25-1.64 51.67.61 36.5 1.03 41.22 5.13 48.6 5.12 9.64 15.17 19.48 25.22 24.81 6.97 3.69 19.89 3.9 335.27 4.51 231.51.41 331.37-.2 338.96-1.85 14.15-2.87 26.45-12.51 33.63-26.25l5.74-10.87V381.6c0-42.65-.41-46.96-4.31-55.16-5.33-11.07-19.69-23.79-30.14-26.86-5.95-1.85-91.25-2.46-339.37-2.46H285.01l-10.87 5.75zm677.1 31.17c3.69 2.05 3.9 4.72 3.9 46.75 0 24.4-.82 45.73-1.64 47.16-1.44 2.05-69.93 2.46-335.88 2.05l-334.04-.62-.61-45.93c-.41-31.99.2-46.75 1.85-48.6 2.05-2.46 54.75-2.87 332.4-2.87 223.5.01 331.36.62 334.02 2.06zM281.73 534.99c-9.23 2.87-20.92 11.89-26.66 20.71-8.2 12.3-9.84 24.61-9.02 69.1.82 45.52 1.85 50.04 16.61 64.18 15.58 15.17-10.66 14.35 359.26 13.74l332.19-.61 8.41-4.51c10.87-5.74 21.94-18.66 25.02-29.12 3.28-10.66 3.28-90.23 0-100.89-3.08-10.46-14.15-23.38-25.02-29.12l-8.41-4.51-333.21-.4c-183.33-.21-335.89.41-339.17 1.43zm670.13 36.09c4.92 4.72 4.92 89.2 0 93.92-2.87 2.87-35.88 3.28-332.19 3.28-223.1 0-330.55-.61-333.22-2.05-3.69-2.05-3.9-4.71-3.9-48.19 0-41.63.41-46.14 3.69-47.98 2.26-1.43 112.99-2.05 333.01-2.26 296.72 0 329.74.41 332.61 3.28zM282.14 771.22c-9.64 2.46-25.02 15.99-30.96 27.07-4.1 7.58-4.51 11.89-5.13 48.8-.41 24.81.2 44.5 1.64 51.47 2.87 13.94 11.89 26.45 24.2 33.83l9.64 5.54 332.19.61c248.53.41 334.45 0 341.01-1.84 10.87-3.08 25.43-15.59 30.96-27.07 3.89-8.2 4.31-12.51 4.31-54.96 0-43.88-.21-46.34-4.92-56.19-4.72-10.66-12.92-18.87-24.61-25.22-5.95-3.28-29.12-3.49-338.55-3.9-214.69-.19-334.86.42-339.78 1.86zm670.95 36.5c1.03 1.64 2.05 23.17 2.05 47.57 0 42.04-.2 44.7-3.9 46.75-6.15 3.28-662.95 2.87-666.23-.41-1.85-1.84-2.46-15.38-2.46-48.19 0-45.73 0-45.93 4.72-47.78 2.67-1.03 140.05-1.64 334.24-1.44 290.57.42 329.94.83 331.58 3.5z"
                 />
               </svg>
-            </div>
+            </a>
             <div
               className="sc-hBMVcZ fIReqG"
             >
@@ -1785,9 +1786,10 @@ exports[`DataSourceStateList: Component should render correctly when no tags 1`]
           <div
             className="sc-ksluoS YJsJl"
           >
-            <div
+            <a
               className="sc-bqGHjH dzsXnW"
               disabled={false}
+              href="/datasource/1/metadata"
               onClick={[Function]}
             >
               <svg
@@ -1805,7 +1807,7 @@ exports[`DataSourceStateList: Component should render correctly when no tags 1`]
                   d="M980.8 521.1L783.2 718.5c-12.2 12.2-32 12.2-44.2 0-12.2-12.2-12.2-31.9 0-44.1L914.6 499 739 323.7c-12.2-12.2-12.2-31.9 0-44.1 12.2-12.2 32-12.2 44.2 0L980.8 477c12.3 12.2 12.3 31.9 0 44.1zM332.9 906.5c-9 15.7-28.9 21.1-44.5 12-15.6-9-20.9-29.1-11.9-44.8L667.1 93.5c9-15.7 28.9-21.1 44.5-12 15.6 9.1 20.9 29.1 11.9 44.8L332.9 906.5zm-71.9-188c-12.2 12.2-32 12.2-44.2 0L19.1 521.1C7 508.9 7 489.2 19.1 477l197.7-197.4c12.2-12.2 32-12.2 44.2 0 12.2 12.2 12.2 31.9 0 44.1L85.4 499 261 674.4c12.2 12.2 12.2 31.9 0 44.1z"
                 />
               </svg>
-            </div>
+            </a>
             <div
               className="sc-hBMVcZ fIReqG"
             >
@@ -1817,65 +1819,41 @@ exports[`DataSourceStateList: Component should render correctly when no tags 1`]
     </div>
   </div>
   <div
-    className="sc-hiKfjK eALEwl"
+    className="sc-gXfWUo hLlOFo"
   >
     <div
-      className="sc-gXfWUo gZQoJo"
+      className="sc-cBoprd ZtrY"
       id="tagsCounter"
     />
     0 states
     <div
-      className="sc-gXfWUo gZQoJo"
+      className="sc-cBoprd ZtrY"
     >
       <div
-        className="sc-bBjRzc gvilNM"
+        className="sc-cOigif fpTIUw"
       >
-        <div
-          className="sc-jJMGHv fzgotI"
+        <a
+          className="sc-hiKfjK kGzIYQ"
+          href="/datasource/undefined/state/create"
+          onClick={[Function]}
         >
-          <button
-            disabled={false}
+          <svg
             id="createStateDesktopBtn"
-            onClick={[Function]}
             style={
               Object {
-                "backgroundColor": "#FFF",
-                "border": "none",
-                "borderRadius": "48px",
-                "color": "#000",
-                "cursor": "pointer",
-                "display": "inline-block",
-                "fill": "#FFF",
-                "fontSize": "18px",
-                "height": 40,
-                "margin": "0",
-                "minHeight": 40,
-                "outline": "none",
-                "padding": "0",
-                "transition": "background 0.25s ease-in-out, color 0.25s ease-in-out",
-                "width": 40,
+                "fill": "#000",
+                "height": 60,
+                "shapeRendering": "crispEdges",
+                "width": 60,
               }
             }
-            type="button"
+            viewBox="0 0 60 60"
           >
-            <svg
-              style={
-                Object {
-                  "fill": "#000",
-                  "height": 40,
-                  "minHeight": 40,
-                  "shapeRendering": "crispEdges",
-                  "width": 40,
-                }
-              }
-              viewBox="0 0 60 60"
-            >
-              <path
-                d="M32 15v13h13v4H32v13h-4V32H15v-4h13V15h4z"
-              />
-            </svg>
-          </button>
-        </div>
+            <path
+              d="M32 15v13h13v4H32v13h-4V32H15v-4h13V15h4z"
+            />
+          </svg>
+        </a>
       </div>
     </div>
   </div>
@@ -1893,9 +1871,10 @@ exports[`DataSourceStateList: Component should render correctly when no tags 1`]
       <div
         className="sc-ksluoS YJsJl"
       >
-        <div
+        <a
           className="sc-bqGHjH dzsXnW"
           disabled={false}
+          href="/datasource/1/source"
           onClick={[Function]}
         >
           <svg
@@ -1913,7 +1892,7 @@ exports[`DataSourceStateList: Component should render correctly when no tags 1`]
               d="M16 42V32h3v7h23v-7h3v10H16zm14.5-30.121l9.06 9.06-2.12 2.122-5.441-5.441L32 33h-3l-.001-15.378-5.438 5.439-2.122-2.122 9.061-9.06z"
             />
           </svg>
-        </div>
+        </a>
         <div
           className="sc-hBMVcZ fIReqG"
         >
@@ -1923,9 +1902,10 @@ exports[`DataSourceStateList: Component should render correctly when no tags 1`]
       <div
         className="sc-ksluoS YJsJl"
       >
-        <div
+        <a
           className="sc-bqGHjH dzsXnW"
           disabled={false}
+          href="/datasource/1/preview"
           onClick={[Function]}
         >
           <svg
@@ -1944,7 +1924,7 @@ exports[`DataSourceStateList: Component should render correctly when no tags 1`]
               fillRule="evenodd"
             />
           </svg>
-        </div>
+        </a>
         <div
           className="sc-hBMVcZ fIReqG"
         >
@@ -1954,9 +1934,10 @@ exports[`DataSourceStateList: Component should render correctly when no tags 1`]
       <div
         className="sc-ksluoS YJsJl"
       >
-        <div
+        <a
           className="sc-bqGHjH dzsXnW"
           disabled={false}
+          href="/datasource/1/steps"
           onClick={[Function]}
         >
           <svg
@@ -1994,7 +1975,7 @@ exports[`DataSourceStateList: Component should render correctly when no tags 1`]
               />
             </g>
           </svg>
-        </div>
+        </a>
         <div
           className="sc-hBMVcZ fIReqG"
         >
@@ -2004,9 +1985,10 @@ exports[`DataSourceStateList: Component should render correctly when no tags 1`]
       <div
         className="sc-ksluoS YJsJl"
       >
-        <div
+        <a
           className="sc-bqGHjH dzsXnW"
           disabled={false}
+          href="/datasource/1/result"
           onClick={[Function]}
         >
           <svg
@@ -2044,7 +2026,7 @@ exports[`DataSourceStateList: Component should render correctly when no tags 1`]
               />
             </g>
           </svg>
-        </div>
+        </a>
         <div
           className="sc-hBMVcZ fIReqG"
         >
@@ -2054,9 +2036,10 @@ exports[`DataSourceStateList: Component should render correctly when no tags 1`]
       <div
         className="sc-ksluoS YJsJl"
       >
-        <div
+        <a
           className="sc-bqGHjH dzsXnW"
           disabled={false}
+          href="/datasource/1/filters"
           onClick={[Function]}
         >
           <svg
@@ -2077,7 +2060,7 @@ exports[`DataSourceStateList: Component should render correctly when no tags 1`]
               strokeWidth={2}
             />
           </svg>
-        </div>
+        </a>
         <div
           className="sc-hBMVcZ fIReqG"
         >
@@ -2087,9 +2070,10 @@ exports[`DataSourceStateList: Component should render correctly when no tags 1`]
       <div
         className="sc-ksluoS YJsJl"
       >
-        <div
+        <a
           className="sc-bqGHjH dzsXnW"
           disabled={false}
+          href="/datasource/1/tag"
           onClick={[Function]}
         >
           <svg
@@ -2121,7 +2105,7 @@ exports[`DataSourceStateList: Component should render correctly when no tags 1`]
               />
             </g>
           </svg>
-        </div>
+        </a>
         <div
           className="sc-hBMVcZ fIReqG"
         >
@@ -2131,9 +2115,10 @@ exports[`DataSourceStateList: Component should render correctly when no tags 1`]
       <div
         className="sc-ksluoS YJsJl"
       >
-        <div
+        <a
           className="sc-bqGHjH dzsXnW"
           disabled={false}
+          href="/datasource/1/state"
           onClick={[Function]}
         >
           <svg
@@ -2151,7 +2136,7 @@ exports[`DataSourceStateList: Component should render correctly when no tags 1`]
               d="M39.56 65.62C29.1 70.75 20.69 78.74 15.36 89c-4.1 7.59-4.51 11.89-5.13 50.24-.62 26.66 0 45.93 1.64 52.7 2.67 12.3 14.56 27.27 26.86 33.42 7.59 4.1 14.15 4.1 343.68 4.1H718.3l10.25-5.95c11.07-6.36 20.3-17.84 23.58-29.12 2.87-10.05 2.67-88.79-.41-98.63-3.08-10.46-15.79-24.81-26.86-30.14l-8.82-4.31H381.8c-328.5.2-334.25.2-342.24 4.31zm677.71 34.44c3.08 5.95 2.67 89-.41 92.07-1.84 1.85-79.15 2.46-335.27 2.46-326.86 0-332.6 0-334.86-3.9-1.23-2.46-2.05-20.92-2.05-46.14 0-35.48.41-42.45 3.28-45.11 2.87-2.87 36.09-3.28 335.06-3.28 326.25.01 332 .01 334.25 3.9zM63.14 542.17c0 230.28.41 281.13 2.67 286.67 4.1 9.84 12.92 19.28 23.79 25.63l9.43 5.54 55.98.61 55.78.62v-34.86l-54.34-.61c-45.73-.62-54.75-1.03-56.39-3.69-1.23-1.85-2.05-43.27-2.05-102.12v-98.84h112.78v-34.86H98V385.3h112.78v-34.86H98v-88.18H63.14v279.91zM274.14 302.87c-14.15 7.38-23.38 19.48-26.45 34.45-1.64 7.18-2.05 26.25-1.64 51.67.61 36.5 1.03 41.22 5.13 48.6 5.12 9.64 15.17 19.48 25.22 24.81 6.97 3.69 19.89 3.9 335.27 4.51 231.51.41 331.37-.2 338.96-1.85 14.15-2.87 26.45-12.51 33.63-26.25l5.74-10.87V381.6c0-42.65-.41-46.96-4.31-55.16-5.33-11.07-19.69-23.79-30.14-26.86-5.95-1.85-91.25-2.46-339.37-2.46H285.01l-10.87 5.75zm677.1 31.17c3.69 2.05 3.9 4.72 3.9 46.75 0 24.4-.82 45.73-1.64 47.16-1.44 2.05-69.93 2.46-335.88 2.05l-334.04-.62-.61-45.93c-.41-31.99.2-46.75 1.85-48.6 2.05-2.46 54.75-2.87 332.4-2.87 223.5.01 331.36.62 334.02 2.06zM281.73 534.99c-9.23 2.87-20.92 11.89-26.66 20.71-8.2 12.3-9.84 24.61-9.02 69.1.82 45.52 1.85 50.04 16.61 64.18 15.58 15.17-10.66 14.35 359.26 13.74l332.19-.61 8.41-4.51c10.87-5.74 21.94-18.66 25.02-29.12 3.28-10.66 3.28-90.23 0-100.89-3.08-10.46-14.15-23.38-25.02-29.12l-8.41-4.51-333.21-.4c-183.33-.21-335.89.41-339.17 1.43zm670.13 36.09c4.92 4.72 4.92 89.2 0 93.92-2.87 2.87-35.88 3.28-332.19 3.28-223.1 0-330.55-.61-333.22-2.05-3.69-2.05-3.9-4.71-3.9-48.19 0-41.63.41-46.14 3.69-47.98 2.26-1.43 112.99-2.05 333.01-2.26 296.72 0 329.74.41 332.61 3.28zM282.14 771.22c-9.64 2.46-25.02 15.99-30.96 27.07-4.1 7.58-4.51 11.89-5.13 48.8-.41 24.81.2 44.5 1.64 51.47 2.87 13.94 11.89 26.45 24.2 33.83l9.64 5.54 332.19.61c248.53.41 334.45 0 341.01-1.84 10.87-3.08 25.43-15.59 30.96-27.07 3.89-8.2 4.31-12.51 4.31-54.96 0-43.88-.21-46.34-4.92-56.19-4.72-10.66-12.92-18.87-24.61-25.22-5.95-3.28-29.12-3.49-338.55-3.9-214.69-.19-334.86.42-339.78 1.86zm670.95 36.5c1.03 1.64 2.05 23.17 2.05 47.57 0 42.04-.2 44.7-3.9 46.75-6.15 3.28-662.95 2.87-666.23-.41-1.85-1.84-2.46-15.38-2.46-48.19 0-45.73 0-45.93 4.72-47.78 2.67-1.03 140.05-1.64 334.24-1.44 290.57.42 329.94.83 331.58 3.5z"
             />
           </svg>
-        </div>
+        </a>
         <div
           className="sc-hBMVcZ fIReqG"
         >
@@ -2161,9 +2146,10 @@ exports[`DataSourceStateList: Component should render correctly when no tags 1`]
       <div
         className="sc-ksluoS YJsJl"
       >
-        <div
+        <a
           className="sc-bqGHjH dzsXnW"
           disabled={false}
+          href="/datasource/1/metadata"
           onClick={[Function]}
         >
           <svg
@@ -2181,7 +2167,7 @@ exports[`DataSourceStateList: Component should render correctly when no tags 1`]
               d="M980.8 521.1L783.2 718.5c-12.2 12.2-32 12.2-44.2 0-12.2-12.2-12.2-31.9 0-44.1L914.6 499 739 323.7c-12.2-12.2-12.2-31.9 0-44.1 12.2-12.2 32-12.2 44.2 0L980.8 477c12.3 12.2 12.3 31.9 0 44.1zM332.9 906.5c-9 15.7-28.9 21.1-44.5 12-15.6-9-20.9-29.1-11.9-44.8L667.1 93.5c9-15.7 28.9-21.1 44.5-12 15.6 9.1 20.9 29.1 11.9 44.8L332.9 906.5zm-71.9-188c-12.2 12.2-32 12.2-44.2 0L19.1 521.1C7 508.9 7 489.2 19.1 477l197.7-197.4c12.2-12.2 32-12.2 44.2 0 12.2 12.2 12.2 31.9 0 44.1L85.4 499 261 674.4c12.2 12.2 12.2 31.9 0 44.1z"
             />
           </svg>
-        </div>
+        </a>
         <div
           className="sc-hBMVcZ fIReqG"
         >
@@ -2240,7 +2226,7 @@ exports[`DataSourceStateList: Component should render correctly with loader 1`] 
                 "fontSize": "24px",
                 "fontWeight": 600,
                 "letterSpacing": "-0.12px",
-                "lineHight": 1.25,
+                "lineHeight": 1.25,
                 "margin": 0,
               }
             }
@@ -2345,7 +2331,7 @@ exports[`DataSourceStateList: Component should render correctly with loader 1`] 
                   "fontSize": "24px",
                   "fontWeight": 600,
                   "letterSpacing": "-0.12px",
-                  "lineHight": 1.25,
+                  "lineHeight": 1.25,
                   "margin": 0,
                 }
               }
@@ -2568,7 +2554,7 @@ exports[`DataSourceStateList: Component should render correctly with loader 1`] 
             "fontSize": "24px",
             "fontWeight": 600,
             "letterSpacing": "-0.12px",
-            "lineHight": 1.25,
+            "lineHeight": 1.25,
             "margin": 0,
           }
         }
@@ -2588,9 +2574,10 @@ exports[`DataSourceStateList: Component should render correctly with loader 1`] 
           <div
             className="sc-ksluoS YJsJl"
           >
-            <div
+            <a
               className="sc-bqGHjH dzsXnW"
               disabled={false}
+              href="/datasource/1/source"
               onClick={[Function]}
             >
               <svg
@@ -2608,7 +2595,7 @@ exports[`DataSourceStateList: Component should render correctly with loader 1`] 
                   d="M16 42V32h3v7h23v-7h3v10H16zm14.5-30.121l9.06 9.06-2.12 2.122-5.441-5.441L32 33h-3l-.001-15.378-5.438 5.439-2.122-2.122 9.061-9.06z"
                 />
               </svg>
-            </div>
+            </a>
             <div
               className="sc-hBMVcZ fIReqG"
             >
@@ -2618,9 +2605,10 @@ exports[`DataSourceStateList: Component should render correctly with loader 1`] 
           <div
             className="sc-ksluoS YJsJl"
           >
-            <div
+            <a
               className="sc-bqGHjH dzsXnW"
               disabled={false}
+              href="/datasource/1/preview"
               onClick={[Function]}
             >
               <svg
@@ -2639,7 +2627,7 @@ exports[`DataSourceStateList: Component should render correctly with loader 1`] 
                   fillRule="evenodd"
                 />
               </svg>
-            </div>
+            </a>
             <div
               className="sc-hBMVcZ fIReqG"
             >
@@ -2649,9 +2637,10 @@ exports[`DataSourceStateList: Component should render correctly with loader 1`] 
           <div
             className="sc-ksluoS YJsJl"
           >
-            <div
+            <a
               className="sc-bqGHjH dzsXnW"
               disabled={false}
+              href="/datasource/1/steps"
               onClick={[Function]}
             >
               <svg
@@ -2689,7 +2678,7 @@ exports[`DataSourceStateList: Component should render correctly with loader 1`] 
                   />
                 </g>
               </svg>
-            </div>
+            </a>
             <div
               className="sc-hBMVcZ fIReqG"
             >
@@ -2699,9 +2688,10 @@ exports[`DataSourceStateList: Component should render correctly with loader 1`] 
           <div
             className="sc-ksluoS YJsJl"
           >
-            <div
+            <a
               className="sc-bqGHjH dzsXnW"
               disabled={false}
+              href="/datasource/1/result"
               onClick={[Function]}
             >
               <svg
@@ -2739,7 +2729,7 @@ exports[`DataSourceStateList: Component should render correctly with loader 1`] 
                   />
                 </g>
               </svg>
-            </div>
+            </a>
             <div
               className="sc-hBMVcZ fIReqG"
             >
@@ -2749,9 +2739,10 @@ exports[`DataSourceStateList: Component should render correctly with loader 1`] 
           <div
             className="sc-ksluoS YJsJl"
           >
-            <div
+            <a
               className="sc-bqGHjH dzsXnW"
               disabled={false}
+              href="/datasource/1/filters"
               onClick={[Function]}
             >
               <svg
@@ -2772,7 +2763,7 @@ exports[`DataSourceStateList: Component should render correctly with loader 1`] 
                   strokeWidth={2}
                 />
               </svg>
-            </div>
+            </a>
             <div
               className="sc-hBMVcZ fIReqG"
             >
@@ -2782,9 +2773,10 @@ exports[`DataSourceStateList: Component should render correctly with loader 1`] 
           <div
             className="sc-ksluoS YJsJl"
           >
-            <div
+            <a
               className="sc-bqGHjH dzsXnW"
               disabled={false}
+              href="/datasource/1/tag"
               onClick={[Function]}
             >
               <svg
@@ -2816,7 +2808,7 @@ exports[`DataSourceStateList: Component should render correctly with loader 1`] 
                   />
                 </g>
               </svg>
-            </div>
+            </a>
             <div
               className="sc-hBMVcZ fIReqG"
             >
@@ -2826,9 +2818,10 @@ exports[`DataSourceStateList: Component should render correctly with loader 1`] 
           <div
             className="sc-ksluoS YJsJl"
           >
-            <div
+            <a
               className="sc-bqGHjH dzsXnW"
               disabled={false}
+              href="/datasource/1/state"
               onClick={[Function]}
             >
               <svg
@@ -2846,7 +2839,7 @@ exports[`DataSourceStateList: Component should render correctly with loader 1`] 
                   d="M39.56 65.62C29.1 70.75 20.69 78.74 15.36 89c-4.1 7.59-4.51 11.89-5.13 50.24-.62 26.66 0 45.93 1.64 52.7 2.67 12.3 14.56 27.27 26.86 33.42 7.59 4.1 14.15 4.1 343.68 4.1H718.3l10.25-5.95c11.07-6.36 20.3-17.84 23.58-29.12 2.87-10.05 2.67-88.79-.41-98.63-3.08-10.46-15.79-24.81-26.86-30.14l-8.82-4.31H381.8c-328.5.2-334.25.2-342.24 4.31zm677.71 34.44c3.08 5.95 2.67 89-.41 92.07-1.84 1.85-79.15 2.46-335.27 2.46-326.86 0-332.6 0-334.86-3.9-1.23-2.46-2.05-20.92-2.05-46.14 0-35.48.41-42.45 3.28-45.11 2.87-2.87 36.09-3.28 335.06-3.28 326.25.01 332 .01 334.25 3.9zM63.14 542.17c0 230.28.41 281.13 2.67 286.67 4.1 9.84 12.92 19.28 23.79 25.63l9.43 5.54 55.98.61 55.78.62v-34.86l-54.34-.61c-45.73-.62-54.75-1.03-56.39-3.69-1.23-1.85-2.05-43.27-2.05-102.12v-98.84h112.78v-34.86H98V385.3h112.78v-34.86H98v-88.18H63.14v279.91zM274.14 302.87c-14.15 7.38-23.38 19.48-26.45 34.45-1.64 7.18-2.05 26.25-1.64 51.67.61 36.5 1.03 41.22 5.13 48.6 5.12 9.64 15.17 19.48 25.22 24.81 6.97 3.69 19.89 3.9 335.27 4.51 231.51.41 331.37-.2 338.96-1.85 14.15-2.87 26.45-12.51 33.63-26.25l5.74-10.87V381.6c0-42.65-.41-46.96-4.31-55.16-5.33-11.07-19.69-23.79-30.14-26.86-5.95-1.85-91.25-2.46-339.37-2.46H285.01l-10.87 5.75zm677.1 31.17c3.69 2.05 3.9 4.72 3.9 46.75 0 24.4-.82 45.73-1.64 47.16-1.44 2.05-69.93 2.46-335.88 2.05l-334.04-.62-.61-45.93c-.41-31.99.2-46.75 1.85-48.6 2.05-2.46 54.75-2.87 332.4-2.87 223.5.01 331.36.62 334.02 2.06zM281.73 534.99c-9.23 2.87-20.92 11.89-26.66 20.71-8.2 12.3-9.84 24.61-9.02 69.1.82 45.52 1.85 50.04 16.61 64.18 15.58 15.17-10.66 14.35 359.26 13.74l332.19-.61 8.41-4.51c10.87-5.74 21.94-18.66 25.02-29.12 3.28-10.66 3.28-90.23 0-100.89-3.08-10.46-14.15-23.38-25.02-29.12l-8.41-4.51-333.21-.4c-183.33-.21-335.89.41-339.17 1.43zm670.13 36.09c4.92 4.72 4.92 89.2 0 93.92-2.87 2.87-35.88 3.28-332.19 3.28-223.1 0-330.55-.61-333.22-2.05-3.69-2.05-3.9-4.71-3.9-48.19 0-41.63.41-46.14 3.69-47.98 2.26-1.43 112.99-2.05 333.01-2.26 296.72 0 329.74.41 332.61 3.28zM282.14 771.22c-9.64 2.46-25.02 15.99-30.96 27.07-4.1 7.58-4.51 11.89-5.13 48.8-.41 24.81.2 44.5 1.64 51.47 2.87 13.94 11.89 26.45 24.2 33.83l9.64 5.54 332.19.61c248.53.41 334.45 0 341.01-1.84 10.87-3.08 25.43-15.59 30.96-27.07 3.89-8.2 4.31-12.51 4.31-54.96 0-43.88-.21-46.34-4.92-56.19-4.72-10.66-12.92-18.87-24.61-25.22-5.95-3.28-29.12-3.49-338.55-3.9-214.69-.19-334.86.42-339.78 1.86zm670.95 36.5c1.03 1.64 2.05 23.17 2.05 47.57 0 42.04-.2 44.7-3.9 46.75-6.15 3.28-662.95 2.87-666.23-.41-1.85-1.84-2.46-15.38-2.46-48.19 0-45.73 0-45.93 4.72-47.78 2.67-1.03 140.05-1.64 334.24-1.44 290.57.42 329.94.83 331.58 3.5z"
                 />
               </svg>
-            </div>
+            </a>
             <div
               className="sc-hBMVcZ fIReqG"
             >
@@ -2856,9 +2849,10 @@ exports[`DataSourceStateList: Component should render correctly with loader 1`] 
           <div
             className="sc-ksluoS YJsJl"
           >
-            <div
+            <a
               className="sc-bqGHjH dzsXnW"
               disabled={false}
+              href="/datasource/1/metadata"
               onClick={[Function]}
             >
               <svg
@@ -2876,7 +2870,7 @@ exports[`DataSourceStateList: Component should render correctly with loader 1`] 
                   d="M980.8 521.1L783.2 718.5c-12.2 12.2-32 12.2-44.2 0-12.2-12.2-12.2-31.9 0-44.1L914.6 499 739 323.7c-12.2-12.2-12.2-31.9 0-44.1 12.2-12.2 32-12.2 44.2 0L980.8 477c12.3 12.2 12.3 31.9 0 44.1zM332.9 906.5c-9 15.7-28.9 21.1-44.5 12-15.6-9-20.9-29.1-11.9-44.8L667.1 93.5c9-15.7 28.9-21.1 44.5-12 15.6 9.1 20.9 29.1 11.9 44.8L332.9 906.5zm-71.9-188c-12.2 12.2-32 12.2-44.2 0L19.1 521.1C7 508.9 7 489.2 19.1 477l197.7-197.4c12.2-12.2 32-12.2 44.2 0 12.2 12.2 12.2 31.9 0 44.1L85.4 499 261 674.4c12.2 12.2 12.2 31.9 0 44.1z"
                 />
               </svg>
-            </div>
+            </a>
             <div
               className="sc-hBMVcZ fIReqG"
             >
@@ -2888,73 +2882,50 @@ exports[`DataSourceStateList: Component should render correctly with loader 1`] 
     </div>
   </div>
   <div
-    className="sc-hiKfjK eALEwl"
+    className="sc-gXfWUo hLlOFo"
   >
     <div
-      className="sc-gXfWUo gZQoJo"
+      className="sc-cBoprd ZtrY"
       id="tagsCounter"
     />
     2 states
     <div
-      className="sc-gXfWUo gZQoJo"
+      className="sc-cBoprd ZtrY"
     >
       <div
-        className="sc-bBjRzc gvilNM"
+        className="sc-cOigif fpTIUw"
       >
-        <div
-          className="sc-jJMGHv fzgotI"
+        <a
+          className="sc-hiKfjK kGzIYQ"
+          href="/datasource/undefined/state/create"
+          onClick={[Function]}
         >
-          <button
-            disabled={false}
+          <svg
             id="createStateDesktopBtn"
-            onClick={[Function]}
             style={
               Object {
-                "backgroundColor": "#FFF",
-                "border": "none",
-                "borderRadius": "48px",
-                "color": "#000",
-                "cursor": "pointer",
-                "display": "inline-block",
-                "fill": "#FFF",
-                "fontSize": "18px",
-                "height": 40,
-                "margin": "0",
-                "minHeight": 40,
-                "outline": "none",
-                "padding": "0",
-                "transition": "background 0.25s ease-in-out, color 0.25s ease-in-out",
-                "width": 40,
+                "fill": "#000",
+                "height": 60,
+                "shapeRendering": "crispEdges",
+                "width": 60,
               }
             }
-            type="button"
+            viewBox="0 0 60 60"
           >
-            <svg
-              style={
-                Object {
-                  "fill": "#000",
-                  "height": 40,
-                  "minHeight": 40,
-                  "shapeRendering": "crispEdges",
-                  "width": 40,
-                }
-              }
-              viewBox="0 0 60 60"
-            >
-              <path
-                d="M32 15v13h13v4H32v13h-4V32H15v-4h13V15h4z"
-              />
-            </svg>
-          </button>
-        </div>
+            <path
+              d="M32 15v13h13v4H32v13h-4V32H15v-4h13V15h4z"
+            />
+          </svg>
+        </a>
       </div>
     </div>
   </div>
   <div
     className="sc-gtssRu gZvzhL"
   >
-    <div
-      className="sc-dlnjPT bzbJRd"
+    <a
+      className="sc-dlnjPT dLGlGF"
+      href="/state/1"
       onClick={[Function]}
     >
       <div
@@ -2978,9 +2949,10 @@ exports[`DataSourceStateList: Component should render correctly with loader 1`] 
           fillRule="evenodd"
         />
       </svg>
-    </div>
-    <div
-      className="sc-dlnjPT bzbJRd"
+    </a>
+    <a
+      className="sc-dlnjPT dLGlGF"
+      href="/state/2"
       onClick={[Function]}
     >
       <div
@@ -3004,7 +2976,7 @@ exports[`DataSourceStateList: Component should render correctly with loader 1`] 
           fillRule="evenodd"
         />
       </svg>
-    </div>
+    </a>
   </div>
   <div
     className="sc-crzoUp fAvqwc"
@@ -3015,9 +2987,10 @@ exports[`DataSourceStateList: Component should render correctly with loader 1`] 
       <div
         className="sc-ksluoS YJsJl"
       >
-        <div
+        <a
           className="sc-bqGHjH dzsXnW"
           disabled={false}
+          href="/datasource/1/source"
           onClick={[Function]}
         >
           <svg
@@ -3035,7 +3008,7 @@ exports[`DataSourceStateList: Component should render correctly with loader 1`] 
               d="M16 42V32h3v7h23v-7h3v10H16zm14.5-30.121l9.06 9.06-2.12 2.122-5.441-5.441L32 33h-3l-.001-15.378-5.438 5.439-2.122-2.122 9.061-9.06z"
             />
           </svg>
-        </div>
+        </a>
         <div
           className="sc-hBMVcZ fIReqG"
         >
@@ -3045,9 +3018,10 @@ exports[`DataSourceStateList: Component should render correctly with loader 1`] 
       <div
         className="sc-ksluoS YJsJl"
       >
-        <div
+        <a
           className="sc-bqGHjH dzsXnW"
           disabled={false}
+          href="/datasource/1/preview"
           onClick={[Function]}
         >
           <svg
@@ -3066,7 +3040,7 @@ exports[`DataSourceStateList: Component should render correctly with loader 1`] 
               fillRule="evenodd"
             />
           </svg>
-        </div>
+        </a>
         <div
           className="sc-hBMVcZ fIReqG"
         >
@@ -3076,9 +3050,10 @@ exports[`DataSourceStateList: Component should render correctly with loader 1`] 
       <div
         className="sc-ksluoS YJsJl"
       >
-        <div
+        <a
           className="sc-bqGHjH dzsXnW"
           disabled={false}
+          href="/datasource/1/steps"
           onClick={[Function]}
         >
           <svg
@@ -3116,7 +3091,7 @@ exports[`DataSourceStateList: Component should render correctly with loader 1`] 
               />
             </g>
           </svg>
-        </div>
+        </a>
         <div
           className="sc-hBMVcZ fIReqG"
         >
@@ -3126,9 +3101,10 @@ exports[`DataSourceStateList: Component should render correctly with loader 1`] 
       <div
         className="sc-ksluoS YJsJl"
       >
-        <div
+        <a
           className="sc-bqGHjH dzsXnW"
           disabled={false}
+          href="/datasource/1/result"
           onClick={[Function]}
         >
           <svg
@@ -3166,7 +3142,7 @@ exports[`DataSourceStateList: Component should render correctly with loader 1`] 
               />
             </g>
           </svg>
-        </div>
+        </a>
         <div
           className="sc-hBMVcZ fIReqG"
         >
@@ -3176,9 +3152,10 @@ exports[`DataSourceStateList: Component should render correctly with loader 1`] 
       <div
         className="sc-ksluoS YJsJl"
       >
-        <div
+        <a
           className="sc-bqGHjH dzsXnW"
           disabled={false}
+          href="/datasource/1/filters"
           onClick={[Function]}
         >
           <svg
@@ -3199,7 +3176,7 @@ exports[`DataSourceStateList: Component should render correctly with loader 1`] 
               strokeWidth={2}
             />
           </svg>
-        </div>
+        </a>
         <div
           className="sc-hBMVcZ fIReqG"
         >
@@ -3209,9 +3186,10 @@ exports[`DataSourceStateList: Component should render correctly with loader 1`] 
       <div
         className="sc-ksluoS YJsJl"
       >
-        <div
+        <a
           className="sc-bqGHjH dzsXnW"
           disabled={false}
+          href="/datasource/1/tag"
           onClick={[Function]}
         >
           <svg
@@ -3243,7 +3221,7 @@ exports[`DataSourceStateList: Component should render correctly with loader 1`] 
               />
             </g>
           </svg>
-        </div>
+        </a>
         <div
           className="sc-hBMVcZ fIReqG"
         >
@@ -3253,9 +3231,10 @@ exports[`DataSourceStateList: Component should render correctly with loader 1`] 
       <div
         className="sc-ksluoS YJsJl"
       >
-        <div
+        <a
           className="sc-bqGHjH dzsXnW"
           disabled={false}
+          href="/datasource/1/state"
           onClick={[Function]}
         >
           <svg
@@ -3273,7 +3252,7 @@ exports[`DataSourceStateList: Component should render correctly with loader 1`] 
               d="M39.56 65.62C29.1 70.75 20.69 78.74 15.36 89c-4.1 7.59-4.51 11.89-5.13 50.24-.62 26.66 0 45.93 1.64 52.7 2.67 12.3 14.56 27.27 26.86 33.42 7.59 4.1 14.15 4.1 343.68 4.1H718.3l10.25-5.95c11.07-6.36 20.3-17.84 23.58-29.12 2.87-10.05 2.67-88.79-.41-98.63-3.08-10.46-15.79-24.81-26.86-30.14l-8.82-4.31H381.8c-328.5.2-334.25.2-342.24 4.31zm677.71 34.44c3.08 5.95 2.67 89-.41 92.07-1.84 1.85-79.15 2.46-335.27 2.46-326.86 0-332.6 0-334.86-3.9-1.23-2.46-2.05-20.92-2.05-46.14 0-35.48.41-42.45 3.28-45.11 2.87-2.87 36.09-3.28 335.06-3.28 326.25.01 332 .01 334.25 3.9zM63.14 542.17c0 230.28.41 281.13 2.67 286.67 4.1 9.84 12.92 19.28 23.79 25.63l9.43 5.54 55.98.61 55.78.62v-34.86l-54.34-.61c-45.73-.62-54.75-1.03-56.39-3.69-1.23-1.85-2.05-43.27-2.05-102.12v-98.84h112.78v-34.86H98V385.3h112.78v-34.86H98v-88.18H63.14v279.91zM274.14 302.87c-14.15 7.38-23.38 19.48-26.45 34.45-1.64 7.18-2.05 26.25-1.64 51.67.61 36.5 1.03 41.22 5.13 48.6 5.12 9.64 15.17 19.48 25.22 24.81 6.97 3.69 19.89 3.9 335.27 4.51 231.51.41 331.37-.2 338.96-1.85 14.15-2.87 26.45-12.51 33.63-26.25l5.74-10.87V381.6c0-42.65-.41-46.96-4.31-55.16-5.33-11.07-19.69-23.79-30.14-26.86-5.95-1.85-91.25-2.46-339.37-2.46H285.01l-10.87 5.75zm677.1 31.17c3.69 2.05 3.9 4.72 3.9 46.75 0 24.4-.82 45.73-1.64 47.16-1.44 2.05-69.93 2.46-335.88 2.05l-334.04-.62-.61-45.93c-.41-31.99.2-46.75 1.85-48.6 2.05-2.46 54.75-2.87 332.4-2.87 223.5.01 331.36.62 334.02 2.06zM281.73 534.99c-9.23 2.87-20.92 11.89-26.66 20.71-8.2 12.3-9.84 24.61-9.02 69.1.82 45.52 1.85 50.04 16.61 64.18 15.58 15.17-10.66 14.35 359.26 13.74l332.19-.61 8.41-4.51c10.87-5.74 21.94-18.66 25.02-29.12 3.28-10.66 3.28-90.23 0-100.89-3.08-10.46-14.15-23.38-25.02-29.12l-8.41-4.51-333.21-.4c-183.33-.21-335.89.41-339.17 1.43zm670.13 36.09c4.92 4.72 4.92 89.2 0 93.92-2.87 2.87-35.88 3.28-332.19 3.28-223.1 0-330.55-.61-333.22-2.05-3.69-2.05-3.9-4.71-3.9-48.19 0-41.63.41-46.14 3.69-47.98 2.26-1.43 112.99-2.05 333.01-2.26 296.72 0 329.74.41 332.61 3.28zM282.14 771.22c-9.64 2.46-25.02 15.99-30.96 27.07-4.1 7.58-4.51 11.89-5.13 48.8-.41 24.81.2 44.5 1.64 51.47 2.87 13.94 11.89 26.45 24.2 33.83l9.64 5.54 332.19.61c248.53.41 334.45 0 341.01-1.84 10.87-3.08 25.43-15.59 30.96-27.07 3.89-8.2 4.31-12.51 4.31-54.96 0-43.88-.21-46.34-4.92-56.19-4.72-10.66-12.92-18.87-24.61-25.22-5.95-3.28-29.12-3.49-338.55-3.9-214.69-.19-334.86.42-339.78 1.86zm670.95 36.5c1.03 1.64 2.05 23.17 2.05 47.57 0 42.04-.2 44.7-3.9 46.75-6.15 3.28-662.95 2.87-666.23-.41-1.85-1.84-2.46-15.38-2.46-48.19 0-45.73 0-45.93 4.72-47.78 2.67-1.03 140.05-1.64 334.24-1.44 290.57.42 329.94.83 331.58 3.5z"
             />
           </svg>
-        </div>
+        </a>
         <div
           className="sc-hBMVcZ fIReqG"
         >
@@ -3283,9 +3262,10 @@ exports[`DataSourceStateList: Component should render correctly with loader 1`] 
       <div
         className="sc-ksluoS YJsJl"
       >
-        <div
+        <a
           className="sc-bqGHjH dzsXnW"
           disabled={false}
+          href="/datasource/1/metadata"
           onClick={[Function]}
         >
           <svg
@@ -3303,7 +3283,7 @@ exports[`DataSourceStateList: Component should render correctly with loader 1`] 
               d="M980.8 521.1L783.2 718.5c-12.2 12.2-32 12.2-44.2 0-12.2-12.2-12.2-31.9 0-44.1L914.6 499 739 323.7c-12.2-12.2-12.2-31.9 0-44.1 12.2-12.2 32-12.2 44.2 0L980.8 477c12.3 12.2 12.3 31.9 0 44.1zM332.9 906.5c-9 15.7-28.9 21.1-44.5 12-15.6-9-20.9-29.1-11.9-44.8L667.1 93.5c9-15.7 28.9-21.1 44.5-12 15.6 9.1 20.9 29.1 11.9 44.8L332.9 906.5zm-71.9-188c-12.2 12.2-32 12.2-44.2 0L19.1 521.1C7 508.9 7 489.2 19.1 477l197.7-197.4c12.2-12.2 32-12.2 44.2 0 12.2 12.2 12.2 31.9 0 44.1L85.4 499 261 674.4c12.2 12.2 12.2 31.9 0 44.1z"
             />
           </svg>
-        </div>
+        </a>
         <div
           className="sc-hBMVcZ fIReqG"
         >

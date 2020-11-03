@@ -12,7 +12,7 @@ export const defaultProps = {
   handleChange: Function.prototype,
   handleBlur: Function.prototype,
   setFieldValue: Function.prototype,
-  onCancelClick: Function.prototype,
+  cancelUrl: 'cancelUrl',
   isValid: true,
   isSubmitting: false,
   values: {},

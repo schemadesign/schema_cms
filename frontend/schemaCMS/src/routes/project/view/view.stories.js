@@ -39,6 +39,7 @@ export const defaultProps = {
     slug: 'project_title',
     created: '2019-08-26T11:05:12+0000',
     status: 'Status',
+    apiUrl: 'apiUrl',
     owner: {
       id: '1',
       firstName: 'Firstname',

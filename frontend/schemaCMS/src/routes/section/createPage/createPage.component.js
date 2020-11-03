@@ -13,7 +13,7 @@ import { PageForm } from '../../../shared/components/pageForm';
 import { MobileMenu } from '../../../shared/components/menu/mobileMenu';
 import { errorMessageParser, filterMenuOptions, prepareForPostingPageData } from '../../../shared/utils/helpers';
 import { LoadingWrapper } from '../../../shared/components/loadingWrapper';
-import { BackButton, NavigationContainer, NextButton } from '../../../shared/components/navigation';
+import { BackLink, NavigationContainer, NextButton } from '../../../shared/components/navigation';
 import { INITIAL_VALUES, PAGE_SCHEMA, PAGE_TEMPLATE } from '../../../modules/page/page.constants';
 import reportError from '../../../shared/utils/reportError';
 import { getProjectMenuOptions } from '../../project/project.constants';
@@ -94,8 +94,6 @@ export const CreatePage = ({
     },
   });
 
-  const handleCancelClick = () => history.push(`/section/${sectionId}`);
-
   useEffectOnce(() => {
     (async () => {
       try {
@@ -141,9 +139,9 @@ export const CreatePage = ({
             {...restFormikProps}
           />
           <NavigationContainer fixed>
-            <BackButton id="cancelBtn" type="button" onClick={handleCancelClick}>
+            <BackLink id="cancelBtn" to={`/section/${sectionId}`}>
               <FormattedMessage {...messages.cancel} />
-            </BackButton>
+            </BackLink>
             <NextButton
               id="createPage"
               type="submit"

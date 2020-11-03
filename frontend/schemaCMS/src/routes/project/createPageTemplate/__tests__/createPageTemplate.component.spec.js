@@ -29,11 +29,4 @@ describe('CreatePageTemplate: Component', () => {
     await render();
     expect(defaultProps.fetchBlockTemplates).toHaveBeenCalledWith({ projectId: 'projectId', raw: true });
   });
-
-  it('should redirect to page templates', async () => {
-    const wrapper = await render();
-    wrapper.root.findByProps({ id: 'cancelBtn' }).props.onClick();
-
-    expect(mockPushHistory).toHaveBeenCalledWith('/project/projectId/page-templates');
-  });
 });
