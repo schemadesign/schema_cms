@@ -1,14 +1,19 @@
 ## [Unreleased]
 
 ### Fixes
-- add delay for updating uploaded data source in the data source list
 
+### Changes
+
+### Features
+
+
+## 1.9.4 (November 03, 2020) - Fixes
+### Fixes
+- add delay for updating uploaded data source in the data source list
 
 ### Changes
 - add api url from the backend on the project view and projects list
 - make elements with on click handler to normal link with href
-
-### Features
 
 
 ## 1.9.3 (October 22, 2020) - Fixes
