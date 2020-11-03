@@ -1,8 +1,9 @@
 import styled from 'styled-components';
-import { Card, Typography } from 'schemaUI';
+import { Card } from 'schemaUI';
+import { Link } from 'react-router-dom';
+
 import { media } from '../../../theme/media';
 
-const { H1 } = Typography;
 const LIST_ITEM_MARGIN = 10;
 
 export const ListItem = styled(Card)`
@@ -19,9 +20,17 @@ export const ListItem = styled(Card)`
   `};
 `;
 
-export const ListItemTitle = styled(H1)`
+export const ListItemTitle = styled(Link)`
   word-break: break-word;
   cursor: pointer;
+  line-height: 1.25;
+  letter-spacing: -0.12px;
+  margin: 0;
+  color: inherit;
+  text-decoration: none;
+  display: block;
+  font-size: 2em;
+  font-weight: bold;
 `;
 
 export const ListItemContent = styled.div`

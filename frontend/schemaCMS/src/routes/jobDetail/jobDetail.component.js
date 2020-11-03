@@ -9,7 +9,7 @@ import { renderWhenTrue } from '../../shared/utils/rendering';
 import messages from './jobDetail.messages';
 import { DESCRIPTION, ERROR, JOB_ID, JOB_STATE, JOB_STATE_SUCCESS } from '../../modules/job/job.constants';
 import { TextInput } from '../../shared/components/form/inputs/textInput';
-import { BackButton, NavigationContainer, NextButton } from '../../shared/components/navigation';
+import { BackLink, NavigationContainer, NextButton } from '../../shared/components/navigation';
 import { LoadingWrapper } from '../../shared/components/loadingWrapper';
 import { ContextHeader } from '../../shared/components/contextHeader';
 import { JOB_DETAIL_MENU_OPTIONS } from './jobDetail.constants';
@@ -50,8 +50,6 @@ export class JobDetail extends PureComponent {
       this.setState({ loading: false, error });
     }
   }
-
-  handleGoBack = () => this.props.history.push(`/datasource/${this.props.job.datasource}/job`);
 
   renderStep = ({ scriptName }, index) => <Step key={index}>{scriptName}</Step>;
 
@@ -165,9 +163,9 @@ export class JobDetail extends PureComponent {
           {this.renderForm(job)}
         </LoadingWrapper>
         <NavigationContainer fixed>
-          <BackButton onClick={this.handleGoBack}>
+          <BackLink to={`/datasource/${this.props.job.datasource}/job`}>
             <FormattedMessage {...messages.back} />
-          </BackButton>
+          </BackLink>
           {this.renderSaveButton(!!job.id && !error)}
         </NavigationContainer>
       </Fragment>

@@ -189,17 +189,8 @@ exports[`Filters: Component should render correctly 1`] = `
       count={2}
       right={
         <ForwardRef(styled.div)>
-          <PlusButton
-            customStyles={
-              Object {
-                "height": 40,
-                "minHeight": 40,
-                "width": 40,
-              }
-            }
-            hideOnDesktop={false}
-            onClick={[Function]}
-            type="button"
+          <PlusLink
+            to="/datasource/1/filters/add"
           />
         </ForwardRef(styled.div)>
       }
@@ -457,17 +448,8 @@ exports[`Filters: Component should render correctly when no filters 1`] = `
       count={0}
       right={
         <ForwardRef(styled.div)>
-          <PlusButton
-            customStyles={
-              Object {
-                "height": 40,
-                "minHeight": 40,
-                "width": 40,
-              }
-            }
-            hideOnDesktop={false}
-            onClick={[Function]}
-            type="button"
+          <PlusLink
+            to="/datasource/1/filters/add"
           />
         </ForwardRef(styled.div)>
       }
@@ -705,17 +687,8 @@ exports[`Filters: Component should render correctly with loader 1`] = `
       count={2}
       right={
         <ForwardRef(styled.div)>
-          <PlusButton
-            customStyles={
-              Object {
-                "height": 40,
-                "minHeight": 40,
-                "width": 40,
-              }
-            }
-            hideOnDesktop={false}
-            onClick={[Function]}
-            type="button"
+          <PlusLink
+            to="/datasource/1/filters/add"
           />
         </ForwardRef(styled.div)>
       }

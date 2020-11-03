@@ -112,11 +112,10 @@ exports[`DataSourceList: Component should render correctly 1`] = `
     subtitle="Overview"
     title="Data Sources"
   >
-    <PlusButton
-      customStyles={Object {}}
-      hideOnDesktop={false}
+    <PlusLink
       id="createDataSourceDesktopBtn"
-      onClick={[Function]}
+      size={60}
+      to="/project/1/datasource/add"
     />
   </ContextHeader>
   <LoadingWrapper
@@ -216,12 +215,12 @@ exports[`DataSourceList: Component should render correctly 1`] = `
         id="dataSourceContainer"
         key="0"
       >
-        <Styled(H1)
+        <Styled(Link)
           id="dataSourceTitle"
-          onClick={[Function]}
+          to="/datasource/17/source"
         >
           name
-        </Styled(H1)>
+        </Styled(Link)>
       </Styled(Component)>
       <Styled(Component)
         footerComponent={
@@ -313,12 +312,12 @@ exports[`DataSourceList: Component should render correctly 1`] = `
         id="dataSourceContainer"
         key="1"
       >
-        <Styled(H1)
+        <Styled(Link)
           id="dataSourceTitle"
-          onClick={[Function]}
+          to="/datasource/17/preview"
         >
           name
-        </Styled(H1)>
+        </Styled(Link)>
       </Styled(Component)>
       <Styled(Component)
         footerComponent={
@@ -410,12 +409,12 @@ exports[`DataSourceList: Component should render correctly 1`] = `
         id="dataSourceContainer"
         key="2"
       >
-        <Styled(H1)
+        <Styled(Link)
           id="dataSourceTitle"
-          onClick={[Function]}
+          to="/datasource/17/result"
         >
           name
-        </Styled(H1)>
+        </Styled(Link)>
       </Styled(Component)>
       <Styled(Component)
         footerComponent={
@@ -507,12 +506,12 @@ exports[`DataSourceList: Component should render correctly 1`] = `
         id="dataSourceContainer"
         key="3"
       >
-        <Styled(H1)
+        <Styled(Link)
           id="dataSourceTitle"
-          onClick={[Function]}
+          to="/datasource/17/result"
         >
           name
-        </Styled(H1)>
+        </Styled(Link)>
       </Styled(Component)>
       <Styled(Component)
         footerComponent={
@@ -604,12 +603,12 @@ exports[`DataSourceList: Component should render correctly 1`] = `
         id="dataSourceContainer"
         key="4"
       >
-        <Styled(H1)
+        <Styled(Link)
           id="dataSourceTitle"
-          onClick={[Function]}
+          to="/datasource/17/result"
         >
           name
-        </Styled(H1)>
+        </Styled(Link)>
       </Styled(Component)>
       <Styled(Component)
         footerComponent={
@@ -701,12 +700,12 @@ exports[`DataSourceList: Component should render correctly 1`] = `
         id="dataSourceContainer"
         key="5"
       >
-        <Styled(H1)
+        <Styled(Link)
           id="dataSourceTitle"
-          onClick={[Function]}
+          to="/datasource/17/result"
         >
           name
-        </Styled(H1)>
+        </Styled(Link)>
       </Styled(Component)>
       <Styled(Component)
         footerComponent={
@@ -798,12 +797,12 @@ exports[`DataSourceList: Component should render correctly 1`] = `
         id="dataSourceContainer"
         key="6"
       >
-        <Styled(H1)
+        <Styled(Link)
           id="dataSourceTitle"
-          onClick={[Function]}
+          to="/datasource/17/result"
         >
           name
-        </Styled(H1)>
+        </Styled(Link)>
       </Styled(Component)>
       <Styled(Component)
         footerComponent={
@@ -895,12 +894,12 @@ exports[`DataSourceList: Component should render correctly 1`] = `
         id="dataSourceContainer"
         key="7"
       >
-        <Styled(H1)
+        <Styled(Link)
           id="dataSourceTitle"
-          onClick={[Function]}
+          to="/datasource/18/result"
         >
           name
-        </Styled(H1)>
+        </Styled(Link)>
       </Styled(Component)>
       <Styled(Component)
         footerComponent={
@@ -997,12 +996,12 @@ exports[`DataSourceList: Component should render correctly 1`] = `
         id="dataSourceContainer"
         key="8"
       >
-        <Styled(H1)
+        <Styled(Link)
           id="dataSourceTitle"
-          onClick={[Function]}
+          to="/datasource/20/result"
         >
           name
-        </Styled(H1)>
+        </Styled(Link)>
       </Styled(Component)>
       <Styled(Component)
         footerComponent={
@@ -1094,30 +1093,30 @@ exports[`DataSourceList: Component should render correctly 1`] = `
         id="dataSourceContainer"
         key="9"
       >
-        <Styled(H1)
+        <Styled(Link)
           id="dataSourceTitle"
-          onClick={[Function]}
+          to="/datasource/19/result"
         >
           name
-        </Styled(H1)>
+        </Styled(Link)>
       </Styled(Component)>
     </styled.section>
   </LoadingWrapper>
   <NavigationContainer
     contentStyles={null}
     fixed={true}
-    hideOnDesktop={true}
+    hideOnDesktop={false}
     right={false}
   >
-    <BackArrowButton
+    <BackLink
       id="backBtn"
-      onClick={[Function]}
+      to="/project/1"
     />
-    <PlusButton
-      customStyles={Object {}}
-      hideOnDesktop={false}
+    <PlusLink
+      hideOnDesktop={true}
       id="createDataSourceBtn"
-      onClick={[Function]}
+      size={60}
+      to="/project/1/datasource/add"
     />
   </NavigationContainer>
 </styled.div>
@@ -1235,11 +1234,10 @@ exports[`DataSourceList: Component should render empty 1`] = `
     subtitle="Overview"
     title="Data Sources"
   >
-    <PlusButton
-      customStyles={Object {}}
-      hideOnDesktop={false}
+    <PlusLink
       id="createDataSourceDesktopBtn"
-      onClick={[Function]}
+      size={60}
+      to="/project/1/datasource/add"
     />
   </ContextHeader>
   <LoadingWrapper
@@ -1253,18 +1251,18 @@ exports[`DataSourceList: Component should render empty 1`] = `
   <NavigationContainer
     contentStyles={null}
     fixed={true}
-    hideOnDesktop={true}
+    hideOnDesktop={false}
     right={false}
   >
-    <BackArrowButton
+    <BackLink
       id="backBtn"
-      onClick={[Function]}
+      to="/project/1"
     />
-    <PlusButton
-      customStyles={Object {}}
-      hideOnDesktop={false}
+    <PlusLink
+      hideOnDesktop={true}
       id="createDataSourceBtn"
-      onClick={[Function]}
+      size={60}
+      to="/project/1/datasource/add"
     />
   </NavigationContainer>
 </styled.div>

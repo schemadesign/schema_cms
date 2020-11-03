@@ -8,10 +8,10 @@ exports[`DataSourceNavigation: Component should render correctly 1`] = `
     <styled.div
       key="0"
     >
-      <styled.div
-        active={true}
+      <Styled(Link)
+        $active={true}
         disabled={false}
-        onClick={[Function]}
+        to="/datasource/1/source"
       >
         <Component
           customStyles={
@@ -22,7 +22,7 @@ exports[`DataSourceNavigation: Component should render correctly 1`] = `
           }
           id="sourceBtn"
         />
-      </styled.div>
+      </Styled(Link)>
       <styled.div>
         <FormattedMessage
           defaultMessage="Source"
@@ -33,10 +33,10 @@ exports[`DataSourceNavigation: Component should render correctly 1`] = `
     <styled.div
       key="1"
     >
-      <styled.div
-        active={false}
+      <Styled(Link)
+        $active={false}
         disabled={true}
-        onClick={[Function]}
+        to="/datasource/1/preview"
       >
         <Component
           customStyles={
@@ -47,7 +47,7 @@ exports[`DataSourceNavigation: Component should render correctly 1`] = `
           }
           id="fieldsBtn"
         />
-      </styled.div>
+      </Styled(Link)>
       <styled.div>
         <FormattedMessage
           defaultMessage="Fields"
@@ -58,10 +58,10 @@ exports[`DataSourceNavigation: Component should render correctly 1`] = `
     <styled.div
       key="2"
     >
-      <styled.div
-        active={false}
+      <Styled(Link)
+        $active={false}
         disabled={true}
-        onClick={[Function]}
+        to="/datasource/1/steps"
       >
         <Component
           customStyles={
@@ -73,7 +73,7 @@ exports[`DataSourceNavigation: Component should render correctly 1`] = `
           }
           id="stepsBtn"
         />
-      </styled.div>
+      </Styled(Link)>
       <styled.div>
         <FormattedMessage
           defaultMessage="Steps"
@@ -84,10 +84,10 @@ exports[`DataSourceNavigation: Component should render correctly 1`] = `
     <styled.div
       key="3"
     >
-      <styled.div
-        active={false}
+      <Styled(Link)
+        $active={false}
         disabled={true}
-        onClick={[Function]}
+        to="/datasource/1/result"
       >
         <Component
           customStyles={
@@ -99,7 +99,7 @@ exports[`DataSourceNavigation: Component should render correctly 1`] = `
           }
           id="resultsBtn"
         />
-      </styled.div>
+      </Styled(Link)>
       <styled.div>
         <FormattedMessage
           defaultMessage="Results"
@@ -110,10 +110,10 @@ exports[`DataSourceNavigation: Component should render correctly 1`] = `
     <styled.div
       key="4"
     >
-      <styled.div
-        active={false}
+      <Styled(Link)
+        $active={false}
         disabled={true}
-        onClick={[Function]}
+        to="/datasource/1/filters"
       >
         <Component
           customStyles={
@@ -124,7 +124,7 @@ exports[`DataSourceNavigation: Component should render correctly 1`] = `
           }
           id="filtersBtn"
         />
-      </styled.div>
+      </Styled(Link)>
       <styled.div>
         <FormattedMessage
           defaultMessage="Filters"
@@ -135,10 +135,10 @@ exports[`DataSourceNavigation: Component should render correctly 1`] = `
     <styled.div
       key="5"
     >
-      <styled.div
-        active={false}
+      <Styled(Link)
+        $active={false}
         disabled={true}
-        onClick={[Function]}
+        to="/datasource/1/tag"
       >
         <Component
           customStyles={
@@ -149,7 +149,7 @@ exports[`DataSourceNavigation: Component should render correctly 1`] = `
           }
           id="tagsBtn"
         />
-      </styled.div>
+      </Styled(Link)>
       <styled.div>
         <FormattedMessage
           defaultMessage="Tags"
@@ -160,10 +160,10 @@ exports[`DataSourceNavigation: Component should render correctly 1`] = `
     <styled.div
       key="6"
     >
-      <styled.div
-        active={false}
+      <Styled(Link)
+        $active={false}
         disabled={true}
-        onClick={[Function]}
+        to="/datasource/1/state"
       >
         <Component
           customStyles={
@@ -174,7 +174,7 @@ exports[`DataSourceNavigation: Component should render correctly 1`] = `
           }
           id="statesBtn"
         />
-      </styled.div>
+      </Styled(Link)>
       <styled.div>
         <FormattedMessage
           defaultMessage="States"
@@ -185,10 +185,10 @@ exports[`DataSourceNavigation: Component should render correctly 1`] = `
     <styled.div
       key="7"
     >
-      <styled.div
-        active={false}
+      <Styled(Link)
+        $active={false}
         disabled={true}
-        onClick={[Function]}
+        to="/datasource/1/metadata"
       >
         <Component
           customStyles={
@@ -199,7 +199,7 @@ exports[`DataSourceNavigation: Component should render correctly 1`] = `
           }
           id="metaDataBtn"
         />
-      </styled.div>
+      </Styled(Link)>
       <styled.div>
         <FormattedMessage
           defaultMessage="Metadata"
@@ -219,10 +219,10 @@ exports[`DataSourceNavigation: Component should render correctly with fake job 1
     <styled.div
       key="0"
     >
-      <styled.div
-        active={true}
+      <Styled(Link)
+        $active={true}
         disabled={false}
-        onClick={[Function]}
+        to="/datasource/1/source"
       >
         <Component
           customStyles={
@@ -233,7 +233,7 @@ exports[`DataSourceNavigation: Component should render correctly with fake job 1
           }
           id="sourceBtn"
         />
-      </styled.div>
+      </Styled(Link)>
       <styled.div>
         <FormattedMessage
           defaultMessage="Source"
@@ -244,10 +244,10 @@ exports[`DataSourceNavigation: Component should render correctly with fake job 1
     <styled.div
       key="1"
     >
-      <styled.div
-        active={false}
+      <Styled(Link)
+        $active={false}
         disabled={false}
-        onClick={[Function]}
+        to="/datasource/1/preview"
       >
         <Component
           customStyles={
@@ -258,7 +258,7 @@ exports[`DataSourceNavigation: Component should render correctly with fake job 1
           }
           id="fieldsBtn"
         />
-      </styled.div>
+      </Styled(Link)>
       <styled.div>
         <FormattedMessage
           defaultMessage="Fields"
@@ -269,10 +269,10 @@ exports[`DataSourceNavigation: Component should render correctly with fake job 1
     <styled.div
       key="2"
     >
-      <styled.div
-        active={false}
+      <Styled(Link)
+        $active={false}
         disabled={false}
-        onClick={[Function]}
+        to="/datasource/1/steps"
       >
         <Component
           customStyles={
@@ -284,7 +284,7 @@ exports[`DataSourceNavigation: Component should render correctly with fake job 1
           }
           id="stepsBtn"
         />
-      </styled.div>
+      </Styled(Link)>
       <styled.div>
         <FormattedMessage
           defaultMessage="Steps"
@@ -295,10 +295,10 @@ exports[`DataSourceNavigation: Component should render correctly with fake job 1
     <styled.div
       key="3"
     >
-      <styled.div
-        active={false}
+      <Styled(Link)
+        $active={false}
         disabled={true}
-        onClick={[Function]}
+        to="/datasource/1/result"
       >
         <Component
           customStyles={
@@ -310,7 +310,7 @@ exports[`DataSourceNavigation: Component should render correctly with fake job 1
           }
           id="resultsBtn"
         />
-      </styled.div>
+      </Styled(Link)>
       <styled.div>
         <FormattedMessage
           defaultMessage="Results"
@@ -321,10 +321,10 @@ exports[`DataSourceNavigation: Component should render correctly with fake job 1
     <styled.div
       key="4"
     >
-      <styled.div
-        active={false}
+      <Styled(Link)
+        $active={false}
         disabled={false}
-        onClick={[Function]}
+        to="/datasource/1/filters"
       >
         <Component
           customStyles={
@@ -335,7 +335,7 @@ exports[`DataSourceNavigation: Component should render correctly with fake job 1
           }
           id="filtersBtn"
         />
-      </styled.div>
+      </Styled(Link)>
       <styled.div>
         <FormattedMessage
           defaultMessage="Filters"
@@ -346,10 +346,10 @@ exports[`DataSourceNavigation: Component should render correctly with fake job 1
     <styled.div
       key="5"
     >
-      <styled.div
-        active={false}
+      <Styled(Link)
+        $active={false}
         disabled={false}
-        onClick={[Function]}
+        to="/datasource/1/tag"
       >
         <Component
           customStyles={
@@ -360,7 +360,7 @@ exports[`DataSourceNavigation: Component should render correctly with fake job 1
           }
           id="tagsBtn"
         />
-      </styled.div>
+      </Styled(Link)>
       <styled.div>
         <FormattedMessage
           defaultMessage="Tags"
@@ -371,10 +371,10 @@ exports[`DataSourceNavigation: Component should render correctly with fake job 1
     <styled.div
       key="6"
     >
-      <styled.div
-        active={false}
+      <Styled(Link)
+        $active={false}
         disabled={false}
-        onClick={[Function]}
+        to="/datasource/1/state"
       >
         <Component
           customStyles={
@@ -385,7 +385,7 @@ exports[`DataSourceNavigation: Component should render correctly with fake job 1
           }
           id="statesBtn"
         />
-      </styled.div>
+      </Styled(Link)>
       <styled.div>
         <FormattedMessage
           defaultMessage="States"
@@ -396,10 +396,10 @@ exports[`DataSourceNavigation: Component should render correctly with fake job 1
     <styled.div
       key="7"
     >
-      <styled.div
-        active={false}
+      <Styled(Link)
+        $active={false}
         disabled={false}
-        onClick={[Function]}
+        to="/datasource/1/metadata"
       >
         <Component
           customStyles={
@@ -410,7 +410,7 @@ exports[`DataSourceNavigation: Component should render correctly with fake job 1
           }
           id="metaDataBtn"
         />
-      </styled.div>
+      </Styled(Link)>
       <styled.div>
         <FormattedMessage
           defaultMessage="Metadata"
@@ -430,10 +430,10 @@ exports[`DataSourceNavigation: Component should render correctly with job 1`] = 
     <styled.div
       key="0"
     >
-      <styled.div
-        active={true}
+      <Styled(Link)
+        $active={true}
         disabled={false}
-        onClick={[Function]}
+        to="/datasource/1/source"
       >
         <Component
           customStyles={
@@ -444,7 +444,7 @@ exports[`DataSourceNavigation: Component should render correctly with job 1`] = 
           }
           id="sourceBtn"
         />
-      </styled.div>
+      </Styled(Link)>
       <styled.div>
         <FormattedMessage
           defaultMessage="Source"
@@ -455,10 +455,10 @@ exports[`DataSourceNavigation: Component should render correctly with job 1`] = 
     <styled.div
       key="1"
     >
-      <styled.div
-        active={false}
+      <Styled(Link)
+        $active={false}
         disabled={false}
-        onClick={[Function]}
+        to="/datasource/1/preview"
       >
         <Component
           customStyles={
@@ -469,7 +469,7 @@ exports[`DataSourceNavigation: Component should render correctly with job 1`] = 
           }
           id="fieldsBtn"
         />
-      </styled.div>
+      </Styled(Link)>
       <styled.div>
         <FormattedMessage
           defaultMessage="Fields"
@@ -480,10 +480,10 @@ exports[`DataSourceNavigation: Component should render correctly with job 1`] = 
     <styled.div
       key="2"
     >
-      <styled.div
-        active={false}
+      <Styled(Link)
+        $active={false}
         disabled={false}
-        onClick={[Function]}
+        to="/datasource/1/steps"
       >
         <Component
           customStyles={
@@ -495,7 +495,7 @@ exports[`DataSourceNavigation: Component should render correctly with job 1`] = 
           }
           id="stepsBtn"
         />
-      </styled.div>
+      </Styled(Link)>
       <styled.div>
         <FormattedMessage
           defaultMessage="Steps"
@@ -506,10 +506,10 @@ exports[`DataSourceNavigation: Component should render correctly with job 1`] = 
     <styled.div
       key="3"
     >
-      <styled.div
-        active={false}
+      <Styled(Link)
+        $active={false}
         disabled={false}
-        onClick={[Function]}
+        to="/datasource/1/result"
       >
         <Component
           customStyles={
@@ -521,7 +521,7 @@ exports[`DataSourceNavigation: Component should render correctly with job 1`] = 
           }
           id="resultsBtn"
         />
-      </styled.div>
+      </Styled(Link)>
       <styled.div>
         <FormattedMessage
           defaultMessage="Results"
@@ -532,10 +532,10 @@ exports[`DataSourceNavigation: Component should render correctly with job 1`] = 
     <styled.div
       key="4"
     >
-      <styled.div
-        active={false}
+      <Styled(Link)
+        $active={false}
         disabled={false}
-        onClick={[Function]}
+        to="/datasource/1/filters"
       >
         <Component
           customStyles={
@@ -546,7 +546,7 @@ exports[`DataSourceNavigation: Component should render correctly with job 1`] = 
           }
           id="filtersBtn"
         />
-      </styled.div>
+      </Styled(Link)>
       <styled.div>
         <FormattedMessage
           defaultMessage="Filters"
@@ -557,10 +557,10 @@ exports[`DataSourceNavigation: Component should render correctly with job 1`] = 
     <styled.div
       key="5"
     >
-      <styled.div
-        active={false}
+      <Styled(Link)
+        $active={false}
         disabled={false}
-        onClick={[Function]}
+        to="/datasource/1/tag"
       >
         <Component
           customStyles={
@@ -571,7 +571,7 @@ exports[`DataSourceNavigation: Component should render correctly with job 1`] = 
           }
           id="tagsBtn"
         />
-      </styled.div>
+      </Styled(Link)>
       <styled.div>
         <FormattedMessage
           defaultMessage="Tags"
@@ -582,10 +582,10 @@ exports[`DataSourceNavigation: Component should render correctly with job 1`] = 
     <styled.div
       key="6"
     >
-      <styled.div
-        active={false}
+      <Styled(Link)
+        $active={false}
         disabled={false}
-        onClick={[Function]}
+        to="/datasource/1/state"
       >
         <Component
           customStyles={
@@ -596,7 +596,7 @@ exports[`DataSourceNavigation: Component should render correctly with job 1`] = 
           }
           id="statesBtn"
         />
-      </styled.div>
+      </Styled(Link)>
       <styled.div>
         <FormattedMessage
           defaultMessage="States"
@@ -607,10 +607,10 @@ exports[`DataSourceNavigation: Component should render correctly with job 1`] = 
     <styled.div
       key="7"
     >
-      <styled.div
-        active={false}
+      <Styled(Link)
+        $active={false}
         disabled={false}
-        onClick={[Function]}
+        to="/datasource/1/metadata"
       >
         <Component
           customStyles={
@@ -621,7 +621,7 @@ exports[`DataSourceNavigation: Component should render correctly with job 1`] = 
           }
           id="metaDataBtn"
         />
-      </styled.div>
+      </Styled(Link)>
       <styled.div>
         <FormattedMessage
           defaultMessage="Metadata"

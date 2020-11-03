@@ -25,7 +25,7 @@ import { STEPS_PAGE } from '../../../modules/dataSource/dataSource.constants';
 import { DATA_WRANGLING_FORM_NAME } from '../../../modules/dataWranglingScripts/dataWranglingScripts.constants';
 import { Container, Form } from './imageScrapingScript.styles';
 import messages from './imageScrapingScript.messages';
-import { BackButton, NavigationContainer, NextButton } from '../../../shared/components/navigation';
+import { BackLink, NavigationContainer, NextButton } from '../../../shared/components/navigation';
 import { ContextHeader } from '../../../shared/components/contextHeader';
 import { LoadingWrapper } from '../../../shared/components/loadingWrapper';
 import { getMatchParam } from '../../../shared/utils/helpers';
@@ -97,6 +97,12 @@ export class ImageScrapingScript extends PureComponent {
     };
   };
 
+  getDataWranglingListPath = () => {
+    const dataSourceId = getMatchParam(this.props, 'dataSourceId');
+
+    return { pathname: `/datasource/${dataSourceId}/${STEPS_PAGE}`, state: { fromScript: true } };
+  };
+
   handleChange = ({ target: { value, checked } }) => {
     const values = this.state.selectedFields;
     const selectedFields = ifElse(equals(true), always(append(value, values)), always(reject(equals(value), values)))(
@@ -106,12 +112,6 @@ export class ImageScrapingScript extends PureComponent {
     return this.setState({
       selectedFields,
     });
-  };
-
-  handleGoToDataWranglingList = (match, history) => () => {
-    const dataSourceId = getMatchParam(this.props, 'dataSourceId');
-
-    return history.push(`/datasource/${dataSourceId}/${STEPS_PAGE}`, { fromScript: true });
   };
 
   handleSaveClick = () => {
@@ -154,7 +154,7 @@ export class ImageScrapingScript extends PureComponent {
 
   render() {
     const headerConfig = this.getHeaderAndMenuConfig();
-    const { intl, dataWranglingScript, match, history, isAdmin, fieldsWithUrls, imageScrapingFields } = this.props;
+    const { intl, dataWranglingScript, isAdmin, fieldsWithUrls, imageScrapingFields } = this.props;
     const { loading, error, selectedFields } = this.state;
     const syntaxTheme = isAdmin ? darcula : defaultStyle;
     const isCleanForm = isEmpty([
@@ -191,7 +191,7 @@ export class ImageScrapingScript extends PureComponent {
           </LoadingWrapper>
         </Form>
         <NavigationContainer fixed>
-          <BackButton id="imageScrapingBackBtn" onClick={this.handleGoToDataWranglingList(match, history)} />
+          <BackLink id="imageScrapingBackBtn" to={this.getDataWranglingListPath()} />
           <NextButton id="imageScrapingNextBtn" onClick={this.handleSaveClick} disabled={isCleanForm || loading}>
             <FormattedMessage {...messages.save} />
           </NextButton>

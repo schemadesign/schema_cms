@@ -2,7 +2,7 @@ import React, { Fragment, useState } from 'react';
 import { useEffectOnce } from 'react-use';
 import PropTypes from 'prop-types';
 import { FormattedMessage, useIntl } from 'react-intl';
-import { useHistory, useParams } from 'react-router';
+import { useParams } from 'react-router';
 import Helmet from 'react-helmet';
 
 import { Container } from './blockTemplates.styles';
@@ -12,7 +12,7 @@ import { filterMenuOptions } from '../../../shared/utils/helpers';
 import { MobileMenu } from '../../../shared/components/menu/mobileMenu';
 import { getProjectMenuOptions } from '../project.constants';
 import { ContextHeader } from '../../../shared/components/contextHeader';
-import { BackArrowButton, NavigationContainer, PlusButton } from '../../../shared/components/navigation';
+import { BackLink, NavigationContainer, PlusLink, LARGE_BUTTON_SIZE } from '../../../shared/components/navigation';
 import { ListContainer, ListItem, ListItemTitle } from '../../../shared/components/listComponents';
 import { CardHeader } from '../../../shared/components/cardHeader';
 import extendedDayjs, { BASE_DATE_FORMAT } from '../../../shared/utils/extendedDayjs';
@@ -48,7 +48,6 @@ const getBreadcrumbsItems = project => [
 ];
 
 const BlockTemplate = ({ copyBlockTemplate, created, createdBy, name, id, elements, projectId }) => {
-  const history = useHistory();
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState(false);
   const whenCreated = extendedDayjs(created, BASE_DATE_FORMAT).fromNow();
@@ -67,8 +66,6 @@ const BlockTemplate = ({ copyBlockTemplate, created, createdBy, name, id, elemen
     }
   };
 
-  const handlePageClick = () => history.push(`/block-template/${id}`);
-
   const header = (
     <CardHeader
       list={list}
@@ -86,7 +83,7 @@ const BlockTemplate = ({ copyBlockTemplate, created, createdBy, name, id, elemen
 
   return (
     <ListItem headerComponent={header} footerComponent={footer}>
-      <ListItemTitle id={`blockTemplateTitle-${id}`} onClick={handlePageClick}>
+      <ListItemTitle id={`blockTemplateTitle-${id}`} to={`/block-template/${id}`}>
         {name}
       </ListItemTitle>
     </ListItem>
@@ -107,7 +104,6 @@ export const BlockTemplates = ({ fetchBlockTemplates, copyBlockTemplate, blockTe
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
   const intl = useIntl();
-  const history = useHistory();
   const { projectId } = useParams();
   const menuOptions = getProjectMenuOptions(projectId);
   const title = <FormattedMessage {...messages.title} />;
@@ -126,8 +122,7 @@ export const BlockTemplates = ({ fetchBlockTemplates, copyBlockTemplate, blockTe
     })();
   });
 
-  const handleBackClick = () => history.push(`/project/${projectId}/templates`);
-  const handleCreateClick = () => () => history.push(`/project/${projectId}/block-templates/create`);
+  const createUrl = `/project/${projectId}/block-templates/create`;
 
   return (
     <Container>
@@ -135,7 +130,7 @@ export const BlockTemplates = ({ fetchBlockTemplates, copyBlockTemplate, blockTe
       <MobileMenu headerTitle={title} headerSubtitle={subtitle} options={filterMenuOptions(menuOptions, userRole)} />
       <ProjectBreadcrumbs items={getBreadcrumbsItems(project)} />
       <ContextHeader title={title} subtitle={subtitle}>
-        <PlusButton id="createBlockTemplate" onClick={handleCreateClick()} />
+        <PlusLink id="createBlockTemplate" to={createUrl} size={LARGE_BUTTON_SIZE} />
       </ContextHeader>
       <LoadingWrapper loading={loading} error={error} noDataContent={noData} noData={!blockTemplates.length}>
         {() => (
@@ -150,8 +145,8 @@ export const BlockTemplates = ({ fetchBlockTemplates, copyBlockTemplate, blockTe
         )}
       </LoadingWrapper>
       <NavigationContainer fixed>
-        <BackArrowButton id="backBtn" onClick={handleBackClick} />
-        <PlusButton hideOnDesktop id="createBlockTemplateMobile" onClick={handleCreateClick} />
+        <BackLink id="backBtn" to={`/project/${projectId}/templates`} />
+        <PlusLink hideOnDesktop id="createBlockTemplateMobile" to={createUrl} size={LARGE_BUTTON_SIZE} />
       </NavigationContainer>
     </Container>
   );

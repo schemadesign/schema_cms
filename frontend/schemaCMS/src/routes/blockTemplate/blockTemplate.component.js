@@ -21,7 +21,7 @@ import {
   INITIAL_VALUES,
 } from '../../modules/blockTemplates/blockTemplates.constants';
 import { BlockTemplateForm } from '../../shared/components/blockTemplateForm';
-import { BackButton, NavigationContainer, NextButton } from '../../shared/components/navigation';
+import { BackButton, NavigationContainer, NextButton, BackLink } from '../../shared/components/navigation';
 import { getProjectMenuOptions } from '../project/project.constants';
 import { LoadingWrapper } from '../../shared/components/loadingWrapper';
 import reportError from '../../shared/utils/reportError';
@@ -89,8 +89,6 @@ export const BlockTemplate = memo(
         setRemoveLoading(false);
       }
     };
-
-    const handleBackClick = () => history.push(`/project/${project.id}/block-templates`);
 
     const menuOptions = getProjectMenuOptions(project.id);
     const { handleSubmit, isValid, dirty, ...restFormikProps } = useFormik({
@@ -163,9 +161,7 @@ export const BlockTemplate = memo(
               {...restFormikProps}
             />
             <NavigationContainer fixed>
-              <BackButton id="cancelBtn" type="button" onClick={handleBackClick}>
-                <FormattedMessage {...messages.cancel} />
-              </BackButton>
+              <BackLink id="cancelBtn" to={`/project/${project.id}/block-templates`} />
               <NextButton
                 id="createTemplateBlockMobile"
                 type="submit"

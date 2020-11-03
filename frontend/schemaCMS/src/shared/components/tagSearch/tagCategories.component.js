@@ -6,7 +6,7 @@ import { always, ifElse, isNil, concat, flip } from 'ramda';
 
 import { Title, Category } from './tagSearch.styles';
 import messages from './tagSearch.messages';
-import { MultiSelect } from '../form/multiSelect/multiSelect.component';
+import { MultiSelect } from '../form/multiSelect';
 
 export const TagCategories = ({ name, isSingleSelect = false, selectedTags, tags, setFieldValue, id, valuePath }) => {
   const getValuePath = id => ifElse(isNil, always(`${id}`), flip(concat)(`.${id}`))(valuePath);

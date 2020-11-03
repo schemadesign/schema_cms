@@ -1,25 +1,116 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`UserCreateProject: Component should call fetchUser and fetchProject on componentDidMount 1`] = `
-<LoadingWrapper
-  error={null}
-  loading={true}
-  noData={false}
-  noDataContent={null}
->
-  <Component />
-</LoadingWrapper>
-`;
-
 exports[`UserCreateProject: Component should render correctly 1`] = `
-<LoadingWrapper
-  error={null}
-  loading={false}
-  noData={false}
-  noDataContent={null}
+<Formik
+  displayName="user_create_project_form"
+  enableReinitialize={false}
+  initialValues={
+    Object {
+      "firstName": "Ann",
+      "id": "1",
+      "lastName": "Lorem",
+      "role": "Editor",
+    }
+  }
+  isInitialValid={true}
+  onSubmit={[Function]}
+  validationSchema={
+    ObjectSchema {
+      "_blacklist": RefSet {
+        "list": Set {},
+        "refs": Map {},
+      },
+      "_conditions": Array [],
+      "_defaultDefault": [Function],
+      "_deps": Array [],
+      "_excludedEdges": Array [],
+      "_exclusive": Object {},
+      "_mutate": undefined,
+      "_nodes": Array [
+        "email",
+        "role",
+      ],
+      "_options": Object {
+        "abortEarly": true,
+        "recursive": true,
+      },
+      "_type": "object",
+      "_typeError": [Function],
+      "_whitelist": RefSet {
+        "list": Set {},
+        "refs": Map {},
+      },
+      "fields": Object {
+        "email": StringSchema {
+          "_blacklist": RefSet {
+            "list": Set {},
+            "refs": Map {},
+          },
+          "_conditions": Array [],
+          "_deps": Array [],
+          "_exclusive": Object {
+            "required": true,
+            "undefined": false,
+          },
+          "_mutate": undefined,
+          "_options": Object {
+            "abortEarly": true,
+            "recursive": true,
+          },
+          "_type": "string",
+          "_typeError": [Function],
+          "_whitelist": RefSet {
+            "list": Set {},
+            "refs": Map {},
+          },
+          "tests": Array [
+            [Function],
+            [Function],
+          ],
+          "transforms": Array [
+            [Function],
+          ],
+        },
+        "role": StringSchema {
+          "_blacklist": RefSet {
+            "list": Set {},
+            "refs": Map {},
+          },
+          "_conditions": Array [],
+          "_default": "",
+          "_deps": Array [],
+          "_exclusive": Object {
+            "required": true,
+          },
+          "_mutate": undefined,
+          "_options": Object {
+            "abortEarly": true,
+            "recursive": true,
+          },
+          "_type": "string",
+          "_typeError": [Function],
+          "_whitelist": RefSet {
+            "list": Set {},
+            "refs": Map {},
+          },
+          "tests": Array [
+            [Function],
+          ],
+          "transforms": Array [
+            [Function],
+            [Function],
+          ],
+        },
+      },
+      "tests": Array [],
+      "transforms": Array [
+        [Function],
+      ],
+    }
+  }
 >
   <Component />
-</LoadingWrapper>
+</Formik>
 `;
 
 exports[`UserCreateProject: Component should render correctly with loader 1`] = `

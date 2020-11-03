@@ -61,15 +61,14 @@ exports[`JobDetail: Component should render correctly 1`] = `
     hideOnDesktop={false}
     right={false}
   >
-    <BackButton
-      disabled={false}
-      onClick={[Function]}
+    <BackLink
+      to="/datasource/undefined/job"
     >
       <FormattedMessage
         defaultMessage="Back"
         id="jobDetail.back"
       />
-    </BackButton>
+    </BackLink>
     <NextButton
       disabled={false}
       loading={false}
@@ -145,15 +144,14 @@ exports[`JobDetail: Component should render correctly with failure job 1`] = `
     hideOnDesktop={false}
     right={false}
   >
-    <BackButton
-      disabled={false}
-      onClick={[Function]}
+    <BackLink
+      to="/datasource/undefined/job"
     >
       <FormattedMessage
         defaultMessage="Back"
         id="jobDetail.back"
       />
-    </BackButton>
+    </BackLink>
     <NextButton
       disabled={false}
       loading={false}
@@ -229,15 +227,14 @@ exports[`JobDetail: Component should render correctly with fake job 1`] = `
     hideOnDesktop={false}
     right={false}
   >
-    <BackButton
-      disabled={false}
-      onClick={[Function]}
+    <BackLink
+      to="/datasource/undefined/job"
     >
       <FormattedMessage
         defaultMessage="Back"
         id="jobDetail.back"
       />
-    </BackButton>
+    </BackLink>
     <NextButton
       disabled={false}
       loading={false}
@@ -313,15 +310,14 @@ exports[`JobDetail: Component should render correctly with loader 1`] = `
     hideOnDesktop={false}
     right={false}
   >
-    <BackButton
-      disabled={false}
-      onClick={[Function]}
+    <BackLink
+      to="/datasource/undefined/job"
     >
       <FormattedMessage
         defaultMessage="Back"
         id="jobDetail.back"
       />
-    </BackButton>
+    </BackLink>
     <NextButton
       disabled={false}
       loading={false}

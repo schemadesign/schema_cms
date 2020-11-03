@@ -133,9 +133,15 @@ exports[`DataWranglingDefaultScript: Component should render correctly 1`] = `
     hideOnDesktop={false}
     right={false}
   >
-    <BackButton
-      disabled={false}
-      onClick={[Function]}
+    <BackLink
+      to={
+        Object {
+          "pathname": "/datasource/dataSourceId/steps",
+          "state": Object {
+            "fromScript": true,
+          },
+        }
+      }
     />
   </NavigationContainer>
 </styled.div>
@@ -274,9 +280,15 @@ exports[`DataWranglingDefaultScript: Component should render correctly with load
     hideOnDesktop={false}
     right={false}
   >
-    <BackButton
-      disabled={false}
-      onClick={[Function]}
+    <BackLink
+      to={
+        Object {
+          "pathname": "/datasource/dataSourceId/steps",
+          "state": Object {
+            "fromScript": true,
+          },
+        }
+      }
     />
   </NavigationContainer>
 </styled.div>

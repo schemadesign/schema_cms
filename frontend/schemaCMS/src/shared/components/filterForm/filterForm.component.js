@@ -18,7 +18,7 @@ import {
 } from '../../../modules/filter/filter.constants';
 import { Select } from '../form/select';
 import { Form, Row } from './filterForm.styles';
-import { BackButton, NavigationContainer, NextButton } from '../navigation';
+import { BackButton, BackLink, NavigationContainer, NextButton } from '../navigation';
 import { ModalActions, modalStyles, ModalTitle, Modal } from '../modal/modal.styles';
 import { FILTERS_PAGE } from '../../../modules/dataSource/dataSource.constants';
 import { Link, LinkContainer } from '../../../theme/typography';
@@ -81,8 +81,6 @@ export class FilterForm extends PureComponent {
   handleRemoveFilter = () => this.setState({ confirmationModalOpen: true });
 
   handleCancelRemove = () => this.setState({ confirmationModalOpen: false });
-
-  handleBack = () => this.props.history.push(`/datasource/${this.props.dataSourceId}/${FILTERS_PAGE}`);
 
   handleConfirmRemove = async () => {
     try {
@@ -192,9 +190,9 @@ export class FilterForm extends PureComponent {
                 </Row>
                 {this.renderRemoveFilterLink(!!this.props.filter.id)}
                 <NavigationContainer fixed>
-                  <BackButton onClick={this.handleBack} type="button">
+                  <BackLink to={`/datasource/${this.props.dataSourceId}/${FILTERS_PAGE}`}>
                     <FormattedMessage {...messages[this.getBackMessageId(!this.props.filter.id)]} />
-                  </BackButton>
+                  </BackLink>
                   <NextButton loading={isSubmitting} disabled={!dirty || !isValid || isSubmitting} type="submit">
                     <FormattedMessage {...messages.saveFilter} />
                   </NextButton>

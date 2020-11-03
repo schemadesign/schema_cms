@@ -5,6 +5,8 @@
 
 
 ### Changes
+- make elements with on click handler to normal link with href
+
 
 ### Features
 

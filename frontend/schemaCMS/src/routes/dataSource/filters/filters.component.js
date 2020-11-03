@@ -10,7 +10,7 @@ import { Link } from './filters.styles';
 import messages from './filters.messages';
 import { LoadingWrapper } from '../../../shared/components/loadingWrapper';
 import { ContextHeader } from '../../../shared/components/contextHeader';
-import { NavigationContainer, NextButton, PlusButton } from '../../../shared/components/navigation';
+import { NavigationContainer, NextButton, PlusLink } from '../../../shared/components/navigation';
 import { DataSourceNavigation } from '../../../shared/components/dataSourceNavigation';
 import { errorMessageParser, filterMenuOptions, getMatchParam } from '../../../shared/utils/helpers';
 import { renderWhenTrue } from '../../../shared/utils/rendering';
@@ -18,7 +18,7 @@ import reportError from '../../../shared/utils/reportError';
 import { MobileMenu } from '../../../shared/components/menu/mobileMenu';
 import { getProjectMenuOptions } from '../../project/project.constants';
 import { CounterHeader } from '../../../shared/components/counterHeader';
-import { mobilePlusStyles, PlusContainer } from '../../../shared/components/form/frequentComponents.styles';
+import { PlusContainer } from '../../../shared/components/form/frequentComponents.styles';
 
 const { CheckboxGroup, Checkbox } = Form;
 
@@ -58,6 +58,11 @@ export class Filters extends PureComponent {
     }
   }
 
+  getCreateFilterUrl = () => {
+    const dataSourceId = getMatchParam(this.props, 'dataSourceId');
+    return `/datasource/${dataSourceId}/filters/add`;
+  };
+
   handleChange = ({ e, setValues, values }) => {
     const { value, checked } = e.target;
     const setFilters = ifElse(equals(true), always(append(value, values)), always(reject(equals(value), values)));
@@ -82,11 +87,6 @@ export class Filters extends PureComponent {
     } finally {
       setSubmitting(false);
     }
-  };
-
-  handleCreateFilter = () => {
-    const dataSourceId = getMatchParam(this.props, 'dataSourceId');
-    this.props.history.push(`/datasource/${dataSourceId}/filters/add`);
   };
 
   renderCheckboxes = ({ id, name }, index) => (
@@ -121,7 +121,7 @@ export class Filters extends PureComponent {
           copy={filterCopy}
           right={
             <PlusContainer>
-              <PlusButton customStyles={mobilePlusStyles} onClick={this.handleCreateFilter} type="button" />
+              <PlusLink to={this.getCreateFilterUrl()} />
             </PlusContainer>
           }
         />

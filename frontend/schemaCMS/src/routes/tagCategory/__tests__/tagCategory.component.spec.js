@@ -59,22 +59,9 @@ describe('TagCategory: Component', () => {
 
     wrapper
       .find(BackButton)
-      .at(1)
-      .simulate('click');
-
-    expect(wrapper.state().confirmationModalOpen).toBeFalsy();
-  });
-
-  it('should go back', () => {
-    jest.spyOn(defaultProps.history, 'push');
-
-    const wrapper = render();
-
-    wrapper
-      .find(BackButton)
       .at(0)
       .simulate('click');
 
-    expect(defaultProps.history.push).toHaveBeenCalledWith('/project/1/tag-templates');
+    expect(wrapper.state().confirmationModalOpen).toBeFalsy();
   });
 });

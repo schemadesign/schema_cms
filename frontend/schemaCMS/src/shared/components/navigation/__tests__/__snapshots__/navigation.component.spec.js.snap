@@ -1,19 +1,5 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Navigation: Component should render BackArrowButton 1`] = `
-<Component
-  customStyles={
-    Object {
-      "height": "60px",
-      "width": "60px",
-    }
-  }
-  onClick={[Function]}
->
-  <Component />
-</Component>
-`;
-
 exports[`Navigation: Component should render BackButton 1`] = `
 <Styled(Component)
   disabled={false}
@@ -36,6 +22,17 @@ exports[`Navigation: Component should render BackButton with custom children 1`]
     id="shared.components.navigation.next"
   />
 </Styled(Component)>
+`;
+
+exports[`Navigation: Component should render BackLink with custom children 1`] = `
+<a
+  className="sc-eCApGN bCGgwq"
+  disabled={false}
+  href="/toUrl"
+  onClick={[Function]}
+>
+  Next
+</a>
 `;
 
 exports[`Navigation: Component should render NavigationContainer 1`] = `
@@ -100,4 +97,29 @@ exports[`Navigation: Component should render PlusButton 1`] = `
     />
   </Component>
 </styled.div>
+`;
+
+exports[`Navigation: Component should render PlusLink with custom children 1`] = `
+<a
+  className="sc-gKAblj EFWDY"
+  href="/toUrl"
+  onClick={[Function]}
+>
+  <svg
+    id=""
+    style={
+      Object {
+        "fill": "#000",
+        "height": 60,
+        "shapeRendering": "crispEdges",
+        "width": 60,
+      }
+    }
+    viewBox="0 0 60 60"
+  >
+    <path
+      d="M32 15v13h13v4H32v13h-4V32H15v-4h13V15h4z"
+    />
+  </svg>
+</a>
 `;

@@ -76,6 +76,11 @@ class BlockTemplateSerializer(CustomModelSerializer):
             )
         ]
 
+    def to_representation(self, instance):
+        response = super().to_representation(instance)
+        response["elements"] = sorted(response["elements"], key=lambda x: x["order"])
+        return response
+
     @transaction.atomic()
     def create(self, validated_data):
         elements = validated_data.pop("elements", [])

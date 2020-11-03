@@ -47,7 +47,7 @@ exports[`CreateSection: Component should render correctly 1`] = `
                 "fontSize": "24px",
                 "fontWeight": 600,
                 "letterSpacing": "-0.12px",
-                "lineHight": 1.25,
+                "lineHeight": 1.25,
                 "margin": 0,
               }
             }
@@ -152,7 +152,7 @@ exports[`CreateSection: Component should render correctly 1`] = `
                   "fontSize": "24px",
                   "fontWeight": 600,
                   "letterSpacing": "-0.12px",
-                  "lineHight": 1.25,
+                  "lineHeight": 1.25,
                   "margin": 0,
                 }
               }
@@ -346,7 +346,7 @@ exports[`CreateSection: Component should render correctly 1`] = `
     </div>
   </div>
   <div
-    className="sc-lmgQde erJfDo"
+    className="sc-iJCRLp eJiYjM"
   >
     <div
       style={
@@ -368,7 +368,7 @@ exports[`CreateSection: Component should render correctly 1`] = `
         }
       >
         <a
-          className="sc-giAqnE aTmv"
+          className="sc-ezzayL eRUViH"
           href="/project/1/"
           onClick={[Function]}
           style={
@@ -390,7 +390,7 @@ exports[`CreateSection: Component should render correctly 1`] = `
             Project
           </span>
           <h3
-            className="sc-ezzayL doGUso"
+            className="sc-bYwzba bIvhCs"
             style={
               Object {
                 "fontFamily": "Inter, \\"Helvetica Neue\\", Helvetica, Arial, sans-serif",
@@ -426,7 +426,7 @@ exports[`CreateSection: Component should render correctly 1`] = `
         }
       >
         <a
-          className="sc-giAqnE aTmv"
+          className="sc-ezzayL eRUViH"
           href="/project/1/content"
           onClick={[Function]}
           style={
@@ -448,7 +448,7 @@ exports[`CreateSection: Component should render correctly 1`] = `
             Tab
           </span>
           <h3
-            className="sc-ezzayL doGUso"
+            className="sc-bYwzba bIvhCs"
             style={
               Object {
                 "fontFamily": "Inter, \\"Helvetica Neue\\", Helvetica, Arial, sans-serif",
@@ -484,7 +484,7 @@ exports[`CreateSection: Component should render correctly 1`] = `
         }
       >
         <div
-          className="sc-iJCRLp GoWck"
+          className="sc-giAqnE jqgyGP"
         >
           <span
             style={
@@ -497,7 +497,7 @@ exports[`CreateSection: Component should render correctly 1`] = `
             Section
           </span>
           <h3
-            className="sc-ezzayL doGUso"
+            className="sc-bYwzba bIvhCs"
             style={
               Object {
                 "fontFamily": "Inter, \\"Helvetica Neue\\", Helvetica, Arial, sans-serif",
@@ -515,13 +515,13 @@ exports[`CreateSection: Component should render correctly 1`] = `
     </div>
   </div>
   <div
-    className="sc-dIvqjp cKUJXt"
+    className="sc-hHEjAm IVnVi"
   >
     <div
-      className="sc-hHEjAm eknuhT"
+      className="sc-dlMBXb hBQOnd"
     >
       <h2
-        className="sc-dlMBXb hYjtZS"
+        className="sc-kfYqjs jyVZHv"
         id="desktopHeaderTitle"
         style={
           Object {
@@ -535,7 +535,7 @@ exports[`CreateSection: Component should render correctly 1`] = `
         Section
       </h2>
       <h1
-        className="sc-kfYqjs jyVZHv"
+        className="sc-fKgIGh dOwufL"
         id="desktopHeaderSubtitle"
         style={
           Object {
@@ -543,7 +543,7 @@ exports[`CreateSection: Component should render correctly 1`] = `
             "fontSize": "24px",
             "fontWeight": 600,
             "letterSpacing": "-0.12px",
-            "lineHight": 1.25,
+            "lineHeight": 1.25,
             "margin": 0,
           }
         }
@@ -552,7 +552,7 @@ exports[`CreateSection: Component should render correctly 1`] = `
       </h1>
     </div>
     <div
-      className="sc-fKgIGh"
+      className="sc-bCwgka"
     />
   </div>
   <form
@@ -560,7 +560,7 @@ exports[`CreateSection: Component should render correctly 1`] = `
     onSubmit={[Function]}
   >
     <div
-      className="sc-bCwgka kmMkxo"
+      className="sc-iwaifL iBtTLj"
     >
       <div
         style={
@@ -625,7 +625,7 @@ exports[`CreateSection: Component should render correctly 1`] = `
         />
       </div>
       <div
-        className="sc-cxNIbT kLlQfh"
+        className="sc-lmgQde dGvbQF"
         id="nameError"
       />
     </div>

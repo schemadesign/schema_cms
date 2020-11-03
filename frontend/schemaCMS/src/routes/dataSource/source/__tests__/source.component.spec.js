@@ -3,8 +3,7 @@ import { shallow } from 'enzyme';
 
 import { Source } from '../source.component';
 import { defaultProps } from '../source.stories';
-import { Form, Link } from '../source.styles';
-import browserHistory from '../../../../shared/utils/history';
+import { Form } from '../source.styles';
 
 describe('SourceComponent: Component', () => {
   const component = props => <Source {...defaultProps} {...props} />;
@@ -72,19 +71,5 @@ describe('SourceComponent: Component', () => {
       dataSourceId: 'dataSourceIdId',
       projectId: 'projectId',
     });
-  });
-
-  it('should redirect on click past versions', () => {
-    jest.spyOn(browserHistory, 'push');
-
-    const wrapper = render();
-    wrapper
-      .find(Form)
-      .dive()
-      .find(Link)
-      .at(0)
-      .simulate('click');
-
-    expect(browserHistory.push).toHaveBeenCalledWith('/datasource/1/job');
   });
 });

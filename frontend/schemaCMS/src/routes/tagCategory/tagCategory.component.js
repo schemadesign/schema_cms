@@ -12,7 +12,7 @@ import { MobileMenu } from '../../shared/components/menu/mobileMenu';
 import reportError from '../../shared/utils/reportError';
 import { TagCategoryForm } from '../../shared/components/tagCategoryForm';
 import { Modal, ModalActions, modalStyles, ModalTitle } from '../../shared/components/modal/modal.styles';
-import { BackButton, NavigationContainer, NextButton } from '../../shared/components/navigation';
+import { BackButton, BackLink, NavigationContainer, NextButton } from '../../shared/components/navigation';
 import { TAG_CATEGORIES_PAGE } from '../../modules/project/project.constants';
 
 import {
@@ -97,9 +97,6 @@ export class TagCategory extends PureComponent {
 
   openRemoveCategoryModal = () => this.setState({ confirmationModalOpen: true });
 
-  handleBack = () =>
-    this.props.history.push(`/project/${pathOr('', ['project', 'id'], this.props)}/${TAG_CATEGORIES_PAGE}`);
-
   handleCancelRemove = () => this.setState({ confirmationModalOpen: false });
 
   handleConfirmRemove = async () => {
@@ -128,9 +125,7 @@ export class TagCategory extends PureComponent {
           <Form onSubmit={handleSubmit}>
             <TagCategoryForm openRemoveCategoryModal={this.openRemoveCategoryModal} {...this.props} />
             <NavigationContainer fixed>
-              <BackButton onClick={this.handleBack} type="button">
-                <FormattedMessage {...messages.back} />
-              </BackButton>
+              <BackLink to={`/project/${pathOr('', ['project', 'id'], this.props)}/${TAG_CATEGORIES_PAGE}`} />
               <NextButton
                 id="saveBtn"
                 loading={isSubmitting}

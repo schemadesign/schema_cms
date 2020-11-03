@@ -8,7 +8,7 @@ import { ContextHeader } from '../../../shared/components/contextHeader';
 import { filterMenuOptions, getMatchParam } from '../../../shared/utils/helpers';
 import { MobileMenu } from '../../../shared/components/menu/mobileMenu';
 import { TagCategoryForm } from '../../../shared/components/tagCategoryForm';
-import { BackButton, NavigationContainer, NextButton } from '../../../shared/components/navigation';
+import { BackLink, NavigationContainer, NextButton } from '../../../shared/components/navigation';
 import { TAG_CATEGORIES_PAGE } from '../../../modules/project/project.constants';
 import { getProjectMenuOptions } from '../project.constants';
 import {
@@ -59,9 +59,6 @@ export class CreateTagCategory extends PureComponent {
     headerSubtitle: <FormattedMessage {...messages.subTitle} />,
   });
 
-  handleBack = () =>
-    this.props.history.push(`/project/${getMatchParam(this.props, 'projectId')}/${TAG_CATEGORIES_PAGE}`);
-
   render() {
     const { project, userRole, isSubmitting, isValid, dirty, handleSubmit } = this.props;
     const headerConfig = this.getHeaderAndMenuConfig();
@@ -78,9 +75,9 @@ export class CreateTagCategory extends PureComponent {
         <ProjectBreadcrumbs items={getBreadcrumbsItems(project)} />
         <TagCategoryForm {...this.props} />
         <NavigationContainer fixed>
-          <BackButton id="cancelBtn" onClick={this.handleBack} type="button">
+          <BackLink id="cancelBtn" to={`/project/${getMatchParam(this.props, 'projectId')}/${TAG_CATEGORIES_PAGE}`}>
             <FormattedMessage {...messages.cancel} />
-          </BackButton>
+          </BackLink>
           <NextButton id="saveBtn" loading={isSubmitting} disabled={!dirty || !isValid || isSubmitting} type="submit">
             <FormattedMessage {...messages.saveTag} />
           </NextButton>

@@ -31,13 +31,6 @@ describe('BlockTemplate: Component', () => {
     expect(defaultProps.fetchBlockTemplate).toHaveBeenCalledWith({ blockTemplateId: 'blockTemplateId' });
   });
 
-  it('should redirect to block templates', async () => {
-    const wrapper = await render();
-    wrapper.root.findByProps({ id: 'cancelBtn' }).props.onClick();
-
-    expect(mockPushHistory).toHaveBeenCalledWith('/project/1/block-templates');
-  });
-
   it('should remove block and redirect to list', async () => {
     jest.spyOn(defaultProps, 'removeBlockTemplate');
     const wrapper = await render();

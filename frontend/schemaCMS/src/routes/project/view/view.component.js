@@ -25,7 +25,7 @@ import {
   selectContainerStyles,
   InputContainer,
 } from './view.styles';
-import { BackArrowButton, BackButton, NavigationContainer, NextButton } from '../../../shared/components/navigation';
+import { BackButton, BackLink, NavigationContainer, NextButton } from '../../../shared/components/navigation';
 
 import { Modal, ModalActions, modalStyles, ModalTitle } from '../../../shared/components/modal/modal.styles';
 import { Link, LinkContainer } from '../../../theme/typography';
@@ -81,8 +81,6 @@ export class View extends PureComponent {
     }));
 
   formatMessage = value => this.props.intl.formatMessage(value);
-
-  handleGoTo = to => () => (to ? this.props.history.push(to) : null);
 
   handleDeleteClick = () => this.setState({ confirmationModalOpen: true });
 
@@ -318,7 +316,7 @@ export class View extends PureComponent {
           </Fragment>
         </div>
         <NavigationContainer fixed>
-          <BackArrowButton id="backProjectBtn" onClick={this.handleGoTo('/project')} />
+          <BackLink id="backProjectBtn" to="/project" />
           {this.renderSaveButton(isAdmin)}
         </NavigationContainer>
         <Modal

@@ -4,11 +4,10 @@ import { FormattedMessage } from 'react-intl';
 
 import { ContextHeader } from '../../../shared/components/contextHeader';
 import { UserList } from '../../../shared/components/userList';
-import { BackButton, NavigationContainer, PlusButton } from '../../../shared/components/navigation';
+import { NavigationContainer, PlusLink, BackLink, LARGE_BUTTON_SIZE } from '../../../shared/components/navigation';
 import { LoadingWrapper } from '../../../shared/components/loadingWrapper';
 import { Container } from '../../project/list/list.styles';
 import messages from './list.messages';
-import browserHistory from '../../../shared/utils/history';
 import { USER_ID, USER_MENU_OPTIONS } from '../user.constants';
 import { MobileMenu } from '../../../shared/components/menu/mobileMenu';
 import reportError from '../../../shared/utils/reportError';
@@ -36,16 +35,13 @@ export class List extends PureComponent {
     }
   }
 
-  handleAddUser = () => browserHistory.push('/user/add');
-
-  handleCancelClick = () => browserHistory.push('/');
-
   render() {
     const { loading, error } = this.state;
     const { users, userRole } = this.props;
 
     const headerTitle = <FormattedMessage {...messages.headerTitle} />;
     const headerSubtitle = <FormattedMessage {...messages.headerSubtitle} />;
+    const addUserUrl = '/user/add';
 
     return (
       <Container>
@@ -56,16 +52,16 @@ export class List extends PureComponent {
           active={USER_ID}
         />
         <ContextHeader title={headerTitle} subtitle={headerSubtitle}>
-          <PlusButton id="addUserBtn" onClick={this.handleAddUser} />
+          <PlusLink id="addUserBtn" to={addUserUrl} size={LARGE_BUTTON_SIZE} />
         </ContextHeader>
         <LoadingWrapper loading={loading} error={error} noData={!users.length}>
           <UserList users={users} />
         </LoadingWrapper>
-        <NavigationContainer fixed hideOnDesktop>
-          <BackButton onClick={this.handleCancelClick}>
-            <FormattedMessage {...messages.cancel} />
-          </BackButton>
-          <PlusButton id="addUserBtn" onClick={this.handleAddUser} />
+        <NavigationContainer fixed>
+          <BackLink to={'/'}>
+            <FormattedMessage {...messages.back} />
+          </BackLink>
+          <PlusLink hideOnDesktop id="addUserBtn" to={addUserUrl} size={LARGE_BUTTON_SIZE} />
         </NavigationContainer>
       </Container>
     );

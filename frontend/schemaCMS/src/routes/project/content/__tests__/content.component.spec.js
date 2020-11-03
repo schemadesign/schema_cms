@@ -24,31 +24,10 @@ describe('Content: Component', () => {
     expect(wrapper).toMatchSnapshot();
   });
 
-  it('should go back', async () => {
-    const wrapper = await render();
-    wrapper.root.findByProps({ id: 'backBtn' }).props.onClick();
-
-    expect(mockPushHistory).toHaveBeenCalledWith('/project/projectId');
-  });
-
   it('should fetch sections', async () => {
     jest.spyOn(defaultProps, 'fetchSections');
     await render();
 
     expect(defaultProps.fetchSections).toHaveBeenCalledWith({ projectId: 'projectId' });
-  });
-
-  it('should go to create page', async () => {
-    const wrapper = await render();
-    wrapper.root.findByProps({ id: 'createSection' }).props.onClick();
-
-    expect(mockPushHistory).toHaveBeenCalledWith('/project/projectId/section/create');
-  });
-
-  it('should go to create page on mobile', async () => {
-    const wrapper = await render();
-    wrapper.root.findByProps({ id: 'creatSectionMobile' }).props.onClick();
-
-    expect(mockPushHistory).toHaveBeenCalledWith('/project/projectId/section/create');
   });
 });

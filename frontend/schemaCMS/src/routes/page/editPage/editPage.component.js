@@ -19,7 +19,7 @@ import {
 } from '../../../shared/utils/helpers';
 import { LoadingWrapper } from '../../../shared/components/loadingWrapper';
 import { PageForm } from '../../../shared/components/pageForm';
-import { BackButton, NavigationContainer, NextButton } from '../../../shared/components/navigation';
+import { BackButton, NavigationContainer, NextButton, BackLink } from '../../../shared/components/navigation';
 import { getProjectMenuOptions } from '../../project/project.constants';
 import {
   PAGE_SCHEMA,
@@ -180,8 +180,6 @@ export const EditPage = ({
     setCustomLocation(false);
   };
 
-  const handleBackClick = () => history.push(`/section/${page.section.id}`);
-
   useEffectOnce(() => {
     (async () => {
       try {
@@ -234,9 +232,7 @@ export const EditPage = ({
             {...restFormikProps}
           />
           <NavigationContainer fixed>
-            <BackButton id="backBtn" type="button" onClick={handleBackClick}>
-              <FormattedMessage {...messages.back} />
-            </BackButton>
+            <BackLink id="backBtn" to={`/section/${page.section.id}`} />
             <NextButton
               id="publishPage"
               type="button"
