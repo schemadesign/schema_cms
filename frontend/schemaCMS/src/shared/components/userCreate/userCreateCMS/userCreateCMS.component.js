@@ -5,7 +5,6 @@ import { USER_CREATE_CMS_FORM, USER_CREATE_CMS_SCHEME, USER_ROLE } from '../../.
 import { UserCreate } from '../userCreateComponent/userCreate.component';
 import messages from '../userCreateComponent/userCreate.messages';
 import { EMAIL, FIRST_NAME, LAST_NAME, ROLES } from '../../../../modules/userProfile/userProfile.constants';
-import browserHistory from '../../../utils/history';
 import { errorMessageParser } from '../../../utils/helpers';
 
 export class UserCreateCMS extends PureComponent {
@@ -34,10 +33,6 @@ export class UserCreateCMS extends PureComponent {
     };
   };
 
-  handleCancelClick = () => {
-    browserHistory.push('/user');
-  };
-
   render() {
     return (
       <Formik
@@ -55,7 +50,7 @@ export class UserCreateCMS extends PureComponent {
         {({ handleSubmit, ...restProps }) => (
           <UserCreate
             handleSubmit={handleSubmit}
-            onCancelClick={this.handleCancelClick}
+            cancelUrl="/user"
             userRole={this.props.userRole}
             isInvitation
             {...restProps}

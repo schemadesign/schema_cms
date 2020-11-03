@@ -8,7 +8,7 @@ exports[`H1: Component should render children when passed in 1`] = `
       "fontSize": "24px",
       "fontWeight": 600,
       "letterSpacing": "-0.12px",
-      "lineHight": 1.25,
+      "lineHeight": 1.25,
       "margin": 0,
     }
   }
@@ -25,7 +25,7 @@ exports[`H1: Component should render correctly 1`] = `
       "fontSize": "24px",
       "fontWeight": 600,
       "letterSpacing": "-0.12px",
-      "lineHight": 1.25,
+      "lineHeight": 1.25,
       "margin": 0,
     }
   }
@@ -41,7 +41,7 @@ exports[`H1: Component should render with attributes 1`] = `
       "fontSize": "24px",
       "fontWeight": 600,
       "letterSpacing": "-0.12px",
-      "lineHight": 1.25,
+      "lineHeight": 1.25,
       "margin": 0,
     }
   }
@@ -60,7 +60,7 @@ exports[`H1: Component should render with custom styles 1`] = `
       "fontSize": "24px",
       "fontWeight": 600,
       "letterSpacing": "-0.12px",
-      "lineHight": 1.25,
+      "lineHeight": 1.25,
       "margin": 0,
     }
   }
@@ -76,7 +76,7 @@ exports[`H1: Component should render with custom theme 1`] = `
       "color": "gray",
       "fontFamily": "serif",
       "letterSpacing": "-0.12px",
-      "lineHight": 1.25,
+      "lineHeight": 1.25,
       "margin": 0,
       "size": "100px",
     }

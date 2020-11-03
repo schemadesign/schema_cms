@@ -598,9 +598,9 @@ exports[`View: Component should render content correctly 1`] = `
     hideOnDesktop={false}
     right={false}
   >
-    <BackArrowButton
+    <BackLink
       id="backProjectBtn"
-      onClick={[Function]}
+      to="/project"
     />
     <NextButton
       disabled={true}
@@ -1049,9 +1049,9 @@ exports[`View: Component should render content correctly for editor 1`] = `
     hideOnDesktop={false}
     right={false}
   >
-    <BackArrowButton
+    <BackLink
       id="backProjectBtn"
-      onClick={[Function]}
+      to="/project"
     />
   </NavigationContainer>
   <Styled(Modal)
@@ -1791,9 +1791,9 @@ exports[`View: Component should render correctly 1`] = `
     hideOnDesktop={false}
     right={false}
   >
-    <BackArrowButton
+    <BackLink
       id="backProjectBtn"
-      onClick={[Function]}
+      to="/project"
     />
     <NextButton
       disabled={true}

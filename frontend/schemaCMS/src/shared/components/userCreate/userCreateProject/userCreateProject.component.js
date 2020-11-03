@@ -3,7 +3,6 @@ import PropTypes from 'prop-types';
 import { find, path, prop, propEq } from 'ramda';
 import { Formik } from 'formik';
 
-import browserHistory from '../../../utils/history';
 import {
   NEW_USER_ROLES_OPTIONS,
   USER_CREATE_PROJECT_FORM,
@@ -79,11 +78,6 @@ export class UserCreateProject extends PureComponent {
     };
   };
 
-  handleCancelClick = evt => {
-    evt.preventDefault();
-    browserHistory.push(`/project/${this.props.project.id}/user/add`);
-  };
-
   renderContent = () => {
     const { project, user, userRole } = this.props;
 
@@ -108,7 +102,7 @@ export class UserCreateProject extends PureComponent {
           <UserCreate
             handleSubmit={handleSubmit}
             headerValues={headerValues}
-            onCancelClick={this.handleCancelClick}
+            cancelUrl={`/project/${this.props.project.id}/user/add`}
             userRole={userRole}
             {...restProps}
           />

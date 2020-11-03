@@ -31,13 +31,6 @@ describe('EditPage: Component', () => {
     expect(defaultProps.fetchPageAdditionalData).toHaveBeenCalledWith({ projectId: 1 });
   });
 
-  it('should go back to section', async () => {
-    const wrapper = await render();
-    wrapper.root.findByProps({ id: 'backBtn' }).props.onClick();
-
-    expect(mockPushHistory).toHaveBeenCalledWith('/section/sectionId');
-  });
-
   it('should publish the page', async () => {
     jest.spyOn(defaultProps, 'publishPage');
     const wrapper = await render();

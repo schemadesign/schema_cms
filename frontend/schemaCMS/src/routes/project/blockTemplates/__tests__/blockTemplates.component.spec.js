@@ -34,34 +34,6 @@ describe('BlockTemplates: Component', () => {
     expect(defaultProps.fetchBlockTemplates).toHaveBeenCalledWith({ projectId: 'projectId' });
   });
 
-  it('should redirect to create block template', async () => {
-    const wrapper = await render();
-    wrapper.root.findByProps({ id: 'createBlockTemplate' }).props.onClick();
-
-    expect(mockPushHistory).toHaveBeenCalledWith('/project/projectId/block-templates/create');
-  });
-
-  it('should redirect to create block template on mobile', async () => {
-    const wrapper = await render();
-    wrapper.root.findByProps({ id: 'createBlockTemplateMobile' }).props.onClick();
-
-    expect(mockPushHistory).toHaveBeenCalledWith('/project/projectId/block-templates/create');
-  });
-
-  it('should go back', async () => {
-    const wrapper = await render();
-    wrapper.root.findByProps({ id: 'backBtn' }).props.onClick();
-
-    expect(mockPushHistory).toHaveBeenCalledWith('/project/projectId/block-templates/create');
-  });
-
-  it('should redirect to block template', async () => {
-    const wrapper = await render();
-    wrapper.root.findByProps({ id: 'blockTemplateTitle-1' }).props.onClick();
-
-    expect(mockPushHistory).toHaveBeenCalledWith('/block-template/1');
-  });
-
   it('should call copy block template', async () => {
     jest.spyOn(defaultProps, 'copyBlockTemplate');
     const wrapper = await render();

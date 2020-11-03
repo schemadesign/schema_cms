@@ -559,14 +559,14 @@ exports[`SourceComponent: Component should render correctly 1`] = `
       }
     />
     <styled.div>
-      <Styled(Styled(Span))
-        onClick={[Function]}
+      <Styled(Styled(Styled(Span)))
+        to="/datasource/1/job"
       >
         <FormattedMessage
           defaultMessage="View Past Versions"
           id="dataSource.source.pastVersions"
         />
-      </Styled(Styled(Span))>
+      </Styled(Styled(Styled(Span)))>
       <Styled(Styled(Span))
         id="removeDataSourceDesktopBtn"
         onClick={[Function]}

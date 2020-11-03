@@ -33,13 +33,6 @@ describe('PageTemplate: Component', () => {
     expect(defaultProps.fetchBlockTemplates).toHaveBeenCalledWith({ projectId: 'projectId', raw: true });
   });
 
-  it('should redirect to page templates', async () => {
-    const wrapper = await render();
-    wrapper.root.findByProps({ id: 'cancelBtn' }).props.onClick();
-
-    expect(mockPushHistory).toHaveBeenCalledWith('/project/1/page-templates');
-  });
-
   it('should remove page and redirect to list', async () => {
     jest.spyOn(defaultProps, 'removePageTemplate');
     const wrapper = await render();

@@ -164,16 +164,9 @@ exports[`TagCategory: Component should render correctly 1`] = `
         hideOnDesktop={false}
         right={false}
       >
-        <BackButton
-          disabled={false}
-          onClick={[Function]}
-          type="button"
-        >
-          <FormattedMessage
-            defaultMessage="Back"
-            id="tagCategory.back"
-          />
-        </BackButton>
+        <BackLink
+          to="/project/1/tag-templates"
+        />
         <NextButton
           disabled={true}
           id="saveBtn"
@@ -418,16 +411,9 @@ exports[`TagCategory: Component should render correctly with loader 1`] = `
         hideOnDesktop={false}
         right={false}
       >
-        <BackButton
-          disabled={false}
-          onClick={[Function]}
-          type="button"
-        >
-          <FormattedMessage
-            defaultMessage="Back"
-            id="tagCategory.back"
-          />
-        </BackButton>
+        <BackLink
+          to="/project/1/tag-templates"
+        />
         <NextButton
           disabled={true}
           id="saveBtn"

@@ -3,7 +3,7 @@ import { shallow } from 'enzyme';
 
 import { View } from '../view.component';
 import { defaultProps, adminProps } from '../view.stories';
-import { BackButton, NextButton } from '../../../../shared/components/navigation';
+import { NextButton } from '../../../../shared/components/navigation';
 
 describe('View: Component', () => {
   const component = props => <View {...defaultProps} {...props} />;
@@ -52,18 +52,6 @@ describe('View: Component', () => {
       .simulate('click');
 
     expect(adminProps.makeAdmin).toBeCalledWith({ userId: '1' });
-  });
-
-  it('should go back', () => {
-    jest.spyOn(defaultProps.history, 'push');
-
-    const wrapper = render();
-    wrapper
-      .find(BackButton)
-      .at(0)
-      .simulate('click');
-
-    expect(defaultProps.history.push).toBeCalledWith('/user');
   });
 
   it('should set error correctly', async () => {

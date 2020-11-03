@@ -8,7 +8,7 @@ import { renderWhenTrueOtherwise } from '../../../utils/rendering';
 import { TextInput } from '../../form/inputs/textInput';
 import { EMAIL, FIRST_NAME, LAST_NAME } from '../../../../modules/userProfile/userProfile.constants';
 import { Select } from '../../form/select';
-import { BackButton, NavigationContainer, NextButton } from '../../navigation';
+import { BackLink, NavigationContainer, NextButton } from '../../navigation';
 import { ContextHeader } from '../../contextHeader';
 
 import messages from './userCreate.messages';
@@ -28,7 +28,7 @@ export class UserCreate extends PureComponent {
     isInvitation: PropTypes.bool,
     isSubmitting: PropTypes.bool.isRequired,
     values: PropTypes.object.isRequired,
-    onCancelClick: PropTypes.func.isRequired,
+    cancelUrl: PropTypes.string.isRequired,
   };
 
   static defaultProps = {
@@ -72,9 +72,9 @@ export class UserCreate extends PureComponent {
 
     return (
       <NavigationContainer fixed>
-        <BackButton id="inviteUserBackBtn" type="button" onClick={this.props.onCancelClick}>
+        <BackLink id="inviteUserBackBtn" to={this.props.cancelUrl}>
           <FormattedMessage {...messages.cancel} />
-        </BackButton>
+        </BackLink>
         <NextButton
           id="inviteUserSubmitBtn"
           type="submit"

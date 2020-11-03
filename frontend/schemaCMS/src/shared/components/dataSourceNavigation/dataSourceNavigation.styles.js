@@ -1,5 +1,6 @@
 import styled, { css } from 'styled-components';
 import { always, cond, T, propEq } from 'ramda';
+import { Link } from 'react-router-dom';
 
 import { media } from '../../../theme/media';
 
@@ -49,11 +50,11 @@ const inActiveStyles = css`
 
 const statusButtonStyles = cond([
   [propEq('disabled', true), always(disabledStyles)],
-  [propEq('active', false), always(inActiveStyles)],
+  [propEq('$active', false), always(inActiveStyles)],
   [T, always(null)],
 ]);
 
-export const Button = styled.div`
+export const Button = styled(Link)`
   background-color: ${({ theme: { stepper } }) => stepper.background};
   border-radius: 50%;
   display: flex;

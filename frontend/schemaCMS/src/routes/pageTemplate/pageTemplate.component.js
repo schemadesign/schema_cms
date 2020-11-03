@@ -15,7 +15,7 @@ import { MobileMenu } from '../../shared/components/menu/mobileMenu';
 import { errorMessageParser, filterMenuOptions } from '../../shared/utils/helpers';
 import { LoadingWrapper } from '../../shared/components/loadingWrapper';
 import { PageTemplateForm } from '../../shared/components/pageTemplateForm';
-import { BackButton, NavigationContainer, NextButton } from '../../shared/components/navigation';
+import { BackLink, NavigationContainer, NextButton, BackButton } from '../../shared/components/navigation';
 import { Modal, ModalActions, modalStyles, ModalTitle } from '../../shared/components/modal/modal.styles';
 import {
   BLOCK_ID,
@@ -129,8 +129,6 @@ export const PageTemplate = memo(
       },
     });
 
-    const handleCancelButton = () => history.push(`/project/${project.id}/page-templates`);
-
     useEffectOnce(() => {
       (async () => {
         try {
@@ -166,9 +164,7 @@ export const PageTemplate = memo(
               {...restFormikProps}
             />
             <NavigationContainer fixed>
-              <BackButton id="cancelBtn" type="button" onClick={handleCancelButton}>
-                <FormattedMessage {...messages.cancel} />
-              </BackButton>
+              <BackLink id="cancelBtn" to={`/project/${project.id}/page-templates`} />
               <NextButton
                 id="createTemplatePageMobile"
                 type="submit"

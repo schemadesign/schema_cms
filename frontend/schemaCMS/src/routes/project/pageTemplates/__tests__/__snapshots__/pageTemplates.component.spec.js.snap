@@ -47,7 +47,7 @@ exports[`PageTemplates: Component should render correctly 1`] = `
                 "fontSize": "24px",
                 "fontWeight": 600,
                 "letterSpacing": "-0.12px",
-                "lineHight": 1.25,
+                "lineHeight": 1.25,
                 "margin": 0,
               }
             }
@@ -152,7 +152,7 @@ exports[`PageTemplates: Component should render correctly 1`] = `
                   "fontSize": "24px",
                   "fontWeight": 600,
                   "letterSpacing": "-0.12px",
-                  "lineHight": 1.25,
+                  "lineHeight": 1.25,
                   "margin": 0,
                 }
               }
@@ -346,7 +346,7 @@ exports[`PageTemplates: Component should render correctly 1`] = `
     </div>
   </div>
   <div
-    className="sc-ciSmjq hUhgFp"
+    className="sc-jcwofb izSwhv"
   >
     <div
       style={
@@ -368,7 +368,7 @@ exports[`PageTemplates: Component should render correctly 1`] = `
         }
       >
         <a
-          className="sc-carGAA hGjnbZ"
+          className="sc-iTVIwl fulmMb"
           href="/project/1/"
           onClick={[Function]}
           style={
@@ -390,7 +390,7 @@ exports[`PageTemplates: Component should render correctly 1`] = `
             Project
           </span>
           <h3
-            className="sc-iTVIwl ccQrNI"
+            className="sc-iBzFoy eIVjNQ"
             style={
               Object {
                 "fontFamily": "Inter, \\"Helvetica Neue\\", Helvetica, Arial, sans-serif",
@@ -426,7 +426,7 @@ exports[`PageTemplates: Component should render correctly 1`] = `
         }
       >
         <a
-          className="sc-carGAA hGjnbZ"
+          className="sc-iTVIwl fulmMb"
           href="/project/1/templates"
           onClick={[Function]}
           style={
@@ -448,7 +448,7 @@ exports[`PageTemplates: Component should render correctly 1`] = `
             Tab
           </span>
           <h3
-            className="sc-iTVIwl ccQrNI"
+            className="sc-iBzFoy eIVjNQ"
             style={
               Object {
                 "fontFamily": "Inter, \\"Helvetica Neue\\", Helvetica, Arial, sans-serif",
@@ -484,7 +484,7 @@ exports[`PageTemplates: Component should render correctly 1`] = `
         }
       >
         <div
-          className="sc-jcwofb bTALwb"
+          className="sc-carGAA kJkeUZ"
         >
           <span
             style={
@@ -497,7 +497,7 @@ exports[`PageTemplates: Component should render correctly 1`] = `
             Library
           </span>
           <h3
-            className="sc-iTVIwl ccQrNI"
+            className="sc-iBzFoy eIVjNQ"
             style={
               Object {
                 "fontFamily": "Inter, \\"Helvetica Neue\\", Helvetica, Arial, sans-serif",
@@ -515,13 +515,13 @@ exports[`PageTemplates: Component should render correctly 1`] = `
     </div>
   </div>
   <div
-    className="sc-dlMBXb jygUFU"
+    className="sc-kfYqjs jVUIpp"
   >
     <div
-      className="sc-kfYqjs cvqBSM"
+      className="sc-fKgIGh ePACvs"
     >
       <h2
-        className="sc-fKgIGh dOwufL"
+        className="sc-bCwgka bBdQKU"
         id="desktopHeaderTitle"
         style={
           Object {
@@ -535,7 +535,7 @@ exports[`PageTemplates: Component should render correctly 1`] = `
         Page Templates
       </h2>
       <h1
-        className="sc-bCwgka bBdQKU"
+        className="sc-iwaifL fAJgQr"
         id="desktopHeaderSubtitle"
         style={
           Object {
@@ -543,7 +543,7 @@ exports[`PageTemplates: Component should render correctly 1`] = `
             "fontSize": "24px",
             "fontWeight": 600,
             "letterSpacing": "-0.12px",
-            "lineHight": 1.25,
+            "lineHeight": 1.25,
             "margin": 0,
           }
         }
@@ -552,71 +552,49 @@ exports[`PageTemplates: Component should render correctly 1`] = `
       </h1>
     </div>
     <div
-      className="sc-iwaifL"
+      className="sc-cxNIbT"
     >
-      <div
-        className="sc-hHEjAm fLukyj"
+      <a
+        className="sc-dlMBXb clkDjE"
+        href="/project/projectId/page-templates/create"
+        onClick={[Function]}
       >
-        <button
-          disabled={false}
+        <svg
           id="createPageTemplate"
-          onClick={[Function]}
           style={
             Object {
-              "backgroundColor": "#FFF",
-              "border": "none",
-              "borderRadius": "48px",
-              "color": "#000",
-              "cursor": "pointer",
-              "display": "inline-block",
-              "fill": "#FFF",
-              "fontSize": "18px",
-              "height": "60px",
-              "margin": "0",
-              "minHeight": "48px",
-              "outline": "none",
-              "padding": "0",
-              "transition": "background 0.25s ease-in-out, color 0.25s ease-in-out",
-              "width": "60px",
+              "fill": "#000",
+              "height": 60,
+              "shapeRendering": "crispEdges",
+              "width": 60,
             }
           }
+          viewBox="0 0 60 60"
         >
-          <svg
-            style={
-              Object {
-                "fill": "#000",
-                "height": "60px",
-                "shapeRendering": "crispEdges",
-                "width": "60px",
-              }
-            }
-            viewBox="0 0 60 60"
-          >
-            <path
-              d="M32 15v13h13v4H32v13h-4V32H15v-4h13V15h4z"
-            />
-          </svg>
-        </button>
-      </div>
+          <path
+            d="M32 15v13h13v4H32v13h-4V32H15v-4h13V15h4z"
+          />
+        </svg>
+      </a>
     </div>
   </div>
   <div
-    className="sc-gXfWUo frbwBf"
+    className="sc-cBoprd gDhvdr"
   >
     <div
-      className="sc-cBoprd ePeCXs"
+      className="sc-ciSmjq eqdcj"
       id="tagsCounter"
     />
     2 Page Templates
     <div
-      className="sc-cBoprd ePeCXs"
+      className="sc-ciSmjq eqdcj"
     />
   </div>
   <section
-    className="sc-bYwzba dSxsfA"
+    className="sc-kLokih jYAEkb"
   >
     <div
-      className="sc-cxNIbT jLLsEu"
+      className="sc-lmgQde fCRagy"
       style={
         Object {
           "backgroundColor": "#1d1d20",
@@ -649,29 +627,29 @@ exports[`PageTemplates: Component should render correctly 1`] = `
           }
         >
           <div
-            className="sc-jJMGHv hDQofz"
+            className="sc-hiKfjK ktYRHG"
           >
             <ul
-              className="sc-kLokih byyYNW"
+              className="sc-iklIKw jtswJj"
             >
               <li
-                className="sc-iklIKw hMirwp"
+                className="sc-jJMGHv RaMGy"
                 id="headerItem-0"
               >
                 in 3 months
               </li>
               <li
-                className="sc-iklIKw hMirwp"
+                className="sc-jJMGHv RaMGy"
                 id="headerItem-1"
               >
                 owner
               </li>
             </ul>
             <div
-              className="sc-hiKfjK"
+              className="sc-gXfWUo"
             >
               <div
-                className="sc-iBzFoy uvdXK"
+                className="sc-efHXLn cgVju"
                 id="pageTemplateCopyButton-1"
                 onClick={[Function]}
               >
@@ -693,23 +671,14 @@ exports[`PageTemplates: Component should render correctly 1`] = `
             </div>
           </div>
         </div>
-        <h1
-          className="sc-lmgQde hvuaFM"
+        <a
+          className="sc-iJCRLp gQaZxh"
+          href="/page-template/1"
           id="pageTemplateTitle-1"
           onClick={[Function]}
-          style={
-            Object {
-              "fontFamily": "Inter, \\"Helvetica Neue\\", Helvetica, Arial, sans-serif",
-              "fontSize": "24px",
-              "fontWeight": 600,
-              "letterSpacing": "-0.12px",
-              "lineHight": 1.25,
-              "margin": 0,
-            }
-          }
         >
           Page template
-        </h1>
+        </a>
       </div>
       <div
         style={
@@ -724,7 +693,7 @@ exports[`PageTemplates: Component should render correctly 1`] = `
       </div>
     </div>
     <div
-      className="sc-cxNIbT jLLsEu"
+      className="sc-lmgQde fCRagy"
       style={
         Object {
           "backgroundColor": "#1d1d20",
@@ -757,29 +726,29 @@ exports[`PageTemplates: Component should render correctly 1`] = `
           }
         >
           <div
-            className="sc-jJMGHv hDQofz"
+            className="sc-hiKfjK ktYRHG"
           >
             <ul
-              className="sc-kLokih byyYNW"
+              className="sc-iklIKw jtswJj"
             >
               <li
-                className="sc-iklIKw hMirwp"
+                className="sc-jJMGHv RaMGy"
                 id="headerItem-0"
               >
                 in 3 months
               </li>
               <li
-                className="sc-iklIKw hMirwp"
+                className="sc-jJMGHv RaMGy"
                 id="headerItem-1"
               >
                 owner 2
               </li>
             </ul>
             <div
-              className="sc-hiKfjK"
+              className="sc-gXfWUo"
             >
               <div
-                className="sc-iBzFoy uvdXK"
+                className="sc-efHXLn cgVju"
                 id="pageTemplateCopyButton-2"
                 onClick={[Function]}
               >
@@ -801,23 +770,14 @@ exports[`PageTemplates: Component should render correctly 1`] = `
             </div>
           </div>
         </div>
-        <h1
-          className="sc-lmgQde hvuaFM"
+        <a
+          className="sc-iJCRLp gQaZxh"
+          href="/page-template/2"
           id="pageTemplateTitle-2"
           onClick={[Function]}
-          style={
-            Object {
-              "fontFamily": "Inter, \\"Helvetica Neue\\", Helvetica, Arial, sans-serif",
-              "fontSize": "24px",
-              "fontWeight": 600,
-              "letterSpacing": "-0.12px",
-              "lineHight": 1.25,
-              "margin": 0,
-            }
-          }
         >
           Page template 2
-        </h1>
+        </a>
       </div>
       <div
         style={
@@ -841,89 +801,37 @@ exports[`PageTemplates: Component should render correctly 1`] = `
       <div
         className="sc-fFSRdu fbSARs"
       >
-        <button
+        <a
+          className="sc-dIvqjp eEKXKg"
           disabled={false}
+          href="/project/projectId/templates"
           id="backBtn"
           onClick={[Function]}
-          style={
-            Object {
-              "backgroundColor": "#1d1d20",
-              "border": "none",
-              "borderRadius": "48px",
-              "color": "#FFF",
-              "cursor": "pointer",
-              "display": "inline-block",
-              "fill": "#FFF",
-              "fontSize": "18px",
-              "height": "60px",
-              "margin": "0",
-              "minHeight": "48px",
-              "outline": "none",
-              "padding": "0",
-              "transition": "background 0.25s ease-in-out, color 0.25s ease-in-out",
-              "width": "60px",
-            }
-          }
+        >
+          Back
+        </a>
+        <a
+          className="sc-dlMBXb eGwbfr"
+          href="/project/projectId/page-templates/create"
+          onClick={[Function]}
         >
           <svg
+            id="createPageTemplateMobile"
             style={
               Object {
-                "fill": "#FFF",
-                "height": "60px",
-                "width": "60px",
+                "fill": "#000",
+                "height": 60,
+                "shapeRendering": "crispEdges",
+                "width": 60,
               }
             }
             viewBox="0 0 60 60"
           >
             <path
-              d="M25.857 17L28 19.083 18.828 28H45v3H18.828L28 39.917 25.857 42 13 29.5 25.857 17z"
+              d="M32 15v13h13v4H32v13h-4V32H15v-4h13V15h4z"
             />
           </svg>
-        </button>
-        <div
-          className="sc-hHEjAm dsGYTg"
-        >
-          <button
-            disabled={false}
-            id="createPageTemplateMobile"
-            onClick={[Function]}
-            style={
-              Object {
-                "backgroundColor": "#FFF",
-                "border": "none",
-                "borderRadius": "48px",
-                "color": "#000",
-                "cursor": "pointer",
-                "display": "inline-block",
-                "fill": "#FFF",
-                "fontSize": "18px",
-                "height": "60px",
-                "margin": "0",
-                "minHeight": "48px",
-                "outline": "none",
-                "padding": "0",
-                "transition": "background 0.25s ease-in-out, color 0.25s ease-in-out",
-                "width": "60px",
-              }
-            }
-          >
-            <svg
-              style={
-                Object {
-                  "fill": "#000",
-                  "height": "60px",
-                  "shapeRendering": "crispEdges",
-                  "width": "60px",
-                }
-              }
-              viewBox="0 0 60 60"
-            >
-              <path
-                d="M32 15v13h13v4H32v13h-4V32H15v-4h13V15h4z"
-              />
-            </svg>
-          </button>
-        </div>
+        </a>
       </div>
     </div>
   </div>

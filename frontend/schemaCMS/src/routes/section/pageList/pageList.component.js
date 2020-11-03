@@ -18,11 +18,12 @@ import { MobileMenu } from '../../../shared/components/menu/mobileMenu';
 import { errorMessageParser, filterMenuOptions, getUrlParams } from '../../../shared/utils/helpers';
 import { ContextHeader } from '../../../shared/components/contextHeader';
 import {
-  BackArrowButton,
   BackButton,
   NavigationContainer,
   NextButton,
-  PlusButton,
+  PlusLink,
+  LARGE_BUTTON_SIZE,
+  BackLink,
 } from '../../../shared/components/navigation';
 import { CounterHeader } from '../../../shared/components/counterHeader';
 import { ListContainer, ListItem, ListItemTitle, FooterContainer } from '../../../shared/components/listComponents';
@@ -43,7 +44,6 @@ import {
   inputStyles,
   MobileInputName,
   MobilePlusContainer,
-  mobilePlusStyles,
   Subtitle,
   SwitchContainer,
   SwitchContent,
@@ -86,7 +86,6 @@ export const Page = ({
   setFieldValue,
   index,
 }) => {
-  const history = useHistory();
   const intl = useIntl();
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState(false);
@@ -95,7 +94,6 @@ export const Page = ({
   const active = mainPage === id;
   const setMainPage = () => setFieldValue(SECTIONS_MAIN_PAGE, active ? null : id);
   const templateCopy = templateName || intl.formatMessage(messages.blankTemplate);
-  const handlePageClick = () => history.push(`/page/${id}`);
 
   const copyPageAction = async () => {
     try {
@@ -135,7 +133,7 @@ export const Page = ({
 
   return (
     <ListItem headerComponent={header} footerComponent={renderFooterComponent()}>
-      <ListItemTitle id={`page-${id}`} onClick={handlePageClick}>
+      <ListItemTitle id={`page-${id}`} to={`/page/${id}`}>
         {name}
       </ListItemTitle>
     </ListItem>
@@ -204,6 +202,7 @@ export const PageList = ({
     propOr('', PAGE_DISPLAY_NAME)
   )(pages.results);
   const pageUrl = `${domain}${displayName ? `/${displayName}` : ''}`;
+  const addPageUrl = `/section/${sectionId}/create-page`;
   const visitPage = domain ? (
     <Fragment>
       <CopySeparator />
@@ -231,9 +230,6 @@ export const PageList = ({
       }
     },
   });
-
-  const handleCreateClick = () => history.push(`/section/${sectionId}/create-page`);
-  const handleBackClick = () => history.push(`/project/${projectId}/content`);
 
   const pageCount = pages.count / INITIAL_PAGE_SIZE;
 
@@ -311,7 +307,7 @@ export const PageList = ({
           <ProjectBreadcrumbs items={getBreadcrumbsItems({ id: projectId, title: projectTitle }, section)} />
           <Form onSubmit={handleSubmit}>
             <ContextHeader title={title} subtitle={nameInput}>
-              <PlusButton id="createPage" type="button" onClick={handleCreateClick} />
+              <PlusLink id="createPage" to={addPageUrl} size={LARGE_BUTTON_SIZE} />
             </ContextHeader>
             <MobileInputName>
               <TextInput
@@ -331,12 +327,7 @@ export const PageList = ({
                 count={pages.results.length}
                 right={
                   <MobilePlusContainer>
-                    <PlusButton
-                      customStyles={mobilePlusStyles}
-                      id="createPageMobile"
-                      onClick={handleCreateClick}
-                      type="button"
-                    />
+                    <PlusLink id="createPageMobile" to={addPageUrl} />
                   </MobilePlusContainer>
                 }
               />
@@ -402,7 +393,7 @@ export const PageList = ({
                 </SwitchContainer>
               </Switches>
               <NavigationContainer fixed>
-                <BackArrowButton id="backBtn" type="button" onClick={handleBackClick} />
+                <BackLink id="backBtn" to={`/project/${projectId}/content`} />
                 <NextButton
                   id="updateSection"
                   type="submit"

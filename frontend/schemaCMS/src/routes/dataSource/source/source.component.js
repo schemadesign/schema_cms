@@ -4,7 +4,7 @@ import PropTypes from 'prop-types';
 import { FormattedMessage } from 'react-intl';
 import Helmet from 'react-helmet';
 
-import { Form, Link } from './source.styles';
+import { Form, Link, Button } from './source.styles';
 import messages from './source.messages';
 import {
   DATA_SOURCE_GOOGLE_SHEET,
@@ -13,7 +13,6 @@ import {
 } from '../../../modules/dataSource/dataSource.constants';
 import { filterMenuOptions, getMatchParam } from '../../../shared/utils/helpers';
 import { renderWhenTrue } from '../../../shared/utils/rendering';
-import browserHistory from '../../../shared/utils/history';
 import { ModalActions, Modal, ModalTitle, modalStyles } from '../../../shared/components/modal/modal.styles';
 import { LinkContainer } from '../../../theme/typography';
 import { BackButton, NavigationContainer, NextButton } from '../../../shared/components/navigation';
@@ -100,17 +99,15 @@ export class Source extends PureComponent {
     });
   };
 
-  handlePastVersionsClick = () => browserHistory.push(`/datasource/${getMatchParam(this.props, 'dataSourceId')}/job`);
-
   renderLinks = renderWhenTrue(
     always(
       <LinkContainer>
-        <Link onClick={this.handlePastVersionsClick}>
+        <Link to={`/datasource/${getMatchParam(this.props, 'dataSourceId')}/job`}>
           <FormattedMessage {...messages.pastVersions} />
         </Link>
-        <Link id="removeDataSourceDesktopBtn" onClick={() => this.handleOpenModal('confirmationRemoveModalOpen')}>
+        <Button id="removeDataSourceDesktopBtn" onClick={() => this.handleOpenModal('confirmationRemoveModalOpen')}>
           <FormattedMessage {...messages.removeDataSource} />
-        </Link>
+        </Button>
       </LinkContainer>
     )
   );

@@ -72,10 +72,8 @@ exports[`View: Component should render correctly 1`] = `
     hideOnDesktop={false}
     right={false}
   >
-    <BackButton
-      disabled={false}
-      onClick={[Function]}
-      type="button"
+    <BackLink
+      to="/user"
     />
   </NavigationContainer>
   <Styled(Modal)
@@ -280,10 +278,8 @@ exports[`View: Component should render correctly for admin user 1`] = `
     hideOnDesktop={false}
     right={false}
   >
-    <BackButton
-      disabled={false}
-      onClick={[Function]}
-      type="button"
+    <BackLink
+      to="/user"
     />
   </NavigationContainer>
   <Styled(Modal)
