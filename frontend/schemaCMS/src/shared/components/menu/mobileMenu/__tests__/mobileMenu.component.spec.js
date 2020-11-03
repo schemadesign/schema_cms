@@ -11,6 +11,18 @@ describe('MobileMenu: Component', () => {
 
   it('should render correctly', () => {
     const wrapper = render();
-    global.expect(wrapper).toMatchSnapshot();
+    expect(wrapper).toMatchSnapshot();
+  });
+
+  it('should show logout popup and hide menu', () => {
+    const wrapper = render();
+    wrapper.instance().handleToggleMenu();
+
+    expect(wrapper.state().isMenuOpen).toEqual(true);
+
+    wrapper.find('#logoutNavBtn').simulate('click');
+
+    expect(wrapper.state().isMenuOpen).toEqual(false);
+    expect(wrapper.state().logoutModalOpen).toEqual(true);
   });
 });

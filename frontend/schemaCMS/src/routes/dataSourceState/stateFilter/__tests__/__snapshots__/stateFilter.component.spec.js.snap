@@ -258,6 +258,7 @@ Array [
             className="sc-kEqYlL bZgDLg"
           >
             <div
+              id="logoutNavBtn"
               onClick={[Function]}
             >
               Log out
@@ -651,6 +652,7 @@ Array [
             className="sc-kEqYlL bZgDLg"
           >
             <div
+              id="logoutNavBtn"
               onClick={[Function]}
             >
               Log out
@@ -1044,6 +1046,7 @@ Array [
             className="sc-kEqYlL bZgDLg"
           >
             <div
+              id="logoutNavBtn"
               onClick={[Function]}
             >
               Log out
@@ -1437,6 +1440,7 @@ Array [
             className="sc-kEqYlL bZgDLg"
           >
             <div
+              id="logoutNavBtn"
               onClick={[Function]}
             >
               Log out

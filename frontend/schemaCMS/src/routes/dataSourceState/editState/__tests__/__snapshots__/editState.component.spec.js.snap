@@ -539,6 +539,7 @@ Array [
             className="sc-fujyUd fKowmD"
           >
             <div
+              id="logoutNavBtn"
               onClick={[Function]}
             >
               Log out

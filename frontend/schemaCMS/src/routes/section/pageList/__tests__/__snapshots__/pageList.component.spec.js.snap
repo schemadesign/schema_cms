@@ -260,6 +260,7 @@ exports[`PageList: Component should render correctly 1`] = `
             className="sc-jrsJCI hEdsDt"
           >
             <div
+              id="logoutNavBtn"
               onClick={[Function]}
             >
               Log out

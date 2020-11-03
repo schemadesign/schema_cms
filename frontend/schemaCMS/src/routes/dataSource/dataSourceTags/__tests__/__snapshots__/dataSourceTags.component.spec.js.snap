@@ -256,6 +256,7 @@ exports[`DataSourceTags: Component should render correctly 1`] = `
             className="sc-bqGHjH kKZQTE"
           >
             <div
+              id="logoutNavBtn"
               onClick={[Function]}
             >
               Log out
