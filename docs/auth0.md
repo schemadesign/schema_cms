@@ -8,7 +8,7 @@
 1. [Create](https://auth0.com/signup) a new account or log-in to existing one.
 2. Create new tenant that will be used by Schema CMS or use default one:
 
-    ![menu](./images/auth0/create_tenant.png)
+    ![menu](https://raw.githubusercontent.com/schemadesign/schema_cms/master/docs/images/auth0/create_tenant.png)
     
 3. Create required applications:
     
