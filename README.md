@@ -182,3 +182,8 @@ App will start deploying after couple of seconds. To monitor progress of deploym
 and enter `schema-cms-pipeline`.
 
 > NOTE: When `Build` stage is done next` Deploy` stage needs `manual approval` to run. `Approve` button will appear on` approve changes` block. Approve to finish deployment.                                                                                .
+
+### Debugging
+
+To see logs you can use [Cloud Watch](https://us-west-2.console.aws.amazon.com/cloudwatch/home) to monitor the logs for Lambda functions and the Django application.
+
