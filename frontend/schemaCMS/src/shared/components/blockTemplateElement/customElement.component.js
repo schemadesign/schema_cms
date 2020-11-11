@@ -7,6 +7,7 @@ import HTML5toTouch from 'react-dnd-multi-backend/dist/cjs/HTML5toTouch';
 import { DndProvider } from 'react-dnd';
 import { asMutable } from 'seamless-immutable';
 import { remove } from 'ramda';
+import { camelize } from 'humps';
 
 import { Draggable } from '../draggable';
 import {
@@ -30,9 +31,10 @@ const { MenuIcon, MinusIcon } = Icons;
 export const CustomElement = ({ values, valuePath, setFieldValue, handleChange, ...restFormikProps }) => {
   const orderedValues = mapAndAddOrder(values);
   const intl = useIntl();
-  const elementOptions = CUSTOM_ELEMENTS_TYPES.map(type => ({
+  const elementOptions = CUSTOM_ELEMENTS_TYPES.map((type, index) => ({
     label: intl.formatMessage(messages[type]),
     value: type,
+    id: `custom-element-${camelize(type)}-${index}`,
   }));
   const addElement = () =>
     setFieldValue(
@@ -57,7 +59,7 @@ export const CustomElement = ({ values, valuePath, setFieldValue, handleChange, 
         copy={intl.formatMessage(messages.elements)}
         count={orderedValues.length}
         right={
-          <PlusContainer>
+          <PlusContainer id="addCustomElementBtnContainer">
             <PlusButton customStyles={mobilePlusStyles} id={`add-${valuePath}`} onClick={addElement} type="button" />
           </PlusContainer>
         }
@@ -82,7 +84,7 @@ export const CustomElement = ({ values, valuePath, setFieldValue, handleChange, 
               );
 
               return (
-                <ElementContainer>
+                <ElementContainer id={`custom-element-container-${index}`}>
                   {draggableIcon}
                   <ElementInputs>
                     <Select

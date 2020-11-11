@@ -762,6 +762,7 @@ exports[`Metadata: Component should render correctly 1`] = `
     className="sc-gtssRu"
   >
     <div
+      id=""
       onClick={[Function]}
       style={
         Object {

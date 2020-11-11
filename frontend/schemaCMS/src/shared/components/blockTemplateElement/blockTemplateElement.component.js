@@ -3,6 +3,7 @@ import PropTypes from 'prop-types';
 import { AccordionDetails, AccordionHeader, Icons } from 'schemaUI';
 import { useIntl } from 'react-intl';
 import { always, pathOr } from 'ramda';
+import { camelize } from 'humps';
 
 import { customLabelStyles, Header, IconsContainer, InputContainer, ElementIcon } from './blockTemplateElement.styles';
 import messages from './blockTemplateElement.messages';
@@ -33,7 +34,11 @@ export const BlockTemplateElement = ({
 }) => {
   const intl = useIntl();
   const elementPath = `${BLOCK_TEMPLATES_ELEMENTS}.${index}`;
-  const typesOptions = ELEMENTS_TYPES.map(item => ({ label: intl.formatMessage(messages[item]), value: item }));
+  const typesOptions = ELEMENTS_TYPES.map((item, index) => ({
+    label: intl.formatMessage(messages[item]),
+    value: item,
+    id: `standard-element-${camelize(item)}-${index}`,
+  }));
   const handleSelectType = ({ value }) => setFieldValue(`${elementPath}.${ELEMENT_TYPE}`, value);
   const renderElements = renderWhenTrue(
     always(
@@ -74,12 +79,12 @@ export const BlockTemplateElement = ({
         </Header>
       </AccordionHeader>
       <AccordionDetails>
-        <InputContainer>
+        <InputContainer id={`standard-element-container-${index}`}>
           <Select
             label={intl.formatMessage(messages[ELEMENT_TYPE])}
             name={`${elementPath}.${ELEMENT_TYPE}`}
             value={element[ELEMENT_TYPE]}
-            id="elementTypeSelect"
+            id={`standard-elementTypeSelect-${index}`}
             options={typesOptions}
             onSelect={handleSelectType}
             placeholder={intl.formatMessage(messages.typePlaceholder)}

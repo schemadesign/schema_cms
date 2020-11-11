@@ -18,6 +18,7 @@ export class Accordion extends PureComponent {
     collapseCopy: PropTypes.oneOfType([PropTypes.element, PropTypes.string]),
     expandCopy: PropTypes.oneOfType([PropTypes.element, PropTypes.string]),
     newOpen: PropTypes.bool,
+    id: PropTypes.string,
   };
 
   static defaultProps = {
@@ -25,6 +26,7 @@ export class Accordion extends PureComponent {
     customHeaderStyles: {},
     customDetailsStyles: {},
     newOpen: false,
+    id: '',
   };
 
   state = {
@@ -89,6 +91,7 @@ export class Accordion extends PureComponent {
       collapseCopy,
       expandCopy,
       customExpandButtonStyles,
+      id,
       ...rest
     } = this.props;
     const { accordionsState, isAnyOpen } = this.state;
@@ -104,7 +107,11 @@ export class Accordion extends PureComponent {
     return (
       <Fragment>
         {collapseCopy && expandCopy && !!children ? (
-          <div style={{ ...expandButtonStyles, ...customExpandButtonStyles }} onClick={this.toggleOpenAccordion}>
+          <div
+            id={id}
+            style={{ ...expandButtonStyles, ...customExpandButtonStyles }}
+            onClick={this.toggleOpenAccordion}
+          >
             {isAnyOpen ? collapseCopy : expandCopy}
           </div>
         ) : null}
