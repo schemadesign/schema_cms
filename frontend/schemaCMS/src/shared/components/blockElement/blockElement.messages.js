@@ -126,7 +126,7 @@ export default defineMessages({
   },
   fileSizeError: {
     id: 'shared.components.blockElement.fileSizeError',
-    defaultMessage: '{type} should have maximum 50MB',
+    defaultMessage: '{type} should have maximum 150MB',
   },
   elementNamePlaceholder: {
     id: 'shared.components.blockElement.elementNamePlaceholder',
