@@ -21,7 +21,7 @@ import { IMAGE_TYPE, ELEMENT_PARAMS } from '../../../modules/blockTemplates/bloc
 import { TextInput } from '../form/inputs/textInput';
 import { FILE, FILE_NAME, FILE_ALT } from '../../../modules/page/page.constants';
 
-const MAX_SIZE = 50 * 1024 * 1024;
+const MAX_SIZE = 150 * 1024 * 1024;
 const { EditIcon } = Icons;
 
 export const FileElement = ({
