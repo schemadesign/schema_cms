@@ -113,8 +113,8 @@ class ApiStack(Stack):
                 image=nginx_image, container_name="nginx", container_port=80, enable_logging=True,
             ),
             desired_count=1,
-            cpu=512,
-            memory_limit_mib=1024,
+            cpu=1024,
+            memory_limit_mib=2048,
             certificate=Certificate.from_certificate_arn(self, "Cert", certificate_arn=self.certificate_arn),
             domain_name=self.domain_name,
             domain_zone=PrivateHostedZone(self, "zone", vpc=self.vpc, zone_name=self.domain_name,),
@@ -142,8 +142,8 @@ class ApiStack(Stack):
                 "DJANGO_SECRET_KEY": self.django_secret_key,
                 "LAMBDA_AUTH_TOKEN": self.lambda_auth_token,
             },
-            cpu=512,
-            memory_limit_mib=1024,
+            cpu=1024,
+            memory_limit_mib=2048,
         )
 
         self.django_secret_key.grant_read(self.api.service.task_definition.task_role)
