@@ -39,7 +39,7 @@ export const DataSourceLabeling = ({ dataSource, onSelect }) => {
 
   const renderField = field => {
     return (
-      <FieldType>
+      <FieldType key={field}>
         <FieldName>{field}</FieldName>
         <FieldName>{fields[field].dtype}</FieldName>
         <FieldName>
