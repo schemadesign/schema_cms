@@ -6,7 +6,7 @@ import { useHistory, useRouteMatch } from 'react-router';
 import { useEffectOnce } from 'react-use';
 import { useFormik, yupToFormErrors, validateYupSchema } from 'formik';
 import { remove, map, pick } from 'ramda';
-import { Accordion, AccordionDetails, AccordionHeader, AccordionPanel, Icons } from 'schemaUI';
+import { Accordion, AccordionDetails, AccordionHeader, AccordionPanel, Icons, Typography } from 'schemaUI';
 import { useTheme } from 'styled-components';
 
 import {
@@ -18,6 +18,7 @@ import {
   IconsContainer,
   InputContainer,
   inputContainerStyles,
+  TitleWrapper,
 } from './metadata.styles';
 import messages from './metadata.messages';
 import { MobileMenu } from '../../../shared/components/menu/mobileMenu';
@@ -33,8 +34,10 @@ import { binStyles, mobilePlusStyles, PlusContainer } from '../../../shared/comp
 import { NavigationContainer, NextButton, PlusButton } from '../../../shared/components/navigation';
 import { TextInput } from '../../../shared/components/form/inputs/textInput';
 import { DataSourceLabeling } from '../../../shared/components/dataSourceLabeling';
+import { renderWhenTrue } from '../../../shared/utils/rendering';
 
 const { EditIcon, BinIcon } = Icons;
+const { H1 } = Typography;
 
 export const Metadata = ({
   dataSource,
@@ -116,6 +119,14 @@ export const Metadata = ({
     setFieldValue('labels', map(pick(['dtype']))(mappedValues));
   };
 
+  const renderMetadataTitle = renderWhenTrue(() => (
+    <TitleWrapper>
+      <H1>
+        <FormattedMessage {...messages.metaDataTitle} />
+      </H1>
+    </TitleWrapper>
+  ));
+
   return (
     <Container>
       <Helmet title={intl.formatMessage(messages.pageTitle)} />
@@ -139,6 +150,7 @@ export const Metadata = ({
           }
         />
         <Form>
+          {renderMetadataTitle(!!values[METADATA].length)}
           <Accordion {...accordionCopyProps} newOpen>
             {values[METADATA].map(({ key, value, id }, index) => (
               <AccordionPanel key={id} id={id}>
@@ -177,6 +189,11 @@ export const Metadata = ({
               </AccordionPanel>
             ))}
           </Accordion>
+          <TitleWrapper>
+            <H1>
+              <FormattedMessage {...messages.mappingLabelsTitle} />
+            </H1>
+          </TitleWrapper>
           <DataSourceLabeling dataSource={previewData} onSelect={handleOnSelect} />
           <NavigationContainer right fixed padding="10px 0 70px">
             <NextButton onClick={handleSubmit} loading={isSubmitting} disabled={!isValid || !dirty || isSubmitting}>
