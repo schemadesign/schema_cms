@@ -1348,6 +1348,33 @@ exports[`Metadata: Component should render correctly 1`] = `
     </div>
      
     <div
+      className="sc-jffIyK"
+    >
+      <div
+        className="sc-eJoaVz kXjWrG"
+      >
+        <div
+          className="sc-oefIU bfyoGD"
+        >
+          <div
+            className="sc-hhIhEF UPshW"
+          >
+            Field
+          </div>
+          <div
+            className="sc-hhIhEF UPshW"
+          >
+            Original Type
+          </div>
+          <div
+            className="sc-hhIhEF UPshW"
+          >
+            Mapped Type
+          </div>
+        </div>
+      </div>
+    </div>
+    <div
       className="sc-fFSRdu eVZQbr"
     >
       <div

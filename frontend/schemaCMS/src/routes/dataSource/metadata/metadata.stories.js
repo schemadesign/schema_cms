@@ -11,9 +11,14 @@ export const defaultProps = {
   project,
   fetchMetadata: Function.prototype,
   updateMetadata: Function.prototype,
+  fetchPreview: Function.prototype,
   dataSource: {
     id: 1,
+    activeJob: {
+      id: 1,
+    },
   },
+  previewData: {},
   userRole: ROLES.ADMIN,
 };
 
