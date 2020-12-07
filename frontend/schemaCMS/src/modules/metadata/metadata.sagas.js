@@ -22,7 +22,9 @@ function* fetchMetadata({ payload: { dataSourceId } }) {
 function* updateMetadata({ payload: { dataSourceId, formData } }) {
   try {
     yield put(MetadataRoutines.updateMetadata.request());
-    const { data } = yield api.patch(`${DATA_SOURCES_PATH}/${dataSourceId}${METADATA_PATH}`, { data: formData });
+    const { data } = yield api.patch(`${DATA_SOURCES_PATH}/${dataSourceId}${METADATA_PATH}`, {
+      data: { ...formData, skipDecamelize: true },
+    });
 
     yield put(MetadataRoutines.updateMetadata.success(data.results.data));
   } catch (error) {

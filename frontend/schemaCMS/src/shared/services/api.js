@@ -26,6 +26,8 @@ import {
   startsWith,
   toLower,
   when,
+  propEq,
+  either,
 } from 'ramda';
 import queryString from 'query-string';
 import browserHistory from '../utils/history';
@@ -65,7 +67,7 @@ api.interceptors.request.use(
     }),
     data: when(
       pipe(
-        is(FormData),
+        either([is(FormData), propEq('skipDecamelize', true)]),
         not
       ),
       decamelizeKeys

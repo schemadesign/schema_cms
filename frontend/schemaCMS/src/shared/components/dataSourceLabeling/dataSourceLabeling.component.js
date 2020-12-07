@@ -1,9 +1,11 @@
 import React, { useEffect, useState } from 'react';
 import PropTypes from 'prop-types';
-import { keys } from 'ramda';
+import { keys, equals } from 'ramda';
 
 import { Container, FieldType, FieldName, customSelectStyles, FieldTypeHeader } from './dataSourceLabeling.styles';
 import { Select } from '../form/select';
+import { renderWhenTrue } from '../../utils/rendering';
+import { TextInput } from '../form/inputs/textInput';
 
 const DEFAULT_TYPES = [
   { value: 'string', label: 'String' },
@@ -11,6 +13,7 @@ const DEFAULT_TYPES = [
   { value: 'date', label: 'Date' },
   { value: 'int', label: 'Integer' },
   { value: 'number', label: 'Number' },
+  { value: 'img', label: 'Image' },
 ];
 
 export const DataSourceLabeling = ({ dataSource, onSelect }) => {
@@ -22,10 +25,10 @@ export const DataSourceLabeling = ({ dataSource, onSelect }) => {
     setMappedFields(fields);
   }, [fields]);
 
-  const onSelectField = field => ({ value: dtype }) => {
+  const updateMappedField = (field, key, value) => {
     const newFieldType = {
       ...mappedFields[field],
-      dtype,
+      [key]: value,
     };
 
     const newMappedFields = {
@@ -36,6 +39,24 @@ export const DataSourceLabeling = ({ dataSource, onSelect }) => {
     setMappedFields(newMappedFields);
     onSelect(newMappedFields);
   };
+
+  const onSelectField = field => ({ value: dtype }) => {
+    updateMappedField(field, 'dtype', dtype);
+  };
+
+  const handleInputChange = field => ({ currentTarget: { value } }) => {
+    updateMappedField(field, 'param', value);
+  };
+
+  const renderDateField = isDate => field =>
+    renderWhenTrue(() => (
+      <TextInput
+        name={`date${field}`}
+        placeholder="dd/mm/YYYY"
+        value={mappedFields[field].param}
+        onChange={handleInputChange(field)}
+      />
+    ))(isDate);
 
   const renderField = field => {
     return (
@@ -50,6 +71,7 @@ export const DataSourceLabeling = ({ dataSource, onSelect }) => {
             options={DEFAULT_TYPES}
             onSelect={onSelectField(field)}
           />
+          {renderDateField(equals('date', mappedFields[field].dtype))(field)}
         </FieldName>
       </FieldType>
     );
