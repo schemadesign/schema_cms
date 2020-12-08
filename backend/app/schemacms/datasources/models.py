@@ -32,7 +32,15 @@ class MetaDataModel(models.Model):
 
         self.preview.seek(0)
 
-        return json.loads(self.preview.read())
+        preview = json.loads(self.preview.read())
+
+        print(self.get_data_source_meta().fields_labels)
+
+        for k, v in preview["fields"].items():
+            label = self.get_data_source_meta().fields_labels.get(k, {})
+            v["label"] = label
+
+        return preview
 
     @property
     def shape(self):
@@ -283,6 +291,7 @@ class DataSourceMeta(SoftDeleteObject, MetaDataModel):
         max_length=25, choices=constants.PROCESSING_STATE_CHOICES, default=constants.ProcessingState.PENDING
     )
     error = models.TextField(blank=True, default="")
+    fields_labels = pg_fields.JSONField(blank=True, default=dict)
 
     objects = managers.DataSourceMetaManager()
 
@@ -298,6 +307,9 @@ class DataSourceMeta(SoftDeleteObject, MetaDataModel):
         base_path = self.preview.storage.location
 
         return os.path.join(base_path, f"{self.datasource.id}/previews/{filename}")
+
+    def get_data_source_meta(self):
+        return self.meta_data
 
 
 class WranglingScript(SoftDeleteObject, TimeStampedModel):
@@ -459,6 +471,9 @@ class DataSourceJobMetaData(SoftDeleteObject, MetaDataModel):
         base_path = self.preview.storage.location
 
         return os.path.join(base_path, f"{self.job.datasource.id}/previews/{filename}")
+
+    def get_data_source_meta(self):
+        return self.job.datasource.meta_data
 
 
 class DataSourceJobStep(SoftDeleteObject, models.Model):
