@@ -17,7 +17,7 @@ const DEFAULT_TYPES = [
 ];
 
 export const DataSourceLabeling = ({ dataSource, onSelect }) => {
-  const { fields } = dataSource;
+  const { labels: fields } = dataSource;
 
   const [mappedFields, setMappedFields] = useState();
 

@@ -5,7 +5,7 @@ import { DataSourceLabeling } from './dataSourceLabeling.component';
 
 export const defaultProps = {
   dataSource: {
-    fields: {
+    labels: {
       Field1: {
         dtype: 'string',
       },
