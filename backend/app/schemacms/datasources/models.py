@@ -33,12 +33,11 @@ class MetaDataModel(models.Model):
         self.preview.seek(0)
 
         preview = json.loads(self.preview.read())
-
-        print(self.get_data_source_meta().fields_labels)
+        preview["labels"] = {}
 
         for k, v in preview["fields"].items():
             label = self.get_data_source_meta().fields_labels.get(k, {"dtype": v.get("dtype")})
-            v["label"] = label
+            preview["labels"][k] = label
 
         return preview
 
