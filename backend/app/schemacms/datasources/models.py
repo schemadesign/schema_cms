@@ -37,7 +37,7 @@ class MetaDataModel(models.Model):
         print(self.get_data_source_meta().fields_labels)
 
         for k, v in preview["fields"].items():
-            label = self.get_data_source_meta().fields_labels.get(k, {})
+            label = self.get_data_source_meta().fields_labels.get(k, {"dtype": v.get("dtype")})
             v["label"] = label
 
         return preview
@@ -309,7 +309,7 @@ class DataSourceMeta(SoftDeleteObject, MetaDataModel):
         return os.path.join(base_path, f"{self.datasource.id}/previews/{filename}")
 
     def get_data_source_meta(self):
-        return self.meta_data
+        return self
 
 
 class WranglingScript(SoftDeleteObject, TimeStampedModel):
