@@ -318,8 +318,11 @@ class TestDataSourcePreview:
         data_source.update_meta(preview={"test": "test"}, items=2, fields=2, fields_names=["col1", "col2"])
         data_source.meta_data.refresh_from_db()
 
+        expected_results = json.loads(data_source.meta_data.preview.read())
+        expected_results["labels"] = {}
+
         expected_data = dict(
-            results=json.loads(data_source.meta_data.preview.read()),
+            results=expected_results,
             data_source={"name": data_source.name},
             project=data_source.project_info,
         )
@@ -658,7 +661,7 @@ class TestJobDetailView:
     def test_description_is_allowed_to_edit(self, api_client, admin, job_factory, job_step_factory):
         job = job_factory()
         job_step_factory.create_batch(2, datasource_job=job)
-        valid_payload = dict(descriprion="new desc")
+        valid_payload = dict(description="new desc")
 
         api_client.force_authenticate(admin)
         valid_response = api_client.patch(self.get_url(job.id), data=valid_payload)
@@ -894,11 +897,14 @@ class TestDescriptionView:
 
     def test_create_description(self, api_client, admin, data_source):
         payload = {
-            "data": [
-                {"key": "Test Key 1", "value": "Test Value 1"},
-                {"key": "Test Key 2", "value": "Test Value 2"},
-                {"key": "Test Key 3", "value": "Test Value 3"},
-            ]
+            "data": {
+                "metadata": [
+                    {"key": "Test Key 1", "value": "Test Value 1"},
+                    {"key": "Test Key 2", "value": "Test Value 2"},
+                    {"key": "Test Key 3", "value": "Test Value 3"},
+                ],
+                "labels": {},
+            }
         }
 
         api_client.force_authenticate(admin)
@@ -915,10 +921,13 @@ class TestDescriptionView:
         data_source.save()
 
         payload = {
-            "data": [
-                {"key": "Test Key 1", "value": "Test Value 1"},
-                {"key": "Test Key 2", "value": "Test Value 2"},
-            ]
+            "data": {
+                "metadata": [
+                    {"key": "Test Key 1", "value": "Test Value 1"},
+                    {"key": "Test Key 2", "value": "Test Value 2"},
+                ],
+                "labels": {},
+            }
         }
 
         api_client.force_authenticate(admin)

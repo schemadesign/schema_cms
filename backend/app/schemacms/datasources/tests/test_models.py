@@ -127,11 +127,14 @@ class TestDataSource:
 class TestDataSourceMeta:
     @pytest.mark.parametrize("offset, whence", [(0, 0), (0, 2)])  # test different file cursor positions
     def test_data(self, data_source_factory, offset, whence):
+        preview_data = {"fields": {"test": {"dtype": "test_type"}}}
+
         ds = data_source_factory()
-        ds.update_meta(preview={"test": "test"}, items=0, fields=0, fields_names=[])
+        ds.update_meta(preview=preview_data, items=0, fields=0, fields_names=[])
 
         ds.meta_data.refresh_from_db()
         expected = json.loads(ds.meta_data.preview.read())
+        expected["labels"] = {"test": {"dtype": "test_type"}}
         ds.meta_data.preview.seek(offset, whence)
 
         assert ds.meta_data.data == expected

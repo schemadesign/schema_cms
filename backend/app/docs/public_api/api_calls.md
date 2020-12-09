@@ -536,15 +536,18 @@ Content-Type: application/json
    "fields": {
       "0": {
          "name": "Total Revenue",
-         "type": "number"
+         "type": "number",
+         "label": {"type": "number"}
       },
       "1": {
          "name": "Total Cost",
-         "type": "number" 
+         "type": "number",
+         "label": {"type": "number"}
       },
       "2": {
          "name": "Total Profit",
-         "type": "number"
+         "type": "number",
+         "label": {"type": "number"}
       },
    },
    "filters": [],
@@ -636,15 +639,18 @@ Content-Type: application/json
 {
   "0": {
     "name": "Total Revenue",
-    "type": "number"
+    "type": "number",
+    "label": {"type": "number"}
   },
   "1": {
     "name": "Total Cost",
-    "type": "number"
+    "type": "number",
+    "label": {"type": "number"}
   },
   "2": {
     "name": "Total Profit",
-    "type": "number"
+    "type": "number",
+    "label": {"type": "number"}
   }
 }
 ```
