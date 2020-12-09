@@ -16,6 +16,7 @@ export const FieldType = styled.div`
 export const FieldName = styled.div`
   display: flex;
   flex: 1;
+  text-transform: capitalize;
 `;
 
 export const customSelectStyles = css`

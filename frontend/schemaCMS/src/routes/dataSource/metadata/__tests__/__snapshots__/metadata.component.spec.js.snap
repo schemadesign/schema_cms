@@ -1393,17 +1393,17 @@ exports[`Metadata: Component should render correctly 1`] = `
           className="sc-hhIhEF hLpBRd"
         >
           <div
-            className="sc-eirseW ibxCWH"
+            className="sc-eirseW gUBWBM"
           >
             Field
           </div>
           <div
-            className="sc-eirseW ibxCWH"
+            className="sc-eirseW gUBWBM"
           >
             Original Type
           </div>
           <div
-            className="sc-eirseW ibxCWH"
+            className="sc-eirseW gUBWBM"
           >
             Mapped Type
           </div>

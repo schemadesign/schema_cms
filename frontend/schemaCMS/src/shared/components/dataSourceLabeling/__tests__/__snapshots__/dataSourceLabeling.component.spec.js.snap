@@ -11,17 +11,17 @@ exports[`DataSourceLabeling: Component should render correctly 1`] = `
       className="sc-dlnjPT fLFyDH"
     >
       <div
-        className="sc-hKFyIo xZa-dO"
+        className="sc-hKFyIo iuZCNB"
       >
         Field
       </div>
       <div
-        className="sc-hKFyIo xZa-dO"
+        className="sc-hKFyIo iuZCNB"
       >
         Original Type
       </div>
       <div
-        className="sc-hKFyIo xZa-dO"
+        className="sc-hKFyIo iuZCNB"
       >
         Mapped Type
       </div>
@@ -31,17 +31,15 @@ exports[`DataSourceLabeling: Component should render correctly 1`] = `
     className="sc-dlnjPT fLFyDH"
   >
     <div
-      className="sc-hKFyIo xZa-dO"
+      className="sc-hKFyIo iuZCNB"
     >
       Field1
     </div>
     <div
-      className="sc-hKFyIo xZa-dO"
-    >
-      string
-    </div>
+      className="sc-hKFyIo iuZCNB"
+    />
     <div
-      className="sc-hKFyIo xZa-dO"
+      className="sc-hKFyIo iuZCNB"
     >
       <div
         className="sc-eCApGN bSrFPJ"
@@ -303,17 +301,15 @@ exports[`DataSourceLabeling: Component should render correctly 1`] = `
     className="sc-dlnjPT fLFyDH"
   >
     <div
-      className="sc-hKFyIo xZa-dO"
+      className="sc-hKFyIo iuZCNB"
     >
       Field2
     </div>
     <div
-      className="sc-hKFyIo xZa-dO"
-    >
-      Number
-    </div>
+      className="sc-hKFyIo iuZCNB"
+    />
     <div
-      className="sc-hKFyIo xZa-dO"
+      className="sc-hKFyIo iuZCNB"
     >
       <div
         className="sc-eCApGN bSrFPJ"
@@ -323,7 +319,7 @@ exports[`DataSourceLabeling: Component should render correctly 1`] = `
           id="Field2"
           name="Field2"
           type="hidden"
-          value="Number"
+          value="number"
         />
         <div
           style={
@@ -365,7 +361,7 @@ exports[`DataSourceLabeling: Component should render correctly 1`] = `
                   }
                 }
               >
-                
+                Number
               </div>
             </div>
             <div
@@ -472,9 +468,10 @@ exports[`DataSourceLabeling: Component should render correctly 1`] = `
                 onMouseOver={[Function]}
                 style={
                   Object {
+                    "backgroundColor": "#FFF",
                     "border": "1px solid  #2F2F36",
                     "borderTop": "none",
-                    "color": "#71737e",
+                    "color": "#000",
                     "cursor": "pointer",
                     "overflow": "hidden",
                     "padding": "20px 10px",

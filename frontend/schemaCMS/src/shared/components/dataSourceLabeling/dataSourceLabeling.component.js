@@ -42,8 +42,8 @@ export const DataSourceLabeling = ({ dataSource, onSelect }) => {
     onSelect(newMappedFields);
   };
 
-  const onSelectField = field => ({ value: dtype }) => {
-    updateMappedField(field, 'dtype', dtype);
+  const onSelectField = field => ({ value }) => {
+    updateMappedField(field, 'type', value);
   };
 
   const handleInputChange = field => ({ currentTarget: { value } }) => {
@@ -69,7 +69,7 @@ export const DataSourceLabeling = ({ dataSource, onSelect }) => {
           <Select
             customStyles={customSelectStyles}
             name={field}
-            value={mappedFields[field].dtype}
+            value={mappedFields[field].type}
             options={DEFAULT_TYPES}
             onSelect={onSelectField(field)}
           />

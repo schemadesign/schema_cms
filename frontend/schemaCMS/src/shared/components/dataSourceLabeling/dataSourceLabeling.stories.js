@@ -7,10 +7,10 @@ export const defaultProps = {
   dataSource: {
     labels: {
       Field1: {
-        dtype: 'string',
+        type: 'string',
       },
       Field2: {
-        dtype: 'Number',
+        type: 'number',
       },
     },
   },
