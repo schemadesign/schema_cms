@@ -134,7 +134,7 @@ class TestDataSourceMeta:
 
         ds.meta_data.refresh_from_db()
         expected = json.loads(ds.meta_data.preview.read())
-        expected["labels"] = {"test": {"dtype": "test_type"}}
+        expected["labels"] = {"test": {"type": "test_type"}}
         ds.meta_data.preview.seek(offset, whence)
 
         assert ds.meta_data.data == expected

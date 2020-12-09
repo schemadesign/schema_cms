@@ -247,13 +247,14 @@ class DataSourceViewSet(BaseDataSourceView, ActionSerializerViewSetMixin, viewse
                 else:
                     raise exceptions.ValidationError("Duplicated keys sent", code="duplicatedKeys")
 
-            labels = request.data["data"]["labels"]
+            if "labels" in request.data["data"]:
+                labels = request.data["data"]["labels"]
 
-            if not isinstance(labels, dict):
-                raise exceptions.ValidationError("Labels need to be a dict")
+                if not isinstance(labels, dict):
+                    raise exceptions.ValidationError("Labels need to be a dict")
 
-            ds.meta_data.fields_labels = labels
-            ds.meta_data.save()
+                ds.meta_data.fields_labels = labels
+                ds.meta_data.save()
 
             description = ds.add_description({"data": request.data["data"]["metadata"]})
             data = self.get_serializer(description).data
