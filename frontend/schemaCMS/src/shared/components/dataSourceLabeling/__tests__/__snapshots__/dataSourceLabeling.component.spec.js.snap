@@ -214,6 +214,66 @@ exports[`DataSourceLabeling: Component should render correctly 1`] = `
               >
                 Number
               </div>
+              <div
+                id="select-item-5"
+                onClick={[Function]}
+                onMouseOut={[Function]}
+                onMouseOver={[Function]}
+                style={
+                  Object {
+                    "border": "1px solid  #2F2F36",
+                    "borderTop": "none",
+                    "color": "#71737e",
+                    "cursor": "pointer",
+                    "overflow": "hidden",
+                    "padding": "20px 10px",
+                    "textOverflow": "ellipsis",
+                    "whiteSpace": "nowrap",
+                  }
+                }
+              >
+                Image
+              </div>
+              <div
+                id="select-item-6"
+                onClick={[Function]}
+                onMouseOut={[Function]}
+                onMouseOver={[Function]}
+                style={
+                  Object {
+                    "border": "1px solid  #2F2F36",
+                    "borderTop": "none",
+                    "color": "#71737e",
+                    "cursor": "pointer",
+                    "overflow": "hidden",
+                    "padding": "20px 10px",
+                    "textOverflow": "ellipsis",
+                    "whiteSpace": "nowrap",
+                  }
+                }
+              >
+                Phone
+              </div>
+              <div
+                id="select-item-7"
+                onClick={[Function]}
+                onMouseOut={[Function]}
+                onMouseOver={[Function]}
+                style={
+                  Object {
+                    "border": "1px solid  #2F2F36",
+                    "borderTop": "none",
+                    "color": "#71737e",
+                    "cursor": "pointer",
+                    "overflow": "hidden",
+                    "padding": "20px 10px",
+                    "textOverflow": "ellipsis",
+                    "whiteSpace": "nowrap",
+                  }
+                }
+              >
+                Email
+              </div>
             </div>
           </div>
         </div>
@@ -424,6 +484,66 @@ exports[`DataSourceLabeling: Component should render correctly 1`] = `
                 }
               >
                 Number
+              </div>
+              <div
+                id="select-item-5"
+                onClick={[Function]}
+                onMouseOut={[Function]}
+                onMouseOver={[Function]}
+                style={
+                  Object {
+                    "border": "1px solid  #2F2F36",
+                    "borderTop": "none",
+                    "color": "#71737e",
+                    "cursor": "pointer",
+                    "overflow": "hidden",
+                    "padding": "20px 10px",
+                    "textOverflow": "ellipsis",
+                    "whiteSpace": "nowrap",
+                  }
+                }
+              >
+                Image
+              </div>
+              <div
+                id="select-item-6"
+                onClick={[Function]}
+                onMouseOut={[Function]}
+                onMouseOver={[Function]}
+                style={
+                  Object {
+                    "border": "1px solid  #2F2F36",
+                    "borderTop": "none",
+                    "color": "#71737e",
+                    "cursor": "pointer",
+                    "overflow": "hidden",
+                    "padding": "20px 10px",
+                    "textOverflow": "ellipsis",
+                    "whiteSpace": "nowrap",
+                  }
+                }
+              >
+                Phone
+              </div>
+              <div
+                id="select-item-7"
+                onClick={[Function]}
+                onMouseOut={[Function]}
+                onMouseOver={[Function]}
+                style={
+                  Object {
+                    "border": "1px solid  #2F2F36",
+                    "borderTop": "none",
+                    "color": "#71737e",
+                    "cursor": "pointer",
+                    "overflow": "hidden",
+                    "padding": "20px 10px",
+                    "textOverflow": "ellipsis",
+                    "whiteSpace": "nowrap",
+                  }
+                }
+              >
+                Email
               </div>
             </div>
           </div>
