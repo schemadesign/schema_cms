@@ -19,13 +19,13 @@ const DEFAULT_TYPES = [
 ];
 
 export const DataSourceLabeling = ({ dataSource, onSelect }) => {
-  const { labels: fields } = dataSource;
+  const { labels, fields } = dataSource;
 
   const [mappedFields, setMappedFields] = useState();
 
   useEffect(() => {
-    setMappedFields(fields);
-  }, [fields]);
+    setMappedFields(labels);
+  }, [labels]);
 
   const updateMappedField = (field, key, value) => {
     const newFieldType = {
@@ -64,7 +64,7 @@ export const DataSourceLabeling = ({ dataSource, onSelect }) => {
     return (
       <FieldType key={field}>
         <FieldName>{field}</FieldName>
-        <FieldName>{fields[field].type}</FieldName>
+        <FieldName>{fields[field].dtype}</FieldName>
         <FieldName>
           <Select
             customStyles={customSelectStyles}
