@@ -75,16 +75,11 @@ class PADataSourceDetailNoRecordsSerializer(PADataSourceListSerializer):
         fields = json.loads(obj.get_active_job().meta_data.preview.read())["fields"]
         labels = obj.meta_data.fields_labels
 
-        for key, label in labels.items():
-            if isinstance(label, dict) and "dtype" in label:
-                label["type"] = label["dtype"]
-                del label["dtype"]
-
         data = {
             str(num): {
                 "name": key,
                 "type": value["dtype"],
-                "label": labels.get(key, {"dtype": value["dtype"]}),
+                "label": labels.get(key, {"type": value["dtype"]}),
             }
             for num, (key, value) in enumerate(fields.items())
         }

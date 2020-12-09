@@ -37,7 +37,7 @@ class MetaDataModel(models.Model):
 
         if "fields" in preview:
             for k, v in preview["fields"].items():
-                label = self.get_data_source_meta().fields_labels.get(k, {"dtype": v.get("dtype")})
+                label = self.get_data_source_meta().fields_labels.get(k, {"type": v.get("dtype")})
                 preview["labels"][k] = label
 
         return preview
