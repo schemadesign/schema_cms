@@ -55,26 +55,28 @@ const extractObjectErrors = pipe(
 export const camelizeResponseErrors = errors =>
   ifElse(is(Array), map(extractObjectErrors), e => extractObjectErrors(e))(errors);
 
-api.interceptors.request.use(
-  evolve({
-    url: when(complement(anyPass([endsWith('/'), startsWith('http')])), url => {
-      const parsedUrl = queryString.parseUrl(url);
-      if (isEmpty(parsedUrl.query)) {
-        return parsedUrl.url;
-      }
+if (process.env.NODE_ENV !== 'test') {
+  api.interceptors.request.use(
+    evolve({
+      url: when(complement(anyPass([endsWith('/'), startsWith('http')])), url => {
+        const parsedUrl = queryString.parseUrl(url);
+        if (isEmpty(parsedUrl.query)) {
+          return parsedUrl.url;
+        }
 
-      return `${parsedUrl.url}?${queryString.stringify(parsedUrl.query)}`;
-    }),
-    data: when(
-      pipe(
-        either([is(FormData), propEq('skipDecamelize', true)]),
-        not
+        return `${parsedUrl.url}?${queryString.stringify(parsedUrl.query)}`;
+      }),
+      data: when(
+        pipe(
+          either([is(FormData), propEq('skipDecamelize', true)]),
+          not
+        ),
+        decamelizeKeys
       ),
-      decamelizeKeys
-    ),
-  }),
-  error => Promise.reject(error)
-);
+    }),
+    error => Promise.reject(error)
+  );
+}
 
 const getData = path(['response', 'data']);
 

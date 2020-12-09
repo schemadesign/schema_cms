@@ -38,7 +38,9 @@ describe('Metadata: sagas', () => {
       };
 
       mockApi
-        .patch(`${DATA_SOURCES_PATH}/${payload.dataSourceId}${METADATA_PATH}`, { data: formData })
+        .patch(`${DATA_SOURCES_PATH}/${payload.dataSourceId}${METADATA_PATH}`, {
+          data: { ...formData, skipDecamelize: true },
+        })
         .reply(OK, responseData);
 
       await expectSaga(watchMetadata)
