@@ -37,7 +37,9 @@ exports[`DataSourceLabeling: Component should render correctly 1`] = `
     </div>
     <div
       className="sc-hKFyIo iuZCNB"
-    />
+    >
+      string
+    </div>
     <div
       className="sc-hKFyIo iuZCNB"
     >
@@ -307,7 +309,9 @@ exports[`DataSourceLabeling: Component should render correctly 1`] = `
     </div>
     <div
       className="sc-hKFyIo iuZCNB"
-    />
+    >
+      number
+    </div>
     <div
       className="sc-hKFyIo iuZCNB"
     >

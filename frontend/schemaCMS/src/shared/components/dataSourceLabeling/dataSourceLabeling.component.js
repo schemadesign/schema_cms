@@ -64,7 +64,7 @@ export const DataSourceLabeling = ({ dataSource, onSelect }) => {
     return (
       <FieldType key={field}>
         <FieldName>{field}</FieldName>
-        <FieldName>{fields[field].dtype}</FieldName>
+        <FieldName>{fields[field].type}</FieldName>
         <FieldName>
           <Select
             customStyles={customSelectStyles}
@@ -73,7 +73,7 @@ export const DataSourceLabeling = ({ dataSource, onSelect }) => {
             options={DEFAULT_TYPES}
             onSelect={onSelectField(field)}
           />
-          {renderDateField(equals('date', mappedFields[field].dtype))(field)}
+          {renderDateField(equals('date', mappedFields[field].type))(field)}
         </FieldName>
       </FieldType>
     );

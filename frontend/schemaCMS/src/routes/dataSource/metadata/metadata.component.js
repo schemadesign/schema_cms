@@ -116,7 +116,7 @@ export const Metadata = ({
   });
 
   const handleOnSelect = mappedValues => {
-    setFieldValue('labels', map(pick(['dtype', 'param']))(mappedValues));
+    setFieldValue('labels', map(pick(['type', 'param']))(mappedValues));
   };
 
   const renderMetadataTitle = renderWhenTrue(() => (
