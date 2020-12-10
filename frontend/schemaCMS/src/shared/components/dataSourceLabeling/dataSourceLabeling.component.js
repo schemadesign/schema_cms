@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import PropTypes from 'prop-types';
-import { keys, equals } from 'ramda';
+import { keys, equals, dissoc } from 'ramda';
 
 import { Container, FieldType, FieldName, customSelectStyles, FieldTypeHeader } from './dataSourceLabeling.styles';
 import { Select } from '../form/select';
@@ -28,7 +28,7 @@ export const DataSourceLabeling = ({ dataSource, onSelect }) => {
     setMappedFields(labels);
   }, [labels]);
 
-  const updateMappedField = (field, key, value) => {
+  const updateMappedField = (field, key, value, shouldRemoveParam = false) => {
     const newFieldType = {
       ...mappedFields[field],
       [key]: value,
@@ -36,7 +36,7 @@ export const DataSourceLabeling = ({ dataSource, onSelect }) => {
 
     const newMappedFields = {
       ...mappedFields,
-      [field]: newFieldType,
+      [field]: shouldRemoveParam ? dissoc('param')(newFieldType) : newFieldType,
     };
 
     setMappedFields(newMappedFields);
@@ -44,7 +44,8 @@ export const DataSourceLabeling = ({ dataSource, onSelect }) => {
   };
 
   const onSelectField = field => ({ value }) => {
-    updateMappedField(field, 'type', value);
+    const shouldRemoveParam = value !== 'date';
+    updateMappedField(field, 'type', value, shouldRemoveParam);
   };
 
   const handleInputChange = field => ({ currentTarget: { value } }) => {
