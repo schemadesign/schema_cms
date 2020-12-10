@@ -16,6 +16,7 @@ const DEFAULT_TYPES = [
   { value: 'img', label: 'Image' },
   { value: 'phone', label: 'Phone' },
   { value: 'email', label: 'Email' },
+  { value: 'link', label: 'Link' },
 ];
 
 export const DataSourceLabeling = ({ dataSource, onSelect }) => {

@@ -274,6 +274,26 @@ exports[`DataSourceLabeling: Component should render correctly 1`] = `
               >
                 Email
               </div>
+              <div
+                id="select-item-8"
+                onClick={[Function]}
+                onMouseOut={[Function]}
+                onMouseOver={[Function]}
+                style={
+                  Object {
+                    "border": "1px solid  #2F2F36",
+                    "borderTop": "none",
+                    "color": "#71737e",
+                    "cursor": "pointer",
+                    "overflow": "hidden",
+                    "padding": "20px 10px",
+                    "textOverflow": "ellipsis",
+                    "whiteSpace": "nowrap",
+                  }
+                }
+              >
+                Link
+              </div>
             </div>
           </div>
         </div>
@@ -545,6 +565,26 @@ exports[`DataSourceLabeling: Component should render correctly 1`] = `
                 }
               >
                 Email
+              </div>
+              <div
+                id="select-item-8"
+                onClick={[Function]}
+                onMouseOut={[Function]}
+                onMouseOver={[Function]}
+                style={
+                  Object {
+                    "border": "1px solid  #2F2F36",
+                    "borderTop": "none",
+                    "color": "#71737e",
+                    "cursor": "pointer",
+                    "overflow": "hidden",
+                    "padding": "20px 10px",
+                    "textOverflow": "ellipsis",
+                    "whiteSpace": "nowrap",
+                  }
+                }
+              >
+                Link
               </div>
             </div>
           </div>
