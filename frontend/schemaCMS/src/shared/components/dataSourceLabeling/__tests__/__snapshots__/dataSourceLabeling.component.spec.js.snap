@@ -2,7 +2,7 @@
 
 exports[`DataSourceLabeling: Component should render correctly 1`] = `
 <div
-  className="sc-bdnylx"
+  className="sc-bdnylx gLhJEL"
 >
   <div
     className="sc-gtssRu iNdVgL"
@@ -299,6 +299,11 @@ exports[`DataSourceLabeling: Component should render correctly 1`] = `
         </div>
         <div
           className="sc-jSFkmK ezShLZ"
+          style={
+            Object {
+              "top": 0,
+            }
+          }
         >
           <svg
             style={
@@ -591,6 +596,11 @@ exports[`DataSourceLabeling: Component should render correctly 1`] = `
         </div>
         <div
           className="sc-jSFkmK ezShLZ"
+          style={
+            Object {
+              "top": 0,
+            }
+          }
         >
           <svg
             style={

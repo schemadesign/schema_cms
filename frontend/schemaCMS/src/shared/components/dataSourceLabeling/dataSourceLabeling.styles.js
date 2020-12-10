@@ -1,7 +1,9 @@
 import styled, { css } from 'styled-components';
 import { colors } from '../../../theme/styled';
 
-export const Container = styled.div``;
+export const Container = styled.div`
+  margin-top: 60px;
+`;
 
 export const FieldTypeHeader = styled.div`
   border-bottom: 1px solid ${colors.coolGray};

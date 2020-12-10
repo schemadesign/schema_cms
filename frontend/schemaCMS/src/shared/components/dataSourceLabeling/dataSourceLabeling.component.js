@@ -70,6 +70,7 @@ export const DataSourceLabeling = ({ dataSource, onSelect }) => {
         <FieldName>
           <Select
             customStyles={customSelectStyles}
+            iconContainerStyles={{ top: 0 }}
             name={field}
             value={mappedFields[field].type}
             options={DEFAULT_TYPES}
