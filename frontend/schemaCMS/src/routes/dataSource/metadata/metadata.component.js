@@ -67,6 +67,7 @@ export const Metadata = ({
     isSubmitting,
     dirty,
     isValid,
+    resetForm,
     ...restFormikProps
   } = useFormik({
     initialValues: { [METADATA]: metadata },
@@ -83,6 +84,7 @@ export const Metadata = ({
     onSubmit: async (data, { setSubmitting, setErrors }) => {
       try {
         await updateMetadata({ dataSourceId: dataSource.id, formData: data });
+        resetForm({ values });
         setSubmitting(false);
       } catch (errors) {
         reportError(errors);
