@@ -17,7 +17,6 @@ import {
   keys,
   map,
   mapObjIndexed,
-  not,
   path,
   pathOr,
   pipe,
@@ -26,8 +25,8 @@ import {
   startsWith,
   toLower,
   when,
-  propEq,
-  either,
+  pathEq,
+  identity,
 } from 'ramda';
 import queryString from 'query-string';
 import browserHistory from '../utils/history';
@@ -66,13 +65,11 @@ if (process.env.NODE_ENV !== 'test') {
 
         return `${parsedUrl.url}?${queryString.stringify(parsedUrl.query)}`;
       }),
-      data: when(
-        pipe(
-          either([is(FormData), propEq('skipDecamelize', true)]),
-          not
-        ),
-        decamelizeKeys
-      ),
+      data: cond([
+        [is(FormData), decamelizeKeys],
+        [pathEq(['data', 'skipDecamelize'], true), identity],
+        [T, decamelizeKeys],
+      ]),
     }),
     error => Promise.reject(error)
   );
