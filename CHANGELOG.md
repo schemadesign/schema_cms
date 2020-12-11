@@ -7,6 +7,11 @@
 ### Features
 
 
+## 1.10.0 (December 11, 2020) - Release
+### Changes
+- Fields labels
+
+
 ## 1.9.4 (November 03, 2020) - Fixes
 ### Fixes
 - add delay for updating uploaded data source in the data source list
