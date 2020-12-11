@@ -5,8 +5,8 @@ import Helmet from 'react-helmet';
 import { useHistory, useRouteMatch } from 'react-router';
 import { useEffectOnce } from 'react-use';
 import { useFormik, yupToFormErrors, validateYupSchema } from 'formik';
-import { remove } from 'ramda';
-import { Accordion, AccordionDetails, AccordionHeader, AccordionPanel, Icons } from 'schemaUI';
+import { remove, map, pick } from 'ramda';
+import { Accordion, AccordionDetails, AccordionHeader, AccordionPanel, Icons, Typography } from 'schemaUI';
 import { useTheme } from 'styled-components';
 
 import {
@@ -18,6 +18,7 @@ import {
   IconsContainer,
   InputContainer,
   inputContainerStyles,
+  TitleWrapper,
 } from './metadata.styles';
 import messages from './metadata.messages';
 import { MobileMenu } from '../../../shared/components/menu/mobileMenu';
@@ -32,10 +33,22 @@ import { CounterHeader } from '../../../shared/components/counterHeader';
 import { binStyles, mobilePlusStyles, PlusContainer } from '../../../shared/components/form/frequentComponents.styles';
 import { NavigationContainer, NextButton, PlusButton } from '../../../shared/components/navigation';
 import { TextInput } from '../../../shared/components/form/inputs/textInput';
+import { DataSourceLabeling } from '../../../shared/components/dataSourceLabeling';
+import { renderWhenTrue } from '../../../shared/utils/rendering';
 
 const { EditIcon, BinIcon } = Icons;
+const { H1 } = Typography;
 
-export const Metadata = ({ dataSource, userRole, project, fetchMetadata, updateMetadata, metadata }) => {
+export const Metadata = ({
+  dataSource,
+  userRole,
+  project,
+  fetchMetadata,
+  updateMetadata,
+  metadata,
+  previewData,
+  fetchPreview,
+}) => {
   const intl = useIntl();
   const history = useHistory();
   const match = useRouteMatch();
@@ -54,6 +67,7 @@ export const Metadata = ({ dataSource, userRole, project, fetchMetadata, updateM
     isSubmitting,
     dirty,
     isValid,
+    resetForm,
     ...restFormikProps
   } = useFormik({
     initialValues: { [METADATA]: metadata },
@@ -69,7 +83,8 @@ export const Metadata = ({ dataSource, userRole, project, fetchMetadata, updateM
     },
     onSubmit: async (data, { setSubmitting, setErrors }) => {
       try {
-        await updateMetadata({ dataSourceId: dataSource.id, formData: data[METADATA] });
+        await updateMetadata({ dataSourceId: dataSource.id, formData: data });
+        resetForm({ values });
         setSubmitting(false);
       } catch (errors) {
         reportError(errors);
@@ -87,6 +102,7 @@ export const Metadata = ({ dataSource, userRole, project, fetchMetadata, updateM
     (async () => {
       try {
         await fetchMetadata({ dataSourceId: dataSource.id });
+        await fetchPreview({ dataSourceId: dataSource.id, jobId: dataSource.activeJob.id });
       } catch (e) {
         reportError(e);
         setError(e);
@@ -100,6 +116,18 @@ export const Metadata = ({ dataSource, userRole, project, fetchMetadata, updateM
     collapseCopy: intl.formatMessage(messages.collapseCopy),
     expandCopy: intl.formatMessage(messages.expandCopy),
   });
+
+  const handleOnSelect = mappedValues => {
+    setFieldValue('labels', map(pick(['type', 'param']))(mappedValues));
+  };
+
+  const renderMetadataTitle = renderWhenTrue(() => (
+    <TitleWrapper>
+      <H1>
+        <FormattedMessage {...messages.metaDataTitle} />
+      </H1>
+    </TitleWrapper>
+  ));
 
   return (
     <Container>
@@ -124,6 +152,7 @@ export const Metadata = ({ dataSource, userRole, project, fetchMetadata, updateM
           }
         />
         <Form>
+          {renderMetadataTitle(!!values[METADATA].length)}
           <Accordion {...accordionCopyProps} newOpen>
             {values[METADATA].map(({ key, value, id }, index) => (
               <AccordionPanel key={id} id={id}>
@@ -162,6 +191,12 @@ export const Metadata = ({ dataSource, userRole, project, fetchMetadata, updateM
               </AccordionPanel>
             ))}
           </Accordion>
+          <TitleWrapper>
+            <H1>
+              <FormattedMessage {...messages.mappingLabelsTitle} />
+            </H1>
+          </TitleWrapper>
+          <DataSourceLabeling dataSource={previewData} onSelect={handleOnSelect} />
           <NavigationContainer right fixed padding="10px 0 70px">
             <NextButton onClick={handleSubmit} loading={isSubmitting} disabled={!isValid || !dirty || isSubmitting}>
               <FormattedMessage {...messages.save} />
@@ -181,4 +216,6 @@ Metadata.propTypes = {
   fetchMetadata: PropTypes.func.isRequired,
   updateMetadata: PropTypes.func.isRequired,
   metadata: PropTypes.array.isRequired,
+  previewData: PropTypes.object.isRequired,
+  fetchPreview: PropTypes.func.isRequired,
 };

@@ -20,6 +20,7 @@ export const Select = memo(
     options,
     centerIcon = false,
     onSelect,
+    iconContainerStyles,
     ...restProps
   }) => {
     const [open, setOpen] = useState(false);
@@ -44,7 +45,7 @@ export const Select = memo(
           setOpen={setOpen}
           {...restProps}
         />
-        <IconContainer centerIcon={centerIcon}>
+        <IconContainer style={iconContainerStyles} centerIcon={centerIcon}>
           <CaretIcon />
         </IconContainer>
       </Container>
@@ -61,5 +62,6 @@ Select.propTypes = {
   placeholder: PropTypes.string,
   options: PropTypes.array.isRequired,
   centerIcon: PropTypes.bool,
+  iconContainerStyles: PropTypes.object,
   onSelect: PropTypes.func.isRequired,
 };

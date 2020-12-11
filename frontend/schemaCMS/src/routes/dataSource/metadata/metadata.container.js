@@ -10,12 +10,14 @@ import { selectDataSource } from '../../../modules/dataSource';
 import { selectUserRole } from '../../../modules/userProfile';
 import { selectProject } from '../../../modules/project';
 import { MetadataRoutines, selectMetadata } from '../../../modules/metadata';
+import { JobRoutines, selectJobPreview } from '../../../modules/job';
 
 const mapStateToProps = createStructuredSelector({
   dataSource: selectDataSource,
   userRole: selectUserRole,
   project: selectProject,
   metadata: selectMetadata,
+  previewData: selectJobPreview,
 });
 
 export const mapDispatchToProps = dispatch => ({
@@ -23,6 +25,7 @@ export const mapDispatchToProps = dispatch => ({
     {
       fetchMetadata: promisifyRoutine(MetadataRoutines.fetchMetadata),
       updateMetadata: promisifyRoutine(MetadataRoutines.updateMetadata),
+      fetchPreview: promisifyRoutine(JobRoutines.fetchPreview),
     },
     dispatch
   ),

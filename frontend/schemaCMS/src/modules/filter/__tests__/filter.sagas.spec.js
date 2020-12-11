@@ -69,7 +69,7 @@ describe('Filter: sagas', () => {
 
       mockApi
         // eslint-disable-next-line camelcase
-        .post(`${DATA_SOURCES_PATH}/${dataSourceId}/filters`, { ...formData, is_active: true })
+        .post(`${DATA_SOURCES_PATH}/${dataSourceId}/filters`, { ...formData, isActive: true })
         .reply(OK, response);
 
       await expectSaga(watchFilter)

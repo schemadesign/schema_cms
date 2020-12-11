@@ -31,4 +31,12 @@ export default defineMessages({
     id: 'dataSource.metadata.expandCopy',
     defaultMessage: 'Expand Metadata',
   },
+  metaDataTitle: {
+    id: 'dataSource.metadata.metaDataTitle',
+    defaultMessage: 'Metadata',
+  },
+  mappingLabelsTitle: {
+    id: 'dataSource.metadata.mappingLabelsTitle',
+    defaultMessage: 'Labels Mapping',
+  },
 });

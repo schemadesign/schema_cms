@@ -7,6 +7,11 @@ export const Container = styled.div``;
 
 export const Form = styled.form``;
 
+export const TitleWrapper = styled.div`
+  margin: 10px 0 20px;
+  text-align: center;
+`;
+
 export const Header = styled.div`
   display: flex;
   flex-direction: row;

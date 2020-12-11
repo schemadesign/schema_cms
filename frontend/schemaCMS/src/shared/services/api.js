@@ -17,7 +17,6 @@ import {
   keys,
   map,
   mapObjIndexed,
-  not,
   path,
   pathOr,
   pipe,
@@ -26,6 +25,8 @@ import {
   startsWith,
   toLower,
   when,
+  pathEq,
+  identity,
 } from 'ramda';
 import queryString from 'query-string';
 import browserHistory from '../utils/history';
@@ -53,26 +54,26 @@ const extractObjectErrors = pipe(
 export const camelizeResponseErrors = errors =>
   ifElse(is(Array), map(extractObjectErrors), e => extractObjectErrors(e))(errors);
 
-api.interceptors.request.use(
-  evolve({
-    url: when(complement(anyPass([endsWith('/'), startsWith('http')])), url => {
-      const parsedUrl = queryString.parseUrl(url);
-      if (isEmpty(parsedUrl.query)) {
-        return parsedUrl.url;
-      }
+if (process.env.NODE_ENV !== 'test') {
+  api.interceptors.request.use(
+    evolve({
+      url: when(complement(anyPass([endsWith('/'), startsWith('http')])), url => {
+        const parsedUrl = queryString.parseUrl(url);
+        if (isEmpty(parsedUrl.query)) {
+          return parsedUrl.url;
+        }
 
-      return `${parsedUrl.url}?${queryString.stringify(parsedUrl.query)}`;
+        return `${parsedUrl.url}?${queryString.stringify(parsedUrl.query)}`;
+      }),
+      data: cond([
+        [is(FormData), decamelizeKeys],
+        [pathEq(['data', 'skipDecamelize'], true), identity],
+        [T, decamelizeKeys],
+      ]),
     }),
-    data: when(
-      pipe(
-        is(FormData),
-        not
-      ),
-      decamelizeKeys
-    ),
-  }),
-  error => Promise.reject(error)
-);
+    error => Promise.reject(error)
+  );
+}
 
 const getData = path(['response', 'data']);
 

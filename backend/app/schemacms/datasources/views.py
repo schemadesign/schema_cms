@@ -241,13 +241,22 @@ class DataSourceViewSet(BaseDataSourceView, ActionSerializerViewSetMixin, viewse
         if request.method in ["POST", "PATCH"]:
             keys = []
 
-            for v in request.data["data"]:
+            for v in request.data["data"]["metadata"]:
                 if v["key"] not in keys:
                     keys.append(v["key"])
                 else:
                     raise exceptions.ValidationError("Duplicated keys sent", code="duplicatedKeys")
 
-            description = ds.add_description(request.data)
+            if "labels" in request.data["data"]:
+                labels = request.data["data"]["labels"]
+
+                if not isinstance(labels, dict):
+                    raise exceptions.ValidationError("Labels need to be a dict")
+
+                ds.meta_data.fields_labels = labels
+                ds.meta_data.save()
+
+            description = ds.add_description({"data": request.data["data"]["metadata"]})
             data = self.get_serializer(description).data
 
         return response.Response({"project": ds.project.project_info, "results": data})
