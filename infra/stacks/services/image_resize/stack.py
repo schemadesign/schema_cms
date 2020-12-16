@@ -4,6 +4,8 @@ from aws_cdk.aws_apigateway import LambdaRestApi
 from aws_cdk.aws_lambda import Function, Runtime, Code, Tracing
 from aws_cdk.aws_s3 import Bucket, RedirectProtocol, RoutingRule, RoutingRuleCondition, ReplaceKey
 from aws_cdk.aws_ssm import StringParameter
+from aws_cdk.aws_cloudfront import Distribution, BehaviorOptions, CachePolicy
+from aws_cdk.aws_cloudfront_origins import S3Origin
 from aws_cdk.core import Stack, App, Duration, CfnOutput
 
 from config.base import EnvSettings
@@ -21,6 +23,7 @@ class ImageResizeStack(Stack):
 
         (self.function, self.function_code, self.api_gateway,) = self.create_lambda(envs)
         self.image_bucket = self.create_bucket(lambda_url=self.api_gateway.url)
+        self.create_cloudfront_distribution()
         self.function.add_environment(key="BUCKET", value=self.image_bucket.bucket_name)
         self.function.add_environment(key="REDIRECT_URL", value=self.image_bucket.bucket_website_url)
         self.function.add_environment(key="CORS_ORIGIN", value=f"https://{self.domain}")
@@ -82,6 +85,25 @@ class ImageResizeStack(Stack):
         )
 
         return function, code, api_gateway
+
+    def create_cloudfront_distribution(self):
+
+        return Distribution(
+            self,
+            "image-resize-distribution",
+            default_behavior=BehaviorOptions(
+                origin=S3Origin(bucket=self.image_bucket),
+                cache_policy=CachePolicy(
+                    self,
+                    "image-resize-cache-policy",
+                    default_ttl=Duration.seconds(0),
+                    min_ttl=Duration.seconds(0),
+                    max_ttl=Duration.days(365)
+                )
+            ),
+            default_root_object="index.html"
+        )
+
 
     @staticmethod
     def get_image_resize_bucket_arn_output_export_name(envs: EnvSettings):

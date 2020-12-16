@@ -29,7 +29,8 @@ def append_path(*paths):
 
 def image_static_url(path):
     host_url = settings.AWS_IMAGE_STATIC_URL
-    return append_path(host_url, path)
+    quoted_path = parse.quote(path)
+    return append_path(host_url, quoted_path)
 
 
 def www_to_https(url: str) -> str:
