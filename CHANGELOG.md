@@ -6,6 +6,15 @@
 
 ### Features
 
+## 1.10.1 (December 16, 2020) - Fix
+### Fix
+- fix humps decamelize keys that was removing file from FormData
+
+
+## 1.10.0 (December 11, 2020) - Release
+### Feature
+- add possibility to map a column to a specific type in Metadata
+
 
 ## 1.9.4 (November 03, 2020) - Fixes
 ### Fixes
