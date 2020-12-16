@@ -30,6 +30,7 @@ import {
 } from 'ramda';
 import queryString from 'query-string';
 import browserHistory from '../utils/history';
+import { decamelizeThatDontBreaksFile } from '../utils/decamelizeFile';
 
 const api = axios.create({
   baseURL: process.env.REACT_APP_BASE_API_URL,
@@ -66,7 +67,7 @@ if (process.env.NODE_ENV !== 'test') {
         return `${parsedUrl.url}?${queryString.stringify(parsedUrl.query)}`;
       }),
       data: cond([
-        [is(FormData), decamelizeKeys],
+        [is(FormData), formData => decamelizeThatDontBreaksFile(formData)],
         [pathEq(['data', 'skipDecamelize'], true), identity],
         [T, decamelizeKeys],
       ]),
