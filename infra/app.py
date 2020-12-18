@@ -28,7 +28,9 @@ class App(App):
             components=self.components,
             base_resources=self.base.resources,
         )
-        self.image_resize = ImageResizeStack(self, "schema-cms-image-resize", envs=ENV_SETTINGS)
+        self.resize_lambda = self.image_resize = ImageResizeStack(
+            self, "schema-cms-image-resize", envs=ENV_SETTINGS
+        )
         self.workers = LambdaWorkerStack(
             self, "schema-cms-workers", envs=ENV_SETTINGS, components=self.components
         )

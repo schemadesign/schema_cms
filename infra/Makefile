@@ -2,7 +2,7 @@ SELF_DIR := $(dir $(lastword $(MAKEFILE_LIST)))
 include $(SELF_DIR)/../base.mk
 
 install:
-	npm install aws-cdk@1.45.0
+	npm install aws-cdk@1.78.0
 	pipenv install
 
 

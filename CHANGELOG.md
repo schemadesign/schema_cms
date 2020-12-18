@@ -6,6 +6,10 @@
 
 ### Features
 
+## 1.10.2 (December 18, 2020) - Fix
+### Fix
+- fix scraped images not displayed via https
+
 ## 1.10.1 (December 16, 2020) - Fix
 ### Fix
 - fix humps decamelize keys that was removing file from FormData
