@@ -58,6 +58,7 @@ boto3 = "==1.14.47"
 "aws-cdk-aws-codepipeline-actions" = "==1.78.0"
 "aws-cdk.aws-dynamodb" = "==1.78.0"
 "aws-cdk.aws-stepfunctions-tasks" = "==1.78.0"
+"aws-cdk.aws-cloudfront-origins" = "==1.78.0"
 
 [requires]
 python_version = "3.8"

@@ -7,7 +7,6 @@ from aws_cdk.aws_secretsmanager import Secret
 from aws_cdk.aws_sqs import Queue
 from aws_cdk.aws_ssm import StringParameter
 from aws_cdk.core import App, Stack, Duration, Fn
-
 from config.base import EnvSettings
 from stacks.components.stack import ComponentsStack
 from stacks.services.api.stack import ApiStack

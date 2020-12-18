@@ -29,12 +29,11 @@ class BaseResources(Construct):
         self.db = DatabaseInstance(
             self,
             "DataBase",
-            master_username="root",
             database_name=envs.data_base_name,
             engine=DatabaseInstanceEngine.POSTGRES,
             storage_encrypted=True,
             allocated_storage=50,
-            instance_class=InstanceType.of(InstanceClass.BURSTABLE2, InstanceSize.SMALL),
+            instance_type=InstanceType.of(InstanceClass.BURSTABLE2, InstanceSize.SMALL),
             vpc=self.vpc,
         )
 

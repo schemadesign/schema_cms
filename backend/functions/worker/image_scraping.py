@@ -28,7 +28,7 @@ def append_path(*paths):
 
 
 def image_static_url(path):
-    host_url = settings.AWS_IMAGE_STATIC_URL
+    host_url = f"https://{settings.AWS_IMAGE_STORAGE_BUCKET_NAME}.s3.amazonaws.com"
     quoted_path = parse.quote(path)
     return append_path(host_url, quoted_path)
 
