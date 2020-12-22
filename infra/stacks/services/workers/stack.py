@@ -69,14 +69,14 @@ class LambdaWorkerStack(Stack):
             handler="handler.main",
             environment={
                 "AWS_STORAGE_BUCKET_NAME": self.app_bucket.bucket_name,
-                "IMAGE_SCRAPING_FETCH_TIMEOUT": "15",
+                "IMAGE_SCRAPING_FETCH_TIMEOUT": "60",
                 "AWS_IMAGE_STORAGE_BUCKET_NAME": self.resize_lambda_image_bucket.bucket_name,
                 "AWS_IMAGE_STATIC_URL": self.resize_lambda_image_bucket.bucket_website_url,
                 "BACKEND_URL": self.backend_url,
                 "LAMBDA_AUTH_TOKEN": self.lambda_auth_token.secret_value.to_string(),
             },
             memory_size=memory_size,
-            timeout=Duration.seconds(300),
+            timeout=Duration.seconds(600),
             tracing=Tracing.ACTIVE,
         )
 

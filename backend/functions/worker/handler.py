@@ -66,9 +66,10 @@ def process_job(job_data: dict):
     except Exception as e:
         return logging.critical(f"Invalid message body - {e}")
 
+    processor = JobProcessor(job=current_job)
+
     try:
         api.schemacms_api.update_job_state(job_pk=current_job.id, state=utils.ProcessState.PROCESSING)
-        processor = JobProcessor(job=current_job)
 
         try:
             df = processor.read(script_process=True)
