@@ -1,4 +1,5 @@
-![alt text](https://github.com/schemadesign/schema_cms/blob/main/Schema_CMS_Logo.png?raw=true)
+![alt text](https://github.com/schemadesign/schema_cms/blob/master/Schema_CMS_Logo.png?raw=true)
+
 
 # Prerequisites
 Docker is used to develop, test, and improve an environment.
