@@ -8,8 +8,9 @@ Docker is used to develop, test, and improve an environment.
 2. Install [docker-compose](https://docs.docker.com/compose/install/) if you are using Linux
 3. Install [python](https://www.python.org/downloads/) (version 3.8)
 4. Install [pipenv](https://github.com/pypa/pipenv#installation) (python package manager)
-5. Install [npm](https://nodejs.org/en/) (version 12+)
+5. Install [Node](https://nodejs.org/en/) (version 12+)
 6. Install [yarn](https://classic.yarnpkg.com/en/docs/install/#mac-stable) (version 1.22.+)
+7. Install [AWS CLI](hhttps://docs.aws.amazon.com/cli/latest/userguide/install-cliv2.html) (version 1.22.+)
 
 ## Installation
 
@@ -96,7 +97,7 @@ You can find instructions for Auth0 [here](./docs/auth0.md) and Okta [here](./do
 ### aws-vault configuration
 1. Log In to [AWS Console](https://aws.amazon.com/console/), go to `My security credentials` and create access key.
 2. Use created access key to add new profile in [aws-vault](https://github.com/99designs/aws-vault#quick-start).
-3. Edit file `~/aws/config` by adding line `region=<selected-deployment-region>` under profile you added.
+3. Edit file `~/.aws/config` by adding line `region=<selected-deployment-region>` under profile you added.
 4. Update `profile` and `region` in `.project_config.json`.
     
 ## Steps
