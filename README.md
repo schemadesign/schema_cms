@@ -10,7 +10,7 @@ Docker is used to develop, test, and improve an environment.
 4. Install [pipenv](https://github.com/pypa/pipenv#installation) (python package manager)
 5. Install [Node](https://nodejs.org/en/) (version 12+)
 6. Install [yarn](https://classic.yarnpkg.com/en/docs/install/#mac-stable) (version 1.22.+)
-7. Install [AWS CLI](hhttps://docs.aws.amazon.com/cli/latest/userguide/install-cliv2.html) (version 1.22.+)
+7. Install [AWS CLI](https://docs.aws.amazon.com/cli/latest/userguide/install-cliv2.html) (version 1.22.+)
 
 ## Installation
 
