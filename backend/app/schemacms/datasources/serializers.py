@@ -6,7 +6,7 @@ from rest_framework import serializers, exceptions
 from . import models as ds_models
 from .constants import ProcessingState, DataSourceType
 from ..users.models import User
-from ..utils.serializers import NestedRelatedModelSerializer, UserSerializer
+from ..utils.serializers import NestedRelatedModelSerializer
 from ..utils.validators import CustomUniqueTogetherValidator
 
 
