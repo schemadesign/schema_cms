@@ -290,6 +290,7 @@ export class SourceFormComponent extends PureComponent {
                   disabled: isProcessing || fileUploading,
                 })}
               </ApiSourceInput>
+              {this.renderProcessingMessage({ isProcessing, fileUploadingError, fileUploading })}
               <ApiSourceInput>
                 {this.renderApiSourceJsonPathInput({
                   ...restProps,
@@ -298,7 +299,6 @@ export class SourceFormComponent extends PureComponent {
               </ApiSourceInput>
               <ApiSourceSwitch>{this.renderApiSourceAutoRefreshSwitch({ ...restProps })}</ApiSourceSwitch>
             </ApiSourceContainer>
-            {this.renderProcessingMessage({ isProcessing, fileUploadingError, fileUploading })}
           </Fragment>
         ),
       ],
