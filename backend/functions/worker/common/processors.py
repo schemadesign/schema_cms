@@ -5,12 +5,15 @@ except Exception:
 
 
 import json
+import requests
 import logging
 from urllib.parse import urlparse
 from dataclasses import dataclass
 from io import StringIO, BytesIO
 
 import datatable as dt
+import pandas as pd
+
 from image_scraping import is_valid_url, www_to_https
 
 from . import settings
@@ -192,6 +195,8 @@ class FileSourceProcessor(SourceProcessor):
 
 @dataclass
 class GoogleSheetProcessor(SourceProcessor):
+    type = "GoogleSheet"
+
     def read(self, script_process=False):
 
         if not script_process:
@@ -236,7 +241,7 @@ class GoogleSheetProcessor(SourceProcessor):
         file_name = self.get_source_file_name()
         write_data_frame_to_csv_on_s3(data_frame, file_name)
         write_data_frame_to_parquet_on_s3(data_frame, file_name)
-        logger.info(f"Google Sheet Source File Saved - DS # {self.datasource.id}")
+        logger.info(f"{self.type} Source File Saved - DS # {self.datasource.id}")
 
     def get_source_file_name(self):
         return f"{self.datasource.id}/uploads/google_sheet_source_file.csv"
@@ -249,7 +254,30 @@ class GoogleSheetProcessor(SourceProcessor):
         return preview_data_dict
 
 
-processors = {"file": FileSourceProcessor, "google_sheet": GoogleSheetProcessor}
+@dataclass
+class ApiSourceProcessor(GoogleSheetProcessor):
+    type = "Api"
+
+    def read(self, script_process=False):
+        r = requests.get(self.datasource.api_url)
+
+        if r.status_code == 200:
+            path = self.datasource.api_json_path or "results"
+            frame = pd.json_normalize(r.json(), record_path=[path])
+
+            return frame
+        else:
+            raise ValueError("Unable to read data from API")
+
+    def get_source_file_name(self):
+        return f"{self.datasource.id}/uploads/api_source_file.csv"
+
+
+processors = {
+    "file": FileSourceProcessor,
+    "google_sheet": GoogleSheetProcessor,
+    "api": ApiSourceProcessor,
+}
 
 
 @dataclass

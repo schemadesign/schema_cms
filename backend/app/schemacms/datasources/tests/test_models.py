@@ -88,6 +88,8 @@ class TestDataSource:
             "type": ds.type,
             "file": ds.file.name,
             "google_sheet": ds.google_sheet,
+            "api_url": ds.api_url,
+            "api_json_path": ds.api_json_path,
             "shape": job.meta_data.shape,
             "result": job.result,
             "filters": [],
