@@ -20,13 +20,10 @@ class Local(Common):
     EMAIL_BACKEND = "django.core.mail.backends.smtp.EmailBackend"
 
     INSTALLED_APPS = Common.INSTALLED_APPS
-    INSTALLED_APPS += ["debug_toolbar", "silk"]
+    INSTALLED_APPS += ["debug_toolbar"]
 
     MIDDLEWARE = Common.MIDDLEWARE
     MIDDLEWARE += ["debug_toolbar.middleware.DebugToolbarMiddleware"]
-
-    if os.getenv("USE_SILK", False):
-        MIDDLEWARE += ["silk.middleware.SilkyMiddleware"]
 
     # django-debug-toolbar
     hostname, _, ips = socket.gethostbyname_ex(socket.gethostname())
