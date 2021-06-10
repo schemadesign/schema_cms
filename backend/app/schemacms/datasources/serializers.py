@@ -91,6 +91,7 @@ class DataSourceSerializer(serializers.ModelSerializer):
             "file_name",
             "google_sheet",
             "api_url",
+            "api_json_path",
             "auto_refresh",
             "created",
             "modified",
