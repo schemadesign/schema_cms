@@ -291,7 +291,6 @@ class DataSourceViewSet(BaseDataSourceView, ActionSerializerViewSetMixin, viewse
     def update_meta(self, request, *args, **kwargs):
         data_source = self.get_object()
         copy_steps = request.data.pop("copy_steps", None)
-
         status_ = request.data.get("status")
 
         serializer = self.get_serializer(data=request.data, context=data_source.meta_data)
@@ -312,7 +311,7 @@ class DataSourceViewSet(BaseDataSourceView, ActionSerializerViewSetMixin, viewse
                     current_active_job.is_active = False
                     current_active_job.save(update_fields=["is_active"])
 
-                if data_source.google_sheet and source_file:
+                if data_source.type in [constants.DataSourceType.API, constants.DataSourceType.GOOGLE_SHEET]:
                     data_source.file = source_file
                     data_source.save(update_fields=["file"])
 

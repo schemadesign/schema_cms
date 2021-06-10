@@ -57,9 +57,12 @@ class DataSource(MetaGeneratorMixin, SoftDeleteObject, TimeStampedModel):
         validators=[FileExtensionValidator(allowed_extensions=["csv", "tsv"])],
     )
     google_sheet = models.URLField(null=True, blank=True, default="")
+    api_url = models.URLField(null=True, blank=True, default="")
+    api_json_path = models.CharField(blank=True, max_length=126, default="")
     created_by = models.ForeignKey(
         settings.AUTH_USER_MODEL, on_delete=models.SET_NULL, related_name="data_sources", null=True
     )
+    auto_refresh = models.BooleanField(default=False)
 
     objects = managers.DataSourceManager()
 
@@ -150,7 +153,7 @@ class DataSource(MetaGeneratorMixin, SoftDeleteObject, TimeStampedModel):
             return None
 
     def schedule_update_meta(self, copy_steps):
-        if not self.file and not self.google_sheet:
+        if not self.file and not self.google_sheet and not self.api_url:
             raise ValueError("Cannot schedule meta processing without source")
 
         file_size = self.file.size if self.file else settings.EXT_QUEUE_LIMIT - 1
@@ -166,7 +169,7 @@ class DataSource(MetaGeneratorMixin, SoftDeleteObject, TimeStampedModel):
             )
 
     def update_meta(self, **kwargs):
-        if not self.file and not self.google_sheet:
+        if not any([self.file, self.google_sheet, self.api_url]):
             return
 
         with transaction.atomic():
@@ -246,6 +249,8 @@ class DataSource(MetaGeneratorMixin, SoftDeleteObject, TimeStampedModel):
             "type": self.type,
             "file": self.file.name if self.file else None,
             "google_sheet": self.google_sheet,
+            "api_url": self.api_url,
+            "api_json_path": self.api_json_path,
             "shape": None,
             "result": None,
             "fields": {},
