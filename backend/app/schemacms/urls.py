@@ -33,10 +33,7 @@ if settings.DEBUG:
     import debug_toolbar
 
     urlpatterns = (
-        [
-            urls.path("__debug__/", urls.include(debug_toolbar.urls)),
-            urls.path("silk/", urls.include("silk.urls", namespace="silk")),
-        ]
+        [urls.path("__debug__/", urls.include(debug_toolbar.urls))]
         + urlpatterns
         + static(settings.STATIC_URL)
     )

@@ -262,10 +262,14 @@ class ApiSourceProcessor(GoogleSheetProcessor):
         r = requests.get(self.datasource.api_url)
 
         if r.status_code == 200:
-            path = self.datasource.api_json_path or "results"
-            frame = pd.json_normalize(r.json(), record_path=[path])
+            if self.datasource.api_json_path:
+                path = self.datasource.api_json_path.split(".")
+                frame = pd.json_normalize(r.json(), record_path=path)
+            else:
+                frame = pd.json_normalize(r.json())
 
             return frame
+
         else:
             raise ValueError("Unable to read data from API")
 
