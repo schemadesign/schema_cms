@@ -20,6 +20,8 @@ class DataSource(LoaderMixin):
     file: str = ""
     type: str = ""
     google_sheet: str = ""
+    api_url: str = ""
+    api_json_path: str = ""
     result: str = ""
     shape: list = dataclasses.field(default_factory=list)
     fields: dict = dataclasses.field(default_factory=dict)
@@ -81,3 +83,5 @@ class Job(LoaderMixin):
             return services.get_s3_object(self.source_file_path, version=self.source_file_version)
         if self.datasource.type == "google_sheet":
             return self.datasource.google_sheet
+        if self.datasource.type == "api":
+            return self.datasource.api_url
