@@ -47,7 +47,7 @@ fe-up:
 down:
 	$(DOCKER_COMPOSE) down
 
-exec:
+shell:
 	$(DOCKER_COMPOSE) run --rm backend bash
 
 attach:
