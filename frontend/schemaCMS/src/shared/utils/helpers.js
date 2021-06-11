@@ -76,7 +76,7 @@ export const errorMessageParser = ({ errors, messages = {}, formatMessage = () =
       const defaultErrorMessage = 'Something went wrong.';
       const formattedMessageError = messageError ? formatMessage(messageError) : defaultErrorMessage;
 
-      return { [name]: formattedMessageError, ...previousValue };
+      return { [camelize(name)]: formattedMessageError, ...previousValue };
     }, {});
   }
 
