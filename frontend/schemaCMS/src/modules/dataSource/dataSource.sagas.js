@@ -25,6 +25,9 @@ import {
   path,
   when,
   is,
+  cond,
+  equals,
+  always,
 } from 'ramda';
 import { eventChannel } from 'redux-saga';
 
@@ -45,6 +48,11 @@ import {
   DATA_SOURCE_FILE,
   DATA_SOURCE_FILE_NAME,
   SOURCE_TYPE_GOOGLE_SHEET,
+  DATA_SOURCE_API_URL,
+  SOURCE_TYPE_API,
+  SOURCE_TYPE_FILE,
+  DATA_SOURCE_API_JSON_PATH,
+  DATA_SOURCE_AUTO_REFRESH,
 } from './dataSource.constants';
 import { formatFormData } from '../../shared/utils/helpers';
 import { ProjectRoutines } from '../project';
@@ -108,9 +116,31 @@ function* create({ payload }) {
   try {
     yield put(DataSourceRoutines.create.request());
     const isFileFlow = payload.requestData[DATA_SOURCE_TYPE] === DATA_SOURCE_FILE;
-    const omitFields = isFileFlow
-      ? [DATA_SOURCE_FILE, DATA_SOURCE_GOOGLE_SHEET]
-      : [DATA_SOURCE_FILE, DATA_SOURCE_FILE_NAME];
+
+    const omitFields = cond([
+      [
+        equals(SOURCE_TYPE_FILE),
+        always([
+          DATA_SOURCE_FILE,
+          DATA_SOURCE_GOOGLE_SHEET,
+          DATA_SOURCE_API_URL,
+          DATA_SOURCE_API_JSON_PATH,
+          DATA_SOURCE_AUTO_REFRESH,
+        ]),
+      ],
+      [
+        equals(SOURCE_TYPE_GOOGLE_SHEET),
+        always([
+          DATA_SOURCE_FILE,
+          DATA_SOURCE_FILE_NAME,
+          DATA_SOURCE_API_URL,
+          DATA_SOURCE_API_JSON_PATH,
+          DATA_SOURCE_AUTO_REFRESH,
+        ]),
+      ],
+      [equals(SOURCE_TYPE_API), always([DATA_SOURCE_FILE, DATA_SOURCE_FILE_NAME, DATA_SOURCE_GOOGLE_SHEET])],
+    ])(payload.requestData[DATA_SOURCE_TYPE]);
+
     const requestData = { project: payload.projectId, ...omit(omitFields, payload.requestData) };
     const {
       data: { id },
@@ -122,6 +152,9 @@ function* create({ payload }) {
           id,
           fileName: payload.requestData.file ? payload.requestData.file.name : '',
           [DATA_SOURCE_GOOGLE_SHEET]: requestData[DATA_SOURCE_GOOGLE_SHEET] || null,
+          [DATA_SOURCE_API_URL]: requestData[DATA_SOURCE_API_URL] || null,
+          [DATA_SOURCE_API_JSON_PATH]: requestData[DATA_SOURCE_API_JSON_PATH] || null,
+          [DATA_SOURCE_AUTO_REFRESH]: requestData[DATA_SOURCE_AUTO_REFRESH] || false,
           progress: 0,
         },
         isUpload: isFileFlow,
