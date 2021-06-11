@@ -9,6 +9,7 @@ import { SourceForm } from '../../../shared/components/sourceForm';
 import messages from './createDataSource.messages';
 import { ContextHeader } from '../../../shared/components/contextHeader';
 import {
+  DATA_SOURCE_API_URL,
   DATA_SOURCE_FILE,
   DATA_SOURCE_GOOGLE_SHEET,
   DATA_SOURCE_SCHEMA,
@@ -35,6 +36,7 @@ export class CreateDataSource extends PureComponent {
     cond([
       [equals(DATA_SOURCE_FILE), always(!values.fileName)],
       [equals(DATA_SOURCE_GOOGLE_SHEET), always(!values.googleSheet)],
+      [equals(DATA_SOURCE_API_URL), always(!values.apiUrl)],
     ])(values.type);
 
   handleSubmit = async (requestData, { setErrors, setSubmitting }) => {
@@ -74,7 +76,7 @@ export class CreateDataSource extends PureComponent {
         <Formik
           id="csvUploadFileName"
           enableReinitialize
-          initialValues={{ fileName: '', googleSheet: '' }}
+          initialValues={{ fileName: '', googleSheet: '', apiUrl: '', apiJsonPath: '', autoRefresh: false }}
           validationSchema={DATA_SOURCE_SCHEMA}
           onSubmit={this.handleSubmit}
         >

@@ -8,6 +8,9 @@ export const DATA_SOURCE_NAME = 'name';
 export const DATA_SOURCE_FILE = 'file';
 export const DATA_SOURCE_FILE_NAME = 'fileName';
 export const DATA_SOURCE_GOOGLE_SHEET = 'googleSheet';
+export const DATA_SOURCE_API_URL = 'apiUrl';
+export const DATA_SOURCE_API_JSON_PATH = 'apiJsonPath';
+export const DATA_SOURCE_AUTO_REFRESH = 'autoRefresh';
 export const DATA_SOURCE_TYPE = 'type';
 export const DATA_SOURCE_RUN_LAST_JOB = 'runLastJob';
 export const DATA_SOURCE_REIMPORT = 'reimport';
@@ -31,7 +34,15 @@ export const META_PROCESSING = 'processing';
 export const META_FAILED = 'failed';
 export const META_SUCCESS = 'success';
 
-export const DATA_SOURCE_FIELDS = [DATA_SOURCE_FILE_NAME, DATA_SOURCE_TYPE, DATA_SOURCE_NAME, DATA_SOURCE_GOOGLE_SHEET];
+export const DATA_SOURCE_FIELDS = [
+  DATA_SOURCE_FILE_NAME,
+  DATA_SOURCE_TYPE,
+  DATA_SOURCE_NAME,
+  DATA_SOURCE_GOOGLE_SHEET,
+  DATA_SOURCE_API_URL,
+  DATA_SOURCE_API_JSON_PATH,
+  DATA_SOURCE_AUTO_REFRESH,
+];
 
 const FILE_SIZE = 900000000;
 
@@ -62,5 +73,16 @@ export const DATA_SOURCE_SCHEMA = Yup.object().shape({
       .trim()
       .url('The link field needs to be a valid URL')
       .required('Required'),
+  }),
+  [DATA_SOURCE_API_URL]: Yup.mixed().when(DATA_SOURCE_TYPE, {
+    is: SOURCE_TYPE_API,
+    then: Yup.string()
+      .trim()
+      .url('The link field needs to be a valid API URL')
+      .required('Required'),
+  }),
+  [DATA_SOURCE_API_JSON_PATH]: Yup.mixed().when(DATA_SOURCE_TYPE, {
+    is: SOURCE_TYPE_API,
+    then: Yup.string().trim(),
   }),
 });

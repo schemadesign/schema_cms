@@ -74,3 +74,30 @@ export const Link = styled(LinkTypography)`
     margin-bottom: 0;
   }
 `;
+
+export const ApiSourceContainer = styled.div`
+  display: flex;
+  flex-direction: column;
+
+  ${media.desktop`
+    flex-direction: column;
+  `};
+`;
+
+export const ApiSourceInput = styled.div`
+  width: 100%;
+`;
+
+export const ApiSourceSwitch = styled.div`
+  border-top: 2px solid ${({ theme }) => theme.border};
+  padding-top: 15px;
+`;
+
+export const ApiSourceReimport = styled.div`
+  height: 48px;
+  margin: -10px 0 20px;
+
+  ${media.desktop`
+    margin: 0 0 0 20px;
+  `};
+`;
