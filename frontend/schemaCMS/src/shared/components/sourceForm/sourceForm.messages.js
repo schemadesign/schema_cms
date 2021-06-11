@@ -70,4 +70,36 @@ export default defineMessages({
     id: 'shared.components.sourceForm.confirmReimport',
     defaultMessage: 'Yes',
   },
+  apiSource: {
+    id: 'shared.components.sourceForm.apiSource',
+    defaultMessage: 'API',
+  },
+  apiSourceUrlPlaceholder: {
+    id: 'shared.components.sourceForm.apiSourceUrlPlaceholder',
+    defaultMessage: 'Put a valid API URL here',
+  },
+  apiSourceJsonPath: {
+    id: 'shared.components.sourceForm.apiSourceJsonPath',
+    defaultMessage: 'Path',
+  },
+  apiSourceJsonPathPlaceholder: {
+    id: 'shared.components.sourceForm.apiSourceJsonPathPlaceholder',
+    defaultMessage: 'Put a valid path here',
+  },
+  apiSourceAutoRefreshLabel: {
+    id: 'shared.components.sourceForm.apiSourceAutoRefreshLabel',
+    defaultMessage: 'Set automatic data reimport',
+  },
+  apiSourceAutoRefreshCopy: {
+    id: 'shared.components.sourceForm.apiSourceAutoRefreshCopy',
+    defaultMessage: 'Automatic data reimport is {autoRefreshState}',
+  },
+  enabledAutoRefresh: {
+    id: 'shared.components.sourceForm.enabledAutoRefresh',
+    defaultMessage: 'enabled',
+  },
+  disabledAutoRefresh: {
+    id: 'shared.components.sourceForm.disabledAutoRefresh',
+    defaultMessage: 'disabled',
+  },
 });

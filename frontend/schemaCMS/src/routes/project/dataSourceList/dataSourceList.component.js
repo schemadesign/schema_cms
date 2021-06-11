@@ -30,6 +30,7 @@ import {
   PREVIEW_PAGE,
   RESULT_PAGE,
   SOURCE_PAGE,
+  SOURCE_TYPE_API,
   SOURCE_TYPE_FILE,
   SOURCE_TYPE_GOOGLE_SHEET,
 } from '../../../modules/dataSource/dataSource.constants';
@@ -41,7 +42,7 @@ import { getProjectMenuOptions, PROJECT_DATASOURCE_ID } from '../project.constan
 import { renderWhenTrue } from '../../../shared/utils/rendering';
 import { JOB_STATE_FAILURE } from '../../../modules/job/job.constants';
 
-const { CsvIcon, GoogleSpreadsheetIcon, IntersectIcon } = Icons;
+const { CsvIcon, GoogleSpreadsheetIcon, IntersectIcon, ApiIcon } = Icons;
 const DEFAULT_VALUE = '—';
 
 export class DataSourceList extends PureComponent {
@@ -126,6 +127,10 @@ export class DataSourceList extends PureComponent {
       [
         equals(SOURCE_TYPE_GOOGLE_SHEET),
         always(<GoogleSpreadsheetIcon customStyles={getSourceIconStyles(this.props.theme, metaProcessing, 30)} />),
+      ],
+      [
+        equals(SOURCE_TYPE_API),
+        always(<ApiIcon customStyles={getSourceIconStyles(this.props.theme, metaProcessing, 30)} />),
       ],
     ]);
 
@@ -215,7 +220,7 @@ export class DataSourceList extends PureComponent {
     ])({ metaFailed, jobProcessing, metaProcessing, isUploading, fileUploadingError, jobFailed, noDataSourceUploaded });
 
   renderItem = (
-    { name, created, createdBy, id, tags, metaData, activeJob, jobsState = {}, fileName, googleSheet, type },
+    { name, created, createdBy, id, tags, metaData, activeJob, jobsState = {}, fileName, googleSheet, apiUrl, type },
     index
   ) => {
     const { firstName = '—', lastName = '' } = createdBy || {};
@@ -223,7 +228,7 @@ export class DataSourceList extends PureComponent {
     const jobFailed = propEq('lastJobStatus', JOB_STATE_FAILURE)(jobsState);
     const metaFailed = propEq('status', META_FAILED)(metaData);
     const { metaProcessing, jobProcessing } = isProcessingData({ jobsState, metaData });
-    const noDataSourceUploaded = !fileName && !googleSheet;
+    const noDataSourceUploaded = !fileName && !googleSheet && !apiUrl;
     const fileUploading = find(propEq('id', id), this.props.uploadingDataSources);
     const fileUploadingError = !!propOr(false, 'error', fileUploading);
     const isUploading = !!fileUploading;

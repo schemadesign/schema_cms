@@ -290,6 +290,37 @@ exports[`SourceFormComponent: Component should render correctly 1`] = `
         </Component>
       </RadioBaseComponent>
     </styled.div>
+    <styled.div>
+      <RadioBaseComponent
+        id="api"
+        label="API"
+        value="api"
+      >
+        <Component
+          customStyles={
+            Object {
+              "background": "#1d1d20",
+              "height": 96,
+              "marginBottom": 10,
+              "pointerEvents": "none",
+              "width": 96,
+            }
+          }
+          id="apiSourceUploadIcon"
+          type="button"
+        >
+          <Component
+            customStyles={
+              Object {
+                "fill": "#FFF",
+                "height": "70px",
+                "width": "70px",
+              }
+            }
+          />
+        </Component>
+      </RadioBaseComponent>
+    </styled.div>
   </RadioGroup>
   <Uploader
     accept=".csv"
@@ -855,6 +886,37 @@ exports[`SourceFormComponent: Component should render file uploader 1`] = `
             customStyles={
               Object {
                 "fill": "#FFF",
+              }
+            }
+          />
+        </Component>
+      </RadioBaseComponent>
+    </styled.div>
+    <styled.div>
+      <RadioBaseComponent
+        id="api"
+        label="API"
+        value="api"
+      >
+        <Component
+          customStyles={
+            Object {
+              "background": "#1d1d20",
+              "height": 96,
+              "marginBottom": 10,
+              "pointerEvents": "none",
+              "width": 96,
+            }
+          }
+          id="apiSourceUploadIcon"
+          type="button"
+        >
+          <Component
+            customStyles={
+              Object {
+                "fill": "#FFF",
+                "height": "70px",
+                "width": "70px",
               }
             }
           />

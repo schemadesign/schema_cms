@@ -16,6 +16,9 @@ import {
   SpreadsheetContainer,
   SpreadsheetReimport,
   SpreadsheetInput,
+  ApiSourceContainer,
+  ApiSourceInput,
+  ApiSourceSwitch,
 } from './sourceForm.styles';
 import messages from './sourceForm.messages';
 import { TextInput } from '../form/inputs/textInput';
@@ -31,15 +34,25 @@ import {
   DATA_SOURCE_REIMPORT,
   DATA_SOURCE_RUN_LAST_JOB,
   DATA_SOURCE_FILE_NAME,
+  DATA_SOURCE_API_URL,
+  DATA_SOURCE_API_JSON_PATH,
+  DATA_SOURCE_AUTO_REFRESH,
 } from '../../../modules/dataSource/dataSource.constants';
 import { Uploader } from '../form/uploader';
 import { getEventFiles, isProcessingData } from '../../utils/helpers';
 import { renderWhenTrue } from '../../utils/rendering';
 import { BackButton, NextButton } from '../navigation';
 import { Modal, ModalActions, modalStyles, ModalTitle } from '../modal/modal.styles';
+import {
+  AvailableCopy,
+  SwitchContainer,
+  SwitchContent,
+  SwitchCopy,
+  SwitchLabel,
+} from '../form/frequentComponents.styles';
 
-const { RadioGroup, RadioBaseComponent, Label } = Form;
-const { CsvIcon, GoogleSpreadsheetIcon } = Icons;
+const { RadioGroup, RadioBaseComponent, Label, Switch } = Form;
+const { CsvIcon, GoogleSpreadsheetIcon, ApiIcon } = Icons;
 
 export class SourceFormComponent extends PureComponent {
   static propTypes = {
@@ -76,6 +89,13 @@ export class SourceFormComponent extends PureComponent {
     }
 
     if (type === SOURCE_TYPE_GOOGLE_SHEET) {
+      setFieldValue(
+        DATA_SOURCE_FILE_NAME,
+        (dataSource[DATA_SOURCE_TYPE] === SOURCE_TYPE_FILE && dataSource[DATA_SOURCE_FILE_NAME]) || null
+      );
+    }
+
+    if (type === SOURCE_TYPE_API) {
       setFieldValue(
         DATA_SOURCE_FILE_NAME,
         (dataSource[DATA_SOURCE_TYPE] === SOURCE_TYPE_FILE && dataSource[DATA_SOURCE_FILE_NAME]) || null
@@ -171,6 +191,64 @@ export class SourceFormComponent extends PureComponent {
     );
   };
 
+  renderApiSourceUrlInput = ({ apiUrl, ...restProps }) => {
+    const { handleChange } = this.props;
+    return (
+      <TextInput
+        value={apiUrl || ''}
+        onChange={handleChange}
+        name={DATA_SOURCE_API_URL}
+        placeholder={this.props.intl.formatMessage(messages.apiSourceUrlPlaceholder)}
+        fullWidth
+        label={this.props.intl.formatMessage(messages.url)}
+        isEdit
+        {...restProps}
+      />
+    );
+  };
+
+  renderApiSourceJsonPathInput = ({ apiJsonPath, ...restProps }) => {
+    const { handleChange } = this.props;
+    return (
+      <TextInput
+        value={apiJsonPath || ''}
+        onChange={handleChange}
+        name={DATA_SOURCE_API_JSON_PATH}
+        placeholder={this.props.intl.formatMessage(messages.apiSourceJsonPathPlaceholder)}
+        fullWidth
+        label={this.props.intl.formatMessage(messages.apiSourceJsonPath)}
+        isEdit
+        {...restProps}
+      />
+    );
+  };
+
+  renderApiSourceAutoRefreshSwitch = ({ autoRefresh }) => {
+    const { handleChange } = this.props;
+    return (
+      <SwitchContainer>
+        <SwitchContent>
+          <Switch value={autoRefresh} id={DATA_SOURCE_AUTO_REFRESH} onChange={handleChange} />
+          <SwitchCopy>
+            <SwitchLabel htmlFor={DATA_SOURCE_AUTO_REFRESH}>
+              <FormattedMessage {...messages.apiSourceAutoRefreshLabel} />
+            </SwitchLabel>
+            <AvailableCopy>
+              <FormattedMessage
+                {...messages.apiSourceAutoRefreshCopy}
+                values={{
+                  autoRefreshState: this.props.intl.formatMessage(
+                    messages[autoRefresh ? 'enabledAutoRefresh' : 'disabledAutoRefresh']
+                  ),
+                }}
+              />
+            </AvailableCopy>
+          </SwitchCopy>
+        </SwitchContent>
+      </SwitchContainer>
+    );
+  };
+
   renderReimportButton = ({ isProcessing }) => {
     const { isSubmitting, dataSource, dirty } = this.props;
 
@@ -201,7 +279,29 @@ export class SourceFormComponent extends PureComponent {
           </Fragment>
         ),
       ],
-      [equals(SOURCE_TYPE_API), () => {}],
+      [
+        equals(SOURCE_TYPE_API),
+        () => (
+          <Fragment>
+            <ApiSourceContainer>
+              <ApiSourceInput>
+                {this.renderApiSourceUrlInput({
+                  ...restProps,
+                  disabled: isProcessing || fileUploading,
+                })}
+              </ApiSourceInput>
+              {this.renderProcessingMessage({ isProcessing, fileUploadingError, fileUploading })}
+              <ApiSourceInput>
+                {this.renderApiSourceJsonPathInput({
+                  ...restProps,
+                  disabled: isProcessing || fileUploading,
+                })}
+              </ApiSourceInput>
+              <ApiSourceSwitch>{this.renderApiSourceAutoRefreshSwitch({ ...restProps })}</ApiSourceSwitch>
+            </ApiSourceContainer>
+          </Fragment>
+        ),
+      ],
       [equals(SOURCE_TYPE_DATABASE), () => {}],
       [
         equals(SOURCE_TYPE_GOOGLE_SHEET),
@@ -257,13 +357,30 @@ export class SourceFormComponent extends PureComponent {
     );
   };
 
+  renderApiSourceButton = type => {
+    const { active, unActive } = this.props.theme.radioButton;
+    const { fill, background } = type === SOURCE_TYPE_API ? active : unActive;
+
+    return (
+      <RadioBaseComponent
+        label={this.props.intl.formatMessage(messages.apiSource)}
+        value={SOURCE_TYPE_API}
+        id={SOURCE_TYPE_API}
+      >
+        <Button id="apiSourceUploadIcon" customStyles={{ background, ...buttonStyles }} type="button">
+          <ApiIcon customStyles={{ fill, width: '70px', height: '70px' }} />
+        </Button>
+      </RadioBaseComponent>
+    );
+  };
+
   render() {
     const { dataSource, handleChange, values, uploadingDataSources, ...restProps } = this.props;
     const { confirmationRunReimport } = this.state;
     const { jobsState, id, metaData } = dataSource;
     const { isProcessing } = isProcessingData({ jobsState, metaData });
     const uploadingDataSource = find(propEq('id', id), uploadingDataSources);
-    const { name, type, googleSheet } = values;
+    const { name, type, googleSheet, apiUrl, apiJsonPath, autoRefresh } = values;
     const fileUploadingError = !!propOr(false, 'error', uploadingDataSource);
     const fileUploading = !!uploadingDataSource && !fileUploadingError;
     const fileName = ifElse(isNil, () => pathOr('', ['fileName'], values), prop('fileName'))(uploadingDataSource);
@@ -293,12 +410,18 @@ export class SourceFormComponent extends PureComponent {
         >
           <SourceButtonWrapper>{this.renderRadioButton(type)}</SourceButtonWrapper>
           <SourceButtonWrapper>{this.renderSpreadsheetButton(type)}</SourceButtonWrapper>
+          <SourceButtonWrapper>{this.renderApiSourceButton(type)}</SourceButtonWrapper>
         </RadioGroup>
         {this.renderSourceUpload({
           type,
           fileName,
           googleSheet,
-          isProcessing: isProcessing && (!!dataSource.fileName || !!dataSource[DATA_SOURCE_GOOGLE_SHEET]),
+          apiUrl,
+          apiJsonPath,
+          autoRefresh,
+          isProcessing:
+            isProcessing &&
+            (!!dataSource.fileName || !!dataSource[DATA_SOURCE_GOOGLE_SHEET] || !!dataSource[DATA_SOURCE_API_URL]),
           fileUploadingError,
           fileUploading,
           ...restProps,
