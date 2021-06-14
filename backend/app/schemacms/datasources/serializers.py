@@ -139,12 +139,15 @@ class DataSourceSerializer(serializers.ModelSerializer):
 
     @staticmethod
     def get_created_by(obj):
-        return {
-            "id": obj.created_by.id,
-            "first_name": obj.created_by.first_name,
-            "last_name": obj.created_by.last_name,
-            "role": obj.created_by.role,
-        }
+        if obj.created_by:
+            return {
+                "id": obj.created_by.id,
+                "first_name": obj.created_by.first_name,
+                "last_name": obj.created_by.last_name,
+                "role": obj.created_by.role,
+            }
+        else:
+            return None
 
     def get_file_name(self, obj):
         if obj.file:
@@ -232,10 +235,14 @@ class DataSourceDetailSerializer(DataSourceSerializer):
             if type_ == DataSourceType.FILE:
                 instance.google_sheet = ""
                 instance.api_url = ""
+                instance.auto_refresh = False
+                instance.api_json_path = ""
 
             if type_ == DataSourceType.GOOGLE_SHEET:
                 instance.file = None
                 instance.api_url = ""
+                instance.auto_refresh = False
+                instance.api_json_path = ""
 
             if type_ == DataSourceType.API:
                 instance.file = None
@@ -257,12 +264,15 @@ class WranglingScriptSerializer(serializers.ModelSerializer):
 
     @staticmethod
     def get_created_by(obj):
-        return {
-            "id": obj.created_by.id,
-            "first_name": obj.created_by.first_name,
-            "last_name": obj.created_by.last_name,
-            "role": obj.created_by.role,
-        }
+        if obj.created_by:
+            return {
+                "id": obj.created_by.id,
+                "first_name": obj.created_by.first_name,
+                "last_name": obj.created_by.last_name,
+                "role": obj.created_by.role,
+            }
+        else:
+            return None
 
     def create(self, validated_data):
         datasource = self.initial_data["datasource"]
