@@ -295,10 +295,8 @@ function* updateOne({ payload: { requestData, dataSource } }) {
 
     if (
       requestData[DATA_SOURCE_API_URL] ||
-      requestData[DATA_SOURCE_API_JSON_PATH] ||
-      requestData[DATA_SOURCE_API_JSON_PATH] === '' ||
-      requestData[DATA_SOURCE_AUTO_REFRESH] ||
-      requestData[DATA_SOURCE_AUTO_REFRESH] === false
+      is(String, requestData[DATA_SOURCE_API_JSON_PATH]) ||
+      is(Boolean, requestData[DATA_SOURCE_AUTO_REFRESH])
     ) {
       const { data } = yield api.patch(`${DATA_SOURCES_PATH}/${dataSource.id}`, {
         [DATA_SOURCE_API_URL]: requestData[DATA_SOURCE_API_URL],
