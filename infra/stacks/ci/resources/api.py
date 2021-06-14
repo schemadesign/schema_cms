@@ -7,8 +7,10 @@ from aws_cdk.aws_codebuild import (
     PipelineProject,
     BuildEnvironment,
     BuildEnvironmentVariable,
+    BuildEnvironmentVariableType,
     LinuxBuildImage,
 )
+from aws_cdk.aws_iam import PolicyStatement
 from aws_cdk.aws_codepipeline import IStage, Artifact
 from aws_cdk.aws_codepipeline_actions import (
     CodeBuildAction,
@@ -55,6 +57,12 @@ class ApiCiConfig(Construct):
                 environment_variables={
                     "REPOSITORY_URI": BuildEnvironmentVariable(value=repo.repository_uri),
                     "PUSH_IMAGES": BuildEnvironmentVariable(value="1"),
+                    "DOCKER_USERNAME": BuildEnvironmentVariable(
+                        type=BuildEnvironmentVariableType.SECRETS_MANAGER, value="DOCKER_USERNAME",
+                    ),
+                    "DOCKER_PASSWORD": BuildEnvironmentVariable(
+                        type=BuildEnvironmentVariableType.SECRETS_MANAGER, value="DOCKER_PASSWORD",
+                    ),
                 },
                 build_image=LinuxBuildImage.STANDARD_2_0,
                 privileged=True,
@@ -64,6 +72,7 @@ class ApiCiConfig(Construct):
 
         repo.grant_pull_push(project)
 
+        project.add_to_role_policy(PolicyStatement(actions=["secretsmanager:*"], resources=["*"]))
         return project
 
     def create_front_build_project(self, envs: EnvSettings, repos: dict):
@@ -77,6 +86,12 @@ class ApiCiConfig(Construct):
                     "APP_REPOSITORY_URI": BuildEnvironmentVariable(value=repos["app"].repository_uri),
                     "WEBAPP_REPOSITORY_URI": BuildEnvironmentVariable(value=repos["webapp"].repository_uri),
                     "PUSH_IMAGES": BuildEnvironmentVariable(value="1"),
+                    "DOCKER_USERNAME": BuildEnvironmentVariable(
+                        type=BuildEnvironmentVariableType.SECRETS_MANAGER, value="DOCKER_USERNAME",
+                    ),
+                    "DOCKER_PASSWORD": BuildEnvironmentVariable(
+                        type=BuildEnvironmentVariableType.SECRETS_MANAGER, value="DOCKER_PASSWORD",
+                    ),
                 },
                 build_image=LinuxBuildImage.STANDARD_2_0,
                 privileged=True,
@@ -88,6 +103,7 @@ class ApiCiConfig(Construct):
         for repo in repos.values():
             repo.grant_pull_push(project)
 
+        project.add_to_role_policy(PolicyStatement(actions=["secretsmanager:*"], resources=["*"]))
         return project
 
     def create_build_action(self, name: str, project: PipelineProject, order: int):

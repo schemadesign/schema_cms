@@ -1,6 +1,7 @@
 from aws_cdk import aws_codebuild
 from aws_cdk.aws_ecr import Repository
 from aws_cdk.core import Construct
+from aws_cdk.aws_iam import PolicyStatement
 
 from config.base import EnvSettings
 from stacks.base.resources.ecr import BaseECR
@@ -41,6 +42,14 @@ class PRTestConfig(Construct):
                         value=self.ecr_repos["app"].repository_uri
                     ),
                     "PUSH_IMAGES": aws_codebuild.BuildEnvironmentVariable(value="0"),
+                    "DOCKER_USERNAME": aws_codebuild.BuildEnvironmentVariable(
+                        type=aws_codebuild.BuildEnvironmentVariableType.SECRETS_MANAGER,
+                        value="DOCKER_USERNAME",
+                    ),
+                    "DOCKER_PASSWORD": aws_codebuild.BuildEnvironmentVariable(
+                        type=aws_codebuild.BuildEnvironmentVariableType.SECRETS_MANAGER,
+                        value="DOCKER_PASSWORD",
+                    ),
                 },
                 build_image=aws_codebuild.LinuxBuildImage.STANDARD_2_0,
                 privileged=True,
@@ -68,6 +77,14 @@ class PRTestConfig(Construct):
                         value=self.ecr_repos["webapp"].repository_uri
                     ),
                     "PUSH_IMAGES": aws_codebuild.BuildEnvironmentVariable(value="0"),
+                    "DOCKER_USERNAME": aws_codebuild.BuildEnvironmentVariable(
+                        type=aws_codebuild.BuildEnvironmentVariableType.SECRETS_MANAGER,
+                        value="DOCKER_USERNAME",
+                    ),
+                    "DOCKER_PASSWORD": aws_codebuild.BuildEnvironmentVariable(
+                        type=aws_codebuild.BuildEnvironmentVariableType.SECRETS_MANAGER,
+                        value="DOCKER_PASSWORD",
+                    ),
                 },
                 build_image=aws_codebuild.LinuxBuildImage.STANDARD_2_0,
                 privileged=True,
@@ -78,6 +95,9 @@ class PRTestConfig(Construct):
 
         for repo in self.ecr_repos.values():
             repo.grant_pull_push(self.fe_ci_project)
+
+        self.fe_ci_project.add_to_role_policy(PolicyStatement(actions=["secretsmanager:*"], resources=["*"]))
+        self.app_ci_project.add_to_role_policy(PolicyStatement(actions=["secretsmanager:*"], resources=["*"]))
 
     def retrieve_backend_ecr_repository(self, envs: EnvSettings):
         return Repository.from_repository_name(
