@@ -14,11 +14,12 @@ import {
   ErrorWrapper,
   SourceButtonWrapper,
   SpreadsheetContainer,
-  SpreadsheetReimport,
   SpreadsheetInput,
   ApiSourceContainer,
   ApiSourceInput,
   ApiSourceSwitch,
+  ApiSourceUrlInputContainer,
+  ReimportButtonContainer,
 } from './sourceForm.styles';
 import messages from './sourceForm.messages';
 import { TextInput } from '../form/inputs/textInput';
@@ -126,7 +127,7 @@ export class SourceFormComponent extends PureComponent {
       this.props.handleSubmit();
     });
   };
-  //
+
   handleShowReimportModal = () => {
     this.setState({ confirmationRunReimport: true });
   };
@@ -254,15 +255,17 @@ export class SourceFormComponent extends PureComponent {
 
     return renderWhenTrue(
       always(
-        <NextButton
-          type="button"
-          onClick={this.handleShowReimportModal}
-          disabled={isSubmitting || isProcessing || dirty}
-        >
-          <FormattedMessage {...messages.reimport} />
-        </NextButton>
+        <ReimportButtonContainer>
+          <NextButton
+            type="button"
+            onClick={this.handleShowReimportModal}
+            disabled={isSubmitting || isProcessing || dirty}
+          >
+            <FormattedMessage {...messages.reimport} />
+          </NextButton>
+        </ReimportButtonContainer>
       )
-    )(!!dataSource[DATA_SOURCE_GOOGLE_SHEET]);
+    )(!!dataSource[DATA_SOURCE_GOOGLE_SHEET] || !!dataSource[DATA_SOURCE_API_URL]);
   };
 
   renderSourceUpload = ({ type, isProcessing, fileUploadingError, fileUploading, ...restProps }) =>
@@ -284,12 +287,15 @@ export class SourceFormComponent extends PureComponent {
         () => (
           <Fragment>
             <ApiSourceContainer>
-              <ApiSourceInput>
-                {this.renderApiSourceUrlInput({
-                  ...restProps,
-                  disabled: isProcessing || fileUploading,
-                })}
-              </ApiSourceInput>
+              <ApiSourceUrlInputContainer>
+                <ApiSourceInput>
+                  {this.renderApiSourceUrlInput({
+                    ...restProps,
+                    disabled: isProcessing || fileUploading,
+                  })}
+                </ApiSourceInput>
+                {this.renderReimportButton({ isProcessing })}
+              </ApiSourceUrlInputContainer>
               {this.renderProcessingMessage({ isProcessing, fileUploadingError, fileUploading })}
               <ApiSourceInput>
                 {this.renderApiSourceJsonPathInput({
@@ -314,7 +320,7 @@ export class SourceFormComponent extends PureComponent {
                   disabled: isProcessing || fileUploading,
                 })}
               </SpreadsheetInput>
-              <SpreadsheetReimport>{this.renderReimportButton({ isProcessing })}</SpreadsheetReimport>
+              {this.renderReimportButton({ isProcessing })}
             </SpreadsheetContainer>
             {this.renderProcessingMessage({ isProcessing, fileUploadingError, fileUploading })}
           </Fragment>
