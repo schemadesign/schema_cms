@@ -19,6 +19,7 @@ phases:
     commands:
       - echo Build started on `date`
       - echo Building FE Docker image...
+      - make docker-login
       - docker pull $WEBAPP_REPOSITORY_URI:latest || true
       - docker build -t $WEBAPP_REPOSITORY_URI:$VERSION --cache-from $WEBAPP_REPOSITORY_URI:latest ./frontend
       - |

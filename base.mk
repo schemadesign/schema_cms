@@ -71,3 +71,8 @@ clean:
 prune:
 	# clean all that is not actively used
 	docker system prune -af
+
+docker-login:
+ifneq ($(DOCKER_USERNAME),)
+	echo "$(DOCKER_PASSWORD)" | docker login -u "$(DOCKER_USERNAME)" --password-stdin
+endif

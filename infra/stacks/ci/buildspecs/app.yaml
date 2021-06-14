@@ -15,10 +15,13 @@ phases:
       - COMMIT_HASH=$(echo $CODEBUILD_RESOLVED_SOURCE_VERSION | cut -c 1-7)
       - VERSION=${COMMIT_HASH:=latest}
       - echo "Build version:$VERSION"
+      - echo $DOCKER_USERNAME
   build:
     commands:
       - echo Build started on `date`
       - echo Building the Docker image...
+      - echo $DOCKER_USERNAME
+      - make docker-login
       - docker pull $REPOSITORY_URI:latest || true
       - docker build -t $REPOSITORY_URI:latest --cache-from $REPOSITORY_URI:latest ./backend/app
       - BACKEND_IMAGE=$REPOSITORY_URI:latest docker-compose -f ./backend/app/docker-compose-ci.yml run backend /app/scripts/run_tests.sh
