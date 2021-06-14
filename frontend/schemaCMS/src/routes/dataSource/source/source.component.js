@@ -7,8 +7,11 @@ import Helmet from 'react-helmet';
 import { Form, Link, Button } from './source.styles';
 import messages from './source.messages';
 import {
+  DATA_SOURCE_API_JSON_PATH,
+  DATA_SOURCE_API_URL,
   DATA_SOURCE_GOOGLE_SHEET,
   DATA_SOURCE_RUN_LAST_JOB,
+  SOURCE_TYPE_API,
   SOURCE_TYPE_GOOGLE_SHEET,
 } from '../../../modules/dataSource/dataSource.constants';
 import { filterMenuOptions, getMatchParam } from '../../../shared/utils/helpers';
@@ -84,7 +87,13 @@ export class Source extends PureComponent {
       values.type === SOURCE_TYPE_GOOGLE_SHEET &&
       values[DATA_SOURCE_GOOGLE_SHEET] !== dataSource[DATA_SOURCE_GOOGLE_SHEET];
 
-    if ((values.file || isSpreadsheetChanged) && !isFakeJob) {
+    const isApiSourceChanged =
+      values.type === SOURCE_TYPE_API && values[DATA_SOURCE_API_URL] !== dataSource[DATA_SOURCE_API_URL];
+
+    const isApiJsonPathChanged =
+      values.type === SOURCE_TYPE_API && values[DATA_SOURCE_API_JSON_PATH] !== dataSource[DATA_SOURCE_API_JSON_PATH];
+
+    if ((values.file || isSpreadsheetChanged || isApiSourceChanged || isApiJsonPathChanged) && !isFakeJob) {
       e.preventDefault();
       this.handleOpenModal('confirmationRunJobModalOpen');
     }
