@@ -301,7 +301,7 @@ function* updateOne({ payload: { requestData, dataSource } }) {
       requestData[DATA_SOURCE_AUTO_REFRESH] === false
     ) {
       const { data } = yield api.patch(`${DATA_SOURCES_PATH}/${dataSource.id}`, {
-        [DATA_SOURCE_API_URL]: requestData[DATA_SOURCE_API_URL] || dataSource[DATA_SOURCE_API_URL],
+        [DATA_SOURCE_API_URL]: requestData[DATA_SOURCE_API_URL],
         [DATA_SOURCE_API_JSON_PATH]: requestData[DATA_SOURCE_API_JSON_PATH],
         [DATA_SOURCE_AUTO_REFRESH]: requestData[DATA_SOURCE_AUTO_REFRESH],
         [DATA_SOURCE_RUN_LAST_JOB]: requestData[DATA_SOURCE_RUN_LAST_JOB],
