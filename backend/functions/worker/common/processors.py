@@ -4,6 +4,7 @@ except Exception:
     pass
 
 
+import itertools
 import json
 import requests
 import logging
@@ -13,6 +14,7 @@ from io import StringIO, BytesIO
 
 import datatable as dt
 import pandas as pd
+from jsonpath_ng import parse
 
 from image_scraping import is_valid_url, www_to_https
 
@@ -267,9 +269,10 @@ class ApiSourceProcessor(GoogleSheetProcessor):
         r = requests.get(self.datasource.api_url)
 
         if r.status_code == 200:
-            if self.datasource.api_json_path:
-                path = self.datasource.api_json_path.split(".")
-                frame = pd.json_normalize(r.json(), record_path=path)
+            if path := self.datasource.api_json_path:
+                jsonpath_expr = parse(path)
+                data = [obj.value for obj in jsonpath_expr.find(r.json())]
+                frame = pd.json_normalize(list(itertools.chain.from_iterable(data)))
             else:
                 frame = pd.json_normalize(r.json())
 
