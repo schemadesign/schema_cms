@@ -91,21 +91,13 @@ class DataSourceViewSet(BaseDataSourceView, ActionSerializerViewSetMixin, viewse
     def perform_create(self, serializer):
         serializer.save(created_by=self.request.user)
 
-    def perform_update(self, serializer):
-        if "file" in serializer.validated_data:
-            serializer.save(created_by=self.request.user)
-        else:
-            serializer.save()
-
     @decorators.action(detail=True, methods=["get"])
     def preview(self, request, pk=None, **kwargs):
         data_source = self.get_object()
-
-        if not hasattr(data_source, "meta_data"):
-            return response.Response({}, status=status.HTTP_200_OK)
+        job = data_source.get_active_job()
 
         data = dict(
-            results=data_source.meta_data.data,
+            results=job.meta_data.data if job else data_source.meta_data.data,
             data_source={"name": data_source.name},
             project=data_source.project_info,
         )
@@ -277,6 +269,7 @@ class DataSourceViewSet(BaseDataSourceView, ActionSerializerViewSetMixin, viewse
         job = get_object_or_404(models.DataSourceJob, pk=job_id)
 
         data_source.set_active_job(job)
+        data_source.refresh_from_db()
         serializer = self.get_serializer(instance=data_source, context=data_source)
 
         return response.Response({"project": project, "results": serializer.data})
@@ -299,10 +292,16 @@ class DataSourceViewSet(BaseDataSourceView, ActionSerializerViewSetMixin, viewse
         data_source.update_meta(**serializer.validated_data)
 
         if status_ == constants.ProcessingState.SUCCESS:
-            source_file = request.data.pop("source_file", None)
+            source_file = request.data.pop("source_file", "")
+            source_file_version = request.data.pop("source_file_version", "")
+            print(source_file)
 
             with transaction.atomic():
-                fake_job = data_source.create_job(description=f"DataSource {data_source.id} file upload")
+                fake_job = data_source.create_job(
+                    description=f"DataSource {data_source.id} file upload",
+                    source_file_path=source_file,
+                    source_file_version=source_file_version,
+                )
 
                 if copy_steps:
                     current_active_job = data_source.get_active_job()
@@ -310,10 +309,6 @@ class DataSourceViewSet(BaseDataSourceView, ActionSerializerViewSetMixin, viewse
 
                     current_active_job.is_active = False
                     current_active_job.save(update_fields=["is_active"])
-
-                if data_source.type in [constants.DataSourceType.API, constants.DataSourceType.GOOGLE_SHEET]:
-                    data_source.file = source_file
-                    data_source.save(update_fields=["file"])
 
                 transaction.on_commit(fake_job.schedule)
 
@@ -372,7 +367,6 @@ class DataSourceJobDetailViewSet(
     )
     def update_meta(self, request, *args, **kwargs):
         job = self.get_object()
-
         serializer = self.get_serializer(data=request.data, context=job)
         serializer.is_valid(raise_exception=True)
         job.update_meta(**serializer.validated_data)
