@@ -218,7 +218,7 @@ class TestRetrieveUpdateDeleteProjectView:
 
 class TestProjectDataSourcesView:
     def test_list_for_authenticate_admin_user(
-        self, api_client, rf, admin, project, data_source_factory, job_step_factory
+        self, api_client, rf, admin, project, data_source_factory, job_step_factory, job_meta_factory
     ):
         data_sources = data_source_factory.create_batch(2, project=project)
         # Set active job to test active job serialization
@@ -228,6 +228,7 @@ class TestProjectDataSourcesView:
                 datasource_job__job_state=ds_constants.ProcessingState.SUCCESS,
                 options={"columns": ["imageurl"]},
             )
+            job_meta_factory(job=step.datasource_job)
             data_source.set_active_job(step.datasource_job)
 
         request = rf.get(self.get_url(project.id))
