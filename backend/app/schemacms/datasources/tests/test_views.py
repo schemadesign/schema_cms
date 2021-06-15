@@ -418,6 +418,8 @@ class TestDataSourceJobUpdateState:
         payload = dict(
             job_state=ds_constants.ProcessingState.SUCCESS,
             result="path/to/result.csv",
+            source_file_path="path/to/source_copy.csv",
+            source_file_version="test-version",
             result_parquet="path/to/result.csv",
             error="test",
         )
@@ -815,12 +817,14 @@ class TestFilterDetailView:
 
 
 class TestRevertJobView:
-    def test_response(self, api_client, data_source, admin, job_factory, mocker):
+    def test_response(self, api_client, data_source, admin, job_factory, job_meta_factory, mocker):
         jobs = job_factory.create_batch(
             3, datasource=data_source, job_state=ds_constants.ProcessingState.SUCCESS
         )
         payload = dict(id=jobs[1].id)
         old_active_job = data_source.get_active_job()
+
+        job_meta_factory(job=jobs[1])
 
         api_client.force_authenticate(admin)
         response = api_client.post(self.get_url(data_source.id), data=payload)

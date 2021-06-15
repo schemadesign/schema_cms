@@ -197,11 +197,18 @@ class DataSource(MetaGeneratorMixin, SoftDeleteObject, TimeStampedModel):
 
     def create_job(self, **job_kwargs):
         """Create new job for data source, copy source file and version"""
+        source_file_path = {
+            constants.DataSourceType.FILE: "",
+            constants.DataSourceType.API: self.api_url,
+            constants.DataSourceType.GOOGLE_SHEET: self.google_sheet,
+        }
+
+        if self.type == constants.DataSourceType.FILE:
+            job_kwargs["source_file_path"] = self.file.name
+            job_kwargs["source_file_version"] = self.source_file_latest_version
+
         return DataSourceJob.objects.create(
-            datasource=self,
-            source_file_path=self.file.name,
-            source_file_version=self.source_file_latest_version,
-            **job_kwargs,
+            datasource=self, datasource_type=self.type, source_url=source_file_path[self.type], **job_kwargs,
         )
 
     @transaction.atomic()
@@ -209,7 +216,26 @@ class DataSource(MetaGeneratorMixin, SoftDeleteObject, TimeStampedModel):
         self.jobs.filter(is_active=True).update(is_active=False)
 
         job.is_active = True
-        job.save()
+        job.save(update_fields=["is_active"])
+
+        self.type = job.datasource_type
+
+        if self.type == constants.DataSourceType.GOOGLE_SHEET:
+            self.google_sheet = job.source_url
+            self.file = None
+            self.api_url = ""
+
+        if self.type == constants.DataSourceType.API:
+            self.api_url = job.source_url
+            self.file = None
+            self.google_sheet = ""
+
+        if self.type == constants.DataSourceType.FILE:
+            self.file = job.source_file_path
+            self.google_sheet = ""
+            self.api_url = ""
+
+        self.save(update_fields=["type", "file", "google_sheet", "api_url"])
 
     def result_fields_info(self):
         try:
@@ -366,7 +392,11 @@ class WranglingScript(SoftDeleteObject, TimeStampedModel):
 
 class DataSourceJob(MetaGeneratorMixin, SoftDeleteObject, TimeStampedModel, fsm.DataSourceJobFSM):
     datasource = models.ForeignKey(DataSource, on_delete=models.CASCADE, related_name="jobs")
+    datasource_type = models.CharField(
+        max_length=25, choices=constants.DATA_SOURCE_TYPE_CHOICES, default=constants.DataSourceType.FILE
+    )
     description = models.TextField(blank=True)
+    source_url = models.URLField(default="", blank=True)
     source_file_path = models.CharField(max_length=255, editable=False)
     source_file_version = models.CharField(max_length=36, editable=False)
     result = models.FileField(upload_to=file_upload_path, null=True, blank=True)
