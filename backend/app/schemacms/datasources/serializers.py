@@ -15,6 +15,20 @@ class RawDataSourceSerializer(serializers.Serializer):
     name = serializers.CharField(read_only=True)
 
 
+class DataSourceNewMetaSerializer(serializers.Serializer):
+    items = serializers.IntegerField(read_only=True)
+    fields = serializers.IntegerField(read_only=True)
+    fields_names = serializers.ListField(read_only=True)
+    fields_with_urls = serializers.ListField(read_only=True)
+    preview = serializers.FileField(read_only=True)
+    filters = serializers.SerializerMethodField()
+    status = serializers.CharField(read_only=True)
+    error = serializers.CharField(read_only=True)
+
+    def get_filters(self, meta):
+        return 0
+
+
 class DataSourceMetaSerializer(serializers.ModelSerializer):
     filters = serializers.SerializerMethodField(read_only=True)
 
@@ -73,7 +87,7 @@ class DataSourceTagSerializer(serializers.ModelSerializer):
 
 
 class DataSourceSerializer(serializers.ModelSerializer):
-    meta_data = DataSourceMetaSerializer(read_only=True)
+    meta_data = serializers.SerializerMethodField()
     file_name = serializers.SerializerMethodField()
     created_by = serializers.SerializerMethodField()
     jobs_state = serializers.SerializerMethodField()
@@ -170,6 +184,12 @@ class DataSourceSerializer(serializers.ModelSerializer):
         }
 
         return jobs_state
+
+    def get_meta_data(self, obj):
+        if job := obj.get_active_job():
+            return DataSourceNewMetaSerializer(job.meta_data, read_only=True).data
+        else:
+            return {}
 
     @transaction.atomic()
     def save(self, *args, **kwargs):
@@ -382,19 +402,21 @@ class PublicApiDataSourceJobStateSerializer(serializers.ModelSerializer):
     job_state = serializers.ChoiceField(
         choices=[ProcessingState.PROCESSING, ProcessingState.SUCCESS, ProcessingState.FAILED]
     )
+    source_file_path = serializers.CharField()
+    source_file_version = serializers.CharField()
     result = serializers.CharField()
     result_parquet = serializers.CharField()
 
     class Meta:
         model = ds_models.DataSourceJob
-        fields = ("job_state", "result", "result_parquet", "error")
+        fields = ("source_file_path", "source_file_version", "job_state", "result", "result_parquet", "error")
 
     def __init__(self, *args, **kwargs):
         super().__init__(*args, **kwargs)
         job_state = self.initial_data.get("job_state")
         job_state_available_fields = {
             ProcessingState.PROCESSING: [],
-            ProcessingState.SUCCESS: ["result", "result_parquet"],
+            ProcessingState.SUCCESS: ["source_file_path", "source_file_version", "result", "result_parquet"],
             ProcessingState.FAILED: ["error"],
         }
         available_fields = job_state_available_fields.get(job_state, []) + ["job_state"]
@@ -412,6 +434,7 @@ class PublicApiDataSourceJobStateSerializer(serializers.ModelSerializer):
     @transaction.atomic()
     def save(self, **kwargs):
         job_state = self.validated_data.pop("job_state")
+
         for field_name, val in self.validated_data.items():
             setattr(self.instance, field_name, val)
         job_state_action = {
