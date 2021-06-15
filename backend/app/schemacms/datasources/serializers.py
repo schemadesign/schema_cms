@@ -225,7 +225,7 @@ class DataSourceSerializer(serializers.ModelSerializer):
                 {"api_url": "Unable to connect with provided api"}, code="apiUnableToConnect"
             )
 
-        if response.headers["Content-Type"] != "application/json":
+        if "application/json" not in response.headers["Content-Type"].split(";"):
             raise exceptions.ValidationError(
                 {"api_url": "Api returns wrong data format"}, code="apiWrongFormat"
             )
