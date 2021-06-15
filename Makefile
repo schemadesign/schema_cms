@@ -12,6 +12,10 @@ setup-docker:
 	docker volume create --name=schema-cms-backend-db-data
 	docker volume create --name=schema-cms-localstack-data
 
+reset-docker:
+	docker volume rm schema-cms-backend-db-data
+	docker volume rm schema-cms-localstack-data
+
 setup: install setup-docker
 
 build:
