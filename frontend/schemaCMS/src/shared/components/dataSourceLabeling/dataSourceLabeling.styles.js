@@ -3,6 +3,7 @@ import { colors } from '../../../theme/styled';
 
 export const Container = styled.div`
   margin-top: 60px;
+  margin-bottom: 140px;
 `;
 
 export const FieldTypeHeader = styled.div`

@@ -13,6 +13,7 @@ const DEFAULT_TYPES = [
   { value: 'date', label: 'Date' },
   { value: 'int', label: 'Integer' },
   { value: 'number', label: 'Number' },
+  { value: 'boolean', label: 'Boolean' },
   { value: 'img', label: 'Image' },
   { value: 'phone', label: 'Phone' },
   { value: 'email', label: 'Email' },

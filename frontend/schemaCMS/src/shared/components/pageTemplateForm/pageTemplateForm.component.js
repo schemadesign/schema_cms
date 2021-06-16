@@ -14,6 +14,7 @@ import { PlusButton, BackButton, NextButton } from '../navigation';
 import {
   AvailableCopy,
   BinIconContainer,
+  EditIconLabel,
   IconsContainer,
   IconWrapper,
   inputContainerStyles,
@@ -113,7 +114,9 @@ export const PageTemplateForm = ({
         {...restFormikProps}
       />
       <IconsContainer>
-        <EditIcon />
+        <EditIconLabel htmlFor={PAGE_TEMPLATES_NAME}>
+          <EditIcon />
+        </EditIconLabel>
         {renderCopyButton(!!pageTemplateId)}
       </IconsContainer>
     </Subtitle>

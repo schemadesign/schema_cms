@@ -19,6 +19,7 @@ import {
   SwitchContent,
   SwitchCopy,
   BinIconContainer,
+  EditIconLabel,
 } from '../form/frequentComponents.styles';
 import { Container } from './blockTemplateForm.styles';
 import messages from './blockTemplateForm.messages';
@@ -101,7 +102,9 @@ export const BlockTemplateForm = ({
         {...restFormikProps}
       />
       <IconsContainer>
-        <EditIcon />
+        <EditIconLabel htmlFor={BLOCK_TEMPLATES_NAME}>
+          <EditIcon />
+        </EditIconLabel>
         {renderCopyButton(!!blockTemplateId)}
       </IconsContainer>
     </Subtitle>

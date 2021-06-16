@@ -2,7 +2,7 @@
 
 exports[`DataSourceLabeling: Component should render correctly 1`] = `
 <div
-  className="sc-bdnylx gLhJEL"
+  className="sc-bdnylx hHZzIp"
 >
   <div
     className="sc-gtssRu iNdVgL"
@@ -232,7 +232,7 @@ exports[`DataSourceLabeling: Component should render correctly 1`] = `
                   }
                 }
               >
-                Image
+                Boolean
               </div>
               <div
                 id="select-item-6"
@@ -252,7 +252,7 @@ exports[`DataSourceLabeling: Component should render correctly 1`] = `
                   }
                 }
               >
-                Phone
+                Image
               </div>
               <div
                 id="select-item-7"
@@ -272,10 +272,30 @@ exports[`DataSourceLabeling: Component should render correctly 1`] = `
                   }
                 }
               >
-                Email
+                Phone
               </div>
               <div
                 id="select-item-8"
+                onClick={[Function]}
+                onMouseOut={[Function]}
+                onMouseOver={[Function]}
+                style={
+                  Object {
+                    "border": "1px solid  #2F2F36",
+                    "borderTop": "none",
+                    "color": "#71737e",
+                    "cursor": "pointer",
+                    "overflow": "hidden",
+                    "padding": "20px 10px",
+                    "textOverflow": "ellipsis",
+                    "whiteSpace": "nowrap",
+                  }
+                }
+              >
+                Email
+              </div>
+              <div
+                id="select-item-9"
                 onClick={[Function]}
                 onMouseOut={[Function]}
                 onMouseOver={[Function]}
@@ -529,7 +549,7 @@ exports[`DataSourceLabeling: Component should render correctly 1`] = `
                   }
                 }
               >
-                Image
+                Boolean
               </div>
               <div
                 id="select-item-6"
@@ -549,7 +569,7 @@ exports[`DataSourceLabeling: Component should render correctly 1`] = `
                   }
                 }
               >
-                Phone
+                Image
               </div>
               <div
                 id="select-item-7"
@@ -569,10 +589,30 @@ exports[`DataSourceLabeling: Component should render correctly 1`] = `
                   }
                 }
               >
-                Email
+                Phone
               </div>
               <div
                 id="select-item-8"
+                onClick={[Function]}
+                onMouseOut={[Function]}
+                onMouseOver={[Function]}
+                style={
+                  Object {
+                    "border": "1px solid  #2F2F36",
+                    "borderTop": "none",
+                    "color": "#71737e",
+                    "cursor": "pointer",
+                    "overflow": "hidden",
+                    "padding": "20px 10px",
+                    "textOverflow": "ellipsis",
+                    "whiteSpace": "nowrap",
+                  }
+                }
+              >
+                Email
+              </div>
+              <div
+                id="select-item-9"
                 onClick={[Function]}
                 onMouseOut={[Function]}
                 onMouseOver={[Function]}

@@ -30,7 +30,12 @@ import reportError from '../../../shared/utils/reportError';
 import { LoadingWrapper } from '../../../shared/components/loadingWrapper';
 import { METADATA, METADATA_KEY, METADATA_SCHEMA, METADATA_VALUE } from '../../../modules/metadata/metadata.constants';
 import { CounterHeader } from '../../../shared/components/counterHeader';
-import { binStyles, mobilePlusStyles, PlusContainer } from '../../../shared/components/form/frequentComponents.styles';
+import {
+  binStyles,
+  EditIconLabel,
+  mobilePlusStyles,
+  PlusContainer,
+} from '../../../shared/components/form/frequentComponents.styles';
 import { NavigationContainer, NextButton, PlusButton } from '../../../shared/components/navigation';
 import { TextInput } from '../../../shared/components/form/inputs/textInput';
 import { DataSourceLabeling } from '../../../shared/components/dataSourceLabeling';
@@ -168,7 +173,9 @@ export const Metadata = ({
                       {...restFormikProps}
                     />
                     <IconsContainer>
-                      <EditIcon />
+                      <EditIconLabel htmlFor={`${METADATA}.${index}.${METADATA_KEY}`}>
+                        <EditIcon />
+                      </EditIconLabel>
                       <BinIcon customStyles={binStyles} onClick={() => removeMetadata(index)} />
                     </IconsContainer>
                   </Header>
@@ -185,7 +192,9 @@ export const Metadata = ({
                       multiline
                       {...restFormikProps}
                     />
-                    <EditIcon customStyles={editIconStyles} />
+                    <EditIconLabel htmlFor={`${METADATA}.${index}.${METADATA_VALUE}`}>
+                      <EditIcon customStyles={editIconStyles} />
+                    </EditIconLabel>
                   </InputContainer>
                 </AccordionDetails>
               </AccordionPanel>

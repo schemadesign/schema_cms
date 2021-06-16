@@ -347,7 +347,7 @@ exports[`BlockTemplate: Component should render correctly 1`] = `
     </div>
   </div>
   <div
-    className="sc-lbVuaH gVgDRK"
+    className="sc-gGLyOc kkBUTP"
   >
     <div
       style={
@@ -369,7 +369,7 @@ exports[`BlockTemplate: Component should render correctly 1`] = `
         }
       >
         <a
-          className="sc-ckTRkR hVaVwp"
+          className="sc-fbIXFq iIuqzo"
           href="/project/1/"
           onClick={[Function]}
           style={
@@ -391,7 +391,7 @@ exports[`BlockTemplate: Component should render correctly 1`] = `
             Project
           </span>
           <h3
-            className="sc-fbIXFq ijAnMD"
+            className="sc-FRqcf ibfQYF"
             style={
               Object {
                 "fontFamily": "Inter, \\"Helvetica Neue\\", Helvetica, Arial, sans-serif",
@@ -427,7 +427,7 @@ exports[`BlockTemplate: Component should render correctly 1`] = `
         }
       >
         <a
-          className="sc-ckTRkR hVaVwp"
+          className="sc-fbIXFq iIuqzo"
           href="/project/1/templates"
           onClick={[Function]}
           style={
@@ -449,7 +449,7 @@ exports[`BlockTemplate: Component should render correctly 1`] = `
             Tab
           </span>
           <h3
-            className="sc-fbIXFq ijAnMD"
+            className="sc-FRqcf ibfQYF"
             style={
               Object {
                 "fontFamily": "Inter, \\"Helvetica Neue\\", Helvetica, Arial, sans-serif",
@@ -485,7 +485,7 @@ exports[`BlockTemplate: Component should render correctly 1`] = `
         }
       >
         <a
-          className="sc-ckTRkR hVaVwp"
+          className="sc-fbIXFq iIuqzo"
           href="/project/1/block-templates"
           onClick={[Function]}
           style={
@@ -507,7 +507,7 @@ exports[`BlockTemplate: Component should render correctly 1`] = `
             Library
           </span>
           <h3
-            className="sc-fbIXFq ijAnMD"
+            className="sc-FRqcf ibfQYF"
             style={
               Object {
                 "fontFamily": "Inter, \\"Helvetica Neue\\", Helvetica, Arial, sans-serif",
@@ -543,7 +543,7 @@ exports[`BlockTemplate: Component should render correctly 1`] = `
         }
       >
         <div
-          className="sc-gGLyOc idsrnr"
+          className="sc-ckTRkR bZresJ"
         >
           <span
             style={
@@ -556,7 +556,7 @@ exports[`BlockTemplate: Component should render correctly 1`] = `
             Template
           </span>
           <h3
-            className="sc-fbIXFq ijAnMD"
+            className="sc-FRqcf ibfQYF"
             style={
               Object {
                 "fontFamily": "Inter, \\"Helvetica Neue\\", Helvetica, Arial, sans-serif",
@@ -577,16 +577,16 @@ exports[`BlockTemplate: Component should render correctly 1`] = `
     onSubmit={[Function]}
   >
     <div
-      className="sc-jJMGHv fVskba"
+      className="sc-hiKfjK YJikf"
     >
       <div
-        className="sc-hiKfjK fkOTlE"
+        className="sc-gXfWUo kcybGJ"
       >
         <div
-          className="sc-gXfWUo fIDrtI"
+          className="sc-cBoprd jcsXJM"
         >
           <h2
-            className="sc-cBoprd eErWUv"
+            className="sc-ciSmjq jGYlpo"
             id="desktopHeaderTitle"
             style={
               Object {
@@ -600,7 +600,7 @@ exports[`BlockTemplate: Component should render correctly 1`] = `
             Block Template
           </h2>
           <h1
-            className="sc-ciSmjq jGYlpo"
+            className="sc-jcwofb kucsUy"
             id="desktopHeaderSubtitle"
             style={
               Object {
@@ -614,10 +614,10 @@ exports[`BlockTemplate: Component should render correctly 1`] = `
             }
           >
             <div
-              className="sc-cxNIbT etZTuz"
+              className="sc-lmgQde EisLb"
             >
               <div
-                className="sc-carGAA dcSVrW"
+                className="sc-iTVIwl fYnNZo"
               >
                 <div
                   style={
@@ -689,33 +689,47 @@ exports[`BlockTemplate: Component should render correctly 1`] = `
                         "top": 2,
                       }
                     }
-                  />
+                  >
+                    <label
+                      htmlFor="name"
+                      style={
+                        Object {
+                          "cursor": "pointer",
+                        }
+                      }
+                    />
+                  </div>
                 </div>
                 <div
-                  className="sc-iBzFoy kiMlWq"
+                  className="sc-efHXLn fZIWTS"
                   id="nameError"
                 />
               </div>
               <div
-                className="sc-lmgQde cBfMfP"
+                className="sc-iJCRLp cEZYrb"
               >
-                <svg
-                  style={
-                    Object {
-                      "fill": "#FFF",
-                      "height": "30px",
-                      "width": "30px",
-                    }
-                  }
-                  viewBox="0 0 30 30"
+                <label
+                  className="sc-iwaifL fLxMjF"
+                  htmlFor="name"
                 >
-                  <path
-                    d="M21.789 10.92a.724.724 0 000-1.022l-1.687-1.687a.724.724 0 00-1.022 0l-1.322 1.322 2.709 2.709 1.322-1.322zM9 18.291V21h2.709l7.992-7.992-2.709-2.71L9 18.292z"
-                    fillRule="evenodd"
-                  />
-                </svg>
+                  <svg
+                    style={
+                      Object {
+                        "fill": "#FFF",
+                        "height": "30px",
+                        "width": "30px",
+                      }
+                    }
+                    viewBox="0 0 30 30"
+                  >
+                    <path
+                      d="M21.789 10.92a.724.724 0 000-1.022l-1.687-1.687a.724.724 0 00-1.022 0l-1.322 1.322 2.709 2.709 1.322-1.322zM9 18.291V21h2.709l7.992-7.992-2.709-2.71L9 18.292z"
+                      fillRule="evenodd"
+                    />
+                  </svg>
+                </label>
                 <div
-                  className="sc-jffIyK cvvZQa"
+                  className="sc-eJoaVz bMUoKu"
                   id="blockTemplateCopyButton"
                   onClick={[Function]}
                 >
@@ -739,7 +753,7 @@ exports[`BlockTemplate: Component should render correctly 1`] = `
           </h1>
         </div>
         <div
-          className="sc-jcwofb"
+          className="sc-carGAA"
         >
           <div
             className="sc-bkbjAj iFdJhe"
@@ -789,10 +803,10 @@ exports[`BlockTemplate: Component should render correctly 1`] = `
         </div>
       </div>
       <div
-        className="sc-iJCRLp bOYzWV"
+        className="sc-giAqnE YxTfW"
       >
         <div
-          className="sc-carGAA dZtKqw"
+          className="sc-iTVIwl kAMMmi"
         >
           <div
             style={
@@ -854,27 +868,36 @@ exports[`BlockTemplate: Component should render correctly 1`] = `
                   "top": 2,
                 }
               }
-            />
+            >
+              <label
+                htmlFor="name"
+                style={
+                  Object {
+                    "cursor": "pointer",
+                  }
+                }
+              />
+            </div>
           </div>
           <div
-            className="sc-iBzFoy kiMlWq"
+            className="sc-efHXLn fZIWTS"
             id="nameError"
           />
         </div>
       </div>
       <div
-        className="sc-efHXLn jVOFoC"
+        className="sc-cTJmaU ixvODn"
       >
         <div
-          className="sc-cTJmaU bsxmQs"
+          className="sc-jNnnWF kDEYDN"
           id="tagsCounter"
         />
         2 Elements
         <div
-          className="sc-cTJmaU bsxmQs"
+          className="sc-jNnnWF kDEYDN"
         >
           <div
-            className="sc-ezzayL ehyycY"
+            className="sc-bYwzba cTWbvQ"
           >
             <div
               className="sc-bkbjAj iFdJhe"
@@ -976,14 +999,14 @@ exports[`BlockTemplate: Component should render correctly 1`] = `
               }
             >
               <div
-                className="sc-dPaNSN KknpL"
+                className="sc-bBjRzc cItkjY"
               >
                 <div
-                  className="sc-bBjRzc bJmnTa"
+                  className="sc-cOigif fyNkkq"
                 >
                   <div>
                     <div
-                      className="sc-kLokih dBjrEo"
+                      className="sc-iklIKw cjCzld"
                     >
                       <svg
                         style={
@@ -1004,7 +1027,7 @@ exports[`BlockTemplate: Component should render correctly 1`] = `
                     </div>
                   </div>
                   <div
-                    className="sc-jgPznn dfhxwm"
+                    className="sc-gSYCTC bPGpOA"
                   >
                     <svg
                       style={
@@ -1024,7 +1047,7 @@ exports[`BlockTemplate: Component should render correctly 1`] = `
                   </div>
                 </div>
                 <div
-                  className="sc-carGAA dcSVrW"
+                  className="sc-iTVIwl fYnNZo"
                 >
                   <div
                     style={
@@ -1095,31 +1118,45 @@ exports[`BlockTemplate: Component should render correctly 1`] = `
                           "top": 2,
                         }
                       }
-                    />
+                    >
+                      <label
+                        htmlFor="elements.0.name"
+                        style={
+                          Object {
+                            "cursor": "pointer",
+                          }
+                        }
+                      />
+                    </div>
                   </div>
                   <div
-                    className="sc-iBzFoy kiMlWq"
+                    className="sc-efHXLn fZIWTS"
                     id="elements.0.nameError"
                   />
                 </div>
                 <div
-                  className="sc-bBjRzc bJmnTa"
+                  className="sc-cOigif fyNkkq"
                 >
-                  <svg
-                    style={
-                      Object {
-                        "fill": "#FFF",
-                        "height": "30px",
-                        "width": "30px",
-                      }
-                    }
-                    viewBox="0 0 30 30"
+                  <label
+                    className="sc-iwaifL fLxMjF"
+                    htmlFor="elements.0.name"
                   >
-                    <path
-                      d="M21.789 10.92a.724.724 0 000-1.022l-1.687-1.687a.724.724 0 00-1.022 0l-1.322 1.322 2.709 2.709 1.322-1.322zM9 18.291V21h2.709l7.992-7.992-2.709-2.71L9 18.292z"
-                      fillRule="evenodd"
-                    />
-                  </svg>
+                    <svg
+                      style={
+                        Object {
+                          "fill": "#FFF",
+                          "height": "30px",
+                          "width": "30px",
+                        }
+                      }
+                      viewBox="0 0 30 30"
+                    >
+                      <path
+                        d="M21.789 10.92a.724.724 0 000-1.022l-1.687-1.687a.724.724 0 00-1.022 0l-1.322 1.322 2.709 2.709 1.322-1.322zM9 18.291V21h2.709l7.992-7.992-2.709-2.71L9 18.292z"
+                        fillRule="evenodd"
+                      />
+                    </svg>
+                  </label>
                   <svg
                     id="removeElement-0"
                     onClick={[Function]}
@@ -1228,14 +1265,14 @@ exports[`BlockTemplate: Component should render correctly 1`] = `
               }
             >
               <div
-                className="sc-dPaNSN KknpL"
+                className="sc-bBjRzc cItkjY"
               >
                 <div
-                  className="sc-bBjRzc bJmnTa"
+                  className="sc-cOigif fyNkkq"
                 >
                   <div>
                     <div
-                      className="sc-kLokih dBjrEo"
+                      className="sc-iklIKw cjCzld"
                     >
                       <svg
                         style={
@@ -1256,7 +1293,7 @@ exports[`BlockTemplate: Component should render correctly 1`] = `
                     </div>
                   </div>
                   <div
-                    className="sc-jgPznn dfhxwm"
+                    className="sc-gSYCTC bPGpOA"
                   >
                     <svg
                       style={
@@ -1276,7 +1313,7 @@ exports[`BlockTemplate: Component should render correctly 1`] = `
                   </div>
                 </div>
                 <div
-                  className="sc-carGAA dcSVrW"
+                  className="sc-iTVIwl fYnNZo"
                 >
                   <div
                     style={
@@ -1347,31 +1384,45 @@ exports[`BlockTemplate: Component should render correctly 1`] = `
                           "top": 2,
                         }
                       }
-                    />
+                    >
+                      <label
+                        htmlFor="elements.1.name"
+                        style={
+                          Object {
+                            "cursor": "pointer",
+                          }
+                        }
+                      />
+                    </div>
                   </div>
                   <div
-                    className="sc-iBzFoy kiMlWq"
+                    className="sc-efHXLn fZIWTS"
                     id="elements.1.nameError"
                   />
                 </div>
                 <div
-                  className="sc-bBjRzc bJmnTa"
+                  className="sc-cOigif fyNkkq"
                 >
-                  <svg
-                    style={
-                      Object {
-                        "fill": "#FFF",
-                        "height": "30px",
-                        "width": "30px",
-                      }
-                    }
-                    viewBox="0 0 30 30"
+                  <label
+                    className="sc-iwaifL fLxMjF"
+                    htmlFor="elements.1.name"
                   >
-                    <path
-                      d="M21.789 10.92a.724.724 0 000-1.022l-1.687-1.687a.724.724 0 00-1.022 0l-1.322 1.322 2.709 2.709 1.322-1.322zM9 18.291V21h2.709l7.992-7.992-2.709-2.71L9 18.292z"
-                      fillRule="evenodd"
-                    />
-                  </svg>
+                    <svg
+                      style={
+                        Object {
+                          "fill": "#FFF",
+                          "height": "30px",
+                          "width": "30px",
+                        }
+                      }
+                      viewBox="0 0 30 30"
+                    >
+                      <path
+                        d="M21.789 10.92a.724.724 0 000-1.022l-1.687-1.687a.724.724 0 00-1.022 0l-1.322 1.322 2.709 2.709 1.322-1.322zM9 18.291V21h2.709l7.992-7.992-2.709-2.71L9 18.292z"
+                        fillRule="evenodd"
+                      />
+                    </svg>
+                  </label>
                   <svg
                     id="removeElement-1"
                     onClick={[Function]}
@@ -1512,7 +1563,7 @@ exports[`BlockTemplate: Component should render correctly 1`] = `
                 Make it Available
               </label>
               <span
-                className="sc-iwaifL fjBsUz"
+                className="sc-cxNIbT hRIDAp"
               >
                 This Template is currently available for Editors
               </span>

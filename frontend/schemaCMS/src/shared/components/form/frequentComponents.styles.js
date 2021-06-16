@@ -39,6 +39,10 @@ export const BinIconContainer = styled.div`
   top: 0;
 `;
 
+export const EditIconLabel = styled.label`
+  cursor: pointer;
+`;
+
 export const AvailableCopy = styled.span`
   color: ${({ theme }) => theme.secondaryText};
   min-width: 100%;

@@ -44,6 +44,7 @@ import {
   PlusContainer,
   IconWrapper,
   menuIconStyles,
+  EditIconLabel,
 } from '../form/frequentComponents.styles';
 import { TextInput } from '../form/inputs/textInput';
 import messages from './pageForm.messages';
@@ -208,7 +209,9 @@ export const PageForm = ({
         {...restFormikProps}
       />
       <IconsContainer>
-        <EditIcon />
+        <EditIconLabel htmlFor={PAGE_NAME}>
+          <EditIcon />
+        </EditIconLabel>
         {renderCopyButton(!!pageId)}
       </IconsContainer>
     </Subtitle>

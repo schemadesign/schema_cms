@@ -347,7 +347,7 @@ exports[`EditPage: Component should render correctly 1`] = `
     </div>
   </div>
   <div
-    className="sc-csTaMs knPBHR"
+    className="sc-dFRpvv gzKTsC"
   >
     <div
       style={
@@ -369,7 +369,7 @@ exports[`EditPage: Component should render correctly 1`] = `
         }
       >
         <a
-          className="sc-bsatbK jguMzz"
+          className="sc-gIvpCV hASJRr"
           href="/project/1/"
           onClick={[Function]}
           style={
@@ -391,7 +391,7 @@ exports[`EditPage: Component should render correctly 1`] = `
             Project
           </span>
           <h3
-            className="sc-gIvpCV fQnaIY"
+            className="sc-euEtjk bmsWwp"
             style={
               Object {
                 "fontFamily": "Inter, \\"Helvetica Neue\\", Helvetica, Arial, sans-serif",
@@ -427,7 +427,7 @@ exports[`EditPage: Component should render correctly 1`] = `
         }
       >
         <a
-          className="sc-bsatbK jguMzz"
+          className="sc-gIvpCV hASJRr"
           href="/project/1/content"
           onClick={[Function]}
           style={
@@ -449,7 +449,7 @@ exports[`EditPage: Component should render correctly 1`] = `
             Tab
           </span>
           <h3
-            className="sc-gIvpCV fQnaIY"
+            className="sc-euEtjk bmsWwp"
             style={
               Object {
                 "fontFamily": "Inter, \\"Helvetica Neue\\", Helvetica, Arial, sans-serif",
@@ -485,7 +485,7 @@ exports[`EditPage: Component should render correctly 1`] = `
         }
       >
         <a
-          className="sc-bsatbK jguMzz"
+          className="sc-gIvpCV hASJRr"
           href="/section/sectionId"
           onClick={[Function]}
           style={
@@ -507,7 +507,7 @@ exports[`EditPage: Component should render correctly 1`] = `
             Section
           </span>
           <h3
-            className="sc-gIvpCV fQnaIY"
+            className="sc-euEtjk bmsWwp"
             style={
               Object {
                 "fontFamily": "Inter, \\"Helvetica Neue\\", Helvetica, Arial, sans-serif",
@@ -543,7 +543,7 @@ exports[`EditPage: Component should render correctly 1`] = `
         }
       >
         <div
-          className="sc-dFRpvv iSuHAK"
+          className="sc-bsatbK kMeDaH"
         >
           <span
             style={
@@ -556,7 +556,7 @@ exports[`EditPage: Component should render correctly 1`] = `
             Page
           </span>
           <h3
-            className="sc-gIvpCV fQnaIY"
+            className="sc-euEtjk bmsWwp"
             style={
               Object {
                 "fontFamily": "Inter, \\"Helvetica Neue\\", Helvetica, Arial, sans-serif",
@@ -580,13 +580,13 @@ exports[`EditPage: Component should render correctly 1`] = `
       className="sc-kfYqjs fPXJvO"
     >
       <div
-        className="sc-iBzFoy gDdiRk"
+        className="sc-efHXLn cAkQso"
       >
         <div
-          className="sc-efHXLn aHlJF"
+          className="sc-cTJmaU dioFPA"
         >
           <h2
-            className="sc-cTJmaU nFUUP"
+            className="sc-jNnnWF giOLJe"
             id="desktopHeaderTitle"
             style={
               Object {
@@ -600,7 +600,7 @@ exports[`EditPage: Component should render correctly 1`] = `
             Page
           </h2>
           <h1
-            className="sc-jNnnWF giOLJe"
+            className="sc-dPaNSN jBxpAl"
             id="desktopHeaderSubtitle"
             style={
               Object {
@@ -614,10 +614,10 @@ exports[`EditPage: Component should render correctly 1`] = `
             }
           >
             <div
-              className="sc-bYwzba dnGYIE"
+              className="sc-kLokih jwnpqb"
             >
               <div
-                className="sc-jcwofb jRevJQ"
+                className="sc-carGAA dcSVrW"
               >
                 <div
                   style={
@@ -689,33 +689,47 @@ exports[`EditPage: Component should render correctly 1`] = `
                         "top": 2,
                       }
                     }
-                  />
+                  >
+                    <label
+                      htmlFor="name"
+                      style={
+                        Object {
+                          "cursor": "pointer",
+                        }
+                      }
+                    />
+                  </div>
                 </div>
                 <div
-                  className="sc-iTVIwl jPDUAq"
+                  className="sc-iBzFoy kiMlWq"
                   id="nameError"
                 />
               </div>
               <div
-                className="sc-kLokih kLaboX"
+                className="sc-iklIKw bNiroy"
               >
-                <svg
-                  style={
-                    Object {
-                      "fill": "#FFF",
-                      "height": "30px",
-                      "width": "30px",
-                    }
-                  }
-                  viewBox="0 0 30 30"
+                <label
+                  className="sc-ezzayL iwrUog"
+                  htmlFor="name"
                 >
-                  <path
-                    d="M21.789 10.92a.724.724 0 000-1.022l-1.687-1.687a.724.724 0 00-1.022 0l-1.322 1.322 2.709 2.709 1.322-1.322zM9 18.291V21h2.709l7.992-7.992-2.709-2.71L9 18.292z"
-                    fillRule="evenodd"
-                  />
-                </svg>
+                  <svg
+                    style={
+                      Object {
+                        "fill": "#FFF",
+                        "height": "30px",
+                        "width": "30px",
+                      }
+                    }
+                    viewBox="0 0 30 30"
+                  >
+                    <path
+                      d="M21.789 10.92a.724.724 0 000-1.022l-1.687-1.687a.724.724 0 00-1.022 0l-1.322 1.322 2.709 2.709 1.322-1.322zM9 18.291V21h2.709l7.992-7.992-2.709-2.71L9 18.292z"
+                      fillRule="evenodd"
+                    />
+                  </svg>
+                </label>
                 <div
-                  className="sc-jQAyEw jlUFEW"
+                  className="sc-fuIRbl bOiyfl"
                   id="pageCopyButton"
                   onClick={[Function]}
                 >
@@ -739,14 +753,14 @@ exports[`EditPage: Component should render correctly 1`] = `
           </h1>
         </div>
         <div
-          className="sc-dPaNSN"
+          className="sc-bBjRzc"
         />
       </div>
       <div
-        className="sc-iklIKw kPaeiQ"
+        className="sc-jJMGHv gXtBuf"
       >
         <div
-          className="sc-jcwofb hwjkIm"
+          className="sc-carGAA dZtKqw"
         >
           <div
             style={
@@ -809,35 +823,44 @@ exports[`EditPage: Component should render correctly 1`] = `
                 }
               }
             >
-              <div
-                className="sc-carGAA ezHpCp"
-              >
-                <svg
-                  style={
-                    Object {
-                      "fill": "#FFF",
-                      "height": "30px",
-                      "width": "30px",
-                    }
+              <label
+                htmlFor="name"
+                style={
+                  Object {
+                    "cursor": "pointer",
                   }
-                  viewBox="0 0 30 30"
+                }
+              >
+                <div
+                  className="sc-iTVIwl eNqgEP"
                 >
-                  <path
-                    d="M21.789 10.92a.724.724 0 000-1.022l-1.687-1.687a.724.724 0 00-1.022 0l-1.322 1.322 2.709 2.709 1.322-1.322zM9 18.291V21h2.709l7.992-7.992-2.709-2.71L9 18.292z"
-                    fillRule="evenodd"
-                  />
-                </svg>
-              </div>
+                  <svg
+                    style={
+                      Object {
+                        "fill": "#FFF",
+                        "height": "30px",
+                        "width": "30px",
+                      }
+                    }
+                    viewBox="0 0 30 30"
+                  >
+                    <path
+                      d="M21.789 10.92a.724.724 0 000-1.022l-1.687-1.687a.724.724 0 00-1.022 0l-1.322 1.322 2.709 2.709 1.322-1.322zM9 18.291V21h2.709l7.992-7.992-2.709-2.71L9 18.292z"
+                      fillRule="evenodd"
+                    />
+                  </svg>
+                </div>
+              </label>
             </div>
           </div>
           <div
-            className="sc-iTVIwl jPDUAq"
+            className="sc-iBzFoy kiMlWq"
             id="nameError"
           />
         </div>
       </div>
       <div
-        className="sc-jcwofb hwjkIm"
+        className="sc-carGAA dZtKqw"
       >
         <div
           style={
@@ -900,34 +923,43 @@ exports[`EditPage: Component should render correctly 1`] = `
               }
             }
           >
-            <div
-              className="sc-carGAA ezHpCp"
-            >
-              <svg
-                style={
-                  Object {
-                    "fill": "#FFF",
-                    "height": "30px",
-                    "width": "30px",
-                  }
+            <label
+              htmlFor="displayName"
+              style={
+                Object {
+                  "cursor": "pointer",
                 }
-                viewBox="0 0 30 30"
+              }
+            >
+              <div
+                className="sc-iTVIwl eNqgEP"
               >
-                <path
-                  d="M21.789 10.92a.724.724 0 000-1.022l-1.687-1.687a.724.724 0 00-1.022 0l-1.322 1.322 2.709 2.709 1.322-1.322zM9 18.291V21h2.709l7.992-7.992-2.709-2.71L9 18.292z"
-                  fillRule="evenodd"
-                />
-              </svg>
-            </div>
+                <svg
+                  style={
+                    Object {
+                      "fill": "#FFF",
+                      "height": "30px",
+                      "width": "30px",
+                    }
+                  }
+                  viewBox="0 0 30 30"
+                >
+                  <path
+                    d="M21.789 10.92a.724.724 0 000-1.022l-1.687-1.687a.724.724 0 00-1.022 0l-1.322 1.322 2.709 2.709 1.322-1.322zM9 18.291V21h2.709l7.992-7.992-2.709-2.71L9 18.292z"
+                    fillRule="evenodd"
+                  />
+                </svg>
+              </div>
+            </label>
           </div>
         </div>
         <div
-          className="sc-iTVIwl jPDUAq"
+          className="sc-iBzFoy kiMlWq"
           id="displayNameError"
         />
       </div>
       <div
-        className="sc-jcwofb hwjkIm"
+        className="sc-carGAA dZtKqw"
       >
         <div
           style={
@@ -1008,34 +1040,43 @@ exports[`EditPage: Component should render correctly 1`] = `
               }
             }
           >
-            <div
-              className="sc-carGAA ezHpCp"
-            >
-              <svg
-                style={
-                  Object {
-                    "fill": "#FFF",
-                    "height": "30px",
-                    "width": "30px",
-                  }
+            <label
+              htmlFor="description"
+              style={
+                Object {
+                  "cursor": "pointer",
                 }
-                viewBox="0 0 30 30"
+              }
+            >
+              <div
+                className="sc-iTVIwl eNqgEP"
               >
-                <path
-                  d="M21.789 10.92a.724.724 0 000-1.022l-1.687-1.687a.724.724 0 00-1.022 0l-1.322 1.322 2.709 2.709 1.322-1.322zM9 18.291V21h2.709l7.992-7.992-2.709-2.71L9 18.292z"
-                  fillRule="evenodd"
-                />
-              </svg>
-            </div>
+                <svg
+                  style={
+                    Object {
+                      "fill": "#FFF",
+                      "height": "30px",
+                      "width": "30px",
+                    }
+                  }
+                  viewBox="0 0 30 30"
+                >
+                  <path
+                    d="M21.789 10.92a.724.724 0 000-1.022l-1.687-1.687a.724.724 0 00-1.022 0l-1.322 1.322 2.709 2.709 1.322-1.322zM9 18.291V21h2.709l7.992-7.992-2.709-2.71L9 18.292z"
+                    fillRule="evenodd"
+                  />
+                </svg>
+              </div>
+            </label>
           </div>
         </div>
         <div
-          className="sc-iTVIwl jPDUAq"
+          className="sc-iBzFoy kiMlWq"
           id="descriptionError"
         />
       </div>
       <div
-        className="sc-jcwofb hwjkIm"
+        className="sc-carGAA dZtKqw"
       >
         <div
           style={
@@ -1098,34 +1139,43 @@ exports[`EditPage: Component should render correctly 1`] = `
               }
             }
           >
-            <div
-              className="sc-carGAA ezHpCp"
-            >
-              <svg
-                style={
-                  Object {
-                    "fill": "#FFF",
-                    "height": "30px",
-                    "width": "30px",
-                  }
+            <label
+              htmlFor="keywords"
+              style={
+                Object {
+                  "cursor": "pointer",
                 }
-                viewBox="0 0 30 30"
+              }
+            >
+              <div
+                className="sc-iTVIwl eNqgEP"
               >
-                <path
-                  d="M21.789 10.92a.724.724 0 000-1.022l-1.687-1.687a.724.724 0 00-1.022 0l-1.322 1.322 2.709 2.709 1.322-1.322zM9 18.291V21h2.709l7.992-7.992-2.709-2.71L9 18.292z"
-                  fillRule="evenodd"
-                />
-              </svg>
-            </div>
+                <svg
+                  style={
+                    Object {
+                      "fill": "#FFF",
+                      "height": "30px",
+                      "width": "30px",
+                    }
+                  }
+                  viewBox="0 0 30 30"
+                >
+                  <path
+                    d="M21.789 10.92a.724.724 0 000-1.022l-1.687-1.687a.724.724 0 00-1.022 0l-1.322 1.322 2.709 2.709 1.322-1.322zM9 18.291V21h2.709l7.992-7.992-2.709-2.71L9 18.292z"
+                    fillRule="evenodd"
+                  />
+                </svg>
+              </div>
+            </label>
           </div>
         </div>
         <div
-          className="sc-iTVIwl jPDUAq"
+          className="sc-iBzFoy kiMlWq"
           id="keywordsError"
         />
       </div>
       <div
-        className="sc-jcwofb hwjkIm"
+        className="sc-carGAA dZtKqw"
       >
         <div
           style={
@@ -1188,29 +1238,38 @@ exports[`EditPage: Component should render correctly 1`] = `
               }
             }
           >
-            <div
-              className="sc-carGAA ezHpCp"
-            >
-              <svg
-                style={
-                  Object {
-                    "fill": "#FFF",
-                    "height": "30px",
-                    "width": "30px",
-                  }
+            <label
+              htmlFor="link"
+              style={
+                Object {
+                  "cursor": "pointer",
                 }
-                viewBox="0 0 30 30"
+              }
+            >
+              <div
+                className="sc-iTVIwl eNqgEP"
               >
-                <path
-                  d="M21.789 10.92a.724.724 0 000-1.022l-1.687-1.687a.724.724 0 00-1.022 0l-1.322 1.322 2.709 2.709 1.322-1.322zM9 18.291V21h2.709l7.992-7.992-2.709-2.71L9 18.292z"
-                  fillRule="evenodd"
-                />
-              </svg>
-            </div>
+                <svg
+                  style={
+                    Object {
+                      "fill": "#FFF",
+                      "height": "30px",
+                      "width": "30px",
+                    }
+                  }
+                  viewBox="0 0 30 30"
+                >
+                  <path
+                    d="M21.789 10.92a.724.724 0 000-1.022l-1.687-1.687a.724.724 0 00-1.022 0l-1.322 1.322 2.709 2.709 1.322-1.322zM9 18.291V21h2.709l7.992-7.992-2.709-2.71L9 18.292z"
+                    fillRule="evenodd"
+                  />
+                </svg>
+              </div>
+            </label>
           </div>
         </div>
         <div
-          className="sc-iTVIwl jPDUAq"
+          className="sc-iBzFoy kiMlWq"
           id="linkError"
         />
       </div>
@@ -1231,24 +1290,24 @@ exports[`EditPage: Component should render correctly 1`] = `
         Tags
       </label>
       <div
-        className="sc-bTDODP gcEWcN"
+        className="sc-kHWWFa bgbeok"
       >
         <div
-          className="sc-dsXyEt kNwLxM"
+          className="sc-daBvwG dvKsJO"
         >
           <div
-            className="sc-kHWWFa fMQqIo"
+            className="sc-hOPghE Rihxt"
             title="Colors"
           >
             <span
-              className="sc-hOPghE kjQIcM"
+              className="sc-dsXyEt dvireu"
             >
               Category: 
             </span>
             Colors
           </div>
           <div
-            className="sc-jUfxsr"
+            className="sc-jQAyEw"
           >
             <div
               className=" css-2b097c-container"
@@ -1346,18 +1405,18 @@ exports[`EditPage: Component should render correctly 1`] = `
             </div>
           </div>
           <div
-            className="sc-kHWWFa fMQqIo"
+            className="sc-hOPghE Rihxt"
             title="Countries"
           >
             <span
-              className="sc-hOPghE kjQIcM"
+              className="sc-dsXyEt dvireu"
             >
               Category: 
             </span>
             Countries
           </div>
           <div
-            className="sc-jUfxsr"
+            className="sc-jQAyEw"
           >
             <div
               className=" css-2b097c-container"
@@ -1460,7 +1519,7 @@ exports[`EditPage: Component should render correctly 1`] = `
         className="sc-fKgIGh UcVQm"
       >
         <div
-          className="sc-bBjRzc cLlKOT"
+          className="sc-cOigif bisePT"
           onClick={[Function]}
         >
           <label
@@ -1612,7 +1671,7 @@ exports[`EditPage: Component should render correctly 1`] = `
             </div>
           </div>
           <div
-            className="sc-cOigif glWrEq"
+            className="sc-ArjOu kaQAHc"
           >
             <svg
               style={
@@ -1633,18 +1692,18 @@ exports[`EditPage: Component should render correctly 1`] = `
         </div>
       </div>
       <div
-        className="sc-hmbsMR ghxCzr"
+        className="sc-eKYRpg cBNNce"
       >
         <div
-          className="sc-eKYRpg kkVHcu"
+          className="sc-bTDODP hKMUXd"
           id="tagsCounter"
         />
         1 Block
         <div
-          className="sc-eKYRpg kkVHcu"
+          className="sc-bTDODP hKMUXd"
         >
           <div
-            className="sc-jJMGHv bBRjrt"
+            className="sc-hiKfjK fEtFBc"
           >
             <div
               className="sc-bkbjAj iFdJhe"
@@ -1746,14 +1805,14 @@ exports[`EditPage: Component should render correctly 1`] = `
               }
             >
               <div
-                className="sc-ArjOu hrweAR"
+                className="sc-khIgXV jzCoCJ"
               >
                 <div
-                  className="sc-hTRkEk hUWyjQ"
+                  className="sc-jgPznn lnOZkA"
                 >
                   <div>
                     <div
-                      className="sc-cBoprd hqLqFq"
+                      className="sc-ciSmjq huMZal"
                     >
                       <svg
                         style={
@@ -1775,7 +1834,7 @@ exports[`EditPage: Component should render correctly 1`] = `
                   </div>
                 </div>
                 <div
-                  className="sc-jcwofb jRevJQ"
+                  className="sc-carGAA dcSVrW"
                 >
                   <div
                     style={
@@ -1843,31 +1902,45 @@ exports[`EditPage: Component should render correctly 1`] = `
                           "top": 2,
                         }
                       }
-                    />
+                    >
+                      <label
+                        htmlFor="blocks.0.name"
+                        style={
+                          Object {
+                            "cursor": "pointer",
+                          }
+                        }
+                      />
+                    </div>
                   </div>
                   <div
-                    className="sc-iTVIwl jPDUAq"
+                    className="sc-iBzFoy kiMlWq"
                     id="blocks.0.nameError"
                   />
                 </div>
                 <div
-                  className="sc-hTRkEk hUWyjQ"
+                  className="sc-jgPznn lnOZkA"
                 >
-                  <svg
-                    style={
-                      Object {
-                        "fill": "#FFF",
-                        "height": "30px",
-                        "width": "30px",
-                      }
-                    }
-                    viewBox="0 0 30 30"
+                  <label
+                    className="sc-ezzayL iwrUog"
+                    htmlFor="blocks.0.name"
                   >
-                    <path
-                      d="M21.789 10.92a.724.724 0 000-1.022l-1.687-1.687a.724.724 0 00-1.022 0l-1.322 1.322 2.709 2.709 1.322-1.322zM9 18.291V21h2.709l7.992-7.992-2.709-2.71L9 18.292z"
-                      fillRule="evenodd"
-                    />
-                  </svg>
+                    <svg
+                      style={
+                        Object {
+                          "fill": "#FFF",
+                          "height": "30px",
+                          "width": "30px",
+                        }
+                      }
+                      viewBox="0 0 30 30"
+                    >
+                      <path
+                        d="M21.789 10.92a.724.724 0 000-1.022l-1.687-1.687a.724.724 0 00-1.022 0l-1.322 1.322 2.709 2.709 1.322-1.322zM9 18.291V21h2.709l7.992-7.992-2.709-2.71L9 18.292z"
+                        fillRule="evenodd"
+                      />
+                    </svg>
+                  </label>
                   <svg
                     id="blocks.0"
                     onClick={[Function]}
@@ -1892,7 +1965,7 @@ exports[`EditPage: Component should render correctly 1`] = `
                 </div>
               </div>
               <div
-                className="sc-jgPznn ASqSK"
+                className="sc-gSYCTC GoWEY"
                 title="type"
               >
                 type
@@ -2014,14 +2087,14 @@ exports[`EditPage: Component should render correctly 1`] = `
                 Make it Public
               </label>
               <span
-                className="sc-ezzayL kIINRq"
+                className="sc-bYwzba eSaRpC"
               >
                 This Page is currently Private
                 <span
-                  className="sc-gXfWUo fwdiGn"
+                  className="sc-cBoprd iFVzKX"
                 />
                 <a
-                  className="sc-gsWdvU AMjzS"
+                  className="sc-bXevSJ cTVvbG"
                   href="http://project.domain/page-name-2/page-name"
                   target="_blank"
                 >

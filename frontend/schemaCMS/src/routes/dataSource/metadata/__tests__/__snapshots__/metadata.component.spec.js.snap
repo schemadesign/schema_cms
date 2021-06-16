@@ -708,7 +708,7 @@ exports[`Metadata: Component should render correctly 1`] = `
       className="sc-ciSmjq cmoBib"
     >
       <div
-        className="sc-ArjOu cKgemW"
+        className="sc-khIgXV eebYPS"
       >
         <div
           className="sc-kfYqjs jUvgVQ"
@@ -818,7 +818,7 @@ exports[`Metadata: Component should render correctly 1`] = `
           className="sc-hKFyIo hkUCsP"
         >
           <div
-            className="sc-laZMyp lpszHm"
+            className="sc-iNiQeE fnbEum"
           >
             <div
               style={
@@ -889,31 +889,45 @@ exports[`Metadata: Component should render correctly 1`] = `
                     "top": 2,
                   }
                 }
-              />
+              >
+                <label
+                  htmlFor="metadata.0.key"
+                  style={
+                    Object {
+                      "cursor": "pointer",
+                    }
+                  }
+                />
+              </div>
             </div>
             <div
-              className="sc-jffIyK cgWYlu"
+              className="sc-eJoaVz enDGLi"
               id="metadata.0.keyError"
             />
           </div>
           <div
             className="sc-eCApGN cdJafh"
           >
-            <svg
-              style={
-                Object {
-                  "fill": "#FFF",
-                  "height": "30px",
-                  "width": "30px",
-                }
-              }
-              viewBox="0 0 30 30"
+            <label
+              className="sc-jNnnWF jhIKvw"
+              htmlFor="metadata.0.key"
             >
-              <path
-                d="M21.789 10.92a.724.724 0 000-1.022l-1.687-1.687a.724.724 0 00-1.022 0l-1.322 1.322 2.709 2.709 1.322-1.322zM9 18.291V21h2.709l7.992-7.992-2.709-2.71L9 18.292z"
-                fillRule="evenodd"
-              />
-            </svg>
+              <svg
+                style={
+                  Object {
+                    "fill": "#FFF",
+                    "height": "30px",
+                    "width": "30px",
+                  }
+                }
+                viewBox="0 0 30 30"
+              >
+                <path
+                  d="M21.789 10.92a.724.724 0 000-1.022l-1.687-1.687a.724.724 0 00-1.022 0l-1.322 1.322 2.709 2.709 1.322-1.322zM9 18.291V21h2.709l7.992-7.992-2.709-2.71L9 18.292z"
+                  fillRule="evenodd"
+                />
+              </svg>
+            </label>
             <svg
               onClick={[Function]}
               style={
@@ -1009,7 +1023,7 @@ exports[`Metadata: Component should render correctly 1`] = `
           className="sc-hKFyIo hkUCsP"
         >
           <div
-            className="sc-laZMyp lpszHm"
+            className="sc-iNiQeE fnbEum"
           >
             <div
               style={
@@ -1080,31 +1094,45 @@ exports[`Metadata: Component should render correctly 1`] = `
                     "top": 2,
                   }
                 }
-              />
+              >
+                <label
+                  htmlFor="metadata.1.key"
+                  style={
+                    Object {
+                      "cursor": "pointer",
+                    }
+                  }
+                />
+              </div>
             </div>
             <div
-              className="sc-jffIyK cgWYlu"
+              className="sc-eJoaVz enDGLi"
               id="metadata.1.keyError"
             />
           </div>
           <div
             className="sc-eCApGN cdJafh"
           >
-            <svg
-              style={
-                Object {
-                  "fill": "#FFF",
-                  "height": "30px",
-                  "width": "30px",
-                }
-              }
-              viewBox="0 0 30 30"
+            <label
+              className="sc-jNnnWF jhIKvw"
+              htmlFor="metadata.1.key"
             >
-              <path
-                d="M21.789 10.92a.724.724 0 000-1.022l-1.687-1.687a.724.724 0 00-1.022 0l-1.322 1.322 2.709 2.709 1.322-1.322zM9 18.291V21h2.709l7.992-7.992-2.709-2.71L9 18.292z"
-                fillRule="evenodd"
-              />
-            </svg>
+              <svg
+                style={
+                  Object {
+                    "fill": "#FFF",
+                    "height": "30px",
+                    "width": "30px",
+                  }
+                }
+                viewBox="0 0 30 30"
+              >
+                <path
+                  d="M21.789 10.92a.724.724 0 000-1.022l-1.687-1.687a.724.724 0 00-1.022 0l-1.322 1.322 2.709 2.709 1.322-1.322zM9 18.291V21h2.709l7.992-7.992-2.709-2.71L9 18.292z"
+                  fillRule="evenodd"
+                />
+              </svg>
+            </label>
             <svg
               onClick={[Function]}
               style={
@@ -1200,7 +1228,7 @@ exports[`Metadata: Component should render correctly 1`] = `
           className="sc-hKFyIo hkUCsP"
         >
           <div
-            className="sc-laZMyp lpszHm"
+            className="sc-iNiQeE fnbEum"
           >
             <div
               style={
@@ -1271,31 +1299,45 @@ exports[`Metadata: Component should render correctly 1`] = `
                     "top": 2,
                   }
                 }
-              />
+              >
+                <label
+                  htmlFor="metadata.2.key"
+                  style={
+                    Object {
+                      "cursor": "pointer",
+                    }
+                  }
+                />
+              </div>
             </div>
             <div
-              className="sc-jffIyK cgWYlu"
+              className="sc-eJoaVz enDGLi"
               id="metadata.2.keyError"
             />
           </div>
           <div
             className="sc-eCApGN cdJafh"
           >
-            <svg
-              style={
-                Object {
-                  "fill": "#FFF",
-                  "height": "30px",
-                  "width": "30px",
-                }
-              }
-              viewBox="0 0 30 30"
+            <label
+              className="sc-jNnnWF jhIKvw"
+              htmlFor="metadata.2.key"
             >
-              <path
-                d="M21.789 10.92a.724.724 0 000-1.022l-1.687-1.687a.724.724 0 00-1.022 0l-1.322 1.322 2.709 2.709 1.322-1.322zM9 18.291V21h2.709l7.992-7.992-2.709-2.71L9 18.292z"
-                fillRule="evenodd"
-              />
-            </svg>
+              <svg
+                style={
+                  Object {
+                    "fill": "#FFF",
+                    "height": "30px",
+                    "width": "30px",
+                  }
+                }
+                viewBox="0 0 30 30"
+              >
+                <path
+                  d="M21.789 10.92a.724.724 0 000-1.022l-1.687-1.687a.724.724 0 00-1.022 0l-1.322 1.322 2.709 2.709 1.322-1.322zM9 18.291V21h2.709l7.992-7.992-2.709-2.71L9 18.292z"
+                  fillRule="evenodd"
+                />
+              </svg>
+            </label>
             <svg
               onClick={[Function]}
               style={
@@ -1384,26 +1426,26 @@ exports[`Metadata: Component should render correctly 1`] = `
       </h1>
     </div>
     <div
-      className="sc-eJoaVz kVOIMn"
+      className="sc-oefIU fWJyIk"
     >
       <div
-        className="sc-oefIU dZsxlD"
+        className="sc-hhIhEF fByUDx"
       >
         <div
-          className="sc-hhIhEF hLpBRd"
+          className="sc-eirseW kilNms"
         >
           <div
-            className="sc-eirseW gUBWBM"
+            className="sc-lbVuaH gXgdcH"
           >
             Field
           </div>
           <div
-            className="sc-eirseW gUBWBM"
+            className="sc-lbVuaH gXgdcH"
           >
             Original Type
           </div>
           <div
-            className="sc-eirseW gUBWBM"
+            className="sc-lbVuaH gXgdcH"
           >
             Mapped Type
           </div>

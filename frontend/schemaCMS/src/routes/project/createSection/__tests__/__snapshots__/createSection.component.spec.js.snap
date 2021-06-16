@@ -623,7 +623,16 @@ exports[`CreateSection: Component should render correctly 1`] = `
               "top": 2,
             }
           }
-        />
+        >
+          <label
+            htmlFor="name"
+            style={
+              Object {
+                "cursor": "pointer",
+              }
+            }
+          />
+        </div>
       </div>
       <div
         className="sc-lmgQde dGvbQF"

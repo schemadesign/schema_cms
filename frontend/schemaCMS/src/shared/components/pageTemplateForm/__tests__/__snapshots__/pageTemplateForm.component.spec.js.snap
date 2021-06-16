@@ -41,10 +41,10 @@ exports[`PageTemplateForm: Component should render correctly 1`] = `
         }
       >
         <div
-          className="sc-bkbjAj KGWtD"
+          className="sc-iemXMA duXrBA"
         >
           <div
-            className="sc-iwaifL hrOozR"
+            className="sc-cxNIbT bGWzbL"
           >
             <div
               style={
@@ -115,33 +115,47 @@ exports[`PageTemplateForm: Component should render correctly 1`] = `
                     "top": 2,
                   }
                 }
-              />
+              >
+                <label
+                  htmlFor="name"
+                  style={
+                    Object {
+                      "cursor": "pointer",
+                    }
+                  }
+                />
+              </div>
             </div>
             <div
-              className="sc-lmgQde dGvbQF"
+              className="sc-iJCRLp bWFzJd"
               id="nameError"
             />
           </div>
           <div
-            className="sc-iemXMA bQeCqo"
+            className="sc-dIvqjp ivNCfN"
           >
-            <svg
-              style={
-                Object {
-                  "fill": "#FFF",
-                  "height": "30px",
-                  "width": "30px",
-                }
-              }
-              viewBox="0 0 30 30"
+            <label
+              className="sc-fFSRdu dydEKp"
+              htmlFor="name"
             >
-              <path
-                d="M21.789 10.92a.724.724 0 000-1.022l-1.687-1.687a.724.724 0 00-1.022 0l-1.322 1.322 2.709 2.709 1.322-1.322zM9 18.291V21h2.709l7.992-7.992-2.709-2.71L9 18.292z"
-                fillRule="evenodd"
-              />
-            </svg>
+              <svg
+                style={
+                  Object {
+                    "fill": "#FFF",
+                    "height": "30px",
+                    "width": "30px",
+                  }
+                }
+                viewBox="0 0 30 30"
+              >
+                <path
+                  d="M21.789 10.92a.724.724 0 000-1.022l-1.687-1.687a.724.724 0 00-1.022 0l-1.322 1.322 2.709 2.709 1.322-1.322zM9 18.291V21h2.709l7.992-7.992-2.709-2.71L9 18.292z"
+                  fillRule="evenodd"
+                />
+              </svg>
+            </label>
             <div
-              className="sc-jcwofb jGJgbO"
+              className="sc-carGAA hHxcvA"
               id="pageTemplateCopyButton"
               onClick={[Function]}
             >
@@ -215,10 +229,10 @@ exports[`PageTemplateForm: Component should render correctly 1`] = `
     </div>
   </div>
   <div
-    className="sc-dIvqjp vkXIj"
+    className="sc-hHEjAm fDPUGs"
   >
     <div
-      className="sc-iwaifL iBtTLj"
+      className="sc-cxNIbT dxskWl"
     >
       <div
         style={
@@ -280,46 +294,55 @@ exports[`PageTemplateForm: Component should render correctly 1`] = `
             }
           }
         >
-          <div
-            className="sc-cxNIbT cgUnwQ"
-          >
-            <svg
-              style={
-                Object {
-                  "fill": "#FFF",
-                  "height": "30px",
-                  "width": "30px",
-                }
+          <label
+            htmlFor="name"
+            style={
+              Object {
+                "cursor": "pointer",
               }
-              viewBox="0 0 30 30"
+            }
+          >
+            <div
+              className="sc-lmgQde bGsGIg"
             >
-              <path
-                d="M21.789 10.92a.724.724 0 000-1.022l-1.687-1.687a.724.724 0 00-1.022 0l-1.322 1.322 2.709 2.709 1.322-1.322zM9 18.291V21h2.709l7.992-7.992-2.709-2.71L9 18.292z"
-                fillRule="evenodd"
-              />
-            </svg>
-          </div>
+              <svg
+                style={
+                  Object {
+                    "fill": "#FFF",
+                    "height": "30px",
+                    "width": "30px",
+                  }
+                }
+                viewBox="0 0 30 30"
+              >
+                <path
+                  d="M21.789 10.92a.724.724 0 000-1.022l-1.687-1.687a.724.724 0 00-1.022 0l-1.322 1.322 2.709 2.709 1.322-1.322zM9 18.291V21h2.709l7.992-7.992-2.709-2.71L9 18.292z"
+                  fillRule="evenodd"
+                />
+              </svg>
+            </div>
+          </label>
         </div>
       </div>
       <div
-        className="sc-lmgQde dGvbQF"
+        className="sc-iJCRLp bWFzJd"
         id="nameError"
       />
     </div>
   </div>
   <div
-    className="sc-iJCRLp hOmxV"
+    className="sc-giAqnE eFZBDm"
   >
     <div
-      className="sc-giAqnE jEMelV"
+      className="sc-ezzayL euZLdJ"
       id="tagsCounter"
     />
     1 Block
     <div
-      className="sc-giAqnE jEMelV"
+      className="sc-ezzayL euZLdJ"
     >
       <div
-        className="sc-dlMBXb eaNbbY"
+        className="sc-kfYqjs kYSTTd"
       >
         <div
           className="sc-kEqYlL bzTLXi"
@@ -386,14 +409,14 @@ exports[`PageTemplateForm: Component should render correctly 1`] = `
       }
     >
       <div
-        className="sc-bYwzba gkWjPa"
+        className="sc-kLokih egsxcB"
       >
         <div
-          className="sc-kLokih gOMSzJ"
+          className="sc-iklIKw cXFMgw"
         >
           <div>
             <div
-              className="sc-fKgIGh dlUpMW"
+              className="sc-bCwgka vLXKp"
             >
               <svg
                 style={
@@ -415,10 +438,10 @@ exports[`PageTemplateForm: Component should render correctly 1`] = `
           </div>
         </div>
         <div
-          className="sc-iklIKw ftNFOB"
+          className="sc-jJMGHv ffhJZy"
         >
           <div
-            className="sc-jJMGHv WYKrM"
+            className="sc-hiKfjK iMDFLp"
             onClick={[Function]}
           >
             <input
@@ -553,7 +576,7 @@ exports[`PageTemplateForm: Component should render correctly 1`] = `
               </div>
             </div>
             <div
-              className="sc-hiKfjK PllbS"
+              className="sc-gXfWUo fYmIqP"
             >
               <svg
                 style={
@@ -574,7 +597,7 @@ exports[`PageTemplateForm: Component should render correctly 1`] = `
           </div>
         </div>
         <div
-          className="sc-kLokih gOMSzJ"
+          className="sc-iklIKw cXFMgw"
         >
           <svg
             style={
@@ -684,7 +707,7 @@ exports[`PageTemplateForm: Component should render correctly 1`] = `
             Make it Available
           </label>
           <span
-            className="sc-fFSRdu hFbWnz"
+            className="sc-bkbjAj hjwsvd"
           >
             This Template is currently available for Editors
           </span>

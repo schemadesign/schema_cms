@@ -10,7 +10,7 @@ import { TextInput } from '../form/inputs/textInput';
 import messages from './pageBlock.messages';
 import { BlockElement } from '../blockElement';
 import { BLOCK_NAME, BLOCK_TYPE, BLOCK_ELEMENTS, BLOCK_ID, BLOCK_KEY } from '../../../modules/page/page.constants';
-import { binStyles } from '../form/frequentComponents.styles';
+import { binStyles, EditIconLabel } from '../form/frequentComponents.styles';
 import { renderWhenTrue, renderWhenTrueOtherwise } from '../../utils/rendering';
 
 const { EditIcon, BinIcon } = Icons;
@@ -44,7 +44,13 @@ export const PageBlock = ({
     ),
     always(<BlockName>{block[BLOCK_NAME]}</BlockName>)
   );
-  const renderEditIcon = renderWhenTrue(always(<EditIcon />));
+  const renderEditIcon = renderWhenTrue(
+    always(
+      <EditIconLabel htmlFor={blockName}>
+        <EditIcon />
+      </EditIconLabel>
+    )
+  );
   const renderBinIcon = renderWhenTrue(
     always(<BinIcon id={blockPath} customStyles={binStyles} onClick={() => removeBlock(index)} />)
   );

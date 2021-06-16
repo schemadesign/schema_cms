@@ -20,6 +20,7 @@ import {
   OBSERVABLE_PARAMS,
   OBSERVABLE_USER,
 } from '../../../modules/blockTemplates/blockTemplates.constants';
+import { EditIconLabel } from '../form/frequentComponents.styles';
 
 const { EditIcon } = Icons;
 
@@ -49,7 +50,9 @@ export const ObservableHQElement = ({ element, blockPath, index, handleChange, .
           centerIcon
           {...restFormikProps}
         />
-        <EditIcon customStyles={editIconStyles} />
+        <EditIconLabel htmlFor={observableUserName}>
+          <EditIcon customStyles={editIconStyles} />
+        </EditIconLabel>
       </InputContainer>
       <Label>
         <FormattedMessage {...messages[`${OBSERVABLE_NOTEBOOK}Placeholder`]} />
@@ -64,7 +67,9 @@ export const ObservableHQElement = ({ element, blockPath, index, handleChange, .
           centerIcon
           {...restFormikProps}
         />
-        <EditIcon customStyles={editIconStyles} />
+        <EditIconLabel htmlFor={observableNotebookName}>
+          <EditIcon customStyles={editIconStyles} />
+        </EditIconLabel>
       </InputContainer>
       <Label>
         <FormattedMessage {...messages[`${OBSERVABLE_CELL}Placeholder`]} />
@@ -79,7 +84,9 @@ export const ObservableHQElement = ({ element, blockPath, index, handleChange, .
           centerIcon
           {...restFormikProps}
         />
-        <EditIcon customStyles={editIconStyles} />
+        <EditIconLabel htmlFor={observableCellName}>
+          <EditIcon customStyles={editIconStyles} />
+        </EditIconLabel>
       </InputContainer>
       <Label>
         <FormattedMessage {...messages[`${OBSERVABLE_PARAMS}Placeholder`]} />
@@ -94,7 +101,9 @@ export const ObservableHQElement = ({ element, blockPath, index, handleChange, .
           centerIcon
           {...restFormikProps}
         />
-        <EditIcon customStyles={editIconStyles} />
+        <EditIconLabel htmlFor={observableParamsName}>
+          <EditIcon customStyles={editIconStyles} />
+        </EditIconLabel>
       </InputContainer>
     </ObservableHQContainer>
   );

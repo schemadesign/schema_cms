@@ -10,6 +10,7 @@ import messages from './blockElement.messages';
 // eslint-disable-next-line import/no-cycle
 import getElementComponent from '../../utils/getElement';
 import { renderWhenTrueOtherwise } from '../../utils/rendering';
+import { EditIconLabel } from '../form/frequentComponents.styles';
 
 const { MinusIcon, EditIcon } = Icons;
 
@@ -41,7 +42,13 @@ export const BlockElement = props => {
             <MinusIcon />
           </IconContainer>
           {renderElementName(isAdmin)}
-          <IconContainer>{isAdmin ? <EditIcon /> : null}</IconContainer>
+          <IconContainer>
+            {isAdmin ? (
+              <EditIconLabel htmlFor={elementPath}>
+                <EditIcon />
+              </EditIconLabel>
+            ) : null}
+          </IconContainer>
         </Header>
       </AccordionHeader>
       <AccordionDetails>
