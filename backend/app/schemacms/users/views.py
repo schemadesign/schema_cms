@@ -69,7 +69,7 @@ class UserViewSet(
     @decorators.action(detail=True, methods=["post"])
     def deactivate(self, request, *args, **kwargs):
         instance = self.get_object()
-        instance.deactivate(requester=self.request.user)
+        instance.delete()
         return response.Response(status=status.HTTP_204_NO_CONTENT)
 
 
