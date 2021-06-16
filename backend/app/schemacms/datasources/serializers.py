@@ -202,6 +202,7 @@ class DataSourceSerializer(serializers.ModelSerializer):
             self.validated_data.get("file", None)
             or self.validated_data.get("google_sheet", None)
             or self.validated_data.get("api_url", None)
+            or self.validated_data.get("api_json_path", None)
         ):
             copy_steps = self.initial_data.get("run_last_job", False)
             obj.schedule_update_meta(copy_steps)
