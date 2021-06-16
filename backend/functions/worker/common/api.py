@@ -72,6 +72,12 @@ class SchemaCMSAPI:
         )
         return response
 
+    def refresh_ds_data(self):
+        url = os.path.join(self._datasources_url(), "refresh-data")
+
+        response = requests.post(url, json={}, headers=self.get_headers(), timeout=self.timeout,)
+        return response
+
     def get_headers(self):
         return {"Authorization": f"Token {settings.LAMBDA_AUTH_TOKEN}"}
 
@@ -80,6 +86,9 @@ class SchemaCMSAPI:
 
     def _job_url(self, job_pk) -> str:
         return os.path.join(self.backend_url, "jobs", str(job_pk))
+
+    def _datasources_url(self):
+        return os.path.join(self.backend_url, "datasources")
 
 
 schemacms_api = SchemaCMSAPI()
