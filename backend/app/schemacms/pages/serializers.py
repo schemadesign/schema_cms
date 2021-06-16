@@ -215,7 +215,7 @@ class PageTemplateSerializer(CustomModelSerializer):
 
     @staticmethod
     def get_blocks(template):
-        blocks = template.page_blocks.all()
+        blocks = template.page_blocks.all().order_by("order")
         return PageTemplateBlockSerializer(blocks, many=True).data
 
 
