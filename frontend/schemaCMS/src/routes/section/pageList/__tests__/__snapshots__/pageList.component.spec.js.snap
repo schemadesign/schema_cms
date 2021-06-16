@@ -347,7 +347,7 @@ exports[`PageList: Component should render correctly 1`] = `
     </div>
   </div>
   <div
-    className="sc-oefIU iHSzly"
+    className="sc-hhIhEF btgZyM"
   >
     <div
       style={
@@ -369,7 +369,7 @@ exports[`PageList: Component should render correctly 1`] = `
         }
       >
         <a
-          className="sc-eirseW fsaJVd"
+          className="sc-lbVuaH fPMYye"
           href="/project/1/"
           onClick={[Function]}
           style={
@@ -391,7 +391,7 @@ exports[`PageList: Component should render correctly 1`] = `
             Project
           </span>
           <h3
-            className="sc-lbVuaH hqsRwB"
+            className="sc-gGLyOc tKUnA"
             style={
               Object {
                 "fontFamily": "Inter, \\"Helvetica Neue\\", Helvetica, Arial, sans-serif",
@@ -427,7 +427,7 @@ exports[`PageList: Component should render correctly 1`] = `
         }
       >
         <a
-          className="sc-eirseW fsaJVd"
+          className="sc-lbVuaH fPMYye"
           href="/project/1/content"
           onClick={[Function]}
           style={
@@ -449,7 +449,7 @@ exports[`PageList: Component should render correctly 1`] = `
             Tab
           </span>
           <h3
-            className="sc-lbVuaH hqsRwB"
+            className="sc-gGLyOc tKUnA"
             style={
               Object {
                 "fontFamily": "Inter, \\"Helvetica Neue\\", Helvetica, Arial, sans-serif",
@@ -485,7 +485,7 @@ exports[`PageList: Component should render correctly 1`] = `
         }
       >
         <div
-          className="sc-hhIhEF bCJVTk"
+          className="sc-eirseW joltyZ"
         >
           <span
             style={
@@ -498,7 +498,7 @@ exports[`PageList: Component should render correctly 1`] = `
             Section
           </span>
           <h3
-            className="sc-lbVuaH hqsRwB"
+            className="sc-gGLyOc tKUnA"
             style={
               Object {
                 "fontFamily": "Inter, \\"Helvetica Neue\\", Helvetica, Arial, sans-serif",
@@ -554,10 +554,10 @@ exports[`PageList: Component should render correctly 1`] = `
           }
         >
           <div
-            className="sc-bBjRzc hhSNtM"
+            className="sc-cOigif dzFJcM"
           >
             <div
-              className="sc-iNiQeE fnbEum"
+              className="sc-jffIyK dWzFyc"
             >
               <div
                 style={
@@ -629,31 +629,45 @@ exports[`PageList: Component should render correctly 1`] = `
                       "top": 2,
                     }
                   }
-                />
+                >
+                  <label
+                    htmlFor="name"
+                    style={
+                      Object {
+                        "cursor": "pointer",
+                      }
+                    }
+                  />
+                </div>
               </div>
               <div
-                className="sc-eJoaVz enDGLi"
+                className="sc-oefIU crFEYj"
                 id="nameError"
               />
             </div>
             <div
-              className="sc-cOigif eItylA"
+              className="sc-ArjOu hTLVka"
             >
-              <svg
-                style={
-                  Object {
-                    "fill": "#FFF",
-                    "height": "30px",
-                    "width": "30px",
-                  }
-                }
-                viewBox="0 0 30 30"
+              <label
+                className="sc-dPaNSN jQMCAH"
+                htmlFor="name"
               >
-                <path
-                  d="M21.789 10.92a.724.724 0 000-1.022l-1.687-1.687a.724.724 0 00-1.022 0l-1.322 1.322 2.709 2.709 1.322-1.322zM9 18.291V21h2.709l7.992-7.992-2.709-2.71L9 18.292z"
-                  fillRule="evenodd"
-                />
-              </svg>
+                <svg
+                  style={
+                    Object {
+                      "fill": "#FFF",
+                      "height": "30px",
+                      "width": "30px",
+                    }
+                  }
+                  viewBox="0 0 30 30"
+                >
+                  <path
+                    d="M21.789 10.92a.724.724 0 000-1.022l-1.687-1.687a.724.724 0 00-1.022 0l-1.322 1.322 2.709 2.709 1.322-1.322zM9 18.291V21h2.709l7.992-7.992-2.709-2.71L9 18.292z"
+                    fillRule="evenodd"
+                  />
+                </svg>
+              </label>
             </div>
           </div>
         </h1>
@@ -686,10 +700,10 @@ exports[`PageList: Component should render correctly 1`] = `
       </div>
     </div>
     <div
-      className="sc-ArjOu eWLrKs"
+      className="sc-khIgXV kWqkfo"
     >
       <div
-        className="sc-iNiQeE dNBpdY"
+        className="sc-jffIyK uZkeG"
       >
         <div
           style={
@@ -752,38 +766,47 @@ exports[`PageList: Component should render correctly 1`] = `
               }
             }
           >
-            <div
-              className="sc-jffIyK inshpT"
-            >
-              <svg
-                style={
-                  Object {
-                    "fill": "#FFF",
-                    "height": "30px",
-                    "width": "30px",
-                  }
+            <label
+              htmlFor="name"
+              style={
+                Object {
+                  "cursor": "pointer",
                 }
-                viewBox="0 0 30 30"
+              }
+            >
+              <div
+                className="sc-eJoaVz iOWEpP"
               >
-                <path
-                  d="M21.789 10.92a.724.724 0 000-1.022l-1.687-1.687a.724.724 0 00-1.022 0l-1.322 1.322 2.709 2.709 1.322-1.322zM9 18.291V21h2.709l7.992-7.992-2.709-2.71L9 18.292z"
-                  fillRule="evenodd"
-                />
-              </svg>
-            </div>
+                <svg
+                  style={
+                    Object {
+                      "fill": "#FFF",
+                      "height": "30px",
+                      "width": "30px",
+                    }
+                  }
+                  viewBox="0 0 30 30"
+                >
+                  <path
+                    d="M21.789 10.92a.724.724 0 000-1.022l-1.687-1.687a.724.724 0 00-1.022 0l-1.322 1.322 2.709 2.709 1.322-1.322zM9 18.291V21h2.709l7.992-7.992-2.709-2.71L9 18.292z"
+                    fillRule="evenodd"
+                  />
+                </svg>
+              </div>
+            </label>
           </div>
         </div>
         <div
-          className="sc-eJoaVz enDGLi"
+          className="sc-oefIU crFEYj"
           id="nameError"
         />
       </div>
     </div>
     <div
-      className="sc-gGLyOc iAnIfb"
+      className="sc-ckTRkR edwCZp"
     >
       <div
-        className="sc-ckTRkR aLQTx"
+        className="sc-fbIXFq bdvLzQ"
       >
         <div
           className=" css-2b097c-container"
@@ -900,7 +923,7 @@ exports[`PageList: Component should render correctly 1`] = `
         className="sc-giAqnE jEMelV"
       >
         <div
-          className="sc-hTRkEk lcrqaG"
+          className="sc-jgPznn enCBum"
         >
           <a
             className="sc-kfYqjs gpkNwB"
@@ -1008,7 +1031,7 @@ exports[`PageList: Component should render correctly 1`] = `
                     />
                   </svg>
                   <div
-                    className="sc-dvXXZy hPMaga"
+                    className="sc-TtZHJ ewxVJf"
                     id="pageCopyButton-0"
                     onClick={[Function]}
                   >
@@ -1059,7 +1082,7 @@ exports[`PageList: Component should render correctly 1`] = `
               templateName
             </div>
             <div
-              className="sc-laZMyp djSiIL"
+              className="sc-iNiQeE kCibwz"
             >
               Draft
             </div>
@@ -1144,7 +1167,7 @@ exports[`PageList: Component should render correctly 1`] = `
                     />
                   </svg>
                   <div
-                    className="sc-dvXXZy hPMaga"
+                    className="sc-TtZHJ ewxVJf"
                     id="pageCopyButton-1"
                     onClick={[Function]}
                   >
@@ -1195,7 +1218,7 @@ exports[`PageList: Component should render correctly 1`] = `
               (blank)
             </div>
             <div
-              className="sc-laZMyp djSiIL"
+              className="sc-iNiQeE kCibwz"
             >
               Draft
             </div>
@@ -1280,7 +1303,7 @@ exports[`PageList: Component should render correctly 1`] = `
                     />
                   </svg>
                   <div
-                    className="sc-dvXXZy hPMaga"
+                    className="sc-TtZHJ ewxVJf"
                     id="pageCopyButton-2"
                     onClick={[Function]}
                   >
@@ -1462,14 +1485,14 @@ exports[`PageList: Component should render correctly 1`] = `
               Make it Public
             </label>
             <span
-              className="sc-dPaNSN hbWViB"
+              className="sc-bBjRzc gYKhhW"
             >
               This Section is currently Public
               <span
-                className="sc-jgPznn bdlFio"
+                className="sc-gSYCTC bjcjEy"
               />
               <a
-                className="sc-jOFreG iIgpix"
+                className="sc-hmbsMR fSxnsN"
                 href="http://project.domain"
                 target="_blank"
               >
@@ -1567,14 +1590,14 @@ exports[`PageList: Component should render correctly 1`] = `
               Make it available for RSS
             </label>
             <span
-              className="sc-dPaNSN hbWViB"
+              className="sc-bBjRzc gYKhhW"
             >
               This Section is currently disabled for RSS feed
               <span
-                className="sc-jgPznn bdlFio"
+                className="sc-gSYCTC bjcjEy"
               />
               <a
-                className="sc-jOFreG iIgpix"
+                className="sc-hmbsMR fSxnsN"
                 href="http://project.domain"
                 target="_blank"
               >

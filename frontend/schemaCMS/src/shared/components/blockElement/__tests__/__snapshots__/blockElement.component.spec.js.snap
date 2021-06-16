@@ -3,21 +3,21 @@
 exports[`BlockElement: Component should render correctly custom element 1`] = `
 Array [
   <div
-    className="sc-gXfWUo hLlOFo"
+    className="sc-cBoprd kVYrUE"
   >
     <div
-      className="sc-cBoprd ZtrY"
+      className="sc-ciSmjq cmoBib"
       id="tagsCounter"
     />
     3 Sets
     <div
-      className="sc-cBoprd ZtrY"
+      className="sc-ciSmjq cmoBib"
     >
       <div
-        className="sc-bYwzba SBKfs"
+        className="sc-ezzayL fqGViI"
       >
         <div
-          className="sc-efHXLn ezWPaR"
+          className="sc-cTJmaU jGOUAM"
         >
           <button
             disabled={false}
@@ -85,7 +85,7 @@ Array [
       >
         <div>
           <div
-            className="sc-jJMGHv dTetgy"
+            className="sc-iklIKw cjCzld"
           >
             <svg
               style={
@@ -378,7 +378,7 @@ Array [
       >
         <div>
           <div
-            className="sc-jJMGHv dTetgy"
+            className="sc-iklIKw cjCzld"
           >
             <svg
               style={
@@ -671,7 +671,7 @@ Array [
       >
         <div>
           <div
-            className="sc-jJMGHv dTetgy"
+            className="sc-iklIKw cjCzld"
           >
             <svg
               style={
@@ -1066,7 +1066,16 @@ exports[`BlockElement: Component should render correctly embed video element 1`]
                 "top": 2,
               }
             }
-          />
+          >
+            <label
+              htmlFor="blockPath.elements.0.name"
+              style={
+                Object {
+                  "cursor": "pointer",
+                }
+              }
+            />
+          </div>
         </div>
         <div
           className="sc-fFSRdu dyJKsj"
@@ -1076,21 +1085,26 @@ exports[`BlockElement: Component should render correctly embed video element 1`]
       <div
         className="sc-jrsJCI bgDRrR"
       >
-        <svg
-          style={
-            Object {
-              "fill": "#FFF",
-              "height": "30px",
-              "width": "30px",
-            }
-          }
-          viewBox="0 0 30 30"
+        <label
+          className="sc-iwaifL fLxMjF"
+          htmlFor="blockPath.elements.0.name"
         >
-          <path
-            d="M21.789 10.92a.724.724 0 000-1.022l-1.687-1.687a.724.724 0 00-1.022 0l-1.322 1.322 2.709 2.709 1.322-1.322zM9 18.291V21h2.709l7.992-7.992-2.709-2.71L9 18.292z"
-            fillRule="evenodd"
-          />
-        </svg>
+          <svg
+            style={
+              Object {
+                "fill": "#FFF",
+                "height": "30px",
+                "width": "30px",
+              }
+            }
+            viewBox="0 0 30 30"
+          >
+            <path
+              d="M21.789 10.92a.724.724 0 000-1.022l-1.687-1.687a.724.724 0 00-1.022 0l-1.322 1.322 2.709 2.709 1.322-1.322zM9 18.291V21h2.709l7.992-7.992-2.709-2.71L9 18.292z"
+              fillRule="evenodd"
+            />
+          </svg>
+        </label>
       </div>
     </div>
     <div
@@ -1241,7 +1255,16 @@ exports[`BlockElement: Component should render correctly file element 1`] = `
                 "top": 2,
               }
             }
-          />
+          >
+            <label
+              htmlFor="blockPath.elements.0.name"
+              style={
+                Object {
+                  "cursor": "pointer",
+                }
+              }
+            />
+          </div>
         </div>
         <div
           className="sc-fFSRdu dyJKsj"
@@ -1251,21 +1274,26 @@ exports[`BlockElement: Component should render correctly file element 1`] = `
       <div
         className="sc-jrsJCI bgDRrR"
       >
-        <svg
-          style={
-            Object {
-              "fill": "#FFF",
-              "height": "30px",
-              "width": "30px",
-            }
-          }
-          viewBox="0 0 30 30"
+        <label
+          className="sc-iwaifL fLxMjF"
+          htmlFor="blockPath.elements.0.name"
         >
-          <path
-            d="M21.789 10.92a.724.724 0 000-1.022l-1.687-1.687a.724.724 0 00-1.022 0l-1.322 1.322 2.709 2.709 1.322-1.322zM9 18.291V21h2.709l7.992-7.992-2.709-2.71L9 18.292z"
-            fillRule="evenodd"
-          />
-        </svg>
+          <svg
+            style={
+              Object {
+                "fill": "#FFF",
+                "height": "30px",
+                "width": "30px",
+              }
+            }
+            viewBox="0 0 30 30"
+          >
+            <path
+              d="M21.789 10.92a.724.724 0 000-1.022l-1.687-1.687a.724.724 0 00-1.022 0l-1.322 1.322 2.709 2.709 1.322-1.322zM9 18.291V21h2.709l7.992-7.992-2.709-2.71L9 18.292z"
+              fillRule="evenodd"
+            />
+          </svg>
+        </label>
       </div>
     </div>
     <div
@@ -1416,7 +1444,16 @@ exports[`BlockElement: Component should render correctly image element 1`] = `
                 "top": 2,
               }
             }
-          />
+          >
+            <label
+              htmlFor="blockPath.elements.0.name"
+              style={
+                Object {
+                  "cursor": "pointer",
+                }
+              }
+            />
+          </div>
         </div>
         <div
           className="sc-fFSRdu dyJKsj"
@@ -1426,21 +1463,26 @@ exports[`BlockElement: Component should render correctly image element 1`] = `
       <div
         className="sc-jrsJCI bgDRrR"
       >
-        <svg
-          style={
-            Object {
-              "fill": "#FFF",
-              "height": "30px",
-              "width": "30px",
-            }
-          }
-          viewBox="0 0 30 30"
+        <label
+          className="sc-iwaifL fLxMjF"
+          htmlFor="blockPath.elements.0.name"
         >
-          <path
-            d="M21.789 10.92a.724.724 0 000-1.022l-1.687-1.687a.724.724 0 00-1.022 0l-1.322 1.322 2.709 2.709 1.322-1.322zM9 18.291V21h2.709l7.992-7.992-2.709-2.71L9 18.292z"
-            fillRule="evenodd"
-          />
-        </svg>
+          <svg
+            style={
+              Object {
+                "fill": "#FFF",
+                "height": "30px",
+                "width": "30px",
+              }
+            }
+            viewBox="0 0 30 30"
+          >
+            <path
+              d="M21.789 10.92a.724.724 0 000-1.022l-1.687-1.687a.724.724 0 00-1.022 0l-1.322 1.322 2.709 2.709 1.322-1.322zM9 18.291V21h2.709l7.992-7.992-2.709-2.71L9 18.292z"
+              fillRule="evenodd"
+            />
+          </svg>
+        </label>
       </div>
     </div>
     <div
@@ -1591,7 +1633,16 @@ exports[`BlockElement: Component should render correctly internal connection ele
                 "top": 2,
               }
             }
-          />
+          >
+            <label
+              htmlFor="blockPath.elements.0.name"
+              style={
+                Object {
+                  "cursor": "pointer",
+                }
+              }
+            />
+          </div>
         </div>
         <div
           className="sc-fFSRdu dyJKsj"
@@ -1601,21 +1652,26 @@ exports[`BlockElement: Component should render correctly internal connection ele
       <div
         className="sc-jrsJCI bgDRrR"
       >
-        <svg
-          style={
-            Object {
-              "fill": "#FFF",
-              "height": "30px",
-              "width": "30px",
-            }
-          }
-          viewBox="0 0 30 30"
+        <label
+          className="sc-iwaifL fLxMjF"
+          htmlFor="blockPath.elements.0.name"
         >
-          <path
-            d="M21.789 10.92a.724.724 0 000-1.022l-1.687-1.687a.724.724 0 00-1.022 0l-1.322 1.322 2.709 2.709 1.322-1.322zM9 18.291V21h2.709l7.992-7.992-2.709-2.71L9 18.292z"
-            fillRule="evenodd"
-          />
-        </svg>
+          <svg
+            style={
+              Object {
+                "fill": "#FFF",
+                "height": "30px",
+                "width": "30px",
+              }
+            }
+            viewBox="0 0 30 30"
+          >
+            <path
+              d="M21.789 10.92a.724.724 0 000-1.022l-1.687-1.687a.724.724 0 00-1.022 0l-1.322 1.322 2.709 2.709 1.322-1.322zM9 18.291V21h2.709l7.992-7.992-2.709-2.71L9 18.292z"
+              fillRule="evenodd"
+            />
+          </svg>
+        </label>
       </div>
     </div>
     <div
@@ -1766,7 +1822,16 @@ exports[`BlockElement: Component should render correctly internal connection ele
                 "top": 2,
               }
             }
-          />
+          >
+            <label
+              htmlFor="blockPath.elements.0.name"
+              style={
+                Object {
+                  "cursor": "pointer",
+                }
+              }
+            />
+          </div>
         </div>
         <div
           className="sc-fFSRdu dyJKsj"
@@ -1776,21 +1841,26 @@ exports[`BlockElement: Component should render correctly internal connection ele
       <div
         className="sc-jrsJCI bgDRrR"
       >
-        <svg
-          style={
-            Object {
-              "fill": "#FFF",
-              "height": "30px",
-              "width": "30px",
-            }
-          }
-          viewBox="0 0 30 30"
+        <label
+          className="sc-iwaifL fLxMjF"
+          htmlFor="blockPath.elements.0.name"
         >
-          <path
-            d="M21.789 10.92a.724.724 0 000-1.022l-1.687-1.687a.724.724 0 00-1.022 0l-1.322 1.322 2.709 2.709 1.322-1.322zM9 18.291V21h2.709l7.992-7.992-2.709-2.71L9 18.292z"
-            fillRule="evenodd"
-          />
-        </svg>
+          <svg
+            style={
+              Object {
+                "fill": "#FFF",
+                "height": "30px",
+                "width": "30px",
+              }
+            }
+            viewBox="0 0 30 30"
+          >
+            <path
+              d="M21.789 10.92a.724.724 0 000-1.022l-1.687-1.687a.724.724 0 00-1.022 0l-1.322 1.322 2.709 2.709 1.322-1.322zM9 18.291V21h2.709l7.992-7.992-2.709-2.71L9 18.292z"
+              fillRule="evenodd"
+            />
+          </svg>
+        </label>
       </div>
     </div>
     <div
@@ -1941,7 +2011,16 @@ exports[`BlockElement: Component should render correctly markdown element 1`] = 
                 "top": 2,
               }
             }
-          />
+          >
+            <label
+              htmlFor="blockPath.elements.0.name"
+              style={
+                Object {
+                  "cursor": "pointer",
+                }
+              }
+            />
+          </div>
         </div>
         <div
           className="sc-fFSRdu dyJKsj"
@@ -1951,21 +2030,26 @@ exports[`BlockElement: Component should render correctly markdown element 1`] = 
       <div
         className="sc-jrsJCI bgDRrR"
       >
-        <svg
-          style={
-            Object {
-              "fill": "#FFF",
-              "height": "30px",
-              "width": "30px",
-            }
-          }
-          viewBox="0 0 30 30"
+        <label
+          className="sc-iwaifL fLxMjF"
+          htmlFor="blockPath.elements.0.name"
         >
-          <path
-            d="M21.789 10.92a.724.724 0 000-1.022l-1.687-1.687a.724.724 0 00-1.022 0l-1.322 1.322 2.709 2.709 1.322-1.322zM9 18.291V21h2.709l7.992-7.992-2.709-2.71L9 18.292z"
-            fillRule="evenodd"
-          />
-        </svg>
+          <svg
+            style={
+              Object {
+                "fill": "#FFF",
+                "height": "30px",
+                "width": "30px",
+              }
+            }
+            viewBox="0 0 30 30"
+          >
+            <path
+              d="M21.789 10.92a.724.724 0 000-1.022l-1.687-1.687a.724.724 0 00-1.022 0l-1.322 1.322 2.709 2.709 1.322-1.322zM9 18.291V21h2.709l7.992-7.992-2.709-2.71L9 18.292z"
+              fillRule="evenodd"
+            />
+          </svg>
+        </label>
       </div>
     </div>
     <div
@@ -2116,7 +2200,16 @@ exports[`BlockElement: Component should render correctly observable element 1`] 
                 "top": 2,
               }
             }
-          />
+          >
+            <label
+              htmlFor="blockPath.elements.0.name"
+              style={
+                Object {
+                  "cursor": "pointer",
+                }
+              }
+            />
+          </div>
         </div>
         <div
           className="sc-fFSRdu dyJKsj"
@@ -2126,21 +2219,26 @@ exports[`BlockElement: Component should render correctly observable element 1`] 
       <div
         className="sc-jrsJCI bgDRrR"
       >
-        <svg
-          style={
-            Object {
-              "fill": "#FFF",
-              "height": "30px",
-              "width": "30px",
-            }
-          }
-          viewBox="0 0 30 30"
+        <label
+          className="sc-iwaifL fLxMjF"
+          htmlFor="blockPath.elements.0.name"
         >
-          <path
-            d="M21.789 10.92a.724.724 0 000-1.022l-1.687-1.687a.724.724 0 00-1.022 0l-1.322 1.322 2.709 2.709 1.322-1.322zM9 18.291V21h2.709l7.992-7.992-2.709-2.71L9 18.292z"
-            fillRule="evenodd"
-          />
-        </svg>
+          <svg
+            style={
+              Object {
+                "fill": "#FFF",
+                "height": "30px",
+                "width": "30px",
+              }
+            }
+            viewBox="0 0 30 30"
+          >
+            <path
+              d="M21.789 10.92a.724.724 0 000-1.022l-1.687-1.687a.724.724 0 00-1.022 0l-1.322 1.322 2.709 2.709 1.322-1.322zM9 18.291V21h2.709l7.992-7.992-2.709-2.71L9 18.292z"
+              fillRule="evenodd"
+            />
+          </svg>
+        </label>
       </div>
     </div>
     <div
@@ -2291,7 +2389,16 @@ exports[`BlockElement: Component should render correctly text element 1`] = `
                 "top": 2,
               }
             }
-          />
+          >
+            <label
+              htmlFor="blockPath.elements.0.name"
+              style={
+                Object {
+                  "cursor": "pointer",
+                }
+              }
+            />
+          </div>
         </div>
         <div
           className="sc-fFSRdu dyJKsj"
@@ -2301,21 +2408,26 @@ exports[`BlockElement: Component should render correctly text element 1`] = `
       <div
         className="sc-jrsJCI bgDRrR"
       >
-        <svg
-          style={
-            Object {
-              "fill": "#FFF",
-              "height": "30px",
-              "width": "30px",
-            }
-          }
-          viewBox="0 0 30 30"
+        <label
+          className="sc-iwaifL fLxMjF"
+          htmlFor="blockPath.elements.0.name"
         >
-          <path
-            d="M21.789 10.92a.724.724 0 000-1.022l-1.687-1.687a.724.724 0 00-1.022 0l-1.322 1.322 2.709 2.709 1.322-1.322zM9 18.291V21h2.709l7.992-7.992-2.709-2.71L9 18.292z"
-            fillRule="evenodd"
-          />
-        </svg>
+          <svg
+            style={
+              Object {
+                "fill": "#FFF",
+                "height": "30px",
+                "width": "30px",
+              }
+            }
+            viewBox="0 0 30 30"
+          >
+            <path
+              d="M21.789 10.92a.724.724 0 000-1.022l-1.687-1.687a.724.724 0 00-1.022 0l-1.322 1.322 2.709 2.709 1.322-1.322zM9 18.291V21h2.709l7.992-7.992-2.709-2.71L9 18.292z"
+              fillRule="evenodd"
+            />
+          </svg>
+        </label>
       </div>
     </div>
     <div

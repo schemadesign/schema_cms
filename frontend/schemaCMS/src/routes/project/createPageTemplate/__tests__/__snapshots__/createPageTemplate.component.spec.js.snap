@@ -347,7 +347,7 @@ exports[`CreatePageTemplate: Component should render correctly 1`] = `
     </div>
   </div>
   <div
-    className="sc-jffIyK icpikD"
+    className="sc-eJoaVz lifigH"
   >
     <div
       style={
@@ -369,7 +369,7 @@ exports[`CreatePageTemplate: Component should render correctly 1`] = `
         }
       >
         <a
-          className="sc-oefIU grTDgi"
+          className="sc-hhIhEF djezdw"
           href="/project/1/"
           onClick={[Function]}
           style={
@@ -391,7 +391,7 @@ exports[`CreatePageTemplate: Component should render correctly 1`] = `
             Project
           </span>
           <h3
-            className="sc-hhIhEF ckWjpP"
+            className="sc-eirseW frqVju"
             style={
               Object {
                 "fontFamily": "Inter, \\"Helvetica Neue\\", Helvetica, Arial, sans-serif",
@@ -427,7 +427,7 @@ exports[`CreatePageTemplate: Component should render correctly 1`] = `
         }
       >
         <a
-          className="sc-oefIU grTDgi"
+          className="sc-hhIhEF djezdw"
           href="/project/1/templates"
           onClick={[Function]}
           style={
@@ -449,7 +449,7 @@ exports[`CreatePageTemplate: Component should render correctly 1`] = `
             Tab
           </span>
           <h3
-            className="sc-hhIhEF ckWjpP"
+            className="sc-eirseW frqVju"
             style={
               Object {
                 "fontFamily": "Inter, \\"Helvetica Neue\\", Helvetica, Arial, sans-serif",
@@ -485,7 +485,7 @@ exports[`CreatePageTemplate: Component should render correctly 1`] = `
         }
       >
         <a
-          className="sc-oefIU grTDgi"
+          className="sc-hhIhEF djezdw"
           href="/project/1/block-templates"
           onClick={[Function]}
           style={
@@ -507,7 +507,7 @@ exports[`CreatePageTemplate: Component should render correctly 1`] = `
             Library
           </span>
           <h3
-            className="sc-hhIhEF ckWjpP"
+            className="sc-eirseW frqVju"
             style={
               Object {
                 "fontFamily": "Inter, \\"Helvetica Neue\\", Helvetica, Arial, sans-serif",
@@ -543,7 +543,7 @@ exports[`CreatePageTemplate: Component should render correctly 1`] = `
         }
       >
         <div
-          className="sc-eJoaVz lhMWLT"
+          className="sc-oefIU bJjNUe"
         >
           <span
             style={
@@ -556,7 +556,7 @@ exports[`CreatePageTemplate: Component should render correctly 1`] = `
             Template
           </span>
           <h3
-            className="sc-hhIhEF ckWjpP"
+            className="sc-eirseW frqVju"
             style={
               Object {
                 "fontFamily": "Inter, \\"Helvetica Neue\\", Helvetica, Arial, sans-serif",
@@ -614,10 +614,10 @@ exports[`CreatePageTemplate: Component should render correctly 1`] = `
             }
           >
             <div
-              className="sc-hiKfjK ibmnWo"
+              className="sc-gXfWUo lhDuBl"
             >
               <div
-                className="sc-efHXLn jYKEbE"
+                className="sc-cTJmaU bAvdmN"
               >
                 <div
                   style={
@@ -689,31 +689,45 @@ exports[`CreatePageTemplate: Component should render correctly 1`] = `
                         "top": 2,
                       }
                     }
-                  />
+                  >
+                    <label
+                      htmlFor="name"
+                      style={
+                        Object {
+                          "cursor": "pointer",
+                        }
+                      }
+                    />
+                  </div>
                 </div>
                 <div
-                  className="sc-jNnnWF dIRusS"
+                  className="sc-dPaNSN hoQDhR"
                   id="nameError"
                 />
               </div>
               <div
-                className="sc-gXfWUo ueuFJ"
+                className="sc-cBoprd katUGt"
               >
-                <svg
-                  style={
-                    Object {
-                      "fill": "#FFF",
-                      "height": "30px",
-                      "width": "30px",
-                    }
-                  }
-                  viewBox="0 0 30 30"
+                <label
+                  className="sc-jJMGHv eWbJnh"
+                  htmlFor="name"
                 >
-                  <path
-                    d="M21.789 10.92a.724.724 0 000-1.022l-1.687-1.687a.724.724 0 00-1.022 0l-1.322 1.322 2.709 2.709 1.322-1.322zM9 18.291V21h2.709l7.992-7.992-2.709-2.71L9 18.292z"
-                    fillRule="evenodd"
-                  />
-                </svg>
+                  <svg
+                    style={
+                      Object {
+                        "fill": "#FFF",
+                        "height": "30px",
+                        "width": "30px",
+                      }
+                    }
+                    viewBox="0 0 30 30"
+                  >
+                    <path
+                      d="M21.789 10.92a.724.724 0 000-1.022l-1.687-1.687a.724.724 0 00-1.022 0l-1.322 1.322 2.709 2.709 1.322-1.322zM9 18.291V21h2.709l7.992-7.992-2.709-2.71L9 18.292z"
+                      fillRule="evenodd"
+                    />
+                  </svg>
+                </label>
               </div>
             </div>
           </h1>
@@ -769,10 +783,10 @@ exports[`CreatePageTemplate: Component should render correctly 1`] = `
         </div>
       </div>
       <div
-        className="sc-cBoprd jeyZDf"
+        className="sc-ciSmjq fazbWU"
       >
         <div
-          className="sc-efHXLn jlayDm"
+          className="sc-cTJmaU hyxntz"
         >
           <div
             style={
@@ -835,46 +849,55 @@ exports[`CreatePageTemplate: Component should render correctly 1`] = `
                 }
               }
             >
-              <div
-                className="sc-cTJmaU hnMXSC"
-              >
-                <svg
-                  style={
-                    Object {
-                      "fill": "#FFF",
-                      "height": "30px",
-                      "width": "30px",
-                    }
+              <label
+                htmlFor="name"
+                style={
+                  Object {
+                    "cursor": "pointer",
                   }
-                  viewBox="0 0 30 30"
+                }
+              >
+                <div
+                  className="sc-jNnnWF bxPInj"
                 >
-                  <path
-                    d="M21.789 10.92a.724.724 0 000-1.022l-1.687-1.687a.724.724 0 00-1.022 0l-1.322 1.322 2.709 2.709 1.322-1.322zM9 18.291V21h2.709l7.992-7.992-2.709-2.71L9 18.292z"
-                    fillRule="evenodd"
-                  />
-                </svg>
-              </div>
+                  <svg
+                    style={
+                      Object {
+                        "fill": "#FFF",
+                        "height": "30px",
+                        "width": "30px",
+                      }
+                    }
+                    viewBox="0 0 30 30"
+                  >
+                    <path
+                      d="M21.789 10.92a.724.724 0 000-1.022l-1.687-1.687a.724.724 0 00-1.022 0l-1.322 1.322 2.709 2.709 1.322-1.322zM9 18.291V21h2.709l7.992-7.992-2.709-2.71L9 18.292z"
+                      fillRule="evenodd"
+                    />
+                  </svg>
+                </div>
+              </label>
             </div>
           </div>
           <div
-            className="sc-jNnnWF dIRusS"
+            className="sc-dPaNSN hoQDhR"
             id="nameError"
           />
         </div>
       </div>
       <div
-        className="sc-dPaNSN iWEFEl"
+        className="sc-bBjRzc iXtoFi"
       >
         <div
-          className="sc-bBjRzc dGHPqV"
+          className="sc-cOigif lasETV"
           id="tagsCounter"
         />
         1 Block
         <div
-          className="sc-bBjRzc dGHPqV"
+          className="sc-cOigif lasETV"
         >
           <div
-            className="sc-jcwofb ibYHcM"
+            className="sc-carGAA dLvJIe"
           >
             <div
               className="sc-bkbjAj iFdJhe"
@@ -941,14 +964,14 @@ exports[`CreatePageTemplate: Component should render correctly 1`] = `
           }
         >
           <div
-            className="sc-ArjOu caYHac"
+            className="sc-khIgXV htvfms"
           >
             <div
-              className="sc-khIgXV kywSmM"
+              className="sc-hTRkEk hUWyjQ"
             >
               <div>
                 <div
-                  className="sc-iTVIwl jMqlOD"
+                  className="sc-iBzFoy ifOLmv"
                 >
                   <svg
                     style={
@@ -970,10 +993,10 @@ exports[`CreatePageTemplate: Component should render correctly 1`] = `
               </div>
             </div>
             <div
-              className="sc-hTRkEk hmhehp"
+              className="sc-jgPznn kibGvt"
             >
               <div
-                className="sc-jgPznn eqGaEX"
+                className="sc-gSYCTC cVTzNB"
                 onClick={[Function]}
               >
                 <input
@@ -1107,7 +1130,7 @@ exports[`CreatePageTemplate: Component should render correctly 1`] = `
                   </div>
                 </div>
                 <div
-                  className="sc-gSYCTC OpZja"
+                  className="sc-laZMyp bfLBkw"
                 >
                   <svg
                     style={
@@ -1128,7 +1151,7 @@ exports[`CreatePageTemplate: Component should render correctly 1`] = `
               </div>
             </div>
             <div
-              className="sc-khIgXV kywSmM"
+              className="sc-hTRkEk hUWyjQ"
             >
               <svg
                 style={
@@ -1238,7 +1261,7 @@ exports[`CreatePageTemplate: Component should render correctly 1`] = `
                 Make it Available
               </label>
               <span
-                className="sc-jJMGHv dxuJpD"
+                className="sc-hiKfjK dXVHlu"
               >
                 This Template is currently unavailable for Editors
               </span>

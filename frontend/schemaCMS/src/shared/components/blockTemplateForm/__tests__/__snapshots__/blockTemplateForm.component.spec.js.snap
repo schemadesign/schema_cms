@@ -2,16 +2,16 @@
 
 exports[`BlockTemplateForm: Component should render correctly 1`] = `
 <div
-  className="sc-bqGHjH kWTpCE"
+  className="sc-ksluoS boYUIv"
 >
   <div
-    className="sc-ksluoS cbWigc"
+    className="sc-hBMVcZ fkNgIh"
   >
     <div
-      className="sc-hBMVcZ crziqY"
+      className="sc-fnVYJo kkQioa"
     >
       <h2
-        className="sc-fnVYJo eIbiJl"
+        className="sc-fFSRdu cZusCf"
         id="desktopHeaderTitle"
         style={
           Object {
@@ -27,7 +27,7 @@ exports[`BlockTemplateForm: Component should render correctly 1`] = `
         </span>
       </h2>
       <h1
-        className="sc-fFSRdu cZusCf"
+        className="sc-bkbjAj ijwAzB"
         id="desktopHeaderSubtitle"
         style={
           Object {
@@ -41,10 +41,10 @@ exports[`BlockTemplateForm: Component should render correctly 1`] = `
         }
       >
         <div
-          className="sc-iCoHVE gurCqT"
+          className="sc-fujyUd cIAIRg"
         >
           <div
-            className="sc-iwaifL hrOozR"
+            className="sc-cxNIbT bGWzbL"
           >
             <div
               style={
@@ -115,33 +115,47 @@ exports[`BlockTemplateForm: Component should render correctly 1`] = `
                     "top": 2,
                   }
                 }
-              />
+              >
+                <label
+                  htmlFor="name"
+                  style={
+                    Object {
+                      "cursor": "pointer",
+                    }
+                  }
+                />
+              </div>
             </div>
             <div
-              className="sc-lmgQde dGvbQF"
+              className="sc-iJCRLp bWFzJd"
               id="nameError"
             />
           </div>
           <div
-            className="sc-fujyUd cjDcdo"
+            className="sc-pNWxx elmSgA"
           >
-            <svg
-              style={
-                Object {
-                  "fill": "#FFF",
-                  "height": "30px",
-                  "width": "30px",
-                }
-              }
-              viewBox="0 0 30 30"
+            <label
+              className="sc-gKAblj jtHtQo"
+              htmlFor="name"
             >
-              <path
-                d="M21.789 10.92a.724.724 0 000-1.022l-1.687-1.687a.724.724 0 00-1.022 0l-1.322 1.322 2.709 2.709 1.322-1.322zM9 18.291V21h2.709l7.992-7.992-2.709-2.71L9 18.292z"
-                fillRule="evenodd"
-              />
-            </svg>
+              <svg
+                style={
+                  Object {
+                    "fill": "#FFF",
+                    "height": "30px",
+                    "width": "30px",
+                  }
+                }
+                viewBox="0 0 30 30"
+              >
+                <path
+                  d="M21.789 10.92a.724.724 0 000-1.022l-1.687-1.687a.724.724 0 00-1.022 0l-1.322 1.322 2.709 2.709 1.322-1.322zM9 18.291V21h2.709l7.992-7.992-2.709-2.71L9 18.292z"
+                  fillRule="evenodd"
+                />
+              </svg>
+            </label>
             <div
-              className="sc-iTVIwl cJJlrm"
+              className="sc-iBzFoy uvdXK"
               id="blockTemplateCopyButton"
               onClick={[Function]}
             >
@@ -165,10 +179,10 @@ exports[`BlockTemplateForm: Component should render correctly 1`] = `
       </h1>
     </div>
     <div
-      className="sc-bkbjAj"
+      className="sc-iemXMA"
     >
       <div
-        className="sc-fKgIGh hkeCOM"
+        className="sc-bCwgka kGiSRv"
       >
         <button
           disabled={false}
@@ -215,10 +229,10 @@ exports[`BlockTemplateForm: Component should render correctly 1`] = `
     </div>
   </div>
   <div
-    className="sc-pNWxx iGzVuy"
+    className="sc-jrsJCI dHUNmA"
   >
     <div
-      className="sc-iwaifL iBtTLj"
+      className="sc-cxNIbT dxskWl"
     >
       <div
         style={
@@ -279,30 +293,39 @@ exports[`BlockTemplateForm: Component should render correctly 1`] = `
               "top": 2,
             }
           }
-        />
+        >
+          <label
+            htmlFor="name"
+            style={
+              Object {
+                "cursor": "pointer",
+              }
+            }
+          />
+        </div>
       </div>
       <div
-        className="sc-lmgQde dGvbQF"
+        className="sc-iJCRLp bWFzJd"
         id="nameError"
       />
     </div>
   </div>
   <div
-    className="sc-iJCRLp hOmxV"
+    className="sc-giAqnE eFZBDm"
   >
     <div
-      className="sc-giAqnE jEMelV"
+      className="sc-ezzayL euZLdJ"
       id="tagsCounter"
     />
     2 Elements
     <div
-      className="sc-giAqnE jEMelV"
+      className="sc-ezzayL euZLdJ"
     >
       <div
-        className="sc-kEqYlL jZOwBr"
+        className="sc-iqAbSa bIlKMk"
       >
         <div
-          className="sc-fKgIGh hkeCOM"
+          className="sc-bCwgka kGiSRv"
         >
           <button
             disabled={false}
@@ -401,14 +424,14 @@ exports[`BlockTemplateForm: Component should render correctly 1`] = `
           }
         >
           <div
-            className="sc-bYwzba bzfBbo"
+            className="sc-kLokih gJmyxz"
           >
             <div
-              className="sc-kLokih gOMSzJ"
+              className="sc-iklIKw cXFMgw"
             >
               <div>
                 <div
-                  className="sc-crzoUp iCzTXX"
+                  className="sc-dIsAE fsdLvA"
                 >
                   <svg
                     style={
@@ -429,7 +452,7 @@ exports[`BlockTemplateForm: Component should render correctly 1`] = `
                 </div>
               </div>
               <div
-                className="sc-cBoprd dHgLAJ"
+                className="sc-ciSmjq sKTKC"
               >
                 <svg
                   style={
@@ -449,7 +472,7 @@ exports[`BlockTemplateForm: Component should render correctly 1`] = `
               </div>
             </div>
             <div
-              className="sc-iwaifL hrOozR"
+              className="sc-cxNIbT bGWzbL"
             >
               <div
                 style={
@@ -519,31 +542,45 @@ exports[`BlockTemplateForm: Component should render correctly 1`] = `
                       "top": 2,
                     }
                   }
-                />
+                >
+                  <label
+                    htmlFor="elements.0.name"
+                    style={
+                      Object {
+                        "cursor": "pointer",
+                      }
+                    }
+                  />
+                </div>
               </div>
               <div
-                className="sc-lmgQde dGvbQF"
+                className="sc-iJCRLp bWFzJd"
                 id="elements.0.nameError"
               />
             </div>
             <div
-              className="sc-kLokih gOMSzJ"
+              className="sc-iklIKw cXFMgw"
             >
-              <svg
-                style={
-                  Object {
-                    "fill": "#FFF",
-                    "height": "30px",
-                    "width": "30px",
-                  }
-                }
-                viewBox="0 0 30 30"
+              <label
+                className="sc-gKAblj jtHtQo"
+                htmlFor="elements.0.name"
               >
-                <path
-                  d="M21.789 10.92a.724.724 0 000-1.022l-1.687-1.687a.724.724 0 00-1.022 0l-1.322 1.322 2.709 2.709 1.322-1.322zM9 18.291V21h2.709l7.992-7.992-2.709-2.71L9 18.292z"
-                  fillRule="evenodd"
-                />
-              </svg>
+                <svg
+                  style={
+                    Object {
+                      "fill": "#FFF",
+                      "height": "30px",
+                      "width": "30px",
+                    }
+                  }
+                  viewBox="0 0 30 30"
+                >
+                  <path
+                    d="M21.789 10.92a.724.724 0 000-1.022l-1.687-1.687a.724.724 0 00-1.022 0l-1.322 1.322 2.709 2.709 1.322-1.322zM9 18.291V21h2.709l7.992-7.992-2.709-2.71L9 18.292z"
+                    fillRule="evenodd"
+                  />
+                </svg>
+              </label>
               <svg
                 id="removeElement-0"
                 onClick={[Function]}
@@ -652,14 +689,14 @@ exports[`BlockTemplateForm: Component should render correctly 1`] = `
           }
         >
           <div
-            className="sc-bYwzba bzfBbo"
+            className="sc-kLokih gJmyxz"
           >
             <div
-              className="sc-kLokih gOMSzJ"
+              className="sc-iklIKw cXFMgw"
             >
               <div>
                 <div
-                  className="sc-crzoUp iCzTXX"
+                  className="sc-dIsAE fsdLvA"
                 >
                   <svg
                     style={
@@ -680,7 +717,7 @@ exports[`BlockTemplateForm: Component should render correctly 1`] = `
                 </div>
               </div>
               <div
-                className="sc-cBoprd dHgLAJ"
+                className="sc-ciSmjq sKTKC"
               >
                 <svg
                   style={
@@ -700,7 +737,7 @@ exports[`BlockTemplateForm: Component should render correctly 1`] = `
               </div>
             </div>
             <div
-              className="sc-iwaifL hrOozR"
+              className="sc-cxNIbT bGWzbL"
             >
               <div
                 style={
@@ -770,31 +807,45 @@ exports[`BlockTemplateForm: Component should render correctly 1`] = `
                       "top": 2,
                     }
                   }
-                />
+                >
+                  <label
+                    htmlFor="elements.1.name"
+                    style={
+                      Object {
+                        "cursor": "pointer",
+                      }
+                    }
+                  />
+                </div>
               </div>
               <div
-                className="sc-lmgQde dGvbQF"
+                className="sc-iJCRLp bWFzJd"
                 id="elements.1.nameError"
               />
             </div>
             <div
-              className="sc-kLokih gOMSzJ"
+              className="sc-iklIKw cXFMgw"
             >
-              <svg
-                style={
-                  Object {
-                    "fill": "#FFF",
-                    "height": "30px",
-                    "width": "30px",
-                  }
-                }
-                viewBox="0 0 30 30"
+              <label
+                className="sc-gKAblj jtHtQo"
+                htmlFor="elements.1.name"
               >
-                <path
-                  d="M21.789 10.92a.724.724 0 000-1.022l-1.687-1.687a.724.724 0 00-1.022 0l-1.322 1.322 2.709 2.709 1.322-1.322zM9 18.291V21h2.709l7.992-7.992-2.709-2.71L9 18.292z"
-                  fillRule="evenodd"
-                />
-              </svg>
+                <svg
+                  style={
+                    Object {
+                      "fill": "#FFF",
+                      "height": "30px",
+                      "width": "30px",
+                    }
+                  }
+                  viewBox="0 0 30 30"
+                >
+                  <path
+                    d="M21.789 10.92a.724.724 0 000-1.022l-1.687-1.687a.724.724 0 00-1.022 0l-1.322 1.322 2.709 2.709 1.322-1.322zM9 18.291V21h2.709l7.992-7.992-2.709-2.71L9 18.292z"
+                    fillRule="evenodd"
+                  />
+                </svg>
+              </label>
               <svg
                 id="removeElement-1"
                 onClick={[Function]}
@@ -935,7 +986,7 @@ exports[`BlockTemplateForm: Component should render correctly 1`] = `
             Make it Available
           </label>
           <span
-            className="sc-gKAblj bbfmPW"
+            className="sc-iCoHVE gZjpER"
           >
             This Template is currently available for Editors
           </span>

@@ -67,25 +67,34 @@ exports[`DataSourceStateForm: Component should render correctly 1`] = `
           }
         }
       >
-        <div
-          className="sc-dlnjPT gEjiGW"
-        >
-          <svg
-            style={
-              Object {
-                "fill": "#FFF",
-                "height": "30px",
-                "width": "30px",
-              }
+        <label
+          htmlFor="name"
+          style={
+            Object {
+              "cursor": "pointer",
             }
-            viewBox="0 0 30 30"
+          }
+        >
+          <div
+            className="sc-dlnjPT gEjiGW"
           >
-            <path
-              d="M21.789 10.92a.724.724 0 000-1.022l-1.687-1.687a.724.724 0 00-1.022 0l-1.322 1.322 2.709 2.709 1.322-1.322zM9 18.291V21h2.709l7.992-7.992-2.709-2.71L9 18.292z"
-              fillRule="evenodd"
-            />
-          </svg>
-        </div>
+            <svg
+              style={
+                Object {
+                  "fill": "#FFF",
+                  "height": "30px",
+                  "width": "30px",
+                }
+              }
+              viewBox="0 0 30 30"
+            >
+              <path
+                d="M21.789 10.92a.724.724 0 000-1.022l-1.687-1.687a.724.724 0 00-1.022 0l-1.322 1.322 2.709 2.709 1.322-1.322zM9 18.291V21h2.709l7.992-7.992-2.709-2.71L9 18.292z"
+                fillRule="evenodd"
+              />
+            </svg>
+          </div>
+        </label>
       </div>
     </div>
     <div
@@ -174,25 +183,34 @@ exports[`DataSourceStateForm: Component should render correctly 1`] = `
           }
         }
       >
-        <div
-          className="sc-dlnjPT gEjiGW"
-        >
-          <svg
-            style={
-              Object {
-                "fill": "#FFF",
-                "height": "30px",
-                "width": "30px",
-              }
+        <label
+          htmlFor="description"
+          style={
+            Object {
+              "cursor": "pointer",
             }
-            viewBox="0 0 30 30"
+          }
+        >
+          <div
+            className="sc-dlnjPT gEjiGW"
           >
-            <path
-              d="M21.789 10.92a.724.724 0 000-1.022l-1.687-1.687a.724.724 0 00-1.022 0l-1.322 1.322 2.709 2.709 1.322-1.322zM9 18.291V21h2.709l7.992-7.992-2.709-2.71L9 18.292z"
-              fillRule="evenodd"
-            />
-          </svg>
-        </div>
+            <svg
+              style={
+                Object {
+                  "fill": "#FFF",
+                  "height": "30px",
+                  "width": "30px",
+                }
+              }
+              viewBox="0 0 30 30"
+            >
+              <path
+                d="M21.789 10.92a.724.724 0 000-1.022l-1.687-1.687a.724.724 0 00-1.022 0l-1.322 1.322 2.709 2.709 1.322-1.322zM9 18.291V21h2.709l7.992-7.992-2.709-2.71L9 18.292z"
+                fillRule="evenodd"
+              />
+            </svg>
+          </div>
+        </label>
       </div>
     </div>
     <div
@@ -262,25 +280,34 @@ exports[`DataSourceStateForm: Component should render correctly 1`] = `
           }
         }
       >
-        <div
-          className="sc-dlnjPT gEjiGW"
-        >
-          <svg
-            style={
-              Object {
-                "fill": "#FFF",
-                "height": "30px",
-                "width": "30px",
-              }
+        <label
+          htmlFor="sourceUrl"
+          style={
+            Object {
+              "cursor": "pointer",
             }
-            viewBox="0 0 30 30"
+          }
+        >
+          <div
+            className="sc-dlnjPT gEjiGW"
           >
-            <path
-              d="M21.789 10.92a.724.724 0 000-1.022l-1.687-1.687a.724.724 0 00-1.022 0l-1.322 1.322 2.709 2.709 1.322-1.322zM9 18.291V21h2.709l7.992-7.992-2.709-2.71L9 18.292z"
-              fillRule="evenodd"
-            />
-          </svg>
-        </div>
+            <svg
+              style={
+                Object {
+                  "fill": "#FFF",
+                  "height": "30px",
+                  "width": "30px",
+                }
+              }
+              viewBox="0 0 30 30"
+            >
+              <path
+                d="M21.789 10.92a.724.724 0 000-1.022l-1.687-1.687a.724.724 0 00-1.022 0l-1.322 1.322 2.709 2.709 1.322-1.322zM9 18.291V21h2.709l7.992-7.992-2.709-2.71L9 18.292z"
+                fillRule="evenodd"
+              />
+            </svg>
+          </div>
+        </label>
       </div>
     </div>
     <div
@@ -351,7 +378,16 @@ exports[`DataSourceStateForm: Component should render correctly 1`] = `
             "top": 2,
           }
         }
-      />
+      >
+        <label
+          htmlFor="author"
+          style={
+            Object {
+              "cursor": "pointer",
+            }
+          }
+        />
+      </div>
     </div>
     <div
       className="sc-hKFyIo DFKiB"
@@ -421,7 +457,16 @@ exports[`DataSourceStateForm: Component should render correctly 1`] = `
             "top": 2,
           }
         }
-      />
+      >
+        <label
+          htmlFor="created"
+          style={
+            Object {
+              "cursor": "pointer",
+            }
+          }
+        />
+      </div>
     </div>
     <div
       className="sc-hKFyIo DFKiB"
@@ -1027,7 +1072,7 @@ exports[`DataSourceStateForm: Component should render correctly 1`] = `
             Make it Public
           </label>
           <span
-            className="sc-bkbjAj hjwsvd"
+            className="sc-iemXMA fcWpfK"
           >
             This State is currently Private
           </span>

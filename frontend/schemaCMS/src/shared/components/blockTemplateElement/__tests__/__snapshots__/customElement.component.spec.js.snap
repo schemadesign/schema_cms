@@ -5,21 +5,21 @@ exports[`CustomElement: Component should render correctly 1`] = `
   className="sc-gKAblj fHQgnh"
 >
   <div
-    className="sc-fKgIGh fVSVOY"
+    className="sc-bCwgka eDDRwn"
   >
     <div
-      className="sc-bCwgka gQWYQD"
+      className="sc-iwaifL egjjJw"
       id="tagsCounter"
     />
     1 Element
     <div
-      className="sc-bCwgka gQWYQD"
+      className="sc-iwaifL egjjJw"
     >
       <div
-        className="sc-iemXMA drkvag"
+        className="sc-dIvqjp iNCAit"
       >
         <div
-          className="sc-ezzayL jchpWR"
+          className="sc-bYwzba ikCxt"
         >
           <button
             disabled={false}
@@ -87,7 +87,7 @@ exports[`CustomElement: Component should render correctly 1`] = `
       >
         <div>
           <div
-            className="sc-dlMBXb fdsUsb"
+            className="sc-kfYqjs cIqTnu"
           >
             <svg
               style={
@@ -406,7 +406,7 @@ exports[`CustomElement: Component should render correctly 1`] = `
             </div>
           </div>
           <div
-            className="sc-kLokih bfeYDD"
+            className="sc-iklIKw PRxGi"
           >
             <div
               style={
@@ -473,10 +473,19 @@ exports[`CustomElement: Component should render correctly 1`] = `
                     "top": 2,
                   }
                 }
-              />
+              >
+                <label
+                  htmlFor="valuePath.0.name"
+                  style={
+                    Object {
+                      "cursor": "pointer",
+                    }
+                  }
+                />
+              </div>
             </div>
             <div
-              className="sc-jJMGHv dZRdTb"
+              className="sc-hiKfjK bDgfum"
               id="valuePath.0.nameError"
             />
           </div>

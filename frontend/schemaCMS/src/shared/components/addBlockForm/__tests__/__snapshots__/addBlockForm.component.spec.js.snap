@@ -8,7 +8,7 @@ exports[`AddBlockForm: Component should render a block template with added eleme
     className="sc-bdnylx dXFUsK"
   >
     <div
-      className="sc-fKgIGh dTpQEO"
+      className="sc-bCwgka jPnEeh"
       onClick={[Function]}
     >
       <label
@@ -180,7 +180,7 @@ exports[`AddBlockForm: Component should render a block template with added eleme
         </div>
       </div>
       <div
-        className="sc-bCwgka jgoXTA"
+        className="sc-iwaifL bXwhvv"
       >
         <svg
           style={
@@ -201,18 +201,18 @@ exports[`AddBlockForm: Component should render a block template with added eleme
     </div>
   </div>
   <div
-    className="sc-cBoprd kVYrUE"
+    className="sc-ciSmjq gQRuMP"
   >
     <div
-      className="sc-ciSmjq cmoBib"
+      className="sc-jcwofb iHyuSB"
       id="tagsCounter"
     />
     0 Elements
     <div
-      className="sc-ciSmjq cmoBib"
+      className="sc-jcwofb iHyuSB"
     >
       <div
-        className="sc-iemXMA drkvag"
+        className="sc-dIvqjp iNCAit"
       >
         <div
           className="sc-pNWxx hdHMB"
@@ -340,7 +340,7 @@ exports[`AddBlockForm: Component should render correctly 1`] = `
     className="sc-bdnylx dXFUsK"
   >
     <div
-      className="sc-fKgIGh dTpQEO"
+      className="sc-bCwgka jPnEeh"
       onClick={[Function]}
     >
       <label
@@ -511,7 +511,7 @@ exports[`AddBlockForm: Component should render correctly 1`] = `
         </div>
       </div>
       <div
-        className="sc-bCwgka jgoXTA"
+        className="sc-iwaifL bXwhvv"
       >
         <svg
           style={

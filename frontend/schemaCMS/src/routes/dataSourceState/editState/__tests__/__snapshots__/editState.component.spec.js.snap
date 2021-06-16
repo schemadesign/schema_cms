@@ -3,7 +3,7 @@
 exports[`EditState: Component should render correctly 1`] = `
 Array [
   <div
-    className="sc-jgPznn bqAAed"
+    className="sc-gSYCTC gZEKEv"
   >
     <div
       style={
@@ -25,7 +25,7 @@ Array [
         }
       >
         <a
-          className="sc-laZMyp ezgTvF"
+          className="sc-iNiQeE hnQVGV"
           href="/project/1/"
           onClick={[Function]}
           style={
@@ -47,7 +47,7 @@ Array [
             Project
           </span>
           <h3
-            className="sc-iNiQeE ccDdTK"
+            className="sc-jffIyK iNBqKg"
             style={
               Object {
                 "fontFamily": "Inter, \\"Helvetica Neue\\", Helvetica, Arial, sans-serif",
@@ -83,7 +83,7 @@ Array [
         }
       >
         <a
-          className="sc-laZMyp ezgTvF"
+          className="sc-iNiQeE hnQVGV"
           href="/project/1/datasource"
           onClick={[Function]}
           style={
@@ -105,7 +105,7 @@ Array [
             Tab
           </span>
           <h3
-            className="sc-iNiQeE ccDdTK"
+            className="sc-jffIyK iNBqKg"
             style={
               Object {
                 "fontFamily": "Inter, \\"Helvetica Neue\\", Helvetica, Arial, sans-serif",
@@ -141,7 +141,7 @@ Array [
         }
       >
         <a
-          className="sc-laZMyp ezgTvF"
+          className="sc-iNiQeE hnQVGV"
           href="/datasource/1"
           onClick={[Function]}
           style={
@@ -163,7 +163,7 @@ Array [
             Data Source
           </span>
           <h3
-            className="sc-iNiQeE ccDdTK"
+            className="sc-jffIyK iNBqKg"
             style={
               Object {
                 "fontFamily": "Inter, \\"Helvetica Neue\\", Helvetica, Arial, sans-serif",
@@ -199,7 +199,7 @@ Array [
         }
       >
         <a
-          className="sc-laZMyp ezgTvF"
+          className="sc-iNiQeE hnQVGV"
           href="/datasource/1/state"
           onClick={[Function]}
           style={
@@ -221,7 +221,7 @@ Array [
             Tab
           </span>
           <h3
-            className="sc-iNiQeE ccDdTK"
+            className="sc-jffIyK iNBqKg"
             style={
               Object {
                 "fontFamily": "Inter, \\"Helvetica Neue\\", Helvetica, Arial, sans-serif",
@@ -257,7 +257,7 @@ Array [
         }
       >
         <div
-          className="sc-gSYCTC gfqDcn"
+          className="sc-laZMyp kOJbHl"
         >
           <span
             style={
@@ -270,7 +270,7 @@ Array [
             State
           </span>
           <h3
-            className="sc-iNiQeE ccDdTK"
+            className="sc-jffIyK iNBqKg"
             style={
               Object {
                 "fontFamily": "Inter, \\"Helvetica Neue\\", Helvetica, Arial, sans-serif",
@@ -730,25 +730,34 @@ Array [
             }
           }
         >
-          <div
-            className="sc-iJCRLp kLvrzs"
-          >
-            <svg
-              style={
-                Object {
-                  "fill": "#FFF",
-                  "height": "30px",
-                  "width": "30px",
-                }
+          <label
+            htmlFor="name"
+            style={
+              Object {
+                "cursor": "pointer",
               }
-              viewBox="0 0 30 30"
+            }
+          >
+            <div
+              className="sc-iJCRLp kLvrzs"
             >
-              <path
-                d="M21.789 10.92a.724.724 0 000-1.022l-1.687-1.687a.724.724 0 00-1.022 0l-1.322 1.322 2.709 2.709 1.322-1.322zM9 18.291V21h2.709l7.992-7.992-2.709-2.71L9 18.292z"
-                fillRule="evenodd"
-              />
-            </svg>
-          </div>
+              <svg
+                style={
+                  Object {
+                    "fill": "#FFF",
+                    "height": "30px",
+                    "width": "30px",
+                  }
+                }
+                viewBox="0 0 30 30"
+              >
+                <path
+                  d="M21.789 10.92a.724.724 0 000-1.022l-1.687-1.687a.724.724 0 00-1.022 0l-1.322 1.322 2.709 2.709 1.322-1.322zM9 18.291V21h2.709l7.992-7.992-2.709-2.71L9 18.292z"
+                  fillRule="evenodd"
+                />
+              </svg>
+            </div>
+          </label>
         </div>
       </div>
       <div
@@ -837,25 +846,34 @@ Array [
             }
           }
         >
-          <div
-            className="sc-iJCRLp kLvrzs"
-          >
-            <svg
-              style={
-                Object {
-                  "fill": "#FFF",
-                  "height": "30px",
-                  "width": "30px",
-                }
+          <label
+            htmlFor="description"
+            style={
+              Object {
+                "cursor": "pointer",
               }
-              viewBox="0 0 30 30"
+            }
+          >
+            <div
+              className="sc-iJCRLp kLvrzs"
             >
-              <path
-                d="M21.789 10.92a.724.724 0 000-1.022l-1.687-1.687a.724.724 0 00-1.022 0l-1.322 1.322 2.709 2.709 1.322-1.322zM9 18.291V21h2.709l7.992-7.992-2.709-2.71L9 18.292z"
-                fillRule="evenodd"
-              />
-            </svg>
-          </div>
+              <svg
+                style={
+                  Object {
+                    "fill": "#FFF",
+                    "height": "30px",
+                    "width": "30px",
+                  }
+                }
+                viewBox="0 0 30 30"
+              >
+                <path
+                  d="M21.789 10.92a.724.724 0 000-1.022l-1.687-1.687a.724.724 0 00-1.022 0l-1.322 1.322 2.709 2.709 1.322-1.322zM9 18.291V21h2.709l7.992-7.992-2.709-2.71L9 18.292z"
+                  fillRule="evenodd"
+                />
+              </svg>
+            </div>
+          </label>
         </div>
       </div>
       <div
@@ -926,25 +944,34 @@ Array [
             }
           }
         >
-          <div
-            className="sc-iJCRLp kLvrzs"
-          >
-            <svg
-              style={
-                Object {
-                  "fill": "#FFF",
-                  "height": "30px",
-                  "width": "30px",
-                }
+          <label
+            htmlFor="sourceUrl"
+            style={
+              Object {
+                "cursor": "pointer",
               }
-              viewBox="0 0 30 30"
+            }
+          >
+            <div
+              className="sc-iJCRLp kLvrzs"
             >
-              <path
-                d="M21.789 10.92a.724.724 0 000-1.022l-1.687-1.687a.724.724 0 00-1.022 0l-1.322 1.322 2.709 2.709 1.322-1.322zM9 18.291V21h2.709l7.992-7.992-2.709-2.71L9 18.292z"
-                fillRule="evenodd"
-              />
-            </svg>
-          </div>
+              <svg
+                style={
+                  Object {
+                    "fill": "#FFF",
+                    "height": "30px",
+                    "width": "30px",
+                  }
+                }
+                viewBox="0 0 30 30"
+              >
+                <path
+                  d="M21.789 10.92a.724.724 0 000-1.022l-1.687-1.687a.724.724 0 00-1.022 0l-1.322 1.322 2.709 2.709 1.322-1.322zM9 18.291V21h2.709l7.992-7.992-2.709-2.71L9 18.292z"
+                  fillRule="evenodd"
+                />
+              </svg>
+            </div>
+          </label>
         </div>
       </div>
       <div
@@ -1061,7 +1088,7 @@ Array [
               Make it Public
             </label>
             <span
-              className="sc-efHXLn fugJjy"
+              className="sc-cTJmaU hBzeJT"
             >
               This State is currently Private
             </span>
