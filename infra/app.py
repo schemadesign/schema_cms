@@ -8,7 +8,7 @@ from stacks.components.stack import ComponentsStack
 from stacks.services.api.stack import ApiStack
 from stacks.services.workers.stack import LambdaWorkerStack
 from stacks.services.image_resize.stack import ImageResizeStack
-
+from stacks.services.schedulers.stack import LambdaSchedulerStack
 from config.base import load_infra_envs
 
 
@@ -35,6 +35,8 @@ class App(App):
             self, "schema-cms-workers", envs=ENV_SETTINGS, components=self.components
         )
 
+        self.schedulers = LambdaSchedulerStack(self, "schema-cms-schedulers", envs=ENV_SETTINGS)
+
         installation_mode = self.node.try_get_context("installation_mode")
 
         if installation_mode == FULL_INSTALLATION_MODE:
@@ -43,6 +45,7 @@ class App(App):
                 "schema-cms-cicd",
                 envs=ENV_SETTINGS,
                 functions=self.workers.functions,
+                schedulers=self.schedulers.functions,
                 ir_function=self.image_resize.function_code,
             )
             self.repo_pr_checks = PRTestStack(self, "schema-cms-pr-checks", envs=ENV_SETTINGS)

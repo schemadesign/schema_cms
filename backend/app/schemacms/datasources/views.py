@@ -68,6 +68,21 @@ class DataSourceListView(BaseDataSourceView, mixins.ListModelMixin, viewsets.Gen
 
         return res
 
+    @decorators.action(
+        detail=False,
+        url_path="refresh-data",
+        methods=["post"],
+        permission_classes=[permissions.IsAuthenticated],
+        authentication_classes=[authentication.EnvTokenAuthentication],
+    )
+    def refresh_data(self, request, *args, **kwargs):
+        datasources = models.DataSource.objects.filter(type=constants.DataSourceType.API, auto_refresh=True)
+
+        for ds in datasources:
+            ds.schedule_update_meta(True)
+
+        return response.Response(status=status.HTTP_200_OK)
+
 
 class DataSourceViewSet(BaseDataSourceView, ActionSerializerViewSetMixin, viewsets.ModelViewSet):
     serializer_class_mapping = {
