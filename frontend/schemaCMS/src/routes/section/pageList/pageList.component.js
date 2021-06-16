@@ -52,6 +52,7 @@ import {
   SwitchLabel,
   CopySeparator,
   Draft,
+  EditIconLabel,
 } from '../../../shared/components/form/frequentComponents.styles';
 import { TextInput } from '../../../shared/components/form/inputs/textInput';
 import { Modal, ModalActions, modalStyles, ModalTitle } from '../../../shared/components/modal/modal.styles';
@@ -295,7 +296,9 @@ export const PageList = ({
         {...restFormikProps}
       />
       <IconsContainer>
-        <EditIcon />
+        <EditIconLabel htmlFor={SECTIONS_NAME}>
+          <EditIcon />
+        </EditIconLabel>
       </IconsContainer>
     </Subtitle>
   );

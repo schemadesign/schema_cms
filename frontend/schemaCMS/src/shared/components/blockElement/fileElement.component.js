@@ -20,6 +20,7 @@ import { renderWhenTrue } from '../../utils/rendering';
 import { IMAGE_TYPE, ELEMENT_PARAMS } from '../../../modules/blockTemplates/blockTemplates.constants';
 import { TextInput } from '../form/inputs/textInput';
 import { FILE, FILE_NAME, FILE_ALT } from '../../../modules/page/page.constants';
+import { EditIconLabel } from '../form/frequentComponents.styles';
 
 const MAX_SIZE = 150 * 1024 * 1024;
 const { EditIcon } = Icons;
@@ -98,7 +99,9 @@ export const FileElement = ({
             multiline
             {...restFormikProps}
           />
-          <EditIcon customStyles={editIconStyles} />
+          <EditIconLabel htmlFor={altPath}>
+            <EditIcon customStyles={editIconStyles} />
+          </EditIconLabel>
         </InputContainer>
       </Fragment>
     )

@@ -20,4 +20,7 @@ export const getStyles = (theme = defaultTheme, autoWidth) => ({
     right: 0,
     top: 0,
   },
+  iconLabelStyles: {
+    cursor: 'pointer',
+  },
 });

@@ -17,7 +17,7 @@ import {
 import { Select } from '../form/select';
 import { renderWhenTrue } from '../../utils/rendering';
 import { CustomElement } from './customElement.component';
-import { binStyles } from '../form/frequentComponents.styles';
+import { binStyles, EditIconLabel } from '../form/frequentComponents.styles';
 
 const { EditIcon, BinIcon, MinusIcon } = Icons;
 
@@ -68,7 +68,9 @@ export const BlockTemplateElement = ({
             {...restFormikProps}
           />
           <IconsContainer>
-            <EditIcon />
+            <EditIconLabel htmlFor={`${elementPath}.${ELEMENT_NAME}`}>
+              <EditIcon />
+            </EditIconLabel>
             <BinIcon id={`removeElement-${index}`} customStyles={binStyles} onClick={() => removeElement(index)} />
           </IconsContainer>
         </Header>

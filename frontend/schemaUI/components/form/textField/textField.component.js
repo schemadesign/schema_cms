@@ -50,7 +50,10 @@ class TextFieldComponent extends PureComponent {
       fullWidth,
       ...restProps
     } = this.props;
-    const { containerStyles, errorStyles, iconContainerStyles } = getStyles(theme, restProps.autoWidth);
+    const { containerStyles, errorStyles, iconContainerStyles, iconLabelStyles } = getStyles(
+      theme,
+      restProps.autoWidth
+    );
     const errorFieldStyles = error ? errorStyles : {};
     const styles = { ...containerStyles, ...customStyles };
     const fieldStyles = { ...customInputStyles, ...errorFieldStyles };
@@ -62,7 +65,11 @@ class TextFieldComponent extends PureComponent {
       <div style={styles}>
         {this.renderLabel({ label, name, customStyles: customLabelStyles })}
         {renderField({ name, ...restProps, customStyles: fieldStyles })}
-        <div style={{ ...iconContainerStyles, ...customIconStyles }}>{this.props.iconComponent}</div>
+        <div style={{ ...iconContainerStyles, ...customIconStyles }}>
+          <label htmlFor={name} style={iconLabelStyles}>
+            {this.props.iconComponent}
+          </label>
+        </div>
       </div>
     );
   }

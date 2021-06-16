@@ -6,6 +6,7 @@ import { useTheme } from 'styled-components';
 import { getCustomInputStyles, customStyles, editIconStyles, InputContainer } from './blockElement.styles';
 import { TextInput } from '../form/inputs/textInput';
 import { getValuePath } from '../../utils/helpers';
+import { EditIconLabel } from '../form/frequentComponents.styles';
 
 const { EditIcon } = Icons;
 
@@ -21,7 +22,9 @@ export const DefaultElement = ({ element, blockPath, handleChange, index, ...res
       multiline
       {...restFormikProps}
     />
-    <EditIcon customStyles={editIconStyles} />
+    <EditIconLabel htmlFor={getValuePath({ blockPath, index })}>
+      <EditIcon customStyles={editIconStyles} />
+    </EditIconLabel>
   </InputContainer>
 );
 DefaultElement.propTypes = {

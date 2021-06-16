@@ -14,6 +14,7 @@ import {
   EMBED_VIDEO_ATTRIBUTES,
   ELEMENT_PARAMS,
 } from '../../../modules/blockTemplates/blockTemplates.constants';
+import { EditIconLabel } from '../form/frequentComponents.styles';
 
 const { EditIcon } = Icons;
 
@@ -37,7 +38,9 @@ export const EmbedVideoElement = ({ element, blockPath, handleChange, index, ...
           debounceValue
           {...restFormikProps}
         />
-        <EditIcon customStyles={editIconStyles} />
+        <EditIconLabel htmlFor={getValuePath({ blockPath, index })}>
+          <EditIcon customStyles={editIconStyles} />
+        </EditIconLabel>
       </InputContainer>
       <Label>
         <FormattedMessage {...messages[EMBED_VIDEO_ATTRIBUTES]} />
@@ -54,7 +57,11 @@ export const EmbedVideoElement = ({ element, blockPath, handleChange, index, ...
           debounceValue
           {...restFormikProps}
         />
-        <EditIcon customStyles={editIconStyles} />
+        <EditIconLabel
+          htmlFor={getValuePath({ blockPath, index, elementValue: `${ELEMENT_PARAMS}.${EMBED_VIDEO_ATTRIBUTES}` })}
+        >
+          <EditIcon customStyles={editIconStyles} />
+        </EditIconLabel>
       </InputContainer>
     </Fragment>
   );
