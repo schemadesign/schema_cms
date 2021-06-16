@@ -10,6 +10,7 @@ from .cdk import CDKConfig
 from .entrypoint import CiEntrypoint
 from .image_resize import ImageResizeLambdaCiConfig
 from .workers import WorkersCiConfig
+from .schedulers import SchedulersCiConfig
 
 
 class CIPipeline(Construct):
@@ -24,7 +25,14 @@ class CIPipeline(Construct):
         return Artifact.artifact(name=f"{envs.project_name}-source")
 
     def __init__(
-        self, scope: Construct, id: str, envs: EnvSettings, entrypoint: CiEntrypoint, functions, ir_function
+        self,
+        scope: Construct,
+        id: str,
+        envs: EnvSettings,
+        entrypoint: CiEntrypoint,
+        functions,
+        schedulers,
+        ir_function,
     ):
         super().__init__(scope, id)
 
@@ -35,7 +43,7 @@ class CIPipeline(Construct):
         self.ecr_repos = {"nginx": nginx_repo, "app": backend_repo, "webapp": webapp_repo}
 
         self.pipeline = self.create_pipeline(envs, entrypoint)
-        self.configure_pipeline(envs, self.pipeline, functions, ir_function)
+        self.configure_pipeline(envs, self.pipeline, functions, schedulers, ir_function)
 
     def create_pipeline(self, envs: EnvSettings, entrypoint: CiEntrypoint):
         source_actions = [
@@ -64,7 +72,7 @@ class CIPipeline(Construct):
 
         return pipeline
 
-    def configure_pipeline(self, envs: EnvSettings, pipeline: Pipeline, functions, ir_function):
+    def configure_pipeline(self, envs: EnvSettings, pipeline: Pipeline, functions, schedulers, ir_function):
         source_output_artifact = CIPipeline.get_output_artifact(envs)
         build_stage = pipeline.stages[1]
         deploy_stage = pipeline.stages[2]
@@ -80,14 +88,20 @@ class CIPipeline(Construct):
             self, "WorkersConfig", envs, build_stage, source_output_artifact, cdk_artifact, functions
         )
 
+        scheds = SchedulersCiConfig(
+            self, "SchedulersConfig", envs, build_stage, source_output_artifact, cdk_artifact, schedulers
+        )
+
         deploy_stage.add_action(api.prepare_api_changes(envs, cdk_artifact))
         deploy_stage.add_action(workers.prepare_workers_changes(envs, admin_permissions=True, run_order=2,))
+        deploy_stage.add_action(scheds.prepare_schedulers_changes(envs, admin_permissions=True, run_order=2,))
         deploy_stage.add_action(
             image_resize.prepare_image_resize_lambda_changes(envs, cdk_artifact, ir_function)
         )
         deploy_stage.add_action(image_resize.execute_image_resize_lambda_changes(envs))
         deploy_stage.add_action(api.execute_api_changes(envs))
         deploy_stage.add_action(workers.execute_workers_changes(envs))
+        deploy_stage.add_action(scheds.execute_schedulers_changes(envs))
 
     def retrieve_backend_ecr_repository(self, envs: EnvSettings):
         return Repository.from_repository_name(
