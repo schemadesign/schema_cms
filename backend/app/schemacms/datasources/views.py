@@ -68,21 +68,6 @@ class DataSourceListView(BaseDataSourceView, mixins.ListModelMixin, viewsets.Gen
 
         return res
 
-    @decorators.action(
-        detail=False,
-        url_path="refresh-data",
-        methods=["post"],
-        permission_classes=[permissions.IsAuthenticated],
-        authentication_classes=[authentication.EnvTokenAuthentication],
-    )
-    def refresh_data(self, request, *args, **kwargs):
-        datasources = models.DataSource.objects.filter(type=constants.DataSourceType.API, auto_refresh=True)
-
-        for ds in datasources:
-            ds.schedule_update_meta(True)
-
-        return response.Response(status=status.HTTP_200_OK)
-
 
 class DataSourceViewSet(BaseDataSourceView, ActionSerializerViewSetMixin, viewsets.ModelViewSet):
     serializer_class_mapping = {
@@ -299,6 +284,7 @@ class DataSourceViewSet(BaseDataSourceView, ActionSerializerViewSetMixin, viewse
     def update_meta(self, request, *args, **kwargs):
         data_source = self.get_object()
         copy_steps = request.data.pop("copy_steps", None)
+        auto_refresh = request.data.pop("auto_refresh", False)
         status_ = request.data.get("status")
 
         serializer = self.get_serializer(data=request.data, context=data_source.meta_data)
@@ -309,11 +295,15 @@ class DataSourceViewSet(BaseDataSourceView, ActionSerializerViewSetMixin, viewse
         if status_ == constants.ProcessingState.SUCCESS:
             source_file = request.data.pop("source_file", "")
             source_file_version = request.data.pop("source_file_version", "")
-            print(source_file)
 
             with transaction.atomic():
+                if auto_refresh:
+                    description = "Auto Refresh Data"
+                else:
+                    description = f"DataSource {data_source.id} file upload"
+
                 fake_job = data_source.create_job(
-                    description=f"DataSource {data_source.id} file upload",
+                    description=description,
                     source_file_path=source_file,
                     source_file_version=source_file_version,
                 )
@@ -328,6 +318,21 @@ class DataSourceViewSet(BaseDataSourceView, ActionSerializerViewSetMixin, viewse
                 transaction.on_commit(fake_job.schedule)
 
         return response.Response(status=status.HTTP_204_NO_CONTENT)
+
+    @decorators.action(
+        detail=False,
+        url_path="refresh-data",
+        methods=["post"],
+        permission_classes=[permissions.IsAuthenticated],
+        authentication_classes=[authentication.EnvTokenAuthentication],
+    )
+    def refresh_data(self, request, *args, **kwargs):
+        datasources = models.DataSource.objects.filter(type=constants.DataSourceType.API, auto_refresh=True)
+
+        for ds in datasources:
+            ds.schedule_update_meta(copy_steps=True, auto_refresh=True)
+
+        return response.Response(status=status.HTTP_200_OK)
 
 
 class DataSourceJobDetailViewSet(

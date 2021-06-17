@@ -35,7 +35,12 @@ def read_file_to_data_frame(file):
 
 
 def get_unique_values_for_column(data_frame, column):
-    return data_frame[column].dropna().unique().tolist()
+    try:
+        unique_values = data_frame[column].dropna().unique().tolist()
+    except Exception:
+        unique_values = []
+
+    return unique_values
 
 
 def write_data_frame_to_csv_on_s3(data_frame, filename):
@@ -86,7 +91,12 @@ def get_preview_data(data_frame):
     min_ = data_frame.min(numeric_only=True).to_json()
     max_ = data_frame.max(numeric_only=True).to_json()
     std = data_frame.std(numeric_only=True).to_json()
-    unique = data_frame.nunique().to_json()
+
+    try:
+        unique = data_frame.nunique().to_json()
+    except Exception:
+        unique = json.dumps({})
+
     nan = data_frame.isna().sum()
 
     try:
@@ -153,6 +163,7 @@ def get_preview_data(data_frame):
 class SourceProcessor:
     datasource: DataSource
     copy_steps: bool = False
+    auto_refresh: bool = False
 
     def read(self, script_process=False):
         pass
@@ -167,6 +178,7 @@ class SourceProcessor:
         schemacms_api.update_datasource_meta(
             datasource_pk=self.datasource.id,
             copy_steps=self.copy_steps,
+            auto_refresh=self.auto_refresh,
             status=ProcessState.SUCCESS,
             **preview_dict,
         )

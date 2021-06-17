@@ -80,11 +80,12 @@ def schedule_worker_with(data: dict, source_file_size: int):
     return sqs_response["MessageId"]
 
 
-def schedule_object_meta_processing(obj, source_file_size, copy_steps):
+def schedule_object_meta_processing(obj, source_file_size, copy_steps, auto_refresh):
     data = {
         "type": obj.meta_file_processing_type,
         "data": obj.meta_file_serialization(),
         "copy_steps": copy_steps,
+        "auto_refresh": auto_refresh,
     }
 
     try:
