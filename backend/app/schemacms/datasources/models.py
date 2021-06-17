@@ -152,7 +152,7 @@ class DataSource(MetaGeneratorMixin, SoftDeleteObject, TimeStampedModel):
         except DataSourceJob.DoesNotExist:
             return None
 
-    def schedule_update_meta(self, copy_steps):
+    def schedule_update_meta(self, copy_steps, auto_refresh=False):
         if not self.file and not self.google_sheet and not self.api_url:
             raise ValueError("Cannot schedule meta processing without source")
 
@@ -164,7 +164,7 @@ class DataSource(MetaGeneratorMixin, SoftDeleteObject, TimeStampedModel):
 
             transaction.on_commit(
                 lambda: services.schedule_object_meta_processing(
-                    obj=self, source_file_size=file_size, copy_steps=copy_steps
+                    obj=self, source_file_size=file_size, copy_steps=copy_steps, auto_refresh=auto_refresh
                 )
             )
 
