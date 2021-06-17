@@ -15,38 +15,24 @@ class RawDataSourceSerializer(serializers.Serializer):
     name = serializers.CharField(read_only=True)
 
 
-class DataSourceNewMetaSerializer(serializers.Serializer):
+class DataSourceMetaSerializer(serializers.Serializer):
     items = serializers.IntegerField(read_only=True)
     fields = serializers.IntegerField(read_only=True)
     fields_names = serializers.ListField(read_only=True)
     fields_with_urls = serializers.ListField(read_only=True)
     preview = serializers.FileField(read_only=True)
     filters = serializers.SerializerMethodField()
-    status = serializers.CharField(read_only=True)
+    status = serializers.SerializerMethodField()
     error = serializers.CharField(read_only=True)
 
     def get_filters(self, meta):
-        return 0
+        return self.context.get("filters", 0)
 
-
-class DataSourceMetaSerializer(serializers.ModelSerializer):
-    filters = serializers.SerializerMethodField(read_only=True)
-
-    class Meta:
-        model = ds_models.DataSourceMeta
-        fields = (
-            "items",
-            "fields",
-            "fields_names",
-            "fields_with_urls",
-            "preview",
-            "filters",
-            "status",
-            "error",
-        )
-
-    def get_filters(self, meta):
-        return meta.datasource.filters_count
+    def get_status(self, obj):
+        if hasattr(obj, "status"):
+            return obj.status
+        else:
+            return obj.job.job_state
 
 
 class DataSourceCreatorSerializer(serializers.ModelSerializer):
@@ -187,9 +173,9 @@ class DataSourceSerializer(serializers.ModelSerializer):
 
     def get_meta_data(self, obj):
         if job := obj.get_active_job():
-            return DataSourceNewMetaSerializer(job.meta_data, read_only=True).data
+            return DataSourceMetaSerializer(job.meta_data, context={"filters": obj.filters_count}).data
         else:
-            return {}
+            return DataSourceMetaSerializer(obj.meta_data, context={"filters": obj.filters_count}).data
 
     @transaction.atomic()
     def save(self, *args, **kwargs):
@@ -226,7 +212,10 @@ class DataSourceSerializer(serializers.ModelSerializer):
                 {"api_url": "Unable to connect with provided api"}, code="apiUnableToConnect"
             )
 
-        if "application/json" not in response.headers["Content-Type"].split(";"):
+        allowed_content = ["application/javascript", "application/json"]
+        headers = response.headers["Content-Type"].split(";")
+
+        if not any(ac in headers for ac in allowed_content):
             raise exceptions.ValidationError(
                 {"api_url": "Api returns wrong data format"}, code="apiWrongFormat"
             )
