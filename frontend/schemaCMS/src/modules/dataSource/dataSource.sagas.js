@@ -34,7 +34,7 @@ import { eventChannel } from 'redux-saga';
 import { DataSourceRoutines } from './dataSource.redux';
 import browserHistory from '../../shared/utils/history';
 import api from '../../shared/services/api';
-import { DATA_SOURCES_PATH, PREVIEW_PATH, PROJECTS_PATH } from '../../shared/utils/api.constants';
+import { DATA_SOURCES_PATH, PREVIEW_PATH, PROJECTS_PATH, REIMPORT_PATH } from '../../shared/utils/api.constants';
 import {
   DATA_SOURCE_RUN_LAST_JOB,
   FETCH_LIST_DELAY,
@@ -312,14 +312,12 @@ function* updateOne({ payload: { requestData, dataSource } }) {
     }
 
     if (requestData[DATA_SOURCE_REIMPORT]) {
-      const dataSourceUrlKey = dataSource[DATA_SOURCE_GOOGLE_SHEET] ? DATA_SOURCE_GOOGLE_SHEET : DATA_SOURCE_API_URL;
-      const { data } = yield api.patch(`${DATA_SOURCES_PATH}/${dataSource.id}`, {
-        [dataSourceUrlKey]: dataSource[dataSourceUrlKey],
+      yield api.post(`${DATA_SOURCES_PATH}/${dataSource.id}${REIMPORT_PATH}`, {
         [DATA_SOURCE_RUN_LAST_JOB]: requestData[DATA_SOURCE_RUN_LAST_JOB],
       });
 
       browserHistory.push(`/project/${dataSource.project.id}/datasource`);
-      yield put(DataSourceRoutines.updateOne.success({ dataSource: data }));
+      yield put(DataSourceRoutines.updateOne.success({ dataSource }));
       return;
     }
 
