@@ -63,6 +63,7 @@ export class ImageScrapingScript extends PureComponent {
     error: null,
     loading: true,
     selectedFields: [],
+    isEditMode: false,
   };
 
   async componentDidMount() {
@@ -81,7 +82,11 @@ export class ImageScrapingScript extends PureComponent {
         find(propEq('id', scriptId)),
         ifElse(isNil, always(imageScrapingFields), path(['options', 'columns']))
       )(dataSource);
-      this.setState({ loading: false, selectedFields });
+      this.setState({
+        loading: false,
+        selectedFields: imageScrapingFields.length ? imageScrapingFields : selectedFields,
+        isEditMode: !!selectedFields.length,
+      });
     } catch (error) {
       reportError(error);
       this.setState({ loading: false, error });
@@ -118,11 +123,13 @@ export class ImageScrapingScript extends PureComponent {
     const { selectedFields } = this.state;
     const scriptId = getMatchParam(this.props, 'scriptId');
     const dataSourceId = getMatchParam(this.props, 'dataSourceId');
+    const { isEditMode } = this.state;
 
     return this.props.setImageScrapingFields({
       imageScrapingFields: selectedFields,
       scriptId,
       dataSourceId,
+      isEditMode,
     });
   };
 

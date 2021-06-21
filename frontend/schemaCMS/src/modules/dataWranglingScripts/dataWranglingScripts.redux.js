@@ -103,13 +103,17 @@ const updateDataWranglingScripts = (
     .set('checkedScripts', sortedChecked);
 };
 
-const setImageScrapingFields = (state = INITIAL_STATE, { payload: { imageScrapingFields, scriptId } }) => {
+const setImageScrapingFields = (state = INITIAL_STATE, { payload: { imageScrapingFields, scriptId, isEditMode } }) => {
   const script = state.scripts.find(({ id }) => id.toString() === scriptId);
   const { uncheckedScripts, checkedScripts } = updateScripts({
     ...state,
     script,
     checked: !isEmpty(imageScrapingFields),
   });
+
+  if (isEditMode && !isEmpty(imageScrapingFields)) {
+    return state.set('imageScrapingFields', imageScrapingFields).update('customScripts', x => [...x, scriptId]);
+  }
 
   return state
     .set('imageScrapingFields', imageScrapingFields)
