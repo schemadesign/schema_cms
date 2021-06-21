@@ -1,8 +1,12 @@
 import json
 import os
 
+from django.conf import settings
 from django.db import transaction
+from django.db.models import Count, Q
 from django.shortcuts import get_object_or_404
+from django.utils import timezone
+
 from rest_framework import (
     decorators,
     exceptions,
@@ -20,6 +24,7 @@ from . import constants, models, serializers
 from .permissions import DataSourceListPermission
 from ..authorization import authentication
 from ..utils.serializers import ActionSerializerViewSetMixin, IDNameSerializer
+from ..utils.services import s3
 from ..projects.models import Project
 
 
@@ -314,6 +319,7 @@ class DataSourceViewSet(BaseDataSourceView, ActionSerializerViewSetMixin, viewse
                     description=description,
                     source_file_path=source_file,
                     source_file_version=source_file_version,
+                    is_auto_refresh=auto_refresh,
                 )
 
                 if copy_steps:
@@ -341,6 +347,41 @@ class DataSourceViewSet(BaseDataSourceView, ActionSerializerViewSetMixin, viewse
             ds.schedule_update_meta(copy_steps=True, auto_refresh=True)
 
         return response.Response(status=status.HTTP_200_OK)
+
+    @decorators.action(
+        detail=False,
+        url_path="clear-old-jobs",
+        methods=["post"],
+        permission_classes=[permissions.IsAuthenticated],
+        authentication_classes=[authentication.EnvTokenAuthentication],
+    )
+    def clear_old_versions(self, request, *args, **kwargs):
+        time_delta = timezone.now() - timezone.timedelta(days=30)
+        jobs = (
+            models.DataSourceJob.objects.filter(created__lt=time_delta, is_auto_refresh=True, is_active=False)
+            .annotate(
+                ds_job_count=Count("datasource__jobs", filter=Q(datasource__jobs__is_auto_refresh=True))
+            )
+            .filter(ds_job_count__gt=1)
+        )
+
+        if jobs:
+            objects_to_delete = {"Objects": []}
+
+            for job in jobs:
+                objects_to_delete["Objects"].append(
+                    {"Key": job.source_file_path, "VersionId": job.source_file_version}
+                )
+                objects_to_delete["Objects"].append({"Key": job.result.name})
+                objects_to_delete["Objects"].append({"Key": job.result_parquet.name})
+
+            s3.delete_objects(Bucket=settings.AWS_STORAGE_BUCKET_NAME, Delete=objects_to_delete)
+
+            jobs.delete()
+
+            return response.Response({"message": f"{len(jobs)} deleted"}, status=status.HTTP_200_OK)
+        else:
+            return response.Response({"message": "0 jobs to delete"}, status=status.HTTP_200_OK)
 
 
 class DataSourceJobDetailViewSet(

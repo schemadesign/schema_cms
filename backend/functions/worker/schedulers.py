@@ -27,3 +27,13 @@ def refresh_datasources_data(event, context):
     else:
         logger.info("Unable to refresh data sources data")
         logger.info(str(response.json()))
+
+
+def clear_old_jobs(event, context):
+    response = api.schemacms_api.clear_old_jobs()
+
+    if response.status_code == 200:
+        logger.info("Clear old versions request sent.")
+    else:
+        logger.info("Unable to clear old versions")
+        logger.info(str(response.json()))

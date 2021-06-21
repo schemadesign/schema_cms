@@ -403,6 +403,7 @@ class DataSourceJob(MetaGeneratorMixin, SoftDeleteObject, TimeStampedModel, fsm.
     result_parquet = models.FileField(upload_to=file_upload_path, null=True, blank=True)
     error = models.TextField(blank=True, default="")
     is_active = models.BooleanField(default=False)
+    is_auto_refresh = models.BooleanField(default=False)
 
     objects = managers.DataSourceJobManager()
 
