@@ -411,7 +411,7 @@ exports[`DataSourceList: Component should render correctly 1`] = `
       >
         <Styled(Link)
           id="dataSourceTitle"
-          to="/datasource/17/result"
+          to="/datasource/17/preview"
         >
           name
         </Styled(Link)>
@@ -508,7 +508,7 @@ exports[`DataSourceList: Component should render correctly 1`] = `
       >
         <Styled(Link)
           id="dataSourceTitle"
-          to="/datasource/17/result"
+          to="/datasource/17/preview"
         >
           name
         </Styled(Link)>
@@ -605,7 +605,7 @@ exports[`DataSourceList: Component should render correctly 1`] = `
       >
         <Styled(Link)
           id="dataSourceTitle"
-          to="/datasource/17/result"
+          to="/datasource/17/preview"
         >
           name
         </Styled(Link)>
@@ -702,7 +702,7 @@ exports[`DataSourceList: Component should render correctly 1`] = `
       >
         <Styled(Link)
           id="dataSourceTitle"
-          to="/datasource/17/result"
+          to="/datasource/17/preview"
         >
           name
         </Styled(Link)>
@@ -799,7 +799,7 @@ exports[`DataSourceList: Component should render correctly 1`] = `
       >
         <Styled(Link)
           id="dataSourceTitle"
-          to="/datasource/17/result"
+          to="/datasource/17/preview"
         >
           name
         </Styled(Link)>
@@ -896,7 +896,7 @@ exports[`DataSourceList: Component should render correctly 1`] = `
       >
         <Styled(Link)
           id="dataSourceTitle"
-          to="/datasource/18/result"
+          to="/datasource/18/preview"
         >
           name
         </Styled(Link)>
@@ -998,7 +998,7 @@ exports[`DataSourceList: Component should render correctly 1`] = `
       >
         <Styled(Link)
           id="dataSourceTitle"
-          to="/datasource/20/result"
+          to="/datasource/20/preview"
         >
           name
         </Styled(Link)>
@@ -1095,7 +1095,7 @@ exports[`DataSourceList: Component should render correctly 1`] = `
       >
         <Styled(Link)
           id="dataSourceTitle"
-          to="/datasource/19/result"
+          to="/datasource/19/preview"
         >
           name
         </Styled(Link)>

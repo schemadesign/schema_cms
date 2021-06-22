@@ -41,7 +41,6 @@ import {
   META_FAILED,
   META_SUCCESS,
   RESULT_PAGE,
-  PREVIEW_PAGE,
   DATA_SOURCE_REIMPORT,
   DATA_SOURCE_GOOGLE_SHEET,
   DATA_SOURCE_TYPE,
@@ -395,11 +394,8 @@ function* revertToJob({ payload: { dataSourceId, jobId } }) {
 
     yield put(ProjectRoutines.setProject.trigger(data.project));
     yield put(DataSourceRoutines.revertToJob.success(data.results));
-    if (data.results.activeJob.scripts.length) {
-      browserHistory.push(`/datasource/${dataSourceId}/${RESULT_PAGE}`);
-    } else {
-      browserHistory.push(`/datasource/${dataSourceId}/${PREVIEW_PAGE}`);
-    }
+
+    browserHistory.push(`/datasource/${dataSourceId}/${RESULT_PAGE}`);
   } catch (error) {
     reportError(error);
     yield put(DataSourceRoutines.revertToJob.failure(error));

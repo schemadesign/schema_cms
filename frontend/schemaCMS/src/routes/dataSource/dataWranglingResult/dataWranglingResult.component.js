@@ -30,10 +30,10 @@ export class DataWranglingResult extends PureComponent {
     const activeJobId = path(['activeJob', 'id'], dataSource);
     const headerTitle = dataSource.name;
     const headerSubtitle = <FormattedMessage {...messages.subTitle} />;
-    const isFakeJob = pathEq(['activeJob', 'scripts'], [], dataSource);
+    const isNoActiveJob = pathEq(['activeJob'], null, dataSource);
     const menuOptions = getProjectMenuOptions(dataSource.project.id);
 
-    if (isFakeJob) {
+    if (isNoActiveJob) {
       this.props.history.push(`/datasource/${dataSource.id}/${SOURCE_PAGE}`);
       return null;
     }

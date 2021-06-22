@@ -2,7 +2,7 @@ import React, { PureComponent } from 'react';
 import PropTypes from 'prop-types';
 import Helmet from 'react-helmet';
 import { Icons } from 'schemaUI';
-import { always, cond, equals, find, propEq, propOr, T } from 'ramda';
+import { always, cond, equals, find, ifElse, propEq, propOr, T } from 'ramda';
 import { FormattedMessage } from 'react-intl';
 
 import { ProjectTabs } from '../../../shared/components/projectTabs';
@@ -28,7 +28,6 @@ import { HeaderItem, HeaderList } from '../list/list.styles';
 import {
   META_FAILED,
   PREVIEW_PAGE,
-  RESULT_PAGE,
   SOURCE_PAGE,
   SOURCE_TYPE_API,
   SOURCE_TYPE_FILE,
@@ -91,11 +90,7 @@ export class DataSourceList extends PureComponent {
     noDataContent: this.props.intl.formatMessage(messages.noData),
   });
 
-  getDataSourcePage = cond([
-    [equals(null), always(SOURCE_PAGE)],
-    [propEq('scripts', []), always(PREVIEW_PAGE)],
-    [T, always(RESULT_PAGE)],
-  ]);
+  getDataSourcePage = ifElse(equals(null), always(SOURCE_PAGE), always(PREVIEW_PAGE));
 
   getShowDataSourceUrl = ({ id, activeJob }) => {
     const dataSourcePage = this.getDataSourcePage(activeJob);
