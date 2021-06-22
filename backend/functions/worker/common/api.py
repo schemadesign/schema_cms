@@ -75,7 +75,13 @@ class SchemaCMSAPI:
     def refresh_ds_data(self):
         url = os.path.join(self._datasources_url(), "refresh-data")
 
-        response = requests.post(url, json={}, headers=self.get_headers(), timeout=self.timeout,)
+        response = requests.post(url, json={}, headers=self.get_headers(), timeout=self.timeout)
+        return response
+
+    def clear_old_jobs(self):
+        url = os.path.join(self._datasources_url(), "clear-old-jobs")
+
+        response = requests.post(url, json={}, headers=self.get_headers(), timeout=self.timeout)
         return response
 
     def get_headers(self):

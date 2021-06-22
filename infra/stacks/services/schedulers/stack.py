@@ -30,7 +30,7 @@ class LambdaSchedulerStack(Stack):
             secret_arn=Fn.import_value(ApiStack.get_lambda_auth_token_arn_output_export_name(envs)),
         )
 
-        self.functions = [self._create_schedulers(envs)]
+        self.functions = self._create_schedulers(envs)
 
     def _create_schedulers(self, envs: EnvSettings):
         is_app_only = self.node.try_get_context("is_app_only")
@@ -40,7 +40,7 @@ class LambdaSchedulerStack(Stack):
         else:
             code = Code.from_cfn_parameters()
 
-        scheduler = Function(
+        auto_refresh_scheduler = Function(
             self,
             "data-processing-auto-refresh-scheduler",
             function_name=f"{envs.project_name}-data-processing-auto-refresh-scheduler",
@@ -56,8 +56,26 @@ class LambdaSchedulerStack(Stack):
             tracing=Tracing.ACTIVE,
         )
 
-        rule = Rule(self, "auto-refresh-rule", schedule=Schedule.expression("cron(0 4 * * ? *)"))
+        clear_old_jobs = Function(
+            self,
+            "data-processing-clear-old-jobs-scheduler",
+            function_name=f"{envs.project_name}-data-processing-clear-old-jobs-scheduler",
+            code=code,
+            runtime=Runtime.PYTHON_3_8,
+            handler="schedulers.clear_old_jobs",
+            environment={
+                "BACKEND_URL": self.backend_url,
+                "LAMBDA_AUTH_TOKEN": self.lambda_auth_token.secret_value.to_string(),
+            },
+            memory_size=128,
+            timeout=Duration.seconds(120),
+            tracing=Tracing.ACTIVE,
+        )
 
-        rule.add_target(LambdaFunction(scheduler))
+        auto_refresh_rule = Rule(self, "auto-refresh-rule", schedule=Schedule.expression("cron(0 4 * * ? *)"))
+        clear_old_jobs_rule = Rule(self, "clear-old-jobs", schedule=Schedule.expression("cron(0 5 * * ? *)"))
 
-        return scheduler, code
+        auto_refresh_rule.add_target(LambdaFunction(auto_refresh_scheduler))
+        clear_old_jobs_rule.add_target(LambdaFunction(clear_old_jobs))
+
+        return [(auto_refresh_rule, code), (clear_old_jobs_rule, code)]
