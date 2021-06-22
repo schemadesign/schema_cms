@@ -99,10 +99,9 @@ class DataSourceViewSet(BaseDataSourceView, ActionSerializerViewSetMixin, viewse
     @decorators.action(detail=True, methods=["get"])
     def preview(self, request, pk=None, **kwargs):
         data_source = self.get_object()
-        job = data_source.get_active_job()
 
         data = dict(
-            results=job.meta_data.data if job else data_source.meta_data.data,
+            results=data_source.meta_data.data,
             data_source={"name": data_source.name},
             project=data_source.project_info,
         )
