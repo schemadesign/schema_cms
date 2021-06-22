@@ -172,10 +172,7 @@ class DataSourceSerializer(serializers.ModelSerializer):
         return jobs_state
 
     def get_meta_data(self, obj):
-        if job := obj.get_active_job():
-            return DataSourceMetaSerializer(job.meta_data, context={"filters": obj.filters_count}).data
-        else:
-            return DataSourceMetaSerializer(obj.meta_data, context={"filters": obj.filters_count}).data
+        return DataSourceMetaSerializer(obj.meta_data, context={"filters": obj.filters_count}).data
 
     @transaction.atomic()
     def save(self, *args, **kwargs):

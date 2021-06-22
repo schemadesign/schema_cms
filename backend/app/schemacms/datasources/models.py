@@ -218,25 +218,6 @@ class DataSource(MetaGeneratorMixin, SoftDeleteObject, TimeStampedModel):
         job.is_active = True
         job.save(update_fields=["is_active"])
 
-        self.type = job.datasource_type
-
-        if self.type == constants.DataSourceType.GOOGLE_SHEET:
-            self.google_sheet = job.source_url
-            self.file = None
-            self.api_url = ""
-
-        if self.type == constants.DataSourceType.API:
-            self.api_url = job.source_url
-            self.file = None
-            self.google_sheet = ""
-
-        if self.type == constants.DataSourceType.FILE:
-            self.file = job.source_file_path
-            self.google_sheet = ""
-            self.api_url = ""
-
-        self.save(update_fields=["type", "file", "google_sheet", "api_url"])
-
     def result_fields_info(self):
         try:
             preview = self.get_active_job().meta_data.preview
