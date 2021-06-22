@@ -175,14 +175,7 @@ class SourceProcessor:
 
     def update(self):
         preview_dict = self.get_preview()
-        schemacms_api.update_datasource_meta(
-            datasource_pk=self.datasource.id,
-            copy_steps=self.copy_steps,
-            auto_refresh=self.auto_refresh,
-            status=ProcessState.SUCCESS,
-            **preview_dict,
-        )
-
+        self.send_update_meta_request(preview_dict)
         logger.info(f"Meta created - DataSource # {self.datasource.id}")
 
     def process_fail(self, error):
@@ -195,6 +188,15 @@ class SourceProcessor:
 
     def source_info(self):
         pass
+
+    def send_update_meta_request(self, preview_dict):
+        schemacms_api.update_datasource_meta(
+            datasource_pk=self.datasource.id,
+            copy_steps=self.copy_steps,
+            auto_refresh=self.auto_refresh,
+            status=ProcessState.SUCCESS,
+            **preview_dict,
+        )
 
 
 @dataclass
@@ -242,12 +244,7 @@ class GoogleSheetProcessor(SourceProcessor):
         preview_dict = self.get_preview()
         preview_dict["source_file"] = self.get_source_file_name()
 
-        schemacms_api.update_datasource_meta(
-            datasource_pk=self.datasource.id,
-            copy_steps=self.copy_steps,
-            status=ProcessState.SUCCESS,
-            **preview_dict,
-        )
+        self.send_update_meta_request(preview_dict)
 
         logger.info(f"Meta created - DataSource # {self.datasource.id}")
 
