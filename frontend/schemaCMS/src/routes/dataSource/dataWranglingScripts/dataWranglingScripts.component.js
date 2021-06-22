@@ -177,8 +177,14 @@ export class DataWranglingScripts extends PureComponent {
     const { imageScrapingFields, history, checkedScripts, uncheckedScripts } = this.props;
     const scripts = checked ? uncheckedScripts : checkedScripts;
     const script = find(propEq('id', parseInt(value, 10)), scripts);
+    const { existingImageScrapingFields } = this.state;
 
-    if (checked && script.specs.type === IMAGE_SCRAPING_SCRIPT_TYPE && isEmpty(imageScrapingFields)) {
+    if (
+      checked &&
+      script.specs.type === IMAGE_SCRAPING_SCRIPT_TYPE &&
+      isEmpty(imageScrapingFields) &&
+      isEmpty(existingImageScrapingFields)
+    ) {
       const dataSourceId = getMatchParam(this.props, 'dataSourceId');
 
       return history.push(`/script/${value}/${dataSourceId}`);
