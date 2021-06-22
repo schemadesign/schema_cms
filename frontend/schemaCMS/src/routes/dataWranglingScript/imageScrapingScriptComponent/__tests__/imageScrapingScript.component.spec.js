@@ -57,6 +57,7 @@ describe('DataWranglingScript: Component', () => {
       dataSourceId: '1',
       imageScrapingFields: [],
       scriptId: '1',
+      isEditMode: false,
     });
   });
 

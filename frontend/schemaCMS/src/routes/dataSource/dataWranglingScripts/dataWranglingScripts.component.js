@@ -3,7 +3,23 @@ import PropTypes from 'prop-types';
 import { Form, Icons } from 'schemaUI';
 import { FormattedMessage } from 'react-intl';
 import { asMutable } from 'seamless-immutable';
-import { always, find, flatten, ifElse, isEmpty, map, pathEq, pathOr, pipe, prop, propEq, toString, uniq } from 'ramda';
+import {
+  always,
+  find,
+  flatten,
+  ifElse,
+  isEmpty,
+  isNil,
+  map,
+  path,
+  pathEq,
+  pathOr,
+  pipe,
+  prop,
+  propEq,
+  toString,
+  uniq,
+} from 'ramda';
 import Helmet from 'react-helmet';
 import { DndProvider } from 'react-dnd';
 import MultiBackend from 'react-dnd-multi-backend';
@@ -77,12 +93,21 @@ export class DataWranglingScripts extends PureComponent {
     isSubmitting: false,
     errorMessage: '',
     error: null,
+    existingImageScrapingFields: [],
   };
 
   async componentDidMount() {
     try {
       const dataSourceId = getMatchParam(this.props, 'dataSourceId');
       const fromScript = pathOr(false, ['history', 'location', 'state', 'fromScript'], this.props);
+
+      const existingImageScrapingFields = pipe(
+        pathOr([], ['activeJob', 'scripts']),
+        find(propEq('id', 9)),
+        ifElse(isNil, always([]), path(['options', 'columns']))
+      )(this.props.dataSource);
+
+      this.setState({ existingImageScrapingFields });
 
       await this.props.fetchDataWranglingScripts({ dataSourceId, fromScript });
     } catch (error) {
@@ -101,10 +126,25 @@ export class DataWranglingScripts extends PureComponent {
       : `/script/${id}/${getMatchParam(this.props, 'dataSourceId')}`;
   };
 
+  getImageScrapingFields = () => {
+    const { existingImageScrapingFields } = this.state;
+    const { imageScrapingFields } = this.props;
+
+    if (imageScrapingFields.length) {
+      return imageScrapingFields;
+    }
+
+    return existingImageScrapingFields;
+  };
+
   parseSteps = (script, index) =>
     ifElse(
       pathEq(['specs', 'type'], IMAGE_SCRAPING_SCRIPT_TYPE),
-      always({ script: prop('id', script), execOrder: index, options: { columns: this.props.imageScrapingFields } }),
+      always({
+        script: prop('id', script),
+        execOrder: index,
+        options: { columns: this.getImageScrapingFields() },
+      }),
       always({ script: prop('id', script), execOrder: index })
     )(script);
 
@@ -137,8 +177,14 @@ export class DataWranglingScripts extends PureComponent {
     const { imageScrapingFields, history, checkedScripts, uncheckedScripts } = this.props;
     const scripts = checked ? uncheckedScripts : checkedScripts;
     const script = find(propEq('id', parseInt(value, 10)), scripts);
+    const { existingImageScrapingFields } = this.state;
 
-    if (checked && script.specs.type === IMAGE_SCRAPING_SCRIPT_TYPE && isEmpty(imageScrapingFields)) {
+    if (
+      checked &&
+      script.specs.type === IMAGE_SCRAPING_SCRIPT_TYPE &&
+      isEmpty(imageScrapingFields) &&
+      isEmpty(existingImageScrapingFields)
+    ) {
       const dataSourceId = getMatchParam(this.props, 'dataSourceId');
 
       return history.push(`/script/${value}/${dataSourceId}`);
