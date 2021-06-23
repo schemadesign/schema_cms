@@ -68,7 +68,9 @@ class ProjectImportForm(forms.Form):
                 if isinstance(deserialized_object.object, (DataSourceMeta, DataSourceJobMetaData)):
                     self.import_files(zip_file, deserialized_object, ("preview",))
                 if isinstance(deserialized_object.object, DataSourceJob):
-                    self.import_files(zip_file, deserialized_object, ("result", "result_parquet"))
+                    self.import_files(
+                        zip_file, deserialized_object, ("result", "result_parquet"), is_job=True
+                    )
                 if isinstance(deserialized_object.object, PageBlockElement):
                     if obs_ele := deserialized_object.object.observable_hq:
 
@@ -117,6 +119,7 @@ class ProjectImportForm(forms.Form):
                             deserialized_object,
                             (deserialized_object.object.type,),
                             settings.AWS_STORAGE_PAGES_BUCKET_NAME,
+                            acl="public-read",
                         )
 
                 if "created" in object_fields and "modified" in object_fields:
@@ -167,20 +170,51 @@ class ProjectImportForm(forms.Form):
                 new_project.save(update_fields=["xml_file"])
 
     @staticmethod
-    def import_files(zip_file, deserialized_object, file_attrs, bucket=settings.AWS_STORAGE_BUCKET_NAME):
+    def import_files(
+        zip_file,
+        deserialized_object,
+        file_attrs,
+        bucket=settings.AWS_STORAGE_BUCKET_NAME,
+        is_job=False,
+        acl="private",
+    ):
         deserialized_object.save()
 
         for file_attr in file_attrs:
             if object_file := getattr(deserialized_object.object, file_attr):
                 with zip_file.open(f"files/{object_file.name}", "r") as file:
-                    file_name = deserialized_object.object.relative_path_to_save(os.path.basename(file.name))
+                    if is_job:
+                        _, file_extension = os.path.splitext(file.name)
+                        file_name = deserialized_object.object.relative_path_to_save(
+                            f"job_{deserialized_object.object.id}_result{file_extension}"
+                        )
+
+                    else:
+                        file_name = deserialized_object.object.relative_path_to_save(
+                            os.path.basename(file.name)
+                        )
+
                     file = File(file, name=file_name)
 
                     setattr(deserialized_object.object, file_attr, file)
 
                     s3.put_object(
-                        Body=file, Bucket=bucket, Key=file_name, ACL="public-read",
+                        Body=file, Bucket=bucket, Key=file_name, ACL=acl,
                     )
+
+        if is_job and deserialized_object.object.source_file_path:
+            base_name = deserialized_object.object.source_file_path.split(".")[0]
+            original_file_path = f"{base_name}_export_version.csv"
+            base_name = os.path.basename(original_file_path)
+
+            new_path = f"{deserialized_object.object.datasource_id}/uploads/{base_name}"
+
+            with zip_file.open(f"files/{original_file_path}", "r") as file:
+                file = File(file, name=new_path)
+                response = s3.put_object(Body=file, Bucket=bucket, Key=file_name,)
+
+            setattr(deserialized_object.object, "source_file_path", new_path)
+            setattr(deserialized_object.object, "source_file_version", response["VersionId"])
 
 
 @admin.register(models.Project)

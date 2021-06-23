@@ -4,10 +4,13 @@ import json
 
 from django.contrib.admin.utils import NestedObjects
 from django.core import serializers
+from django.conf import settings
 from django.db.models import FileField, ImageField
 from django.db.utils import DEFAULT_DB_ALIAS
 
 from schemacms.projects import models
+from schemacms.datasources.models import DataSourceJob
+from schemacms.utils.services import s3
 
 
 def export_project(pk, using=DEFAULT_DB_ALIAS, output_format="json"):
@@ -68,6 +71,22 @@ def export_project(pk, using=DEFAULT_DB_ALIAS, output_format="json"):
                 file_field = getattr(instance, field.name)
                 if file_field.name:
                     zip_file.writestr(f"files/{file_field.name}", file_field.read())
+
+        if isinstance(instance, DataSourceJob):
+            if instance.source_file_path:
+                try:
+                    s3_response = s3.get_object(
+                        Bucket=settings.AWS_STORAGE_BUCKET_NAME,
+                        Key=instance.source_file_path,
+                        VersionId=instance.source_file_version,
+                    )
+                except Exception:
+                    continue
+
+                if s3_response["ResponseMetadata"]["HTTPStatusCode"] == 200:
+                    base_name = instance.source_file_path.split(".")[0]
+
+                    zip_file.writestr(f"files/{base_name}_export_version.csv", s3_response["Body"].read())
 
     serialized = serializers.serialize(
         output_format, sorted_flatten, use_natural_foreign_keys=True, use_natural_primary_keys=True,
