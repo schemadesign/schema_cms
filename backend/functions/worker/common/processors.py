@@ -344,13 +344,14 @@ class JobProcessor:
         write_data_frame_to_csv_on_s3(data_frame, file_name)
         write_data_frame_to_parquet_on_s3(data_frame, file_name)
 
-        if self.source_processor.type != "file":
-            self.source_file_version = self.source_processor.save_source_file(data_frame, only_csv=True)
-
         logger.info(f"Results saved - Job # {self.job.id}")
 
     def get_result_file_name(self):
         return f"{self.job.datasource.id}/jobs/{self.job.id}/outputs/job_{self.job.id}_result.csv"
+
+    def save_source(self, data_frame):
+        if self.source_processor.type != "file":
+            self.source_file_version = self.source_processor.save_source_file(data_frame, only_csv=True)
 
     def get_source_file_path(self):
         if self.source_processor.type == "file":

@@ -77,6 +77,11 @@ def process_job(job_data: dict):
         except Exception as e:
             raise errors.JobLoadingSourceFileError(f"{e} @ loading source file")
 
+        try:
+            processor.save_source(df)
+        except Exception as e:
+            raise errors.JobSavingFilesError(f"{e} @ saving source file version")
+
         for step in processor.job.steps:
             current_step = step
             try:

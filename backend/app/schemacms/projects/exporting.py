@@ -85,7 +85,6 @@ def export_project(pk, using=DEFAULT_DB_ALIAS, output_format="json"):
 
                 if s3_response["ResponseMetadata"]["HTTPStatusCode"] == 200:
                     base_name = instance.source_file_path.split(".")[0]
-
                     zip_file.writestr(f"files/{base_name}_export_version.csv", s3_response["Body"].read())
 
     serialized = serializers.serialize(
