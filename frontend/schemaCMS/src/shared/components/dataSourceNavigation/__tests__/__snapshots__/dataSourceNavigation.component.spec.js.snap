@@ -297,7 +297,7 @@ exports[`DataSourceNavigation: Component should render correctly with fake job 1
     >
       <Styled(Link)
         $active={false}
-        disabled={true}
+        disabled={false}
         to="/datasource/1/result"
       >
         <Component

@@ -373,7 +373,7 @@ describe('DataSource: sagas', () => {
         .put(DataSourceRoutines.revertToJob.success(response.results))
         .dispatch(DataSourceRoutines.revertToJob(payload))
         .silentRun();
-      expect(browserHistory.push).toBeCalledWith('/datasource/1/preview');
+      expect(browserHistory.push).toBeCalledWith('/datasource/1/result');
     });
   });
 });
