@@ -101,14 +101,6 @@ export class DataWranglingScripts extends PureComponent {
       const dataSourceId = getMatchParam(this.props, 'dataSourceId');
       const fromScript = pathOr(false, ['history', 'location', 'state', 'fromScript'], this.props);
 
-      const existingImageScrapingFields = pipe(
-        pathOr([], ['activeJob', 'scripts']),
-        find(propEq('id', 9)),
-        ifElse(isNil, always([]), path(['options', 'columns']))
-      )(this.props.dataSource);
-
-      this.setState({ existingImageScrapingFields });
-
       await this.props.fetchDataWranglingScripts({ dataSourceId, fromScript });
     } catch (error) {
       reportError(error);
@@ -117,6 +109,21 @@ export class DataWranglingScripts extends PureComponent {
       this.setState({
         loading: false,
       });
+    }
+  }
+
+  componentDidUpdate(prevProps) {
+    const { dataWranglingScripts, dataSource } = this.props;
+
+    if (prevProps.dataWranglingScripts !== dataWranglingScripts) {
+      const imageScrapingScript = find(pathEq(['specs', 'type'], IMAGE_SCRAPING_SCRIPT_TYPE))(dataWranglingScripts);
+      const existingImageScrapingFields = pipe(
+        pathOr([], ['activeJob', 'scripts']),
+        find(propEq('id', imageScrapingScript.id)),
+        ifElse(isNil, always([]), path(['options', 'columns']))
+      )(dataSource);
+
+      this.setState({ existingImageScrapingFields });
     }
   }
 
