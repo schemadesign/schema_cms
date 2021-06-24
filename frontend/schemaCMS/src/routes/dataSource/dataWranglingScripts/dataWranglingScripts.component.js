@@ -105,7 +105,7 @@ export class DataWranglingScripts extends PureComponent {
 
       const response = await this.props.fetchDataWranglingScripts({ dataSourceId, fromScript });
 
-      const currentDataWranglingScripts = propOr(null, 'data', response) || dataWranglingScripts;
+      const currentDataWranglingScripts = propOr(dataWranglingScripts, 'data', response);
 
       const imageScrapingScript = find(pathEq(['specs', 'type'], IMAGE_SCRAPING_SCRIPT_TYPE))(
         currentDataWranglingScripts
