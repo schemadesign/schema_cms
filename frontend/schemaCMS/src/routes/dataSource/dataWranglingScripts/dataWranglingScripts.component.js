@@ -17,6 +17,7 @@ import {
   pipe,
   prop,
   propEq,
+  propOr,
   toString,
   uniq,
 } from 'ramda';
@@ -100,16 +101,25 @@ export class DataWranglingScripts extends PureComponent {
     try {
       const dataSourceId = getMatchParam(this.props, 'dataSourceId');
       const fromScript = pathOr(false, ['history', 'location', 'state', 'fromScript'], this.props);
+      const { dataWranglingScripts, dataSource } = this.props;
 
-      const existingImageScrapingFields = pipe(
-        pathOr([], ['activeJob', 'scripts']),
-        find(propEq('id', 9)),
-        ifElse(isNil, always([]), path(['options', 'columns']))
-      )(this.props.dataSource);
+      const response = await this.props.fetchDataWranglingScripts({ dataSourceId, fromScript });
 
-      this.setState({ existingImageScrapingFields });
+      const currentDataWranglingScripts = propOr(dataWranglingScripts, 'data', response);
 
-      await this.props.fetchDataWranglingScripts({ dataSourceId, fromScript });
+      const imageScrapingScript = find(pathEq(['specs', 'type'], IMAGE_SCRAPING_SCRIPT_TYPE))(
+        currentDataWranglingScripts
+      );
+
+      if (imageScrapingScript) {
+        const existingImageScrapingFields = pipe(
+          pathOr([], ['activeJob', 'scripts']),
+          find(propEq('id', imageScrapingScript.id)),
+          ifElse(isNil, always([]), path(['options', 'columns']))
+        )(dataSource);
+
+        this.setState({ existingImageScrapingFields });
+      }
     } catch (error) {
       reportError(error);
       this.setState({ error });
