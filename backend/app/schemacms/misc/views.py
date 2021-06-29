@@ -20,5 +20,5 @@ class ConfigView(views.APIView):
 
     def get(self, request):
         response_data = {"authentication_backend": mgtm_backends[settings.USER_MGMT_BACKEND]}
-
+        print("test")
         return response.Response(response_data, status=status.HTTP_200_OK)
