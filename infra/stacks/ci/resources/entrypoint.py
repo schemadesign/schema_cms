@@ -31,7 +31,7 @@ class CiEntrypoint(Construct):
             description="Run this project to deploy SchemaCMS selected version",
             cache=Cache.local(LocalCacheMode.SOURCE),
             build_spec=self.create_build_spec(),
-            source=Source.git_hub(owner="schemadesign", repo="schema_cms"),
+            source=Source.git_hub(owner="schemadesign", repo="schema_cms", report_build_status=False),
             artifacts=Artifacts.s3(
                 identifier=self.get_artifacts_identifier(envs),
                 name=self.get_artifacts_name(envs),

@@ -29,6 +29,7 @@ class PRTestConfig(Construct):
                 aws_codebuild.FilterGroup.in_event_of(aws_codebuild.EventAction.PULL_REQUEST_UPDATED),
                 aws_codebuild.FilterGroup.in_event_of(aws_codebuild.EventAction.PULL_REQUEST_REOPENED),
             ],
+            report_build_status=True,
         )
 
         self.app_ci_project = aws_codebuild.Project(
