@@ -99,7 +99,14 @@ You can find instructions for Auth0 [here](./docs/auth0.md) and Okta [here](./do
 2. Use created access key to add new profile in [aws-vault](https://github.com/99designs/aws-vault#quick-start).
 3. Edit file `~/.aws/config` by adding line `region=<selected-deployment-region>` under profile you added.
 4. Update `profile` and `region` in `.project_config.json`.
-    
+
+### DockerHub credentials
+
+Since DockerHub limited pulling images for non-register users we need use logged user during deploying SchemaCMS, thats
+why before deployment we need add in [AWS Secrets Manager](https://us-west-2.console.aws.amazon.com/secretsmanager/home) two secrets:
+`DOCKER_USERNAME` and `DOCKER_PASSWORD`. 
+DockerHub account is available to create [here](https://hub.docker.com/signup).
+
 ## Steps
 ### Deploy base resources and components
 
