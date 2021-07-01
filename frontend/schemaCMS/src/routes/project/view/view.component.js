@@ -24,6 +24,7 @@ import {
   containerInputStyles,
   selectContainerStyles,
   InputContainer,
+  DetailLinkValue,
 } from './view.styles';
 import { BackButton, BackLink, NavigationContainer, NextButton } from '../../../shared/components/navigation';
 
@@ -153,10 +154,17 @@ export class View extends PureComponent {
     <DetailValue id={`${id}Value`}>{value || this.props.project[field] || ''}</DetailValue>
   );
 
+  renderLinkValue = ({ id, value, field }) => (
+    <DetailLinkValue id={`${id}Value`} href={value} target="_blank" rel="noreferrer">
+      {value || this.props.project[field] || ''}
+    </DetailLinkValue>
+  );
+
   renderDetailValue = cond([
     [propEq('isAdmin', false), this.renderValue],
     [propEq('select', true), this.renderSelect],
     [propEq('editable', true), this.renderInput],
+    [propEq('id', 'fieldSlug'), this.renderLinkValue],
     [T, this.renderValue],
   ]);
 

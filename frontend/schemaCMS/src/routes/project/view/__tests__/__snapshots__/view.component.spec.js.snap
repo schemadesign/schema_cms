@@ -574,11 +574,14 @@ exports[`View: Component should render content correctly 1`] = `
             >
               API
             </styled.span>
-            <styled.span
+            <styled.a
+              href="apiUrl"
               id="fieldSlugValue"
+              rel="noreferrer"
+              target="_blank"
             >
               apiUrl
-            </styled.span>
+            </styled.a>
           </styled.div>
         </styled.li>
       </styled.ul>
@@ -1770,11 +1773,14 @@ exports[`View: Component should render correctly 1`] = `
             >
               API
             </styled.span>
-            <styled.span
+            <styled.a
+              href="apiUrl"
               id="fieldSlugValue"
+              rel="noreferrer"
+              target="_blank"
             >
               apiUrl
-            </styled.span>
+            </styled.a>
           </styled.div>
         </styled.li>
       </styled.ul>
