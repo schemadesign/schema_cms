@@ -118,6 +118,7 @@ class ApiStack(Stack):
             certificate=Certificate.from_certificate_arn(self, "Cert", certificate_arn=self.certificate_arn),
             domain_name=self.domain_name,
             domain_zone=PrivateHostedZone(self, "zone", vpc=self.vpc, zone_name=self.domain_name,),
+            redirect_http=True,
         )
 
         self.api.task_definition.add_container(
