@@ -1,4 +1,6 @@
 import styled from 'styled-components';
+import { Link } from 'react-router-dom';
+
 import { media } from '../../../theme/media';
 
 export const Container = styled.div``;
@@ -50,11 +52,17 @@ export const HeaderItem = styled.li`
   }
 `;
 
-export const Description = styled.div`
+export const Description = styled(Link)`
   margin: 7px 0 14px;
   cursor: pointer;
   white-space: pre-wrap;
   word-break: break-word;
+  display: inline-block;
+  color: ${({ theme: { card } }) => card.text};
+  font-size: 18px;
+  line-height: 1.33em;
+  font-weight: 300;
+  text-decoration: none;
 `;
 
 export const Footer = styled.div`
@@ -67,12 +75,3 @@ export const Footer = styled.div`
   text-overflow: ellipsis;
   overflow: hidden;
 `;
-
-export const descriptionStyles = {
-  fontWeight: 300,
-};
-
-export const titleStyles = {
-  cursor: 'pointer',
-  wordBreak: 'break-word',
-};

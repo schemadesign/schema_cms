@@ -75,6 +75,15 @@ export const DetailValue = styled.span`
   word-break: break-word;
 `;
 
+export const DetailLinkValue = styled.a`
+  color: ${({ theme: { text } }) => text};
+  flex: 1 1 auto;
+  white-space: pre-wrap;
+  word-break: break-word;
+  text-decoration: none;
+  display: inline-block;
+`;
+
 export const containerInputStyles = {
   paddingBottom: 0,
   position: 'static',

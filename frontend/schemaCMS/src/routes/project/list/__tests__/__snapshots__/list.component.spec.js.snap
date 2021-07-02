@@ -89,32 +89,18 @@ exports[`List: Component should render correctly 1`] = `
         }
         key="0"
       >
-        <H1
-          customStyles={
-            Object {
-              "cursor": "pointer",
-              "wordBreak": "break-word",
-            }
-          }
+        <Styled(Link)
           id="projectName-0"
-          onClick={[Function]}
+          to="/project/undefined"
         >
           Project Name
-        </H1>
-        <styled.div
-          customStyles={
-            Object {
-              "fontWeight": 300,
-            }
-          }
-          onClick={[Function]}
+        </Styled(Link)>
+        <Styled(Link)
+          id="projectDescription-0"
+          to="/project/undefined"
         >
-          <P
-            id="projectDescription-0"
-          >
-            Description
-          </P>
-        </styled.div>
+          Description
+        </Styled(Link)>
       </Styled(Component)>
       <Styled(Component)
         footerComponent={
@@ -146,32 +132,18 @@ exports[`List: Component should render correctly 1`] = `
         }
         key="1"
       >
-        <H1
-          customStyles={
-            Object {
-              "cursor": "pointer",
-              "wordBreak": "break-word",
-            }
-          }
+        <Styled(Link)
           id="projectName-1"
-          onClick={[Function]}
+          to="/project/undefined"
         >
           Honec sodales libero non fermentum aliquam
-        </H1>
-        <styled.div
-          customStyles={
-            Object {
-              "fontWeight": 300,
-            }
-          }
-          onClick={[Function]}
+        </Styled(Link)>
+        <Styled(Link)
+          id="projectDescription-1"
+          to="/project/undefined"
         >
-          <P
-            id="projectDescription-1"
-          >
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed molestie fermentum dictum. In id posuere nibh.
-          </P>
-        </styled.div>
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed molestie fermentum dictum. In id posuere nibh.
+        </Styled(Link)>
       </Styled(Component)>
     </styled.section>
   </LoadingWrapper>
@@ -280,32 +252,18 @@ exports[`List: Component should render correctly with loading 1`] = `
         }
         key="0"
       >
-        <H1
-          customStyles={
-            Object {
-              "cursor": "pointer",
-              "wordBreak": "break-word",
-            }
-          }
+        <Styled(Link)
           id="projectName-0"
-          onClick={[Function]}
+          to="/project/undefined"
         >
           Project Name
-        </H1>
-        <styled.div
-          customStyles={
-            Object {
-              "fontWeight": 300,
-            }
-          }
-          onClick={[Function]}
+        </Styled(Link)>
+        <Styled(Link)
+          id="projectDescription-0"
+          to="/project/undefined"
         >
-          <P
-            id="projectDescription-0"
-          >
-            Description
-          </P>
-        </styled.div>
+          Description
+        </Styled(Link)>
       </Styled(Component)>
       <Styled(Component)
         footerComponent={
@@ -337,32 +295,18 @@ exports[`List: Component should render correctly with loading 1`] = `
         }
         key="1"
       >
-        <H1
-          customStyles={
-            Object {
-              "cursor": "pointer",
-              "wordBreak": "break-word",
-            }
-          }
+        <Styled(Link)
           id="projectName-1"
-          onClick={[Function]}
+          to="/project/undefined"
         >
           Honec sodales libero non fermentum aliquam
-        </H1>
-        <styled.div
-          customStyles={
-            Object {
-              "fontWeight": 300,
-            }
-          }
-          onClick={[Function]}
+        </Styled(Link)>
+        <Styled(Link)
+          id="projectDescription-1"
+          to="/project/undefined"
         >
-          <P
-            id="projectDescription-1"
-          >
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed molestie fermentum dictum. In id posuere nibh.
-          </P>
-        </styled.div>
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed molestie fermentum dictum. In id posuere nibh.
+        </Styled(Link)>
       </Styled(Component)>
     </styled.section>
   </LoadingWrapper>

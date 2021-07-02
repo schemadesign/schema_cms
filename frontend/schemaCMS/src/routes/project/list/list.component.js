@@ -2,7 +2,6 @@ import React, { PureComponent } from 'react';
 import PropTypes from 'prop-types';
 import Helmet from 'react-helmet';
 import { always, isEmpty } from 'ramda';
-import { Typography } from 'schemaUI';
 
 import extendedDayjs, { BASE_DATE_FORMAT } from '../../../shared/utils/extendedDayjs';
 import { filterMenuOptions } from '../../../shared/utils/helpers';
@@ -10,14 +9,12 @@ import { renderWhenTrue } from '../../../shared/utils/rendering';
 import { LoadingWrapper } from '../../../shared/components/loadingWrapper';
 import { ContextHeader } from '../../../shared/components/contextHeader';
 import messages from './list.messages';
-import { Container, Description, HeaderItem, HeaderList, Footer, descriptionStyles, titleStyles } from './list.styles';
+import { Container, Description, HeaderItem, HeaderList, Footer } from './list.styles';
 import { NavigationContainer, PlusButton } from '../../../shared/components/navigation';
-import { ListItem, ListContainer } from '../../../shared/components/listComponents';
+import { ListItem, ListContainer, ListItemTitle } from '../../../shared/components/listComponents';
 import { PROJECT_LIST_MENU_OPTIONS, PROJECTS_ID } from '../project.constants';
 import { MobileMenu } from '../../../shared/components/menu/mobileMenu';
 import reportError from '../../../shared/utils/reportError';
-
-const { H1, P } = Typography;
 
 export class List extends PureComponent {
   static propTypes = {
@@ -53,8 +50,6 @@ export class List extends PureComponent {
 
   formatMessage = value => this.props.intl.formatMessage(value);
 
-  handleShowProject = id => () => this.props.history.push(`/project/${id}`);
-
   handleNewProject = () => this.props.history.push('/project/create/');
 
   renderHeader = (list = []) => (
@@ -80,17 +75,16 @@ export class List extends PureComponent {
 
     const statusValue = messages[status] ? this.formatMessage(messages[status]) : status;
 
-    const handleShowProject = this.handleShowProject(id);
     const header = this.renderHeader([whenCreated, statusValue, user]);
     const footer = this.renderFooter(index, apiUrl);
 
     return (
       <ListItem key={index} headerComponent={header} footerComponent={footer}>
-        <H1 id={`projectName-${index}`} customStyles={titleStyles} onClick={handleShowProject}>
+        <ListItemTitle id={`projectName-${index}`} to={`/project/${id}`}>
           {title}
-        </H1>
-        <Description onClick={handleShowProject} customStyles={descriptionStyles}>
-          <P id={`projectDescription-${index}`}>{description}</P>
+        </ListItemTitle>
+        <Description id={`projectDescription-${index}`} to={`/project/${id}`}>
+          {description}
         </Description>
       </ListItem>
     );
