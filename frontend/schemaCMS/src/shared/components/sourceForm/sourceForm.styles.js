@@ -58,9 +58,9 @@ export const SpreadsheetInput = styled.div`
   width: 100%;
 `;
 
-export const SpreadsheetReimport = styled.div`
+export const ReimportButtonContainer = styled.div`
   height: 48px;
-  margin: -10px 0 20px;
+  margin: -10px 0 40px;
 
   ${media.desktop`
     margin: 0 0 0 20px;
@@ -73,4 +73,27 @@ export const Link = styled(LinkTypography)`
   &:last-child {
     margin-bottom: 0;
   }
+`;
+
+export const ApiSourceContainer = styled.div`
+  display: flex;
+  flex-direction: column;
+`;
+
+export const ApiSourceUrlInputContainer = styled.div`
+  display: flex;
+  flex-direction: column;
+
+  ${media.desktop`
+    flex-direction: row;
+  `};
+`;
+
+export const ApiSourceInput = styled.div`
+  width: 100%;
+`;
+
+export const ApiSourceSwitch = styled.div`
+  border-top: 2px solid ${({ theme }) => theme.border};
+  padding-top: 15px;
 `;

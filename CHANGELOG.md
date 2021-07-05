@@ -6,6 +6,47 @@
 
 ### Features
 
+
+## 1.11.0 (July 5, 2021) - Release
+
+### Fixes
+- reverting jobs between datasource types
+- templates elements ordering
+- correct files saving during export/import
+
+### Changes
+- backend packages update
+- `Result` tab always displayed in datasource view
+
+
+### Features
+- allow use external public API url as datasource
+- auto data refresh scheduler for API datasource
+- auto cleaning data scheduler for API datasource
+
+
+## 1.10.5 (June 30, 2021) - Fix
+
+### Fixes
+- project title on list as link
+
+
+## 1.10.4 (June 29, 2021) - Fix
+
+### Fixes
+- GitHUb checks fixed on QA env
+
+
+## 1.10.3 (June 28, 2021) - Fix
+
+### Fixes
+- fix pipeline by adding DockerHub login
+- fix image scraping script
+
+### Changes
+- frontend packages update
+
+
 ## 1.10.2 (December 18, 2020) - Fix
 ### Fix
 - fix scraped images not displayed via https

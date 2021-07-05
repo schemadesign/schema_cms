@@ -4,19 +4,24 @@ except Exception:
     pass
 
 
+import itertools
 import json
+import requests
 import logging
 from urllib.parse import urlparse
 from dataclasses import dataclass
 from io import StringIO, BytesIO
 
 import datatable as dt
+import pandas as pd
+from jsonpath_ng import parse
+
 from image_scraping import is_valid_url, www_to_https
 
 from . import settings
 from .api import schemacms_api
 from .services import get_s3_object, s3_resource
-from .types import DataSource, Job
+from .types import DataSource
 from .utils import NumpyEncoder, FieldType, ProcessState
 
 logger = logging.getLogger()
@@ -30,16 +35,23 @@ def read_file_to_data_frame(file):
 
 
 def get_unique_values_for_column(data_frame, column):
-    return data_frame[column].dropna().unique().tolist()
+    try:
+        unique_values = data_frame[column].dropna().unique().tolist()
+    except Exception:
+        unique_values = []
+
+    return unique_values
 
 
 def write_data_frame_to_csv_on_s3(data_frame, filename):
     csv_buffer = StringIO()
 
     csv_buffer.write(data_frame.to_csv(index=False))
-    s3_resource.Object(settings.AWS_STORAGE_BUCKET_NAME, filename).put(
+    response = s3_resource.Object(settings.AWS_STORAGE_BUCKET_NAME, filename).put(
         Body=csv_buffer.getvalue(), ACL="public-read"
     )
+
+    return response.get("VersionId", "")
 
 
 def write_data_frame_to_parquet_on_s3(data_frame, file_name):
@@ -79,7 +91,12 @@ def get_preview_data(data_frame):
     min_ = data_frame.min(numeric_only=True).to_json()
     max_ = data_frame.max(numeric_only=True).to_json()
     std = data_frame.std(numeric_only=True).to_json()
-    unique = data_frame.nunique().to_json()
+
+    try:
+        unique = data_frame.nunique().to_json()
+    except Exception:
+        unique = json.dumps({})
+
     nan = data_frame.isna().sum()
 
     try:
@@ -146,6 +163,7 @@ def get_preview_data(data_frame):
 class SourceProcessor:
     datasource: DataSource
     copy_steps: bool = False
+    auto_refresh: bool = False
 
     def read(self, script_process=False):
         pass
@@ -157,13 +175,7 @@ class SourceProcessor:
 
     def update(self):
         preview_dict = self.get_preview()
-        schemacms_api.update_datasource_meta(
-            datasource_pk=self.datasource.id,
-            copy_steps=self.copy_steps,
-            status=ProcessState.SUCCESS,
-            **preview_dict,
-        )
-
+        self.send_update_meta_request(preview_dict)
         logger.info(f"Meta created - DataSource # {self.datasource.id}")
 
     def process_fail(self, error):
@@ -177,9 +189,20 @@ class SourceProcessor:
     def source_info(self):
         pass
 
+    def send_update_meta_request(self, preview_dict):
+        schemacms_api.update_datasource_meta(
+            datasource_pk=self.datasource.id,
+            copy_steps=self.copy_steps,
+            auto_refresh=self.auto_refresh,
+            status=ProcessState.SUCCESS,
+            **preview_dict,
+        )
+
 
 @dataclass
 class FileSourceProcessor(SourceProcessor):
+    type = "file"
+
     def read(self, script_process=False):
         s3obj = get_s3_object(self.datasource.file)
         data_frame = read_file_to_data_frame(s3obj["Body"])
@@ -192,30 +215,28 @@ class FileSourceProcessor(SourceProcessor):
 
 @dataclass
 class GoogleSheetProcessor(SourceProcessor):
+    type = "GoogleSheet"
+
     def read(self, script_process=False):
 
-        if not script_process:
-            parsed_url = urlparse(self.datasource.google_sheet)
+        parsed_url = urlparse(self.datasource.google_sheet)
 
-            fragment = parsed_url.fragment
+        fragment = parsed_url.fragment
 
-            if fragment.find("gid=") != -1:
-                gid = fragment.rsplit("gid=", 1)[1]
-            else:
-                gid = None
-
-            url = f"https://{parsed_url.netloc}/{parsed_url.path}"
-
-            if url.endswith("edit"):
-                url = url[:-5]
-
-            extra_params = f"export?format=csv&gid={gid}" if gid else "export?format=csv"
-
-            sheet_url = url + "/" + extra_params
-            data_frame = read_file_to_data_frame(sheet_url)
+        if fragment.find("gid=") != -1:
+            gid = fragment.rsplit("gid=", 1)[1]
         else:
-            s3obj = get_s3_object(self.datasource.file)
-            data_frame = read_file_to_data_frame(s3obj["Body"])
+            gid = None
+
+        url = f"https://{parsed_url.netloc}/{parsed_url.path}"
+
+        if url.endswith("edit"):
+            url = url[:-5]
+
+        extra_params = f"export?format=csv&gid={gid}" if gid else "export?format=csv"
+
+        sheet_url = url + "/" + extra_params
+        data_frame = read_file_to_data_frame(sheet_url)
 
         return data_frame
 
@@ -223,43 +244,71 @@ class GoogleSheetProcessor(SourceProcessor):
         preview_dict = self.get_preview()
         preview_dict["source_file"] = self.get_source_file_name()
 
-        schemacms_api.update_datasource_meta(
-            datasource_pk=self.datasource.id,
-            copy_steps=self.copy_steps,
-            status=ProcessState.SUCCESS,
-            **preview_dict,
-        )
+        self.send_update_meta_request(preview_dict)
 
         logger.info(f"Meta created - DataSource # {self.datasource.id}")
 
-    def save_source_file(self, data_frame):
+    def save_source_file(self, data_frame, only_csv=False):
         file_name = self.get_source_file_name()
-        write_data_frame_to_csv_on_s3(data_frame, file_name)
-        write_data_frame_to_parquet_on_s3(data_frame, file_name)
-        logger.info(f"Google Sheet Source File Saved - DS # {self.datasource.id}")
+        file_version = write_data_frame_to_csv_on_s3(data_frame, file_name)
+
+        if not only_csv:
+            write_data_frame_to_parquet_on_s3(data_frame, file_name)
+            logger.info(f"{self.type} Source File Saved - DS # {self.datasource.id}")
+
+        return file_version
 
     def get_source_file_name(self):
-        return f"{self.datasource.id}/uploads/google_sheet_source_file.csv"
+        return f"{self.datasource.id}/uploads/google_sheet_source_copy.csv"
 
     def get_preview(self) -> dict:
         data_frame = self.read()
-        self.save_source_file(data_frame)
+        source_file_copy_version = self.save_source_file(data_frame)
         preview_data_dict = get_preview_data(data_frame)
+        preview_data_dict["source_file_version"] = source_file_copy_version
 
         return preview_data_dict
 
 
-processors = {"file": FileSourceProcessor, "google_sheet": GoogleSheetProcessor}
-
-
 @dataclass
-class JobProcessor:
-    job: Job
+class ApiSourceProcessor(GoogleSheetProcessor):
+    type = "Api"
 
     def read(self, script_process=False):
-        source_processor = self.get_source_processor()
+        r = requests.get(self.datasource.api_url)
 
-        return source_processor.read(script_process)
+        if r.status_code == 200:
+            if path := self.datasource.api_json_path:
+                jsonpath_expr = parse(path)
+                data = [obj.value for obj in jsonpath_expr.find(r.json())]
+                frame = pd.json_normalize(list(itertools.chain.from_iterable(data)))
+            else:
+                frame = pd.json_normalize(r.json())
+
+            return frame
+
+        else:
+            raise ValueError("Unable to read data from API")
+
+    def get_source_file_name(self):
+        return f"{self.datasource.id}/uploads/api_source_copy.csv"
+
+
+processors = {
+    "file": FileSourceProcessor,
+    "google_sheet": GoogleSheetProcessor,
+    "api": ApiSourceProcessor,
+}
+
+
+class JobProcessor:
+    def __init__(self, job):
+        self.job = job
+        self.source_processor = processors.get(self.job.datasource.type)(self.job.datasource)
+        self.source_file_version = ""
+
+    def read(self, script_process=False):
+        return self.source_processor.read(script_process)
 
     @staticmethod
     def get_preview(data_frame) -> dict:
@@ -279,6 +328,8 @@ class JobProcessor:
             schemacms_api.update_job_state(
                 job_pk=self.job.id,
                 state=state,
+                source_file_path=self.get_source_file_path(),
+                source_file_version=self.get_source_file_version(),
                 result=self.get_result_file_name(),
                 result_parquet=self.get_result_file_name().replace(".csv", ".parquet"),
                 error="",
@@ -292,12 +343,24 @@ class JobProcessor:
         file_name = self.get_result_file_name()
         write_data_frame_to_csv_on_s3(data_frame, file_name)
         write_data_frame_to_parquet_on_s3(data_frame, file_name)
+
         logger.info(f"Results saved - Job # {self.job.id}")
-
-    def get_source_processor(self):
-        source_type = self.job.datasource.type
-
-        return processors.get(source_type)(self.job.datasource)
 
     def get_result_file_name(self):
         return f"{self.job.datasource.id}/jobs/{self.job.id}/outputs/job_{self.job.id}_result.csv"
+
+    def save_source(self, data_frame):
+        if self.source_processor.type != "file":
+            self.source_file_version = self.source_processor.save_source_file(data_frame, only_csv=True)
+
+    def get_source_file_path(self):
+        if self.source_processor.type == "file":
+            return self.job.source_file_path
+        else:
+            return self.source_processor.get_source_file_name()
+
+    def get_source_file_version(self):
+        if self.source_processor.type == "file":
+            return self.job.source_file_version
+        else:
+            return self.source_file_version

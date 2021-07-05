@@ -1,5 +1,6 @@
 import React, { PureComponent } from 'react';
 import PropTypes from 'prop-types';
+import { is } from 'ramda';
 
 import { withStyles } from '../styles/withStyles';
 import { getStyles, headerBaseWidth, headerNarrowWidth } from './table.styles';
@@ -7,6 +8,8 @@ import { isIOS } from '../../utils/is';
 
 const NUMBERED_COLUMN_NAME = '#';
 const ROWS_LIMIT = 10;
+const NESTED_VALUE_CHARS_LIMIT = 30;
+const NESTED_VALUE_SUFFIX = '...';
 
 class TableComponent extends PureComponent {
   static propTypes = {
@@ -66,10 +69,17 @@ class TableComponent extends PureComponent {
     return <td style={styles}>{index + 1}</td>;
   };
 
+  stringifyNestedValue = value =>
+    is(Object, value)
+      ? JSON.stringify(value)
+          .substring(0, NESTED_VALUE_CHARS_LIMIT)
+          .concat(NESTED_VALUE_SUFFIX)
+      : value;
+
   renderCells = (data, cellStyles) =>
     data.map((value, index) => (
       <td style={cellStyles} key={index}>
-        {`${value}`}
+        {`${this.stringifyNestedValue(value)}`}
       </td>
     ));
 

@@ -25,26 +25,33 @@ import {
   path,
   when,
   is,
+  cond,
+  equals,
+  always,
 } from 'ramda';
 import { eventChannel } from 'redux-saga';
 
 import { DataSourceRoutines } from './dataSource.redux';
 import browserHistory from '../../shared/utils/history';
 import api from '../../shared/services/api';
-import { DATA_SOURCES_PATH, PREVIEW_PATH, PROJECTS_PATH } from '../../shared/utils/api.constants';
+import { DATA_SOURCES_PATH, PREVIEW_PATH, PROJECTS_PATH, REIMPORT_PATH } from '../../shared/utils/api.constants';
 import {
   DATA_SOURCE_RUN_LAST_JOB,
   FETCH_LIST_DELAY,
   META_FAILED,
   META_SUCCESS,
   RESULT_PAGE,
-  PREVIEW_PAGE,
   DATA_SOURCE_REIMPORT,
   DATA_SOURCE_GOOGLE_SHEET,
   DATA_SOURCE_TYPE,
   DATA_SOURCE_FILE,
   DATA_SOURCE_FILE_NAME,
   SOURCE_TYPE_GOOGLE_SHEET,
+  DATA_SOURCE_API_URL,
+  SOURCE_TYPE_API,
+  SOURCE_TYPE_FILE,
+  DATA_SOURCE_API_JSON_PATH,
+  DATA_SOURCE_AUTO_REFRESH,
 } from './dataSource.constants';
 import { formatFormData } from '../../shared/utils/helpers';
 import { ProjectRoutines } from '../project';
@@ -108,9 +115,31 @@ function* create({ payload }) {
   try {
     yield put(DataSourceRoutines.create.request());
     const isFileFlow = payload.requestData[DATA_SOURCE_TYPE] === DATA_SOURCE_FILE;
-    const omitFields = isFileFlow
-      ? [DATA_SOURCE_FILE, DATA_SOURCE_GOOGLE_SHEET]
-      : [DATA_SOURCE_FILE, DATA_SOURCE_FILE_NAME];
+
+    const omitFields = cond([
+      [
+        equals(SOURCE_TYPE_FILE),
+        always([
+          DATA_SOURCE_FILE,
+          DATA_SOURCE_GOOGLE_SHEET,
+          DATA_SOURCE_API_URL,
+          DATA_SOURCE_API_JSON_PATH,
+          DATA_SOURCE_AUTO_REFRESH,
+        ]),
+      ],
+      [
+        equals(SOURCE_TYPE_GOOGLE_SHEET),
+        always([
+          DATA_SOURCE_FILE,
+          DATA_SOURCE_FILE_NAME,
+          DATA_SOURCE_API_URL,
+          DATA_SOURCE_API_JSON_PATH,
+          DATA_SOURCE_AUTO_REFRESH,
+        ]),
+      ],
+      [equals(SOURCE_TYPE_API), always([DATA_SOURCE_FILE, DATA_SOURCE_FILE_NAME, DATA_SOURCE_GOOGLE_SHEET])],
+    ])(payload.requestData[DATA_SOURCE_TYPE]);
+
     const requestData = { project: payload.projectId, ...omit(omitFields, payload.requestData) };
     const {
       data: { id },
@@ -122,6 +151,9 @@ function* create({ payload }) {
           id,
           fileName: payload.requestData.file ? payload.requestData.file.name : '',
           [DATA_SOURCE_GOOGLE_SHEET]: requestData[DATA_SOURCE_GOOGLE_SHEET] || null,
+          [DATA_SOURCE_API_URL]: requestData[DATA_SOURCE_API_URL] || null,
+          [DATA_SOURCE_API_JSON_PATH]: requestData[DATA_SOURCE_API_JSON_PATH] || null,
+          [DATA_SOURCE_AUTO_REFRESH]: requestData[DATA_SOURCE_AUTO_REFRESH] || false,
           progress: 0,
         },
         isUpload: isFileFlow,
@@ -248,15 +280,43 @@ function* updateOne({ payload: { requestData, dataSource } }) {
       response.data = data;
     }
 
-    if (requestData[DATA_SOURCE_REIMPORT] || requestData[DATA_SOURCE_GOOGLE_SHEET]) {
+    if (requestData[DATA_SOURCE_GOOGLE_SHEET]) {
       const { data } = yield api.patch(`${DATA_SOURCES_PATH}/${dataSource.id}`, {
-        [DATA_SOURCE_GOOGLE_SHEET]: requestData[DATA_SOURCE_GOOGLE_SHEET] || dataSource[DATA_SOURCE_GOOGLE_SHEET],
+        [DATA_SOURCE_GOOGLE_SHEET]: requestData[DATA_SOURCE_GOOGLE_SHEET],
         [DATA_SOURCE_RUN_LAST_JOB]: requestData[DATA_SOURCE_RUN_LAST_JOB],
         [DATA_SOURCE_TYPE]: requestData[DATA_SOURCE_TYPE],
       });
 
       browserHistory.push(`/project/${dataSource.project.id}/datasource`);
       yield put(DataSourceRoutines.updateOne.success({ dataSource: data }));
+      return;
+    }
+
+    if (
+      requestData[DATA_SOURCE_API_URL] ||
+      is(String, requestData[DATA_SOURCE_API_JSON_PATH]) ||
+      is(Boolean, requestData[DATA_SOURCE_AUTO_REFRESH])
+    ) {
+      const { data } = yield api.patch(`${DATA_SOURCES_PATH}/${dataSource.id}`, {
+        [DATA_SOURCE_API_URL]: requestData[DATA_SOURCE_API_URL],
+        [DATA_SOURCE_API_JSON_PATH]: requestData[DATA_SOURCE_API_JSON_PATH],
+        [DATA_SOURCE_AUTO_REFRESH]: requestData[DATA_SOURCE_AUTO_REFRESH],
+        [DATA_SOURCE_RUN_LAST_JOB]: requestData[DATA_SOURCE_RUN_LAST_JOB],
+        [DATA_SOURCE_TYPE]: requestData[DATA_SOURCE_TYPE],
+      });
+
+      browserHistory.push(`/project/${dataSource.project.id}/datasource`);
+      yield put(DataSourceRoutines.updateOne.success({ dataSource: data }));
+      return;
+    }
+
+    if (requestData[DATA_SOURCE_REIMPORT]) {
+      yield api.post(`${DATA_SOURCES_PATH}/${dataSource.id}${REIMPORT_PATH}`, {
+        [DATA_SOURCE_RUN_LAST_JOB]: requestData[DATA_SOURCE_RUN_LAST_JOB],
+      });
+
+      browserHistory.push(`/project/${dataSource.project.id}/datasource`);
+      yield put(DataSourceRoutines.updateOne.success({ dataSource }));
       return;
     }
 
@@ -334,11 +394,8 @@ function* revertToJob({ payload: { dataSourceId, jobId } }) {
 
     yield put(ProjectRoutines.setProject.trigger(data.project));
     yield put(DataSourceRoutines.revertToJob.success(data.results));
-    if (data.results.activeJob.scripts.length) {
-      browserHistory.push(`/datasource/${dataSourceId}/${RESULT_PAGE}`);
-    } else {
-      browserHistory.push(`/datasource/${dataSourceId}/${PREVIEW_PAGE}`);
-    }
+
+    browserHistory.push(`/datasource/${dataSourceId}/${RESULT_PAGE}`);
   } catch (error) {
     reportError(error);
     yield put(DataSourceRoutines.revertToJob.failure(error));

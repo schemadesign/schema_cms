@@ -57,9 +57,12 @@ class DataSource(MetaGeneratorMixin, SoftDeleteObject, TimeStampedModel):
         validators=[FileExtensionValidator(allowed_extensions=["csv", "tsv"])],
     )
     google_sheet = models.URLField(null=True, blank=True, default="")
+    api_url = models.URLField(null=True, blank=True, default="")
+    api_json_path = models.CharField(blank=True, max_length=126, default="")
     created_by = models.ForeignKey(
         settings.AUTH_USER_MODEL, on_delete=models.SET_NULL, related_name="data_sources", null=True
     )
+    auto_refresh = models.BooleanField(default=False)
 
     objects = managers.DataSourceManager()
 
@@ -149,8 +152,8 @@ class DataSource(MetaGeneratorMixin, SoftDeleteObject, TimeStampedModel):
         except DataSourceJob.DoesNotExist:
             return None
 
-    def schedule_update_meta(self, copy_steps):
-        if not self.file and not self.google_sheet:
+    def schedule_update_meta(self, copy_steps, auto_refresh=False):
+        if not self.file and not self.google_sheet and not self.api_url:
             raise ValueError("Cannot schedule meta processing without source")
 
         file_size = self.file.size if self.file else settings.EXT_QUEUE_LIMIT - 1
@@ -161,12 +164,12 @@ class DataSource(MetaGeneratorMixin, SoftDeleteObject, TimeStampedModel):
 
             transaction.on_commit(
                 lambda: services.schedule_object_meta_processing(
-                    obj=self, source_file_size=file_size, copy_steps=copy_steps
+                    obj=self, source_file_size=file_size, copy_steps=copy_steps, auto_refresh=auto_refresh
                 )
             )
 
     def update_meta(self, **kwargs):
-        if not self.file and not self.google_sheet:
+        if not any([self.file, self.google_sheet, self.api_url]):
             return
 
         with transaction.atomic():
@@ -194,11 +197,18 @@ class DataSource(MetaGeneratorMixin, SoftDeleteObject, TimeStampedModel):
 
     def create_job(self, **job_kwargs):
         """Create new job for data source, copy source file and version"""
+        source_file_path = {
+            constants.DataSourceType.FILE: "",
+            constants.DataSourceType.API: self.api_url,
+            constants.DataSourceType.GOOGLE_SHEET: self.google_sheet,
+        }
+
+        if self.type == constants.DataSourceType.FILE:
+            job_kwargs["source_file_path"] = self.file.name
+            job_kwargs["source_file_version"] = self.source_file_latest_version
+
         return DataSourceJob.objects.create(
-            datasource=self,
-            source_file_path=self.file.name,
-            source_file_version=self.source_file_latest_version,
-            **job_kwargs,
+            datasource=self, datasource_type=self.type, source_url=source_file_path[self.type], **job_kwargs,
         )
 
     @transaction.atomic()
@@ -206,7 +216,7 @@ class DataSource(MetaGeneratorMixin, SoftDeleteObject, TimeStampedModel):
         self.jobs.filter(is_active=True).update(is_active=False)
 
         job.is_active = True
-        job.save()
+        job.save(update_fields=["is_active"])
 
     def result_fields_info(self):
         try:
@@ -246,6 +256,8 @@ class DataSource(MetaGeneratorMixin, SoftDeleteObject, TimeStampedModel):
             "type": self.type,
             "file": self.file.name if self.file else None,
             "google_sheet": self.google_sheet,
+            "api_url": self.api_url,
+            "api_json_path": self.api_json_path,
             "shape": None,
             "result": None,
             "fields": {},
@@ -361,13 +373,18 @@ class WranglingScript(SoftDeleteObject, TimeStampedModel):
 
 class DataSourceJob(MetaGeneratorMixin, SoftDeleteObject, TimeStampedModel, fsm.DataSourceJobFSM):
     datasource = models.ForeignKey(DataSource, on_delete=models.CASCADE, related_name="jobs")
+    datasource_type = models.CharField(
+        max_length=25, choices=constants.DATA_SOURCE_TYPE_CHOICES, default=constants.DataSourceType.FILE
+    )
     description = models.TextField(blank=True)
+    source_url = models.URLField(default="", blank=True)
     source_file_path = models.CharField(max_length=255, editable=False)
     source_file_version = models.CharField(max_length=36, editable=False)
     result = models.FileField(upload_to=file_upload_path, null=True, blank=True)
     result_parquet = models.FileField(upload_to=file_upload_path, null=True, blank=True)
     error = models.TextField(blank=True, default="")
     is_active = models.BooleanField(default=False)
+    is_auto_refresh = models.BooleanField(default=False)
 
     objects = managers.DataSourceJobManager()
 

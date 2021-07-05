@@ -1,8 +1,12 @@
 import json
 import os
 
+from django.conf import settings
 from django.db import transaction
+from django.db.models import Count, Q
 from django.shortcuts import get_object_or_404
+from django.utils import timezone
+
 from rest_framework import (
     decorators,
     exceptions,
@@ -20,6 +24,7 @@ from . import constants, models, serializers
 from .permissions import DataSourceListPermission
 from ..authorization import authentication
 from ..utils.serializers import ActionSerializerViewSetMixin, IDNameSerializer
+from ..utils.services import s3
 from ..projects.models import Project
 
 
@@ -91,18 +96,9 @@ class DataSourceViewSet(BaseDataSourceView, ActionSerializerViewSetMixin, viewse
     def perform_create(self, serializer):
         serializer.save(created_by=self.request.user)
 
-    def perform_update(self, serializer):
-        if "file" in serializer.validated_data:
-            serializer.save(created_by=self.request.user)
-        else:
-            serializer.save()
-
     @decorators.action(detail=True, methods=["get"])
     def preview(self, request, pk=None, **kwargs):
         data_source = self.get_object()
-
-        if not hasattr(data_source, "meta_data"):
-            return response.Response({}, status=status.HTTP_200_OK)
 
         data = dict(
             results=data_source.meta_data.data,
@@ -277,9 +273,18 @@ class DataSourceViewSet(BaseDataSourceView, ActionSerializerViewSetMixin, viewse
         job = get_object_or_404(models.DataSourceJob, pk=job_id)
 
         data_source.set_active_job(job)
+        data_source.refresh_from_db()
         serializer = serializers.DataSourceDetailSerializer(data_source)
 
         return response.Response({"project": project, "results": serializer.data})
+
+    @decorators.action(detail=True, url_path="reimport", methods=["post"])
+    def reimport(self, request, pk=None, **kwargs):
+        data_source = self.get_object()
+        run_last_job = request.data.get("run_last_job", False)
+        data_source.schedule_update_meta(run_last_job)
+
+        return response.Response(status=status.HTTP_200_OK)
 
     @decorators.action(
         detail=True,
@@ -291,7 +296,7 @@ class DataSourceViewSet(BaseDataSourceView, ActionSerializerViewSetMixin, viewse
     def update_meta(self, request, *args, **kwargs):
         data_source = self.get_object()
         copy_steps = request.data.pop("copy_steps", None)
-
+        auto_refresh = request.data.pop("auto_refresh", False)
         status_ = request.data.get("status")
 
         serializer = self.get_serializer(data=request.data, context=data_source.meta_data)
@@ -300,10 +305,21 @@ class DataSourceViewSet(BaseDataSourceView, ActionSerializerViewSetMixin, viewse
         data_source.update_meta(**serializer.validated_data)
 
         if status_ == constants.ProcessingState.SUCCESS:
-            source_file = request.data.pop("source_file", None)
+            source_file = request.data.pop("source_file", "")
+            source_file_version = request.data.pop("source_file_version", "")
 
             with transaction.atomic():
-                fake_job = data_source.create_job(description=f"DataSource {data_source.id} file upload")
+                if auto_refresh:
+                    description = "Auto Refresh Data"
+                else:
+                    description = f"DataSource {data_source.id} file upload"
+
+                fake_job = data_source.create_job(
+                    description=description,
+                    source_file_path=source_file,
+                    source_file_version=source_file_version,
+                    is_auto_refresh=auto_refresh,
+                )
 
                 if copy_steps:
                     current_active_job = data_source.get_active_job()
@@ -312,13 +328,59 @@ class DataSourceViewSet(BaseDataSourceView, ActionSerializerViewSetMixin, viewse
                     current_active_job.is_active = False
                     current_active_job.save(update_fields=["is_active"])
 
-                if data_source.google_sheet and source_file:
-                    data_source.file = source_file
-                    data_source.save(update_fields=["file"])
-
                 transaction.on_commit(fake_job.schedule)
 
         return response.Response(status=status.HTTP_204_NO_CONTENT)
+
+    @decorators.action(
+        detail=False,
+        url_path="refresh-data",
+        methods=["post"],
+        permission_classes=[permissions.IsAuthenticated],
+        authentication_classes=[authentication.EnvTokenAuthentication],
+    )
+    def refresh_data(self, request, *args, **kwargs):
+        datasources = models.DataSource.objects.filter(type=constants.DataSourceType.API, auto_refresh=True)
+
+        for ds in datasources:
+            ds.schedule_update_meta(copy_steps=True, auto_refresh=True)
+
+        return response.Response(status=status.HTTP_200_OK)
+
+    @decorators.action(
+        detail=False,
+        url_path="clear-old-jobs",
+        methods=["post"],
+        permission_classes=[permissions.IsAuthenticated],
+        authentication_classes=[authentication.EnvTokenAuthentication],
+    )
+    def clear_old_versions(self, request, *args, **kwargs):
+        time_delta = timezone.now() - timezone.timedelta(days=30)
+        jobs = (
+            models.DataSourceJob.objects.filter(created__lt=time_delta, is_auto_refresh=True, is_active=False)
+            .annotate(
+                ds_job_count=Count("datasource__jobs", filter=Q(datasource__jobs__is_auto_refresh=True))
+            )
+            .filter(ds_job_count__gt=1)
+        )
+
+        if jobs:
+            objects_to_delete = {"Objects": []}
+
+            for job in jobs:
+                objects_to_delete["Objects"].append(
+                    {"Key": job.source_file_path, "VersionId": job.source_file_version}
+                )
+                objects_to_delete["Objects"].append({"Key": job.result.name})
+                objects_to_delete["Objects"].append({"Key": job.result_parquet.name})
+
+            s3.delete_objects(Bucket=settings.AWS_STORAGE_BUCKET_NAME, Delete=objects_to_delete)
+
+            jobs.delete()
+
+            return response.Response({"message": f"{len(jobs)} deleted"}, status=status.HTTP_200_OK)
+        else:
+            return response.Response({"message": "0 jobs to delete"}, status=status.HTTP_200_OK)
 
 
 class DataSourceJobDetailViewSet(
@@ -373,7 +435,6 @@ class DataSourceJobDetailViewSet(
     )
     def update_meta(self, request, *args, **kwargs):
         job = self.get_object()
-
         serializer = self.get_serializer(data=request.data, context=job)
         serializer.is_valid(raise_exception=True)
         job.update_meta(**serializer.validated_data)

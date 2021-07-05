@@ -45,7 +45,15 @@ describe('DataSource: sagas', () => {
         .put(ProjectRoutines.fetchOne.trigger({ projectId: payload.projectId }))
         .put(
           DataSourceRoutines.create.success({
-            dataSource: { id: responseData.id, fileName: 'fileName', googleSheet: null, progress: 0 },
+            dataSource: {
+              id: responseData.id,
+              fileName: 'fileName',
+              googleSheet: null,
+              apiUrl: null,
+              apiJsonPath: null,
+              autoRefresh: false,
+              progress: 0,
+            },
             isUpload: true,
           })
         )
@@ -365,7 +373,7 @@ describe('DataSource: sagas', () => {
         .put(DataSourceRoutines.revertToJob.success(response.results))
         .dispatch(DataSourceRoutines.revertToJob(payload))
         .silentRun();
-      expect(browserHistory.push).toBeCalledWith('/datasource/1/preview');
+      expect(browserHistory.push).toBeCalledWith('/datasource/1/result');
     });
   });
 });

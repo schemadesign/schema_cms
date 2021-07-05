@@ -46,14 +46,42 @@ class SchemaCMSAPI:
         return response
 
     @check_response
-    def update_job_state(self, job_pk, state, result=None, result_parquet=None, error=None):
+    def update_job_state(
+        self,
+        job_pk,
+        state,
+        source_file_path="",
+        source_file_version="",
+        result="",
+        result_parquet="",
+        error="",
+    ):
         url = os.path.join(self._job_url(job_pk), "update-state")
         response = requests.post(
             url,
-            json={"job_state": state, "result": result, "result_parquet": result_parquet, "error": error},
+            json={
+                "source_file_path": source_file_path,
+                "source_file_version": source_file_version,
+                "job_state": state,
+                "result": result,
+                "result_parquet": result_parquet,
+                "error": error,
+            },
             headers=self.get_headers(),
             timeout=self.timeout,
         )
+        return response
+
+    def refresh_ds_data(self):
+        url = os.path.join(self._datasources_url(), "refresh-data")
+
+        response = requests.post(url, json={}, headers=self.get_headers(), timeout=self.timeout)
+        return response
+
+    def clear_old_jobs(self):
+        url = os.path.join(self._datasources_url(), "clear-old-jobs")
+
+        response = requests.post(url, json={}, headers=self.get_headers(), timeout=self.timeout)
         return response
 
     def get_headers(self):
@@ -64,6 +92,9 @@ class SchemaCMSAPI:
 
     def _job_url(self, job_pk) -> str:
         return os.path.join(self.backend_url, "jobs", str(job_pk))
+
+    def _datasources_url(self):
+        return os.path.join(self.backend_url, "datasources")
 
 
 schemacms_api = SchemaCMSAPI()

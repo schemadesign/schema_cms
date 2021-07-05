@@ -22,16 +22,13 @@ describe('DataWranglingResult: Component', () => {
     expect(wrapper).toMatchSnapshot();
   });
 
-  it('should redirect on fake job', async () => {
+  it('should redirect on no job', async () => {
     jest.spyOn(defaultProps.history, 'push');
 
     render({
       dataSource: {
         ...defaultProps.dataSource,
-        activeJob: {
-          id: 1,
-          scripts: [],
-        },
+        activeJob: null,
       },
     });
 

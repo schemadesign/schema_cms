@@ -1,37 +1,38 @@
+import requests
+
 from django.db import transaction
 from rest_framework import serializers, exceptions
 
 from . import models as ds_models
 from .constants import ProcessingState, DataSourceType
 from ..users.models import User
-from ..utils.serializers import NestedRelatedModelSerializer, UserSerializer
+from ..utils.serializers import NestedRelatedModelSerializer
 from ..utils.validators import CustomUniqueTogetherValidator
 
 
-class RawDataSourceSerializer(serializers.ModelSerializer):
-    class Meta:
-        model = ds_models.DataSource
-        fields = ("id", "name")
+class RawDataSourceSerializer(serializers.Serializer):
+    id = serializers.IntegerField(read_only=True)
+    name = serializers.CharField(read_only=True)
 
 
-class DataSourceMetaSerializer(serializers.ModelSerializer):
-    filters = serializers.SerializerMethodField(read_only=True)
-
-    class Meta:
-        model = ds_models.DataSourceMeta
-        fields = (
-            "items",
-            "fields",
-            "fields_names",
-            "fields_with_urls",
-            "preview",
-            "filters",
-            "status",
-            "error",
-        )
+class DataSourceMetaSerializer(serializers.Serializer):
+    items = serializers.IntegerField(read_only=True)
+    fields = serializers.IntegerField(read_only=True)
+    fields_names = serializers.ListField(read_only=True)
+    fields_with_urls = serializers.ListField(read_only=True)
+    preview = serializers.FileField(read_only=True)
+    filters = serializers.SerializerMethodField()
+    status = serializers.SerializerMethodField()
+    error = serializers.CharField(read_only=True)
 
     def get_filters(self, meta):
-        return meta.datasource.filters_count
+        return self.context.get("filters", 0)
+
+    def get_status(self, obj):
+        if hasattr(obj, "status"):
+            return obj.status
+        else:
+            return obj.job.job_state
 
 
 class DataSourceCreatorSerializer(serializers.ModelSerializer):
@@ -52,12 +53,9 @@ class StepSerializer(serializers.ModelSerializer):
         return obj.script.name
 
 
-class ActiveJobSerializer(serializers.ModelSerializer):
+class ActiveJobSerializer(serializers.Serializer):
+    id = serializers.IntegerField(read_only=True)
     scripts = serializers.SerializerMethodField(read_only=True)
-
-    class Meta:
-        model = ds_models.DataSourceJob
-        fields = ("id", "scripts")
 
     def get_scripts(self, obj):
         return [
@@ -75,13 +73,9 @@ class DataSourceTagSerializer(serializers.ModelSerializer):
 
 
 class DataSourceSerializer(serializers.ModelSerializer):
-    meta_data = DataSourceMetaSerializer(read_only=True)
+    meta_data = serializers.SerializerMethodField()
     file_name = serializers.SerializerMethodField()
-    created_by = NestedRelatedModelSerializer(
-        serializer=DataSourceCreatorSerializer(),
-        read_only=True,
-        pk_field=serializers.UUIDField(format="hex_verbose"),
-    )
+    created_by = serializers.SerializerMethodField()
     jobs_state = serializers.SerializerMethodField()
     active_job = serializers.SerializerMethodField()
     tags = DataSourceTagSerializer(read_only=True, many=True)
@@ -96,6 +90,9 @@ class DataSourceSerializer(serializers.ModelSerializer):
             "file",
             "file_name",
             "google_sheet",
+            "api_url",
+            "api_json_path",
+            "auto_refresh",
             "created",
             "modified",
             "meta_data",
@@ -122,6 +119,9 @@ class DataSourceSerializer(serializers.ModelSerializer):
     def validate(self, attrs):
         states = [ProcessingState.PROCESSING, ProcessingState.PENDING]
 
+        if api_url := attrs.get("api_url", None):
+            self.check_api_is_valid(api_url)
+
         if not self.instance:
             return super().validate(attrs)
 
@@ -136,6 +136,18 @@ class DataSourceSerializer(serializers.ModelSerializer):
         if not project.user_has_access(user):
             raise exceptions.PermissionDenied
         return project
+
+    @staticmethod
+    def get_created_by(obj):
+        if obj.created_by:
+            return {
+                "id": obj.created_by.id,
+                "first_name": obj.created_by.first_name,
+                "last_name": obj.created_by.last_name,
+                "role": obj.created_by.role,
+            }
+        else:
+            return None
 
     def get_file_name(self, obj):
         if obj.file:
@@ -159,6 +171,9 @@ class DataSourceSerializer(serializers.ModelSerializer):
 
         return jobs_state
 
+    def get_meta_data(self, obj):
+        return DataSourceMetaSerializer(obj.meta_data, context={"filters": obj.filters_count}).data
+
     @transaction.atomic()
     def save(self, *args, **kwargs):
         obj = super().save(*args, **kwargs)
@@ -166,11 +181,41 @@ class DataSourceSerializer(serializers.ModelSerializer):
         if (tags := self.initial_data.get("tags")) is not None:
             obj.add_tags(tags)
 
-        if self.validated_data.get("file", None) or self.validated_data.get("google_sheet", None):
+        if (
+            self.validated_data.get("file", None)
+            or self.validated_data.get("google_sheet", None)
+            or self.validated_data.get("api_url", None)
+            or self.validated_data.get("api_json_path", None)
+        ):
             copy_steps = self.initial_data.get("run_last_job", False)
             obj.schedule_update_meta(copy_steps)
 
         return obj
+
+    @staticmethod
+    def check_api_is_valid(url):
+        try:
+            response = requests.get(url)
+        except Exception:
+            raise exceptions.ValidationError(
+                {"api_url": "Unable to connect with provided api"}, code="apiUnableToConnect"
+            )
+
+        if response.status_code in [401, 403]:
+            raise exceptions.ValidationError({"api_url": "Only public apis are allowed"}, code="apiNotPublic")
+
+        if response.status_code != 200:
+            raise exceptions.ValidationError(
+                {"api_url": "Unable to connect with provided api"}, code="apiUnableToConnect"
+            )
+
+        allowed_content = ["application/javascript", "application/json"]
+        headers = response.headers["Content-Type"].split(";")
+
+        if not any(ac in headers for ac in allowed_content):
+            raise exceptions.ValidationError(
+                {"api_url": "Api returns wrong data format"}, code="apiWrongFormat"
+            )
 
 
 class DataSourceDescriptionSerializer(serializers.ModelSerializer):
@@ -187,7 +232,6 @@ class DataSourceDetailSerializer(DataSourceSerializer):
 
     @transaction.atomic()
     def update(self, instance, validated_data):
-
         self.clean_type_assets(instance, validated_data)
 
         return super().update(instance, validated_data)
@@ -197,18 +241,26 @@ class DataSourceDetailSerializer(DataSourceSerializer):
         if (type_ := validated_data.get("type")) and type_ != instance.type:
             if type_ == DataSourceType.FILE:
                 instance.google_sheet = ""
+                instance.api_url = ""
+                instance.auto_refresh = False
+                instance.api_json_path = ""
 
             if type_ == DataSourceType.GOOGLE_SHEET:
                 instance.file = None
+                instance.api_url = ""
+                instance.auto_refresh = False
+                instance.api_json_path = ""
+
+            if type_ == DataSourceType.API:
+                instance.file = None
+                instance.google_sheet = ""
 
             instance.save()
 
 
 class WranglingScriptSerializer(serializers.ModelSerializer):
     body = serializers.CharField(read_only=True)
-    created_by = NestedRelatedModelSerializer(
-        serializer=UserSerializer(), read_only=True, pk_field=serializers.UUIDField(format="hex_verbose")
-    )
+    created_by = serializers.SerializerMethodField()
     is_predefined = serializers.BooleanField(read_only=True)
     datasource = serializers.PrimaryKeyRelatedField(read_only=True)
 
@@ -217,13 +269,27 @@ class WranglingScriptSerializer(serializers.ModelSerializer):
         fields = ("id", "datasource", "name", "is_predefined", "created_by", "file", "body", "specs")
         extra_kwargs = {"name": {"required": False, "allow_null": True}}
 
+    @staticmethod
+    def get_created_by(obj):
+        if obj.created_by:
+            return {
+                "id": obj.created_by.id,
+                "first_name": obj.created_by.first_name,
+                "last_name": obj.created_by.last_name,
+                "role": obj.created_by.role,
+            }
+        else:
+            return None
+
     def create(self, validated_data):
         datasource = self.initial_data["datasource"]
 
         script = ds_models.WranglingScript(
-            created_by=self.context["request"].user, datasource=datasource, **validated_data
+            created_by=self.context["request"].user,
+            is_predefined=False,
+            datasource=datasource,
+            **validated_data,
         )
-        script.is_predefined = False
         script.save()
 
         return script
@@ -267,9 +333,8 @@ class CreateJobSerializer(serializers.ModelSerializer):
 
 
 class JobDataSourceSerializer(serializers.ModelSerializer):
-    class Meta:
-        model = ds_models.DataSource
-        fields = ("id", "project")
+    id = serializers.IntegerField()
+    project = serializers.IntegerField()
 
 
 class DataSourceJobSerializer(serializers.ModelSerializer):
@@ -324,19 +389,21 @@ class PublicApiDataSourceJobStateSerializer(serializers.ModelSerializer):
     job_state = serializers.ChoiceField(
         choices=[ProcessingState.PROCESSING, ProcessingState.SUCCESS, ProcessingState.FAILED]
     )
+    source_file_path = serializers.CharField()
+    source_file_version = serializers.CharField()
     result = serializers.CharField()
     result_parquet = serializers.CharField()
 
     class Meta:
         model = ds_models.DataSourceJob
-        fields = ("job_state", "result", "result_parquet", "error")
+        fields = ("source_file_path", "source_file_version", "job_state", "result", "result_parquet", "error")
 
     def __init__(self, *args, **kwargs):
         super().__init__(*args, **kwargs)
         job_state = self.initial_data.get("job_state")
         job_state_available_fields = {
             ProcessingState.PROCESSING: [],
-            ProcessingState.SUCCESS: ["result", "result_parquet"],
+            ProcessingState.SUCCESS: ["source_file_path", "source_file_version", "result", "result_parquet"],
             ProcessingState.FAILED: ["error"],
         }
         available_fields = job_state_available_fields.get(job_state, []) + ["job_state"]
@@ -354,6 +421,7 @@ class PublicApiDataSourceJobStateSerializer(serializers.ModelSerializer):
     @transaction.atomic()
     def save(self, **kwargs):
         job_state = self.validated_data.pop("job_state")
+
         for field_name, val in self.validated_data.items():
             setattr(self.instance, field_name, val)
         job_state_action = {

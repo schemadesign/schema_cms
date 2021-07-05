@@ -132,6 +132,9 @@ exports[`CreateDataSource: Component should render correctly 1`] = `
     id="csvUploadFileName"
     initialValues={
       Object {
+        "apiJsonPath": "",
+        "apiUrl": "",
+        "autoRefresh": false,
         "fileName": "",
         "googleSheet": "",
       }
@@ -151,6 +154,8 @@ exports[`CreateDataSource: Component should render correctly 1`] = `
         "_mutate": undefined,
         "_nodes": Array [
           "type",
+          "apiJsonPath",
+          "apiUrl",
           "googleSheet",
           "fileName",
           "file",
@@ -167,6 +172,84 @@ exports[`CreateDataSource: Component should render correctly 1`] = `
           "refs": Map {},
         },
         "fields": Object {
+          "apiJsonPath": SchemaType {
+            "_blacklist": RefSet {
+              "list": Set {},
+              "refs": Map {},
+            },
+            "_conditions": Array [
+              Condition {
+                "fn": [Function],
+                "refs": Array [
+                  Reference {
+                    "getter": [Function],
+                    "isContext": false,
+                    "isSibling": true,
+                    "isValue": false,
+                    "key": "type",
+                    "map": undefined,
+                    "path": "type",
+                  },
+                ],
+              },
+            ],
+            "_deps": Array [
+              "type",
+            ],
+            "_exclusive": Object {},
+            "_mutate": undefined,
+            "_options": Object {
+              "abortEarly": true,
+              "recursive": true,
+            },
+            "_type": "mixed",
+            "_typeError": [Function],
+            "_whitelist": RefSet {
+              "list": Set {},
+              "refs": Map {},
+            },
+            "tests": Array [],
+            "transforms": Array [],
+          },
+          "apiUrl": SchemaType {
+            "_blacklist": RefSet {
+              "list": Set {},
+              "refs": Map {},
+            },
+            "_conditions": Array [
+              Condition {
+                "fn": [Function],
+                "refs": Array [
+                  Reference {
+                    "getter": [Function],
+                    "isContext": false,
+                    "isSibling": true,
+                    "isValue": false,
+                    "key": "type",
+                    "map": undefined,
+                    "path": "type",
+                  },
+                ],
+              },
+            ],
+            "_deps": Array [
+              "type",
+            ],
+            "_exclusive": Object {},
+            "_mutate": undefined,
+            "_options": Object {
+              "abortEarly": true,
+              "recursive": true,
+            },
+            "_type": "mixed",
+            "_typeError": [Function],
+            "_whitelist": RefSet {
+              "list": Set {},
+              "refs": Map {},
+            },
+            "tests": Array [],
+            "transforms": Array [],
+          },
           "file": SchemaType {
             "_blacklist": RefSet {
               "list": Set {},

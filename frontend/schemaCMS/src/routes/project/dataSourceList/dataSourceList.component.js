@@ -2,7 +2,7 @@ import React, { PureComponent } from 'react';
 import PropTypes from 'prop-types';
 import Helmet from 'react-helmet';
 import { Icons } from 'schemaUI';
-import { always, cond, equals, find, propEq, propOr, T } from 'ramda';
+import { always, cond, equals, find, ifElse, propEq, propOr, T } from 'ramda';
 import { FormattedMessage } from 'react-intl';
 
 import { ProjectTabs } from '../../../shared/components/projectTabs';
@@ -28,8 +28,8 @@ import { HeaderItem, HeaderList } from '../list/list.styles';
 import {
   META_FAILED,
   PREVIEW_PAGE,
-  RESULT_PAGE,
   SOURCE_PAGE,
+  SOURCE_TYPE_API,
   SOURCE_TYPE_FILE,
   SOURCE_TYPE_GOOGLE_SHEET,
 } from '../../../modules/dataSource/dataSource.constants';
@@ -41,7 +41,7 @@ import { getProjectMenuOptions, PROJECT_DATASOURCE_ID } from '../project.constan
 import { renderWhenTrue } from '../../../shared/utils/rendering';
 import { JOB_STATE_FAILURE } from '../../../modules/job/job.constants';
 
-const { CsvIcon, GoogleSpreadsheetIcon, IntersectIcon } = Icons;
+const { CsvIcon, GoogleSpreadsheetIcon, IntersectIcon, ApiIcon } = Icons;
 const DEFAULT_VALUE = '—';
 
 export class DataSourceList extends PureComponent {
@@ -90,11 +90,7 @@ export class DataSourceList extends PureComponent {
     noDataContent: this.props.intl.formatMessage(messages.noData),
   });
 
-  getDataSourcePage = cond([
-    [equals(null), always(SOURCE_PAGE)],
-    [propEq('scripts', []), always(PREVIEW_PAGE)],
-    [T, always(RESULT_PAGE)],
-  ]);
+  getDataSourcePage = ifElse(equals(null), always(SOURCE_PAGE), always(PREVIEW_PAGE));
 
   getShowDataSourceUrl = ({ id, activeJob }) => {
     const dataSourcePage = this.getDataSourcePage(activeJob);
@@ -126,6 +122,10 @@ export class DataSourceList extends PureComponent {
       [
         equals(SOURCE_TYPE_GOOGLE_SHEET),
         always(<GoogleSpreadsheetIcon customStyles={getSourceIconStyles(this.props.theme, metaProcessing, 30)} />),
+      ],
+      [
+        equals(SOURCE_TYPE_API),
+        always(<ApiIcon customStyles={getSourceIconStyles(this.props.theme, metaProcessing, 30)} />),
       ],
     ]);
 
@@ -215,7 +215,7 @@ export class DataSourceList extends PureComponent {
     ])({ metaFailed, jobProcessing, metaProcessing, isUploading, fileUploadingError, jobFailed, noDataSourceUploaded });
 
   renderItem = (
-    { name, created, createdBy, id, tags, metaData, activeJob, jobsState = {}, fileName, googleSheet, type },
+    { name, created, createdBy, id, tags, metaData, activeJob, jobsState = {}, fileName, googleSheet, apiUrl, type },
     index
   ) => {
     const { firstName = '—', lastName = '' } = createdBy || {};
@@ -223,7 +223,7 @@ export class DataSourceList extends PureComponent {
     const jobFailed = propEq('lastJobStatus', JOB_STATE_FAILURE)(jobsState);
     const metaFailed = propEq('status', META_FAILED)(metaData);
     const { metaProcessing, jobProcessing } = isProcessingData({ jobsState, metaData });
-    const noDataSourceUploaded = !fileName && !googleSheet;
+    const noDataSourceUploaded = !fileName && !googleSheet && !apiUrl;
     const fileUploading = find(propEq('id', id), this.props.uploadingDataSources);
     const fileUploadingError = !!propOr(false, 'error', fileUploading);
     const isUploading = !!fileUploading;

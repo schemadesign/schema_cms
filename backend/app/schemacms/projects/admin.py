@@ -176,7 +176,7 @@ class ProjectImportForm(forms.Form):
         file_attrs,
         bucket=settings.AWS_STORAGE_BUCKET_NAME,
         is_job=False,
-        acl="private",
+        acl="public-read",
     ):
         deserialized_object.save()
 
@@ -211,7 +211,7 @@ class ProjectImportForm(forms.Form):
 
             with zip_file.open(f"files/{original_file_path}", "r") as file:
                 file = File(file, name=new_path)
-                response = s3.put_object(Body=file, Bucket=bucket, Key=file_name,)
+                response = s3.put_object(Body=file, Bucket=bucket, Key=new_path)
 
             setattr(deserialized_object.object, "source_file_path", new_path)
             setattr(deserialized_object.object, "source_file_version", response["VersionId"])

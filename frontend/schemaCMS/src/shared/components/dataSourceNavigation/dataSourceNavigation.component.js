@@ -2,7 +2,7 @@ import React, { PureComponent } from 'react';
 import PropTypes from 'prop-types';
 import { Icons } from 'schemaUI';
 import { FormattedMessage } from 'react-intl';
-import { split, last, pipe, equals, path, propEq, pathEq, complement, both, either } from 'ramda';
+import { split, last, pipe, equals, path, propEq, pathEq, complement, both } from 'ramda';
 
 import { Container, InnerContainer, Button, ButtonContainer, PageTitle } from './dataSourceNavigation.styles';
 import messages from './dataSourceNavigation.messages';
@@ -56,10 +56,7 @@ export class DataSourceNavigation extends PureComponent {
       equals(page)
     )(this.props);
 
-  getIsDisabled = either(
-    both(pathEq(['dataSource', 'activeJob'], null), complement(propEq('page', SOURCE_PAGE))),
-    both(pathEq(['dataSource', 'activeJob', 'scripts'], []), propEq('page', RESULT_PAGE))
-  );
+  getIsDisabled = both(pathEq(['dataSource', 'activeJob'], null), complement(propEq('page', SOURCE_PAGE)));
 
   renderButtons = ({ dataSource }) =>
     listIcons.map(({ Icon, page, id, iconStyles }, index) => (

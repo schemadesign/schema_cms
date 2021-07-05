@@ -49,7 +49,9 @@ def process_datasource_meta_source_file(event: dict):
         return logging.critical(f"Invalid message body - {e}")
 
     try:
-        processor = processors.get(datasource.type)(datasource=datasource, copy_steps=event["copy_steps"])
+        processor = processors.get(datasource.type)(
+            datasource=datasource, copy_steps=event["copy_steps"], auto_refresh=event["auto_refresh"]
+        )
         processor.update()
 
     except Exception as e:
@@ -74,6 +76,11 @@ def process_job(job_data: dict):
             df = processor.read(script_process=True)
         except Exception as e:
             raise errors.JobLoadingSourceFileError(f"{e} @ loading source file")
+
+        try:
+            processor.save_source(df)
+        except Exception as e:
+            raise errors.JobSavingFilesError(f"{e} @ saving source file version")
 
         for step in processor.job.steps:
             current_step = step

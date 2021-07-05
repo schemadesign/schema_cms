@@ -35,7 +35,7 @@ make migrate
 Enter backend container:
 
 ```bash
-make exec
+make shell
 ```
 
 Attach backend container:
