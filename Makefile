@@ -38,4 +38,5 @@ deploy-app:
 	$(MAKE) -C $(SELF_DIR)infra deploy-api
 	$(MAKE) -C $(SELF_DIR)infra deploy-image-resize
 	$(MAKE) -C $(SELF_DIR)infra deploy-workers
+	$(MAKE) -C $(SELF_DIR)infra deploy-schedulers
 

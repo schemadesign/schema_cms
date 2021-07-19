@@ -32,5 +32,8 @@ deploy-image-resize:
 deploy-workers:
 	pipenv run $(AWS_VAULT) node_modules/.bin/cdk deploy -c is_app_only=true -e schema-cms-workers;
 
+deploy-schedulers:
+	pipenv run $(AWS_VAULT) node_modules/.bin/cdk deploy -c is_app_only=true -e schema-cms-schedulers;
+
 deploy-repo-pr-checks:
 	pipenv run $(AWS_VAULT) node_modules/.bin/cdk deploy -c installation_mode=full -e schema-cms-pr-checks;
