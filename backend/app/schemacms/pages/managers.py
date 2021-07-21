@@ -112,9 +112,13 @@ class SectionQuerySet(softdelete.models.SoftDeleteQuerySet):
 
 
 class PageTagManager(softdelete.models.SoftDeleteManager):
-    def get_by_natural_key(self, project_title, page_name, is_template, is_draft, category_name, value):
+    def get_by_natural_key(
+        self, project_title, section_name, page_name, is_template, is_draft, category_name, value
+    ):
+
         return self.get(
             page__project__title=project_title,
+            page__section__name=section_name,
             page__name=page_name,
             page__is_template=is_template,
             page__is_draft=is_draft,
