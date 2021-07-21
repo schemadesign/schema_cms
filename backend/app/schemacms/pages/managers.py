@@ -6,13 +6,14 @@ from ..utils.managers import generate_soft_delete_manager
 
 class PageManager(softdelete.models.SoftDeleteManager):
     def get_by_natural_key(self, project_title, section_name, name, is_template, is_draft):
-        return self.get(
-            project__title=project_title,
-            section__name=section_name,
-            name=name,
-            is_template=is_template,
-            is_draft=is_draft,
+        get_kwargs = dict(
+            project__title=project_title, name=name, is_template=is_template, is_draft=is_draft,
         )
+
+        if section_name:
+            get_kwargs["section__name"] = section_name
+
+        return self.get(**get_kwargs)
 
 
 class PageOnlyTemplateManager(softdelete.models.SoftDeleteManager):
@@ -38,15 +39,20 @@ class PageBlockQuerySet(softdelete.models.SoftDeleteQuerySet):
         is_page=False,
     ):
         if is_page:
-            return self.get(
+            get_kwargs = dict(
                 page__project__title=project_title,
                 page__name=block_name,
-                page__section__name=section_name,
                 name=name,
                 order=order,
                 page__is_draft=is_draft,
                 page__is_template=is_template,
             )
+
+            if section_name:
+                get_kwargs["page__section__name"] = section_name
+
+            return self.get(**get_kwargs)
+
         return self.get(block__project__title=project_title, block__name=block_name, name=name, order=order)
 
 
@@ -67,10 +73,9 @@ class PageBlockElementManager(softdelete.models.SoftDeleteManager):
         is_page=False,
     ):
         if is_page:
-            return self.get(
+            get_kwargs = dict(
                 block__page__project__title=project_title,
                 block__page__name=parent_name,
-                block__page__section__name=section_name,
                 block__name=block_name,
                 block__order=block_order,
                 block__page__is_draft=is_draft,
@@ -80,6 +85,11 @@ class PageBlockElementManager(softdelete.models.SoftDeleteManager):
                 parent=parent,
                 custom_element_set=set_,
             )
+
+            if section_name:
+                get_kwargs["block__page__section__name"] = section_name
+
+            return self.get(**get_kwargs)
         return self.get(
             block__block__project__title=project_title, block__block__name=block_name, name=name, order=order
         )
