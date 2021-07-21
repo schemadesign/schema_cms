@@ -5,8 +5,14 @@ from ..utils.managers import generate_soft_delete_manager
 
 
 class PageManager(softdelete.models.SoftDeleteManager):
-    def get_by_natural_key(self, project_title, name, is_template, is_draft):
-        return self.get(project__title=project_title, name=name, is_template=is_template, is_draft=is_draft)
+    def get_by_natural_key(self, project_title, section_name, name, is_template, is_draft):
+        return self.get(
+            project__title=project_title,
+            section__name=section_name,
+            name=name,
+            is_template=is_template,
+            is_draft=is_draft,
+        )
 
 
 class PageOnlyTemplateManager(softdelete.models.SoftDeleteManager):
@@ -21,12 +27,21 @@ class PageOnlyManager(softdelete.models.SoftDeleteManager):
 
 class PageBlockQuerySet(softdelete.models.SoftDeleteQuerySet):
     def get_by_natural_key(
-        self, project_title, block_name, name, order, is_draft=None, is_template=None, is_page=False
+        self,
+        project_title,
+        block_name,
+        name,
+        order,
+        is_draft=None,
+        is_template=None,
+        section_name=None,
+        is_page=False,
     ):
         if is_page:
             return self.get(
                 page__project__title=project_title,
                 page__name=block_name,
+                page__section__name=section_name,
                 name=name,
                 order=order,
                 page__is_draft=is_draft,
@@ -48,12 +63,14 @@ class PageBlockElementManager(softdelete.models.SoftDeleteManager):
         block_order,
         is_draft=None,
         is_template=None,
+        section_name=None,
         is_page=False,
     ):
         if is_page:
             return self.get(
                 block__page__project__title=project_title,
                 block__page__name=parent_name,
+                block__page__section__name=section_name,
                 block__name=block_name,
                 block__order=block_order,
                 block__page__is_draft=is_draft,

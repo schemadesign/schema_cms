@@ -159,7 +159,7 @@ class Page(Content):
         ordering = ("-created",)
 
     def natural_key(self):
-        return self.project.title, self.name, self.is_template, self.is_draft
+        return self.project.title, self.section.name, self.name, self.is_template, self.is_draft
 
     natural_key.dependencies = ["projects.project", "pages.section", "pages.blocktemplate"]
 
@@ -292,6 +292,7 @@ class PageBlock(CloneMixin, SoftDeleteObject):
                 self.order,
                 self.page.is_draft,
                 self.page.is_template,
+                self.page.section.name,
                 True,
             )
         if hasattr(self, "block"):
