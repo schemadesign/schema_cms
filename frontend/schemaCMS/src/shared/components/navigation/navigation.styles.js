@@ -93,6 +93,21 @@ export const buttonIconStyles = {
 };
 
 export const LinkButton = styled(Link)`
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-radius: 4px;
+  padding: 4px 8px 4px 6px;
+  background-color: ${({ theme }) => theme.inverseButton.background};
+  color: ${({ theme }) => theme.inverseButton.text};
+  text-decoration: none;
+
+  ${media.desktop`
+    display: ${({ $hideOnDesktop }) => ($hideOnDesktop ? 'none' : 'flex')};
+  `};
+`;
+
+export const RoundLinkButton = styled(Link)`
   background-color: ${({ theme }) => theme.inverseButton.background};
   width: ${({ $size }) => $size}px;
   height: ${({ $size }) => $size}px;

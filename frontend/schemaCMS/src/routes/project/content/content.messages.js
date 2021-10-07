@@ -18,4 +18,8 @@ export default defineMessages({
     id: 'project.content.pagesCounter',
     defaultMessage: '{pagesCount, plural,one {# Page} other {# Pages}}',
   },
+  addBlockButton: {
+    id: 'project.content.addBlockButton',
+    defaultMessage: 'Add a Block',
+  },
 });

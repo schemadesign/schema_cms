@@ -8,11 +8,12 @@ import {
   ButtonContainer,
   buttonIconStyles,
   Container,
+  LinkButton,
   Navigation,
   NavigationButton,
   NavigationContent,
   NavigationLink,
-  LinkButton,
+  RoundLinkButton,
 } from './navigation.styles';
 import messages from './navigation.messages';
 
@@ -74,17 +75,30 @@ export class PlusButton extends PureComponent {
 }
 
 export const LARGE_BUTTON_SIZE = 60;
-export const SMALL_BUTTON_SIZE = 60;
+export const SMALL_BUTTON_SIZE = 24;
 
-export const PlusLink = ({ hideOnDesktop = false, size = SMALL_BUTTON_SIZE, to = '', id = '' }) => (
-  <LinkButton $inverse to={to} $size={size} $hideOnDesktop={hideOnDesktop}>
+export const PlusLink = ({ hideOnDesktop = false, size = LARGE_BUTTON_SIZE, to = '', id = '' }) => (
+  <RoundLinkButton $inverse to={to} $size={size} $hideOnDesktop={hideOnDesktop}>
     <PlusIcon inverse customStyles={{ width: size, height: size }} id={id} />
-  </LinkButton>
+  </RoundLinkButton>
 );
 
 PlusLink.propTypes = {
   hideOnDesktop: PropTypes.bool,
   size: PropTypes.number,
+  to: PropTypes.string.isRequired,
+  id: PropTypes.string,
+};
+
+export const PlusLinkWithText = ({ hideOnDesktop = false, text = '', to = '', id = '' }) => (
+  <LinkButton $inverse to={to} $hideOnDesktop={hideOnDesktop}>
+    <PlusIcon inverse customStyles={{ width: SMALL_BUTTON_SIZE, height: SMALL_BUTTON_SIZE }} id={id} /> {text}
+  </LinkButton>
+);
+
+PlusLinkWithText.propTypes = {
+  hideOnDesktop: PropTypes.bool,
+  text: PropTypes.string.isRequired,
   to: PropTypes.string.isRequired,
   id: PropTypes.string,
 };

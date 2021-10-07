@@ -19,7 +19,8 @@ import { CardHeader } from '../../../shared/components/cardHeader';
 import { ListContainer, ListItem, ListItemTitle } from '../../../shared/components/listComponents';
 import { CounterHeader } from '../../../shared/components/counterHeader';
 import reportError from '../../../shared/utils/reportError';
-import { NavigationContainer, LARGE_BUTTON_SIZE, PlusLink, BackLink } from '../../../shared/components/navigation';
+import { NavigationContainer, BackLink } from '../../../shared/components/navigation';
+import { PlusLinkWithText } from '../../../shared/components/navigation/navigation.component';
 
 const Section = ({ created, createdBy, name, id, pagesCount = 0 }) => {
   const whenCreated = extendedDayjs(created, BASE_DATE_FORMAT).fromNow();
@@ -77,7 +78,11 @@ export const Content = ({ userRole, fetchSections, sections }) => {
       />
       <ProjectTabs active={CONTENT} url={`/project/${projectId}`} />
       <ContextHeader title={title} subtitle={subtitle}>
-        <PlusLink id="createSection" to={`/project/${projectId}/section/create`} size={LARGE_BUTTON_SIZE} />
+        <PlusLinkWithText
+          id="createSection"
+          text={intl.formatMessage(messages.addBlockButton)}
+          to={`/project/${projectId}/section/create`}
+        />
       </ContextHeader>
       <LoadingWrapper loading={loading} error={error}>
         <Fragment>
@@ -91,11 +96,11 @@ export const Content = ({ userRole, fetchSections, sections }) => {
       </LoadingWrapper>
       <NavigationContainer fixed>
         <BackLink id="backBtn" to={`/project/${projectId}`} />
-        <PlusLink
-          hideOnDesktop
-          id="creatSectionMobile"
+        <PlusLinkWithText
+          id="createSection"
+          text={intl.formatMessage(messages.addBlockButton)}
           to={`/project/${projectId}/section/create`}
-          size={LARGE_BUTTON_SIZE}
+          hideOnDesktop
         />
       </NavigationContainer>
     </Container>
