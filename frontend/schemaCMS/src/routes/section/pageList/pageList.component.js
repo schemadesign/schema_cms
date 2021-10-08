@@ -5,7 +5,7 @@ import { useHistory, useParams } from 'react-router';
 import Helmet from 'react-helmet';
 import { useFormik } from 'formik';
 import { pick, propEq, propOr, pipe, find, always } from 'ramda';
-import { Form as FormUI, Icons } from 'schemaUI';
+import { Form as FormUI, Icons, Button, BUTTON_SIZES } from 'schemaUI';
 import { useEffectOnce } from 'react-use';
 import { parse, stringify } from 'query-string';
 import ReactPaginate from 'react-paginate';
@@ -38,7 +38,6 @@ import {
 } from '../../../modules/sections/sections.constants';
 import {
   AvailableCopy,
-  BinIconContainer,
   IconsContainer,
   inputContainerStyles,
   inputStyles,
@@ -71,7 +70,7 @@ import { renderWhenTrue } from '../../../shared/utils/rendering';
 import { CopyButton } from '../../../shared/components/copyButton';
 import { PageLink } from '../../../theme/typography';
 
-const { EditIcon, BinIcon, HomeIcon } = Icons;
+const { EditIcon, HomeIcon } = Icons;
 const { Switch } = FormUI;
 
 export const Page = ({
@@ -369,9 +368,9 @@ export const PageList = ({
                       </AvailableCopy>
                     </SwitchCopy>
                   </SwitchContent>
-                  <BinIconContainer id="removeSection" onClick={() => setRemoveModalOpen(true)}>
-                    <BinIcon />
-                  </BinIconContainer>
+                  <Button size={BUTTON_SIZES.SMALL} id="removeSection" onClick={() => setRemoveModalOpen(true)}>
+                    Delete Section
+                  </Button>
                 </SwitchContainer>
                 <SwitchContainer>
                   <SwitchContent>

@@ -11,6 +11,7 @@ export const SwitchContainer = styled.div`
   display: flex;
   flex-direction: row;
   align-items: center;
+  justify-content: space-between;
   padding-bottom: 15px;
   position: relative;
 `;
@@ -28,8 +29,11 @@ export const SwitchContent = styled.div`
   display: flex;
   flex-direction: row;
   align-items: center;
-  padding-right: 40px;
   max-width: 100%;
+  padding-right: 10px;
+  ${media.bigMobile`
+   padding-right: 40px;
+  `};
 `;
 
 export const BinIconContainer = styled.div`
