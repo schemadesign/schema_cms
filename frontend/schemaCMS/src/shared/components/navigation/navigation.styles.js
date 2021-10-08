@@ -70,11 +70,12 @@ export const NavigationLink = styled(Link)`
   max-width: 240px;
   background-color: ${({ theme, $inverse }) => ($inverse ? theme.inverseButton.background : theme.button.background)};
   color: ${({ theme, $inverse }) => ($inverse ? theme.inverseButton.text : theme.button.text)};
-  border-radius: 48px;
+  border-radius: 30px;
   text-align: center;
-  line-height: 48px;
+  line-height: 30px;
   text-decoration: none;
-  font-size: 18px;
+  font-size: 20px;
+  padding: 9px 0;
 
   ${media.desktop`
     width: 240px;

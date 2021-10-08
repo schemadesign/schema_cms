@@ -5,7 +5,7 @@ export { Accordion } from './accordion';
 export { AccordionPanel } from './accordionPanel';
 export { AccordionDetails } from './accordionDetails';
 export { AccordionHeader } from './accordionHeader';
-export { Button } from './button';
+export { Button, BUTTON_SIZES } from './button';
 export { Header } from './header';
 export Icons from './icons';
 export { Menu } from './menu';
