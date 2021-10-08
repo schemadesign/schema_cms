@@ -17,14 +17,7 @@ import reportError from '../../../shared/utils/reportError';
 import { MobileMenu } from '../../../shared/components/menu/mobileMenu';
 import { errorMessageParser, filterMenuOptions, getUrlParams } from '../../../shared/utils/helpers';
 import { ContextHeader } from '../../../shared/components/contextHeader';
-import {
-  BackButton,
-  NavigationContainer,
-  NextButton,
-  PlusLink,
-  LARGE_BUTTON_SIZE,
-  BackLink,
-} from '../../../shared/components/navigation';
+import { BackButton, NavigationContainer, NextButton, BackLink } from '../../../shared/components/navigation';
 import { CounterHeader } from '../../../shared/components/counterHeader';
 import { ListContainer, ListItem, ListItemTitle, FooterContainer } from '../../../shared/components/listComponents';
 import extendedDayjs, { BASE_DATE_FORMAT } from '../../../shared/utils/extendedDayjs';
@@ -69,6 +62,7 @@ import { INITIAL_PAGE_SIZE } from '../../../shared/utils/api.constants';
 import { renderWhenTrue } from '../../../shared/utils/rendering';
 import { CopyButton } from '../../../shared/components/copyButton';
 import { PageLink } from '../../../theme/typography';
+import { PlusLinkWithText } from '../../../shared/components/navigation/navigation.component';
 
 const { EditIcon, HomeIcon } = Icons;
 const { Switch } = FormUI;
@@ -309,7 +303,7 @@ export const PageList = ({
           <ProjectBreadcrumbs items={getBreadcrumbsItems({ id: projectId, title: projectTitle }, section)} />
           <Form onSubmit={handleSubmit}>
             <ContextHeader title={title} subtitle={nameInput}>
-              <PlusLink id="createPage" to={addPageUrl} size={LARGE_BUTTON_SIZE} />
+              <PlusLinkWithText id="createPage" text={intl.formatMessage(messages.addPageButton)} to={addPageUrl} />
             </ContextHeader>
             <MobileInputName>
               <TextInput
@@ -329,7 +323,11 @@ export const PageList = ({
                 count={pages.results.length}
                 right={
                   <MobilePlusContainer>
-                    <PlusLink id="createPageMobile" to={addPageUrl} />
+                    <PlusLinkWithText
+                      id="createPageMobile"
+                      text={intl.formatMessage(messages.addPageButton)}
+                      to={addPageUrl}
+                    />
                   </MobilePlusContainer>
                 }
               />

@@ -77,7 +77,8 @@ export const PlusContainer = styled.div`
 `;
 
 export const MobilePlusContainer = styled.div`
-  text-align: right;
+  display: flex;
+  justify-content: end;
   ${media.desktop`
     display: none;
   `}
