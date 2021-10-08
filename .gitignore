@@ -7,3 +7,4 @@ local.env
 __pycache__
 dist
 backend/functions/public_api/node_modules
+/node_modules
