@@ -91,4 +91,8 @@ export default defineMessages({
     id: 'section.pageList.nameSectionNameUniqueError',
     defaultMessage: 'A section with this name already exists in project',
   },
+  deleteButton: {
+    id: 'section.pageList.deleteButton',
+    defaultMessage: 'Delete Section',
+  },
 });

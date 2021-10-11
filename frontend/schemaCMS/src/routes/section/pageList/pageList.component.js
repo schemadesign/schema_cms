@@ -367,7 +367,7 @@ export const PageList = ({
                     </SwitchCopy>
                   </SwitchContent>
                   <Button size={BUTTON_SIZES.SMALL} id="removeSection" onClick={() => setRemoveModalOpen(true)}>
-                    Delete Section
+                    <FormattedMessage {...messages.deleteButton} />
                   </Button>
                 </SwitchContainer>
                 <SwitchContainer>
