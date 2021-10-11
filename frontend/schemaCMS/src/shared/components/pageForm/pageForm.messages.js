@@ -84,6 +84,10 @@ export default defineMessages({
     id: 'shared.components.pageForm.confirmChange',
     defaultMessage: 'Confirm',
   },
+  addBlockButton: {
+    id: 'shared.components.pageForm.addBlockButton',
+    defaultMessage: 'Add a Block',
+  },
   blocks: {
     id: 'shared.components.pageForm.blocks',
     defaultMessage: 'Block',
