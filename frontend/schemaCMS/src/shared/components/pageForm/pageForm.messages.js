@@ -112,4 +112,8 @@ export default defineMessages({
     id: 'shared.components.pageForm.confirmCopy',
     defaultMessage: 'Copy',
   },
+  deleteButton: {
+    id: 'shared.components.pageForm.deleteButton',
+    defaultMessage: 'Delete Page',
+  },
 });

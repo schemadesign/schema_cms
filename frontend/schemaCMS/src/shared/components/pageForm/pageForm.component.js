@@ -178,9 +178,9 @@ export const PageForm = ({
     copyPageFunc();
   };
   const binIcon = setRemoveModalOpen ? (
-    <BinIconContainer id="removePage" onClick={() => setRemoveModalOpen(true)}>
-      <BinIcon />
-    </BinIconContainer>
+    <Button size={BUTTON_SIZES.SMALL} id="removeSection" onClick={() => setRemoveModalOpen(true)}>
+      <FormattedMessage {...messages.deleteButton} />
+    </Button>
   ) : null;
   const visitPage = pageUrl ? (
     <Fragment>
