@@ -45,6 +45,7 @@ import {
   CopySeparator,
   Draft,
   EditIconLabel,
+  DeleteButtonContainer,
 } from '../../../shared/components/form/frequentComponents.styles';
 import { TextInput } from '../../../shared/components/form/inputs/textInput';
 import { Modal, ModalActions, modalStyles, ModalTitle } from '../../../shared/components/modal/modal.styles';
@@ -366,9 +367,11 @@ export const PageList = ({
                       </AvailableCopy>
                     </SwitchCopy>
                   </SwitchContent>
-                  <Button size={BUTTON_SIZES.SMALL} id="removeSection" onClick={() => setRemoveModalOpen(true)}>
-                    <FormattedMessage {...messages.deleteButton} />
-                  </Button>
+                  <DeleteButtonContainer>
+                    <Button size={BUTTON_SIZES.SMALL} id="removeSection" onClick={() => setRemoveModalOpen(true)}>
+                      <FormattedMessage {...messages.deleteButton} />
+                    </Button>
+                  </DeleteButtonContainer>
                 </SwitchContainer>
                 <SwitchContainer>
                   <SwitchContent>

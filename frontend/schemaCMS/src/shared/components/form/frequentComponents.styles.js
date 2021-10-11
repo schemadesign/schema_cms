@@ -9,11 +9,16 @@ export const Switches = styled.div`
 
 export const SwitchContainer = styled.div`
   display: flex;
-  flex-direction: row;
-  align-items: center;
+  flex-direction: column;
+  align-items: start;
   justify-content: space-between;
   padding-bottom: 15px;
   position: relative;
+
+  ${media.bigMobile`
+   flex-direction: row;
+   align-items: center;
+  `};
 `;
 
 export const SwitchLabel = styled.label`
@@ -41,6 +46,13 @@ export const BinIconContainer = styled.div`
   position: absolute;
   right: 0;
   top: 0;
+`;
+
+export const DeleteButtonContainer = styled.div`
+  margin-top: 15px;
+  ${media.bigMobile`
+    margin-top: 0;
+  `};
 `;
 
 export const EditIconLabel = styled.label`

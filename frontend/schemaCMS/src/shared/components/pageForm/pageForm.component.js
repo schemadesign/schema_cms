@@ -28,7 +28,7 @@ import HTML5toTouch from 'react-dnd-multi-backend/dist/cjs/HTML5toTouch';
 import { Container, SelectContainer } from './pageForm.styles';
 import {
   AvailableCopy,
-  BinIconContainer,
+  DeleteButtonContainer,
   IconsContainer,
   inputContainerStyles,
   inputStyles,
@@ -75,7 +75,7 @@ import { renderWhenTrue } from '../../utils/rendering';
 import { PageLink } from '../../../theme/typography';
 import { ROUTES } from '../../utils/routes.contants';
 
-const { EditIcon, BinIcon, MenuIcon, PlusIcon } = Icons;
+const { EditIcon, MenuIcon, PlusIcon } = Icons;
 const { Switch, Label } = Form;
 
 export const PageForm = ({
@@ -178,9 +178,11 @@ export const PageForm = ({
     copyPageFunc();
   };
   const binIcon = setRemoveModalOpen ? (
-    <Button size={BUTTON_SIZES.SMALL} id="removeSection" onClick={() => setRemoveModalOpen(true)}>
-      <FormattedMessage {...messages.deleteButton} />
-    </Button>
+    <DeleteButtonContainer>
+      <Button size={BUTTON_SIZES.SMALL} id="removeSection" onClick={() => setRemoveModalOpen(true)}>
+        <FormattedMessage {...messages.deleteButton} />
+      </Button>
+    </DeleteButtonContainer>
   ) : null;
   const visitPage = pageUrl ? (
     <Fragment>
