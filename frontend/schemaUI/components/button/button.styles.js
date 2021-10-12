@@ -22,7 +22,7 @@ const sizes = {
   },
 };
 
-export const getStyles = (theme = defaultTheme, buttonType = BUTTON, disabled, size) => ({
+export const getStyles = (theme = defaultTheme, buttonType = BUTTON, disabled, size = BUTTON_SIZES.BIG) => ({
   containerStyles: {
     border: 'none',
     borderRadius: sizes[size].borderRadius,
