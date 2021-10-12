@@ -179,7 +179,7 @@ export const PageForm = ({
   };
   const binIcon = setRemoveModalOpen ? (
     <DeleteButtonContainer>
-      <Button size={BUTTON_SIZES.SMALL} id="removeSection" onClick={() => setRemoveModalOpen(true)}>
+      <Button size={BUTTON_SIZES.SMALL} id="removePage" onClick={() => setRemoveModalOpen(true)}>
         <FormattedMessage {...messages.deleteButton} />
       </Button>
     </DeleteButtonContainer>

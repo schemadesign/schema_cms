@@ -1128,7 +1128,7 @@ exports[`PageForm: Component should render correctly 1`] = `
               "margin": "0",
               "minHeight": "32px",
               "outline": "none",
-              "padding": "0 8px",
+              "padding": "0 8px 0 6px",
               "transition": "background 0.25s ease-in-out, color 0.25s ease-in-out",
             }
           }
@@ -1507,7 +1507,7 @@ exports[`PageForm: Component should render correctly 1`] = `
       >
         <button
           disabled={false}
-          id="removeSection"
+          id="removePage"
           onClick={[Function]}
           style={
             Object {
@@ -2665,7 +2665,7 @@ exports[`PageForm: Component should render with page template 1`] = `
               "margin": "0",
               "minHeight": "32px",
               "outline": "none",
-              "padding": "0 8px",
+              "padding": "0 8px 0 6px",
               "transition": "background 0.25s ease-in-out, color 0.25s ease-in-out",
             }
           }
@@ -3044,7 +3044,7 @@ exports[`PageForm: Component should render with page template 1`] = `
       >
         <button
           disabled={false}
-          id="removeSection"
+          id="removePage"
           onClick={[Function]}
           style={
             Object {
