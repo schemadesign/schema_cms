@@ -2,7 +2,7 @@
 
 exports[`Select: Component should render correctly 1`] = `
 <div
-  className="sc-bdnylx gbZWvf"
+  className="sc-bdnxRM cTHMhw"
   onClick={[Function]}
 >
   <label
@@ -153,7 +153,7 @@ exports[`Select: Component should render correctly 1`] = `
     </div>
   </div>
   <div
-    className="sc-gtssRu kSNkvD"
+    className="sc-gtsrHT eMUcrg"
   >
     <svg
       style={

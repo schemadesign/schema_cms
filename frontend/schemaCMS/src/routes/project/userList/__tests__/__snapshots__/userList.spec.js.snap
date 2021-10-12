@@ -5,13 +5,13 @@ exports[`UserList: Component should render correctly 1`] = `
   <MobileMenu
     active="usersNavBtn"
     headerSubtitle={
-      <FormattedMessage
+      <Memo(FormattedMessage)
         defaultMessage="Overview"
         id="project.userList.headerSubtitle"
       />
     }
     headerTitle={
-      <FormattedMessage
+      <Memo(FormattedMessage)
         defaultMessage="Users"
         id="project.userList.headerTitle"
       />
@@ -24,7 +24,7 @@ exports[`UserList: Component should render correctly 1`] = `
             "editor",
           ],
           "id": "projectsNavBtn",
-          "label": <FormattedMessage
+          "label": <Memo(FormattedMessage)
             defaultMessage="Projects"
             id="project.view.projectsListPage"
           />,
@@ -36,7 +36,7 @@ exports[`UserList: Component should render correctly 1`] = `
             "admin",
           ],
           "id": "usersPageNavBtn",
-          "label": <FormattedMessage
+          "label": <Memo(FormattedMessage)
             defaultMessage="Users"
             id="project.view.usersPage"
           />,
@@ -49,7 +49,7 @@ exports[`UserList: Component should render correctly 1`] = `
             "editor",
           ],
           "id": "projectDetailsNavBtn",
-          "label": <FormattedMessage
+          "label": <Memo(FormattedMessage)
             defaultMessage="Project details"
             id="project.view.projectDetails"
           />,
@@ -62,7 +62,7 @@ exports[`UserList: Component should render correctly 1`] = `
             "editor",
           ],
           "id": "dataSourceNavBtn",
-          "label": <FormattedMessage
+          "label": <Memo(FormattedMessage)
             defaultMessage="Data Sources"
             id="project.view.projectDataSources"
           />,
@@ -74,7 +74,7 @@ exports[`UserList: Component should render correctly 1`] = `
             "admin",
           ],
           "id": "usersNavBtn",
-          "label": <FormattedMessage
+          "label": <Memo(FormattedMessage)
             defaultMessage="Project Users"
             id="project.view.projectUsersPage"
           />,
@@ -87,7 +87,7 @@ exports[`UserList: Component should render correctly 1`] = `
             "editor",
           ],
           "id": "contentNavBtn",
-          "label": <FormattedMessage
+          "label": <Memo(FormattedMessage)
             defaultMessage="Content"
             id="project.view.content"
           />,
@@ -99,7 +99,7 @@ exports[`UserList: Component should render correctly 1`] = `
             "admin",
           ],
           "id": "templatesNavBtn",
-          "label": <FormattedMessage
+          "label": <Memo(FormattedMessage)
             defaultMessage="Templates"
             id="project.view.templates"
           />,
@@ -115,13 +115,13 @@ exports[`UserList: Component should render correctly 1`] = `
   />
   <ContextHeader
     subtitle={
-      <FormattedMessage
+      <Memo(FormattedMessage)
         defaultMessage="Overview"
         id="project.userList.headerSubtitle"
       />
     }
     title={
-      <FormattedMessage
+      <Memo(FormattedMessage)
         defaultMessage="Users"
         id="project.userList.headerTitle"
       />
@@ -138,7 +138,7 @@ exports[`UserList: Component should render correctly 1`] = `
     loading={true}
     noData={true}
     noDataContent={
-      <FormattedMessage
+      <Memo(FormattedMessage)
         defaultMessage="No Users"
         id="project.userList.noUsers"
       />
@@ -158,7 +158,7 @@ exports[`UserList: Component should render correctly 1`] = `
     <BackLink
       to="/project/1"
     >
-      <FormattedMessage
+      <MemoizedFormattedMessage
         defaultMessage="Back"
         id="project.userList.back"
       />

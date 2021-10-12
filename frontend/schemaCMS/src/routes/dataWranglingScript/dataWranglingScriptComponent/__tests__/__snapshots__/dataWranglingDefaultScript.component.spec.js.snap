@@ -18,7 +18,7 @@ exports[`DataWranglingDefaultScript: Component should render correctly 1`] = `
             "editor",
           ],
           "id": "projectsNavBtn",
-          "label": <FormattedMessage
+          "label": <Memo(FormattedMessage)
             defaultMessage="Projects"
             id="jobDetail.projectsListPage"
           />,
@@ -33,7 +33,7 @@ exports[`DataWranglingDefaultScript: Component should render correctly 1`] = `
     title="Data Wrangling"
   />
   <Component>
-    <FormattedMessage
+    <MemoizedFormattedMessage
       defaultMessage="Description"
       id="dataWranglingScripts.dataWranglingDefaultScript.description"
     />
@@ -42,7 +42,7 @@ exports[`DataWranglingDefaultScript: Component should render correctly 1`] = `
     local:blank_cells.py
   </styled.div>
   <Component>
-    <FormattedMessage
+    <MemoizedFormattedMessage
       defaultMessage="Python Code"
       id="dataWranglingScripts.dataWranglingDefaultScript.pythonCode"
     />
@@ -165,7 +165,7 @@ exports[`DataWranglingDefaultScript: Component should render correctly with load
             "editor",
           ],
           "id": "projectsNavBtn",
-          "label": <FormattedMessage
+          "label": <Memo(FormattedMessage)
             defaultMessage="Projects"
             id="jobDetail.projectsListPage"
           />,
@@ -180,7 +180,7 @@ exports[`DataWranglingDefaultScript: Component should render correctly with load
     title="Data Wrangling"
   />
   <Component>
-    <FormattedMessage
+    <MemoizedFormattedMessage
       defaultMessage="Description"
       id="dataWranglingScripts.dataWranglingDefaultScript.description"
     />
@@ -189,7 +189,7 @@ exports[`DataWranglingDefaultScript: Component should render correctly with load
     local:blank_cells.py
   </styled.div>
   <Component>
-    <FormattedMessage
+    <MemoizedFormattedMessage
       defaultMessage="Python Code"
       id="dataWranglingScripts.dataWranglingDefaultScript.pythonCode"
     />

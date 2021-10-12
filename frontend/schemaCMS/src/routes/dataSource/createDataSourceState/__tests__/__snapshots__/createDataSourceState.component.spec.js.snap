@@ -2,11 +2,11 @@
 
 exports[`CreateDataSourceState: Component should render correctly 1`] = `
 <form
-  className="sc-bdnylx"
+  className="sc-bdnxRM"
   onSubmit={[Function]}
 >
   <div
-    className="sc-hBMVcZ dQhXKx"
+    className="sc-fnVZcZ rmgth"
   >
     <div
       style={
@@ -23,10 +23,10 @@ exports[`CreateDataSourceState: Component should render correctly 1`] = `
     >
       <div>
         <div
-          className="sc-fnVYJo"
+          className="sc-fFSPTT"
         >
           <h2
-            className="sc-kfYqjs cbmCxw"
+            className="sc-fKgJPI eCDTug"
             id="headerTitle"
             style={
               Object {
@@ -40,7 +40,7 @@ exports[`CreateDataSourceState: Component should render correctly 1`] = `
             State
           </h2>
           <h1
-            className="sc-fKgIGh egBmWs"
+            className="sc-bCwfaz dvJkqu"
             id="headerSubtitle"
             style={
               Object {
@@ -63,14 +63,16 @@ exports[`CreateDataSourceState: Component should render correctly 1`] = `
         onClick={[Function]}
         style={
           Object {
+            "alignItems": "center",
             "backgroundColor": "transparent",
             "border": "none",
-            "borderRadius": "48px",
+            "borderRadius": "30px",
             "color": "#FFF",
             "cursor": "pointer",
-            "display": "inline-block",
+            "display": "flex",
             "fill": "#FFF",
-            "fontSize": "18px",
+            "fontSize": "20px",
+            "justifyContent": "center",
             "margin": "0",
             "minHeight": "48px",
             "outline": "none",
@@ -122,16 +124,16 @@ exports[`CreateDataSourceState: Component should render correctly 1`] = `
       }
     >
       <div
-        className="sc-bkbjAj bTvJWQ"
+        className="sc-iemWCZ VjNnQ"
       >
         <div
-          className="sc-fFSRdu cLvykh"
+          className="sc-bkbkJK hOSTAN"
         >
           <div
-            className="sc-fnVYJo"
+            className="sc-fFSPTT"
           >
             <h2
-              className="sc-kfYqjs cbmCxw"
+              className="sc-fKgJPI eCDTug"
               id="headerTitle"
               style={
                 Object {
@@ -145,7 +147,7 @@ exports[`CreateDataSourceState: Component should render correctly 1`] = `
               State
             </h2>
             <h1
-              className="sc-fKgIGh egBmWs"
+              className="sc-bCwfaz dvJkqu"
               id="headerSubtitle"
               style={
                 Object {
@@ -163,10 +165,10 @@ exports[`CreateDataSourceState: Component should render correctly 1`] = `
           </div>
         </div>
         <div
-          className="sc-iemXMA jNejcA"
+          className="sc-dIvrsQ bCBrVX"
         >
           <div
-            className="sc-dIvqjp iEPBku"
+            className="sc-hHEiqL iPLJUK"
           >
             <a
               href="/project/"
@@ -177,7 +179,7 @@ exports[`CreateDataSourceState: Component should render correctly 1`] = `
             </a>
           </div>
           <div
-            className="sc-dIvqjp iEPBku"
+            className="sc-hHEiqL iPLJUK"
           >
             <a
               href="/user/"
@@ -188,7 +190,7 @@ exports[`CreateDataSourceState: Component should render correctly 1`] = `
             </a>
           </div>
           <div
-            className="sc-dIvqjp iEPBku"
+            className="sc-hHEiqL iPLJUK"
           >
             <a
               href="/project/1"
@@ -199,7 +201,7 @@ exports[`CreateDataSourceState: Component should render correctly 1`] = `
             </a>
           </div>
           <div
-            className="sc-dIvqjp iEPBku"
+            className="sc-hHEiqL iPLJUK"
           >
             <a
               href="/project/1/datasource"
@@ -210,7 +212,7 @@ exports[`CreateDataSourceState: Component should render correctly 1`] = `
             </a>
           </div>
           <div
-            className="sc-dIvqjp iEPBku"
+            className="sc-hHEiqL iPLJUK"
           >
             <a
               href="/project/1/user"
@@ -221,7 +223,7 @@ exports[`CreateDataSourceState: Component should render correctly 1`] = `
             </a>
           </div>
           <div
-            className="sc-dIvqjp iEPBku"
+            className="sc-hHEiqL iPLJUK"
           >
             <a
               href="/project/1/content"
@@ -232,7 +234,7 @@ exports[`CreateDataSourceState: Component should render correctly 1`] = `
             </a>
           </div>
           <div
-            className="sc-dIvqjp iEPBku"
+            className="sc-hHEiqL iPLJUK"
           >
             <a
               href="/project/1/templates"
@@ -244,10 +246,10 @@ exports[`CreateDataSourceState: Component should render correctly 1`] = `
           </div>
         </div>
         <div
-          className="sc-iemXMA jNejcA"
+          className="sc-dIvrsQ bCBrVX"
         >
           <div
-            className="sc-dIvqjp iEPBku"
+            className="sc-hHEiqL iPLJUK"
           >
             <a
               href="/settings"
@@ -258,7 +260,7 @@ exports[`CreateDataSourceState: Component should render correctly 1`] = `
             </a>
           </div>
           <div
-            className="sc-dIvqjp iEPBku"
+            className="sc-hHEiqL iPLJUK"
           >
             <div
               id="logoutNavBtn"
@@ -269,10 +271,10 @@ exports[`CreateDataSourceState: Component should render correctly 1`] = `
           </div>
         </div>
         <div
-          className="sc-hHEjAm FxEiE"
+          className="sc-dlMDgC hOaXQb"
         >
           <a
-            className="sc-dlMBXb dqipSy"
+            className="sc-kfYoZR fZlrPZ"
             href="/"
             id="aboutNavBtn"
             onClick={[Function]}
@@ -282,7 +284,7 @@ exports[`CreateDataSourceState: Component should render correctly 1`] = `
             About Schema CMS
           </a>
           <a
-            className="sc-dlMBXb dqipSy"
+            className="sc-kfYoZR fZlrPZ"
             href="https://github.com/schemadesign/schema_cms/blob/master/backend/app/docs/public_api/api_calls.md"
             id="apiNavBtn"
             onClick={[Function]}
@@ -292,7 +294,7 @@ exports[`CreateDataSourceState: Component should render correctly 1`] = `
             API Doc
           </a>
           <a
-            className="sc-dlMBXb dqipSy"
+            className="sc-kfYoZR fZlrPZ"
             href="https://github.com/schemadesign/schema_cms"
             id="repositoryNavBtn"
             onClick={[Function]}
@@ -309,14 +311,16 @@ exports[`CreateDataSourceState: Component should render correctly 1`] = `
         onClick={[Function]}
         style={
           Object {
+            "alignItems": "center",
             "backgroundColor": "transparent",
             "border": "none",
-            "borderRadius": "48px",
+            "borderRadius": "30px",
             "color": "#FFF",
             "cursor": "pointer",
-            "display": "inline-block",
+            "display": "flex",
             "fill": "#FFF",
-            "fontSize": "18px",
+            "fontSize": "20px",
+            "justifyContent": "center",
             "margin": "0",
             "minHeight": "48px",
             "outline": "none",
@@ -348,13 +352,13 @@ exports[`CreateDataSourceState: Component should render correctly 1`] = `
     </div>
   </div>
   <div
-    className="sc-dlnjPT dpbPKV"
+    className="sc-dlnjwi gYefq"
   >
     <div
-      className="sc-hKFyIo hkUAqa"
+      className="sc-hKFxyN htWaNL"
     >
       <h2
-        className="sc-eCApGN jLlqJF"
+        className="sc-eCApnc bxDuaE"
         id="desktopHeaderTitle"
         style={
           Object {
@@ -368,7 +372,7 @@ exports[`CreateDataSourceState: Component should render correctly 1`] = `
         State
       </h2>
       <h1
-        className="sc-jSFkmK jHNGuh"
+        className="sc-jSFjdj iiPghZ"
         id="desktopHeaderSubtitle"
         style={
           Object {
@@ -385,14 +389,14 @@ exports[`CreateDataSourceState: Component should render correctly 1`] = `
       </h1>
     </div>
     <div
-      className="sc-gKAblj"
+      className="sc-gKAaRy"
     />
   </div>
   <div
-    className="sc-iJCRLp dmVujA"
+    className="sc-giAqHp ea-da-dR"
   >
     <div
-      className="sc-giAqnE hRtEWu"
+      className="sc-ezzafa bmZPSJ"
     >
       <div
         style={
@@ -464,7 +468,7 @@ exports[`CreateDataSourceState: Component should render correctly 1`] = `
             }
           >
             <div
-              className="sc-ezzayL htAOfL"
+              className="sc-bYwzuL iFuWWw"
             >
               <svg
                 style={
@@ -486,12 +490,12 @@ exports[`CreateDataSourceState: Component should render correctly 1`] = `
         </div>
       </div>
       <div
-        className="sc-bYwzba bAVweK"
+        className="sc-kLojOw dROsgc"
         id="nameError"
       />
     </div>
     <div
-      className="sc-giAqnE hRtEWu"
+      className="sc-ezzafa bmZPSJ"
     >
       <div
         style={
@@ -581,7 +585,7 @@ exports[`CreateDataSourceState: Component should render correctly 1`] = `
             }
           >
             <div
-              className="sc-ezzayL htAOfL"
+              className="sc-bYwzuL iFuWWw"
             >
               <svg
                 style={
@@ -603,12 +607,12 @@ exports[`CreateDataSourceState: Component should render correctly 1`] = `
         </div>
       </div>
       <div
-        className="sc-bYwzba bAVweK"
+        className="sc-kLojOw dROsgc"
         id="descriptionError"
       />
     </div>
     <div
-      className="sc-giAqnE hRtEWu"
+      className="sc-ezzafa bmZPSJ"
     >
       <div
         style={
@@ -680,7 +684,7 @@ exports[`CreateDataSourceState: Component should render correctly 1`] = `
             }
           >
             <div
-              className="sc-ezzayL htAOfL"
+              className="sc-bYwzuL iFuWWw"
             >
               <svg
                 style={
@@ -702,7 +706,7 @@ exports[`CreateDataSourceState: Component should render correctly 1`] = `
         </div>
       </div>
       <div
-        className="sc-bYwzba bAVweK"
+        className="sc-kLojOw dROsgc"
         id="sourceUrlError"
       />
     </div>
@@ -723,7 +727,7 @@ exports[`CreateDataSourceState: Component should render correctly 1`] = `
       Tags
     </label>
     <div
-      className="sc-ksluoS cNJlQo"
+      className="sc-hBMUJo kElaZr"
     >
       No Tags available
     </div>
@@ -744,18 +748,18 @@ exports[`CreateDataSourceState: Component should render correctly 1`] = `
       Filters
     </label>
     <div
-      className="sc-ksluoS cNJlQo"
+      className="sc-hBMUJo kElaZr"
     >
       No Filters available
     </div>
     <div
-      className="sc-jcwofb bFQwKB"
+      className="sc-carFqZ fpFFWs"
     >
       <div
-        className="sc-carGAA hPFXxs"
+        className="sc-iTVJFM hGyUSv"
       >
         <div
-          className="sc-efHXLn ckwWiH"
+          className="sc-cTJkRt dnqGAN"
         >
           <div>
             <input
@@ -807,16 +811,16 @@ exports[`CreateDataSourceState: Component should render correctly 1`] = `
             </label>
           </div>
           <div
-            className="sc-iBzFoy dgWGuH"
+            className="sc-efHYUO lkNLgr"
           >
             <label
-              className="sc-iTVIwl dHaTes"
+              className="sc-iBzEeX gRdXCJ"
               htmlFor="isPublic"
             >
               Make it Public
             </label>
             <span
-              className="sc-dPaNSN hbWViB"
+              className="sc-cOifOu hUQQRz"
             >
               This State is currently Private
             </span>
@@ -826,19 +830,19 @@ exports[`CreateDataSourceState: Component should render correctly 1`] = `
     </div>
   </div>
   <div
-    className="sc-iCoHVE iVwhst"
+    className="sc-iCoGMd KGBDl"
   >
     <div
-      className="sc-pNWxx leFfYk"
+      className="sc-pNWdM epaOHw"
     >
       <div
-        className="sc-fujyUd cktdoz"
+        className="sc-fujyAs hPXMmZ"
       >
         <div
-          className="sc-gtssRu kIzCcZ"
+          className="sc-gtsrHT eBiRrC"
         >
           <a
-            className="sc-kEqYlL kfMKSa"
+            className="sc-kEqXSa glRwIQ"
             disabled={false}
             href="/datasource/dataSourceId/state"
             onClick={[Function]}
@@ -846,18 +850,20 @@ exports[`CreateDataSourceState: Component should render correctly 1`] = `
             Cancel
           </a>
           <button
-            className="sc-jrsJCI fykTWR"
+            className="sc-jrsJWt dbWmqZ"
             disabled={true}
             style={
               Object {
+                "alignItems": "center",
                 "backgroundColor": "#1d1d20",
                 "border": "none",
-                "borderRadius": "48px",
+                "borderRadius": "30px",
                 "color": "#71737e",
                 "cursor": "default",
-                "display": "inline-block",
+                "display": "flex",
                 "fill": "#FFF",
-                "fontSize": "18px",
+                "fontSize": "20px",
+                "justifyContent": "center",
                 "margin": "0",
                 "minHeight": "48px",
                 "outline": "none",

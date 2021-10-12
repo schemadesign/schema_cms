@@ -3,7 +3,7 @@
 exports[`TagCategoryForm: Component should render correctly 1`] = `
 Array [
   <div
-    className="sc-bdnylx fndEZO"
+    className="sc-bdnxRM JKNjl"
   >
     <div
       style={
@@ -74,7 +74,7 @@ Array [
           }
         >
           <div
-            className="sc-gtssRu gKLALO"
+            className="sc-gtsrHT gufkHJ"
           >
             <svg
               style={
@@ -96,7 +96,7 @@ Array [
       </div>
     </div>
     <div
-      className="sc-dlnjPT dLCwXv"
+      className="sc-dlnjwi htfpKs"
       id="nameError"
     />
   </div>,
@@ -168,7 +168,7 @@ Array [
         }
       >
         <label
-          className="sc-jrsJCI ddxAxa"
+          className="sc-jrsJWt cSYopy"
           htmlFor="content"
         >
           Content
@@ -297,21 +297,21 @@ Array [
     </div>
   </div>,
   <div
-    className="sc-bCwgka eDDRwn"
+    className="sc-iwajpm hxnQNB"
   >
     <div
-      className="sc-iwaifL egjjJw"
+      className="sc-cxNHIi chVRys"
       id="tagsCounter"
     />
     2 Tags
     <div
-      className="sc-iwaifL egjjJw"
+      className="sc-cxNHIi chVRys"
     >
       <div
-        className="sc-dIvqjp iNCAit"
+        className="sc-hHEiqL haKFeZ"
       >
         <div
-          className="sc-bYwzba ikCxt"
+          className="sc-kLojOw FyfSX"
         >
           <button
             disabled={false}
@@ -319,15 +319,17 @@ Array [
             onClick={[Function]}
             style={
               Object {
+                "alignItems": "center",
                 "backgroundColor": "#FFF",
                 "border": "none",
-                "borderRadius": "48px",
+                "borderRadius": "30px",
                 "color": "#000",
                 "cursor": "pointer",
-                "display": "inline-block",
+                "display": "flex",
                 "fill": "#FFF",
-                "fontSize": "18px",
+                "fontSize": "20px",
                 "height": 40,
+                "justifyContent": "center",
                 "margin": "0",
                 "minHeight": 40,
                 "outline": "none",
@@ -360,13 +362,13 @@ Array [
     </div>
   </div>,
   <div
-    className="sc-jSFkmK iZdDrC"
+    className="sc-jSFjdj gMIFNS"
   >
     <div
-      className="sc-hKFyIo xpGLh"
+      className="sc-hKFxyN fbiGBE"
     >
       <div
-        className="sc-eCApGN ikaKkR"
+        className="sc-eCApnc ijzsjI"
       >
         <div
           style={
@@ -448,10 +450,10 @@ Array [
       </div>
     </div>
     <div
-      className="sc-hKFyIo xpGLh"
+      className="sc-hKFxyN fbiGBE"
     >
       <div
-        className="sc-eCApGN ikaKkR"
+        className="sc-eCApnc ijzsjI"
       >
         <div
           style={
@@ -534,16 +536,16 @@ Array [
     </div>
   </div>,
   <div
-    className="sc-fujyUd kIzGDf"
+    className="sc-fujyAs mAqrx"
     onClick={[Function]}
   >
     Tap or click to add new Tag
   </div>,
   <div
-    className="sc-pNWxx NWUiw"
+    className="sc-pNWdM gsiWJc"
   >
     <div
-      className="sc-iqAbSa dPXBia"
+      className="sc-iqAclL hBInZj"
     >
       <div>
         <input
@@ -594,23 +596,23 @@ Array [
         </label>
       </div>
       <div
-        className="sc-dIsAE hfcUik"
+        className="sc-dIsUp jQREMY"
       >
         <label
-          className="sc-crzoUp iuReZo"
+          className="sc-crzoAE hGOhSk"
           htmlFor="isAvailable"
         >
           Make it Available
         </label>
         <span
-          className="sc-fnVYJo huOJvB"
+          className="sc-fFSPTT dHjoqV"
         >
           This Tag Category is currently unavailable for Editors
         </span>
       </div>
     </div>
     <div
-      className="sc-iqAbSa dPXBia"
+      className="sc-iqAclL hBInZj"
     >
       <div>
         <input
@@ -661,16 +663,16 @@ Array [
         </label>
       </div>
       <div
-        className="sc-dIsAE hfcUik"
+        className="sc-dIsUp jQREMY"
       >
         <label
-          className="sc-crzoUp iuReZo"
+          className="sc-crzoAE hGOhSk"
           htmlFor="isSingleSelect"
         >
           Make it Single Choice
         </label>
         <span
-          className="sc-fnVYJo huOJvB"
+          className="sc-fFSPTT dHjoqV"
         >
           This Tag Category is currently Multi Choice
         </span>
@@ -683,7 +685,7 @@ Array [
 exports[`TagCategoryForm: Component should render empty 1`] = `
 Array [
   <div
-    className="sc-bdnylx fndEZO"
+    className="sc-bdnxRM JKNjl"
   >
     <div
       style={
@@ -754,7 +756,7 @@ Array [
           }
         >
           <div
-            className="sc-gtssRu gKLALO"
+            className="sc-gtsrHT gufkHJ"
           >
             <svg
               style={
@@ -776,7 +778,7 @@ Array [
       </div>
     </div>
     <div
-      className="sc-dlnjPT dLCwXv"
+      className="sc-dlnjwi htfpKs"
       id="nameError"
     />
   </div>,
@@ -848,7 +850,7 @@ Array [
         }
       >
         <label
-          className="sc-jrsJCI ddxAxa"
+          className="sc-jrsJWt cSYopy"
           htmlFor="content"
         >
           Content
@@ -977,21 +979,21 @@ Array [
     </div>
   </div>,
   <div
-    className="sc-bCwgka eDDRwn"
+    className="sc-iwajpm hxnQNB"
   >
     <div
-      className="sc-iwaifL egjjJw"
+      className="sc-cxNHIi chVRys"
       id="tagsCounter"
     />
     0 Tags
     <div
-      className="sc-iwaifL egjjJw"
+      className="sc-cxNHIi chVRys"
     >
       <div
-        className="sc-dIvqjp iNCAit"
+        className="sc-hHEiqL haKFeZ"
       >
         <div
-          className="sc-bYwzba ikCxt"
+          className="sc-kLojOw FyfSX"
         >
           <button
             disabled={false}
@@ -999,15 +1001,17 @@ Array [
             onClick={[Function]}
             style={
               Object {
+                "alignItems": "center",
                 "backgroundColor": "#FFF",
                 "border": "none",
-                "borderRadius": "48px",
+                "borderRadius": "30px",
                 "color": "#000",
                 "cursor": "pointer",
-                "display": "inline-block",
+                "display": "flex",
                 "fill": "#FFF",
-                "fontSize": "18px",
+                "fontSize": "20px",
                 "height": 40,
+                "justifyContent": "center",
                 "margin": "0",
                 "minHeight": 40,
                 "outline": "none",
@@ -1040,19 +1044,19 @@ Array [
     </div>
   </div>,
   <div
-    className="sc-jSFkmK iZdDrC"
+    className="sc-jSFjdj gMIFNS"
   />,
   <div
-    className="sc-fujyUd kIzGDf"
+    className="sc-fujyAs mAqrx"
     onClick={[Function]}
   >
     Tap or click to add new Tag
   </div>,
   <div
-    className="sc-pNWxx NWUiw"
+    className="sc-pNWdM gsiWJc"
   >
     <div
-      className="sc-iqAbSa dPXBia"
+      className="sc-iqAclL hBInZj"
     >
       <div>
         <input
@@ -1103,23 +1107,23 @@ Array [
         </label>
       </div>
       <div
-        className="sc-dIsAE hfcUik"
+        className="sc-dIsUp jQREMY"
       >
         <label
-          className="sc-crzoUp iuReZo"
+          className="sc-crzoAE hGOhSk"
           htmlFor="isAvailable"
         >
           Make it Available
         </label>
         <span
-          className="sc-fnVYJo huOJvB"
+          className="sc-fFSPTT dHjoqV"
         >
           This Tag Category is currently unavailable for Editors
         </span>
       </div>
     </div>
     <div
-      className="sc-iqAbSa dPXBia"
+      className="sc-iqAclL hBInZj"
     >
       <div>
         <input
@@ -1170,16 +1174,16 @@ Array [
         </label>
       </div>
       <div
-        className="sc-dIsAE hfcUik"
+        className="sc-dIsUp jQREMY"
       >
         <label
-          className="sc-crzoUp iuReZo"
+          className="sc-crzoAE hGOhSk"
           htmlFor="isSingleSelect"
         >
           Make it Single Choice
         </label>
         <span
-          className="sc-fnVYJo huOJvB"
+          className="sc-fFSPTT dHjoqV"
         >
           This Tag Category is currently Multi Choice
         </span>

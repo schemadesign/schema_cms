@@ -4,7 +4,7 @@ exports[`CreateFilter: Component should render correctly 1`] = `
 <styled.div>
   <MobileMenu
     headerSubtitle={
-      <FormattedMessage
+      <Memo(FormattedMessage)
         defaultMessage="Create Filter"
         id="dataSource.view.filter.subTitle"
       />
@@ -18,7 +18,7 @@ exports[`CreateFilter: Component should render correctly 1`] = `
             "editor",
           ],
           "id": "projectsNavBtn",
-          "label": <FormattedMessage
+          "label": <Memo(FormattedMessage)
             defaultMessage="Projects"
             id="project.view.projectsListPage"
           />,
@@ -30,7 +30,7 @@ exports[`CreateFilter: Component should render correctly 1`] = `
             "admin",
           ],
           "id": "usersPageNavBtn",
-          "label": <FormattedMessage
+          "label": <Memo(FormattedMessage)
             defaultMessage="Users"
             id="project.view.usersPage"
           />,
@@ -43,7 +43,7 @@ exports[`CreateFilter: Component should render correctly 1`] = `
             "editor",
           ],
           "id": "projectDetailsNavBtn",
-          "label": <FormattedMessage
+          "label": <Memo(FormattedMessage)
             defaultMessage="Project details"
             id="project.view.projectDetails"
           />,
@@ -56,7 +56,7 @@ exports[`CreateFilter: Component should render correctly 1`] = `
             "editor",
           ],
           "id": "dataSourceNavBtn",
-          "label": <FormattedMessage
+          "label": <Memo(FormattedMessage)
             defaultMessage="Data Sources"
             id="project.view.projectDataSources"
           />,
@@ -68,7 +68,7 @@ exports[`CreateFilter: Component should render correctly 1`] = `
             "admin",
           ],
           "id": "usersNavBtn",
-          "label": <FormattedMessage
+          "label": <Memo(FormattedMessage)
             defaultMessage="Project Users"
             id="project.view.projectUsersPage"
           />,
@@ -81,7 +81,7 @@ exports[`CreateFilter: Component should render correctly 1`] = `
             "editor",
           ],
           "id": "contentNavBtn",
-          "label": <FormattedMessage
+          "label": <Memo(FormattedMessage)
             defaultMessage="Content"
             id="project.view.content"
           />,
@@ -93,7 +93,7 @@ exports[`CreateFilter: Component should render correctly 1`] = `
             "admin",
           ],
           "id": "templatesNavBtn",
-          "label": <FormattedMessage
+          "label": <Memo(FormattedMessage)
             defaultMessage="Templates"
             id="project.view.templates"
           />,
@@ -105,7 +105,7 @@ exports[`CreateFilter: Component should render correctly 1`] = `
   />
   <ContextHeader
     subtitle={
-      <FormattedMessage
+      <Memo(FormattedMessage)
         defaultMessage="Create Filter"
         id="dataSource.view.filter.subTitle"
       />
@@ -127,7 +127,7 @@ exports[`CreateFilter: Component should render correctly with loader 1`] = `
 <styled.div>
   <MobileMenu
     headerSubtitle={
-      <FormattedMessage
+      <Memo(FormattedMessage)
         defaultMessage="Create Filter"
         id="dataSource.view.filter.subTitle"
       />
@@ -141,7 +141,7 @@ exports[`CreateFilter: Component should render correctly with loader 1`] = `
             "editor",
           ],
           "id": "projectsNavBtn",
-          "label": <FormattedMessage
+          "label": <Memo(FormattedMessage)
             defaultMessage="Projects"
             id="project.view.projectsListPage"
           />,
@@ -153,7 +153,7 @@ exports[`CreateFilter: Component should render correctly with loader 1`] = `
             "admin",
           ],
           "id": "usersPageNavBtn",
-          "label": <FormattedMessage
+          "label": <Memo(FormattedMessage)
             defaultMessage="Users"
             id="project.view.usersPage"
           />,
@@ -166,7 +166,7 @@ exports[`CreateFilter: Component should render correctly with loader 1`] = `
             "editor",
           ],
           "id": "projectDetailsNavBtn",
-          "label": <FormattedMessage
+          "label": <Memo(FormattedMessage)
             defaultMessage="Project details"
             id="project.view.projectDetails"
           />,
@@ -179,7 +179,7 @@ exports[`CreateFilter: Component should render correctly with loader 1`] = `
             "editor",
           ],
           "id": "dataSourceNavBtn",
-          "label": <FormattedMessage
+          "label": <Memo(FormattedMessage)
             defaultMessage="Data Sources"
             id="project.view.projectDataSources"
           />,
@@ -191,7 +191,7 @@ exports[`CreateFilter: Component should render correctly with loader 1`] = `
             "admin",
           ],
           "id": "usersNavBtn",
-          "label": <FormattedMessage
+          "label": <Memo(FormattedMessage)
             defaultMessage="Project Users"
             id="project.view.projectUsersPage"
           />,
@@ -204,7 +204,7 @@ exports[`CreateFilter: Component should render correctly with loader 1`] = `
             "editor",
           ],
           "id": "contentNavBtn",
-          "label": <FormattedMessage
+          "label": <Memo(FormattedMessage)
             defaultMessage="Content"
             id="project.view.content"
           />,
@@ -216,7 +216,7 @@ exports[`CreateFilter: Component should render correctly with loader 1`] = `
             "admin",
           ],
           "id": "templatesNavBtn",
-          "label": <FormattedMessage
+          "label": <Memo(FormattedMessage)
             defaultMessage="Templates"
             id="project.view.templates"
           />,
@@ -228,7 +228,7 @@ exports[`CreateFilter: Component should render correctly with loader 1`] = `
   />
   <ContextHeader
     subtitle={
-      <FormattedMessage
+      <Memo(FormattedMessage)
         defaultMessage="Create Filter"
         id="dataSource.view.filter.subTitle"
       />

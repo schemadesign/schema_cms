@@ -38,7 +38,7 @@ exports[`LogoutModal: Component should be hidden 1`] = `
   }
 >
   <Styled(H1)>
-    <FormattedMessage
+    <MemoizedFormattedMessage
       defaultMessage="Are you sure you want to log out?"
       id="shared.components.logoutModal.title"
     />
@@ -48,7 +48,7 @@ exports[`LogoutModal: Component should be hidden 1`] = `
       disabled={false}
       onClick={[Function]}
     >
-      <FormattedMessage
+      <MemoizedFormattedMessage
         defaultMessage="Cancel"
         id="shared.components.logoutModal.cancel"
       />
@@ -58,7 +58,7 @@ exports[`LogoutModal: Component should be hidden 1`] = `
       onClick={[Function]}
       to="redirectUrl"
     >
-      <FormattedMessage
+      <MemoizedFormattedMessage
         defaultMessage="Confirm"
         id="shared.components.logoutModal.confirm"
       />
@@ -105,7 +105,7 @@ exports[`LogoutModal: Component should render correctly 1`] = `
   }
 >
   <Styled(H1)>
-    <FormattedMessage
+    <MemoizedFormattedMessage
       defaultMessage="Are you sure you want to log out?"
       id="shared.components.logoutModal.title"
     />
@@ -115,7 +115,7 @@ exports[`LogoutModal: Component should render correctly 1`] = `
       disabled={false}
       onClick={[Function]}
     >
-      <FormattedMessage
+      <MemoizedFormattedMessage
         defaultMessage="Cancel"
         id="shared.components.logoutModal.cancel"
       />
@@ -125,7 +125,7 @@ exports[`LogoutModal: Component should render correctly 1`] = `
       onClick={[Function]}
       to="redirectUrl"
     >
-      <FormattedMessage
+      <MemoizedFormattedMessage
         defaultMessage="Confirm"
         id="shared.components.logoutModal.confirm"
       />

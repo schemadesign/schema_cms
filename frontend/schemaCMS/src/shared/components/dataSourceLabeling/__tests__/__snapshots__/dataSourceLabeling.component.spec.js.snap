@@ -2,49 +2,49 @@
 
 exports[`DataSourceLabeling: Component should render correctly 1`] = `
 <div
-  className="sc-bdnylx hHZzIp"
+  className="sc-bdnxRM sDpFW"
 >
   <div
-    className="sc-gtssRu iNdVgL"
+    className="sc-gtsrHT jHxKeM"
   >
     <div
-      className="sc-dlnjPT fLFyDH"
+      className="sc-dlnjwi cAaRNc"
     >
       <div
-        className="sc-hKFyIo iuZCNB"
+        className="sc-hKFxyN cXbrUo"
       >
         Field
       </div>
       <div
-        className="sc-hKFyIo iuZCNB"
+        className="sc-hKFxyN cXbrUo"
       >
         Original Type
       </div>
       <div
-        className="sc-hKFyIo iuZCNB"
+        className="sc-hKFxyN cXbrUo"
       >
         Mapped Type
       </div>
     </div>
   </div>
   <div
-    className="sc-dlnjPT fLFyDH"
+    className="sc-dlnjwi cAaRNc"
   >
     <div
-      className="sc-hKFyIo iuZCNB"
+      className="sc-hKFxyN cXbrUo"
     >
       Field1
     </div>
     <div
-      className="sc-hKFyIo iuZCNB"
+      className="sc-hKFxyN cXbrUo"
     >
       string
     </div>
     <div
-      className="sc-hKFyIo iuZCNB"
+      className="sc-hKFxyN cXbrUo"
     >
       <div
-        className="sc-eCApGN bSrFPJ"
+        className="sc-eCApnc bRFLYk"
         onClick={[Function]}
       >
         <input
@@ -318,7 +318,7 @@ exports[`DataSourceLabeling: Component should render correctly 1`] = `
           </div>
         </div>
         <div
-          className="sc-jSFkmK ezShLZ"
+          className="sc-jSFjdj gGiCxJ"
           style={
             Object {
               "top": 0,
@@ -345,23 +345,23 @@ exports[`DataSourceLabeling: Component should render correctly 1`] = `
     </div>
   </div>
   <div
-    className="sc-dlnjPT fLFyDH"
+    className="sc-dlnjwi cAaRNc"
   >
     <div
-      className="sc-hKFyIo iuZCNB"
+      className="sc-hKFxyN cXbrUo"
     >
       Field2
     </div>
     <div
-      className="sc-hKFyIo iuZCNB"
+      className="sc-hKFxyN cXbrUo"
     >
       number
     </div>
     <div
-      className="sc-hKFyIo iuZCNB"
+      className="sc-hKFxyN cXbrUo"
     >
       <div
-        className="sc-eCApGN bSrFPJ"
+        className="sc-eCApnc bRFLYk"
         onClick={[Function]}
       >
         <input
@@ -635,7 +635,7 @@ exports[`DataSourceLabeling: Component should render correctly 1`] = `
           </div>
         </div>
         <div
-          className="sc-jSFkmK ezShLZ"
+          className="sc-jSFjdj gGiCxJ"
           style={
             Object {
               "top": 0,

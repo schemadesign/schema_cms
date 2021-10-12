@@ -4,13 +4,13 @@ exports[`View: Component should render correctly 1`] = `
 <styled.div>
   <MobileMenu
     headerSubtitle={
-      <FormattedMessage
+      <Memo(FormattedMessage)
         defaultMessage="Profile"
         id="user.view.subTitle"
       />
     }
     headerTitle={
-      <FormattedMessage
+      <Memo(FormattedMessage)
         defaultMessage="Users"
         id="user.view.title"
       />
@@ -22,7 +22,7 @@ exports[`View: Component should render correctly 1`] = `
             "admin",
           ],
           "id": "projectsNavBtn",
-          "label": <FormattedMessage
+          "label": <Memo(FormattedMessage)
             defaultMessage="Projects"
             id="user.projectsListPage"
           />,
@@ -34,7 +34,7 @@ exports[`View: Component should render correctly 1`] = `
             "admin",
           ],
           "id": "userNavBtn",
-          "label": <FormattedMessage
+          "label": <Memo(FormattedMessage)
             defaultMessage="Users"
             id="user.userPage"
           />,
@@ -46,13 +46,13 @@ exports[`View: Component should render correctly 1`] = `
   />
   <ContextHeader
     subtitle={
-      <FormattedMessage
+      <Memo(FormattedMessage)
         defaultMessage="Profile"
         id="user.view.subTitle"
       />
     }
     title={
-      <FormattedMessage
+      <Memo(FormattedMessage)
         defaultMessage="Users"
         id="user.view.title"
       />
@@ -112,7 +112,7 @@ exports[`View: Component should render correctly 1`] = `
     }
   >
     <Styled(H1)>
-      <FormattedMessage
+      <MemoizedFormattedMessage
         defaultMessage="Are you sure you want to remove this user?"
         id="user.view.removeTitle"
       />
@@ -122,7 +122,7 @@ exports[`View: Component should render correctly 1`] = `
         disabled={false}
         onClick={[Function]}
       >
-        <FormattedMessage
+        <MemoizedFormattedMessage
           defaultMessage="Cancel"
           id="user.view.cancelRemoval"
         />
@@ -132,7 +132,7 @@ exports[`View: Component should render correctly 1`] = `
         loading={false}
         onClick={[Function]}
       >
-        <FormattedMessage
+        <MemoizedFormattedMessage
           defaultMessage="Confirm"
           id="user.view.confirmRemoval"
         />
@@ -175,7 +175,7 @@ exports[`View: Component should render correctly 1`] = `
     }
   >
     <Styled(H1)>
-      <FormattedMessage
+      <MemoizedFormattedMessage
         defaultMessage="Are you sure you want to upgrade user?"
         id="user.view.makeAdminTitle"
       />
@@ -185,7 +185,7 @@ exports[`View: Component should render correctly 1`] = `
         disabled={false}
         onClick={[Function]}
       >
-        <FormattedMessage
+        <MemoizedFormattedMessage
           defaultMessage="Cancel"
           disabled={false}
           id="user.view.cancelRemoval"
@@ -196,7 +196,7 @@ exports[`View: Component should render correctly 1`] = `
         loading={false}
         onClick={[Function]}
       >
-        <FormattedMessage
+        <MemoizedFormattedMessage
           defaultMessage="Confirm"
           id="user.view.confirmRemoval"
         />
@@ -210,13 +210,13 @@ exports[`View: Component should render correctly for admin user 1`] = `
 <styled.div>
   <MobileMenu
     headerSubtitle={
-      <FormattedMessage
+      <Memo(FormattedMessage)
         defaultMessage="Profile"
         id="user.view.subTitle"
       />
     }
     headerTitle={
-      <FormattedMessage
+      <Memo(FormattedMessage)
         defaultMessage="Users"
         id="user.view.title"
       />
@@ -228,7 +228,7 @@ exports[`View: Component should render correctly for admin user 1`] = `
             "admin",
           ],
           "id": "projectsNavBtn",
-          "label": <FormattedMessage
+          "label": <Memo(FormattedMessage)
             defaultMessage="Projects"
             id="user.projectsListPage"
           />,
@@ -240,7 +240,7 @@ exports[`View: Component should render correctly for admin user 1`] = `
             "admin",
           ],
           "id": "userNavBtn",
-          "label": <FormattedMessage
+          "label": <Memo(FormattedMessage)
             defaultMessage="Users"
             id="user.userPage"
           />,
@@ -252,13 +252,13 @@ exports[`View: Component should render correctly for admin user 1`] = `
   />
   <ContextHeader
     subtitle={
-      <FormattedMessage
+      <Memo(FormattedMessage)
         defaultMessage="Profile"
         id="user.view.subTitle"
       />
     }
     title={
-      <FormattedMessage
+      <Memo(FormattedMessage)
         defaultMessage="Users"
         id="user.view.title"
       />
@@ -318,7 +318,7 @@ exports[`View: Component should render correctly for admin user 1`] = `
     }
   >
     <Styled(H1)>
-      <FormattedMessage
+      <MemoizedFormattedMessage
         defaultMessage="Are you sure you want to remove this user?"
         id="user.view.removeTitle"
       />
@@ -328,7 +328,7 @@ exports[`View: Component should render correctly for admin user 1`] = `
         disabled={false}
         onClick={[Function]}
       >
-        <FormattedMessage
+        <MemoizedFormattedMessage
           defaultMessage="Cancel"
           id="user.view.cancelRemoval"
         />
@@ -338,7 +338,7 @@ exports[`View: Component should render correctly for admin user 1`] = `
         loading={false}
         onClick={[Function]}
       >
-        <FormattedMessage
+        <MemoizedFormattedMessage
           defaultMessage="Confirm"
           id="user.view.confirmRemoval"
         />
@@ -381,7 +381,7 @@ exports[`View: Component should render correctly for admin user 1`] = `
     }
   >
     <Styled(H1)>
-      <FormattedMessage
+      <MemoizedFormattedMessage
         defaultMessage="Are you sure you want to upgrade user?"
         id="user.view.makeAdminTitle"
       />
@@ -391,7 +391,7 @@ exports[`View: Component should render correctly for admin user 1`] = `
         disabled={false}
         onClick={[Function]}
       >
-        <FormattedMessage
+        <MemoizedFormattedMessage
           defaultMessage="Cancel"
           disabled={false}
           id="user.view.cancelRemoval"
@@ -402,7 +402,7 @@ exports[`View: Component should render correctly for admin user 1`] = `
         loading={false}
         onClick={[Function]}
       >
-        <FormattedMessage
+        <MemoizedFormattedMessage
           defaultMessage="Confirm"
           id="user.view.confirmRemoval"
         />

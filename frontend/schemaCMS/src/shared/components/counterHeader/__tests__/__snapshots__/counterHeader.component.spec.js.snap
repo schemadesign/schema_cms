@@ -8,7 +8,7 @@ exports[`CounterHeader: Component should render correctly 1`] = `
     id="tagsCounter"
     renderElement={true}
   />
-  <FormattedMessage
+  <MemoizedFormattedMessage
     defaultMessage="{count, plural,one {# {copy}} other {# {copy}s}}"
     id="shared.components.counterHeader.counter"
     values={

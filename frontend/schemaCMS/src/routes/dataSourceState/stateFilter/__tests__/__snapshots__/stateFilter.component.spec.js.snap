@@ -3,7 +3,7 @@
 exports[`StateFilter: Component should render checkbox filter 1`] = `
 Array [
   <div
-    className="sc-gKAblj cwVOCM"
+    className="sc-gKAaRy crfnwX"
   >
     <div
       style={
@@ -20,10 +20,10 @@ Array [
     >
       <div>
         <div
-          className="sc-iCoHVE"
+          className="sc-iCoGMd"
         >
           <h2
-            className="sc-dIsAE exJHSK"
+            className="sc-dIsUp oQOye"
             id="headerTitle"
             style={
               Object {
@@ -37,7 +37,7 @@ Array [
             
           </h2>
           <h1
-            className="sc-bqGHjH kfvRsi"
+            className="sc-bqGGPW xSSLN"
             id="headerSubtitle"
             style={
               Object {
@@ -60,14 +60,16 @@ Array [
         onClick={[Function]}
         style={
           Object {
+            "alignItems": "center",
             "backgroundColor": "transparent",
             "border": "none",
-            "borderRadius": "48px",
+            "borderRadius": "30px",
             "color": "#FFF",
             "cursor": "pointer",
-            "display": "inline-block",
+            "display": "flex",
             "fill": "#FFF",
-            "fontSize": "18px",
+            "fontSize": "20px",
+            "justifyContent": "center",
             "margin": "0",
             "minHeight": "48px",
             "outline": "none",
@@ -119,16 +121,16 @@ Array [
       }
     >
       <div
-        className="sc-pNWxx cnDegH"
+        className="sc-pNWdM jxBANf"
       >
         <div
-          className="sc-fujyUd jhMxVs"
+          className="sc-fujyAs bAoQiS"
         >
           <div
-            className="sc-iCoHVE"
+            className="sc-iCoGMd"
           >
             <h2
-              className="sc-dIsAE exJHSK"
+              className="sc-dIsUp oQOye"
               id="headerTitle"
               style={
                 Object {
@@ -142,7 +144,7 @@ Array [
               
             </h2>
             <h1
-              className="sc-bqGHjH kfvRsi"
+              className="sc-bqGGPW xSSLN"
               id="headerSubtitle"
               style={
                 Object {
@@ -160,10 +162,10 @@ Array [
           </div>
         </div>
         <div
-          className="sc-jrsJCI csnpq"
+          className="sc-jrsJWt iycXgC"
         >
           <div
-            className="sc-kEqYlL bZgDLg"
+            className="sc-kEqXSa fLscgW"
           >
             <a
               href="/project/"
@@ -174,7 +176,7 @@ Array [
             </a>
           </div>
           <div
-            className="sc-kEqYlL bZgDLg"
+            className="sc-kEqXSa fLscgW"
           >
             <a
               href="/user/"
@@ -185,7 +187,7 @@ Array [
             </a>
           </div>
           <div
-            className="sc-kEqYlL bZgDLg"
+            className="sc-kEqXSa fLscgW"
           >
             <a
               href="/project/1"
@@ -196,7 +198,7 @@ Array [
             </a>
           </div>
           <div
-            className="sc-kEqYlL bZgDLg"
+            className="sc-kEqXSa fLscgW"
           >
             <a
               href="/project/1/datasource"
@@ -207,7 +209,7 @@ Array [
             </a>
           </div>
           <div
-            className="sc-kEqYlL bZgDLg"
+            className="sc-kEqXSa fLscgW"
           >
             <a
               href="/project/1/user"
@@ -218,7 +220,7 @@ Array [
             </a>
           </div>
           <div
-            className="sc-kEqYlL bZgDLg"
+            className="sc-kEqXSa fLscgW"
           >
             <a
               href="/project/1/content"
@@ -229,7 +231,7 @@ Array [
             </a>
           </div>
           <div
-            className="sc-kEqYlL bZgDLg"
+            className="sc-kEqXSa fLscgW"
           >
             <a
               href="/project/1/templates"
@@ -241,10 +243,10 @@ Array [
           </div>
         </div>
         <div
-          className="sc-jrsJCI csnpq"
+          className="sc-jrsJWt iycXgC"
         >
           <div
-            className="sc-kEqYlL bZgDLg"
+            className="sc-kEqXSa fLscgW"
           >
             <a
               href="/settings"
@@ -255,7 +257,7 @@ Array [
             </a>
           </div>
           <div
-            className="sc-kEqYlL bZgDLg"
+            className="sc-kEqXSa fLscgW"
           >
             <div
               id="logoutNavBtn"
@@ -266,10 +268,10 @@ Array [
           </div>
         </div>
         <div
-          className="sc-iqAbSa gJwBrW"
+          className="sc-iqAclL kRvzpQ"
         >
           <a
-            className="sc-crzoUp kHuyDG"
+            className="sc-crzoAE feDwqK"
             href="/"
             id="aboutNavBtn"
             onClick={[Function]}
@@ -279,7 +281,7 @@ Array [
             About Schema CMS
           </a>
           <a
-            className="sc-crzoUp kHuyDG"
+            className="sc-crzoAE feDwqK"
             href="https://github.com/schemadesign/schema_cms/blob/master/backend/app/docs/public_api/api_calls.md"
             id="apiNavBtn"
             onClick={[Function]}
@@ -289,7 +291,7 @@ Array [
             API Doc
           </a>
           <a
-            className="sc-crzoUp kHuyDG"
+            className="sc-crzoAE feDwqK"
             href="https://github.com/schemadesign/schema_cms"
             id="repositoryNavBtn"
             onClick={[Function]}
@@ -306,14 +308,16 @@ Array [
         onClick={[Function]}
         style={
           Object {
+            "alignItems": "center",
             "backgroundColor": "transparent",
             "border": "none",
-            "borderRadius": "48px",
+            "borderRadius": "30px",
             "color": "#FFF",
             "cursor": "pointer",
-            "display": "inline-block",
+            "display": "flex",
             "fill": "#FFF",
-            "fontSize": "18px",
+            "fontSize": "20px",
+            "justifyContent": "center",
             "margin": "0",
             "minHeight": "48px",
             "outline": "none",
@@ -345,13 +349,13 @@ Array [
     </div>
   </div>,
   <div
-    className="sc-bCwgka hckZLi"
+    className="sc-iwajpm fLqmfQ"
   >
     <div
-      className="sc-iwaifL gjEKDI"
+      className="sc-cxNHIi bWfpfY"
     >
       <h2
-        className="sc-cxNIbT eQmLRd"
+        className="sc-lmgQwP dRdhPq"
         id="desktopHeaderTitle"
         style={
           Object {
@@ -365,7 +369,7 @@ Array [
         
       </h2>
       <h1
-        className="sc-lmgQde bAKeTV"
+        className="sc-iJCRrE crxtKH"
         id="desktopHeaderSubtitle"
         style={
           Object {
@@ -382,11 +386,11 @@ Array [
       </h1>
     </div>
     <div
-      className="sc-iJCRLp"
+      className="sc-giAqHp"
     />
   </div>,
   <div
-    className="sc-hKFyIo hCpiaH"
+    className="sc-hKFxyN drRJCW"
     type="page"
   >
     An Error occured
@@ -397,7 +401,7 @@ Array [
 exports[`StateFilter: Component should render input filter 1`] = `
 Array [
   <div
-    className="sc-gKAblj cwVOCM"
+    className="sc-gKAaRy crfnwX"
   >
     <div
       style={
@@ -414,10 +418,10 @@ Array [
     >
       <div>
         <div
-          className="sc-iCoHVE"
+          className="sc-iCoGMd"
         >
           <h2
-            className="sc-dIsAE exJHSK"
+            className="sc-dIsUp oQOye"
             id="headerTitle"
             style={
               Object {
@@ -431,7 +435,7 @@ Array [
             
           </h2>
           <h1
-            className="sc-bqGHjH kfvRsi"
+            className="sc-bqGGPW xSSLN"
             id="headerSubtitle"
             style={
               Object {
@@ -454,14 +458,16 @@ Array [
         onClick={[Function]}
         style={
           Object {
+            "alignItems": "center",
             "backgroundColor": "transparent",
             "border": "none",
-            "borderRadius": "48px",
+            "borderRadius": "30px",
             "color": "#FFF",
             "cursor": "pointer",
-            "display": "inline-block",
+            "display": "flex",
             "fill": "#FFF",
-            "fontSize": "18px",
+            "fontSize": "20px",
+            "justifyContent": "center",
             "margin": "0",
             "minHeight": "48px",
             "outline": "none",
@@ -513,16 +519,16 @@ Array [
       }
     >
       <div
-        className="sc-pNWxx cnDegH"
+        className="sc-pNWdM jxBANf"
       >
         <div
-          className="sc-fujyUd jhMxVs"
+          className="sc-fujyAs bAoQiS"
         >
           <div
-            className="sc-iCoHVE"
+            className="sc-iCoGMd"
           >
             <h2
-              className="sc-dIsAE exJHSK"
+              className="sc-dIsUp oQOye"
               id="headerTitle"
               style={
                 Object {
@@ -536,7 +542,7 @@ Array [
               
             </h2>
             <h1
-              className="sc-bqGHjH kfvRsi"
+              className="sc-bqGGPW xSSLN"
               id="headerSubtitle"
               style={
                 Object {
@@ -554,10 +560,10 @@ Array [
           </div>
         </div>
         <div
-          className="sc-jrsJCI csnpq"
+          className="sc-jrsJWt iycXgC"
         >
           <div
-            className="sc-kEqYlL bZgDLg"
+            className="sc-kEqXSa fLscgW"
           >
             <a
               href="/project/"
@@ -568,7 +574,7 @@ Array [
             </a>
           </div>
           <div
-            className="sc-kEqYlL bZgDLg"
+            className="sc-kEqXSa fLscgW"
           >
             <a
               href="/user/"
@@ -579,7 +585,7 @@ Array [
             </a>
           </div>
           <div
-            className="sc-kEqYlL bZgDLg"
+            className="sc-kEqXSa fLscgW"
           >
             <a
               href="/project/1"
@@ -590,7 +596,7 @@ Array [
             </a>
           </div>
           <div
-            className="sc-kEqYlL bZgDLg"
+            className="sc-kEqXSa fLscgW"
           >
             <a
               href="/project/1/datasource"
@@ -601,7 +607,7 @@ Array [
             </a>
           </div>
           <div
-            className="sc-kEqYlL bZgDLg"
+            className="sc-kEqXSa fLscgW"
           >
             <a
               href="/project/1/user"
@@ -612,7 +618,7 @@ Array [
             </a>
           </div>
           <div
-            className="sc-kEqYlL bZgDLg"
+            className="sc-kEqXSa fLscgW"
           >
             <a
               href="/project/1/content"
@@ -623,7 +629,7 @@ Array [
             </a>
           </div>
           <div
-            className="sc-kEqYlL bZgDLg"
+            className="sc-kEqXSa fLscgW"
           >
             <a
               href="/project/1/templates"
@@ -635,10 +641,10 @@ Array [
           </div>
         </div>
         <div
-          className="sc-jrsJCI csnpq"
+          className="sc-jrsJWt iycXgC"
         >
           <div
-            className="sc-kEqYlL bZgDLg"
+            className="sc-kEqXSa fLscgW"
           >
             <a
               href="/settings"
@@ -649,7 +655,7 @@ Array [
             </a>
           </div>
           <div
-            className="sc-kEqYlL bZgDLg"
+            className="sc-kEqXSa fLscgW"
           >
             <div
               id="logoutNavBtn"
@@ -660,10 +666,10 @@ Array [
           </div>
         </div>
         <div
-          className="sc-iqAbSa gJwBrW"
+          className="sc-iqAclL kRvzpQ"
         >
           <a
-            className="sc-crzoUp kHuyDG"
+            className="sc-crzoAE feDwqK"
             href="/"
             id="aboutNavBtn"
             onClick={[Function]}
@@ -673,7 +679,7 @@ Array [
             About Schema CMS
           </a>
           <a
-            className="sc-crzoUp kHuyDG"
+            className="sc-crzoAE feDwqK"
             href="https://github.com/schemadesign/schema_cms/blob/master/backend/app/docs/public_api/api_calls.md"
             id="apiNavBtn"
             onClick={[Function]}
@@ -683,7 +689,7 @@ Array [
             API Doc
           </a>
           <a
-            className="sc-crzoUp kHuyDG"
+            className="sc-crzoAE feDwqK"
             href="https://github.com/schemadesign/schema_cms"
             id="repositoryNavBtn"
             onClick={[Function]}
@@ -700,14 +706,16 @@ Array [
         onClick={[Function]}
         style={
           Object {
+            "alignItems": "center",
             "backgroundColor": "transparent",
             "border": "none",
-            "borderRadius": "48px",
+            "borderRadius": "30px",
             "color": "#FFF",
             "cursor": "pointer",
-            "display": "inline-block",
+            "display": "flex",
             "fill": "#FFF",
-            "fontSize": "18px",
+            "fontSize": "20px",
+            "justifyContent": "center",
             "margin": "0",
             "minHeight": "48px",
             "outline": "none",
@@ -739,13 +747,13 @@ Array [
     </div>
   </div>,
   <div
-    className="sc-bCwgka hckZLi"
+    className="sc-iwajpm fLqmfQ"
   >
     <div
-      className="sc-iwaifL gjEKDI"
+      className="sc-cxNHIi bWfpfY"
     >
       <h2
-        className="sc-cxNIbT eQmLRd"
+        className="sc-lmgQwP dRdhPq"
         id="desktopHeaderTitle"
         style={
           Object {
@@ -759,7 +767,7 @@ Array [
         
       </h2>
       <h1
-        className="sc-lmgQde bAKeTV"
+        className="sc-iJCRrE crxtKH"
         id="desktopHeaderSubtitle"
         style={
           Object {
@@ -776,11 +784,11 @@ Array [
       </h1>
     </div>
     <div
-      className="sc-iJCRLp"
+      className="sc-giAqHp"
     />
   </div>,
   <div
-    className="sc-hKFyIo hCpiaH"
+    className="sc-hKFxyN drRJCW"
     type="page"
   >
     An Error occured
@@ -791,7 +799,7 @@ Array [
 exports[`StateFilter: Component should render range filter 1`] = `
 Array [
   <div
-    className="sc-gKAblj cwVOCM"
+    className="sc-gKAaRy crfnwX"
   >
     <div
       style={
@@ -808,10 +816,10 @@ Array [
     >
       <div>
         <div
-          className="sc-iCoHVE"
+          className="sc-iCoGMd"
         >
           <h2
-            className="sc-dIsAE exJHSK"
+            className="sc-dIsUp oQOye"
             id="headerTitle"
             style={
               Object {
@@ -825,7 +833,7 @@ Array [
             
           </h2>
           <h1
-            className="sc-bqGHjH kfvRsi"
+            className="sc-bqGGPW xSSLN"
             id="headerSubtitle"
             style={
               Object {
@@ -848,14 +856,16 @@ Array [
         onClick={[Function]}
         style={
           Object {
+            "alignItems": "center",
             "backgroundColor": "transparent",
             "border": "none",
-            "borderRadius": "48px",
+            "borderRadius": "30px",
             "color": "#FFF",
             "cursor": "pointer",
-            "display": "inline-block",
+            "display": "flex",
             "fill": "#FFF",
-            "fontSize": "18px",
+            "fontSize": "20px",
+            "justifyContent": "center",
             "margin": "0",
             "minHeight": "48px",
             "outline": "none",
@@ -907,16 +917,16 @@ Array [
       }
     >
       <div
-        className="sc-pNWxx cnDegH"
+        className="sc-pNWdM jxBANf"
       >
         <div
-          className="sc-fujyUd jhMxVs"
+          className="sc-fujyAs bAoQiS"
         >
           <div
-            className="sc-iCoHVE"
+            className="sc-iCoGMd"
           >
             <h2
-              className="sc-dIsAE exJHSK"
+              className="sc-dIsUp oQOye"
               id="headerTitle"
               style={
                 Object {
@@ -930,7 +940,7 @@ Array [
               
             </h2>
             <h1
-              className="sc-bqGHjH kfvRsi"
+              className="sc-bqGGPW xSSLN"
               id="headerSubtitle"
               style={
                 Object {
@@ -948,10 +958,10 @@ Array [
           </div>
         </div>
         <div
-          className="sc-jrsJCI csnpq"
+          className="sc-jrsJWt iycXgC"
         >
           <div
-            className="sc-kEqYlL bZgDLg"
+            className="sc-kEqXSa fLscgW"
           >
             <a
               href="/project/"
@@ -962,7 +972,7 @@ Array [
             </a>
           </div>
           <div
-            className="sc-kEqYlL bZgDLg"
+            className="sc-kEqXSa fLscgW"
           >
             <a
               href="/user/"
@@ -973,7 +983,7 @@ Array [
             </a>
           </div>
           <div
-            className="sc-kEqYlL bZgDLg"
+            className="sc-kEqXSa fLscgW"
           >
             <a
               href="/project/1"
@@ -984,7 +994,7 @@ Array [
             </a>
           </div>
           <div
-            className="sc-kEqYlL bZgDLg"
+            className="sc-kEqXSa fLscgW"
           >
             <a
               href="/project/1/datasource"
@@ -995,7 +1005,7 @@ Array [
             </a>
           </div>
           <div
-            className="sc-kEqYlL bZgDLg"
+            className="sc-kEqXSa fLscgW"
           >
             <a
               href="/project/1/user"
@@ -1006,7 +1016,7 @@ Array [
             </a>
           </div>
           <div
-            className="sc-kEqYlL bZgDLg"
+            className="sc-kEqXSa fLscgW"
           >
             <a
               href="/project/1/content"
@@ -1017,7 +1027,7 @@ Array [
             </a>
           </div>
           <div
-            className="sc-kEqYlL bZgDLg"
+            className="sc-kEqXSa fLscgW"
           >
             <a
               href="/project/1/templates"
@@ -1029,10 +1039,10 @@ Array [
           </div>
         </div>
         <div
-          className="sc-jrsJCI csnpq"
+          className="sc-jrsJWt iycXgC"
         >
           <div
-            className="sc-kEqYlL bZgDLg"
+            className="sc-kEqXSa fLscgW"
           >
             <a
               href="/settings"
@@ -1043,7 +1053,7 @@ Array [
             </a>
           </div>
           <div
-            className="sc-kEqYlL bZgDLg"
+            className="sc-kEqXSa fLscgW"
           >
             <div
               id="logoutNavBtn"
@@ -1054,10 +1064,10 @@ Array [
           </div>
         </div>
         <div
-          className="sc-iqAbSa gJwBrW"
+          className="sc-iqAclL kRvzpQ"
         >
           <a
-            className="sc-crzoUp kHuyDG"
+            className="sc-crzoAE feDwqK"
             href="/"
             id="aboutNavBtn"
             onClick={[Function]}
@@ -1067,7 +1077,7 @@ Array [
             About Schema CMS
           </a>
           <a
-            className="sc-crzoUp kHuyDG"
+            className="sc-crzoAE feDwqK"
             href="https://github.com/schemadesign/schema_cms/blob/master/backend/app/docs/public_api/api_calls.md"
             id="apiNavBtn"
             onClick={[Function]}
@@ -1077,7 +1087,7 @@ Array [
             API Doc
           </a>
           <a
-            className="sc-crzoUp kHuyDG"
+            className="sc-crzoAE feDwqK"
             href="https://github.com/schemadesign/schema_cms"
             id="repositoryNavBtn"
             onClick={[Function]}
@@ -1094,14 +1104,16 @@ Array [
         onClick={[Function]}
         style={
           Object {
+            "alignItems": "center",
             "backgroundColor": "transparent",
             "border": "none",
-            "borderRadius": "48px",
+            "borderRadius": "30px",
             "color": "#FFF",
             "cursor": "pointer",
-            "display": "inline-block",
+            "display": "flex",
             "fill": "#FFF",
-            "fontSize": "18px",
+            "fontSize": "20px",
+            "justifyContent": "center",
             "margin": "0",
             "minHeight": "48px",
             "outline": "none",
@@ -1133,13 +1145,13 @@ Array [
     </div>
   </div>,
   <div
-    className="sc-bCwgka hckZLi"
+    className="sc-iwajpm fLqmfQ"
   >
     <div
-      className="sc-iwaifL gjEKDI"
+      className="sc-cxNHIi bWfpfY"
     >
       <h2
-        className="sc-cxNIbT eQmLRd"
+        className="sc-lmgQwP dRdhPq"
         id="desktopHeaderTitle"
         style={
           Object {
@@ -1153,7 +1165,7 @@ Array [
         
       </h2>
       <h1
-        className="sc-lmgQde bAKeTV"
+        className="sc-iJCRrE crxtKH"
         id="desktopHeaderSubtitle"
         style={
           Object {
@@ -1170,11 +1182,11 @@ Array [
       </h1>
     </div>
     <div
-      className="sc-iJCRLp"
+      className="sc-giAqHp"
     />
   </div>,
   <div
-    className="sc-hKFyIo hCpiaH"
+    className="sc-hKFxyN drRJCW"
     type="page"
   >
     An Error occured
@@ -1185,7 +1197,7 @@ Array [
 exports[`StateFilter: Component should render select filter 1`] = `
 Array [
   <div
-    className="sc-gKAblj cwVOCM"
+    className="sc-gKAaRy crfnwX"
   >
     <div
       style={
@@ -1202,10 +1214,10 @@ Array [
     >
       <div>
         <div
-          className="sc-iCoHVE"
+          className="sc-iCoGMd"
         >
           <h2
-            className="sc-dIsAE exJHSK"
+            className="sc-dIsUp oQOye"
             id="headerTitle"
             style={
               Object {
@@ -1219,7 +1231,7 @@ Array [
             
           </h2>
           <h1
-            className="sc-bqGHjH kfvRsi"
+            className="sc-bqGGPW xSSLN"
             id="headerSubtitle"
             style={
               Object {
@@ -1242,14 +1254,16 @@ Array [
         onClick={[Function]}
         style={
           Object {
+            "alignItems": "center",
             "backgroundColor": "transparent",
             "border": "none",
-            "borderRadius": "48px",
+            "borderRadius": "30px",
             "color": "#FFF",
             "cursor": "pointer",
-            "display": "inline-block",
+            "display": "flex",
             "fill": "#FFF",
-            "fontSize": "18px",
+            "fontSize": "20px",
+            "justifyContent": "center",
             "margin": "0",
             "minHeight": "48px",
             "outline": "none",
@@ -1301,16 +1315,16 @@ Array [
       }
     >
       <div
-        className="sc-pNWxx cnDegH"
+        className="sc-pNWdM jxBANf"
       >
         <div
-          className="sc-fujyUd jhMxVs"
+          className="sc-fujyAs bAoQiS"
         >
           <div
-            className="sc-iCoHVE"
+            className="sc-iCoGMd"
           >
             <h2
-              className="sc-dIsAE exJHSK"
+              className="sc-dIsUp oQOye"
               id="headerTitle"
               style={
                 Object {
@@ -1324,7 +1338,7 @@ Array [
               
             </h2>
             <h1
-              className="sc-bqGHjH kfvRsi"
+              className="sc-bqGGPW xSSLN"
               id="headerSubtitle"
               style={
                 Object {
@@ -1342,10 +1356,10 @@ Array [
           </div>
         </div>
         <div
-          className="sc-jrsJCI csnpq"
+          className="sc-jrsJWt iycXgC"
         >
           <div
-            className="sc-kEqYlL bZgDLg"
+            className="sc-kEqXSa fLscgW"
           >
             <a
               href="/project/"
@@ -1356,7 +1370,7 @@ Array [
             </a>
           </div>
           <div
-            className="sc-kEqYlL bZgDLg"
+            className="sc-kEqXSa fLscgW"
           >
             <a
               href="/user/"
@@ -1367,7 +1381,7 @@ Array [
             </a>
           </div>
           <div
-            className="sc-kEqYlL bZgDLg"
+            className="sc-kEqXSa fLscgW"
           >
             <a
               href="/project/1"
@@ -1378,7 +1392,7 @@ Array [
             </a>
           </div>
           <div
-            className="sc-kEqYlL bZgDLg"
+            className="sc-kEqXSa fLscgW"
           >
             <a
               href="/project/1/datasource"
@@ -1389,7 +1403,7 @@ Array [
             </a>
           </div>
           <div
-            className="sc-kEqYlL bZgDLg"
+            className="sc-kEqXSa fLscgW"
           >
             <a
               href="/project/1/user"
@@ -1400,7 +1414,7 @@ Array [
             </a>
           </div>
           <div
-            className="sc-kEqYlL bZgDLg"
+            className="sc-kEqXSa fLscgW"
           >
             <a
               href="/project/1/content"
@@ -1411,7 +1425,7 @@ Array [
             </a>
           </div>
           <div
-            className="sc-kEqYlL bZgDLg"
+            className="sc-kEqXSa fLscgW"
           >
             <a
               href="/project/1/templates"
@@ -1423,10 +1437,10 @@ Array [
           </div>
         </div>
         <div
-          className="sc-jrsJCI csnpq"
+          className="sc-jrsJWt iycXgC"
         >
           <div
-            className="sc-kEqYlL bZgDLg"
+            className="sc-kEqXSa fLscgW"
           >
             <a
               href="/settings"
@@ -1437,7 +1451,7 @@ Array [
             </a>
           </div>
           <div
-            className="sc-kEqYlL bZgDLg"
+            className="sc-kEqXSa fLscgW"
           >
             <div
               id="logoutNavBtn"
@@ -1448,10 +1462,10 @@ Array [
           </div>
         </div>
         <div
-          className="sc-iqAbSa gJwBrW"
+          className="sc-iqAclL kRvzpQ"
         >
           <a
-            className="sc-crzoUp kHuyDG"
+            className="sc-crzoAE feDwqK"
             href="/"
             id="aboutNavBtn"
             onClick={[Function]}
@@ -1461,7 +1475,7 @@ Array [
             About Schema CMS
           </a>
           <a
-            className="sc-crzoUp kHuyDG"
+            className="sc-crzoAE feDwqK"
             href="https://github.com/schemadesign/schema_cms/blob/master/backend/app/docs/public_api/api_calls.md"
             id="apiNavBtn"
             onClick={[Function]}
@@ -1471,7 +1485,7 @@ Array [
             API Doc
           </a>
           <a
-            className="sc-crzoUp kHuyDG"
+            className="sc-crzoAE feDwqK"
             href="https://github.com/schemadesign/schema_cms"
             id="repositoryNavBtn"
             onClick={[Function]}
@@ -1488,14 +1502,16 @@ Array [
         onClick={[Function]}
         style={
           Object {
+            "alignItems": "center",
             "backgroundColor": "transparent",
             "border": "none",
-            "borderRadius": "48px",
+            "borderRadius": "30px",
             "color": "#FFF",
             "cursor": "pointer",
-            "display": "inline-block",
+            "display": "flex",
             "fill": "#FFF",
-            "fontSize": "18px",
+            "fontSize": "20px",
+            "justifyContent": "center",
             "margin": "0",
             "minHeight": "48px",
             "outline": "none",
@@ -1527,13 +1543,13 @@ Array [
     </div>
   </div>,
   <div
-    className="sc-bCwgka hckZLi"
+    className="sc-iwajpm fLqmfQ"
   >
     <div
-      className="sc-iwaifL gjEKDI"
+      className="sc-cxNHIi bWfpfY"
     >
       <h2
-        className="sc-cxNIbT eQmLRd"
+        className="sc-lmgQwP dRdhPq"
         id="desktopHeaderTitle"
         style={
           Object {
@@ -1547,7 +1563,7 @@ Array [
         
       </h2>
       <h1
-        className="sc-lmgQde bAKeTV"
+        className="sc-iJCRrE crxtKH"
         id="desktopHeaderSubtitle"
         style={
           Object {
@@ -1564,11 +1580,11 @@ Array [
       </h1>
     </div>
     <div
-      className="sc-iJCRLp"
+      className="sc-giAqHp"
     />
   </div>,
   <div
-    className="sc-hKFyIo hCpiaH"
+    className="sc-hKFxyN drRJCW"
     type="page"
   >
     An Error occured

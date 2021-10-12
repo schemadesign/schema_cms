@@ -2,10 +2,10 @@
 
 exports[`PageTemplate: Component should render correctly 1`] = `
 <div
-  className="sc-bdnylx"
+  className="sc-bdnxRM"
 >
   <div
-    className="sc-gtssRu zMrMd"
+    className="sc-gtsrHT ftlQGq"
   >
     <div
       style={
@@ -22,10 +22,10 @@ exports[`PageTemplate: Component should render correctly 1`] = `
     >
       <div>
         <div
-          className="sc-dlnjPT"
+          className="sc-dlnjwi"
         >
           <h2
-            className="sc-pNWxx gmkJvd"
+            className="sc-pNWdM lggCCp"
             id="headerTitle"
             style={
               Object {
@@ -39,7 +39,7 @@ exports[`PageTemplate: Component should render correctly 1`] = `
             Page Template
           </h2>
           <h1
-            className="sc-jrsJCI jTtAyv"
+            className="sc-jrsJWt kjUKXP"
             id="headerSubtitle"
             style={
               Object {
@@ -62,14 +62,16 @@ exports[`PageTemplate: Component should render correctly 1`] = `
         onClick={[Function]}
         style={
           Object {
+            "alignItems": "center",
             "backgroundColor": "transparent",
             "border": "none",
-            "borderRadius": "48px",
+            "borderRadius": "30px",
             "color": "#FFF",
             "cursor": "pointer",
-            "display": "inline-block",
+            "display": "flex",
             "fill": "#FFF",
-            "fontSize": "18px",
+            "fontSize": "20px",
+            "justifyContent": "center",
             "margin": "0",
             "minHeight": "48px",
             "outline": "none",
@@ -121,16 +123,16 @@ exports[`PageTemplate: Component should render correctly 1`] = `
       }
     >
       <div
-        className="sc-eCApGN jLOikM"
+        className="sc-eCApnc iftERp"
       >
         <div
-          className="sc-hKFyIo bSqpkn"
+          className="sc-hKFxyN jZkkRy"
         >
           <div
-            className="sc-dlnjPT"
+            className="sc-dlnjwi"
           >
             <h2
-              className="sc-pNWxx gmkJvd"
+              className="sc-pNWdM lggCCp"
               id="headerTitle"
               style={
                 Object {
@@ -144,7 +146,7 @@ exports[`PageTemplate: Component should render correctly 1`] = `
               Page Template
             </h2>
             <h1
-              className="sc-jrsJCI jTtAyv"
+              className="sc-jrsJWt kjUKXP"
               id="headerSubtitle"
               style={
                 Object {
@@ -162,10 +164,10 @@ exports[`PageTemplate: Component should render correctly 1`] = `
           </div>
         </div>
         <div
-          className="sc-jSFkmK dNvWwD"
+          className="sc-jSFjdj suRwv"
         >
           <div
-            className="sc-gKAblj giqbFz"
+            className="sc-gKAaRy kJUVQc"
           >
             <a
               href="/project/"
@@ -176,7 +178,7 @@ exports[`PageTemplate: Component should render correctly 1`] = `
             </a>
           </div>
           <div
-            className="sc-gKAblj giqbFz"
+            className="sc-gKAaRy kJUVQc"
           >
             <a
               href="/user/"
@@ -187,7 +189,7 @@ exports[`PageTemplate: Component should render correctly 1`] = `
             </a>
           </div>
           <div
-            className="sc-gKAblj giqbFz"
+            className="sc-gKAaRy kJUVQc"
           >
             <a
               href="/project/1"
@@ -198,7 +200,7 @@ exports[`PageTemplate: Component should render correctly 1`] = `
             </a>
           </div>
           <div
-            className="sc-gKAblj giqbFz"
+            className="sc-gKAaRy kJUVQc"
           >
             <a
               href="/project/1/datasource"
@@ -209,7 +211,7 @@ exports[`PageTemplate: Component should render correctly 1`] = `
             </a>
           </div>
           <div
-            className="sc-gKAblj giqbFz"
+            className="sc-gKAaRy kJUVQc"
           >
             <a
               href="/project/1/user"
@@ -220,7 +222,7 @@ exports[`PageTemplate: Component should render correctly 1`] = `
             </a>
           </div>
           <div
-            className="sc-gKAblj giqbFz"
+            className="sc-gKAaRy kJUVQc"
           >
             <a
               href="/project/1/content"
@@ -231,7 +233,7 @@ exports[`PageTemplate: Component should render correctly 1`] = `
             </a>
           </div>
           <div
-            className="sc-gKAblj giqbFz"
+            className="sc-gKAaRy kJUVQc"
           >
             <a
               href="/project/1/templates"
@@ -243,10 +245,10 @@ exports[`PageTemplate: Component should render correctly 1`] = `
           </div>
         </div>
         <div
-          className="sc-jSFkmK dNvWwD"
+          className="sc-jSFjdj suRwv"
         >
           <div
-            className="sc-gKAblj giqbFz"
+            className="sc-gKAaRy kJUVQc"
           >
             <a
               href="/settings"
@@ -257,7 +259,7 @@ exports[`PageTemplate: Component should render correctly 1`] = `
             </a>
           </div>
           <div
-            className="sc-gKAblj giqbFz"
+            className="sc-gKAaRy kJUVQc"
           >
             <div
               id="logoutNavBtn"
@@ -268,10 +270,10 @@ exports[`PageTemplate: Component should render correctly 1`] = `
           </div>
         </div>
         <div
-          className="sc-iCoHVE jZmAqJ"
+          className="sc-iCoGMd gEejpB"
         >
           <a
-            className="sc-fujyUd cmhbQC"
+            className="sc-fujyAs fjPQTs"
             href="/"
             id="aboutNavBtn"
             onClick={[Function]}
@@ -281,7 +283,7 @@ exports[`PageTemplate: Component should render correctly 1`] = `
             About Schema CMS
           </a>
           <a
-            className="sc-fujyUd cmhbQC"
+            className="sc-fujyAs fjPQTs"
             href="https://github.com/schemadesign/schema_cms/blob/master/backend/app/docs/public_api/api_calls.md"
             id="apiNavBtn"
             onClick={[Function]}
@@ -291,7 +293,7 @@ exports[`PageTemplate: Component should render correctly 1`] = `
             API Doc
           </a>
           <a
-            className="sc-fujyUd cmhbQC"
+            className="sc-fujyAs fjPQTs"
             href="https://github.com/schemadesign/schema_cms"
             id="repositoryNavBtn"
             onClick={[Function]}
@@ -308,14 +310,16 @@ exports[`PageTemplate: Component should render correctly 1`] = `
         onClick={[Function]}
         style={
           Object {
+            "alignItems": "center",
             "backgroundColor": "transparent",
             "border": "none",
-            "borderRadius": "48px",
+            "borderRadius": "30px",
             "color": "#FFF",
             "cursor": "pointer",
-            "display": "inline-block",
+            "display": "flex",
             "fill": "#FFF",
-            "fontSize": "18px",
+            "fontSize": "20px",
+            "justifyContent": "center",
             "margin": "0",
             "minHeight": "48px",
             "outline": "none",
@@ -347,7 +351,7 @@ exports[`PageTemplate: Component should render correctly 1`] = `
     </div>
   </div>
   <div
-    className="sc-eJoaVz lifigH"
+    className="sc-hhIiOg bXjJdX"
   >
     <div
       style={
@@ -369,7 +373,7 @@ exports[`PageTemplate: Component should render correctly 1`] = `
         }
       >
         <a
-          className="sc-hhIhEF djezdw"
+          className="sc-lbVvki dbrUNH"
           href="/project/1/"
           onClick={[Function]}
           style={
@@ -391,7 +395,7 @@ exports[`PageTemplate: Component should render correctly 1`] = `
             Project
           </span>
           <h3
-            className="sc-eirseW frqVju"
+            className="sc-gGLxEB eZUljr"
             style={
               Object {
                 "fontFamily": "Inter, \\"Helvetica Neue\\", Helvetica, Arial, sans-serif",
@@ -427,7 +431,7 @@ exports[`PageTemplate: Component should render correctly 1`] = `
         }
       >
         <a
-          className="sc-hhIhEF djezdw"
+          className="sc-lbVvki dbrUNH"
           href="/project/1/templates"
           onClick={[Function]}
           style={
@@ -449,7 +453,7 @@ exports[`PageTemplate: Component should render correctly 1`] = `
             Tab
           </span>
           <h3
-            className="sc-eirseW frqVju"
+            className="sc-gGLxEB eZUljr"
             style={
               Object {
                 "fontFamily": "Inter, \\"Helvetica Neue\\", Helvetica, Arial, sans-serif",
@@ -485,7 +489,7 @@ exports[`PageTemplate: Component should render correctly 1`] = `
         }
       >
         <a
-          className="sc-hhIhEF djezdw"
+          className="sc-lbVvki dbrUNH"
           href="/project/1/page-templates"
           onClick={[Function]}
           style={
@@ -507,7 +511,7 @@ exports[`PageTemplate: Component should render correctly 1`] = `
             Library
           </span>
           <h3
-            className="sc-eirseW frqVju"
+            className="sc-gGLxEB eZUljr"
             style={
               Object {
                 "fontFamily": "Inter, \\"Helvetica Neue\\", Helvetica, Arial, sans-serif",
@@ -543,7 +547,7 @@ exports[`PageTemplate: Component should render correctly 1`] = `
         }
       >
         <div
-          className="sc-oefIU bJjNUe"
+          className="sc-eirqVv goZhkA"
         >
           <span
             style={
@@ -556,7 +560,7 @@ exports[`PageTemplate: Component should render correctly 1`] = `
             Template
           </span>
           <h3
-            className="sc-eirseW frqVju"
+            className="sc-gGLxEB eZUljr"
             style={
               Object {
                 "fontFamily": "Inter, \\"Helvetica Neue\\", Helvetica, Arial, sans-serif",
@@ -577,16 +581,16 @@ exports[`PageTemplate: Component should render correctly 1`] = `
     onSubmit={[Function]}
   >
     <div
-      className="sc-kfYqjs"
+      className="sc-fKgJPI"
     >
       <div
-        className="sc-fKgIGh iDRmPx"
+        className="sc-bCwfaz hVBABX"
       >
         <div
-          className="sc-bCwgka jNlFsP"
+          className="sc-iwajpm hmXCiZ"
         >
           <h2
-            className="sc-iwaifL fAJgQr"
+            className="sc-cxNHIi brbqej"
             id="desktopHeaderTitle"
             style={
               Object {
@@ -600,7 +604,7 @@ exports[`PageTemplate: Component should render correctly 1`] = `
             Page Template
           </h2>
           <h1
-            className="sc-cxNIbT eQmLRd"
+            className="sc-lmgQwP dRdhPq"
             id="desktopHeaderSubtitle"
             style={
               Object {
@@ -614,10 +618,10 @@ exports[`PageTemplate: Component should render correctly 1`] = `
             }
           >
             <div
-              className="sc-gXfWUo lhDuBl"
+              className="sc-ciSkZP dDamJo"
             >
               <div
-                className="sc-cTJmaU bAvdmN"
+                className="sc-dPaNzc bPGHS"
               >
                 <div
                   style={
@@ -701,15 +705,15 @@ exports[`PageTemplate: Component should render correctly 1`] = `
                   </div>
                 </div>
                 <div
-                  className="sc-dPaNSN hoQDhR"
+                  className="sc-cOifOu hvCsmP"
                   id="nameError"
                 />
               </div>
               <div
-                className="sc-cBoprd katUGt"
+                className="sc-jcwpoC kDGLCy"
               >
                 <label
-                  className="sc-jJMGHv eWbJnh"
+                  className="sc-gXfVKN ImLRy"
                   htmlFor="name"
                 >
                   <svg
@@ -729,7 +733,7 @@ exports[`PageTemplate: Component should render correctly 1`] = `
                   </svg>
                 </label>
                 <div
-                  className="sc-iNiQeE clNdVA"
+                  className="sc-eJocfa kNyVta"
                   id="pageTemplateCopyButton"
                   onClick={[Function]}
                 >
@@ -753,10 +757,10 @@ exports[`PageTemplate: Component should render correctly 1`] = `
           </h1>
         </div>
         <div
-          className="sc-lmgQde"
+          className="sc-iJCRrE"
         >
           <div
-            className="sc-bkbjAj iFdJhe"
+            className="sc-bkbkJK leBHJE"
           >
             <button
               disabled={false}
@@ -764,15 +768,17 @@ exports[`PageTemplate: Component should render correctly 1`] = `
               onClick={[Function]}
               style={
                 Object {
+                  "alignItems": "center",
                   "backgroundColor": "#FFF",
                   "border": "none",
-                  "borderRadius": "48px",
+                  "borderRadius": "30px",
                   "color": "#000",
                   "cursor": "pointer",
-                  "display": "inline-block",
+                  "display": "flex",
                   "fill": "#FFF",
-                  "fontSize": "18px",
+                  "fontSize": "20px",
                   "height": "60px",
+                  "justifyContent": "center",
                   "margin": "0",
                   "minHeight": "48px",
                   "outline": "none",
@@ -803,10 +809,10 @@ exports[`PageTemplate: Component should render correctly 1`] = `
         </div>
       </div>
       <div
-        className="sc-ciSmjq fazbWU"
+        className="sc-carFqZ KqVGD"
       >
         <div
-          className="sc-cTJmaU hyxntz"
+          className="sc-dPaNzc bHIIqc"
         >
           <div
             style={
@@ -878,7 +884,7 @@ exports[`PageTemplate: Component should render correctly 1`] = `
                 }
               >
                 <div
-                  className="sc-jNnnWF bxPInj"
+                  className="sc-bBjRSN hLIMFq"
                 >
                   <svg
                     style={
@@ -900,27 +906,27 @@ exports[`PageTemplate: Component should render correctly 1`] = `
             </div>
           </div>
           <div
-            className="sc-dPaNSN hoQDhR"
+            className="sc-cOifOu hvCsmP"
             id="nameError"
           />
         </div>
       </div>
       <div
-        className="sc-bBjRzc iXtoFi"
+        className="sc-Arkif tYMkB"
       >
         <div
-          className="sc-cOigif lasETV"
+          className="sc-khIgEk jRlyEK"
           id="tagsCounter"
         />
         1 Block
         <div
-          className="sc-cOigif lasETV"
+          className="sc-khIgEk jRlyEK"
         >
           <div
-            className="sc-carGAA dLvJIe"
+            className="sc-iBzEeX kxSRGT"
           >
             <div
-              className="sc-bkbjAj iFdJhe"
+              className="sc-bkbkJK leBHJE"
             >
               <button
                 disabled={false}
@@ -928,15 +934,17 @@ exports[`PageTemplate: Component should render correctly 1`] = `
                 onClick={[Function]}
                 style={
                   Object {
+                    "alignItems": "center",
                     "backgroundColor": "#FFF",
                     "border": "none",
-                    "borderRadius": "48px",
+                    "borderRadius": "30px",
                     "color": "#000",
                     "cursor": "pointer",
-                    "display": "inline-block",
+                    "display": "flex",
                     "fill": "#FFF",
-                    "fontSize": "18px",
+                    "fontSize": "20px",
                     "height": 40,
+                    "justifyContent": "center",
                     "margin": "0",
                     "minHeight": 40,
                     "outline": "none",
@@ -984,14 +992,14 @@ exports[`PageTemplate: Component should render correctly 1`] = `
           }
         >
           <div
-            className="sc-khIgXV htvfms"
+            className="sc-jgPyTC gerxyt"
           >
             <div
-              className="sc-hTRkEk hUWyjQ"
+              className="sc-gSYDnn iqOTxb"
             >
               <div>
                 <div
-                  className="sc-iBzFoy ifOLmv"
+                  className="sc-cTJkRt bqSKzr"
                 >
                   <svg
                     style={
@@ -1013,10 +1021,10 @@ exports[`PageTemplate: Component should render correctly 1`] = `
               </div>
             </div>
             <div
-              className="sc-jgPznn kibGvt"
+              className="sc-laZMeE eWAJaB"
             >
               <div
-                className="sc-gSYCTC cVTzNB"
+                className="sc-iNiQyp gNeGTv"
                 onClick={[Function]}
               >
                 <input
@@ -1151,7 +1159,7 @@ exports[`PageTemplate: Component should render correctly 1`] = `
                   </div>
                 </div>
                 <div
-                  className="sc-laZMyp bfLBkw"
+                  className="sc-jffHpj chsdba"
                 >
                   <svg
                     style={
@@ -1172,7 +1180,7 @@ exports[`PageTemplate: Component should render correctly 1`] = `
               </div>
             </div>
             <div
-              className="sc-hTRkEk hUWyjQ"
+              className="sc-gSYDnn iqOTxb"
             >
               <svg
                 style={
@@ -1215,13 +1223,13 @@ exports[`PageTemplate: Component should render correctly 1`] = `
         </div>
       </span>
       <div
-        className="sc-iJCRLp bwNhyG"
+        className="sc-giAqHp iSlCwH"
       >
         <div
-          className="sc-giAqnE iRUXvy"
+          className="sc-ezzafa gyVxtG"
         >
           <div
-            className="sc-kLokih kBNefU"
+            className="sc-iklJeh gOcMYo"
           >
             <div>
               <input
@@ -1273,23 +1281,23 @@ exports[`PageTemplate: Component should render correctly 1`] = `
               </label>
             </div>
             <div
-              className="sc-bYwzba czRGjr"
+              className="sc-kLojOw ffgZHh"
             >
               <label
-                className="sc-ezzayL iyiHTg"
+                className="sc-bYwzuL eqZglP"
                 htmlFor="isAvailable"
               >
                 Make it Available
               </label>
               <span
-                className="sc-hiKfjK dXVHlu"
+                className="sc-cBoqAE DchXZ"
               >
                 This Template is currently available for Editors
               </span>
             </div>
           </div>
           <div
-            className="sc-iklIKw dCMfgY"
+            className="sc-jJMGnK ioQmgx"
             id="removePage"
             onClick={[Function]}
           >
@@ -1313,7 +1321,7 @@ exports[`PageTemplate: Component should render correctly 1`] = `
           </div>
         </div>
         <div
-          className="sc-giAqnE iRUXvy"
+          className="sc-ezzafa gyVxtG"
         >
           <div>
             <input
@@ -1365,10 +1373,10 @@ exports[`PageTemplate: Component should render correctly 1`] = `
             </label>
           </div>
           <div
-            className="sc-bYwzba czRGjr"
+            className="sc-kLojOw ffgZHh"
           >
             <label
-              className="sc-ezzayL iyiHTg"
+              className="sc-bYwzuL eqZglP"
               htmlFor="allowEdit"
             >
               Allow editing the Page Template
@@ -1378,16 +1386,16 @@ exports[`PageTemplate: Component should render correctly 1`] = `
       </div>
     </div>
     <div
-      className="sc-bqGHjH cREPMJ"
+      className="sc-bqGGPW kvHGgi"
     >
       <div
-        className="sc-hBMVcZ feRjcl"
+        className="sc-hBMUJo iDRdfP"
       >
         <div
-          className="sc-ksluoS hnruJh"
+          className="sc-ksluID ljQkwB"
         >
           <a
-            className="sc-fFSRdu ixzilk"
+            className="sc-fFSPTT imXlOu"
             disabled={false}
             href="/project/1/page-templates"
             id="cancelBtn"
@@ -1396,19 +1404,21 @@ exports[`PageTemplate: Component should render correctly 1`] = `
             Back
           </a>
           <button
-            className="sc-fnVYJo lmnryI"
+            className="sc-fnVZcZ bmBBGC"
             disabled={true}
             id="createTemplatePageMobile"
             style={
               Object {
+                "alignItems": "center",
                 "backgroundColor": "#1d1d20",
                 "border": "none",
-                "borderRadius": "48px",
+                "borderRadius": "30px",
                 "color": "#71737e",
                 "cursor": "default",
-                "display": "inline-block",
+                "display": "flex",
                 "fill": "#FFF",
-                "fontSize": "18px",
+                "fontSize": "20px",
+                "justifyContent": "center",
                 "margin": "0",
                 "minHeight": "48px",
                 "outline": "none",

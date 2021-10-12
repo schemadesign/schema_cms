@@ -372,12 +372,12 @@ exports[`App: Component should not render App when language is not set 1`] = `
       >
         <styled.div>
           <ScrollToTop />
-          <FormattedMessage
+          <MemoizedFormattedMessage
             defaultMessage="Schema CMS"
             id="app.pageTitle"
           >
             <Component />
-          </FormattedMessage>
+          </MemoizedFormattedMessage>
           <Memo(l) />
           <DesktopHeader
             userRole="editor"
@@ -775,12 +775,12 @@ exports[`App: Component should render App when language is set 1`] = `
       >
         <styled.div>
           <ScrollToTop />
-          <FormattedMessage
+          <MemoizedFormattedMessage
             defaultMessage="Schema CMS"
             id="app.pageTitle"
           >
             <Component />
-          </FormattedMessage>
+          </MemoizedFormattedMessage>
           <Memo(l) />
           <DesktopHeader
             userRole="editor"

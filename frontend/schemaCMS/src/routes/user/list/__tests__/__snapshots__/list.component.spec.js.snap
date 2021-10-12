@@ -5,13 +5,13 @@ exports[`User List: Component should render correctly with loader 1`] = `
   <MobileMenu
     active="userNavBtn"
     headerSubtitle={
-      <FormattedMessage
+      <Memo(FormattedMessage)
         defaultMessage="Overview"
         id="userList.headerSubtitle"
       />
     }
     headerTitle={
-      <FormattedMessage
+      <Memo(FormattedMessage)
         defaultMessage="Users"
         id="userList.headerTitle"
       />
@@ -23,7 +23,7 @@ exports[`User List: Component should render correctly with loader 1`] = `
             "admin",
           ],
           "id": "projectsNavBtn",
-          "label": <FormattedMessage
+          "label": <Memo(FormattedMessage)
             defaultMessage="Projects"
             id="user.projectsListPage"
           />,
@@ -35,7 +35,7 @@ exports[`User List: Component should render correctly with loader 1`] = `
             "admin",
           ],
           "id": "userNavBtn",
-          "label": <FormattedMessage
+          "label": <Memo(FormattedMessage)
             defaultMessage="Users"
             id="user.userPage"
           />,
@@ -47,13 +47,13 @@ exports[`User List: Component should render correctly with loader 1`] = `
   />
   <ContextHeader
     subtitle={
-      <FormattedMessage
+      <Memo(FormattedMessage)
         defaultMessage="Overview"
         id="userList.headerSubtitle"
       />
     }
     title={
-      <FormattedMessage
+      <Memo(FormattedMessage)
         defaultMessage="Users"
         id="userList.headerTitle"
       />
@@ -84,7 +84,7 @@ exports[`User List: Component should render correctly with loader 1`] = `
     <BackLink
       to="/"
     >
-      <FormattedMessage
+      <MemoizedFormattedMessage
         defaultMessage="Back"
         id="userList.back"
       />
@@ -104,13 +104,13 @@ exports[`User List: Component should render correctly with users data 1`] = `
   <MobileMenu
     active="userNavBtn"
     headerSubtitle={
-      <FormattedMessage
+      <Memo(FormattedMessage)
         defaultMessage="Overview"
         id="userList.headerSubtitle"
       />
     }
     headerTitle={
-      <FormattedMessage
+      <Memo(FormattedMessage)
         defaultMessage="Users"
         id="userList.headerTitle"
       />
@@ -122,7 +122,7 @@ exports[`User List: Component should render correctly with users data 1`] = `
             "admin",
           ],
           "id": "projectsNavBtn",
-          "label": <FormattedMessage
+          "label": <Memo(FormattedMessage)
             defaultMessage="Projects"
             id="user.projectsListPage"
           />,
@@ -134,7 +134,7 @@ exports[`User List: Component should render correctly with users data 1`] = `
             "admin",
           ],
           "id": "userNavBtn",
-          "label": <FormattedMessage
+          "label": <Memo(FormattedMessage)
             defaultMessage="Users"
             id="user.userPage"
           />,
@@ -146,13 +146,13 @@ exports[`User List: Component should render correctly with users data 1`] = `
   />
   <ContextHeader
     subtitle={
-      <FormattedMessage
+      <Memo(FormattedMessage)
         defaultMessage="Overview"
         id="userList.headerSubtitle"
       />
     }
     title={
-      <FormattedMessage
+      <Memo(FormattedMessage)
         defaultMessage="Users"
         id="userList.headerTitle"
       />
@@ -194,7 +194,7 @@ exports[`User List: Component should render correctly with users data 1`] = `
     <BackLink
       to="/"
     >
-      <FormattedMessage
+      <MemoizedFormattedMessage
         defaultMessage="Back"
         id="userList.back"
       />

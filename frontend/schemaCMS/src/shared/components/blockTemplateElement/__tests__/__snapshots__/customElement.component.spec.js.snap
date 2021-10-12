@@ -2,24 +2,24 @@
 
 exports[`CustomElement: Component should render correctly 1`] = `
 <div
-  className="sc-gKAblj fHQgnh"
+  className="sc-gKAaRy izhpEC"
 >
   <div
-    className="sc-bCwgka eDDRwn"
+    className="sc-iwajpm hxnQNB"
   >
     <div
-      className="sc-iwaifL egjjJw"
+      className="sc-cxNHIi chVRys"
       id="tagsCounter"
     />
     1 Element
     <div
-      className="sc-iwaifL egjjJw"
+      className="sc-cxNHIi chVRys"
     >
       <div
-        className="sc-dIvqjp iNCAit"
+        className="sc-hHEiqL haKFeZ"
       >
         <div
-          className="sc-bYwzba ikCxt"
+          className="sc-kLojOw FyfSX"
         >
           <button
             disabled={false}
@@ -27,15 +27,17 @@ exports[`CustomElement: Component should render correctly 1`] = `
             onClick={[Function]}
             style={
               Object {
+                "alignItems": "center",
                 "backgroundColor": "#FFF",
                 "border": "none",
-                "borderRadius": "48px",
+                "borderRadius": "30px",
                 "color": "#000",
                 "cursor": "pointer",
-                "display": "inline-block",
+                "display": "flex",
                 "fill": "#FFF",
-                "fontSize": "18px",
+                "fontSize": "20px",
                 "height": 40,
+                "justifyContent": "center",
                 "margin": "0",
                 "minHeight": 40,
                 "outline": "none",
@@ -83,11 +85,11 @@ exports[`CustomElement: Component should render correctly 1`] = `
       }
     >
       <div
-        className="sc-jSFkmK hvPggO"
+        className="sc-jSFjdj ecdfVm"
       >
         <div>
           <div
-            className="sc-kfYqjs cIqTnu"
+            className="sc-fKgJPI cQgPoe"
           >
             <svg
               style={
@@ -108,10 +110,10 @@ exports[`CustomElement: Component should render correctly 1`] = `
           </div>
         </div>
         <div
-          className="sc-fujyUd fwMxrU"
+          className="sc-fujyAs dUefFu"
         >
           <div
-            className="sc-pNWxx iMkuLX"
+            className="sc-pNWdM kQPRhH"
             onClick={[Function]}
           >
             <input
@@ -386,7 +388,7 @@ exports[`CustomElement: Component should render correctly 1`] = `
               </div>
             </div>
             <div
-              className="sc-jrsJCI jlluVk"
+              className="sc-jrsJWt lbBGAw"
             >
               <svg
                 style={
@@ -406,7 +408,7 @@ exports[`CustomElement: Component should render correctly 1`] = `
             </div>
           </div>
           <div
-            className="sc-iklIKw PRxGi"
+            className="sc-hiKfDv cfwbni"
           >
             <div
               style={
@@ -485,13 +487,13 @@ exports[`CustomElement: Component should render correctly 1`] = `
               </div>
             </div>
             <div
-              className="sc-hiKfjK bDgfum"
+              className="sc-cBoqAE FuHql"
               id="valuePath.0.nameError"
             />
           </div>
         </div>
         <div
-          className="sc-eCApGN ggJtCX"
+          className="sc-eCApnc dKLneu"
           id="remove-valuePath.0"
           onClick={[Function]}
         >

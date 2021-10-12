@@ -9,7 +9,7 @@ exports[`DataWranglingResult: Component should render correctly 1`] = `
   />
   <MobileMenu
     headerSubtitle={
-      <FormattedMessage
+      <Memo(FormattedMessage)
         defaultMessage="Data Wrangling Result"
         id="dataSource.dataWranglingResult.pageTitle"
       />
@@ -22,7 +22,7 @@ exports[`DataWranglingResult: Component should render correctly 1`] = `
             "editor",
           ],
           "id": "projectsNavBtn",
-          "label": <FormattedMessage
+          "label": <Memo(FormattedMessage)
             defaultMessage="Projects"
             id="project.view.projectsListPage"
           />,
@@ -34,7 +34,7 @@ exports[`DataWranglingResult: Component should render correctly 1`] = `
             "admin",
           ],
           "id": "usersPageNavBtn",
-          "label": <FormattedMessage
+          "label": <Memo(FormattedMessage)
             defaultMessage="Users"
             id="project.view.usersPage"
           />,
@@ -47,7 +47,7 @@ exports[`DataWranglingResult: Component should render correctly 1`] = `
             "editor",
           ],
           "id": "projectDetailsNavBtn",
-          "label": <FormattedMessage
+          "label": <Memo(FormattedMessage)
             defaultMessage="Project details"
             id="project.view.projectDetails"
           />,
@@ -60,7 +60,7 @@ exports[`DataWranglingResult: Component should render correctly 1`] = `
             "editor",
           ],
           "id": "dataSourceNavBtn",
-          "label": <FormattedMessage
+          "label": <Memo(FormattedMessage)
             defaultMessage="Data Sources"
             id="project.view.projectDataSources"
           />,
@@ -72,7 +72,7 @@ exports[`DataWranglingResult: Component should render correctly 1`] = `
             "admin",
           ],
           "id": "usersNavBtn",
-          "label": <FormattedMessage
+          "label": <Memo(FormattedMessage)
             defaultMessage="Project Users"
             id="project.view.projectUsersPage"
           />,
@@ -85,7 +85,7 @@ exports[`DataWranglingResult: Component should render correctly 1`] = `
             "editor",
           ],
           "id": "contentNavBtn",
-          "label": <FormattedMessage
+          "label": <Memo(FormattedMessage)
             defaultMessage="Content"
             id="project.view.content"
           />,
@@ -97,7 +97,7 @@ exports[`DataWranglingResult: Component should render correctly 1`] = `
             "admin",
           ],
           "id": "templatesNavBtn",
-          "label": <FormattedMessage
+          "label": <Memo(FormattedMessage)
             defaultMessage="Templates"
             id="project.view.templates"
           />,
@@ -109,7 +109,7 @@ exports[`DataWranglingResult: Component should render correctly 1`] = `
   />
   <ContextHeader
     subtitle={
-      <FormattedMessage
+      <Memo(FormattedMessage)
         defaultMessage="Data Wrangling Result"
         id="dataSource.dataWranglingResult.pageTitle"
       />
@@ -446,7 +446,7 @@ exports[`DataWranglingResult: Component should render correctly with loading 1`]
   />
   <MobileMenu
     headerSubtitle={
-      <FormattedMessage
+      <Memo(FormattedMessage)
         defaultMessage="Data Wrangling Result"
         id="dataSource.dataWranglingResult.pageTitle"
       />
@@ -459,7 +459,7 @@ exports[`DataWranglingResult: Component should render correctly with loading 1`]
             "editor",
           ],
           "id": "projectsNavBtn",
-          "label": <FormattedMessage
+          "label": <Memo(FormattedMessage)
             defaultMessage="Projects"
             id="project.view.projectsListPage"
           />,
@@ -471,7 +471,7 @@ exports[`DataWranglingResult: Component should render correctly with loading 1`]
             "admin",
           ],
           "id": "usersPageNavBtn",
-          "label": <FormattedMessage
+          "label": <Memo(FormattedMessage)
             defaultMessage="Users"
             id="project.view.usersPage"
           />,
@@ -484,7 +484,7 @@ exports[`DataWranglingResult: Component should render correctly with loading 1`]
             "editor",
           ],
           "id": "projectDetailsNavBtn",
-          "label": <FormattedMessage
+          "label": <Memo(FormattedMessage)
             defaultMessage="Project details"
             id="project.view.projectDetails"
           />,
@@ -497,7 +497,7 @@ exports[`DataWranglingResult: Component should render correctly with loading 1`]
             "editor",
           ],
           "id": "dataSourceNavBtn",
-          "label": <FormattedMessage
+          "label": <Memo(FormattedMessage)
             defaultMessage="Data Sources"
             id="project.view.projectDataSources"
           />,
@@ -509,7 +509,7 @@ exports[`DataWranglingResult: Component should render correctly with loading 1`]
             "admin",
           ],
           "id": "usersNavBtn",
-          "label": <FormattedMessage
+          "label": <Memo(FormattedMessage)
             defaultMessage="Project Users"
             id="project.view.projectUsersPage"
           />,
@@ -522,7 +522,7 @@ exports[`DataWranglingResult: Component should render correctly with loading 1`]
             "editor",
           ],
           "id": "contentNavBtn",
-          "label": <FormattedMessage
+          "label": <Memo(FormattedMessage)
             defaultMessage="Content"
             id="project.view.content"
           />,
@@ -534,7 +534,7 @@ exports[`DataWranglingResult: Component should render correctly with loading 1`]
             "admin",
           ],
           "id": "templatesNavBtn",
-          "label": <FormattedMessage
+          "label": <Memo(FormattedMessage)
             defaultMessage="Templates"
             id="project.view.templates"
           />,
@@ -546,7 +546,7 @@ exports[`DataWranglingResult: Component should render correctly with loading 1`]
   />
   <ContextHeader
     subtitle={
-      <FormattedMessage
+      <Memo(FormattedMessage)
         defaultMessage="Data Wrangling Result"
         id="dataSource.dataWranglingResult.pageTitle"
       />

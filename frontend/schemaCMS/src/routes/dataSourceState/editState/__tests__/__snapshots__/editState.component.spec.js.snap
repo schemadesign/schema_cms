@@ -3,7 +3,7 @@
 exports[`EditState: Component should render correctly 1`] = `
 Array [
   <div
-    className="sc-gSYCTC gZEKEv"
+    className="sc-iNiQyp bmMeRh"
   >
     <div
       style={
@@ -25,7 +25,7 @@ Array [
         }
       >
         <a
-          className="sc-iNiQeE hnQVGV"
+          className="sc-eJocfa hAQVRz"
           href="/project/1/"
           onClick={[Function]}
           style={
@@ -47,7 +47,7 @@ Array [
             Project
           </span>
           <h3
-            className="sc-jffIyK iNBqKg"
+            className="sc-oeezt lbaAXZ"
             style={
               Object {
                 "fontFamily": "Inter, \\"Helvetica Neue\\", Helvetica, Arial, sans-serif",
@@ -83,7 +83,7 @@ Array [
         }
       >
         <a
-          className="sc-iNiQeE hnQVGV"
+          className="sc-eJocfa hAQVRz"
           href="/project/1/datasource"
           onClick={[Function]}
           style={
@@ -105,7 +105,7 @@ Array [
             Tab
           </span>
           <h3
-            className="sc-jffIyK iNBqKg"
+            className="sc-oeezt lbaAXZ"
             style={
               Object {
                 "fontFamily": "Inter, \\"Helvetica Neue\\", Helvetica, Arial, sans-serif",
@@ -141,7 +141,7 @@ Array [
         }
       >
         <a
-          className="sc-iNiQeE hnQVGV"
+          className="sc-eJocfa hAQVRz"
           href="/datasource/1"
           onClick={[Function]}
           style={
@@ -163,7 +163,7 @@ Array [
             Data Source
           </span>
           <h3
-            className="sc-jffIyK iNBqKg"
+            className="sc-oeezt lbaAXZ"
             style={
               Object {
                 "fontFamily": "Inter, \\"Helvetica Neue\\", Helvetica, Arial, sans-serif",
@@ -199,7 +199,7 @@ Array [
         }
       >
         <a
-          className="sc-iNiQeE hnQVGV"
+          className="sc-eJocfa hAQVRz"
           href="/datasource/1/state"
           onClick={[Function]}
           style={
@@ -221,7 +221,7 @@ Array [
             Tab
           </span>
           <h3
-            className="sc-jffIyK iNBqKg"
+            className="sc-oeezt lbaAXZ"
             style={
               Object {
                 "fontFamily": "Inter, \\"Helvetica Neue\\", Helvetica, Arial, sans-serif",
@@ -257,7 +257,7 @@ Array [
         }
       >
         <div
-          className="sc-laZMyp kOJbHl"
+          className="sc-jffHpj bZxpdz"
         >
           <span
             style={
@@ -270,7 +270,7 @@ Array [
             State
           </span>
           <h3
-            className="sc-jffIyK iNBqKg"
+            className="sc-oeezt lbaAXZ"
             style={
               Object {
                 "fontFamily": "Inter, \\"Helvetica Neue\\", Helvetica, Arial, sans-serif",
@@ -288,7 +288,7 @@ Array [
     </div>
   </div>,
   <div
-    className="sc-hKFyIo ivkAyL"
+    className="sc-hKFxyN fGSCty"
   >
     <div
       style={
@@ -305,10 +305,10 @@ Array [
     >
       <div>
         <div
-          className="sc-eCApGN"
+          className="sc-eCApnc"
         >
           <h2
-            className="sc-kEqYlL iSsYxm"
+            className="sc-kEqXSa PZYGQ"
             id="headerTitle"
             style={
               Object {
@@ -320,7 +320,7 @@ Array [
             }
           />
           <h1
-            className="sc-iqAbSa gKKaKh"
+            className="sc-iqAclL gvivXb"
             id="headerSubtitle"
             style={
               Object {
@@ -343,14 +343,16 @@ Array [
         onClick={[Function]}
         style={
           Object {
+            "alignItems": "center",
             "backgroundColor": "transparent",
             "border": "none",
-            "borderRadius": "48px",
+            "borderRadius": "30px",
             "color": "#FFF",
             "cursor": "pointer",
-            "display": "inline-block",
+            "display": "flex",
             "fill": "#FFF",
-            "fontSize": "18px",
+            "fontSize": "20px",
+            "justifyContent": "center",
             "margin": "0",
             "minHeight": "48px",
             "outline": "none",
@@ -402,16 +404,16 @@ Array [
       }
     >
       <div
-        className="sc-gKAblj llrNkH"
+        className="sc-gKAaRy ffsgyw"
       >
         <div
-          className="sc-jSFkmK hQXddb"
+          className="sc-jSFjdj hjlZkT"
         >
           <div
-            className="sc-eCApGN"
+            className="sc-eCApnc"
           >
             <h2
-              className="sc-kEqYlL iSsYxm"
+              className="sc-kEqXSa PZYGQ"
               id="headerTitle"
               style={
                 Object {
@@ -423,7 +425,7 @@ Array [
               }
             />
             <h1
-              className="sc-iqAbSa gKKaKh"
+              className="sc-iqAclL gvivXb"
               id="headerSubtitle"
               style={
                 Object {
@@ -441,10 +443,10 @@ Array [
           </div>
         </div>
         <div
-          className="sc-iCoHVE gCJJlT"
+          className="sc-iCoGMd iAnnXP"
         >
           <div
-            className="sc-fujyUd fKowmD"
+            className="sc-fujyAs lmTzzR"
           >
             <a
               href="/project/"
@@ -455,7 +457,7 @@ Array [
             </a>
           </div>
           <div
-            className="sc-fujyUd fKowmD"
+            className="sc-fujyAs lmTzzR"
           >
             <a
               href="/user/"
@@ -466,7 +468,7 @@ Array [
             </a>
           </div>
           <div
-            className="sc-fujyUd fKowmD"
+            className="sc-fujyAs lmTzzR"
           >
             <a
               href="/project/1"
@@ -477,7 +479,7 @@ Array [
             </a>
           </div>
           <div
-            className="sc-fujyUd fKowmD"
+            className="sc-fujyAs lmTzzR"
           >
             <a
               href="/project/1/datasource"
@@ -488,7 +490,7 @@ Array [
             </a>
           </div>
           <div
-            className="sc-fujyUd fKowmD"
+            className="sc-fujyAs lmTzzR"
           >
             <a
               href="/project/1/user"
@@ -499,7 +501,7 @@ Array [
             </a>
           </div>
           <div
-            className="sc-fujyUd fKowmD"
+            className="sc-fujyAs lmTzzR"
           >
             <a
               href="/project/1/content"
@@ -510,7 +512,7 @@ Array [
             </a>
           </div>
           <div
-            className="sc-fujyUd fKowmD"
+            className="sc-fujyAs lmTzzR"
           >
             <a
               href="/project/1/templates"
@@ -522,10 +524,10 @@ Array [
           </div>
         </div>
         <div
-          className="sc-iCoHVE gCJJlT"
+          className="sc-iCoGMd iAnnXP"
         >
           <div
-            className="sc-fujyUd fKowmD"
+            className="sc-fujyAs lmTzzR"
           >
             <a
               href="/settings"
@@ -536,7 +538,7 @@ Array [
             </a>
           </div>
           <div
-            className="sc-fujyUd fKowmD"
+            className="sc-fujyAs lmTzzR"
           >
             <div
               id="logoutNavBtn"
@@ -547,10 +549,10 @@ Array [
           </div>
         </div>
         <div
-          className="sc-pNWxx fFCFli"
+          className="sc-pNWdM fSmvFG"
         >
           <a
-            className="sc-jrsJCI laNVwM"
+            className="sc-jrsJWt gDHOGg"
             href="/"
             id="aboutNavBtn"
             onClick={[Function]}
@@ -560,7 +562,7 @@ Array [
             About Schema CMS
           </a>
           <a
-            className="sc-jrsJCI laNVwM"
+            className="sc-jrsJWt gDHOGg"
             href="https://github.com/schemadesign/schema_cms/blob/master/backend/app/docs/public_api/api_calls.md"
             id="apiNavBtn"
             onClick={[Function]}
@@ -570,7 +572,7 @@ Array [
             API Doc
           </a>
           <a
-            className="sc-jrsJCI laNVwM"
+            className="sc-jrsJWt gDHOGg"
             href="https://github.com/schemadesign/schema_cms"
             id="repositoryNavBtn"
             onClick={[Function]}
@@ -587,14 +589,16 @@ Array [
         onClick={[Function]}
         style={
           Object {
+            "alignItems": "center",
             "backgroundColor": "transparent",
             "border": "none",
-            "borderRadius": "48px",
+            "borderRadius": "30px",
             "color": "#FFF",
             "cursor": "pointer",
-            "display": "inline-block",
+            "display": "flex",
             "fill": "#FFF",
-            "fontSize": "18px",
+            "fontSize": "20px",
+            "justifyContent": "center",
             "margin": "0",
             "minHeight": "48px",
             "outline": "none",
@@ -626,13 +630,13 @@ Array [
     </div>
   </div>,
   <div
-    className="sc-dlMBXb jygUFU"
+    className="sc-kfYoZR ksRrX"
   >
     <div
-      className="sc-kfYqjs cvqBSM"
+      className="sc-fKgJPI eMRxNg"
     >
       <h2
-        className="sc-fKgIGh dOwufL"
+        className="sc-bCwfaz iiMouF"
         id="desktopHeaderTitle"
         style={
           Object {
@@ -644,7 +648,7 @@ Array [
         }
       />
       <h1
-        className="sc-bCwgka bBdQKU"
+        className="sc-iwajpm klxMkK"
         id="desktopHeaderSubtitle"
         style={
           Object {
@@ -661,14 +665,14 @@ Array [
       </h1>
     </div>
     <div
-      className="sc-iwaifL"
+      className="sc-cxNHIi"
     />
   </div>,
   <div
-    className="sc-cxNIbT fanCMY"
+    className="sc-lmgQwP jpTKAj"
   >
     <div
-      className="sc-lmgQde cgzwxR"
+      className="sc-iJCRrE cWVQZj"
     >
       <div
         style={
@@ -739,7 +743,7 @@ Array [
             }
           >
             <div
-              className="sc-iJCRLp kLvrzs"
+              className="sc-giAqHp huHfuF"
             >
               <svg
                 style={
@@ -761,12 +765,12 @@ Array [
         </div>
       </div>
       <div
-        className="sc-giAqnE gKmdVy"
+        className="sc-ezzafa elFSyd"
         id="nameError"
       />
     </div>
     <div
-      className="sc-lmgQde cgzwxR"
+      className="sc-iJCRrE cWVQZj"
     >
       <div
         style={
@@ -855,7 +859,7 @@ Array [
             }
           >
             <div
-              className="sc-iJCRLp kLvrzs"
+              className="sc-giAqHp huHfuF"
             >
               <svg
                 style={
@@ -877,12 +881,12 @@ Array [
         </div>
       </div>
       <div
-        className="sc-giAqnE gKmdVy"
+        className="sc-ezzafa elFSyd"
         id="descriptionError"
       />
     </div>
     <div
-      className="sc-lmgQde cgzwxR"
+      className="sc-iJCRrE cWVQZj"
     >
       <div
         style={
@@ -953,7 +957,7 @@ Array [
             }
           >
             <div
-              className="sc-iJCRLp kLvrzs"
+              className="sc-giAqHp huHfuF"
             >
               <svg
                 style={
@@ -975,7 +979,7 @@ Array [
         </div>
       </div>
       <div
-        className="sc-giAqnE gKmdVy"
+        className="sc-ezzafa elFSyd"
         id="sourceUrlError"
       />
     </div>
@@ -996,7 +1000,7 @@ Array [
       Tags
     </label>
     <div
-      className="sc-dlnjPT kvEGkR"
+      className="sc-dlnjwi ddaxga"
     >
       No Tags available
     </div>
@@ -1017,18 +1021,18 @@ Array [
       Filters
     </label>
     <div
-      className="sc-dlnjPT kvEGkR"
+      className="sc-dlnjwi ddaxga"
     >
       No Filters available
     </div>
     <div
-      className="sc-cBoprd eZJDNA"
+      className="sc-ciSkZP jDLXbJ"
     >
       <div
-        className="sc-ciSmjq jukrfc"
+        className="sc-jcwpoC dwixqD"
       >
         <div
-          className="sc-iTVIwl jjWxdD"
+          className="sc-iBzEeX fhZcTs"
         >
           <div>
             <input
@@ -1079,23 +1083,23 @@ Array [
             </label>
           </div>
           <div
-            className="sc-carGAA hnBnVR"
+            className="sc-iTVJFM gQworh"
           >
             <label
-              className="sc-jcwofb hbUPLQ"
+              className="sc-carFqZ fhvZWN"
               htmlFor="isPublic"
             >
               Make it Public
             </label>
             <span
-              className="sc-cTJmaU hBzeJT"
+              className="sc-dPaNzc ghxDYw"
             >
               This State is currently Private
             </span>
           </div>
         </div>
         <div
-          className="sc-iBzFoy bjbpWW"
+          className="sc-efHYUO bQaKmy"
           id="removeState"
           onClick={[Function]}
         >
@@ -1121,16 +1125,16 @@ Array [
     </div>
   </div>,
   <div
-    className="sc-hBMVcZ cmobYf"
+    className="sc-hBMUJo cyDiol"
   >
     <div
-      className="sc-fFSRdu ktpSFp"
+      className="sc-fFSPTT bUtXSP"
     >
       <div
-        className="sc-fnVYJo lcUbTO"
+        className="sc-fnVZcZ ilqFLo"
       >
         <a
-          className="sc-iemXMA jJqiqd"
+          className="sc-iemWCZ jWufhS"
           disabled={false}
           href="/datasource/1/state"
           onClick={[Function]}
@@ -1138,19 +1142,21 @@ Array [
           Back
         </a>
         <button
-          className="sc-bkbjAj eMzpTM"
+          className="sc-bkbkJK hIUgUy"
           disabled={true}
           onClick={[Function]}
           style={
             Object {
+              "alignItems": "center",
               "backgroundColor": "#1d1d20",
               "border": "none",
-              "borderRadius": "48px",
+              "borderRadius": "30px",
               "color": "#71737e",
               "cursor": "default",
-              "display": "inline-block",
+              "display": "flex",
               "fill": "#FFF",
-              "fontSize": "18px",
+              "fontSize": "20px",
+              "justifyContent": "center",
               "margin": "0",
               "minHeight": "48px",
               "outline": "none",

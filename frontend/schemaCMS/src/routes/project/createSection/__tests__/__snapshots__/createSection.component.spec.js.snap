@@ -2,10 +2,10 @@
 
 exports[`CreateSection: Component should render correctly 1`] = `
 <div
-  className="sc-bdnylx"
+  className="sc-bdnxRM"
 >
   <div
-    className="sc-dlnjPT junKrd"
+    className="sc-dlnjwi cRuKBq"
   >
     <div
       style={
@@ -22,10 +22,10 @@ exports[`CreateSection: Component should render correctly 1`] = `
     >
       <div>
         <div
-          className="sc-hKFyIo"
+          className="sc-hKFxyN"
         >
           <h2
-            className="sc-jrsJCI jTtAyv"
+            className="sc-jrsJWt kjUKXP"
             id="headerTitle"
             style={
               Object {
@@ -39,7 +39,7 @@ exports[`CreateSection: Component should render correctly 1`] = `
             Section
           </h2>
           <h1
-            className="sc-kEqYlL iSsYxm"
+            className="sc-kEqXSa PZYGQ"
             id="headerSubtitle"
             style={
               Object {
@@ -62,14 +62,16 @@ exports[`CreateSection: Component should render correctly 1`] = `
         onClick={[Function]}
         style={
           Object {
+            "alignItems": "center",
             "backgroundColor": "transparent",
             "border": "none",
-            "borderRadius": "48px",
+            "borderRadius": "30px",
             "color": "#FFF",
             "cursor": "pointer",
-            "display": "inline-block",
+            "display": "flex",
             "fill": "#FFF",
-            "fontSize": "18px",
+            "fontSize": "20px",
+            "justifyContent": "center",
             "margin": "0",
             "minHeight": "48px",
             "outline": "none",
@@ -121,16 +123,16 @@ exports[`CreateSection: Component should render correctly 1`] = `
       }
     >
       <div
-        className="sc-jSFkmK cGcYQA"
+        className="sc-jSFjdj fnUjHM"
       >
         <div
-          className="sc-eCApGN eafRhf"
+          className="sc-eCApnc iBHHee"
         >
           <div
-            className="sc-hKFyIo"
+            className="sc-hKFxyN"
           >
             <h2
-              className="sc-jrsJCI jTtAyv"
+              className="sc-jrsJWt kjUKXP"
               id="headerTitle"
               style={
                 Object {
@@ -144,7 +146,7 @@ exports[`CreateSection: Component should render correctly 1`] = `
               Section
             </h2>
             <h1
-              className="sc-kEqYlL iSsYxm"
+              className="sc-kEqXSa PZYGQ"
               id="headerSubtitle"
               style={
                 Object {
@@ -162,10 +164,10 @@ exports[`CreateSection: Component should render correctly 1`] = `
           </div>
         </div>
         <div
-          className="sc-gKAblj gxlfwg"
+          className="sc-gKAaRy kMgRGr"
         >
           <div
-            className="sc-iCoHVE KqyKs"
+            className="sc-iCoGMd esRpfI"
           >
             <a
               href="/project/"
@@ -176,7 +178,7 @@ exports[`CreateSection: Component should render correctly 1`] = `
             </a>
           </div>
           <div
-            className="sc-iCoHVE KqyKs"
+            className="sc-iCoGMd esRpfI"
           >
             <a
               href="/user/"
@@ -187,7 +189,7 @@ exports[`CreateSection: Component should render correctly 1`] = `
             </a>
           </div>
           <div
-            className="sc-iCoHVE KqyKs"
+            className="sc-iCoGMd esRpfI"
           >
             <a
               href="/project/projectId"
@@ -198,7 +200,7 @@ exports[`CreateSection: Component should render correctly 1`] = `
             </a>
           </div>
           <div
-            className="sc-iCoHVE KqyKs"
+            className="sc-iCoGMd esRpfI"
           >
             <a
               href="/project/projectId/datasource"
@@ -209,7 +211,7 @@ exports[`CreateSection: Component should render correctly 1`] = `
             </a>
           </div>
           <div
-            className="sc-iCoHVE KqyKs"
+            className="sc-iCoGMd esRpfI"
           >
             <a
               href="/project/projectId/user"
@@ -220,7 +222,7 @@ exports[`CreateSection: Component should render correctly 1`] = `
             </a>
           </div>
           <div
-            className="sc-iCoHVE gbSiUF"
+            className="sc-iCoGMd idOtyZ"
           >
             <a
               href="/project/projectId/content"
@@ -231,7 +233,7 @@ exports[`CreateSection: Component should render correctly 1`] = `
             </a>
           </div>
           <div
-            className="sc-iCoHVE KqyKs"
+            className="sc-iCoGMd esRpfI"
           >
             <a
               href="/project/projectId/templates"
@@ -243,10 +245,10 @@ exports[`CreateSection: Component should render correctly 1`] = `
           </div>
         </div>
         <div
-          className="sc-gKAblj gxlfwg"
+          className="sc-gKAaRy kMgRGr"
         >
           <div
-            className="sc-iCoHVE KqyKs"
+            className="sc-iCoGMd esRpfI"
           >
             <a
               href="/settings"
@@ -257,7 +259,7 @@ exports[`CreateSection: Component should render correctly 1`] = `
             </a>
           </div>
           <div
-            className="sc-iCoHVE KqyKs"
+            className="sc-iCoGMd esRpfI"
           >
             <div
               id="logoutNavBtn"
@@ -268,10 +270,10 @@ exports[`CreateSection: Component should render correctly 1`] = `
           </div>
         </div>
         <div
-          className="sc-fujyUd hCqIcK"
+          className="sc-fujyAs etqQnk"
         >
           <a
-            className="sc-pNWxx hXnzwK"
+            className="sc-pNWdM gttPrG"
             href="/"
             id="aboutNavBtn"
             onClick={[Function]}
@@ -281,7 +283,7 @@ exports[`CreateSection: Component should render correctly 1`] = `
             About Schema CMS
           </a>
           <a
-            className="sc-pNWxx hXnzwK"
+            className="sc-pNWdM gttPrG"
             href="https://github.com/schemadesign/schema_cms/blob/master/backend/app/docs/public_api/api_calls.md"
             id="apiNavBtn"
             onClick={[Function]}
@@ -291,7 +293,7 @@ exports[`CreateSection: Component should render correctly 1`] = `
             API Doc
           </a>
           <a
-            className="sc-pNWxx hXnzwK"
+            className="sc-pNWdM gttPrG"
             href="https://github.com/schemadesign/schema_cms"
             id="repositoryNavBtn"
             onClick={[Function]}
@@ -308,14 +310,16 @@ exports[`CreateSection: Component should render correctly 1`] = `
         onClick={[Function]}
         style={
           Object {
+            "alignItems": "center",
             "backgroundColor": "transparent",
             "border": "none",
-            "borderRadius": "48px",
+            "borderRadius": "30px",
             "color": "#FFF",
             "cursor": "pointer",
-            "display": "inline-block",
+            "display": "flex",
             "fill": "#FFF",
-            "fontSize": "18px",
+            "fontSize": "20px",
+            "justifyContent": "center",
             "margin": "0",
             "minHeight": "48px",
             "outline": "none",
@@ -347,7 +351,7 @@ exports[`CreateSection: Component should render correctly 1`] = `
     </div>
   </div>
   <div
-    className="sc-iJCRLp eJiYjM"
+    className="sc-giAqHp dpUxlh"
   >
     <div
       style={
@@ -369,7 +373,7 @@ exports[`CreateSection: Component should render correctly 1`] = `
         }
       >
         <a
-          className="sc-ezzayL eRUViH"
+          className="sc-bYwzuL kazSMw"
           href="/project/1/"
           onClick={[Function]}
           style={
@@ -391,7 +395,7 @@ exports[`CreateSection: Component should render correctly 1`] = `
             Project
           </span>
           <h3
-            className="sc-bYwzba bIvhCs"
+            className="sc-kLojOw gMJcEe"
             style={
               Object {
                 "fontFamily": "Inter, \\"Helvetica Neue\\", Helvetica, Arial, sans-serif",
@@ -427,7 +431,7 @@ exports[`CreateSection: Component should render correctly 1`] = `
         }
       >
         <a
-          className="sc-ezzayL eRUViH"
+          className="sc-bYwzuL kazSMw"
           href="/project/1/content"
           onClick={[Function]}
           style={
@@ -449,7 +453,7 @@ exports[`CreateSection: Component should render correctly 1`] = `
             Tab
           </span>
           <h3
-            className="sc-bYwzba bIvhCs"
+            className="sc-kLojOw gMJcEe"
             style={
               Object {
                 "fontFamily": "Inter, \\"Helvetica Neue\\", Helvetica, Arial, sans-serif",
@@ -485,7 +489,7 @@ exports[`CreateSection: Component should render correctly 1`] = `
         }
       >
         <div
-          className="sc-giAqnE jqgyGP"
+          className="sc-ezzafa kSWCbk"
         >
           <span
             style={
@@ -498,7 +502,7 @@ exports[`CreateSection: Component should render correctly 1`] = `
             Section
           </span>
           <h3
-            className="sc-bYwzba bIvhCs"
+            className="sc-kLojOw gMJcEe"
             style={
               Object {
                 "fontFamily": "Inter, \\"Helvetica Neue\\", Helvetica, Arial, sans-serif",
@@ -516,13 +520,13 @@ exports[`CreateSection: Component should render correctly 1`] = `
     </div>
   </div>
   <div
-    className="sc-hHEjAm IVnVi"
+    className="sc-dlMDgC ksWamt"
   >
     <div
-      className="sc-dlMBXb hBQOnd"
+      className="sc-kfYoZR fARwxC"
     >
       <h2
-        className="sc-kfYqjs jyVZHv"
+        className="sc-fKgJPI eOKZEv"
         id="desktopHeaderTitle"
         style={
           Object {
@@ -536,7 +540,7 @@ exports[`CreateSection: Component should render correctly 1`] = `
         Section
       </h2>
       <h1
-        className="sc-fKgIGh dOwufL"
+        className="sc-bCwfaz iiMouF"
         id="desktopHeaderSubtitle"
         style={
           Object {
@@ -553,15 +557,15 @@ exports[`CreateSection: Component should render correctly 1`] = `
       </h1>
     </div>
     <div
-      className="sc-bCwgka"
+      className="sc-iwajpm"
     />
   </div>
   <form
-    className="sc-gtssRu"
+    className="sc-gtsrHT"
     onSubmit={[Function]}
   >
     <div
-      className="sc-iwaifL iBtTLj"
+      className="sc-cxNHIi blzHcf"
     >
       <div
         style={
@@ -635,34 +639,36 @@ exports[`CreateSection: Component should render correctly 1`] = `
         </div>
       </div>
       <div
-        className="sc-lmgQde dGvbQF"
+        className="sc-iJCRrE jQEIVz"
         id="nameError"
       />
     </div>
     <div
-      className="sc-ksluoS eDrIsG"
+      className="sc-ksluID heenju"
     >
       <div
-        className="sc-fnVYJo cApgRn"
+        className="sc-fnVZcZ UrpCx"
       >
         <div
-          className="sc-hBMVcZ ixGuM"
+          className="sc-hBMUJo ftTEEW"
         >
           <button
-            className="sc-fFSRdu fFiWoi"
+            className="sc-fFSPTT kaifUQ"
             disabled={false}
             id="cancelBtn"
             onClick={[Function]}
             style={
               Object {
+                "alignItems": "center",
                 "backgroundColor": "#1d1d20",
                 "border": "none",
-                "borderRadius": "48px",
+                "borderRadius": "30px",
                 "color": "#FFF",
                 "cursor": "pointer",
-                "display": "inline-block",
+                "display": "flex",
                 "fill": "#FFF",
-                "fontSize": "18px",
+                "fontSize": "20px",
+                "justifyContent": "center",
                 "margin": "0",
                 "minHeight": "48px",
                 "outline": "none",
@@ -675,19 +681,21 @@ exports[`CreateSection: Component should render correctly 1`] = `
             Cancel
           </button>
           <button
-            className="sc-fFSRdu fFiWoi"
+            className="sc-fFSPTT kaifUQ"
             disabled={true}
             id="createSection"
             style={
               Object {
+                "alignItems": "center",
                 "backgroundColor": "#1d1d20",
                 "border": "none",
-                "borderRadius": "48px",
+                "borderRadius": "30px",
                 "color": "#71737e",
                 "cursor": "default",
-                "display": "inline-block",
+                "display": "flex",
                 "fill": "#FFF",
-                "fontSize": "18px",
+                "fontSize": "20px",
+                "justifyContent": "center",
                 "margin": "0",
                 "minHeight": "48px",
                 "outline": "none",

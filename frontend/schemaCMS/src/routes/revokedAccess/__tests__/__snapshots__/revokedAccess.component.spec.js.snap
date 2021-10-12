@@ -9,13 +9,13 @@ exports[`RevokedAccess: Component should render correctly 1`] = `
   />
   <MobileMenu
     headerSubtitle={
-      <FormattedMessage
+      <Memo(FormattedMessage)
         defaultMessage="Error"
         id="revokedAccess.subTitle"
       />
     }
     headerTitle={
-      <FormattedMessage
+      <Memo(FormattedMessage)
         defaultMessage="Schema CMS"
         id="revokedAccess.title"
       />
@@ -24,7 +24,7 @@ exports[`RevokedAccess: Component should render correctly 1`] = `
     options={Array []}
   />
   <styled.div>
-    <FormattedMessage
+    <MemoizedFormattedMessage
       defaultMessage="The access for account with email <b>{email}</b> has been revoked."
       id="revokedAccess.info"
       values={
@@ -35,7 +35,7 @@ exports[`RevokedAccess: Component should render correctly 1`] = `
       }
     />
     <br />
-    <FormattedMessage
+    <MemoizedFormattedMessage
       defaultMessage="If you believe this is an error, please contact your administrator or <a>log with different credentials</a>."
       id="revokedAccess.contact"
       values={

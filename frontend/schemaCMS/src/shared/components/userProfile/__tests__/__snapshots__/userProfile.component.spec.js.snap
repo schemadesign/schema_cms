@@ -10,7 +10,7 @@ exports[`UserProfile: Component should render correctly 1`] = `
     fullWidth={true}
     isEdit={false}
     label={
-      <FormattedMessage
+      <Memo(FormattedMessage)
         defaultMessage="First Name"
         id="userProfile.firstNameLabel"
       />
@@ -28,7 +28,7 @@ exports[`UserProfile: Component should render correctly 1`] = `
     fullWidth={true}
     isEdit={false}
     label={
-      <FormattedMessage
+      <Memo(FormattedMessage)
         defaultMessage="Last Name"
         id="userProfile.lastNameLabel"
       />
@@ -46,7 +46,7 @@ exports[`UserProfile: Component should render correctly 1`] = `
     fullWidth={true}
     isEdit={false}
     label={
-      <FormattedMessage
+      <Memo(FormattedMessage)
         defaultMessage="Email"
         id="userProfile.emailLabel"
       />
@@ -64,7 +64,7 @@ exports[`UserProfile: Component should render correctly 1`] = `
     fullWidth={true}
     isEdit={false}
     label={
-      <FormattedMessage
+      <Memo(FormattedMessage)
         defaultMessage="Role"
         id="userProfile.roleLabel"
       />
@@ -87,7 +87,7 @@ exports[`UserProfile: Component should render correctly current user 1`] = `
     fullWidth={true}
     isEdit={true}
     label={
-      <FormattedMessage
+      <Memo(FormattedMessage)
         defaultMessage="First Name"
         id="userProfile.firstNameLabel"
       />
@@ -105,7 +105,7 @@ exports[`UserProfile: Component should render correctly current user 1`] = `
     fullWidth={true}
     isEdit={true}
     label={
-      <FormattedMessage
+      <Memo(FormattedMessage)
         defaultMessage="Last Name"
         id="userProfile.lastNameLabel"
       />
@@ -123,7 +123,7 @@ exports[`UserProfile: Component should render correctly current user 1`] = `
     fullWidth={true}
     isEdit={false}
     label={
-      <FormattedMessage
+      <Memo(FormattedMessage)
         defaultMessage="Email"
         id="userProfile.emailLabel"
       />
@@ -141,7 +141,7 @@ exports[`UserProfile: Component should render correctly current user 1`] = `
     fullWidth={true}
     isEdit={false}
     label={
-      <FormattedMessage
+      <Memo(FormattedMessage)
         defaultMessage="Role"
         id="userProfile.roleLabel"
       />

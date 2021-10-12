@@ -120,7 +120,7 @@ exports[`FilterForm: Component should render correctly 1`] = `
     }
   >
     <Styled(H1)>
-      <FormattedMessage
+      <MemoizedFormattedMessage
         defaultMessage="Are you sure you want to remove this filter?"
         id="shared.components.filterForm.removeTitle"
       />
@@ -130,7 +130,7 @@ exports[`FilterForm: Component should render correctly 1`] = `
         disabled={false}
         onClick={[Function]}
       >
-        <FormattedMessage
+        <MemoizedFormattedMessage
           defaultMessage="Cancel"
           id="shared.components.filterForm.cancelRemoval"
         />
@@ -141,7 +141,7 @@ exports[`FilterForm: Component should render correctly 1`] = `
         loading={false}
         onClick={[Function]}
       >
-        <FormattedMessage
+        <MemoizedFormattedMessage
           defaultMessage="Confirm"
           id="shared.components.filterForm.confirmRemoval"
         />
@@ -234,7 +234,7 @@ exports[`FilterForm: Component should render create form 1`] = `
       isEdit={true}
       isValidating={false}
       label={
-        <FormattedMessage
+        <Memo(FormattedMessage)
           defaultMessage="Filter Name"
           id="shared.components.filterForm.name"
         />
@@ -264,7 +264,7 @@ exports[`FilterForm: Component should render create form 1`] = `
     />
     <Memo()
       label={
-        <FormattedMessage
+        <Memo(FormattedMessage)
           defaultMessage="Field"
           id="shared.components.filterForm.field"
         />
@@ -283,7 +283,7 @@ exports[`FilterForm: Component should render create form 1`] = `
     />
     <Memo()
       label={
-        <FormattedMessage
+        <Memo(FormattedMessage)
           defaultMessage="Filter Type"
           id="shared.components.filterForm.filterType"
         />
@@ -327,7 +327,7 @@ exports[`FilterForm: Component should render create form 1`] = `
         isEdit={false}
         isValidating={false}
         label={
-          <FormattedMessage
+          <Memo(FormattedMessage)
             defaultMessage="Field Type"
             id="shared.components.filterForm.fieldType"
           />
@@ -381,7 +381,7 @@ exports[`FilterForm: Component should render create form 1`] = `
         isEdit={false}
         isValidating={false}
         label={
-          <FormattedMessage
+          <Memo(FormattedMessage)
             defaultMessage="Unique items"
             id="shared.components.filterForm.unique"
           />
@@ -419,7 +419,7 @@ exports[`FilterForm: Component should render create form 1`] = `
       <BackLink
         to="/datasource/1/filters"
       >
-        <FormattedMessage
+        <MemoizedFormattedMessage
           defaultMessage="Cancel"
           id="shared.components.filterForm.cancel"
         />
@@ -429,7 +429,7 @@ exports[`FilterForm: Component should render create form 1`] = `
         loading={false}
         type="submit"
       >
-        <FormattedMessage
+        <MemoizedFormattedMessage
           defaultMessage="Save"
           id="shared.components.filterForm.saveFilter"
         />
@@ -534,7 +534,7 @@ exports[`FilterForm: Component should render edit form 1`] = `
       isEdit={true}
       isValidating={false}
       label={
-        <FormattedMessage
+        <Memo(FormattedMessage)
           defaultMessage="Filter Name"
           id="shared.components.filterForm.name"
         />
@@ -564,7 +564,7 @@ exports[`FilterForm: Component should render edit form 1`] = `
     />
     <Memo()
       label={
-        <FormattedMessage
+        <Memo(FormattedMessage)
           defaultMessage="Field"
           id="shared.components.filterForm.field"
         />
@@ -583,7 +583,7 @@ exports[`FilterForm: Component should render edit form 1`] = `
     />
     <Memo()
       label={
-        <FormattedMessage
+        <Memo(FormattedMessage)
           defaultMessage="Filter Type"
           id="shared.components.filterForm.filterType"
         />
@@ -631,7 +631,7 @@ exports[`FilterForm: Component should render edit form 1`] = `
         isEdit={false}
         isValidating={false}
         label={
-          <FormattedMessage
+          <Memo(FormattedMessage)
             defaultMessage="Field Type"
             id="shared.components.filterForm.fieldType"
           />
@@ -689,7 +689,7 @@ exports[`FilterForm: Component should render edit form 1`] = `
         isEdit={false}
         isValidating={false}
         label={
-          <FormattedMessage
+          <Memo(FormattedMessage)
             defaultMessage="Unique items"
             id="shared.components.filterForm.unique"
           />
@@ -722,7 +722,7 @@ exports[`FilterForm: Component should render edit form 1`] = `
       <Styled(Span)
         onClick={[Function]}
       >
-        <FormattedMessage
+        <MemoizedFormattedMessage
           defaultMessage="Remove filter"
           id="shared.components.filterForm.deleteFilter"
         />
@@ -737,7 +737,7 @@ exports[`FilterForm: Component should render edit form 1`] = `
       <BackLink
         to="/datasource/1/filters"
       >
-        <FormattedMessage
+        <MemoizedFormattedMessage
           defaultMessage="Back"
           id="shared.components.filterForm.back"
         />
@@ -747,7 +747,7 @@ exports[`FilterForm: Component should render edit form 1`] = `
         loading={false}
         type="submit"
       >
-        <FormattedMessage
+        <MemoizedFormattedMessage
           defaultMessage="Save"
           id="shared.components.filterForm.saveFilter"
         />

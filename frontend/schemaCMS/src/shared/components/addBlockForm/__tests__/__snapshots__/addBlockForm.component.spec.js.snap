@@ -5,10 +5,10 @@ exports[`AddBlockForm: Component should render a block template with added eleme
   onSubmit={[Function]}
 >
   <div
-    className="sc-bdnylx dXFUsK"
+    className="sc-bdnxRM jfLXjd"
   >
     <div
-      className="sc-bCwgka jPnEeh"
+      className="sc-cxNHIi cATuCG"
       onClick={[Function]}
     >
       <label
@@ -180,7 +180,7 @@ exports[`AddBlockForm: Component should render a block template with added eleme
         </div>
       </div>
       <div
-        className="sc-iwaifL bXwhvv"
+        className="sc-lmgQwP lkLtCK"
       >
         <svg
           style={
@@ -201,21 +201,21 @@ exports[`AddBlockForm: Component should render a block template with added eleme
     </div>
   </div>
   <div
-    className="sc-ciSmjq gQRuMP"
+    className="sc-carFqZ gtxdrU"
   >
     <div
-      className="sc-jcwofb iHyuSB"
+      className="sc-iTVJFM jSBkhj"
       id="tagsCounter"
     />
     0 Elements
     <div
-      className="sc-jcwofb iHyuSB"
+      className="sc-iTVJFM jSBkhj"
     >
       <div
-        className="sc-dIvqjp iNCAit"
+        className="sc-dlMDgC dfUbDZ"
       >
         <div
-          className="sc-pNWxx hdHMB"
+          className="sc-pNWdM gVThct"
         >
           <button
             disabled={false}
@@ -223,15 +223,17 @@ exports[`AddBlockForm: Component should render a block template with added eleme
             onClick={[Function]}
             style={
               Object {
+                "alignItems": "center",
                 "backgroundColor": "#FFF",
                 "border": "none",
-                "borderRadius": "48px",
+                "borderRadius": "30px",
                 "color": "#000",
                 "cursor": "pointer",
-                "display": "inline-block",
+                "display": "flex",
                 "fill": "#FFF",
-                "fontSize": "18px",
+                "fontSize": "20px",
                 "height": 40,
+                "justifyContent": "center",
                 "margin": "0",
                 "minHeight": 40,
                 "outline": "none",
@@ -267,29 +269,31 @@ exports[`AddBlockForm: Component should render a block template with added eleme
      
   </span>
   <div
-    className="sc-eCApGN iaXPZF"
+    className="sc-eCApnc xRYiU"
   >
     <div
-      className="sc-gKAblj gLiqJM"
+      className="sc-gKAaRy VlDwf"
     >
       <div
-        className="sc-jSFkmK cqXTMK"
+        className="sc-jSFjdj ervdSK"
       >
         <button
-          className="sc-iCoHVE hVCdpY"
+          className="sc-iCoGMd iGTlng"
           disabled={false}
           id="backBtn"
           onClick={[Function]}
           style={
             Object {
+              "alignItems": "center",
               "backgroundColor": "#1d1d20",
               "border": "none",
-              "borderRadius": "48px",
+              "borderRadius": "30px",
               "color": "#FFF",
               "cursor": "pointer",
-              "display": "inline-block",
+              "display": "flex",
               "fill": "#FFF",
-              "fontSize": "18px",
+              "fontSize": "20px",
+              "justifyContent": "center",
               "margin": "0",
               "minHeight": "48px",
               "outline": "none",
@@ -302,19 +306,21 @@ exports[`AddBlockForm: Component should render a block template with added eleme
           Back
         </button>
         <button
-          className="sc-iCoHVE hVCdpY"
+          className="sc-iCoGMd iGTlng"
           disabled={true}
           id="addBlock"
           style={
             Object {
+              "alignItems": "center",
               "backgroundColor": "#1d1d20",
               "border": "none",
-              "borderRadius": "48px",
+              "borderRadius": "30px",
               "color": "#71737e",
               "cursor": "default",
-              "display": "inline-block",
+              "display": "flex",
               "fill": "#FFF",
-              "fontSize": "18px",
+              "fontSize": "20px",
+              "justifyContent": "center",
               "margin": "0",
               "minHeight": "48px",
               "outline": "none",
@@ -337,10 +343,10 @@ exports[`AddBlockForm: Component should render correctly 1`] = `
   onSubmit={[Function]}
 >
   <div
-    className="sc-bdnylx dXFUsK"
+    className="sc-bdnxRM jfLXjd"
   >
     <div
-      className="sc-bCwgka jPnEeh"
+      className="sc-cxNHIi cATuCG"
       onClick={[Function]}
     >
       <label
@@ -511,7 +517,7 @@ exports[`AddBlockForm: Component should render correctly 1`] = `
         </div>
       </div>
       <div
-        className="sc-iwaifL bXwhvv"
+        className="sc-lmgQwP lkLtCK"
       >
         <svg
           style={
@@ -532,29 +538,31 @@ exports[`AddBlockForm: Component should render correctly 1`] = `
     </div>
   </div>
   <div
-    className="sc-eCApGN iaXPZF"
+    className="sc-eCApnc xRYiU"
   >
     <div
-      className="sc-gKAblj gLiqJM"
+      className="sc-gKAaRy VlDwf"
     >
       <div
-        className="sc-jSFkmK cqXTMK"
+        className="sc-jSFjdj ervdSK"
       >
         <button
-          className="sc-iCoHVE hVCdpY"
+          className="sc-iCoGMd iGTlng"
           disabled={false}
           id="backBtn"
           onClick={[Function]}
           style={
             Object {
+              "alignItems": "center",
               "backgroundColor": "#1d1d20",
               "border": "none",
-              "borderRadius": "48px",
+              "borderRadius": "30px",
               "color": "#FFF",
               "cursor": "pointer",
-              "display": "inline-block",
+              "display": "flex",
               "fill": "#FFF",
-              "fontSize": "18px",
+              "fontSize": "20px",
+              "justifyContent": "center",
               "margin": "0",
               "minHeight": "48px",
               "outline": "none",
@@ -567,19 +575,21 @@ exports[`AddBlockForm: Component should render correctly 1`] = `
           Back
         </button>
         <button
-          className="sc-iCoHVE hVCdpY"
+          className="sc-iCoGMd iGTlng"
           disabled={true}
           id="addBlock"
           style={
             Object {
+              "alignItems": "center",
               "backgroundColor": "#1d1d20",
               "border": "none",
-              "borderRadius": "48px",
+              "borderRadius": "30px",
               "color": "#71737e",
               "cursor": "default",
-              "display": "inline-block",
+              "display": "flex",
               "fill": "#FFF",
-              "fontSize": "18px",
+              "fontSize": "20px",
+              "justifyContent": "center",
               "margin": "0",
               "minHeight": "48px",
               "outline": "none",

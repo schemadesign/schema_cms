@@ -2,10 +2,10 @@
 
 exports[`DataSourceStateForm: Component should render correctly 1`] = `
 <div
-  className="sc-bdnylx bjiSkD"
+  className="sc-bdnxRM hmncds"
 >
   <div
-    className="sc-gtssRu cdGZMT"
+    className="sc-gtsrHT eFBnFY"
   >
     <div
       style={
@@ -76,7 +76,7 @@ exports[`DataSourceStateForm: Component should render correctly 1`] = `
           }
         >
           <div
-            className="sc-dlnjPT gEjiGW"
+            className="sc-dlnjwi iSQwZ"
           >
             <svg
               style={
@@ -98,12 +98,12 @@ exports[`DataSourceStateForm: Component should render correctly 1`] = `
       </div>
     </div>
     <div
-      className="sc-hKFyIo DFKiB"
+      className="sc-hKFxyN fazJJE"
       id="nameError"
     />
   </div>
   <div
-    className="sc-gtssRu cdGZMT"
+    className="sc-gtsrHT eFBnFY"
   >
     <div
       style={
@@ -192,7 +192,7 @@ exports[`DataSourceStateForm: Component should render correctly 1`] = `
           }
         >
           <div
-            className="sc-dlnjPT gEjiGW"
+            className="sc-dlnjwi iSQwZ"
           >
             <svg
               style={
@@ -214,12 +214,12 @@ exports[`DataSourceStateForm: Component should render correctly 1`] = `
       </div>
     </div>
     <div
-      className="sc-hKFyIo DFKiB"
+      className="sc-hKFxyN fazJJE"
       id="descriptionError"
     />
   </div>
   <div
-    className="sc-gtssRu cdGZMT"
+    className="sc-gtsrHT eFBnFY"
   >
     <div
       style={
@@ -289,7 +289,7 @@ exports[`DataSourceStateForm: Component should render correctly 1`] = `
           }
         >
           <div
-            className="sc-dlnjPT gEjiGW"
+            className="sc-dlnjwi iSQwZ"
           >
             <svg
               style={
@@ -311,12 +311,12 @@ exports[`DataSourceStateForm: Component should render correctly 1`] = `
       </div>
     </div>
     <div
-      className="sc-hKFyIo DFKiB"
+      className="sc-hKFxyN fazJJE"
       id="sourceUrlError"
     />
   </div>
   <div
-    className="sc-gtssRu cdGZMT"
+    className="sc-gtsrHT eFBnFY"
   >
     <div
       style={
@@ -390,12 +390,12 @@ exports[`DataSourceStateForm: Component should render correctly 1`] = `
       </div>
     </div>
     <div
-      className="sc-hKFyIo DFKiB"
+      className="sc-hKFxyN fazJJE"
       id="authorError"
     />
   </div>
   <div
-    className="sc-gtssRu cdGZMT"
+    className="sc-gtsrHT eFBnFY"
   >
     <div
       style={
@@ -469,7 +469,7 @@ exports[`DataSourceStateForm: Component should render correctly 1`] = `
       </div>
     </div>
     <div
-      className="sc-hKFyIo DFKiB"
+      className="sc-hKFxyN fazJJE"
       id="createdError"
     />
   </div>
@@ -490,24 +490,24 @@ exports[`DataSourceStateForm: Component should render correctly 1`] = `
     Tags
   </label>
   <div
-    className="sc-eCApGN gjchuy"
+    className="sc-eCApnc fJcDGn"
   >
     <div
-      className="sc-iCoHVE caxaKl"
+      className="sc-iCoGMd dwfSpJ"
     >
       <div
-        className="sc-jSFkmK jtlSSW"
+        className="sc-jSFjdj kZhA-dm"
         title="Colors"
       >
         <span
-          className="sc-gKAblj eYxgKQ"
+          className="sc-gKAaRy ljvBon"
         >
           Category: 
         </span>
         Colors
       </div>
       <div
-        className="sc-pNWxx"
+        className="sc-pNWdM"
       >
         <div
           className=" css-2b097c-container"
@@ -605,18 +605,18 @@ exports[`DataSourceStateForm: Component should render correctly 1`] = `
         </div>
       </div>
       <div
-        className="sc-jSFkmK jtlSSW"
+        className="sc-jSFjdj kZhA-dm"
         title="Countries"
       >
         <span
-          className="sc-gKAblj eYxgKQ"
+          className="sc-gKAaRy ljvBon"
         >
           Category: 
         </span>
         Countries
       </div>
       <div
-        className="sc-pNWxx"
+        className="sc-pNWdM"
       >
         <div
           className=" css-2b097c-container"
@@ -784,7 +784,7 @@ exports[`DataSourceStateForm: Component should render correctly 1`] = `
         }
       >
         <div
-          className="sc-crzoUp eFVoDT"
+          className="sc-crzoAE djaafT"
           id="filterName-0"
           onClick={[Function]}
           title="Filter First Name"
@@ -871,7 +871,7 @@ exports[`DataSourceStateForm: Component should render correctly 1`] = `
         }
       >
         <div
-          className="sc-crzoUp eFVoDT"
+          className="sc-crzoAE djaafT"
           id="filterName-1"
           onClick={[Function]}
           title="Filter Last Name"
@@ -958,7 +958,7 @@ exports[`DataSourceStateForm: Component should render correctly 1`] = `
         }
       >
         <div
-          className="sc-crzoUp eFVoDT"
+          className="sc-crzoAE djaafT"
           id="filterName-2"
           onClick={[Function]}
           title="Filter Birthday"
@@ -1005,13 +1005,13 @@ exports[`DataSourceStateForm: Component should render correctly 1`] = `
     </div>
   </div>
   <div
-    className="sc-dIsAE fJEVeK"
+    className="sc-dIsUp edxFuK"
   >
     <div
-      className="sc-bqGHjH kPZApB"
+      className="sc-bqGGPW jhtxot"
     >
       <div
-        className="sc-fnVYJo gatmas"
+        className="sc-fnVZcZ cJISEk"
       >
         <div>
           <input
@@ -1063,16 +1063,16 @@ exports[`DataSourceStateForm: Component should render correctly 1`] = `
           </label>
         </div>
         <div
-          className="sc-hBMVcZ bYlpqO"
+          className="sc-hBMUJo bAGlPc"
         >
           <label
-            className="sc-ksluoS VdohQ"
+            className="sc-ksluID cTNdCg"
             htmlFor="isPublic"
           >
             Make it Public
           </label>
           <span
-            className="sc-iemXMA fcWpfK"
+            className="sc-dIvrsQ dDqmop"
           >
             This State is currently Private
           </span>

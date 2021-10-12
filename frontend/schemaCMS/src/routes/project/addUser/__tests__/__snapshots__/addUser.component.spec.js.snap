@@ -4,13 +4,13 @@ exports[`AddUser: Component should render correctly 1`] = `
 <styled.div>
   <ContextHeader
     subtitle={
-      <FormattedMessage
+      <Memo(FormattedMessage)
         defaultMessage="Add Users"
         id="project.addUser.headerSubtitle"
       />
     }
     title={
-      <FormattedMessage
+      <Memo(FormattedMessage)
         defaultMessage="Users"
         id="project.addUser.headerTitle"
       />
@@ -18,13 +18,13 @@ exports[`AddUser: Component should render correctly 1`] = `
   />
   <MobileMenu
     headerSubtitle={
-      <FormattedMessage
+      <Memo(FormattedMessage)
         defaultMessage="Add Users"
         id="project.addUser.headerSubtitle"
       />
     }
     headerTitle={
-      <FormattedMessage
+      <Memo(FormattedMessage)
         defaultMessage="Users"
         id="project.addUser.headerTitle"
       />
@@ -37,7 +37,7 @@ exports[`AddUser: Component should render correctly 1`] = `
             "editor",
           ],
           "id": "projectsNavBtn",
-          "label": <FormattedMessage
+          "label": <Memo(FormattedMessage)
             defaultMessage="Projects"
             id="project.view.projectsListPage"
           />,
@@ -49,7 +49,7 @@ exports[`AddUser: Component should render correctly 1`] = `
             "admin",
           ],
           "id": "usersPageNavBtn",
-          "label": <FormattedMessage
+          "label": <Memo(FormattedMessage)
             defaultMessage="Users"
             id="project.view.usersPage"
           />,
@@ -62,7 +62,7 @@ exports[`AddUser: Component should render correctly 1`] = `
             "editor",
           ],
           "id": "projectDetailsNavBtn",
-          "label": <FormattedMessage
+          "label": <Memo(FormattedMessage)
             defaultMessage="Project details"
             id="project.view.projectDetails"
           />,
@@ -75,7 +75,7 @@ exports[`AddUser: Component should render correctly 1`] = `
             "editor",
           ],
           "id": "dataSourceNavBtn",
-          "label": <FormattedMessage
+          "label": <Memo(FormattedMessage)
             defaultMessage="Data Sources"
             id="project.view.projectDataSources"
           />,
@@ -87,7 +87,7 @@ exports[`AddUser: Component should render correctly 1`] = `
             "admin",
           ],
           "id": "usersNavBtn",
-          "label": <FormattedMessage
+          "label": <Memo(FormattedMessage)
             defaultMessage="Project Users"
             id="project.view.projectUsersPage"
           />,
@@ -100,7 +100,7 @@ exports[`AddUser: Component should render correctly 1`] = `
             "editor",
           ],
           "id": "contentNavBtn",
-          "label": <FormattedMessage
+          "label": <Memo(FormattedMessage)
             defaultMessage="Content"
             id="project.view.content"
           />,
@@ -112,7 +112,7 @@ exports[`AddUser: Component should render correctly 1`] = `
             "admin",
           ],
           "id": "templatesNavBtn",
-          "label": <FormattedMessage
+          "label": <Memo(FormattedMessage)
             defaultMessage="Templates"
             id="project.view.templates"
           />,
@@ -127,7 +127,7 @@ exports[`AddUser: Component should render correctly 1`] = `
     loading={true}
     noData={true}
     noDataContent={
-      <FormattedMessage
+      <Memo(FormattedMessage)
         defaultMessage="No users with role Editor available"
         id="project.addUser.noData"
       />
@@ -150,13 +150,13 @@ exports[`AddUser: Component should render correctly with users 1`] = `
 <styled.div>
   <ContextHeader
     subtitle={
-      <FormattedMessage
+      <Memo(FormattedMessage)
         defaultMessage="Add Users"
         id="project.addUser.headerSubtitle"
       />
     }
     title={
-      <FormattedMessage
+      <Memo(FormattedMessage)
         defaultMessage="Users"
         id="project.addUser.headerTitle"
       />
@@ -164,13 +164,13 @@ exports[`AddUser: Component should render correctly with users 1`] = `
   />
   <MobileMenu
     headerSubtitle={
-      <FormattedMessage
+      <Memo(FormattedMessage)
         defaultMessage="Add Users"
         id="project.addUser.headerSubtitle"
       />
     }
     headerTitle={
-      <FormattedMessage
+      <Memo(FormattedMessage)
         defaultMessage="Users"
         id="project.addUser.headerTitle"
       />
@@ -183,7 +183,7 @@ exports[`AddUser: Component should render correctly with users 1`] = `
             "editor",
           ],
           "id": "projectsNavBtn",
-          "label": <FormattedMessage
+          "label": <Memo(FormattedMessage)
             defaultMessage="Projects"
             id="project.view.projectsListPage"
           />,
@@ -195,7 +195,7 @@ exports[`AddUser: Component should render correctly with users 1`] = `
             "admin",
           ],
           "id": "usersPageNavBtn",
-          "label": <FormattedMessage
+          "label": <Memo(FormattedMessage)
             defaultMessage="Users"
             id="project.view.usersPage"
           />,
@@ -208,7 +208,7 @@ exports[`AddUser: Component should render correctly with users 1`] = `
             "editor",
           ],
           "id": "projectDetailsNavBtn",
-          "label": <FormattedMessage
+          "label": <Memo(FormattedMessage)
             defaultMessage="Project details"
             id="project.view.projectDetails"
           />,
@@ -221,7 +221,7 @@ exports[`AddUser: Component should render correctly with users 1`] = `
             "editor",
           ],
           "id": "dataSourceNavBtn",
-          "label": <FormattedMessage
+          "label": <Memo(FormattedMessage)
             defaultMessage="Data Sources"
             id="project.view.projectDataSources"
           />,
@@ -233,7 +233,7 @@ exports[`AddUser: Component should render correctly with users 1`] = `
             "admin",
           ],
           "id": "usersNavBtn",
-          "label": <FormattedMessage
+          "label": <Memo(FormattedMessage)
             defaultMessage="Project Users"
             id="project.view.projectUsersPage"
           />,
@@ -246,7 +246,7 @@ exports[`AddUser: Component should render correctly with users 1`] = `
             "editor",
           ],
           "id": "contentNavBtn",
-          "label": <FormattedMessage
+          "label": <Memo(FormattedMessage)
             defaultMessage="Content"
             id="project.view.content"
           />,
@@ -258,7 +258,7 @@ exports[`AddUser: Component should render correctly with users 1`] = `
             "admin",
           ],
           "id": "templatesNavBtn",
-          "label": <FormattedMessage
+          "label": <Memo(FormattedMessage)
             defaultMessage="Templates"
             id="project.view.templates"
           />,
@@ -273,7 +273,7 @@ exports[`AddUser: Component should render correctly with users 1`] = `
     loading={true}
     noData={false}
     noDataContent={
-      <FormattedMessage
+      <Memo(FormattedMessage)
         defaultMessage="No users with role Editor available"
         id="project.addUser.noData"
       />

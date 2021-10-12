@@ -9,7 +9,7 @@ exports[`SourceComponent: Component should render correctly 1`] = `
   />
   <MobileMenu
     headerSubtitle={
-      <FormattedMessage
+      <Memo(FormattedMessage)
         defaultMessage="Source"
         id="dataSource.source.subTitle"
       />
@@ -22,7 +22,7 @@ exports[`SourceComponent: Component should render correctly 1`] = `
             "editor",
           ],
           "id": "projectsNavBtn",
-          "label": <FormattedMessage
+          "label": <Memo(FormattedMessage)
             defaultMessage="Projects"
             id="project.view.projectsListPage"
           />,
@@ -34,7 +34,7 @@ exports[`SourceComponent: Component should render correctly 1`] = `
             "admin",
           ],
           "id": "usersPageNavBtn",
-          "label": <FormattedMessage
+          "label": <Memo(FormattedMessage)
             defaultMessage="Users"
             id="project.view.usersPage"
           />,
@@ -47,7 +47,7 @@ exports[`SourceComponent: Component should render correctly 1`] = `
             "editor",
           ],
           "id": "projectDetailsNavBtn",
-          "label": <FormattedMessage
+          "label": <Memo(FormattedMessage)
             defaultMessage="Project details"
             id="project.view.projectDetails"
           />,
@@ -60,7 +60,7 @@ exports[`SourceComponent: Component should render correctly 1`] = `
             "editor",
           ],
           "id": "dataSourceNavBtn",
-          "label": <FormattedMessage
+          "label": <Memo(FormattedMessage)
             defaultMessage="Data Sources"
             id="project.view.projectDataSources"
           />,
@@ -72,7 +72,7 @@ exports[`SourceComponent: Component should render correctly 1`] = `
             "admin",
           ],
           "id": "usersNavBtn",
-          "label": <FormattedMessage
+          "label": <Memo(FormattedMessage)
             defaultMessage="Project Users"
             id="project.view.projectUsersPage"
           />,
@@ -85,7 +85,7 @@ exports[`SourceComponent: Component should render correctly 1`] = `
             "editor",
           ],
           "id": "contentNavBtn",
-          "label": <FormattedMessage
+          "label": <Memo(FormattedMessage)
             defaultMessage="Content"
             id="project.view.content"
           />,
@@ -97,7 +97,7 @@ exports[`SourceComponent: Component should render correctly 1`] = `
             "admin",
           ],
           "id": "templatesNavBtn",
-          "label": <FormattedMessage
+          "label": <Memo(FormattedMessage)
             defaultMessage="Templates"
             id="project.view.templates"
           />,
@@ -109,7 +109,7 @@ exports[`SourceComponent: Component should render correctly 1`] = `
   />
   <ContextHeader
     subtitle={
-      <FormattedMessage
+      <Memo(FormattedMessage)
         defaultMessage="Source"
         id="dataSource.source.subTitle"
       />
@@ -562,7 +562,7 @@ exports[`SourceComponent: Component should render correctly 1`] = `
       <Styled(Styled(Styled(Span)))
         to="/datasource/1/job"
       >
-        <FormattedMessage
+        <MemoizedFormattedMessage
           defaultMessage="View Past Versions"
           id="dataSource.source.pastVersions"
         />
@@ -571,7 +571,7 @@ exports[`SourceComponent: Component should render correctly 1`] = `
         id="removeDataSourceDesktopBtn"
         onClick={[Function]}
       >
-        <FormattedMessage
+        <MemoizedFormattedMessage
           defaultMessage="Delete Data Source"
           id="dataSource.source.removeDataSource"
         />
@@ -590,7 +590,7 @@ exports[`SourceComponent: Component should render correctly 1`] = `
         onClick={[Function]}
         type="submit"
       >
-        <FormattedMessage
+        <MemoizedFormattedMessage
           defaultMessage="Save"
           id="dataSource.source.save"
         />
@@ -854,7 +854,7 @@ exports[`SourceComponent: Component should render correctly 1`] = `
     }
   >
     <Styled(H1)>
-      <FormattedMessage
+      <MemoizedFormattedMessage
         defaultMessage="Are you sure you want to remove this data source?"
         id="dataSource.source.removeTitle"
       />
@@ -864,7 +864,7 @@ exports[`SourceComponent: Component should render correctly 1`] = `
         disabled={false}
         onClick={[Function]}
       >
-        <FormattedMessage
+        <MemoizedFormattedMessage
           defaultMessage="Cancel"
           id="dataSource.source.cancelRemoval"
         />
@@ -875,7 +875,7 @@ exports[`SourceComponent: Component should render correctly 1`] = `
         loading={false}
         onClick={[Function]}
       >
-        <FormattedMessage
+        <MemoizedFormattedMessage
           defaultMessage="Confirm"
           id="dataSource.source.confirmRemoval"
         />
@@ -918,7 +918,7 @@ exports[`SourceComponent: Component should render correctly 1`] = `
     }
   >
     <Styled(H1)>
-      <FormattedMessage
+      <MemoizedFormattedMessage
         defaultMessage="Do you want to run last steps on current file?"
         id="dataSource.source.removeTitle"
       />
@@ -930,7 +930,7 @@ exports[`SourceComponent: Component should render correctly 1`] = `
         onClick={[Function]}
         type="button"
       >
-        <FormattedMessage
+        <MemoizedFormattedMessage
           defaultMessage="No"
           id="dataSource.source.cancelRemoval"
         />
@@ -941,7 +941,7 @@ exports[`SourceComponent: Component should render correctly 1`] = `
         onClick={[Function]}
         type="button"
       >
-        <FormattedMessage
+        <MemoizedFormattedMessage
           defaultMessage="Yes"
           id="dataSource.source.confirmRemoval"
         />
@@ -960,7 +960,7 @@ exports[`SourceComponent: Component should render file uploader 1`] = `
   />
   <MobileMenu
     headerSubtitle={
-      <FormattedMessage
+      <Memo(FormattedMessage)
         defaultMessage="Source"
         id="dataSource.source.subTitle"
       />
@@ -973,7 +973,7 @@ exports[`SourceComponent: Component should render file uploader 1`] = `
             "editor",
           ],
           "id": "projectsNavBtn",
-          "label": <FormattedMessage
+          "label": <Memo(FormattedMessage)
             defaultMessage="Projects"
             id="project.view.projectsListPage"
           />,
@@ -985,7 +985,7 @@ exports[`SourceComponent: Component should render file uploader 1`] = `
             "admin",
           ],
           "id": "usersPageNavBtn",
-          "label": <FormattedMessage
+          "label": <Memo(FormattedMessage)
             defaultMessage="Users"
             id="project.view.usersPage"
           />,
@@ -998,7 +998,7 @@ exports[`SourceComponent: Component should render file uploader 1`] = `
             "editor",
           ],
           "id": "projectDetailsNavBtn",
-          "label": <FormattedMessage
+          "label": <Memo(FormattedMessage)
             defaultMessage="Project details"
             id="project.view.projectDetails"
           />,
@@ -1011,7 +1011,7 @@ exports[`SourceComponent: Component should render file uploader 1`] = `
             "editor",
           ],
           "id": "dataSourceNavBtn",
-          "label": <FormattedMessage
+          "label": <Memo(FormattedMessage)
             defaultMessage="Data Sources"
             id="project.view.projectDataSources"
           />,
@@ -1023,7 +1023,7 @@ exports[`SourceComponent: Component should render file uploader 1`] = `
             "admin",
           ],
           "id": "usersNavBtn",
-          "label": <FormattedMessage
+          "label": <Memo(FormattedMessage)
             defaultMessage="Project Users"
             id="project.view.projectUsersPage"
           />,
@@ -1036,7 +1036,7 @@ exports[`SourceComponent: Component should render file uploader 1`] = `
             "editor",
           ],
           "id": "contentNavBtn",
-          "label": <FormattedMessage
+          "label": <Memo(FormattedMessage)
             defaultMessage="Content"
             id="project.view.content"
           />,
@@ -1048,7 +1048,7 @@ exports[`SourceComponent: Component should render file uploader 1`] = `
             "admin",
           ],
           "id": "templatesNavBtn",
-          "label": <FormattedMessage
+          "label": <Memo(FormattedMessage)
             defaultMessage="Templates"
             id="project.view.templates"
           />,
@@ -1060,7 +1060,7 @@ exports[`SourceComponent: Component should render file uploader 1`] = `
   />
   <ContextHeader
     subtitle={
-      <FormattedMessage
+      <Memo(FormattedMessage)
         defaultMessage="Source"
         id="dataSource.source.subTitle"
       />
@@ -1516,7 +1516,7 @@ exports[`SourceComponent: Component should render file uploader 1`] = `
         onClick={[Function]}
         type="submit"
       >
-        <FormattedMessage
+        <MemoizedFormattedMessage
           defaultMessage="Save"
           id="dataSource.source.save"
         />
@@ -1777,7 +1777,7 @@ exports[`SourceComponent: Component should render file uploader 1`] = `
     }
   >
     <Styled(H1)>
-      <FormattedMessage
+      <MemoizedFormattedMessage
         defaultMessage="Are you sure you want to remove this data source?"
         id="dataSource.source.removeTitle"
       />
@@ -1787,7 +1787,7 @@ exports[`SourceComponent: Component should render file uploader 1`] = `
         disabled={false}
         onClick={[Function]}
       >
-        <FormattedMessage
+        <MemoizedFormattedMessage
           defaultMessage="Cancel"
           id="dataSource.source.cancelRemoval"
         />
@@ -1798,7 +1798,7 @@ exports[`SourceComponent: Component should render file uploader 1`] = `
         loading={false}
         onClick={[Function]}
       >
-        <FormattedMessage
+        <MemoizedFormattedMessage
           defaultMessage="Confirm"
           id="dataSource.source.confirmRemoval"
         />
@@ -1841,7 +1841,7 @@ exports[`SourceComponent: Component should render file uploader 1`] = `
     }
   >
     <Styled(H1)>
-      <FormattedMessage
+      <MemoizedFormattedMessage
         defaultMessage="Do you want to run last steps on current file?"
         id="dataSource.source.removeTitle"
       />
@@ -1853,7 +1853,7 @@ exports[`SourceComponent: Component should render file uploader 1`] = `
         onClick={[Function]}
         type="button"
       >
-        <FormattedMessage
+        <MemoizedFormattedMessage
           defaultMessage="No"
           id="dataSource.source.cancelRemoval"
         />
@@ -1864,7 +1864,7 @@ exports[`SourceComponent: Component should render file uploader 1`] = `
         onClick={[Function]}
         type="button"
       >
-        <FormattedMessage
+        <MemoizedFormattedMessage
           defaultMessage="Yes"
           id="dataSource.source.confirmRemoval"
         />

@@ -18,7 +18,7 @@ exports[`DataWranglingScript: Component should render correctly 1`] = `
             "editor",
           ],
           "id": "projectsNavBtn",
-          "label": <FormattedMessage
+          "label": <Memo(FormattedMessage)
             defaultMessage="Projects"
             id="jobDetail.projectsListPage"
           />,
@@ -36,7 +36,7 @@ exports[`DataWranglingScript: Component should render correctly 1`] = `
     name="dataWranglingForm"
   >
     <Component>
-      <FormattedMessage
+      <MemoizedFormattedMessage
         defaultMessage="Description"
         id="dataWranglingScripts.imageScrapingScript.description"
       />
@@ -45,7 +45,7 @@ exports[`DataWranglingScript: Component should render correctly 1`] = `
       local:blank_cells.py
     </styled.div>
     <Component>
-      <FormattedMessage
+      <MemoizedFormattedMessage
         defaultMessage="Python Code"
         id="dataWranglingScripts.imageScrapingScript.pythonCode"
       />
@@ -133,7 +133,7 @@ exports[`DataWranglingScript: Component should render correctly 1`] = `
     <Component
       id="imageScrapingUrlFieldsHeader"
     >
-      <FormattedMessage
+      <MemoizedFormattedMessage
         defaultMessage="Fields with URLs"
         id="dataWranglingScripts.imageScrapingScript.fieldsWithUrls"
       />
@@ -145,7 +145,7 @@ exports[`DataWranglingScript: Component should render correctly 1`] = `
       noDataContent={null}
     >
       <styled.div>
-        <FormattedMessage
+        <MemoizedFormattedMessage
           defaultMessage="No fields containing URLs were found."
           id="dataWranglingScripts.imageScrapingScript.noFieldFound"
         />
@@ -175,7 +175,7 @@ exports[`DataWranglingScript: Component should render correctly 1`] = `
       loading={false}
       onClick={[Function]}
     >
-      <FormattedMessage
+      <MemoizedFormattedMessage
         defaultMessage="Save"
         id="dataWranglingScripts.imageScrapingScript.save"
       />
@@ -202,7 +202,7 @@ exports[`DataWranglingScript: Component should render correctly with loader 1`] 
             "editor",
           ],
           "id": "projectsNavBtn",
-          "label": <FormattedMessage
+          "label": <Memo(FormattedMessage)
             defaultMessage="Projects"
             id="jobDetail.projectsListPage"
           />,
@@ -220,7 +220,7 @@ exports[`DataWranglingScript: Component should render correctly with loader 1`] 
     name="dataWranglingForm"
   >
     <Component>
-      <FormattedMessage
+      <MemoizedFormattedMessage
         defaultMessage="Description"
         id="dataWranglingScripts.imageScrapingScript.description"
       />
@@ -229,7 +229,7 @@ exports[`DataWranglingScript: Component should render correctly with loader 1`] 
       local:blank_cells.py
     </styled.div>
     <Component>
-      <FormattedMessage
+      <MemoizedFormattedMessage
         defaultMessage="Python Code"
         id="dataWranglingScripts.imageScrapingScript.pythonCode"
       />
@@ -317,7 +317,7 @@ exports[`DataWranglingScript: Component should render correctly with loader 1`] 
     <Component
       id="imageScrapingUrlFieldsHeader"
     >
-      <FormattedMessage
+      <MemoizedFormattedMessage
         defaultMessage="Fields with URLs"
         id="dataWranglingScripts.imageScrapingScript.fieldsWithUrls"
       />
@@ -329,7 +329,7 @@ exports[`DataWranglingScript: Component should render correctly with loader 1`] 
       noDataContent={null}
     >
       <styled.div>
-        <FormattedMessage
+        <MemoizedFormattedMessage
           defaultMessage="No fields containing URLs were found."
           id="dataWranglingScripts.imageScrapingScript.noFieldFound"
         />
@@ -359,7 +359,7 @@ exports[`DataWranglingScript: Component should render correctly with loader 1`] 
       loading={false}
       onClick={[Function]}
     >
-      <FormattedMessage
+      <MemoizedFormattedMessage
         defaultMessage="Save"
         id="dataWranglingScripts.imageScrapingScript.save"
       />

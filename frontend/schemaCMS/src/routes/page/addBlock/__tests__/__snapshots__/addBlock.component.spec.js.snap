@@ -2,10 +2,10 @@
 
 exports[`AddBlock: Component should render correctly 1`] = `
 <div
-  className="sc-bdnylx"
+  className="sc-bdnxRM"
 >
   <div
-    className="sc-gtssRu zMrMd"
+    className="sc-gtsrHT ftlQGq"
   >
     <div
       style={
@@ -22,10 +22,10 @@ exports[`AddBlock: Component should render correctly 1`] = `
     >
       <div>
         <div
-          className="sc-dlnjPT"
+          className="sc-dlnjwi"
         >
           <h2
-            className="sc-pNWxx gmkJvd"
+            className="sc-pNWdM lggCCp"
             id="headerTitle"
             style={
               Object {
@@ -39,7 +39,7 @@ exports[`AddBlock: Component should render correctly 1`] = `
             Block
           </h2>
           <h1
-            className="sc-jrsJCI jTtAyv"
+            className="sc-jrsJWt kjUKXP"
             id="headerSubtitle"
             style={
               Object {
@@ -62,14 +62,16 @@ exports[`AddBlock: Component should render correctly 1`] = `
         onClick={[Function]}
         style={
           Object {
+            "alignItems": "center",
             "backgroundColor": "transparent",
             "border": "none",
-            "borderRadius": "48px",
+            "borderRadius": "30px",
             "color": "#FFF",
             "cursor": "pointer",
-            "display": "inline-block",
+            "display": "flex",
             "fill": "#FFF",
-            "fontSize": "18px",
+            "fontSize": "20px",
+            "justifyContent": "center",
             "margin": "0",
             "minHeight": "48px",
             "outline": "none",
@@ -121,16 +123,16 @@ exports[`AddBlock: Component should render correctly 1`] = `
       }
     >
       <div
-        className="sc-eCApGN jLOikM"
+        className="sc-eCApnc iftERp"
       >
         <div
-          className="sc-hKFyIo bSqpkn"
+          className="sc-hKFxyN jZkkRy"
         >
           <div
-            className="sc-dlnjPT"
+            className="sc-dlnjwi"
           >
             <h2
-              className="sc-pNWxx gmkJvd"
+              className="sc-pNWdM lggCCp"
               id="headerTitle"
               style={
                 Object {
@@ -144,7 +146,7 @@ exports[`AddBlock: Component should render correctly 1`] = `
               Block
             </h2>
             <h1
-              className="sc-jrsJCI jTtAyv"
+              className="sc-jrsJWt kjUKXP"
               id="headerSubtitle"
               style={
                 Object {
@@ -162,10 +164,10 @@ exports[`AddBlock: Component should render correctly 1`] = `
           </div>
         </div>
         <div
-          className="sc-jSFkmK dNvWwD"
+          className="sc-jSFjdj suRwv"
         >
           <div
-            className="sc-gKAblj giqbFz"
+            className="sc-gKAaRy kJUVQc"
           >
             <a
               href="/project/"
@@ -176,7 +178,7 @@ exports[`AddBlock: Component should render correctly 1`] = `
             </a>
           </div>
           <div
-            className="sc-gKAblj giqbFz"
+            className="sc-gKAaRy kJUVQc"
           >
             <a
               href="/user/"
@@ -187,7 +189,7 @@ exports[`AddBlock: Component should render correctly 1`] = `
             </a>
           </div>
           <div
-            className="sc-gKAblj giqbFz"
+            className="sc-gKAaRy kJUVQc"
           >
             <a
               href="/project/1"
@@ -198,7 +200,7 @@ exports[`AddBlock: Component should render correctly 1`] = `
             </a>
           </div>
           <div
-            className="sc-gKAblj giqbFz"
+            className="sc-gKAaRy kJUVQc"
           >
             <a
               href="/project/1/datasource"
@@ -209,7 +211,7 @@ exports[`AddBlock: Component should render correctly 1`] = `
             </a>
           </div>
           <div
-            className="sc-gKAblj giqbFz"
+            className="sc-gKAaRy kJUVQc"
           >
             <a
               href="/project/1/user"
@@ -220,7 +222,7 @@ exports[`AddBlock: Component should render correctly 1`] = `
             </a>
           </div>
           <div
-            className="sc-gKAblj giqbFz"
+            className="sc-gKAaRy kJUVQc"
           >
             <a
               href="/project/1/content"
@@ -231,7 +233,7 @@ exports[`AddBlock: Component should render correctly 1`] = `
             </a>
           </div>
           <div
-            className="sc-gKAblj giqbFz"
+            className="sc-gKAaRy kJUVQc"
           >
             <a
               href="/project/1/templates"
@@ -243,10 +245,10 @@ exports[`AddBlock: Component should render correctly 1`] = `
           </div>
         </div>
         <div
-          className="sc-jSFkmK dNvWwD"
+          className="sc-jSFjdj suRwv"
         >
           <div
-            className="sc-gKAblj giqbFz"
+            className="sc-gKAaRy kJUVQc"
           >
             <a
               href="/settings"
@@ -257,7 +259,7 @@ exports[`AddBlock: Component should render correctly 1`] = `
             </a>
           </div>
           <div
-            className="sc-gKAblj giqbFz"
+            className="sc-gKAaRy kJUVQc"
           >
             <div
               id="logoutNavBtn"
@@ -268,10 +270,10 @@ exports[`AddBlock: Component should render correctly 1`] = `
           </div>
         </div>
         <div
-          className="sc-iCoHVE jZmAqJ"
+          className="sc-iCoGMd gEejpB"
         >
           <a
-            className="sc-fujyUd cmhbQC"
+            className="sc-fujyAs fjPQTs"
             href="/"
             id="aboutNavBtn"
             onClick={[Function]}
@@ -281,7 +283,7 @@ exports[`AddBlock: Component should render correctly 1`] = `
             About Schema CMS
           </a>
           <a
-            className="sc-fujyUd cmhbQC"
+            className="sc-fujyAs fjPQTs"
             href="https://github.com/schemadesign/schema_cms/blob/master/backend/app/docs/public_api/api_calls.md"
             id="apiNavBtn"
             onClick={[Function]}
@@ -291,7 +293,7 @@ exports[`AddBlock: Component should render correctly 1`] = `
             API Doc
           </a>
           <a
-            className="sc-fujyUd cmhbQC"
+            className="sc-fujyAs fjPQTs"
             href="https://github.com/schemadesign/schema_cms"
             id="repositoryNavBtn"
             onClick={[Function]}
@@ -308,14 +310,16 @@ exports[`AddBlock: Component should render correctly 1`] = `
         onClick={[Function]}
         style={
           Object {
+            "alignItems": "center",
             "backgroundColor": "transparent",
             "border": "none",
-            "borderRadius": "48px",
+            "borderRadius": "30px",
             "color": "#FFF",
             "cursor": "pointer",
-            "display": "inline-block",
+            "display": "flex",
             "fill": "#FFF",
-            "fontSize": "18px",
+            "fontSize": "20px",
+            "justifyContent": "center",
             "margin": "0",
             "minHeight": "48px",
             "outline": "none",
@@ -347,7 +351,7 @@ exports[`AddBlock: Component should render correctly 1`] = `
     </div>
   </div>
   <div
-    className="sc-iNiQeE vgqZV"
+    className="sc-eJocfa cQpAEz"
   >
     <div
       style={
@@ -369,7 +373,7 @@ exports[`AddBlock: Component should render correctly 1`] = `
         }
       >
         <a
-          className="sc-eJoaVz hmaLFX"
+          className="sc-hhIiOg blYffv"
           href="/project/1/"
           onClick={[Function]}
           style={
@@ -391,7 +395,7 @@ exports[`AddBlock: Component should render correctly 1`] = `
             Project
           </span>
           <h3
-            className="sc-oefIU PmnEV"
+            className="sc-eirqVv hhmkzv"
             style={
               Object {
                 "fontFamily": "Inter, \\"Helvetica Neue\\", Helvetica, Arial, sans-serif",
@@ -427,7 +431,7 @@ exports[`AddBlock: Component should render correctly 1`] = `
         }
       >
         <a
-          className="sc-eJoaVz hmaLFX"
+          className="sc-hhIiOg blYffv"
           href="/project/1/content"
           onClick={[Function]}
           style={
@@ -449,7 +453,7 @@ exports[`AddBlock: Component should render correctly 1`] = `
             Tab
           </span>
           <h3
-            className="sc-oefIU PmnEV"
+            className="sc-eirqVv hhmkzv"
             style={
               Object {
                 "fontFamily": "Inter, \\"Helvetica Neue\\", Helvetica, Arial, sans-serif",
@@ -485,7 +489,7 @@ exports[`AddBlock: Component should render correctly 1`] = `
         }
       >
         <a
-          className="sc-eJoaVz hmaLFX"
+          className="sc-hhIiOg blYffv"
           href="/section/1"
           onClick={[Function]}
           style={
@@ -507,7 +511,7 @@ exports[`AddBlock: Component should render correctly 1`] = `
             Section
           </span>
           <h3
-            className="sc-oefIU PmnEV"
+            className="sc-eirqVv hhmkzv"
             style={
               Object {
                 "fontFamily": "Inter, \\"Helvetica Neue\\", Helvetica, Arial, sans-serif",
@@ -543,7 +547,7 @@ exports[`AddBlock: Component should render correctly 1`] = `
         }
       >
         <a
-          className="sc-eJoaVz hmaLFX"
+          className="sc-hhIiOg blYffv"
           href="/page/1"
           onClick={[Function]}
           style={
@@ -565,7 +569,7 @@ exports[`AddBlock: Component should render correctly 1`] = `
             Page
           </span>
           <h3
-            className="sc-oefIU PmnEV"
+            className="sc-eirqVv hhmkzv"
             style={
               Object {
                 "fontFamily": "Inter, \\"Helvetica Neue\\", Helvetica, Arial, sans-serif",
@@ -601,7 +605,7 @@ exports[`AddBlock: Component should render correctly 1`] = `
         }
       >
         <div
-          className="sc-jffIyK PnkAL"
+          className="sc-oeezt gldjwu"
         >
           <span
             style={
@@ -614,7 +618,7 @@ exports[`AddBlock: Component should render correctly 1`] = `
             Block
           </span>
           <h3
-            className="sc-oefIU PmnEV"
+            className="sc-eirqVv hhmkzv"
             style={
               Object {
                 "fontFamily": "Inter, \\"Helvetica Neue\\", Helvetica, Arial, sans-serif",
@@ -632,13 +636,13 @@ exports[`AddBlock: Component should render correctly 1`] = `
     </div>
   </div>
   <div
-    className="sc-hhIhEF kktIMn"
+    className="sc-lbVvki cpsGkI"
   >
     <div
-      className="sc-eirseW hIOvjH"
+      className="sc-gGLxEB hemdMG"
     >
       <h2
-        className="sc-lbVuaH bopGjn"
+        className="sc-ckTSus hbWsYL"
         id="desktopHeaderTitle"
         style={
           Object {
@@ -652,7 +656,7 @@ exports[`AddBlock: Component should render correctly 1`] = `
         Block
       </h2>
       <h1
-        className="sc-gGLyOc dkCugK"
+        className="sc-fbIWvP kiNZfK"
         id="desktopHeaderSubtitle"
         style={
           Object {
@@ -669,17 +673,17 @@ exports[`AddBlock: Component should render correctly 1`] = `
       </h1>
     </div>
     <div
-      className="sc-ckTRkR"
+      className="sc-FRrlG"
     />
   </div>
   <form
     onSubmit={[Function]}
   >
     <div
-      className="sc-dIvqjp juRSdD"
+      className="sc-hHEiqL edAwJD"
     >
       <div
-        className="sc-jcwofb hBPKoH"
+        className="sc-iTVJFM kjyrYV"
         onClick={[Function]}
       >
         <label
@@ -850,7 +854,7 @@ exports[`AddBlock: Component should render correctly 1`] = `
           </div>
         </div>
         <div
-          className="sc-carGAA hXLlYQ"
+          className="sc-iBzEeX hbyLxb"
         >
           <svg
             style={
@@ -871,29 +875,31 @@ exports[`AddBlock: Component should render correctly 1`] = `
       </div>
     </div>
     <div
-      className="sc-bqGHjH cREPMJ"
+      className="sc-bqGGPW kvHGgi"
     >
       <div
-        className="sc-hBMVcZ feRjcl"
+        className="sc-hBMUJo iDRdfP"
       >
         <div
-          className="sc-ksluoS hnruJh"
+          className="sc-ksluID ljQkwB"
         >
           <button
-            className="sc-fnVYJo lmnryI"
+            className="sc-fnVZcZ bmBBGC"
             disabled={false}
             id="backBtn"
             onClick={[Function]}
             style={
               Object {
+                "alignItems": "center",
                 "backgroundColor": "#1d1d20",
                 "border": "none",
-                "borderRadius": "48px",
+                "borderRadius": "30px",
                 "color": "#FFF",
                 "cursor": "pointer",
-                "display": "inline-block",
+                "display": "flex",
                 "fill": "#FFF",
-                "fontSize": "18px",
+                "fontSize": "20px",
+                "justifyContent": "center",
                 "margin": "0",
                 "minHeight": "48px",
                 "outline": "none",
@@ -906,19 +912,21 @@ exports[`AddBlock: Component should render correctly 1`] = `
             Back
           </button>
           <button
-            className="sc-fnVYJo lmnryI"
+            className="sc-fnVZcZ bmBBGC"
             disabled={true}
             id="addBlock"
             style={
               Object {
+                "alignItems": "center",
                 "backgroundColor": "#1d1d20",
                 "border": "none",
-                "borderRadius": "48px",
+                "borderRadius": "30px",
                 "color": "#71737e",
                 "cursor": "default",
-                "display": "inline-block",
+                "display": "flex",
                 "fill": "#FFF",
-                "fontSize": "18px",
+                "fontSize": "20px",
+                "justifyContent": "center",
                 "margin": "0",
                 "minHeight": "48px",
                 "outline": "none",
