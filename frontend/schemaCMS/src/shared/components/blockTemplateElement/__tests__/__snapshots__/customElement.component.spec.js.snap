@@ -1,25 +1,172 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`CustomElement: Component should render correctly 1`] = `
+.c12 {
+  cursor: pointer;
+}
+
+.c5 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  width: 100%;
+  border-top: 1px solid #2F2F36;
+}
+
+.c0 {
+  padding-bottom: 20px;
+}
+
+.c7 {
+  width: 100%;
+  max-width: calc(100% - 60px);
+  padding: 10px 0;
+}
+
+.c8 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  padding-bottom: 30px;
+  padding-right: 30px;
+  position: relative;
+  font-size: 18px;
+  cursor: pointer;
+  width: 100%;
+  padding: 10px 0;
+}
+
+.c8 label {
+  margin-bottom: 2px;
+}
+
+.c9 {
+  position: absolute;
+  right: 0;
+  top: 5px;
+  top: 50%;
+  right: 5px;
+  -webkit-transform: translateY(-50%);
+  -ms-transform: translateY(-50%);
+  transform: translateY(-50%);
+  font-size: 0;
+}
+
+.c3 {
+  text-align: right;
+}
+
+.c6 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  cursor: move;
+  touch-action: none;
+}
+
+.c1 {
+  color: #71737e;
+  text-align: center;
+  padding-bottom: 20px;
+  min-height: 43px;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+}
+
+.c2 {
+  width: 33%;
+}
+
+.c10 {
+  position: relative;
+  max-width: 100%;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  position: relative;
+}
+
+.c11 {
+  position: relative;
+  top: 0;
+  left: 0;
+  color: #f21e29;
+  font-size: 14px;
+  font-weight: normal;
+}
+
+@media (min-width:1050px) {
+  .c0 {
+    padding-left: 30px;
+  }
+}
+
+@media (min-width:1050px) {
+  .c1 {
+    margin-top: 0px;
+    padding-bottom: 40px;
+  }
+}
+
+@media (min-width:1050px) {
+  .c4 {
+    display: block;
+  }
+}
+
 <div
-  className="sc-gKAaRy izhpEC"
+  className="c0"
 >
   <div
-    className="sc-iwajpm hxnQNB"
+    className="c1"
   >
     <div
-      className="sc-cxNHIi chVRys"
+      className="c2"
       id="tagsCounter"
     />
     1 Element
     <div
-      className="sc-cxNHIi chVRys"
+      className="c2"
     >
       <div
-        className="sc-hHEiqL haKFeZ"
+        className="c3"
       >
         <div
-          className="sc-kLojOw FyfSX"
+          className="c4"
         >
           <button
             disabled={false}
@@ -85,11 +232,11 @@ exports[`CustomElement: Component should render correctly 1`] = `
       }
     >
       <div
-        className="sc-jSFjdj ecdfVm"
+        className="c5"
       >
         <div>
           <div
-            className="sc-fKgJPI cQgPoe"
+            className="c6"
           >
             <svg
               style={
@@ -110,10 +257,10 @@ exports[`CustomElement: Component should render correctly 1`] = `
           </div>
         </div>
         <div
-          className="sc-fujyAs dUefFu"
+          className="c7"
         >
           <div
-            className="sc-pNWdM kQPRhH"
+            className="c8"
             onClick={[Function]}
           >
             <input
@@ -388,7 +535,7 @@ exports[`CustomElement: Component should render correctly 1`] = `
               </div>
             </div>
             <div
-              className="sc-jrsJWt lbBGAw"
+              className="c9"
             >
               <svg
                 style={
@@ -408,7 +555,7 @@ exports[`CustomElement: Component should render correctly 1`] = `
             </div>
           </div>
           <div
-            className="sc-hiKfDv cfwbni"
+            className="c10"
           >
             <div
               style={
@@ -487,13 +634,13 @@ exports[`CustomElement: Component should render correctly 1`] = `
               </div>
             </div>
             <div
-              className="sc-cBoqAE FuHql"
+              className="c11"
               id="valuePath.0.nameError"
             />
           </div>
         </div>
         <div
-          className="sc-eCApnc dKLneu"
+          className="c12"
           id="remove-valuePath.0"
           onClick={[Function]}
         >

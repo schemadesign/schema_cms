@@ -1,11 +1,481 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Content: Component should render correctly 1`] = `
+.c0 {
+  font-weight: normal;
+  width: calc(100% - 50px);
+}
+
+.c4 {
+  padding-right: 50px;
+}
+
+.c3 {
+  overflow: auto;
+  -webkit-overflow-scrolling: touch;
+  max-height: 100%;
+}
+
+.c5 {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+}
+
+.c6 {
+  line-height: 1.5;
+  margin: 2px 0;
+  cursor: pointer;
+  font-size: 24px;
+  border-bottom: 2.4px solid #2F2F36;
+  padding: 8px 0 13px;
+}
+
+.c6 a,
+.c6 div {
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  color: #71737e;
+  display: block;
+}
+
+.c7 {
+  line-height: 1.5;
+  margin: 2px 0;
+  cursor: pointer;
+  font-size: 24px;
+  border-bottom: 2.4px solid #FFF;
+  padding: 8px 0 13px;
+}
+
+.c7 a,
+.c7 div {
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  color: #FFF;
+  display: block;
+}
+
+.c8 {
+  margin: 10px 0;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+}
+
+.c9 {
+  color: #FFF;
+  font-size: 14px;
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  margin: 12px 0;
+}
+
+.c1 {
+  word-break: break-word;
+}
+
+.c2 {
+  word-break: break-word;
+}
+
+.c27 {
+  height: 120px;
+}
+
+.c29 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+  -webkit-flex-wrap: wrap;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  width: 100%;
+}
+
+.c28 {
+  bottom: 0;
+  width: 100%;
+  padding: 10px 0 36px;
+  position: fixed;
+  width: calc(100% - 40px);
+  z-index: 999;
+  background-image: linear-gradient( to top, #000,#000 30%, rgba(0,0,0,0) );
+}
+
+.c30 {
+  width: calc(50% - 5px);
+  max-width: 240px;
+  background-color: #1d1d20;
+  color: #FFF;
+  border-radius: 30px;
+  text-align: center;
+  line-height: 30px;
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  font-size: 20px;
+  padding: 9px 0;
+}
+
+.c18 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  border-radius: 4px;
+  padding: 4px 8px 4px 6px;
+  background-color: #FFF;
+  color: #000;
+  -webkit-text-decoration: none;
+  text-decoration: none;
+}
+
+.c31 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  border-radius: 4px;
+  padding: 4px 8px 4px 6px;
+  background-color: #FFF;
+  color: #000;
+  -webkit-text-decoration: none;
+  text-decoration: none;
+}
+
+.c10 {
+  display: none;
+}
+
+.c11 {
+  display: block;
+  -webkit-flex: 1;
+  -ms-flex: 1;
+  flex: 1;
+  -webkit-align-self: flex-end;
+  -ms-flex-item-align: end;
+  align-self: flex-end;
+  text-align: center;
+  border-bottom: 2px solid #2F2F36;
+  cursor: pointer;
+}
+
+.c11:hover {
+  border-bottom-color: #FFF;
+}
+
+.c13 {
+  display: block;
+  -webkit-flex: 1;
+  -ms-flex: 1;
+  flex: 1;
+  -webkit-align-self: flex-end;
+  -ms-flex-item-align: end;
+  align-self: flex-end;
+  text-align: center;
+  border-bottom: 2px solid #FFF;
+  cursor: pointer;
+}
+
+.c13:hover {
+  border-bottom-color: #FFF;
+}
+
+.c12 {
+  color: #FFF;
+  display: block;
+  padding: 16px;
+  -webkit-text-decoration: none;
+  text-decoration: none;
+}
+
+.c14 {
+  display: none;
+}
+
+.c15 {
+  margin-right: 20px;
+  overflow: hidden;
+}
+
+.c16 {
+  color: #FFF;
+}
+
+.c17 {
+  color: #FFF;
+}
+
+.c24 {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+}
+
+.c25 {
+  display: inline-block;
+  line-height: 1.25;
+  margin-right: 1.5em;
+  color: #71737e;
+}
+
+.c25::before {
+  content: '•';
+  margin-left: -1.5em;
+  display: inline-block;
+  padding: 0 7px;
+}
+
+.c23 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+}
+
+.c22 {
+  margin-bottom: 20px;
+  -webkit-flex: 0 0 auto;
+  -ms-flex: 0 0 auto;
+  flex: 0 0 auto;
+  width: 100%;
+  min-height: 150px;
+}
+
+.c26 {
+  word-break: break-word;
+  cursor: pointer;
+  line-height: 1.25;
+  -webkit-letter-spacing: -0.12px;
+  -moz-letter-spacing: -0.12px;
+  -ms-letter-spacing: -0.12px;
+  letter-spacing: -0.12px;
+  margin: 0;
+  color: inherit;
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  display: block;
+  font-size: 2em;
+  font-weight: bold;
+}
+
+.c21 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  -webkit-flex-wrap: wrap;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
+}
+
+.c19 {
+  color: #71737e;
+  text-align: center;
+  padding-bottom: 20px;
+  min-height: 43px;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+}
+
+.c20 {
+  width: 0%;
+}
+
+@media (min-width:1050px) {
+  .c0 {
+    display: none;
+  }
+}
+
+@media (min-width:1050px) {
+  .c4 {
+    height: 54px;
+  }
+}
+
+@media (min-width:1050px) {
+  .c3 {
+    padding-bottom: 20px;
+  }
+}
+
+@media (min-width:768px) {
+
+}
+
+@media (min-width:1050px) {
+  .c27 {
+    height: 100px;
+  }
+}
+
+@media (min-width:1050px) {
+  .c29 {
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+  }
+}
+
+@media (min-width:1050px) {
+  .c28 {
+    position: fixed;
+    width: calc(100% - 40px);
+    z-index: 999;
+    background-image: linear-gradient( to top, #000,#000 30%, rgba(0,0,0,0) );
+    padding: 10px 0 36px;
+    width: 1000px;
+  }
+}
+
+@media (min-width:1050px) {
+  .c30 {
+    width: 240px;
+  }
+}
+
+@media (min-width:1050px) {
+  .c18 {
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+  }
+}
+
+@media (min-width:1050px) {
+  .c31 {
+    display: none;
+  }
+}
+
+@media (min-width:1050px) {
+  .c10 {
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    margin: 29px 0 20px 0;
+    font-size: 15px;
+  }
+}
+
+@media (min-width:1050px) {
+  .c14 {
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: justify;
+    -webkit-justify-content: space-between;
+    -ms-flex-pack: justify;
+    justify-content: space-between;
+    -webkit-align-items: center;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    margin: 60px 0 40px 0;
+    min-height: 63px;
+  }
+}
+
+@media (min-width:1050px) {
+  .c22 {
+    width: calc(100%/3 - 20px);
+    max-width: 320px;
+    min-height: 192px;
+    margin: 10px;
+  }
+}
+
+@media (min-width:1050px) {
+  .c21 {
+    -webkit-box-pack: start;
+    -webkit-justify-content: flex-start;
+    -ms-flex-pack: start;
+    justify-content: flex-start;
+    margin: 0 -10px;
+  }
+}
+
+@media (min-width:1050px) {
+  .c19 {
+    margin-top: -35px;
+    padding-bottom: 40px;
+  }
+}
+
 <div
-  className="sc-bdnxRM"
+  className=""
 >
   <div
-    className="sc-gtsrHT ftlQGq"
+    className="c0"
   >
     <div
       style={
@@ -22,10 +492,10 @@ exports[`Content: Component should render correctly 1`] = `
     >
       <div>
         <div
-          className="sc-dlnjwi"
+          className=""
         >
           <h2
-            className="sc-pNWdM lggCCp"
+            className="c1"
             id="headerTitle"
             style={
               Object {
@@ -39,7 +509,7 @@ exports[`Content: Component should render correctly 1`] = `
             Content
           </h2>
           <h1
-            className="sc-jrsJWt kjUKXP"
+            className="c2"
             id="headerSubtitle"
             style={
               Object {
@@ -123,16 +593,16 @@ exports[`Content: Component should render correctly 1`] = `
       }
     >
       <div
-        className="sc-eCApnc iftERp"
+        className="c3"
       >
         <div
-          className="sc-hKFxyN jZkkRy"
+          className="c4"
         >
           <div
-            className="sc-dlnjwi"
+            className=""
           >
             <h2
-              className="sc-pNWdM lggCCp"
+              className="c1"
               id="headerTitle"
               style={
                 Object {
@@ -146,7 +616,7 @@ exports[`Content: Component should render correctly 1`] = `
               Content
             </h2>
             <h1
-              className="sc-jrsJWt kjUKXP"
+              className="c2"
               id="headerSubtitle"
               style={
                 Object {
@@ -164,10 +634,10 @@ exports[`Content: Component should render correctly 1`] = `
           </div>
         </div>
         <div
-          className="sc-jSFjdj suRwv"
+          className="c5"
         >
           <div
-            className="sc-gKAaRy kJUVQc"
+            className="c6"
           >
             <a
               href="/project/"
@@ -178,7 +648,7 @@ exports[`Content: Component should render correctly 1`] = `
             </a>
           </div>
           <div
-            className="sc-gKAaRy kJUVQc"
+            className="c6"
           >
             <a
               href="/user/"
@@ -189,7 +659,7 @@ exports[`Content: Component should render correctly 1`] = `
             </a>
           </div>
           <div
-            className="sc-gKAaRy kJUVQc"
+            className="c6"
           >
             <a
               href="/project/projectId"
@@ -200,7 +670,7 @@ exports[`Content: Component should render correctly 1`] = `
             </a>
           </div>
           <div
-            className="sc-gKAaRy kJUVQc"
+            className="c6"
           >
             <a
               href="/project/projectId/datasource"
@@ -211,7 +681,7 @@ exports[`Content: Component should render correctly 1`] = `
             </a>
           </div>
           <div
-            className="sc-gKAaRy kJUVQc"
+            className="c6"
           >
             <a
               href="/project/projectId/user"
@@ -222,7 +692,7 @@ exports[`Content: Component should render correctly 1`] = `
             </a>
           </div>
           <div
-            className="sc-gKAaRy imvnxZ"
+            className="c7"
           >
             <a
               href="/project/projectId/content"
@@ -233,7 +703,7 @@ exports[`Content: Component should render correctly 1`] = `
             </a>
           </div>
           <div
-            className="sc-gKAaRy kJUVQc"
+            className="c6"
           >
             <a
               href="/project/projectId/templates"
@@ -245,10 +715,10 @@ exports[`Content: Component should render correctly 1`] = `
           </div>
         </div>
         <div
-          className="sc-jSFjdj suRwv"
+          className="c5"
         >
           <div
-            className="sc-gKAaRy kJUVQc"
+            className="c6"
           >
             <a
               href="/settings"
@@ -259,7 +729,7 @@ exports[`Content: Component should render correctly 1`] = `
             </a>
           </div>
           <div
-            className="sc-gKAaRy kJUVQc"
+            className="c6"
           >
             <div
               id="logoutNavBtn"
@@ -270,10 +740,10 @@ exports[`Content: Component should render correctly 1`] = `
           </div>
         </div>
         <div
-          className="sc-iCoGMd gEejpB"
+          className="c8"
         >
           <a
-            className="sc-fujyAs fjPQTs"
+            className="c9"
             href="/"
             id="aboutNavBtn"
             onClick={[Function]}
@@ -283,7 +753,7 @@ exports[`Content: Component should render correctly 1`] = `
             About Schema CMS
           </a>
           <a
-            className="sc-fujyAs fjPQTs"
+            className="c9"
             href="https://github.com/schemadesign/schema_cms/blob/master/backend/app/docs/public_api/api_calls.md"
             id="apiNavBtn"
             onClick={[Function]}
@@ -293,7 +763,7 @@ exports[`Content: Component should render correctly 1`] = `
             API Doc
           </a>
           <a
-            className="sc-fujyAs fjPQTs"
+            className="c9"
             href="https://github.com/schemadesign/schema_cms"
             id="repositoryNavBtn"
             onClick={[Function]}
@@ -351,17 +821,17 @@ exports[`Content: Component should render correctly 1`] = `
     </div>
   </div>
   <div
-    className="sc-fKgJPI"
+    className=""
     id="tabsContainer"
   >
     <div
-      className="sc-hHEiqL byaMKQ"
+      className="c10"
     >
       <div
-        className="sc-dlMDgC idchUF"
+        className="c11"
       >
         <a
-          className="sc-kfYoZR dDqYWj"
+          className="c12"
           href="/project/projectId"
           id="settingsTab"
           onClick={[Function]}
@@ -370,10 +840,10 @@ exports[`Content: Component should render correctly 1`] = `
         </a>
       </div>
       <div
-        className="sc-dlMDgC idchUF"
+        className="c11"
       >
         <a
-          className="sc-kfYoZR dDqYWj"
+          className="c12"
           href="/project/projectId/datasource"
           id="sourcesTab"
           onClick={[Function]}
@@ -382,10 +852,10 @@ exports[`Content: Component should render correctly 1`] = `
         </a>
       </div>
       <div
-        className="sc-dlMDgC lpbHpi"
+        className="c13"
       >
         <a
-          className="sc-kfYoZR dDqYWj"
+          className="c12"
           href="/project/projectId/content"
           id="contentTab"
           onClick={[Function]}
@@ -394,10 +864,10 @@ exports[`Content: Component should render correctly 1`] = `
         </a>
       </div>
       <div
-        className="sc-dlMDgC idchUF"
+        className="c11"
       >
         <a
-          className="sc-kfYoZR dDqYWj"
+          className="c12"
           href="/project/projectId/templates"
           id="templatesTab"
           onClick={[Function]}
@@ -406,10 +876,10 @@ exports[`Content: Component should render correctly 1`] = `
         </a>
       </div>
       <div
-        className="sc-dlMDgC idchUF"
+        className="c11"
       >
         <a
-          className="sc-kfYoZR dDqYWj"
+          className="c12"
           href="/project/projectId/user"
           id="usersTab"
           onClick={[Function]}
@@ -420,13 +890,13 @@ exports[`Content: Component should render correctly 1`] = `
     </div>
   </div>
   <div
-    className="sc-bCwfaz hVBABX"
+    className="c14"
   >
     <div
-      className="sc-iwajpm hmXCiZ"
+      className="c15"
     >
       <h2
-        className="sc-cxNHIi brbqej"
+        className="c16"
         id="desktopHeaderTitle"
         style={
           Object {
@@ -440,7 +910,7 @@ exports[`Content: Component should render correctly 1`] = `
         Content
       </h2>
       <h1
-        className="sc-lmgQwP dRdhPq"
+        className="c17"
         id="desktopHeaderSubtitle"
         style={
           Object {
@@ -457,10 +927,10 @@ exports[`Content: Component should render correctly 1`] = `
       </h1>
     </div>
     <div
-      className="sc-iJCRrE"
+      className=""
     >
       <a
-        className="sc-iemWCZ uifwT"
+        className="c18"
         href="/project/projectId/section/create"
         onClick={[Function]}
       >
@@ -486,22 +956,22 @@ exports[`Content: Component should render correctly 1`] = `
     </div>
   </div>
   <div
-    className="sc-iBzEeX gLsHJX"
+    className="c19"
   >
     <div
-      className="sc-efHYUO isAuMV"
+      className="c20"
       id="tagsCounter"
     />
     2 sections
     <div
-      className="sc-efHYUO isAuMV"
+      className="c20"
     />
   </div>
   <section
-    className="sc-iTVJFM szJqq"
+    className="c21"
   >
     <div
-      className="sc-gXfVKN lgrNMf"
+      className="c22"
       style={
         Object {
           "backgroundColor": "#1d1d20",
@@ -534,19 +1004,19 @@ exports[`Content: Component should render correctly 1`] = `
           }
         >
           <div
-            className="sc-jJMGnK dCNErZ"
+            className="c23"
           >
             <ul
-              className="sc-kLojOw bkEgHX"
+              className="c24"
             >
               <li
-                className="sc-iklJeh liEYZi"
+                className="c25"
                 id="headerItem-0"
               >
                 in 3 months
               </li>
               <li
-                className="sc-iklJeh liEYZi"
+                className="c25"
                 id="headerItem-1"
               >
                 owner
@@ -555,7 +1025,7 @@ exports[`Content: Component should render correctly 1`] = `
           </div>
         </div>
         <a
-          className="sc-cBoqAE fxTKzd"
+          className="c26"
           href="/section/1"
           id="section-1"
           onClick={[Function]}
@@ -576,7 +1046,7 @@ exports[`Content: Component should render correctly 1`] = `
       </div>
     </div>
     <div
-      className="sc-gXfVKN lgrNMf"
+      className="c22"
       style={
         Object {
           "backgroundColor": "#1d1d20",
@@ -609,19 +1079,19 @@ exports[`Content: Component should render correctly 1`] = `
           }
         >
           <div
-            className="sc-jJMGnK dCNErZ"
+            className="c23"
           >
             <ul
-              className="sc-kLojOw bkEgHX"
+              className="c24"
             >
               <li
-                className="sc-iklJeh liEYZi"
+                className="c25"
                 id="headerItem-0"
               >
                 in 3 months
               </li>
               <li
-                className="sc-iklJeh liEYZi"
+                className="c25"
                 id="headerItem-1"
               >
                 owner 2
@@ -630,7 +1100,7 @@ exports[`Content: Component should render correctly 1`] = `
           </div>
         </div>
         <a
-          className="sc-cBoqAE fxTKzd"
+          className="c26"
           href="/section/2"
           id="section-2"
           onClick={[Function]}
@@ -652,16 +1122,16 @@ exports[`Content: Component should render correctly 1`] = `
     </div>
   </section>
   <div
-    className="sc-bqGGPW kvHGgi"
+    className="c27"
   >
     <div
-      className="sc-hBMUJo iDRdfP"
+      className="c28"
     >
       <div
-        className="sc-ksluID ljQkwB"
+        className="c29"
       >
         <a
-          className="sc-fFSPTT imXlOu"
+          className="c30"
           disabled={false}
           href="/project/projectId"
           id="backBtn"
@@ -670,7 +1140,7 @@ exports[`Content: Component should render correctly 1`] = `
           Back
         </a>
         <a
-          className="sc-iemWCZ LUkVC"
+          className="c31"
           href="/project/projectId/section/create"
           onClick={[Function]}
         >

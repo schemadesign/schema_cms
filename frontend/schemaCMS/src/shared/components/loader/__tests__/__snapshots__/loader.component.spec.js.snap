@@ -1,8 +1,43 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Loader: Component should render correctly 1`] = `
+.c0 {
+  display: inline-block;
+  position: relative;
+  width: 20px;
+  height: 20px;
+}
+
+.c0 div {
+  box-sizing: border-box;
+  display: block;
+  position: absolute;
+  width: 20px;
+  height: 20px;
+  border: 2.5px solid #fff;
+  border-radius: 50%;
+  -webkit-animation: fvtopB 1.2s cubic-bezier(0.5,0,0.5,1) infinite;
+  animation: fvtopB 1.2s cubic-bezier(0.5,0,0.5,1) infinite;
+  border-color: #fff transparent transparent transparent;
+}
+
+.c0 div:nth-child(1) {
+  -webkit-animation-delay: -0.45s;
+  animation-delay: -0.45s;
+}
+
+.c0 div:nth-child(2) {
+  -webkit-animation-delay: -0.3s;
+  animation-delay: -0.3s;
+}
+
+.c0 div:nth-child(3) {
+  -webkit-animation-delay: -0.15s;
+  animation-delay: -0.15s;
+}
+
 <div
-  className="sc-bdnxRM hvTwJZ"
+  className="c0"
 >
   <div />
   <div />

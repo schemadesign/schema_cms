@@ -14,6 +14,8 @@ import ReactModal from 'react-modal';
 import React from 'react';
 import * as effects from 'redux-saga/effects';
 
+import 'jest-styled-components';
+
 Enzyme.configure({ adapter: new Adapter() });
 
 chai.use(chaiEnzyme());

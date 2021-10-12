@@ -1,21 +1,85 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`PageBlockTemplate: Component should render correctly 1`] = `
+.c0 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  width: 100%;
+  border-top: 1px solid #FFF;
+}
+
+.c1 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+}
+
+.c2 {
+  padding-left: 0;
+  width: calc(100% - 81px);
+}
+
+.c3 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  padding-bottom: 30px;
+  padding-right: 30px;
+  position: relative;
+  font-size: 18px;
+  cursor: pointer;
+  padding-bottom: 0;
+}
+
+.c3 label {
+  margin-bottom: 2px;
+}
+
+.c4 {
+  position: absolute;
+  right: 0;
+  top: 5px;
+  top: 50%;
+  right: 5px;
+  -webkit-transform: translateY(-50%);
+  -ms-transform: translateY(-50%);
+  transform: translateY(-50%);
+  font-size: 0;
+}
+
 <div
-  className="sc-gtsrHT kUlfls"
+  className="c0"
 >
   <div
-    className="sc-dlnjwi iLDZtA"
+    className="c1"
   >
     <span>
       icon
     </span>
   </div>
   <div
-    className="sc-hKFxyN xFdsd"
+    className="c2"
   >
     <div
-      className="sc-eCApnc eHBUKL"
+      className="c3"
       onClick={[Function]}
     >
       <input
@@ -110,7 +174,7 @@ exports[`PageBlockTemplate: Component should render correctly 1`] = `
         </div>
       </div>
       <div
-        className="sc-jSFjdj cGCRVl"
+        className="c4"
       >
         <svg
           style={
@@ -131,7 +195,7 @@ exports[`PageBlockTemplate: Component should render correctly 1`] = `
     </div>
   </div>
   <div
-    className="sc-dlnjwi iLDZtA"
+    className="c1"
   >
     <svg
       style={

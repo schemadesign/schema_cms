@@ -1,17 +1,313 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`BlockTemplateForm: Component should render correctly 1`] = `
+.c21 {
+  margin-top: 30px;
+  border-top: 2px solid #2F2F36;
+  padding-top: 15px;
+}
+
+.c22 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-align-items: start;
+  -webkit-box-align: start;
+  -ms-flex-align: start;
+  align-items: start;
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+  padding-bottom: 15px;
+  position: relative;
+}
+
+.c25 {
+  padding-right: 10px;
+}
+
+.c24 {
+  padding-left: 10px;
+  max-width: 100%;
+}
+
+.c23 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  max-width: 100%;
+  padding-right: 10px;
+}
+
+.c27 {
+  cursor: pointer;
+  position: absolute;
+  right: 0;
+  top: 0;
+}
+
+.c9 {
+  cursor: pointer;
+}
+
+.c26 {
+  color: #71737e;
+  min-width: 100%;
+}
+
+.c5 {
+  position: relative;
+}
+
+.c8 {
+  position: absolute;
+  right: 0;
+  top: 0;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+}
+
+.c12 {
+  position: relative;
+}
+
+.c16 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: end;
+  -webkit-justify-content: end;
+  -ms-flex-pack: end;
+  justify-content: end;
+}
+
+.c19 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  cursor: move;
+  touch-action: none;
+}
+
+.c0 {
+  padding-bottom: 50px;
+}
+
+.c1 {
+  display: none;
+}
+
+.c2 {
+  margin-right: 20px;
+  overflow: hidden;
+}
+
+.c3 {
+  color: #FFF;
+}
+
+.c4 {
+  color: #FFF;
+}
+
+.c6 {
+  position: relative;
+  max-width: 100%;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  position: relative;
+}
+
+.c13 {
+  position: relative;
+}
+
+.c7 {
+  position: relative;
+  top: 0;
+  left: 0;
+  color: #f21e29;
+  font-size: 14px;
+  font-weight: normal;
+}
+
+.c14 {
+  color: #71737e;
+  text-align: center;
+  padding-bottom: 20px;
+  min-height: 43px;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+}
+
+.c15 {
+  width: 33%;
+}
+
+.c17 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  max-width: calc(100% - 90px);
+}
+
+.c18 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+}
+
+.c20 {
+  margin: 0 25px 0 5px;
+  display: none;
+}
+
+.c10 {
+  cursor: pointer;
+  position: relative;
+}
+
+@media (min-width:480px) {
+  .c22 {
+    -webkit-flex-direction: row;
+    -ms-flex-direction: row;
+    flex-direction: row;
+    -webkit-align-items: center;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+  }
+}
+
+@media (min-width:480px) {
+  .c23 {
+    padding-right: 40px;
+  }
+}
+
+@media (min-width:1050px) {
+  .c12 {
+    display: none;
+  }
+}
+
+@media (min-width:1050px) {
+  .c16 {
+    display: none;
+  }
+}
+
+@media (min-width:1050px) {
+  .c1 {
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: justify;
+    -webkit-justify-content: space-between;
+    -ms-flex-pack: justify;
+    justify-content: space-between;
+    -webkit-align-items: center;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    margin: 60px 0 40px 0;
+    min-height: 63px;
+  }
+}
+
+@media (min-width:1050px) {
+  .c11 {
+    display: block;
+  }
+}
+
+@media (min-width:1050px) {
+  .c14 {
+    margin-top: -35px;
+    padding-bottom: 40px;
+  }
+}
+
+@media (min-width:1050px) {
+  .c17 {
+    max-width: calc(100% - 170px);
+  }
+}
+
+@media (min-width:1050px) {
+  .c20 {
+    display: block;
+  }
+}
+
+@media (min-width:768px) {
+
+}
+
 <div
-  className="sc-hBMUJo Vnztk"
+  className="c0"
 >
   <div
-    className="sc-fnVZcZ bcepA-d"
+    className="c1"
   >
     <div
-      className="sc-fFSPTT cMZgOy"
+      className="c2"
     >
       <h2
-        className="sc-bkbkJK jdTaif"
+        className="c3"
         id="desktopHeaderTitle"
         style={
           Object {
@@ -27,7 +323,7 @@ exports[`BlockTemplateForm: Component should render correctly 1`] = `
         </span>
       </h2>
       <h1
-        className="sc-iemWCZ fYZIOR"
+        className="c4"
         id="desktopHeaderSubtitle"
         style={
           Object {
@@ -41,10 +337,10 @@ exports[`BlockTemplateForm: Component should render correctly 1`] = `
         }
       >
         <div
-          className="sc-pNWdM bowZMk"
+          className="c5"
         >
           <div
-            className="sc-iJCRrE kSgyvd"
+            className="c6"
           >
             <div
               style={
@@ -127,15 +423,15 @@ exports[`BlockTemplateForm: Component should render correctly 1`] = `
               </div>
             </div>
             <div
-              className="sc-ezzafa elFSyd"
+              className="c7"
               id="nameError"
             />
           </div>
           <div
-            className="sc-jrsJWt ffIway"
+            className="c8"
           >
             <label
-              className="sc-iCoGMd bMarZz"
+              className="c9"
               htmlFor="name"
             >
               <svg
@@ -155,7 +451,7 @@ exports[`BlockTemplateForm: Component should render correctly 1`] = `
               </svg>
             </label>
             <div
-              className="sc-cTJkRt iMorgW"
+              className="c10"
               id="blockTemplateCopyButton"
               onClick={[Function]}
             >
@@ -179,10 +475,10 @@ exports[`BlockTemplateForm: Component should render correctly 1`] = `
       </h1>
     </div>
     <div
-      className="sc-dIvrsQ"
+      className=""
     >
       <div
-        className="sc-iwajpm jcuDmd"
+        className="c11"
       >
         <button
           disabled={false}
@@ -231,10 +527,10 @@ exports[`BlockTemplateForm: Component should render correctly 1`] = `
     </div>
   </div>
   <div
-    className="sc-kEqXSa ezelWv"
+    className="c12"
   >
     <div
-      className="sc-iJCRrE cWVQZj"
+      className="c13"
     >
       <div
         style={
@@ -307,27 +603,27 @@ exports[`BlockTemplateForm: Component should render correctly 1`] = `
         </div>
       </div>
       <div
-        className="sc-ezzafa elFSyd"
+        className="c7"
         id="nameError"
       />
     </div>
   </div>
   <div
-    className="sc-bYwzuL iBABql"
+    className="c14"
   >
     <div
-      className="sc-kLojOw cIQGtj"
+      className="c15"
       id="tagsCounter"
     />
     2 Elements
     <div
-      className="sc-kLojOw cIQGtj"
+      className="c15"
     >
       <div
-        className="sc-crzoAE dxCgra"
+        className="c16"
       >
         <div
-          className="sc-iwajpm jcuDmd"
+          className="c11"
         >
           <button
             disabled={false}
@@ -428,14 +724,14 @@ exports[`BlockTemplateForm: Component should render correctly 1`] = `
           }
         >
           <div
-            className="sc-jJMGnK fclSSz"
+            className="c17"
           >
             <div
-              className="sc-hiKfDv fFlpxo"
+              className="c18"
             >
               <div>
                 <div
-                  className="sc-bqGGPW kdvpAj"
+                  className="c19"
                 >
                   <svg
                     style={
@@ -456,7 +752,7 @@ exports[`BlockTemplateForm: Component should render correctly 1`] = `
                 </div>
               </div>
               <div
-                className="sc-carFqZ gJggHB"
+                className="c20"
               >
                 <svg
                   style={
@@ -476,7 +772,7 @@ exports[`BlockTemplateForm: Component should render correctly 1`] = `
               </div>
             </div>
             <div
-              className="sc-iJCRrE kSgyvd"
+              className="c6"
             >
               <div
                 style={
@@ -558,15 +854,15 @@ exports[`BlockTemplateForm: Component should render correctly 1`] = `
                 </div>
               </div>
               <div
-                className="sc-ezzafa elFSyd"
+                className="c7"
                 id="elements.0.nameError"
               />
             </div>
             <div
-              className="sc-hiKfDv fFlpxo"
+              className="c18"
             >
               <label
-                className="sc-iCoGMd bMarZz"
+                className="c9"
                 htmlFor="elements.0.name"
               >
                 <svg
@@ -693,14 +989,14 @@ exports[`BlockTemplateForm: Component should render correctly 1`] = `
           }
         >
           <div
-            className="sc-jJMGnK fclSSz"
+            className="c17"
           >
             <div
-              className="sc-hiKfDv fFlpxo"
+              className="c18"
             >
               <div>
                 <div
-                  className="sc-bqGGPW kdvpAj"
+                  className="c19"
                 >
                   <svg
                     style={
@@ -721,7 +1017,7 @@ exports[`BlockTemplateForm: Component should render correctly 1`] = `
                 </div>
               </div>
               <div
-                className="sc-carFqZ gJggHB"
+                className="c20"
               >
                 <svg
                   style={
@@ -741,7 +1037,7 @@ exports[`BlockTemplateForm: Component should render correctly 1`] = `
               </div>
             </div>
             <div
-              className="sc-iJCRrE kSgyvd"
+              className="c6"
             >
               <div
                 style={
@@ -823,15 +1119,15 @@ exports[`BlockTemplateForm: Component should render correctly 1`] = `
                 </div>
               </div>
               <div
-                className="sc-ezzafa elFSyd"
+                className="c7"
                 id="elements.1.nameError"
               />
             </div>
             <div
-              className="sc-hiKfDv fFlpxo"
+              className="c18"
             >
               <label
-                className="sc-iCoGMd bMarZz"
+                className="c9"
                 htmlFor="elements.1.name"
               >
                 <svg
@@ -923,13 +1219,13 @@ exports[`BlockTemplateForm: Component should render correctly 1`] = `
      
   </span>
   <div
-    className="sc-bdnxRM bTDqaq"
+    className="c21"
   >
     <div
-      className="sc-gtsrHT kZtzlv"
+      className="c22"
     >
       <div
-        className="sc-eCApnc bqbpNj"
+        className="c23"
       >
         <div>
           <input
@@ -981,23 +1277,23 @@ exports[`BlockTemplateForm: Component should render correctly 1`] = `
           </label>
         </div>
         <div
-          className="sc-hKFxyN imIrMt"
+          className="c24"
         >
           <label
-            className="sc-dlnjwi hxLbJS"
+            className="c25"
             htmlFor="isAvailable"
           >
             Make it Available
           </label>
           <span
-            className="sc-fujyAs bTGrlY"
+            className="c26"
           >
             This Template is currently available for Editors
           </span>
         </div>
       </div>
       <div
-        className="sc-jSFjdj euYGVV"
+        className="c27"
         id="removeBlock"
         onClick={[Function]}
       >

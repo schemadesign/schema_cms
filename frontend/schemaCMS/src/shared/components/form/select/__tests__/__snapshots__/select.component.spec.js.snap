@@ -1,8 +1,33 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Select: Component should render correctly 1`] = `
+.c0 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  padding-bottom: 30px;
+  padding-right: 30px;
+  position: relative;
+  font-size: 18px;
+  cursor: pointer;
+}
+
+.c0 label {
+  margin-bottom: 2px;
+}
+
+.c1 {
+  position: absolute;
+  right: 0;
+  top: 5px;
+}
+
 <div
-  className="sc-bdnxRM cTHMhw"
+  className="c0"
   onClick={[Function]}
 >
   <label
@@ -153,7 +178,7 @@ exports[`Select: Component should render correctly 1`] = `
     </div>
   </div>
   <div
-    className="sc-gtsrHT eMUcrg"
+    className="c1"
   >
     <svg
       style={

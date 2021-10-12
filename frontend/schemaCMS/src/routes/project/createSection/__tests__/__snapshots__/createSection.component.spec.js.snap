@@ -1,11 +1,274 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`CreateSection: Component should render correctly 1`] = `
+.c0 {
+  font-weight: normal;
+  width: calc(100% - 50px);
+}
+
+.c4 {
+  padding-right: 50px;
+}
+
+.c3 {
+  overflow: auto;
+  -webkit-overflow-scrolling: touch;
+  max-height: 100%;
+}
+
+.c5 {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+}
+
+.c6 {
+  line-height: 1.5;
+  margin: 2px 0;
+  cursor: pointer;
+  font-size: 24px;
+  border-bottom: 2.4px solid #2F2F36;
+  padding: 8px 0 13px;
+}
+
+.c6 a,
+.c6 div {
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  color: #71737e;
+  display: block;
+}
+
+.c7 {
+  line-height: 1.5;
+  margin: 2px 0;
+  cursor: pointer;
+  font-size: 24px;
+  border-bottom: 2.4px solid #FFF;
+  padding: 8px 0 13px;
+}
+
+.c7 a,
+.c7 div {
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  color: #FFF;
+  display: block;
+}
+
+.c8 {
+  margin: 10px 0;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+}
+
+.c9 {
+  color: #FFF;
+  font-size: 14px;
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  margin: 12px 0;
+}
+
+.c1 {
+  word-break: break-word;
+}
+
+.c2 {
+  word-break: break-word;
+}
+
+.c20 {
+  height: 120px;
+}
+
+.c22 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+  -webkit-flex-wrap: wrap;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  width: 100%;
+}
+
+.c21 {
+  bottom: 0;
+  width: 100%;
+  padding: 10px 0 36px;
+  position: fixed;
+  width: calc(100% - 40px);
+  z-index: 999;
+  background-image: linear-gradient( to top, #000,#000 30%, rgba(0,0,0,0) );
+}
+
+.c23 {
+  width: calc(50% - 5px);
+  max-width: 240px;
+}
+
+.c14 {
+  display: none;
+}
+
+.c15 {
+  margin-right: 20px;
+  overflow: hidden;
+}
+
+.c16 {
+  color: #FFF;
+}
+
+.c17 {
+  color: #FFF;
+}
+
+.c18 {
+  position: relative;
+}
+
+.c19 {
+  position: relative;
+  top: 0;
+  left: 0;
+  color: #f21e29;
+  font-size: 14px;
+  font-weight: normal;
+}
+
+.c10 {
+  display: none;
+}
+
+.c13 {
+  color: #FFF;
+  width: 100%;
+}
+
+.c11 {
+  color: #a6a7aa;
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  width: 100%;
+}
+
+.c11:hover {
+  color: #FFF;
+}
+
+.c12 {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  max-width: 230px;
+}
+
+@media (min-width:1050px) {
+  .c0 {
+    display: none;
+  }
+}
+
+@media (min-width:1050px) {
+  .c4 {
+    height: 54px;
+  }
+}
+
+@media (min-width:1050px) {
+  .c3 {
+    padding-bottom: 20px;
+  }
+}
+
+@media (min-width:768px) {
+
+}
+
+@media (min-width:1050px) {
+  .c20 {
+    height: 100px;
+  }
+}
+
+@media (min-width:1050px) {
+  .c22 {
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+  }
+}
+
+@media (min-width:1050px) {
+  .c21 {
+    position: fixed;
+    width: calc(100% - 40px);
+    z-index: 999;
+    background-image: linear-gradient( to top, #000,#000 30%, rgba(0,0,0,0) );
+    padding: 10px 0 36px;
+    width: 1000px;
+  }
+}
+
+@media (min-width:1050px) {
+  .c23 {
+    width: 240px;
+  }
+}
+
+@media (min-width:1050px) {
+  .c14 {
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: justify;
+    -webkit-justify-content: space-between;
+    -ms-flex-pack: justify;
+    justify-content: space-between;
+    -webkit-align-items: center;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    margin: 60px 0 40px 0;
+    min-height: 63px;
+  }
+}
+
+@media (min-width:1050px) {
+  .c10 {
+    display: block;
+  }
+}
+
 <div
-  className="sc-bdnxRM"
+  className=""
 >
   <div
-    className="sc-dlnjwi cRuKBq"
+    className="c0"
   >
     <div
       style={
@@ -22,10 +285,10 @@ exports[`CreateSection: Component should render correctly 1`] = `
     >
       <div>
         <div
-          className="sc-hKFxyN"
+          className=""
         >
           <h2
-            className="sc-jrsJWt kjUKXP"
+            className="c1"
             id="headerTitle"
             style={
               Object {
@@ -39,7 +302,7 @@ exports[`CreateSection: Component should render correctly 1`] = `
             Section
           </h2>
           <h1
-            className="sc-kEqXSa PZYGQ"
+            className="c2"
             id="headerSubtitle"
             style={
               Object {
@@ -123,16 +386,16 @@ exports[`CreateSection: Component should render correctly 1`] = `
       }
     >
       <div
-        className="sc-jSFjdj fnUjHM"
+        className="c3"
       >
         <div
-          className="sc-eCApnc iBHHee"
+          className="c4"
         >
           <div
-            className="sc-hKFxyN"
+            className=""
           >
             <h2
-              className="sc-jrsJWt kjUKXP"
+              className="c1"
               id="headerTitle"
               style={
                 Object {
@@ -146,7 +409,7 @@ exports[`CreateSection: Component should render correctly 1`] = `
               Section
             </h2>
             <h1
-              className="sc-kEqXSa PZYGQ"
+              className="c2"
               id="headerSubtitle"
               style={
                 Object {
@@ -164,10 +427,10 @@ exports[`CreateSection: Component should render correctly 1`] = `
           </div>
         </div>
         <div
-          className="sc-gKAaRy kMgRGr"
+          className="c5"
         >
           <div
-            className="sc-iCoGMd esRpfI"
+            className="c6"
           >
             <a
               href="/project/"
@@ -178,7 +441,7 @@ exports[`CreateSection: Component should render correctly 1`] = `
             </a>
           </div>
           <div
-            className="sc-iCoGMd esRpfI"
+            className="c6"
           >
             <a
               href="/user/"
@@ -189,7 +452,7 @@ exports[`CreateSection: Component should render correctly 1`] = `
             </a>
           </div>
           <div
-            className="sc-iCoGMd esRpfI"
+            className="c6"
           >
             <a
               href="/project/projectId"
@@ -200,7 +463,7 @@ exports[`CreateSection: Component should render correctly 1`] = `
             </a>
           </div>
           <div
-            className="sc-iCoGMd esRpfI"
+            className="c6"
           >
             <a
               href="/project/projectId/datasource"
@@ -211,7 +474,7 @@ exports[`CreateSection: Component should render correctly 1`] = `
             </a>
           </div>
           <div
-            className="sc-iCoGMd esRpfI"
+            className="c6"
           >
             <a
               href="/project/projectId/user"
@@ -222,7 +485,7 @@ exports[`CreateSection: Component should render correctly 1`] = `
             </a>
           </div>
           <div
-            className="sc-iCoGMd idOtyZ"
+            className="c7"
           >
             <a
               href="/project/projectId/content"
@@ -233,7 +496,7 @@ exports[`CreateSection: Component should render correctly 1`] = `
             </a>
           </div>
           <div
-            className="sc-iCoGMd esRpfI"
+            className="c6"
           >
             <a
               href="/project/projectId/templates"
@@ -245,10 +508,10 @@ exports[`CreateSection: Component should render correctly 1`] = `
           </div>
         </div>
         <div
-          className="sc-gKAaRy kMgRGr"
+          className="c5"
         >
           <div
-            className="sc-iCoGMd esRpfI"
+            className="c6"
           >
             <a
               href="/settings"
@@ -259,7 +522,7 @@ exports[`CreateSection: Component should render correctly 1`] = `
             </a>
           </div>
           <div
-            className="sc-iCoGMd esRpfI"
+            className="c6"
           >
             <div
               id="logoutNavBtn"
@@ -270,10 +533,10 @@ exports[`CreateSection: Component should render correctly 1`] = `
           </div>
         </div>
         <div
-          className="sc-fujyAs etqQnk"
+          className="c8"
         >
           <a
-            className="sc-pNWdM gttPrG"
+            className="c9"
             href="/"
             id="aboutNavBtn"
             onClick={[Function]}
@@ -283,7 +546,7 @@ exports[`CreateSection: Component should render correctly 1`] = `
             About Schema CMS
           </a>
           <a
-            className="sc-pNWdM gttPrG"
+            className="c9"
             href="https://github.com/schemadesign/schema_cms/blob/master/backend/app/docs/public_api/api_calls.md"
             id="apiNavBtn"
             onClick={[Function]}
@@ -293,7 +556,7 @@ exports[`CreateSection: Component should render correctly 1`] = `
             API Doc
           </a>
           <a
-            className="sc-pNWdM gttPrG"
+            className="c9"
             href="https://github.com/schemadesign/schema_cms"
             id="repositoryNavBtn"
             onClick={[Function]}
@@ -351,7 +614,7 @@ exports[`CreateSection: Component should render correctly 1`] = `
     </div>
   </div>
   <div
-    className="sc-giAqHp dpUxlh"
+    className="c10"
   >
     <div
       style={
@@ -373,7 +636,7 @@ exports[`CreateSection: Component should render correctly 1`] = `
         }
       >
         <a
-          className="sc-bYwzuL kazSMw"
+          className="c11"
           href="/project/1/"
           onClick={[Function]}
           style={
@@ -395,7 +658,7 @@ exports[`CreateSection: Component should render correctly 1`] = `
             Project
           </span>
           <h3
-            className="sc-kLojOw gMJcEe"
+            className="c12"
             style={
               Object {
                 "fontFamily": "Inter, \\"Helvetica Neue\\", Helvetica, Arial, sans-serif",
@@ -431,7 +694,7 @@ exports[`CreateSection: Component should render correctly 1`] = `
         }
       >
         <a
-          className="sc-bYwzuL kazSMw"
+          className="c11"
           href="/project/1/content"
           onClick={[Function]}
           style={
@@ -453,7 +716,7 @@ exports[`CreateSection: Component should render correctly 1`] = `
             Tab
           </span>
           <h3
-            className="sc-kLojOw gMJcEe"
+            className="c12"
             style={
               Object {
                 "fontFamily": "Inter, \\"Helvetica Neue\\", Helvetica, Arial, sans-serif",
@@ -489,7 +752,7 @@ exports[`CreateSection: Component should render correctly 1`] = `
         }
       >
         <div
-          className="sc-ezzafa kSWCbk"
+          className="c13"
         >
           <span
             style={
@@ -502,7 +765,7 @@ exports[`CreateSection: Component should render correctly 1`] = `
             Section
           </span>
           <h3
-            className="sc-kLojOw gMJcEe"
+            className="c12"
             style={
               Object {
                 "fontFamily": "Inter, \\"Helvetica Neue\\", Helvetica, Arial, sans-serif",
@@ -520,13 +783,13 @@ exports[`CreateSection: Component should render correctly 1`] = `
     </div>
   </div>
   <div
-    className="sc-dlMDgC ksWamt"
+    className="c14"
   >
     <div
-      className="sc-kfYoZR fARwxC"
+      className="c15"
     >
       <h2
-        className="sc-fKgJPI eOKZEv"
+        className="c16"
         id="desktopHeaderTitle"
         style={
           Object {
@@ -540,7 +803,7 @@ exports[`CreateSection: Component should render correctly 1`] = `
         Section
       </h2>
       <h1
-        className="sc-bCwfaz iiMouF"
+        className="c17"
         id="desktopHeaderSubtitle"
         style={
           Object {
@@ -557,15 +820,15 @@ exports[`CreateSection: Component should render correctly 1`] = `
       </h1>
     </div>
     <div
-      className="sc-iwajpm"
+      className=""
     />
   </div>
   <form
-    className="sc-gtsrHT"
+    className=""
     onSubmit={[Function]}
   >
     <div
-      className="sc-cxNHIi blzHcf"
+      className="c18"
     >
       <div
         style={
@@ -639,21 +902,21 @@ exports[`CreateSection: Component should render correctly 1`] = `
         </div>
       </div>
       <div
-        className="sc-iJCRrE jQEIVz"
+        className="c19"
         id="nameError"
       />
     </div>
     <div
-      className="sc-ksluID heenju"
+      className="c20"
     >
       <div
-        className="sc-fnVZcZ UrpCx"
+        className="c21"
       >
         <div
-          className="sc-hBMUJo ftTEEW"
+          className="c22"
         >
           <button
-            className="sc-fFSPTT kaifUQ"
+            className="c23"
             disabled={false}
             id="cancelBtn"
             onClick={[Function]}
@@ -681,7 +944,7 @@ exports[`CreateSection: Component should render correctly 1`] = `
             Cancel
           </button>
           <button
-            className="sc-fFSPTT kaifUQ"
+            className="c23"
             disabled={true}
             id="createSection"
             style={

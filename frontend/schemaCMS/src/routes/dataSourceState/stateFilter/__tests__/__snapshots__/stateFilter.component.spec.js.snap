@@ -2,8 +2,106 @@
 
 exports[`StateFilter: Component should render checkbox filter 1`] = `
 Array [
-  <div
-    className="sc-gKAaRy crfnwX"
+  .c0 {
+  font-weight: normal;
+  width: calc(100% - 50px);
+}
+
+.c4 {
+  padding-right: 50px;
+}
+
+.c3 {
+  overflow: auto;
+  -webkit-overflow-scrolling: touch;
+  max-height: 100%;
+}
+
+.c5 {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+}
+
+.c6 {
+  line-height: 1.5;
+  margin: 2px 0;
+  cursor: pointer;
+  font-size: 24px;
+  border-bottom: 2.4px solid #2F2F36;
+  padding: 8px 0 13px;
+}
+
+.c6 a,
+.c6 div {
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  color: #71737e;
+  display: block;
+}
+
+.c7 {
+  margin: 10px 0;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+}
+
+.c8 {
+  color: #FFF;
+  font-size: 14px;
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  margin: 12px 0;
+}
+
+.c1 {
+  word-break: break-word;
+}
+
+.c2 {
+  word-break: break-word;
+}
+
+@media (min-width:1050px) {
+  .c0 {
+    display: none;
+  }
+}
+
+@media (min-width:1050px) {
+  .c4 {
+    height: 54px;
+  }
+}
+
+@media (min-width:1050px) {
+  .c3 {
+    padding-bottom: 20px;
+  }
+}
+
+@media (min-width:768px) {
+
+}
+
+@media (min-width:1050px) {
+
+}
+
+<div
+    className="c0"
   >
     <div
       style={
@@ -20,10 +118,10 @@ Array [
     >
       <div>
         <div
-          className="sc-iCoGMd"
+          className=""
         >
           <h2
-            className="sc-dIsUp oQOye"
+            className="c1"
             id="headerTitle"
             style={
               Object {
@@ -37,7 +135,7 @@ Array [
             
           </h2>
           <h1
-            className="sc-bqGGPW xSSLN"
+            className="c2"
             id="headerSubtitle"
             style={
               Object {
@@ -121,16 +219,16 @@ Array [
       }
     >
       <div
-        className="sc-pNWdM jxBANf"
+        className="c3"
       >
         <div
-          className="sc-fujyAs bAoQiS"
+          className="c4"
         >
           <div
-            className="sc-iCoGMd"
+            className=""
           >
             <h2
-              className="sc-dIsUp oQOye"
+              className="c1"
               id="headerTitle"
               style={
                 Object {
@@ -144,7 +242,7 @@ Array [
               
             </h2>
             <h1
-              className="sc-bqGGPW xSSLN"
+              className="c2"
               id="headerSubtitle"
               style={
                 Object {
@@ -162,10 +260,10 @@ Array [
           </div>
         </div>
         <div
-          className="sc-jrsJWt iycXgC"
+          className="c5"
         >
           <div
-            className="sc-kEqXSa fLscgW"
+            className="c6"
           >
             <a
               href="/project/"
@@ -176,7 +274,7 @@ Array [
             </a>
           </div>
           <div
-            className="sc-kEqXSa fLscgW"
+            className="c6"
           >
             <a
               href="/user/"
@@ -187,7 +285,7 @@ Array [
             </a>
           </div>
           <div
-            className="sc-kEqXSa fLscgW"
+            className="c6"
           >
             <a
               href="/project/1"
@@ -198,7 +296,7 @@ Array [
             </a>
           </div>
           <div
-            className="sc-kEqXSa fLscgW"
+            className="c6"
           >
             <a
               href="/project/1/datasource"
@@ -209,7 +307,7 @@ Array [
             </a>
           </div>
           <div
-            className="sc-kEqXSa fLscgW"
+            className="c6"
           >
             <a
               href="/project/1/user"
@@ -220,7 +318,7 @@ Array [
             </a>
           </div>
           <div
-            className="sc-kEqXSa fLscgW"
+            className="c6"
           >
             <a
               href="/project/1/content"
@@ -231,7 +329,7 @@ Array [
             </a>
           </div>
           <div
-            className="sc-kEqXSa fLscgW"
+            className="c6"
           >
             <a
               href="/project/1/templates"
@@ -243,10 +341,10 @@ Array [
           </div>
         </div>
         <div
-          className="sc-jrsJWt iycXgC"
+          className="c5"
         >
           <div
-            className="sc-kEqXSa fLscgW"
+            className="c6"
           >
             <a
               href="/settings"
@@ -257,7 +355,7 @@ Array [
             </a>
           </div>
           <div
-            className="sc-kEqXSa fLscgW"
+            className="c6"
           >
             <div
               id="logoutNavBtn"
@@ -268,10 +366,10 @@ Array [
           </div>
         </div>
         <div
-          className="sc-iqAclL kRvzpQ"
+          className="c7"
         >
           <a
-            className="sc-crzoAE feDwqK"
+            className="c8"
             href="/"
             id="aboutNavBtn"
             onClick={[Function]}
@@ -281,7 +379,7 @@ Array [
             About Schema CMS
           </a>
           <a
-            className="sc-crzoAE feDwqK"
+            className="c8"
             href="https://github.com/schemadesign/schema_cms/blob/master/backend/app/docs/public_api/api_calls.md"
             id="apiNavBtn"
             onClick={[Function]}
@@ -291,7 +389,7 @@ Array [
             API Doc
           </a>
           <a
-            className="sc-crzoAE feDwqK"
+            className="c8"
             href="https://github.com/schemadesign/schema_cms"
             id="repositoryNavBtn"
             onClick={[Function]}
@@ -348,14 +446,66 @@ Array [
       </button>
     </div>
   </div>,
-  <div
-    className="sc-iwajpm fLqmfQ"
+  .c0 {
+  display: none;
+}
+
+.c1 {
+  margin-right: 20px;
+  overflow: hidden;
+}
+
+.c2 {
+  color: #FFF;
+}
+
+.c3 {
+  color: #FFF;
+}
+
+@media (min-width:1050px) {
+
+}
+
+@media (min-width:1050px) {
+
+}
+
+@media (min-width:1050px) {
+
+}
+
+@media (min-width:768px) {
+
+}
+
+@media (min-width:1050px) {
+  .c0 {
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: justify;
+    -webkit-justify-content: space-between;
+    -ms-flex-pack: justify;
+    justify-content: space-between;
+    -webkit-align-items: center;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    margin: 60px 0 40px 0;
+    min-height: 63px;
+  }
+}
+
+<div
+    className="c0"
   >
     <div
-      className="sc-cxNHIi bWfpfY"
+      className="c1"
     >
       <h2
-        className="sc-lmgQwP dRdhPq"
+        className="c2"
         id="desktopHeaderTitle"
         style={
           Object {
@@ -369,7 +519,7 @@ Array [
         
       </h2>
       <h1
-        className="sc-iJCRrE crxtKH"
+        className="c3"
         id="desktopHeaderSubtitle"
         style={
           Object {
@@ -386,11 +536,39 @@ Array [
       </h1>
     </div>
     <div
-      className="sc-giAqHp"
+      className=""
     />
   </div>,
-  <div
-    className="sc-hKFxyN drRJCW"
+  .c0 {
+  color: #f21e29;
+  font-weight: 200;
+  text-align: center;
+  padding: 50px 10px;
+  font-size: 20px;
+}
+
+@media (min-width:1050px) {
+
+}
+
+@media (min-width:1050px) {
+
+}
+
+@media (min-width:1050px) {
+
+}
+
+@media (min-width:768px) {
+
+}
+
+@media (min-width:1050px) {
+
+}
+
+<div
+    className="c0"
     type="page"
   >
     An Error occured
@@ -400,8 +578,106 @@ Array [
 
 exports[`StateFilter: Component should render input filter 1`] = `
 Array [
-  <div
-    className="sc-gKAaRy crfnwX"
+  .c0 {
+  font-weight: normal;
+  width: calc(100% - 50px);
+}
+
+.c4 {
+  padding-right: 50px;
+}
+
+.c3 {
+  overflow: auto;
+  -webkit-overflow-scrolling: touch;
+  max-height: 100%;
+}
+
+.c5 {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+}
+
+.c6 {
+  line-height: 1.5;
+  margin: 2px 0;
+  cursor: pointer;
+  font-size: 24px;
+  border-bottom: 2.4px solid #2F2F36;
+  padding: 8px 0 13px;
+}
+
+.c6 a,
+.c6 div {
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  color: #71737e;
+  display: block;
+}
+
+.c7 {
+  margin: 10px 0;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+}
+
+.c8 {
+  color: #FFF;
+  font-size: 14px;
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  margin: 12px 0;
+}
+
+.c1 {
+  word-break: break-word;
+}
+
+.c2 {
+  word-break: break-word;
+}
+
+@media (min-width:1050px) {
+  .c0 {
+    display: none;
+  }
+}
+
+@media (min-width:1050px) {
+  .c4 {
+    height: 54px;
+  }
+}
+
+@media (min-width:1050px) {
+  .c3 {
+    padding-bottom: 20px;
+  }
+}
+
+@media (min-width:768px) {
+
+}
+
+@media (min-width:1050px) {
+
+}
+
+<div
+    className="c0"
   >
     <div
       style={
@@ -418,10 +694,10 @@ Array [
     >
       <div>
         <div
-          className="sc-iCoGMd"
+          className=""
         >
           <h2
-            className="sc-dIsUp oQOye"
+            className="c1"
             id="headerTitle"
             style={
               Object {
@@ -435,7 +711,7 @@ Array [
             
           </h2>
           <h1
-            className="sc-bqGGPW xSSLN"
+            className="c2"
             id="headerSubtitle"
             style={
               Object {
@@ -519,16 +795,16 @@ Array [
       }
     >
       <div
-        className="sc-pNWdM jxBANf"
+        className="c3"
       >
         <div
-          className="sc-fujyAs bAoQiS"
+          className="c4"
         >
           <div
-            className="sc-iCoGMd"
+            className=""
           >
             <h2
-              className="sc-dIsUp oQOye"
+              className="c1"
               id="headerTitle"
               style={
                 Object {
@@ -542,7 +818,7 @@ Array [
               
             </h2>
             <h1
-              className="sc-bqGGPW xSSLN"
+              className="c2"
               id="headerSubtitle"
               style={
                 Object {
@@ -560,10 +836,10 @@ Array [
           </div>
         </div>
         <div
-          className="sc-jrsJWt iycXgC"
+          className="c5"
         >
           <div
-            className="sc-kEqXSa fLscgW"
+            className="c6"
           >
             <a
               href="/project/"
@@ -574,7 +850,7 @@ Array [
             </a>
           </div>
           <div
-            className="sc-kEqXSa fLscgW"
+            className="c6"
           >
             <a
               href="/user/"
@@ -585,7 +861,7 @@ Array [
             </a>
           </div>
           <div
-            className="sc-kEqXSa fLscgW"
+            className="c6"
           >
             <a
               href="/project/1"
@@ -596,7 +872,7 @@ Array [
             </a>
           </div>
           <div
-            className="sc-kEqXSa fLscgW"
+            className="c6"
           >
             <a
               href="/project/1/datasource"
@@ -607,7 +883,7 @@ Array [
             </a>
           </div>
           <div
-            className="sc-kEqXSa fLscgW"
+            className="c6"
           >
             <a
               href="/project/1/user"
@@ -618,7 +894,7 @@ Array [
             </a>
           </div>
           <div
-            className="sc-kEqXSa fLscgW"
+            className="c6"
           >
             <a
               href="/project/1/content"
@@ -629,7 +905,7 @@ Array [
             </a>
           </div>
           <div
-            className="sc-kEqXSa fLscgW"
+            className="c6"
           >
             <a
               href="/project/1/templates"
@@ -641,10 +917,10 @@ Array [
           </div>
         </div>
         <div
-          className="sc-jrsJWt iycXgC"
+          className="c5"
         >
           <div
-            className="sc-kEqXSa fLscgW"
+            className="c6"
           >
             <a
               href="/settings"
@@ -655,7 +931,7 @@ Array [
             </a>
           </div>
           <div
-            className="sc-kEqXSa fLscgW"
+            className="c6"
           >
             <div
               id="logoutNavBtn"
@@ -666,10 +942,10 @@ Array [
           </div>
         </div>
         <div
-          className="sc-iqAclL kRvzpQ"
+          className="c7"
         >
           <a
-            className="sc-crzoAE feDwqK"
+            className="c8"
             href="/"
             id="aboutNavBtn"
             onClick={[Function]}
@@ -679,7 +955,7 @@ Array [
             About Schema CMS
           </a>
           <a
-            className="sc-crzoAE feDwqK"
+            className="c8"
             href="https://github.com/schemadesign/schema_cms/blob/master/backend/app/docs/public_api/api_calls.md"
             id="apiNavBtn"
             onClick={[Function]}
@@ -689,7 +965,7 @@ Array [
             API Doc
           </a>
           <a
-            className="sc-crzoAE feDwqK"
+            className="c8"
             href="https://github.com/schemadesign/schema_cms"
             id="repositoryNavBtn"
             onClick={[Function]}
@@ -746,14 +1022,66 @@ Array [
       </button>
     </div>
   </div>,
-  <div
-    className="sc-iwajpm fLqmfQ"
+  .c0 {
+  display: none;
+}
+
+.c1 {
+  margin-right: 20px;
+  overflow: hidden;
+}
+
+.c2 {
+  color: #FFF;
+}
+
+.c3 {
+  color: #FFF;
+}
+
+@media (min-width:1050px) {
+
+}
+
+@media (min-width:1050px) {
+
+}
+
+@media (min-width:1050px) {
+
+}
+
+@media (min-width:768px) {
+
+}
+
+@media (min-width:1050px) {
+  .c0 {
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: justify;
+    -webkit-justify-content: space-between;
+    -ms-flex-pack: justify;
+    justify-content: space-between;
+    -webkit-align-items: center;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    margin: 60px 0 40px 0;
+    min-height: 63px;
+  }
+}
+
+<div
+    className="c0"
   >
     <div
-      className="sc-cxNHIi bWfpfY"
+      className="c1"
     >
       <h2
-        className="sc-lmgQwP dRdhPq"
+        className="c2"
         id="desktopHeaderTitle"
         style={
           Object {
@@ -767,7 +1095,7 @@ Array [
         
       </h2>
       <h1
-        className="sc-iJCRrE crxtKH"
+        className="c3"
         id="desktopHeaderSubtitle"
         style={
           Object {
@@ -784,11 +1112,39 @@ Array [
       </h1>
     </div>
     <div
-      className="sc-giAqHp"
+      className=""
     />
   </div>,
-  <div
-    className="sc-hKFxyN drRJCW"
+  .c0 {
+  color: #f21e29;
+  font-weight: 200;
+  text-align: center;
+  padding: 50px 10px;
+  font-size: 20px;
+}
+
+@media (min-width:1050px) {
+
+}
+
+@media (min-width:1050px) {
+
+}
+
+@media (min-width:1050px) {
+
+}
+
+@media (min-width:768px) {
+
+}
+
+@media (min-width:1050px) {
+
+}
+
+<div
+    className="c0"
     type="page"
   >
     An Error occured
@@ -798,8 +1154,106 @@ Array [
 
 exports[`StateFilter: Component should render range filter 1`] = `
 Array [
-  <div
-    className="sc-gKAaRy crfnwX"
+  .c0 {
+  font-weight: normal;
+  width: calc(100% - 50px);
+}
+
+.c4 {
+  padding-right: 50px;
+}
+
+.c3 {
+  overflow: auto;
+  -webkit-overflow-scrolling: touch;
+  max-height: 100%;
+}
+
+.c5 {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+}
+
+.c6 {
+  line-height: 1.5;
+  margin: 2px 0;
+  cursor: pointer;
+  font-size: 24px;
+  border-bottom: 2.4px solid #2F2F36;
+  padding: 8px 0 13px;
+}
+
+.c6 a,
+.c6 div {
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  color: #71737e;
+  display: block;
+}
+
+.c7 {
+  margin: 10px 0;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+}
+
+.c8 {
+  color: #FFF;
+  font-size: 14px;
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  margin: 12px 0;
+}
+
+.c1 {
+  word-break: break-word;
+}
+
+.c2 {
+  word-break: break-word;
+}
+
+@media (min-width:1050px) {
+  .c0 {
+    display: none;
+  }
+}
+
+@media (min-width:1050px) {
+  .c4 {
+    height: 54px;
+  }
+}
+
+@media (min-width:1050px) {
+  .c3 {
+    padding-bottom: 20px;
+  }
+}
+
+@media (min-width:768px) {
+
+}
+
+@media (min-width:1050px) {
+
+}
+
+<div
+    className="c0"
   >
     <div
       style={
@@ -816,10 +1270,10 @@ Array [
     >
       <div>
         <div
-          className="sc-iCoGMd"
+          className=""
         >
           <h2
-            className="sc-dIsUp oQOye"
+            className="c1"
             id="headerTitle"
             style={
               Object {
@@ -833,7 +1287,7 @@ Array [
             
           </h2>
           <h1
-            className="sc-bqGGPW xSSLN"
+            className="c2"
             id="headerSubtitle"
             style={
               Object {
@@ -917,16 +1371,16 @@ Array [
       }
     >
       <div
-        className="sc-pNWdM jxBANf"
+        className="c3"
       >
         <div
-          className="sc-fujyAs bAoQiS"
+          className="c4"
         >
           <div
-            className="sc-iCoGMd"
+            className=""
           >
             <h2
-              className="sc-dIsUp oQOye"
+              className="c1"
               id="headerTitle"
               style={
                 Object {
@@ -940,7 +1394,7 @@ Array [
               
             </h2>
             <h1
-              className="sc-bqGGPW xSSLN"
+              className="c2"
               id="headerSubtitle"
               style={
                 Object {
@@ -958,10 +1412,10 @@ Array [
           </div>
         </div>
         <div
-          className="sc-jrsJWt iycXgC"
+          className="c5"
         >
           <div
-            className="sc-kEqXSa fLscgW"
+            className="c6"
           >
             <a
               href="/project/"
@@ -972,7 +1426,7 @@ Array [
             </a>
           </div>
           <div
-            className="sc-kEqXSa fLscgW"
+            className="c6"
           >
             <a
               href="/user/"
@@ -983,7 +1437,7 @@ Array [
             </a>
           </div>
           <div
-            className="sc-kEqXSa fLscgW"
+            className="c6"
           >
             <a
               href="/project/1"
@@ -994,7 +1448,7 @@ Array [
             </a>
           </div>
           <div
-            className="sc-kEqXSa fLscgW"
+            className="c6"
           >
             <a
               href="/project/1/datasource"
@@ -1005,7 +1459,7 @@ Array [
             </a>
           </div>
           <div
-            className="sc-kEqXSa fLscgW"
+            className="c6"
           >
             <a
               href="/project/1/user"
@@ -1016,7 +1470,7 @@ Array [
             </a>
           </div>
           <div
-            className="sc-kEqXSa fLscgW"
+            className="c6"
           >
             <a
               href="/project/1/content"
@@ -1027,7 +1481,7 @@ Array [
             </a>
           </div>
           <div
-            className="sc-kEqXSa fLscgW"
+            className="c6"
           >
             <a
               href="/project/1/templates"
@@ -1039,10 +1493,10 @@ Array [
           </div>
         </div>
         <div
-          className="sc-jrsJWt iycXgC"
+          className="c5"
         >
           <div
-            className="sc-kEqXSa fLscgW"
+            className="c6"
           >
             <a
               href="/settings"
@@ -1053,7 +1507,7 @@ Array [
             </a>
           </div>
           <div
-            className="sc-kEqXSa fLscgW"
+            className="c6"
           >
             <div
               id="logoutNavBtn"
@@ -1064,10 +1518,10 @@ Array [
           </div>
         </div>
         <div
-          className="sc-iqAclL kRvzpQ"
+          className="c7"
         >
           <a
-            className="sc-crzoAE feDwqK"
+            className="c8"
             href="/"
             id="aboutNavBtn"
             onClick={[Function]}
@@ -1077,7 +1531,7 @@ Array [
             About Schema CMS
           </a>
           <a
-            className="sc-crzoAE feDwqK"
+            className="c8"
             href="https://github.com/schemadesign/schema_cms/blob/master/backend/app/docs/public_api/api_calls.md"
             id="apiNavBtn"
             onClick={[Function]}
@@ -1087,7 +1541,7 @@ Array [
             API Doc
           </a>
           <a
-            className="sc-crzoAE feDwqK"
+            className="c8"
             href="https://github.com/schemadesign/schema_cms"
             id="repositoryNavBtn"
             onClick={[Function]}
@@ -1144,14 +1598,66 @@ Array [
       </button>
     </div>
   </div>,
-  <div
-    className="sc-iwajpm fLqmfQ"
+  .c0 {
+  display: none;
+}
+
+.c1 {
+  margin-right: 20px;
+  overflow: hidden;
+}
+
+.c2 {
+  color: #FFF;
+}
+
+.c3 {
+  color: #FFF;
+}
+
+@media (min-width:1050px) {
+
+}
+
+@media (min-width:1050px) {
+
+}
+
+@media (min-width:1050px) {
+
+}
+
+@media (min-width:768px) {
+
+}
+
+@media (min-width:1050px) {
+  .c0 {
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: justify;
+    -webkit-justify-content: space-between;
+    -ms-flex-pack: justify;
+    justify-content: space-between;
+    -webkit-align-items: center;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    margin: 60px 0 40px 0;
+    min-height: 63px;
+  }
+}
+
+<div
+    className="c0"
   >
     <div
-      className="sc-cxNHIi bWfpfY"
+      className="c1"
     >
       <h2
-        className="sc-lmgQwP dRdhPq"
+        className="c2"
         id="desktopHeaderTitle"
         style={
           Object {
@@ -1165,7 +1671,7 @@ Array [
         
       </h2>
       <h1
-        className="sc-iJCRrE crxtKH"
+        className="c3"
         id="desktopHeaderSubtitle"
         style={
           Object {
@@ -1182,11 +1688,39 @@ Array [
       </h1>
     </div>
     <div
-      className="sc-giAqHp"
+      className=""
     />
   </div>,
-  <div
-    className="sc-hKFxyN drRJCW"
+  .c0 {
+  color: #f21e29;
+  font-weight: 200;
+  text-align: center;
+  padding: 50px 10px;
+  font-size: 20px;
+}
+
+@media (min-width:1050px) {
+
+}
+
+@media (min-width:1050px) {
+
+}
+
+@media (min-width:1050px) {
+
+}
+
+@media (min-width:768px) {
+
+}
+
+@media (min-width:1050px) {
+
+}
+
+<div
+    className="c0"
     type="page"
   >
     An Error occured
@@ -1196,8 +1730,106 @@ Array [
 
 exports[`StateFilter: Component should render select filter 1`] = `
 Array [
-  <div
-    className="sc-gKAaRy crfnwX"
+  .c0 {
+  font-weight: normal;
+  width: calc(100% - 50px);
+}
+
+.c4 {
+  padding-right: 50px;
+}
+
+.c3 {
+  overflow: auto;
+  -webkit-overflow-scrolling: touch;
+  max-height: 100%;
+}
+
+.c5 {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+}
+
+.c6 {
+  line-height: 1.5;
+  margin: 2px 0;
+  cursor: pointer;
+  font-size: 24px;
+  border-bottom: 2.4px solid #2F2F36;
+  padding: 8px 0 13px;
+}
+
+.c6 a,
+.c6 div {
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  color: #71737e;
+  display: block;
+}
+
+.c7 {
+  margin: 10px 0;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+}
+
+.c8 {
+  color: #FFF;
+  font-size: 14px;
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  margin: 12px 0;
+}
+
+.c1 {
+  word-break: break-word;
+}
+
+.c2 {
+  word-break: break-word;
+}
+
+@media (min-width:1050px) {
+  .c0 {
+    display: none;
+  }
+}
+
+@media (min-width:1050px) {
+  .c4 {
+    height: 54px;
+  }
+}
+
+@media (min-width:1050px) {
+  .c3 {
+    padding-bottom: 20px;
+  }
+}
+
+@media (min-width:768px) {
+
+}
+
+@media (min-width:1050px) {
+
+}
+
+<div
+    className="c0"
   >
     <div
       style={
@@ -1214,10 +1846,10 @@ Array [
     >
       <div>
         <div
-          className="sc-iCoGMd"
+          className=""
         >
           <h2
-            className="sc-dIsUp oQOye"
+            className="c1"
             id="headerTitle"
             style={
               Object {
@@ -1231,7 +1863,7 @@ Array [
             
           </h2>
           <h1
-            className="sc-bqGGPW xSSLN"
+            className="c2"
             id="headerSubtitle"
             style={
               Object {
@@ -1315,16 +1947,16 @@ Array [
       }
     >
       <div
-        className="sc-pNWdM jxBANf"
+        className="c3"
       >
         <div
-          className="sc-fujyAs bAoQiS"
+          className="c4"
         >
           <div
-            className="sc-iCoGMd"
+            className=""
           >
             <h2
-              className="sc-dIsUp oQOye"
+              className="c1"
               id="headerTitle"
               style={
                 Object {
@@ -1338,7 +1970,7 @@ Array [
               
             </h2>
             <h1
-              className="sc-bqGGPW xSSLN"
+              className="c2"
               id="headerSubtitle"
               style={
                 Object {
@@ -1356,10 +1988,10 @@ Array [
           </div>
         </div>
         <div
-          className="sc-jrsJWt iycXgC"
+          className="c5"
         >
           <div
-            className="sc-kEqXSa fLscgW"
+            className="c6"
           >
             <a
               href="/project/"
@@ -1370,7 +2002,7 @@ Array [
             </a>
           </div>
           <div
-            className="sc-kEqXSa fLscgW"
+            className="c6"
           >
             <a
               href="/user/"
@@ -1381,7 +2013,7 @@ Array [
             </a>
           </div>
           <div
-            className="sc-kEqXSa fLscgW"
+            className="c6"
           >
             <a
               href="/project/1"
@@ -1392,7 +2024,7 @@ Array [
             </a>
           </div>
           <div
-            className="sc-kEqXSa fLscgW"
+            className="c6"
           >
             <a
               href="/project/1/datasource"
@@ -1403,7 +2035,7 @@ Array [
             </a>
           </div>
           <div
-            className="sc-kEqXSa fLscgW"
+            className="c6"
           >
             <a
               href="/project/1/user"
@@ -1414,7 +2046,7 @@ Array [
             </a>
           </div>
           <div
-            className="sc-kEqXSa fLscgW"
+            className="c6"
           >
             <a
               href="/project/1/content"
@@ -1425,7 +2057,7 @@ Array [
             </a>
           </div>
           <div
-            className="sc-kEqXSa fLscgW"
+            className="c6"
           >
             <a
               href="/project/1/templates"
@@ -1437,10 +2069,10 @@ Array [
           </div>
         </div>
         <div
-          className="sc-jrsJWt iycXgC"
+          className="c5"
         >
           <div
-            className="sc-kEqXSa fLscgW"
+            className="c6"
           >
             <a
               href="/settings"
@@ -1451,7 +2083,7 @@ Array [
             </a>
           </div>
           <div
-            className="sc-kEqXSa fLscgW"
+            className="c6"
           >
             <div
               id="logoutNavBtn"
@@ -1462,10 +2094,10 @@ Array [
           </div>
         </div>
         <div
-          className="sc-iqAclL kRvzpQ"
+          className="c7"
         >
           <a
-            className="sc-crzoAE feDwqK"
+            className="c8"
             href="/"
             id="aboutNavBtn"
             onClick={[Function]}
@@ -1475,7 +2107,7 @@ Array [
             About Schema CMS
           </a>
           <a
-            className="sc-crzoAE feDwqK"
+            className="c8"
             href="https://github.com/schemadesign/schema_cms/blob/master/backend/app/docs/public_api/api_calls.md"
             id="apiNavBtn"
             onClick={[Function]}
@@ -1485,7 +2117,7 @@ Array [
             API Doc
           </a>
           <a
-            className="sc-crzoAE feDwqK"
+            className="c8"
             href="https://github.com/schemadesign/schema_cms"
             id="repositoryNavBtn"
             onClick={[Function]}
@@ -1542,14 +2174,66 @@ Array [
       </button>
     </div>
   </div>,
-  <div
-    className="sc-iwajpm fLqmfQ"
+  .c0 {
+  display: none;
+}
+
+.c1 {
+  margin-right: 20px;
+  overflow: hidden;
+}
+
+.c2 {
+  color: #FFF;
+}
+
+.c3 {
+  color: #FFF;
+}
+
+@media (min-width:1050px) {
+
+}
+
+@media (min-width:1050px) {
+
+}
+
+@media (min-width:1050px) {
+
+}
+
+@media (min-width:768px) {
+
+}
+
+@media (min-width:1050px) {
+  .c0 {
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: justify;
+    -webkit-justify-content: space-between;
+    -ms-flex-pack: justify;
+    justify-content: space-between;
+    -webkit-align-items: center;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    margin: 60px 0 40px 0;
+    min-height: 63px;
+  }
+}
+
+<div
+    className="c0"
   >
     <div
-      className="sc-cxNHIi bWfpfY"
+      className="c1"
     >
       <h2
-        className="sc-lmgQwP dRdhPq"
+        className="c2"
         id="desktopHeaderTitle"
         style={
           Object {
@@ -1563,7 +2247,7 @@ Array [
         
       </h2>
       <h1
-        className="sc-iJCRrE crxtKH"
+        className="c3"
         id="desktopHeaderSubtitle"
         style={
           Object {
@@ -1580,11 +2264,39 @@ Array [
       </h1>
     </div>
     <div
-      className="sc-giAqHp"
+      className=""
     />
   </div>,
-  <div
-    className="sc-hKFxyN drRJCW"
+  .c0 {
+  color: #f21e29;
+  font-weight: 200;
+  text-align: center;
+  padding: 50px 10px;
+  font-size: 20px;
+}
+
+@media (min-width:1050px) {
+
+}
+
+@media (min-width:1050px) {
+
+}
+
+@media (min-width:1050px) {
+
+}
+
+@media (min-width:768px) {
+
+}
+
+@media (min-width:1050px) {
+
+}
+
+<div
+    className="c0"
     type="page"
   >
     An Error occured

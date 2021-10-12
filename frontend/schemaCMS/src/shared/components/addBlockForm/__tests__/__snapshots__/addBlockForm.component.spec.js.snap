@@ -1,14 +1,162 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`AddBlockForm: Component should render a block template with added elements 1`] = `
+.c7 {
+  height: 120px;
+}
+
+.c9 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+  -webkit-flex-wrap: wrap;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  width: 100%;
+}
+
+.c8 {
+  bottom: 0;
+  width: 100%;
+  padding: 10px 0 36px;
+  position: fixed;
+  width: calc(100% - 40px);
+  z-index: 999;
+  background-image: linear-gradient( to top, #000,#000 30%, rgba(0,0,0,0) );
+}
+
+.c10 {
+  width: calc(50% - 5px);
+  max-width: 240px;
+}
+
+.c5 {
+  text-align: right;
+}
+
+.c1 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  padding-bottom: 30px;
+  padding-right: 30px;
+  position: relative;
+  font-size: 18px;
+  cursor: pointer;
+}
+
+.c1 label {
+  margin-bottom: 2px;
+}
+
+.c2 {
+  position: absolute;
+  right: 0;
+  top: 5px;
+}
+
+.c3 {
+  color: #71737e;
+  text-align: center;
+  padding-bottom: 20px;
+  min-height: 43px;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+}
+
+.c4 {
+  width: 33%;
+}
+
+@media (min-width:1050px) {
+  .c0 {
+    margin-top: -20px;
+  }
+}
+
+@media (min-width:1050px) {
+  .c7 {
+    height: 100px;
+  }
+}
+
+@media (min-width:1050px) {
+  .c9 {
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+  }
+}
+
+@media (min-width:1050px) {
+  .c8 {
+    position: fixed;
+    width: calc(100% - 40px);
+    z-index: 999;
+    background-image: linear-gradient( to top, #000,#000 30%, rgba(0,0,0,0) );
+    padding: 10px 0 36px;
+    width: 1000px;
+  }
+}
+
+@media (min-width:1050px) {
+  .c10 {
+    width: 240px;
+  }
+}
+
+@media (min-width:1050px) {
+  .c6 {
+    display: block;
+  }
+}
+
+@media (min-width:1050px) {
+  .c3 {
+    margin-top: 0px;
+    padding-bottom: 40px;
+  }
+}
+
+@media (min-width:768px) {
+
+}
+
 <form
   onSubmit={[Function]}
 >
   <div
-    className="sc-bdnxRM jfLXjd"
+    className="c0"
   >
     <div
-      className="sc-cxNHIi cATuCG"
+      className="c1"
       onClick={[Function]}
     >
       <label
@@ -180,7 +328,7 @@ exports[`AddBlockForm: Component should render a block template with added eleme
         </div>
       </div>
       <div
-        className="sc-lmgQwP lkLtCK"
+        className="c2"
       >
         <svg
           style={
@@ -201,21 +349,21 @@ exports[`AddBlockForm: Component should render a block template with added eleme
     </div>
   </div>
   <div
-    className="sc-carFqZ gtxdrU"
+    className="c3"
   >
     <div
-      className="sc-iTVJFM jSBkhj"
+      className="c4"
       id="tagsCounter"
     />
     0 Elements
     <div
-      className="sc-iTVJFM jSBkhj"
+      className="c4"
     >
       <div
-        className="sc-dlMDgC dfUbDZ"
+        className="c5"
       >
         <div
-          className="sc-pNWdM gVThct"
+          className="c6"
         >
           <button
             disabled={false}
@@ -269,16 +417,16 @@ exports[`AddBlockForm: Component should render a block template with added eleme
      
   </span>
   <div
-    className="sc-eCApnc xRYiU"
+    className="c7"
   >
     <div
-      className="sc-gKAaRy VlDwf"
+      className="c8"
     >
       <div
-        className="sc-jSFjdj ervdSK"
+        className="c9"
       >
         <button
-          className="sc-iCoGMd iGTlng"
+          className="c10"
           disabled={false}
           id="backBtn"
           onClick={[Function]}
@@ -306,7 +454,7 @@ exports[`AddBlockForm: Component should render a block template with added eleme
           Back
         </button>
         <button
-          className="sc-iCoGMd iGTlng"
+          className="c10"
           disabled={true}
           id="addBlock"
           style={
@@ -339,14 +487,119 @@ exports[`AddBlockForm: Component should render a block template with added eleme
 `;
 
 exports[`AddBlockForm: Component should render correctly 1`] = `
+.c3 {
+  height: 120px;
+}
+
+.c5 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+  -webkit-flex-wrap: wrap;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  width: 100%;
+}
+
+.c4 {
+  bottom: 0;
+  width: 100%;
+  padding: 10px 0 36px;
+  position: fixed;
+  width: calc(100% - 40px);
+  z-index: 999;
+  background-image: linear-gradient( to top, #000,#000 30%, rgba(0,0,0,0) );
+}
+
+.c6 {
+  width: calc(50% - 5px);
+  max-width: 240px;
+}
+
+.c1 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  padding-bottom: 30px;
+  padding-right: 30px;
+  position: relative;
+  font-size: 18px;
+  cursor: pointer;
+}
+
+.c1 label {
+  margin-bottom: 2px;
+}
+
+.c2 {
+  position: absolute;
+  right: 0;
+  top: 5px;
+}
+
+@media (min-width:1050px) {
+  .c0 {
+    margin-top: -20px;
+  }
+}
+
+@media (min-width:1050px) {
+  .c3 {
+    height: 100px;
+  }
+}
+
+@media (min-width:1050px) {
+  .c5 {
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+  }
+}
+
+@media (min-width:1050px) {
+  .c4 {
+    position: fixed;
+    width: calc(100% - 40px);
+    z-index: 999;
+    background-image: linear-gradient( to top, #000,#000 30%, rgba(0,0,0,0) );
+    padding: 10px 0 36px;
+    width: 1000px;
+  }
+}
+
+@media (min-width:1050px) {
+  .c6 {
+    width: 240px;
+  }
+}
+
+@media (min-width:768px) {
+
+}
+
 <form
   onSubmit={[Function]}
 >
   <div
-    className="sc-bdnxRM jfLXjd"
+    className="c0"
   >
     <div
-      className="sc-cxNHIi cATuCG"
+      className="c1"
       onClick={[Function]}
     >
       <label
@@ -517,7 +770,7 @@ exports[`AddBlockForm: Component should render correctly 1`] = `
         </div>
       </div>
       <div
-        className="sc-lmgQwP lkLtCK"
+        className="c2"
       >
         <svg
           style={
@@ -538,16 +791,16 @@ exports[`AddBlockForm: Component should render correctly 1`] = `
     </div>
   </div>
   <div
-    className="sc-eCApnc xRYiU"
+    className="c3"
   >
     <div
-      className="sc-gKAaRy VlDwf"
+      className="c4"
     >
       <div
-        className="sc-jSFjdj ervdSK"
+        className="c5"
       >
         <button
-          className="sc-iCoGMd iGTlng"
+          className="c6"
           disabled={false}
           id="backBtn"
           onClick={[Function]}
@@ -575,7 +828,7 @@ exports[`AddBlockForm: Component should render correctly 1`] = `
           Back
         </button>
         <button
-          className="sc-iCoGMd iGTlng"
+          className="c6"
           disabled={true}
           id="addBlock"
           style={

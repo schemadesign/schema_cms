@@ -1,6 +1,84 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`PageBlock: Component should render correctly 1`] = `
+.c0 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  max-width: calc(100% - 90px);
+  font-size: 18px;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+}
+
+.c1 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+}
+
+.c5 {
+  color: #71737e;
+  max-width: 240px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: none;
+}
+
+.c2 {
+  position: relative;
+  max-width: 100%;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  position: relative;
+}
+
+.c3 {
+  position: relative;
+  top: 0;
+  left: 0;
+  color: #f21e29;
+  font-size: 14px;
+  font-weight: normal;
+}
+
+.c4 {
+  cursor: pointer;
+}
+
+@media (min-width:1050px) {
+  .c0 {
+    max-width: calc(100% - 350px);
+  }
+}
+
+@media (min-width:1050px) {
+  .c5 {
+    display: block;
+  }
+}
+
 <div
   style={
     Object {
@@ -25,17 +103,17 @@ exports[`PageBlock: Component should render correctly 1`] = `
     }
   >
     <div
-      className="sc-bdnxRM hwdmwM"
+      className="c0"
     >
       <div
-        className="sc-dlnjwi iLDZtA"
+        className="c1"
       >
         <div>
           icon
         </div>
       </div>
       <div
-        className="sc-eCApnc eyPtca"
+        className="c2"
       >
         <div
           style={
@@ -114,15 +192,15 @@ exports[`PageBlock: Component should render correctly 1`] = `
           </div>
         </div>
         <div
-          className="sc-gKAaRy lpckLd"
+          className="c3"
           id="formikFieldPath.0.nameError"
         />
       </div>
       <div
-        className="sc-dlnjwi iLDZtA"
+        className="c1"
       >
         <label
-          className="sc-ezzafa hEShb"
+          className="c4"
           htmlFor="formikFieldPath.0.name"
         >
           <svg
@@ -165,7 +243,7 @@ exports[`PageBlock: Component should render correctly 1`] = `
       </div>
     </div>
     <div
-      className="sc-hKFxyN jqwmqy"
+      className="c5"
       title="type"
     >
       type

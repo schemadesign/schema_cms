@@ -2,7 +2,76 @@
 
 exports[`BlockTemplateElement: Component should render correctly 1`] = `
 Array [
-  <div
+  .c0 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  max-width: calc(100% - 90px);
+}
+
+.c1 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+}
+
+.c2 {
+  margin: 0 25px 0 5px;
+  display: none;
+}
+
+.c3 {
+  position: relative;
+  max-width: 100%;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  position: relative;
+}
+
+.c4 {
+  position: relative;
+  top: 0;
+  left: 0;
+  color: #f21e29;
+  font-size: 14px;
+  font-weight: normal;
+}
+
+.c5 {
+  cursor: pointer;
+}
+
+@media (min-width:1050px) {
+  .c0 {
+    max-width: calc(100% - 170px);
+  }
+}
+
+@media (min-width:1050px) {
+  .c2 {
+    display: block;
+  }
+}
+
+<div
     style={
       Object {
         "alignItems": "center",
@@ -17,16 +86,16 @@ Array [
     }
   >
     <div
-      className="sc-gtsrHT jgfGJS"
+      className="c0"
     >
       <div
-        className="sc-dlnjwi iLDZtA"
+        className="c1"
       >
         <span>
           icon
         </span>
         <div
-          className="sc-iCoGMd hgSNtT"
+          className="c2"
         >
           <svg
             style={
@@ -46,7 +115,7 @@ Array [
         </div>
       </div>
       <div
-        className="sc-pNWdM gClWHU"
+        className="c3"
       >
         <div
           style={
@@ -128,15 +197,15 @@ Array [
           </div>
         </div>
         <div
-          className="sc-kEqXSa eYbLUT"
+          className="c4"
           id="elements.0.nameError"
         />
       </div>
       <div
-        className="sc-dlnjwi iLDZtA"
+        className="c1"
       >
         <label
-          className="sc-iemWCZ kjjQur"
+          className="c5"
           htmlFor="elements.0.name"
         >
           <svg
@@ -193,7 +262,15 @@ Array [
       }
     />
   </div>,
-  <div
+  @media (min-width:1050px) {
+
+}
+
+@media (min-width:1050px) {
+
+}
+
+<div
     style={
       Object {
         "backgroundColor": "#000",

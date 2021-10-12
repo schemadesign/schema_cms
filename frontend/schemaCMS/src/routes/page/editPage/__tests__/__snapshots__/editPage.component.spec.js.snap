@@ -1,11 +1,599 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`EditPage: Component should render correctly 1`] = `
+.c0 {
+  font-weight: normal;
+  width: calc(100% - 50px);
+}
+
+.c4 {
+  padding-right: 50px;
+}
+
+.c3 {
+  overflow: auto;
+  -webkit-overflow-scrolling: touch;
+  max-height: 100%;
+}
+
+.c5 {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+}
+
+.c6 {
+  line-height: 1.5;
+  margin: 2px 0;
+  cursor: pointer;
+  font-size: 24px;
+  border-bottom: 2.4px solid #2F2F36;
+  padding: 8px 0 13px;
+}
+
+.c6 a,
+.c6 div {
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  color: #71737e;
+  display: block;
+}
+
+.c7 {
+  margin: 10px 0;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+}
+
+.c8 {
+  color: #FFF;
+  font-size: 14px;
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  margin: 12px 0;
+}
+
+.c1 {
+  word-break: break-word;
+}
+
+.c2 {
+  word-break: break-word;
+}
+
+.c50 {
+  height: 120px;
+}
+
+.c52 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+  -webkit-flex-wrap: wrap;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  width: 100%;
+}
+
+.c51 {
+  bottom: 0;
+  width: 100%;
+  padding: 10px 0 36px;
+  position: fixed;
+  width: calc(100% - 40px);
+  z-index: 999;
+  background-image: linear-gradient( to top, #000,#000 30%, rgba(0,0,0,0) );
+}
+
+.c54 {
+  width: calc(50% - 5px);
+  max-width: 240px;
+}
+
+.c53 {
+  width: calc(50% - 5px);
+  max-width: 240px;
+  background-color: #1d1d20;
+  color: #FFF;
+  border-radius: 30px;
+  text-align: center;
+  line-height: 30px;
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  font-size: 20px;
+  padding: 9px 0;
+}
+
+.c13 {
+  padding-bottom: 50px;
+}
+
+.c31 {
+  position: relative;
+  z-index: 999;
+}
+
+.c41 {
+  margin-top: 30px;
+  border-top: 2px solid #2F2F36;
+  padding-top: 15px;
+}
+
+.c42 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-align-items: start;
+  -webkit-box-align: start;
+  -ms-flex-align: start;
+  align-items: start;
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+  padding-bottom: 15px;
+  position: relative;
+}
+
+.c45 {
+  padding-right: 10px;
+}
+
+.c44 {
+  padding-left: 10px;
+  max-width: 100%;
+}
+
+.c43 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  max-width: 100%;
+  padding-right: 10px;
+}
+
+.c49 {
+  margin-top: 15px;
+}
+
+.c22 {
+  cursor: pointer;
+}
+
+.c46 {
+  color: #71737e;
+  min-width: 100%;
+}
+
+.c18 {
+  position: relative;
+}
+
+.c21 {
+  position: absolute;
+  right: 0;
+  top: 0;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+}
+
+.c24 {
+  position: relative;
+}
+
+.c36 {
+  text-align: right;
+}
+
+.c47 {
+  padding: 0 10px;
+}
+
+.c47:before {
+  content: '|';
+  display: inline;
+}
+
+.c39 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  cursor: move;
+  touch-action: none;
+}
+
+.c19 {
+  position: relative;
+  max-width: 100%;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  position: relative;
+}
+
+.c25 {
+  position: relative;
+}
+
+.c26 {
+  margin-top: 0;
+}
+
+.c20 {
+  position: relative;
+  top: 0;
+  left: 0;
+  color: #f21e29;
+  font-size: 14px;
+  font-weight: normal;
+}
+
+.c14 {
+  display: none;
+}
+
+.c15 {
+  margin-right: 20px;
+  overflow: hidden;
+}
+
+.c16 {
+  color: #FFF;
+}
+
+.c17 {
+  color: #FFF;
+}
+
+.c32 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  padding-bottom: 30px;
+  padding-right: 30px;
+  position: relative;
+  font-size: 18px;
+  cursor: pointer;
+}
+
+.c32 label {
+  margin-bottom: 2px;
+}
+
+.c33 {
+  position: absolute;
+  right: 0;
+  top: 5px;
+}
+
+.c37 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  max-width: calc(100% - 90px);
+  font-size: 18px;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+}
+
+.c38 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+}
+
+.c40 {
+  color: #71737e;
+  max-width: 240px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: none;
+}
+
+.c34 {
+  color: #71737e;
+  text-align: center;
+  padding-bottom: 20px;
+  min-height: 43px;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+}
+
+.c35 {
+  width: 33%;
+}
+
+.c27 {
+  padding-bottom: 30px;
+}
+
+.c29 {
+  font-size: 15px;
+  padding: 20px 0 5px;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  width: 100%;
+  overflow: hidden;
+}
+
+.c30 {
+  color: #71737e;
+}
+
+.c28 {
+  margin-top: 10px;
+  padding: 0 20px 20px;
+}
+
+.c23 {
+  cursor: pointer;
+  position: relative;
+}
+
+.c48 {
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  white-space: nowrap;
+  cursor: pointer;
+  color: #FFF;
+  -webkit-transition: border 400ms;
+  transition: border 400ms;
+  border-bottom: 1px solid transparent;
+}
+
+.c48:hover {
+  border-bottom: 1px solid #FFF;
+}
+
+.c9 {
+  display: none;
+}
+
+.c12 {
+  color: #FFF;
+  width: 100%;
+}
+
+.c10 {
+  color: #a6a7aa;
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  width: 100%;
+}
+
+.c10:hover {
+  color: #FFF;
+}
+
+.c11 {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  max-width: 230px;
+}
+
+@media (min-width:1050px) {
+  .c0 {
+    display: none;
+  }
+}
+
+@media (min-width:1050px) {
+  .c4 {
+    height: 54px;
+  }
+}
+
+@media (min-width:1050px) {
+  .c3 {
+    padding-bottom: 20px;
+  }
+}
+
+@media (min-width:768px) {
+
+}
+
+@media (min-width:1050px) {
+  .c50 {
+    height: 100px;
+  }
+}
+
+@media (min-width:1050px) {
+  .c52 {
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+  }
+}
+
+@media (min-width:1050px) {
+  .c51 {
+    position: fixed;
+    width: calc(100% - 40px);
+    z-index: 999;
+    background-image: linear-gradient( to top, #000,#000 30%, rgba(0,0,0,0) );
+    padding: 10px 0 36px;
+    width: 1000px;
+  }
+}
+
+@media (min-width:1050px) {
+  .c54 {
+    width: 240px;
+  }
+}
+
+@media (min-width:1050px) {
+  .c53 {
+    width: 240px;
+  }
+}
+
+@media (min-width:480px) {
+  .c42 {
+    -webkit-flex-direction: row;
+    -ms-flex-direction: row;
+    flex-direction: row;
+    -webkit-align-items: center;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+  }
+}
+
+@media (min-width:480px) {
+  .c43 {
+    padding-right: 40px;
+  }
+}
+
+@media (min-width:480px) {
+  .c49 {
+    margin-top: 0;
+  }
+}
+
+@media (min-width:1050px) {
+  .c24 {
+    display: none;
+  }
+}
+
+@media (min-width:1050px) {
+  .c26 {
+    margin-top: 0;
+  }
+}
+
+@media (min-width:1050px) {
+  .c14 {
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: justify;
+    -webkit-justify-content: space-between;
+    -ms-flex-pack: justify;
+    justify-content: space-between;
+    -webkit-align-items: center;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    margin: 60px 0 40px 0;
+    min-height: 63px;
+  }
+}
+
+@media (min-width:1050px) {
+  .c37 {
+    max-width: calc(100% - 350px);
+  }
+}
+
+@media (min-width:1050px) {
+  .c40 {
+    display: block;
+  }
+}
+
+@media (min-width:1050px) {
+  .c34 {
+    margin-top: 0px;
+    padding-bottom: 40px;
+  }
+}
+
+@media (min-width:1050px) {
+  .c9 {
+    display: block;
+  }
+}
+
 <div
-  className="sc-bdnxRM"
+  className=""
 >
   <div
-    className="sc-gtsrHT ftlQGq"
+    className="c0"
   >
     <div
       style={
@@ -22,10 +610,10 @@ exports[`EditPage: Component should render correctly 1`] = `
     >
       <div>
         <div
-          className="sc-dlnjwi"
+          className=""
         >
           <h2
-            className="sc-pNWdM lggCCp"
+            className="c1"
             id="headerTitle"
             style={
               Object {
@@ -39,7 +627,7 @@ exports[`EditPage: Component should render correctly 1`] = `
             Page
           </h2>
           <h1
-            className="sc-jrsJWt kjUKXP"
+            className="c2"
             id="headerSubtitle"
             style={
               Object {
@@ -123,16 +711,16 @@ exports[`EditPage: Component should render correctly 1`] = `
       }
     >
       <div
-        className="sc-eCApnc iftERp"
+        className="c3"
       >
         <div
-          className="sc-hKFxyN jZkkRy"
+          className="c4"
         >
           <div
-            className="sc-dlnjwi"
+            className=""
           >
             <h2
-              className="sc-pNWdM lggCCp"
+              className="c1"
               id="headerTitle"
               style={
                 Object {
@@ -146,7 +734,7 @@ exports[`EditPage: Component should render correctly 1`] = `
               Page
             </h2>
             <h1
-              className="sc-jrsJWt kjUKXP"
+              className="c2"
               id="headerSubtitle"
               style={
                 Object {
@@ -164,10 +752,10 @@ exports[`EditPage: Component should render correctly 1`] = `
           </div>
         </div>
         <div
-          className="sc-jSFjdj suRwv"
+          className="c5"
         >
           <div
-            className="sc-gKAaRy kJUVQc"
+            className="c6"
           >
             <a
               href="/project/"
@@ -178,7 +766,7 @@ exports[`EditPage: Component should render correctly 1`] = `
             </a>
           </div>
           <div
-            className="sc-gKAaRy kJUVQc"
+            className="c6"
           >
             <a
               href="/user/"
@@ -189,7 +777,7 @@ exports[`EditPage: Component should render correctly 1`] = `
             </a>
           </div>
           <div
-            className="sc-gKAaRy kJUVQc"
+            className="c6"
           >
             <a
               href="/project/1"
@@ -200,7 +788,7 @@ exports[`EditPage: Component should render correctly 1`] = `
             </a>
           </div>
           <div
-            className="sc-gKAaRy kJUVQc"
+            className="c6"
           >
             <a
               href="/project/1/datasource"
@@ -211,7 +799,7 @@ exports[`EditPage: Component should render correctly 1`] = `
             </a>
           </div>
           <div
-            className="sc-gKAaRy kJUVQc"
+            className="c6"
           >
             <a
               href="/project/1/user"
@@ -222,7 +810,7 @@ exports[`EditPage: Component should render correctly 1`] = `
             </a>
           </div>
           <div
-            className="sc-gKAaRy kJUVQc"
+            className="c6"
           >
             <a
               href="/project/1/content"
@@ -233,7 +821,7 @@ exports[`EditPage: Component should render correctly 1`] = `
             </a>
           </div>
           <div
-            className="sc-gKAaRy kJUVQc"
+            className="c6"
           >
             <a
               href="/project/1/templates"
@@ -245,10 +833,10 @@ exports[`EditPage: Component should render correctly 1`] = `
           </div>
         </div>
         <div
-          className="sc-jSFjdj suRwv"
+          className="c5"
         >
           <div
-            className="sc-gKAaRy kJUVQc"
+            className="c6"
           >
             <a
               href="/settings"
@@ -259,7 +847,7 @@ exports[`EditPage: Component should render correctly 1`] = `
             </a>
           </div>
           <div
-            className="sc-gKAaRy kJUVQc"
+            className="c6"
           >
             <div
               id="logoutNavBtn"
@@ -270,10 +858,10 @@ exports[`EditPage: Component should render correctly 1`] = `
           </div>
         </div>
         <div
-          className="sc-iCoGMd gEejpB"
+          className="c7"
         >
           <a
-            className="sc-fujyAs fjPQTs"
+            className="c8"
             href="/"
             id="aboutNavBtn"
             onClick={[Function]}
@@ -283,7 +871,7 @@ exports[`EditPage: Component should render correctly 1`] = `
             About Schema CMS
           </a>
           <a
-            className="sc-fujyAs fjPQTs"
+            className="c8"
             href="https://github.com/schemadesign/schema_cms/blob/master/backend/app/docs/public_api/api_calls.md"
             id="apiNavBtn"
             onClick={[Function]}
@@ -293,7 +881,7 @@ exports[`EditPage: Component should render correctly 1`] = `
             API Doc
           </a>
           <a
-            className="sc-fujyAs fjPQTs"
+            className="c8"
             href="https://github.com/schemadesign/schema_cms"
             id="repositoryNavBtn"
             onClick={[Function]}
@@ -351,7 +939,7 @@ exports[`EditPage: Component should render correctly 1`] = `
     </div>
   </div>
   <div
-    className="sc-gIvpjk dzWPdq"
+    className="c9"
   >
     <div
       style={
@@ -373,7 +961,7 @@ exports[`EditPage: Component should render correctly 1`] = `
         }
       >
         <a
-          className="sc-fHCHyC ibaVOo"
+          className="c10"
           href="/project/1/"
           onClick={[Function]}
           style={
@@ -395,7 +983,7 @@ exports[`EditPage: Component should render correctly 1`] = `
             Project
           </span>
           <h3
-            className="sc-dtLLSn cuthHN"
+            className="c11"
             style={
               Object {
                 "fontFamily": "Inter, \\"Helvetica Neue\\", Helvetica, Arial, sans-serif",
@@ -431,7 +1019,7 @@ exports[`EditPage: Component should render correctly 1`] = `
         }
       >
         <a
-          className="sc-fHCHyC ibaVOo"
+          className="c10"
           href="/project/1/content"
           onClick={[Function]}
           style={
@@ -453,7 +1041,7 @@ exports[`EditPage: Component should render correctly 1`] = `
             Tab
           </span>
           <h3
-            className="sc-dtLLSn cuthHN"
+            className="c11"
             style={
               Object {
                 "fontFamily": "Inter, \\"Helvetica Neue\\", Helvetica, Arial, sans-serif",
@@ -489,7 +1077,7 @@ exports[`EditPage: Component should render correctly 1`] = `
         }
       >
         <a
-          className="sc-fHCHyC ibaVOo"
+          className="c10"
           href="/section/sectionId"
           onClick={[Function]}
           style={
@@ -511,7 +1099,7 @@ exports[`EditPage: Component should render correctly 1`] = `
             Section
           </span>
           <h3
-            className="sc-dtLLSn cuthHN"
+            className="c11"
             style={
               Object {
                 "fontFamily": "Inter, \\"Helvetica Neue\\", Helvetica, Arial, sans-serif",
@@ -547,7 +1135,7 @@ exports[`EditPage: Component should render correctly 1`] = `
         }
       >
         <div
-          className="sc-euEtCV gydHMb"
+          className="c12"
         >
           <span
             style={
@@ -560,7 +1148,7 @@ exports[`EditPage: Component should render correctly 1`] = `
             Page
           </span>
           <h3
-            className="sc-dtLLSn cuthHN"
+            className="c11"
             style={
               Object {
                 "fontFamily": "Inter, \\"Helvetica Neue\\", Helvetica, Arial, sans-serif",
@@ -581,16 +1169,16 @@ exports[`EditPage: Component should render correctly 1`] = `
     onSubmit={[Function]}
   >
     <div
-      className="sc-fKgJPI jVWYei"
+      className="c13"
     >
       <div
-        className="sc-jNnpgg gvtbDi"
+        className="c14"
       >
         <div
-          className="sc-dPaNzc gqJUzf"
+          className="c15"
         >
           <h2
-            className="sc-bBjRSN eIzqSr"
+            className="c16"
             id="desktopHeaderTitle"
             style={
               Object {
@@ -604,7 +1192,7 @@ exports[`EditPage: Component should render correctly 1`] = `
             Page
           </h2>
           <h1
-            className="sc-cOifOu kCNQcv"
+            className="c17"
             id="desktopHeaderSubtitle"
             style={
               Object {
@@ -618,10 +1206,10 @@ exports[`EditPage: Component should render correctly 1`] = `
             }
           >
             <div
-              className="sc-jJMGnK loiOsv"
+              className="c18"
             >
               <div
-                className="sc-iBzEeX dxtdct"
+                className="c19"
               >
                 <div
                   style={
@@ -705,15 +1293,15 @@ exports[`EditPage: Component should render correctly 1`] = `
                   </div>
                 </div>
                 <div
-                  className="sc-cTJkRt jwMeGW"
+                  className="c20"
                   id="nameError"
                 />
               </div>
               <div
-                className="sc-hiKfDv kHjhCK"
+                className="c21"
               >
                 <label
-                  className="sc-kLojOw hwkXIC"
+                  className="c22"
                   htmlFor="name"
                 >
                   <svg
@@ -733,7 +1321,7 @@ exports[`EditPage: Component should render correctly 1`] = `
                   </svg>
                 </label>
                 <div
-                  className="sc-GvhzO gtRejq"
+                  className="c23"
                   id="pageCopyButton"
                   onClick={[Function]}
                 >
@@ -757,14 +1345,14 @@ exports[`EditPage: Component should render correctly 1`] = `
           </h1>
         </div>
         <div
-          className="sc-Arkif"
+          className=""
         />
       </div>
       <div
-        className="sc-gXfVKN esLCuQ"
+        className="c24"
       >
         <div
-          className="sc-iBzEeX hkiMmz"
+          className="c25"
         >
           <div
             style={
@@ -836,7 +1424,7 @@ exports[`EditPage: Component should render correctly 1`] = `
                 }
               >
                 <div
-                  className="sc-efHYUO bmhoTT"
+                  className="c26"
                 >
                   <svg
                     style={
@@ -858,13 +1446,13 @@ exports[`EditPage: Component should render correctly 1`] = `
             </div>
           </div>
           <div
-            className="sc-cTJkRt jwMeGW"
+            className="c20"
             id="nameError"
           />
         </div>
       </div>
       <div
-        className="sc-iBzEeX hkiMmz"
+        className="c25"
       >
         <div
           style={
@@ -936,7 +1524,7 @@ exports[`EditPage: Component should render correctly 1`] = `
               }
             >
               <div
-                className="sc-efHYUO bmhoTT"
+                className="c26"
               >
                 <svg
                   style={
@@ -958,12 +1546,12 @@ exports[`EditPage: Component should render correctly 1`] = `
           </div>
         </div>
         <div
-          className="sc-cTJkRt jwMeGW"
+          className="c20"
           id="displayNameError"
         />
       </div>
       <div
-        className="sc-iBzEeX hkiMmz"
+        className="c25"
       >
         <div
           style={
@@ -1053,7 +1641,7 @@ exports[`EditPage: Component should render correctly 1`] = `
               }
             >
               <div
-                className="sc-efHYUO bmhoTT"
+                className="c26"
               >
                 <svg
                   style={
@@ -1075,12 +1663,12 @@ exports[`EditPage: Component should render correctly 1`] = `
           </div>
         </div>
         <div
-          className="sc-cTJkRt jwMeGW"
+          className="c20"
           id="descriptionError"
         />
       </div>
       <div
-        className="sc-iBzEeX hkiMmz"
+        className="c25"
       >
         <div
           style={
@@ -1152,7 +1740,7 @@ exports[`EditPage: Component should render correctly 1`] = `
               }
             >
               <div
-                className="sc-efHYUO bmhoTT"
+                className="c26"
               >
                 <svg
                   style={
@@ -1174,12 +1762,12 @@ exports[`EditPage: Component should render correctly 1`] = `
           </div>
         </div>
         <div
-          className="sc-cTJkRt jwMeGW"
+          className="c20"
           id="keywordsError"
         />
       </div>
       <div
-        className="sc-iBzEeX hkiMmz"
+        className="c25"
       >
         <div
           style={
@@ -1251,7 +1839,7 @@ exports[`EditPage: Component should render correctly 1`] = `
               }
             >
               <div
-                className="sc-efHYUO bmhoTT"
+                className="c26"
               >
                 <svg
                   style={
@@ -1273,7 +1861,7 @@ exports[`EditPage: Component should render correctly 1`] = `
           </div>
         </div>
         <div
-          className="sc-cTJkRt jwMeGW"
+          className="c20"
           id="linkError"
         />
       </div>
@@ -1294,24 +1882,24 @@ exports[`EditPage: Component should render correctly 1`] = `
         Tags
       </label>
       <div
-        className="sc-dsXzNU eFRGYb"
+        className="c27"
       >
         <div
-          className="sc-jQAxuV hqzgwT"
+          className="c28"
         >
           <div
-            className="sc-daBunf blpRzf"
+            className="c29"
             title="Colors"
           >
             <span
-              className="sc-jUfyBS glHMid"
+              className="c30"
             >
               Category: 
             </span>
             Colors
           </div>
           <div
-            className="sc-fcmMJX"
+            className=""
           >
             <div
               className=" css-2b097c-container"
@@ -1409,18 +1997,18 @@ exports[`EditPage: Component should render correctly 1`] = `
             </div>
           </div>
           <div
-            className="sc-daBunf blpRzf"
+            className="c29"
             title="Countries"
           >
             <span
-              className="sc-jUfyBS glHMid"
+              className="c30"
             >
               Category: 
             </span>
             Countries
           </div>
           <div
-            className="sc-fcmMJX"
+            className=""
           >
             <div
               className=" css-2b097c-container"
@@ -1520,10 +2108,10 @@ exports[`EditPage: Component should render correctly 1`] = `
         </div>
       </div>
       <div
-        className="sc-bCwfaz kcslWY"
+        className="c31"
       >
         <div
-          className="sc-khIgEk fKGIBY"
+          className="c32"
           onClick={[Function]}
         >
           <label
@@ -1675,7 +2263,7 @@ exports[`EditPage: Component should render correctly 1`] = `
             </div>
           </div>
           <div
-            className="sc-hTRkXV fJqpWV"
+            className="c33"
           >
             <svg
               style={
@@ -1696,18 +2284,18 @@ exports[`EditPage: Component should render correctly 1`] = `
         </div>
       </div>
       <div
-        className="sc-kHWWYL ieEVEX"
+        className="c34"
       >
         <div
-          className="sc-hOPeYd fTSqRu"
+          className="c35"
           id="tagsCounter"
         />
         1 Block
         <div
-          className="sc-hOPeYd fTSqRu"
+          className="c35"
         >
           <div
-            className="sc-cBoqAE JFmwH"
+            className="c36"
           >
             <button
               disabled={false}
@@ -1804,14 +2392,14 @@ exports[`EditPage: Component should render correctly 1`] = `
               }
             >
               <div
-                className="sc-jgPyTC hEpqEk"
+                className="c37"
               >
                 <div
-                  className="sc-laZMeE hNtDPQ"
+                  className="c38"
                 >
                   <div>
                     <div
-                      className="sc-carFqZ hcuJPe"
+                      className="c39"
                     >
                       <svg
                         style={
@@ -1833,7 +2421,7 @@ exports[`EditPage: Component should render correctly 1`] = `
                   </div>
                 </div>
                 <div
-                  className="sc-iBzEeX dxtdct"
+                  className="c19"
                 >
                   <div
                     style={
@@ -1913,15 +2501,15 @@ exports[`EditPage: Component should render correctly 1`] = `
                     </div>
                   </div>
                   <div
-                    className="sc-cTJkRt jwMeGW"
+                    className="c20"
                     id="blocks.0.nameError"
                   />
                 </div>
                 <div
-                  className="sc-laZMeE hNtDPQ"
+                  className="c38"
                 >
                   <label
-                    className="sc-kLojOw hwkXIC"
+                    className="c22"
                     htmlFor="blocks.0.name"
                   >
                     <svg
@@ -1964,7 +2552,7 @@ exports[`EditPage: Component should render correctly 1`] = `
                 </div>
               </div>
               <div
-                className="sc-iNiQyp gIZdsm"
+                className="c40"
                 title="type"
               >
                 type
@@ -2019,13 +2607,13 @@ exports[`EditPage: Component should render correctly 1`] = `
          
       </span>
       <div
-        className="sc-iwajpm JxNtl"
+        className="c41"
       >
         <div
-          className="sc-cxNHIi bXARw"
+          className="c42"
         >
           <div
-            className="sc-giAqHp grvYsX"
+            className="c43"
           >
             <div>
               <input
@@ -2077,23 +2665,23 @@ exports[`EditPage: Component should render correctly 1`] = `
               </label>
             </div>
             <div
-              className="sc-iJCRrE claSZy"
+              className="c44"
             >
               <label
-                className="sc-lmgQwP jSKIs"
+                className="c45"
                 htmlFor="isPublic"
               >
                 Make it Public
               </label>
               <span
-                className="sc-iklJeh hTnJPH"
+                className="c46"
               >
                 This Page is currently Private
                 <span
-                  className="sc-jcwpoC hcntoY"
+                  className="c47"
                 />
                 <a
-                  className="sc-csTbgd gNebUO"
+                  className="c48"
                   href="http://project.domain/page-name-2/page-name"
                   target="_blank"
                 >
@@ -2103,7 +2691,7 @@ exports[`EditPage: Component should render correctly 1`] = `
             </div>
           </div>
           <div
-            className="sc-bYwzuL gSApEp"
+            className="c49"
           >
             <button
               disabled={false}
@@ -2136,16 +2724,16 @@ exports[`EditPage: Component should render correctly 1`] = `
       </div>
     </div>
     <div
-      className="sc-bqGGPW kvHGgi"
+      className="c50"
     >
       <div
-        className="sc-hBMUJo iDRdfP"
+        className="c51"
       >
         <div
-          className="sc-ksluID ljQkwB"
+          className="c52"
         >
           <a
-            className="sc-fFSPTT imXlOu"
+            className="c53"
             disabled={false}
             href="/section/sectionId"
             id="backBtn"
@@ -2154,7 +2742,7 @@ exports[`EditPage: Component should render correctly 1`] = `
             Back
           </a>
           <button
-            className="sc-fnVZcZ bmBBGC"
+            className="c54"
             disabled={true}
             id="publishPage"
             onClick={[Function]}
@@ -2182,7 +2770,7 @@ exports[`EditPage: Component should render correctly 1`] = `
             Publish
           </button>
           <button
-            className="sc-fnVZcZ bmBBGC"
+            className="c54"
             disabled={true}
             id="savePage"
             style={
