@@ -17,7 +17,7 @@ export default defineMessages({
   },
   addPageButton: {
     id: 'section.pageList.addPageButton',
-    defaultMessage: 'Add a Page',
+    defaultMessage: 'Page',
   },
   [SECTIONS_NAME]: {
     id: `section.pageList.${SECTIONS_NAME}`,

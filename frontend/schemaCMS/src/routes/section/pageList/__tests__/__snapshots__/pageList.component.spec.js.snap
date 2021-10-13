@@ -1456,7 +1456,7 @@ exports[`PageList: Component should render correctly 1`] = `
             />
           </svg>
            
-          Add a Page
+          Page
         </a>
       </div>
     </div>
@@ -1708,7 +1708,7 @@ exports[`PageList: Component should render correctly 1`] = `
               />
             </svg>
              
-            Add a Page
+            Page
           </a>
         </div>
       </div>

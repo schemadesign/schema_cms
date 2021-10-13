@@ -86,7 +86,7 @@ export default defineMessages({
   },
   addBlockButton: {
     id: 'shared.components.pageForm.addBlockButton',
-    defaultMessage: 'Add a Block',
+    defaultMessage: 'Block',
   },
   blocks: {
     id: 'shared.components.pageForm.blocks',
