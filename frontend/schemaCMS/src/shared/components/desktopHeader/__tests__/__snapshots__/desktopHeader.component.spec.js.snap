@@ -90,13 +90,13 @@ exports[`DesktopTopHeader: Component should render correctly 1`] = `
         onClose={[Function]}
       >
         <H2>
-          <MemoizedFormattedMessage
+          <FormattedMessage
             defaultMessage="Schema CMS"
             id="shared.components.desktopHeader.title"
           />
         </H2>
         <H1>
-          <MemoizedFormattedMessage
+          <FormattedMessage
             defaultMessage="Menu"
             id="shared.components.desktopHeader.subtitle"
           />
@@ -114,7 +114,7 @@ exports[`DesktopTopHeader: Component should render correctly 1`] = `
                 onClick={[Function]}
                 to="/project"
               >
-                <MemoizedFormattedMessage
+                <FormattedMessage
                   defaultMessage="Projects"
                   id="shared.components.desktopHeader.projects"
                 />
@@ -132,7 +132,7 @@ exports[`DesktopTopHeader: Component should render correctly 1`] = `
                 rel="noreferrer"
                 target="_blank"
               >
-                <MemoizedFormattedMessage
+                <FormattedMessage
                   defaultMessage="About Schema CMS"
                   id="shared.components.desktopHeader.about"
                 />
@@ -148,7 +148,7 @@ exports[`DesktopTopHeader: Component should render correctly 1`] = `
                 rel="noreferrer"
                 target="_blank"
               >
-                <MemoizedFormattedMessage
+                <FormattedMessage
                   defaultMessage="API Doc"
                   id="shared.components.desktopHeader.api"
                 />
@@ -164,7 +164,7 @@ exports[`DesktopTopHeader: Component should render correctly 1`] = `
                 rel="noreferrer"
                 target="_blank"
               >
-                <MemoizedFormattedMessage
+                <FormattedMessage
                   defaultMessage="GitHub Repository"
                   id="shared.components.desktopHeader.repository"
                 />
@@ -225,13 +225,13 @@ exports[`DesktopTopHeader: Component should render correctly when no user 1`] = 
         onClose={[Function]}
       >
         <H2>
-          <MemoizedFormattedMessage
+          <FormattedMessage
             defaultMessage="Schema CMS"
             id="shared.components.desktopHeader.title"
           />
         </H2>
         <H1>
-          <MemoizedFormattedMessage
+          <FormattedMessage
             defaultMessage="Menu"
             id="shared.components.desktopHeader.subtitle"
           />
@@ -249,7 +249,7 @@ exports[`DesktopTopHeader: Component should render correctly when no user 1`] = 
                 onClick={[Function]}
                 to="/project"
               >
-                <MemoizedFormattedMessage
+                <FormattedMessage
                   defaultMessage="Projects"
                   id="shared.components.desktopHeader.projects"
                 />
@@ -267,7 +267,7 @@ exports[`DesktopTopHeader: Component should render correctly when no user 1`] = 
                 rel="noreferrer"
                 target="_blank"
               >
-                <MemoizedFormattedMessage
+                <FormattedMessage
                   defaultMessage="About Schema CMS"
                   id="shared.components.desktopHeader.about"
                 />
@@ -283,7 +283,7 @@ exports[`DesktopTopHeader: Component should render correctly when no user 1`] = 
                 rel="noreferrer"
                 target="_blank"
               >
-                <MemoizedFormattedMessage
+                <FormattedMessage
                   defaultMessage="API Doc"
                   id="shared.components.desktopHeader.api"
                 />
@@ -299,7 +299,7 @@ exports[`DesktopTopHeader: Component should render correctly when no user 1`] = 
                 rel="noreferrer"
                 target="_blank"
               >
-                <MemoizedFormattedMessage
+                <FormattedMessage
                   defaultMessage="GitHub Repository"
                   id="shared.components.desktopHeader.repository"
                 />

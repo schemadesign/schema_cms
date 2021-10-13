@@ -24,7 +24,7 @@ exports[`DataSourceNavigation: Component should render correctly 1`] = `
         />
       </Styled(Link)>
       <styled.div>
-        <MemoizedFormattedMessage
+        <FormattedMessage
           defaultMessage="Source"
           id="shared.components.dataSourceNavigation.source"
         />
@@ -49,7 +49,7 @@ exports[`DataSourceNavigation: Component should render correctly 1`] = `
         />
       </Styled(Link)>
       <styled.div>
-        <MemoizedFormattedMessage
+        <FormattedMessage
           defaultMessage="Fields"
           id="shared.components.dataSourceNavigation.preview"
         />
@@ -75,7 +75,7 @@ exports[`DataSourceNavigation: Component should render correctly 1`] = `
         />
       </Styled(Link)>
       <styled.div>
-        <MemoizedFormattedMessage
+        <FormattedMessage
           defaultMessage="Steps"
           id="shared.components.dataSourceNavigation.steps"
         />
@@ -101,7 +101,7 @@ exports[`DataSourceNavigation: Component should render correctly 1`] = `
         />
       </Styled(Link)>
       <styled.div>
-        <MemoizedFormattedMessage
+        <FormattedMessage
           defaultMessage="Results"
           id="shared.components.dataSourceNavigation.result"
         />
@@ -126,7 +126,7 @@ exports[`DataSourceNavigation: Component should render correctly 1`] = `
         />
       </Styled(Link)>
       <styled.div>
-        <MemoizedFormattedMessage
+        <FormattedMessage
           defaultMessage="Filters"
           id="shared.components.dataSourceNavigation.filters"
         />
@@ -151,7 +151,7 @@ exports[`DataSourceNavigation: Component should render correctly 1`] = `
         />
       </Styled(Link)>
       <styled.div>
-        <MemoizedFormattedMessage
+        <FormattedMessage
           defaultMessage="Tags"
           id="shared.components.dataSourceNavigation.tag"
         />
@@ -176,7 +176,7 @@ exports[`DataSourceNavigation: Component should render correctly 1`] = `
         />
       </Styled(Link)>
       <styled.div>
-        <MemoizedFormattedMessage
+        <FormattedMessage
           defaultMessage="States"
           id="shared.components.dataSourceNavigation.state"
         />
@@ -201,7 +201,7 @@ exports[`DataSourceNavigation: Component should render correctly 1`] = `
         />
       </Styled(Link)>
       <styled.div>
-        <MemoizedFormattedMessage
+        <FormattedMessage
           defaultMessage="Metadata"
           id="shared.components.dataSourceNavigation.metadata"
         />
@@ -235,7 +235,7 @@ exports[`DataSourceNavigation: Component should render correctly with fake job 1
         />
       </Styled(Link)>
       <styled.div>
-        <MemoizedFormattedMessage
+        <FormattedMessage
           defaultMessage="Source"
           id="shared.components.dataSourceNavigation.source"
         />
@@ -260,7 +260,7 @@ exports[`DataSourceNavigation: Component should render correctly with fake job 1
         />
       </Styled(Link)>
       <styled.div>
-        <MemoizedFormattedMessage
+        <FormattedMessage
           defaultMessage="Fields"
           id="shared.components.dataSourceNavigation.preview"
         />
@@ -286,7 +286,7 @@ exports[`DataSourceNavigation: Component should render correctly with fake job 1
         />
       </Styled(Link)>
       <styled.div>
-        <MemoizedFormattedMessage
+        <FormattedMessage
           defaultMessage="Steps"
           id="shared.components.dataSourceNavigation.steps"
         />
@@ -312,7 +312,7 @@ exports[`DataSourceNavigation: Component should render correctly with fake job 1
         />
       </Styled(Link)>
       <styled.div>
-        <MemoizedFormattedMessage
+        <FormattedMessage
           defaultMessage="Results"
           id="shared.components.dataSourceNavigation.result"
         />
@@ -337,7 +337,7 @@ exports[`DataSourceNavigation: Component should render correctly with fake job 1
         />
       </Styled(Link)>
       <styled.div>
-        <MemoizedFormattedMessage
+        <FormattedMessage
           defaultMessage="Filters"
           id="shared.components.dataSourceNavigation.filters"
         />
@@ -362,7 +362,7 @@ exports[`DataSourceNavigation: Component should render correctly with fake job 1
         />
       </Styled(Link)>
       <styled.div>
-        <MemoizedFormattedMessage
+        <FormattedMessage
           defaultMessage="Tags"
           id="shared.components.dataSourceNavigation.tag"
         />
@@ -387,7 +387,7 @@ exports[`DataSourceNavigation: Component should render correctly with fake job 1
         />
       </Styled(Link)>
       <styled.div>
-        <MemoizedFormattedMessage
+        <FormattedMessage
           defaultMessage="States"
           id="shared.components.dataSourceNavigation.state"
         />
@@ -412,7 +412,7 @@ exports[`DataSourceNavigation: Component should render correctly with fake job 1
         />
       </Styled(Link)>
       <styled.div>
-        <MemoizedFormattedMessage
+        <FormattedMessage
           defaultMessage="Metadata"
           id="shared.components.dataSourceNavigation.metadata"
         />
@@ -446,7 +446,7 @@ exports[`DataSourceNavigation: Component should render correctly with job 1`] = 
         />
       </Styled(Link)>
       <styled.div>
-        <MemoizedFormattedMessage
+        <FormattedMessage
           defaultMessage="Source"
           id="shared.components.dataSourceNavigation.source"
         />
@@ -471,7 +471,7 @@ exports[`DataSourceNavigation: Component should render correctly with job 1`] = 
         />
       </Styled(Link)>
       <styled.div>
-        <MemoizedFormattedMessage
+        <FormattedMessage
           defaultMessage="Fields"
           id="shared.components.dataSourceNavigation.preview"
         />
@@ -497,7 +497,7 @@ exports[`DataSourceNavigation: Component should render correctly with job 1`] = 
         />
       </Styled(Link)>
       <styled.div>
-        <MemoizedFormattedMessage
+        <FormattedMessage
           defaultMessage="Steps"
           id="shared.components.dataSourceNavigation.steps"
         />
@@ -523,7 +523,7 @@ exports[`DataSourceNavigation: Component should render correctly with job 1`] = 
         />
       </Styled(Link)>
       <styled.div>
-        <MemoizedFormattedMessage
+        <FormattedMessage
           defaultMessage="Results"
           id="shared.components.dataSourceNavigation.result"
         />
@@ -548,7 +548,7 @@ exports[`DataSourceNavigation: Component should render correctly with job 1`] = 
         />
       </Styled(Link)>
       <styled.div>
-        <MemoizedFormattedMessage
+        <FormattedMessage
           defaultMessage="Filters"
           id="shared.components.dataSourceNavigation.filters"
         />
@@ -573,7 +573,7 @@ exports[`DataSourceNavigation: Component should render correctly with job 1`] = 
         />
       </Styled(Link)>
       <styled.div>
-        <MemoizedFormattedMessage
+        <FormattedMessage
           defaultMessage="Tags"
           id="shared.components.dataSourceNavigation.tag"
         />
@@ -598,7 +598,7 @@ exports[`DataSourceNavigation: Component should render correctly with job 1`] = 
         />
       </Styled(Link)>
       <styled.div>
-        <MemoizedFormattedMessage
+        <FormattedMessage
           defaultMessage="States"
           id="shared.components.dataSourceNavigation.state"
         />
@@ -623,7 +623,7 @@ exports[`DataSourceNavigation: Component should render correctly with job 1`] = 
         />
       </Styled(Link)>
       <styled.div>
-        <MemoizedFormattedMessage
+        <FormattedMessage
           defaultMessage="Metadata"
           id="shared.components.dataSourceNavigation.metadata"
         />

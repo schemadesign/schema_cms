@@ -19,7 +19,7 @@ exports[`List: Component should render correctly 1`] = `
             "editor",
           ],
           "id": "projectsNavBtn",
-          "label": <Memo(FormattedMessage)
+          "label": <FormattedMessage
             defaultMessage="Projects"
             id="project.view.projectsListPage"
           />,
@@ -31,7 +31,7 @@ exports[`List: Component should render correctly 1`] = `
             "admin",
           ],
           "id": "usersPageNavBtn",
-          "label": <Memo(FormattedMessage)
+          "label": <FormattedMessage
             defaultMessage="Users"
             id="project.view.usersPage"
           />,
@@ -182,7 +182,7 @@ exports[`List: Component should render correctly with loading 1`] = `
             "editor",
           ],
           "id": "projectsNavBtn",
-          "label": <Memo(FormattedMessage)
+          "label": <FormattedMessage
             defaultMessage="Projects"
             id="project.view.projectsListPage"
           />,
@@ -194,7 +194,7 @@ exports[`List: Component should render correctly with loading 1`] = `
             "admin",
           ],
           "id": "usersPageNavBtn",
-          "label": <Memo(FormattedMessage)
+          "label": <FormattedMessage
             defaultMessage="Users"
             id="project.view.usersPage"
           />,
@@ -345,7 +345,7 @@ exports[`List: Component should render without data 1`] = `
             "editor",
           ],
           "id": "projectsNavBtn",
-          "label": <Memo(FormattedMessage)
+          "label": <FormattedMessage
             defaultMessage="Projects"
             id="project.view.projectsListPage"
           />,
@@ -357,7 +357,7 @@ exports[`List: Component should render without data 1`] = `
             "admin",
           ],
           "id": "usersPageNavBtn",
-          "label": <Memo(FormattedMessage)
+          "label": <FormattedMessage
             defaultMessage="Users"
             id="project.view.usersPage"
           />,

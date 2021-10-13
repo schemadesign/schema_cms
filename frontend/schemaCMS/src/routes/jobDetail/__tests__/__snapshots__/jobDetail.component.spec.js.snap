@@ -4,13 +4,13 @@ exports[`JobDetail: Component should render correctly 1`] = `
 <Fragment>
   <MobileMenu
     headerSubtitle={
-      <Memo(FormattedMessage)
+      <FormattedMessage
         defaultMessage="Details"
         id="jobDetail.subTitle"
       />
     }
     headerTitle={
-      <Memo(FormattedMessage)
+      <FormattedMessage
         defaultMessage="Job"
         id="jobDetail.title"
       />
@@ -23,7 +23,7 @@ exports[`JobDetail: Component should render correctly 1`] = `
             "editor",
           ],
           "id": "projectsNavBtn",
-          "label": <Memo(FormattedMessage)
+          "label": <FormattedMessage
             defaultMessage="Projects"
             id="jobDetail.projectsListPage"
           />,
@@ -35,13 +35,13 @@ exports[`JobDetail: Component should render correctly 1`] = `
   />
   <ContextHeader
     subtitle={
-      <Memo(FormattedMessage)
+      <FormattedMessage
         defaultMessage="Details"
         id="jobDetail.subTitle"
       />
     }
     title={
-      <Memo(FormattedMessage)
+      <FormattedMessage
         defaultMessage="Job"
         id="jobDetail.title"
       />
@@ -64,7 +64,7 @@ exports[`JobDetail: Component should render correctly 1`] = `
     <BackLink
       to="/datasource/undefined/job"
     >
-      <MemoizedFormattedMessage
+      <FormattedMessage
         defaultMessage="Back"
         id="jobDetail.back"
       />
@@ -74,7 +74,7 @@ exports[`JobDetail: Component should render correctly 1`] = `
       loading={false}
       onClick={[Function]}
     >
-      <MemoizedFormattedMessage
+      <FormattedMessage
         defaultMessage="Save"
         id="jobDetail.save"
       />
@@ -87,13 +87,13 @@ exports[`JobDetail: Component should render correctly with failure job 1`] = `
 <Fragment>
   <MobileMenu
     headerSubtitle={
-      <Memo(FormattedMessage)
+      <FormattedMessage
         defaultMessage="Details"
         id="jobDetail.subTitle"
       />
     }
     headerTitle={
-      <Memo(FormattedMessage)
+      <FormattedMessage
         defaultMessage="Job"
         id="jobDetail.title"
       />
@@ -106,7 +106,7 @@ exports[`JobDetail: Component should render correctly with failure job 1`] = `
             "editor",
           ],
           "id": "projectsNavBtn",
-          "label": <Memo(FormattedMessage)
+          "label": <FormattedMessage
             defaultMessage="Projects"
             id="jobDetail.projectsListPage"
           />,
@@ -118,13 +118,13 @@ exports[`JobDetail: Component should render correctly with failure job 1`] = `
   />
   <ContextHeader
     subtitle={
-      <Memo(FormattedMessage)
+      <FormattedMessage
         defaultMessage="Details"
         id="jobDetail.subTitle"
       />
     }
     title={
-      <Memo(FormattedMessage)
+      <FormattedMessage
         defaultMessage="Job"
         id="jobDetail.title"
       />
@@ -147,7 +147,7 @@ exports[`JobDetail: Component should render correctly with failure job 1`] = `
     <BackLink
       to="/datasource/undefined/job"
     >
-      <MemoizedFormattedMessage
+      <FormattedMessage
         defaultMessage="Back"
         id="jobDetail.back"
       />
@@ -157,7 +157,7 @@ exports[`JobDetail: Component should render correctly with failure job 1`] = `
       loading={false}
       onClick={[Function]}
     >
-      <MemoizedFormattedMessage
+      <FormattedMessage
         defaultMessage="Save"
         id="jobDetail.save"
       />
@@ -170,13 +170,13 @@ exports[`JobDetail: Component should render correctly with fake job 1`] = `
 <Fragment>
   <MobileMenu
     headerSubtitle={
-      <Memo(FormattedMessage)
+      <FormattedMessage
         defaultMessage="Details"
         id="jobDetail.subTitle"
       />
     }
     headerTitle={
-      <Memo(FormattedMessage)
+      <FormattedMessage
         defaultMessage="Job"
         id="jobDetail.title"
       />
@@ -189,7 +189,7 @@ exports[`JobDetail: Component should render correctly with fake job 1`] = `
             "editor",
           ],
           "id": "projectsNavBtn",
-          "label": <Memo(FormattedMessage)
+          "label": <FormattedMessage
             defaultMessage="Projects"
             id="jobDetail.projectsListPage"
           />,
@@ -201,13 +201,13 @@ exports[`JobDetail: Component should render correctly with fake job 1`] = `
   />
   <ContextHeader
     subtitle={
-      <Memo(FormattedMessage)
+      <FormattedMessage
         defaultMessage="Details"
         id="jobDetail.subTitle"
       />
     }
     title={
-      <Memo(FormattedMessage)
+      <FormattedMessage
         defaultMessage="Job"
         id="jobDetail.title"
       />
@@ -230,7 +230,7 @@ exports[`JobDetail: Component should render correctly with fake job 1`] = `
     <BackLink
       to="/datasource/undefined/job"
     >
-      <MemoizedFormattedMessage
+      <FormattedMessage
         defaultMessage="Back"
         id="jobDetail.back"
       />
@@ -240,7 +240,7 @@ exports[`JobDetail: Component should render correctly with fake job 1`] = `
       loading={false}
       onClick={[Function]}
     >
-      <MemoizedFormattedMessage
+      <FormattedMessage
         defaultMessage="Save"
         id="jobDetail.save"
       />
@@ -253,13 +253,13 @@ exports[`JobDetail: Component should render correctly with loader 1`] = `
 <Fragment>
   <MobileMenu
     headerSubtitle={
-      <Memo(FormattedMessage)
+      <FormattedMessage
         defaultMessage="Details"
         id="jobDetail.subTitle"
       />
     }
     headerTitle={
-      <Memo(FormattedMessage)
+      <FormattedMessage
         defaultMessage="Job"
         id="jobDetail.title"
       />
@@ -272,7 +272,7 @@ exports[`JobDetail: Component should render correctly with loader 1`] = `
             "editor",
           ],
           "id": "projectsNavBtn",
-          "label": <Memo(FormattedMessage)
+          "label": <FormattedMessage
             defaultMessage="Projects"
             id="jobDetail.projectsListPage"
           />,
@@ -284,13 +284,13 @@ exports[`JobDetail: Component should render correctly with loader 1`] = `
   />
   <ContextHeader
     subtitle={
-      <Memo(FormattedMessage)
+      <FormattedMessage
         defaultMessage="Details"
         id="jobDetail.subTitle"
       />
     }
     title={
-      <Memo(FormattedMessage)
+      <FormattedMessage
         defaultMessage="Job"
         id="jobDetail.title"
       />
@@ -313,7 +313,7 @@ exports[`JobDetail: Component should render correctly with loader 1`] = `
     <BackLink
       to="/datasource/undefined/job"
     >
-      <MemoizedFormattedMessage
+      <FormattedMessage
         defaultMessage="Back"
         id="jobDetail.back"
       />
@@ -323,7 +323,7 @@ exports[`JobDetail: Component should render correctly with loader 1`] = `
       loading={false}
       onClick={[Function]}
     >
-      <MemoizedFormattedMessage
+      <FormattedMessage
         defaultMessage="Save"
         id="jobDetail.save"
       />

@@ -9,13 +9,13 @@ exports[`CreateDataSource: Component should render correctly 1`] = `
   />
   <MobileMenu
     headerSubtitle={
-      <Memo(FormattedMessage)
+      <FormattedMessage
         defaultMessage="Create"
         id="project.createDataSource.subTitle"
       />
     }
     headerTitle={
-      <Memo(FormattedMessage)
+      <FormattedMessage
         defaultMessage="New Data Source"
         id="project.createDataSource.title"
       />
@@ -28,7 +28,7 @@ exports[`CreateDataSource: Component should render correctly 1`] = `
             "editor",
           ],
           "id": "projectsNavBtn",
-          "label": <Memo(FormattedMessage)
+          "label": <FormattedMessage
             defaultMessage="Projects"
             id="project.view.projectsListPage"
           />,
@@ -40,7 +40,7 @@ exports[`CreateDataSource: Component should render correctly 1`] = `
             "admin",
           ],
           "id": "usersPageNavBtn",
-          "label": <Memo(FormattedMessage)
+          "label": <FormattedMessage
             defaultMessage="Users"
             id="project.view.usersPage"
           />,
@@ -53,7 +53,7 @@ exports[`CreateDataSource: Component should render correctly 1`] = `
             "editor",
           ],
           "id": "projectDetailsNavBtn",
-          "label": <Memo(FormattedMessage)
+          "label": <FormattedMessage
             defaultMessage="Project details"
             id="project.view.projectDetails"
           />,
@@ -66,7 +66,7 @@ exports[`CreateDataSource: Component should render correctly 1`] = `
             "editor",
           ],
           "id": "dataSourceNavBtn",
-          "label": <Memo(FormattedMessage)
+          "label": <FormattedMessage
             defaultMessage="Data Sources"
             id="project.view.projectDataSources"
           />,
@@ -78,7 +78,7 @@ exports[`CreateDataSource: Component should render correctly 1`] = `
             "admin",
           ],
           "id": "usersNavBtn",
-          "label": <Memo(FormattedMessage)
+          "label": <FormattedMessage
             defaultMessage="Project Users"
             id="project.view.projectUsersPage"
           />,
@@ -91,7 +91,7 @@ exports[`CreateDataSource: Component should render correctly 1`] = `
             "editor",
           ],
           "id": "contentNavBtn",
-          "label": <Memo(FormattedMessage)
+          "label": <FormattedMessage
             defaultMessage="Content"
             id="project.view.content"
           />,
@@ -103,7 +103,7 @@ exports[`CreateDataSource: Component should render correctly 1`] = `
             "admin",
           ],
           "id": "templatesNavBtn",
-          "label": <Memo(FormattedMessage)
+          "label": <FormattedMessage
             defaultMessage="Templates"
             id="project.view.templates"
           />,
@@ -115,13 +115,13 @@ exports[`CreateDataSource: Component should render correctly 1`] = `
   />
   <ContextHeader
     subtitle={
-      <Memo(FormattedMessage)
+      <FormattedMessage
         defaultMessage="Create"
         id="project.createDataSource.subTitle"
       />
     }
     title={
-      <Memo(FormattedMessage)
+      <FormattedMessage
         defaultMessage="New Data Source"
         id="project.createDataSource.title"
       />

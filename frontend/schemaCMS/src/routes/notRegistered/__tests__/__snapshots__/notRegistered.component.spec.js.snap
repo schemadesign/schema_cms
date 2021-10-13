@@ -9,13 +9,13 @@ exports[`NotRegistered: Component should render correctly 1`] = `
   />
   <MobileMenu
     headerSubtitle={
-      <Memo(FormattedMessage)
+      <FormattedMessage
         defaultMessage="Error"
         id="notRegistered.subTitle"
       />
     }
     headerTitle={
-      <Memo(FormattedMessage)
+      <FormattedMessage
         defaultMessage="Schema CMS"
         id="notRegistered.title"
       />
@@ -24,7 +24,7 @@ exports[`NotRegistered: Component should render correctly 1`] = `
     options={Array []}
   />
   <styled.div>
-    <MemoizedFormattedMessage
+    <FormattedMessage
       defaultMessage="Account with email <b>{email}</b> is not registered."
       id="notRegistered.info"
       values={
@@ -35,7 +35,7 @@ exports[`NotRegistered: Component should render correctly 1`] = `
       }
     />
     <br />
-    <MemoizedFormattedMessage
+    <FormattedMessage
       defaultMessage="If you believe this is an error, please contact your administrator or <a>log in again</a>."
       id="notRegistered.contact"
       values={

@@ -9,13 +9,13 @@ exports[`NotFound: Component should render correctly 1`] = `
   />
   <MobileMenu
     headerSubtitle={
-      <Memo(FormattedMessage)
+      <FormattedMessage
         defaultMessage="Error"
         id="notFound.subTitle"
       />
     }
     headerTitle={
-      <Memo(FormattedMessage)
+      <FormattedMessage
         defaultMessage="Schema CMS"
         id="notFound.title"
       />
@@ -25,7 +25,7 @@ exports[`NotFound: Component should render correctly 1`] = `
   />
   <styled.div>
     <H1>
-      <MemoizedFormattedMessage
+      <FormattedMessage
         defaultMessage="The page you are looking for doesn't exist or has been moved."
         id="notFound.description"
       />

@@ -4,13 +4,13 @@ exports[`TagCategory: Component should render correctly 1`] = `
 <styled.div>
   <MobileMenu
     headerSubtitle={
-      <Memo(FormattedMessage)
+      <FormattedMessage
         defaultMessage="Edit"
         id="tagCategory.subTitle"
       />
     }
     headerTitle={
-      <Memo(FormattedMessage)
+      <FormattedMessage
         defaultMessage="Tag Category"
         id="tagCategory.title"
       />
@@ -19,13 +19,13 @@ exports[`TagCategory: Component should render correctly 1`] = `
   />
   <ContextHeader
     subtitle={
-      <Memo(FormattedMessage)
+      <FormattedMessage
         defaultMessage="Edit"
         id="tagCategory.subTitle"
       />
     }
     title={
-      <Memo(FormattedMessage)
+      <FormattedMessage
         defaultMessage="Tag Category"
         id="tagCategory.title"
       />
@@ -173,7 +173,7 @@ exports[`TagCategory: Component should render correctly 1`] = `
           loading={false}
           type="submit"
         >
-          <MemoizedFormattedMessage
+          <FormattedMessage
             defaultMessage="Save"
             id="tagCategory.saveTagCategory"
           />
@@ -217,7 +217,7 @@ exports[`TagCategory: Component should render correctly 1`] = `
     }
   >
     <Styled(H1)>
-      <MemoizedFormattedMessage
+      <FormattedMessage
         defaultMessage="Are you sure you want to remove this tag category?"
         id="tagCategory.removeTitle"
       />
@@ -227,7 +227,7 @@ exports[`TagCategory: Component should render correctly 1`] = `
         disabled={false}
         onClick={[Function]}
       >
-        <MemoizedFormattedMessage
+        <FormattedMessage
           defaultMessage="Cancel"
           id="tagCategory.cancelRemoval"
         />
@@ -238,7 +238,7 @@ exports[`TagCategory: Component should render correctly 1`] = `
         loading={false}
         onClick={[Function]}
       >
-        <MemoizedFormattedMessage
+        <FormattedMessage
           defaultMessage="Confirm"
           id="tagCategory.confirmRemoval"
         />
@@ -252,13 +252,13 @@ exports[`TagCategory: Component should render correctly with loader 1`] = `
 <styled.div>
   <MobileMenu
     headerSubtitle={
-      <Memo(FormattedMessage)
+      <FormattedMessage
         defaultMessage="Edit"
         id="tagCategory.subTitle"
       />
     }
     headerTitle={
-      <Memo(FormattedMessage)
+      <FormattedMessage
         defaultMessage="Tag Category"
         id="tagCategory.title"
       />
@@ -267,13 +267,13 @@ exports[`TagCategory: Component should render correctly with loader 1`] = `
   />
   <ContextHeader
     subtitle={
-      <Memo(FormattedMessage)
+      <FormattedMessage
         defaultMessage="Edit"
         id="tagCategory.subTitle"
       />
     }
     title={
-      <Memo(FormattedMessage)
+      <FormattedMessage
         defaultMessage="Tag Category"
         id="tagCategory.title"
       />
@@ -420,7 +420,7 @@ exports[`TagCategory: Component should render correctly with loader 1`] = `
           loading={false}
           type="submit"
         >
-          <MemoizedFormattedMessage
+          <FormattedMessage
             defaultMessage="Save"
             id="tagCategory.saveTagCategory"
           />
@@ -464,7 +464,7 @@ exports[`TagCategory: Component should render correctly with loader 1`] = `
     }
   >
     <Styled(H1)>
-      <MemoizedFormattedMessage
+      <FormattedMessage
         defaultMessage="Are you sure you want to remove this tag category?"
         id="tagCategory.removeTitle"
       />
@@ -474,7 +474,7 @@ exports[`TagCategory: Component should render correctly with loader 1`] = `
         disabled={false}
         onClick={[Function]}
       >
-        <MemoizedFormattedMessage
+        <FormattedMessage
           defaultMessage="Cancel"
           id="tagCategory.cancelRemoval"
         />
@@ -485,7 +485,7 @@ exports[`TagCategory: Component should render correctly with loader 1`] = `
         loading={false}
         onClick={[Function]}
       >
-        <MemoizedFormattedMessage
+        <FormattedMessage
           defaultMessage="Confirm"
           id="tagCategory.confirmRemoval"
         />

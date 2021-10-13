@@ -5,7 +5,7 @@ exports[`Navigation: Component should render BackButton 1`] = `
   disabled={false}
   onClick={[Function]}
 >
-  <MemoizedFormattedMessage
+  <FormattedMessage
     defaultMessage="Back"
     id="shared.components.navigation.back"
   />
@@ -17,7 +17,7 @@ exports[`Navigation: Component should render BackButton with custom children 1`]
   disabled={false}
   onClick={[Function]}
 >
-  <MemoizedFormattedMessage
+  <FormattedMessage
     defaultMessage="Next"
     id="shared.components.navigation.next"
   />
@@ -78,7 +78,7 @@ exports[`Navigation: Component should render NextButton 1`] = `
   inverse={true}
   onClick={[Function]}
 >
-  <MemoizedFormattedMessage
+  <FormattedMessage
     defaultMessage="Next"
     id="shared.components.navigation.next"
   />
@@ -90,7 +90,7 @@ exports[`Navigation: Component should render NextButton with custom children 1`]
   inverse={true}
   onClick={[Function]}
 >
-  <MemoizedFormattedMessage
+  <FormattedMessage
     defaultMessage="Back"
     id="shared.components.navigation.back"
   />

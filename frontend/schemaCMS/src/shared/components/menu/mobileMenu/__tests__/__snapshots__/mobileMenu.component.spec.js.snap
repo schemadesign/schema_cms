@@ -108,7 +108,7 @@ exports[`MobileMenu: Component should render correctly 1`] = `
             onClick={[Function]}
             to="/settings"
           >
-            <MemoizedFormattedMessage
+            <FormattedMessage
               defaultMessage="Settings"
               id="shared.components.mobileMenu.settings"
             />
@@ -122,7 +122,7 @@ exports[`MobileMenu: Component should render correctly 1`] = `
             id="logoutNavBtn"
             onClick={[Function]}
           >
-            <MemoizedFormattedMessage
+            <FormattedMessage
               defaultMessage="Log out"
               id="shared.components.mobileMenu.logOut"
             />
@@ -138,7 +138,7 @@ exports[`MobileMenu: Component should render correctly 1`] = `
           rel="noreferrer"
           target="_blank"
         >
-          <MemoizedFormattedMessage
+          <FormattedMessage
             defaultMessage="About Schema CMS"
             id="shared.components.mobileMenu.about"
           />
@@ -151,7 +151,7 @@ exports[`MobileMenu: Component should render correctly 1`] = `
           rel="noreferrer"
           target="_blank"
         >
-          <MemoizedFormattedMessage
+          <FormattedMessage
             defaultMessage="API Doc"
             id="shared.components.mobileMenu.api"
           />
@@ -164,7 +164,7 @@ exports[`MobileMenu: Component should render correctly 1`] = `
           rel="noreferrer"
           target="_blank"
         >
-          <MemoizedFormattedMessage
+          <FormattedMessage
             defaultMessage="GitHub Repository"
             id="shared.components.mobileMenu.repository"
           />

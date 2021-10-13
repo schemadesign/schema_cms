@@ -19,7 +19,7 @@ exports[`DataSourceList: Component should render correctly 1`] = `
             "editor",
           ],
           "id": "projectsNavBtn",
-          "label": <Memo(FormattedMessage)
+          "label": <FormattedMessage
             defaultMessage="Projects"
             id="project.view.projectsListPage"
           />,
@@ -31,7 +31,7 @@ exports[`DataSourceList: Component should render correctly 1`] = `
             "admin",
           ],
           "id": "usersPageNavBtn",
-          "label": <Memo(FormattedMessage)
+          "label": <FormattedMessage
             defaultMessage="Users"
             id="project.view.usersPage"
           />,
@@ -44,7 +44,7 @@ exports[`DataSourceList: Component should render correctly 1`] = `
             "editor",
           ],
           "id": "projectDetailsNavBtn",
-          "label": <Memo(FormattedMessage)
+          "label": <FormattedMessage
             defaultMessage="Project details"
             id="project.view.projectDetails"
           />,
@@ -57,7 +57,7 @@ exports[`DataSourceList: Component should render correctly 1`] = `
             "editor",
           ],
           "id": "dataSourceNavBtn",
-          "label": <Memo(FormattedMessage)
+          "label": <FormattedMessage
             defaultMessage="Data Sources"
             id="project.view.projectDataSources"
           />,
@@ -69,7 +69,7 @@ exports[`DataSourceList: Component should render correctly 1`] = `
             "admin",
           ],
           "id": "usersNavBtn",
-          "label": <Memo(FormattedMessage)
+          "label": <FormattedMessage
             defaultMessage="Project Users"
             id="project.view.projectUsersPage"
           />,
@@ -82,7 +82,7 @@ exports[`DataSourceList: Component should render correctly 1`] = `
             "editor",
           ],
           "id": "contentNavBtn",
-          "label": <Memo(FormattedMessage)
+          "label": <FormattedMessage
             defaultMessage="Content"
             id="project.view.content"
           />,
@@ -94,7 +94,7 @@ exports[`DataSourceList: Component should render correctly 1`] = `
             "admin",
           ],
           "id": "templatesNavBtn",
-          "label": <Memo(FormattedMessage)
+          "label": <FormattedMessage
             defaultMessage="Templates"
             id="project.view.templates"
           />,
@@ -206,7 +206,7 @@ exports[`DataSourceList: Component should render correctly 1`] = `
             id="dataSourceStatus"
             metaProcessing={true}
           >
-            <Memo(FormattedMessage)
+            <FormattedMessage
               defaultMessage="No data source uploaded"
               id="project.dataSourceList.noDataSourceUploaded"
             />
@@ -303,7 +303,7 @@ exports[`DataSourceList: Component should render correctly 1`] = `
             id="dataSourceStatus"
             metaProcessing={true}
           >
-            <Memo(FormattedMessage)
+            <FormattedMessage
               defaultMessage="No data source uploaded"
               id="project.dataSourceList.noDataSourceUploaded"
             />
@@ -400,7 +400,7 @@ exports[`DataSourceList: Component should render correctly 1`] = `
             id="dataSourceStatus"
             metaProcessing={true}
           >
-            <Memo(FormattedMessage)
+            <FormattedMessage
               defaultMessage="No data source uploaded"
               id="project.dataSourceList.noDataSourceUploaded"
             />
@@ -497,7 +497,7 @@ exports[`DataSourceList: Component should render correctly 1`] = `
             id="dataSourceStatus"
             metaProcessing={true}
           >
-            <Memo(FormattedMessage)
+            <FormattedMessage
               defaultMessage="No data source uploaded"
               id="project.dataSourceList.noDataSourceUploaded"
             />
@@ -594,7 +594,7 @@ exports[`DataSourceList: Component should render correctly 1`] = `
             id="dataSourceStatus"
             metaProcessing={true}
           >
-            <Memo(FormattedMessage)
+            <FormattedMessage
               defaultMessage="No data source uploaded"
               id="project.dataSourceList.noDataSourceUploaded"
             />
@@ -691,7 +691,7 @@ exports[`DataSourceList: Component should render correctly 1`] = `
             id="dataSourceStatus"
             metaProcessing={true}
           >
-            <Memo(FormattedMessage)
+            <FormattedMessage
               defaultMessage="No data source uploaded"
               id="project.dataSourceList.noDataSourceUploaded"
             />
@@ -788,7 +788,7 @@ exports[`DataSourceList: Component should render correctly 1`] = `
             id="dataSourceStatus"
             metaProcessing={true}
           >
-            <Memo(FormattedMessage)
+            <FormattedMessage
               defaultMessage="No data source uploaded"
               id="project.dataSourceList.noDataSourceUploaded"
             />
@@ -885,7 +885,7 @@ exports[`DataSourceList: Component should render correctly 1`] = `
             id="dataSourceStatus"
             metaProcessing={true}
           >
-            <Memo(FormattedMessage)
+            <FormattedMessage
               defaultMessage="Uploading file failed"
               id="project.dataSourceList.fileUploadingError"
             />
@@ -982,7 +982,7 @@ exports[`DataSourceList: Component should render correctly 1`] = `
             id="dataSourceStatus"
             metaProcessing={true}
           >
-            <Memo(FormattedMessage)
+            <FormattedMessage
               defaultMessage="Uploading file {uploadProgress}%..."
               id="project.dataSourceList.fileUploading"
               values={
@@ -1084,7 +1084,7 @@ exports[`DataSourceList: Component should render correctly 1`] = `
             id="dataSourceStatus"
             metaProcessing={true}
           >
-            <Memo(FormattedMessage)
+            <FormattedMessage
               defaultMessage="No data source uploaded"
               id="project.dataSourceList.noDataSourceUploaded"
             />
@@ -1141,7 +1141,7 @@ exports[`DataSourceList: Component should render empty 1`] = `
             "editor",
           ],
           "id": "projectsNavBtn",
-          "label": <Memo(FormattedMessage)
+          "label": <FormattedMessage
             defaultMessage="Projects"
             id="project.view.projectsListPage"
           />,
@@ -1153,7 +1153,7 @@ exports[`DataSourceList: Component should render empty 1`] = `
             "admin",
           ],
           "id": "usersPageNavBtn",
-          "label": <Memo(FormattedMessage)
+          "label": <FormattedMessage
             defaultMessage="Users"
             id="project.view.usersPage"
           />,
@@ -1166,7 +1166,7 @@ exports[`DataSourceList: Component should render empty 1`] = `
             "editor",
           ],
           "id": "projectDetailsNavBtn",
-          "label": <Memo(FormattedMessage)
+          "label": <FormattedMessage
             defaultMessage="Project details"
             id="project.view.projectDetails"
           />,
@@ -1179,7 +1179,7 @@ exports[`DataSourceList: Component should render empty 1`] = `
             "editor",
           ],
           "id": "dataSourceNavBtn",
-          "label": <Memo(FormattedMessage)
+          "label": <FormattedMessage
             defaultMessage="Data Sources"
             id="project.view.projectDataSources"
           />,
@@ -1191,7 +1191,7 @@ exports[`DataSourceList: Component should render empty 1`] = `
             "admin",
           ],
           "id": "usersNavBtn",
-          "label": <Memo(FormattedMessage)
+          "label": <FormattedMessage
             defaultMessage="Project Users"
             id="project.view.projectUsersPage"
           />,
@@ -1204,7 +1204,7 @@ exports[`DataSourceList: Component should render empty 1`] = `
             "editor",
           ],
           "id": "contentNavBtn",
-          "label": <Memo(FormattedMessage)
+          "label": <FormattedMessage
             defaultMessage="Content"
             id="project.view.content"
           />,
@@ -1216,7 +1216,7 @@ exports[`DataSourceList: Component should render empty 1`] = `
             "admin",
           ],
           "id": "templatesNavBtn",
-          "label": <Memo(FormattedMessage)
+          "label": <FormattedMessage
             defaultMessage="Templates"
             id="project.view.templates"
           />,

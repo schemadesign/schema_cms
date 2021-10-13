@@ -5,13 +5,13 @@ exports[`Settings: Component should render correctly 1`] = `
   <MobileMenu
     active="settingsNavBtn"
     headerSubtitle={
-      <Memo(FormattedMessage)
+      <FormattedMessage
         defaultMessage="My Profile"
         id="settings.subTitle"
       />
     }
     headerTitle={
-      <Memo(FormattedMessage)
+      <FormattedMessage
         defaultMessage="Schema CMS"
         id="settings.title"
       />
@@ -24,7 +24,7 @@ exports[`Settings: Component should render correctly 1`] = `
             "editor",
           ],
           "id": "projectsNavBtn",
-          "label": <Memo(FormattedMessage)
+          "label": <FormattedMessage
             defaultMessage="Projects"
             id="settings.projectsListPage"
           />,
@@ -36,7 +36,7 @@ exports[`Settings: Component should render correctly 1`] = `
             "admin",
           ],
           "id": "usersNavBtn",
-          "label": <Memo(FormattedMessage)
+          "label": <FormattedMessage
             defaultMessage="Users"
             id="settings.usersPage"
           />,
@@ -48,13 +48,13 @@ exports[`Settings: Component should render correctly 1`] = `
   />
   <ContextHeader
     subtitle={
-      <Memo(FormattedMessage)
+      <FormattedMessage
         defaultMessage="My Profile"
         id="settings.subTitle"
       />
     }
     title={
-      <Memo(FormattedMessage)
+      <FormattedMessage
         defaultMessage="Schema CMS"
         id="settings.title"
       />
@@ -218,13 +218,13 @@ exports[`Settings: Component should render correctly 2`] = `
   <MobileMenu
     active="settingsNavBtn"
     headerSubtitle={
-      <Memo(FormattedMessage)
+      <FormattedMessage
         defaultMessage="My Profile"
         id="settings.subTitle"
       />
     }
     headerTitle={
-      <Memo(FormattedMessage)
+      <FormattedMessage
         defaultMessage="Schema CMS"
         id="settings.title"
       />
@@ -237,7 +237,7 @@ exports[`Settings: Component should render correctly 2`] = `
             "editor",
           ],
           "id": "projectsNavBtn",
-          "label": <Memo(FormattedMessage)
+          "label": <FormattedMessage
             defaultMessage="Projects"
             id="settings.projectsListPage"
           />,
@@ -249,7 +249,7 @@ exports[`Settings: Component should render correctly 2`] = `
             "admin",
           ],
           "id": "usersNavBtn",
-          "label": <Memo(FormattedMessage)
+          "label": <FormattedMessage
             defaultMessage="Users"
             id="settings.usersPage"
           />,
@@ -261,13 +261,13 @@ exports[`Settings: Component should render correctly 2`] = `
   />
   <ContextHeader
     subtitle={
-      <Memo(FormattedMessage)
+      <FormattedMessage
         defaultMessage="My Profile"
         id="settings.subTitle"
       />
     }
     title={
-      <Memo(FormattedMessage)
+      <FormattedMessage
         defaultMessage="Schema CMS"
         id="settings.title"
       />
@@ -547,7 +547,7 @@ exports[`Settings: Component should render correctly form 1`] = `
         id="resetPasswordLink"
         onClick={[Function]}
       >
-        <MemoizedFormattedMessage
+        <FormattedMessage
           defaultMessage="Reset password"
           id="settings.resetPassword"
         />
@@ -571,7 +571,7 @@ exports[`Settings: Component should render correctly form 1`] = `
         loading={false}
         type="submit"
       >
-        <MemoizedFormattedMessage
+        <FormattedMessage
           defaultMessage="Save"
           id="settings.save"
         />
@@ -707,7 +707,7 @@ exports[`Settings: Component should render form without reset password link 1`] 
         loading={false}
         type="submit"
       >
-        <MemoizedFormattedMessage
+        <FormattedMessage
           defaultMessage="Save"
           id="settings.save"
         />

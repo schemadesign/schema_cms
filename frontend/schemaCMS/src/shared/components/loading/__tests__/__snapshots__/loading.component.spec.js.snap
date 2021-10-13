@@ -2,7 +2,7 @@
 
 exports[`Loading: Component should render correctly 1`] = `
 <styled.div>
-  <MemoizedFormattedMessage
+  <FormattedMessage
     defaultMessage="Loading..."
     id="shared.components.loading.loading"
   />

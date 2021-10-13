@@ -2,7 +2,7 @@
 
 exports[`NoData: Component should render correctly 1`] = `
 <styled.div>
-  <MemoizedFormattedMessage
+  <FormattedMessage
     defaultMessage="No Data Found."
     id="shared.components.noData.noData"
   />

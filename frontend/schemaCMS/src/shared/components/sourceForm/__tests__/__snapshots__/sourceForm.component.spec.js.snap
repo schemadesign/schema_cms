@@ -208,7 +208,7 @@ exports[`SourceFormComponent: Component should render correctly 1`] = `
       }
     }
   >
-    <MemoizedFormattedMessage
+    <FormattedMessage
       defaultMessage="Source Type"
       id="shared.components.sourceForm.source"
     />
@@ -560,7 +560,7 @@ exports[`SourceFormComponent: Component should render correctly 1`] = `
     }
   >
     <Styled(H1)>
-      <MemoizedFormattedMessage
+      <FormattedMessage
         defaultMessage="Re-importing could change the current values. Are you sure you want to proceed? "
         id="shared.components.sourceForm.reimportTitle"
       />
@@ -572,7 +572,7 @@ exports[`SourceFormComponent: Component should render correctly 1`] = `
         onClick={[Function]}
         type="button"
       >
-        <MemoizedFormattedMessage
+        <FormattedMessage
           defaultMessage="Cancel"
           id="shared.components.sourceForm.cancelReimport"
         />
@@ -583,7 +583,7 @@ exports[`SourceFormComponent: Component should render correctly 1`] = `
         onClick={[Function]}
         type="button"
       >
-        <MemoizedFormattedMessage
+        <FormattedMessage
           defaultMessage="Yes"
           id="shared.components.sourceForm.confirmReimport"
         />
@@ -595,7 +595,7 @@ exports[`SourceFormComponent: Component should render correctly 1`] = `
 
 exports[`SourceFormComponent: Component should render error wrapper 1`] = `
 <styled.div>
-  <MemoizedFormattedMessage
+  <FormattedMessage
     defaultMessage="Uploading file failed. Please try again."
     id="shared.components.sourceForm.uploadingError"
   />
@@ -810,7 +810,7 @@ exports[`SourceFormComponent: Component should render file uploader 1`] = `
       }
     }
   >
-    <MemoizedFormattedMessage
+    <FormattedMessage
       defaultMessage="Source Type"
       id="shared.components.sourceForm.source"
     />
@@ -1162,7 +1162,7 @@ exports[`SourceFormComponent: Component should render file uploader 1`] = `
     }
   >
     <Styled(H1)>
-      <MemoizedFormattedMessage
+      <FormattedMessage
         defaultMessage="Re-importing could change the current values. Are you sure you want to proceed? "
         id="shared.components.sourceForm.reimportTitle"
       />
@@ -1174,7 +1174,7 @@ exports[`SourceFormComponent: Component should render file uploader 1`] = `
         onClick={[Function]}
         type="button"
       >
-        <MemoizedFormattedMessage
+        <FormattedMessage
           defaultMessage="Cancel"
           id="shared.components.sourceForm.cancelReimport"
         />
@@ -1185,7 +1185,7 @@ exports[`SourceFormComponent: Component should render file uploader 1`] = `
         onClick={[Function]}
         type="button"
       >
-        <MemoizedFormattedMessage
+        <FormattedMessage
           defaultMessage="Yes"
           id="shared.components.sourceForm.confirmReimport"
         />
@@ -1197,7 +1197,7 @@ exports[`SourceFormComponent: Component should render file uploader 1`] = `
 
 exports[`SourceFormComponent: Component should render warning wrapper with job ongoing 1`] = `
 <styled.div>
-  <MemoizedFormattedMessage
+  <FormattedMessage
     defaultMessage="There is a script processing ongoing. Please wait until it finishes to try and upload a new file."
     id="shared.components.sourceForm.processing"
   />
@@ -1206,7 +1206,7 @@ exports[`SourceFormComponent: Component should render warning wrapper with job o
 
 exports[`SourceFormComponent: Component should render warning wrapper with uploading file 1`] = `
 <styled.div>
-  <MemoizedFormattedMessage
+  <FormattedMessage
     defaultMessage="Uploading file in progress..."
     id="shared.components.sourceForm.uploadingFile"
   />

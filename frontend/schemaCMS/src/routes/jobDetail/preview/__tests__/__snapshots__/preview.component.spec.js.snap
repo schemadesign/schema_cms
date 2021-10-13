@@ -4,13 +4,13 @@ exports[`Preview: Component should render correctly 1`] = `
 <styled.div>
   <MobileMenu
     headerSubtitle={
-      <Memo(FormattedMessage)
+      <FormattedMessage
         defaultMessage="Preview"
         id="job.preview.subTitile"
       />
     }
     headerTitle={
-      <Memo(FormattedMessage)
+      <FormattedMessage
         defaultMessage="Job"
         id="job.preview.pageTitle"
       />
@@ -23,7 +23,7 @@ exports[`Preview: Component should render correctly 1`] = `
             "editor",
           ],
           "id": "projectsNavBtn",
-          "label": <Memo(FormattedMessage)
+          "label": <FormattedMessage
             defaultMessage="Projects"
             id="jobDetail.projectsListPage"
           />,
@@ -35,13 +35,13 @@ exports[`Preview: Component should render correctly 1`] = `
   />
   <ContextHeader
     subtitle={
-      <Memo(FormattedMessage)
+      <FormattedMessage
         defaultMessage="Preview"
         id="job.preview.subTitile"
       />
     }
     title={
-      <Memo(FormattedMessage)
+      <FormattedMessage
         defaultMessage="Job"
         id="job.preview.pageTitle"
       />
@@ -141,13 +141,13 @@ exports[`Preview: Component should render correctly with loader 1`] = `
 <styled.div>
   <MobileMenu
     headerSubtitle={
-      <Memo(FormattedMessage)
+      <FormattedMessage
         defaultMessage="Preview"
         id="job.preview.subTitile"
       />
     }
     headerTitle={
-      <Memo(FormattedMessage)
+      <FormattedMessage
         defaultMessage="Job"
         id="job.preview.pageTitle"
       />
@@ -160,7 +160,7 @@ exports[`Preview: Component should render correctly with loader 1`] = `
             "editor",
           ],
           "id": "projectsNavBtn",
-          "label": <Memo(FormattedMessage)
+          "label": <FormattedMessage
             defaultMessage="Projects"
             id="jobDetail.projectsListPage"
           />,
@@ -172,13 +172,13 @@ exports[`Preview: Component should render correctly with loader 1`] = `
   />
   <ContextHeader
     subtitle={
-      <Memo(FormattedMessage)
+      <FormattedMessage
         defaultMessage="Preview"
         id="job.preview.subTitile"
       />
     }
     title={
-      <Memo(FormattedMessage)
+      <FormattedMessage
         defaultMessage="Job"
         id="job.preview.pageTitle"
       />

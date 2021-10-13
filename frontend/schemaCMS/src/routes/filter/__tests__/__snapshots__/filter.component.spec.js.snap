@@ -4,7 +4,7 @@ exports[`Filter: Component should render correctly 1`] = `
 <styled.div>
   <MobileMenu
     headerSubtitle={
-      <Memo(FormattedMessage)
+      <FormattedMessage
         defaultMessage="Edit Filter"
         id="filter.subTitle"
       />
@@ -18,7 +18,7 @@ exports[`Filter: Component should render correctly 1`] = `
             "editor",
           ],
           "id": "projectsNavBtn",
-          "label": <Memo(FormattedMessage)
+          "label": <FormattedMessage
             defaultMessage="Projects"
             id="filter.projectsListPage"
           />,
@@ -30,7 +30,7 @@ exports[`Filter: Component should render correctly 1`] = `
   />
   <ContextHeader
     subtitle={
-      <Memo(FormattedMessage)
+      <FormattedMessage
         defaultMessage="Edit Filter"
         id="filter.subTitle"
       />
@@ -89,7 +89,7 @@ exports[`Filter: Component should render correctly with loader 1`] = `
 <styled.div>
   <MobileMenu
     headerSubtitle={
-      <Memo(FormattedMessage)
+      <FormattedMessage
         defaultMessage="Edit Filter"
         id="filter.subTitle"
       />
@@ -103,7 +103,7 @@ exports[`Filter: Component should render correctly with loader 1`] = `
             "editor",
           ],
           "id": "projectsNavBtn",
-          "label": <Memo(FormattedMessage)
+          "label": <FormattedMessage
             defaultMessage="Projects"
             id="filter.projectsListPage"
           />,
@@ -115,7 +115,7 @@ exports[`Filter: Component should render correctly with loader 1`] = `
   />
   <ContextHeader
     subtitle={
-      <Memo(FormattedMessage)
+      <FormattedMessage
         defaultMessage="Edit Filter"
         id="filter.subTitle"
       />

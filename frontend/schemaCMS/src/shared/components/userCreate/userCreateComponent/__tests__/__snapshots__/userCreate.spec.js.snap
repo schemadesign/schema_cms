@@ -4,7 +4,7 @@ exports[`UserCreate: Component should render correctly 1`] = `
 <styled.div>
   <MobileMenu
     headerSubtitle={
-      <Memo(FormattedMessage)
+      <FormattedMessage
         defaultMessage="You are adding {user} to {project}"
         id="userCreate.addUser"
         values={
@@ -16,7 +16,7 @@ exports[`UserCreate: Component should render correctly 1`] = `
       />
     }
     headerTitle={
-      <Memo(FormattedMessage)
+      <FormattedMessage
         defaultMessage="Users"
         id="userCreate.pageTitle"
       />
@@ -28,7 +28,7 @@ exports[`UserCreate: Component should render correctly 1`] = `
             "admin",
           ],
           "id": "projectsNavBtn",
-          "label": <Memo(FormattedMessage)
+          "label": <FormattedMessage
             defaultMessage="Projects"
             id="user.projectsListPage"
           />,
@@ -40,7 +40,7 @@ exports[`UserCreate: Component should render correctly 1`] = `
             "admin",
           ],
           "id": "userNavBtn",
-          "label": <Memo(FormattedMessage)
+          "label": <FormattedMessage
             defaultMessage="Users"
             id="user.userPage"
           />,
@@ -52,7 +52,7 @@ exports[`UserCreate: Component should render correctly 1`] = `
   />
   <ContextHeader
     subtitle={
-      <Memo(FormattedMessage)
+      <FormattedMessage
         defaultMessage="You are adding {user} to {project}"
         id="userCreate.addUser"
         values={
@@ -64,7 +64,7 @@ exports[`UserCreate: Component should render correctly 1`] = `
       />
     }
     title={
-      <Memo(FormattedMessage)
+      <FormattedMessage
         defaultMessage="Users"
         id="userCreate.pageTitle"
       />
@@ -157,7 +157,7 @@ exports[`UserCreate: Component should render correctly 1`] = `
         id="inviteUserBackBtn"
         to="cancelUrl"
       >
-        <MemoizedFormattedMessage
+        <FormattedMessage
           defaultMessage="Cancel"
           id="userCreate.cancel"
         />
@@ -168,7 +168,7 @@ exports[`UserCreate: Component should render correctly 1`] = `
         loading={false}
         type="submit"
       >
-        <MemoizedFormattedMessage
+        <FormattedMessage
           defaultMessage="Add"
           id="userCreate.add"
         />
