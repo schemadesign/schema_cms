@@ -377,7 +377,7 @@ exports[`App: Component should not render App when language is not set 1`] = `
             id="app.pageTitle"
           >
             <Component />
-          </MemoizedFormattedMessage>
+          </FormattedMessage>
           <Memo(l) />
           <DesktopHeader
             userRole="editor"
@@ -780,7 +780,7 @@ exports[`App: Component should render App when language is set 1`] = `
             id="app.pageTitle"
           >
             <Component />
-          </MemoizedFormattedMessage>
+          </FormattedMessage>
           <Memo(l) />
           <DesktopHeader
             userRole="editor"

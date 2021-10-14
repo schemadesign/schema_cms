@@ -28,7 +28,7 @@ exports[`UserList: Component should render correctly with users 1`] = `
           to="/user/1"
         >
           Alan
-
+           
           Watts
         </Styled(Link)>
       </styled.div>
@@ -58,7 +58,7 @@ exports[`UserList: Component should render correctly with users 1`] = `
           to="/user/2"
         >
           Dale
-
+           
           Chihuly
         </Styled(Link)>
       </styled.div>
@@ -88,7 +88,7 @@ exports[`UserList: Component should render correctly with users 1`] = `
           to="/user/3"
         >
           Dave
-
+           
           Bowie
         </Styled(Link)>
       </styled.div>
