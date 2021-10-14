@@ -147,6 +147,7 @@
     "start": "node scripts/start.js",
     "build": "node scripts/build.js",
     "test": "node scripts/test.js",
+    "test:update": "bash scripts/run_test_outside.sh",
     "extract-intl": "node scripts/extractIntl.js en pl",
     "lint": "yarn run lint:js && yarn run lint:css",
     "lint:css": "stylelint './src/**/*.js'",
