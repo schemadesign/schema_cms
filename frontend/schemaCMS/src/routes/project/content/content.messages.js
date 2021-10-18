@@ -20,6 +20,6 @@ export default defineMessages({
   },
   addBlockButton: {
     id: 'project.content.addBlockButton',
-    defaultMessage: 'Add a Block',
+    defaultMessage: 'Block',
   },
 });
