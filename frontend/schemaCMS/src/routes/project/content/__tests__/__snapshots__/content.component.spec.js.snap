@@ -950,7 +950,7 @@ exports[`Content: Component should render correctly 1`] = `
             d="M32 15v13h13v4H32v13h-4V32H15v-4h13V15h4z"
           />
         </svg>
-
+         
         Block
       </a>
     </div>
