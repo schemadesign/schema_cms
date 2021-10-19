@@ -5,18 +5,22 @@ exports[`PageForm: Component should render correctly 1`] = `
   padding-bottom: 50px;
 }
 
-.c17 {
+.c13 {
+  width: 100%;
+}
+
+.c19 {
   position: relative;
   z-index: 999;
 }
 
-.c27 {
+.c29 {
   margin-top: 30px;
   border-top: 2px solid #2F2F36;
   padding-top: 15px;
 }
 
-.c28 {
+.c30 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -36,16 +40,16 @@ exports[`PageForm: Component should render correctly 1`] = `
   position: relative;
 }
 
-.c31 {
+.c33 {
   padding-right: 10px;
 }
 
-.c30 {
+.c32 {
   padding-left: 10px;
   max-width: 100%;
 }
 
-.c29 {
+.c31 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -61,7 +65,7 @@ exports[`PageForm: Component should render correctly 1`] = `
   padding-right: 10px;
 }
 
-.c35 {
+.c37 {
   margin-top: 15px;
 }
 
@@ -69,7 +73,7 @@ exports[`PageForm: Component should render correctly 1`] = `
   cursor: pointer;
 }
 
-.c32 {
+.c34 {
   color: #71737e;
   min-width: 100%;
 }
@@ -96,20 +100,20 @@ exports[`PageForm: Component should render correctly 1`] = `
   position: relative;
 }
 
-.c22 {
+.c24 {
   text-align: right;
 }
 
-.c33 {
+.c35 {
   padding: 0 10px;
 }
 
-.c33:before {
+.c35:before {
   content: '|';
   display: inline;
 }
 
-.c25 {
+.c27 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -169,7 +173,7 @@ exports[`PageForm: Component should render correctly 1`] = `
   color: #FFF;
 }
 
-.c18 {
+.c20 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -184,17 +188,17 @@ exports[`PageForm: Component should render correctly 1`] = `
   cursor: pointer;
 }
 
-.c18 label {
+.c20 label {
   margin-bottom: 2px;
 }
 
-.c19 {
+.c21 {
   position: absolute;
   right: 0;
   top: 5px;
 }
 
-.c23 {
+.c25 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -210,7 +214,7 @@ exports[`PageForm: Component should render correctly 1`] = `
   align-items: center;
 }
 
-.c24 {
+.c26 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -221,7 +225,7 @@ exports[`PageForm: Component should render correctly 1`] = `
   align-items: center;
 }
 
-.c26 {
+.c28 {
   color: #71737e;
   max-width: 240px;
   white-space: nowrap;
@@ -230,7 +234,7 @@ exports[`PageForm: Component should render correctly 1`] = `
   display: none;
 }
 
-.c20 {
+.c22 {
   color: #71737e;
   text-align: center;
   padding-bottom: 20px;
@@ -252,33 +256,11 @@ exports[`PageForm: Component should render correctly 1`] = `
   align-items: center;
 }
 
-.c21 {
+.c23 {
   width: 33%;
 }
 
-.c13 {
-  padding-bottom: 30px;
-}
-
-.c15 {
-  font-size: 15px;
-  padding: 20px 0 5px;
-  text-overflow: ellipsis;
-  white-space: nowrap;
-  width: 100%;
-  overflow: hidden;
-}
-
-.c16 {
-  color: #71737e;
-}
-
-.c14 {
-  margin-top: 10px;
-  padding: 0 20px 20px;
-}
-
-.c34 {
+.c36 {
   -webkit-text-decoration: none;
   text-decoration: none;
   white-space: nowrap;
@@ -289,12 +271,67 @@ exports[`PageForm: Component should render correctly 1`] = `
   border-bottom: 1px solid transparent;
 }
 
-.c34:hover {
+.c36:hover {
   border-bottom: 1px solid #FFF;
 }
 
+.c14 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  border-bottom: 1px solid grey;
+}
+
+.c15 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  width: 100%;
+}
+
+.c16 {
+  display: block;
+  -webkit-flex: 1;
+  -ms-flex: 1;
+  flex: 1;
+  -webkit-align-self: flex-end;
+  -ms-flex-item-align: end;
+  align-self: flex-end;
+  text-align: center;
+  border-bottom: 2px solid #FFF;
+  cursor: pointer;
+}
+
+.c16:hover {
+  border-bottom-color: #FFF;
+}
+
+.c18 {
+  display: block;
+  -webkit-flex: 1;
+  -ms-flex: 1;
+  flex: 1;
+  -webkit-align-self: flex-end;
+  -ms-flex-item-align: end;
+  align-self: flex-end;
+  text-align: center;
+  border-bottom: 2px solid #2F2F36;
+  cursor: pointer;
+}
+
+.c18:hover {
+  border-bottom-color: #FFF;
+}
+
+.c17 {
+  color: #FFF;
+  padding: 16px;
+}
+
 @media (min-width:480px) {
-  .c28 {
+  .c30 {
     -webkit-flex-direction: row;
     -ms-flex-direction: row;
     flex-direction: row;
@@ -306,13 +343,13 @@ exports[`PageForm: Component should render correctly 1`] = `
 }
 
 @media (min-width:480px) {
-  .c29 {
+  .c31 {
     padding-right: 40px;
   }
 }
 
 @media (min-width:480px) {
-  .c35 {
+  .c37 {
     margin-top: 0;
   }
 }
@@ -353,21 +390,38 @@ exports[`PageForm: Component should render correctly 1`] = `
 }
 
 @media (min-width:1050px) {
-  .c23 {
+  .c25 {
     max-width: calc(100% - 350px);
   }
 }
 
 @media (min-width:1050px) {
-  .c26 {
+  .c28 {
     display: block;
   }
 }
 
 @media (min-width:1050px) {
-  .c20 {
+  .c22 {
     margin-top: 0px;
     padding-bottom: 40px;
+  }
+}
+
+@media (min-width:1050px) {
+  .c14 {
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    margin: 29px 0 20px 0;
+    font-size: 14px;
+  }
+}
+
+@media (min-width:1050px) {
+  .c15 {
+    width: 400px;
   }
 }
 
@@ -635,435 +689,6 @@ exports[`PageForm: Component should render correctly 1`] = `
     </div>
   </div>
   <div
-    className="c11"
-  >
-    <div
-      style={
-        Object {
-          "display": "flex",
-          "flexDirection": "column",
-          "maxWidth": "100%",
-          "paddingBottom": "30px",
-          "position": "relative",
-        }
-      }
-    >
-      <label
-        htmlFor="displayName"
-        style={
-          Object {
-            "border": "none",
-            "borderTop": "2px solid #2F2F36",
-            "color": "#71737e",
-            "display": "block",
-            "fontSize": "14px",
-            "outline": "none",
-            "paddingTop": "8px",
-            "width": "100%",
-          }
-        }
-      >
-        URL Display Name
-      </label>
-      <input
-        id="displayName"
-        name="displayName"
-        onBlur={[Function]}
-        onChange={[Function]}
-        style={
-          Object {
-            "backgroundColor": "transparent",
-            "border": "none",
-            "color": "#FFF",
-            "fontFamily": "inherit",
-            "fontSize": "18px",
-            "fontWeight": "inherit",
-            "letterSpacing": "normal",
-            "lineHeight": "24px",
-            "maxWidth": "100%",
-            "minWidth": 60,
-            "outline": "none",
-            "padding": 0,
-          }
-        }
-        type="text"
-        value="page-name"
-      />
-      <div
-        style={
-          Object {
-            "position": "absolute",
-            "right": 0,
-            "top": 2,
-          }
-        }
-      >
-        <label
-          htmlFor="displayName"
-          style={
-            Object {
-              "cursor": "pointer",
-            }
-          }
-        >
-          <div
-            className="c12"
-          >
-            <svg
-              style={
-                Object {
-                  "fill": "#FFF",
-                  "height": "30px",
-                  "width": "30px",
-                }
-              }
-              viewBox="0 0 30 30"
-            >
-              <path
-                d="M21.789 10.92a.724.724 0 000-1.022l-1.687-1.687a.724.724 0 00-1.022 0l-1.322 1.322 2.709 2.709 1.322-1.322zM9 18.291V21h2.709l7.992-7.992-2.709-2.71L9 18.292z"
-                fillRule="evenodd"
-              />
-            </svg>
-          </div>
-        </label>
-      </div>
-    </div>
-    <div
-      className="c7"
-      id="displayNameError"
-    />
-  </div>
-  <div
-    className="c11"
-  >
-    <div
-      style={
-        Object {
-          "display": "flex",
-          "flexDirection": "column",
-          "maxWidth": "100%",
-          "paddingBottom": "30px",
-          "position": "relative",
-        }
-      }
-    >
-      <label
-        htmlFor="description"
-        style={
-          Object {
-            "border": "none",
-            "borderTop": "2px solid #2F2F36",
-            "color": "#71737e",
-            "display": "block",
-            "fontSize": "14px",
-            "outline": "none",
-            "paddingTop": "8px",
-            "width": "100%",
-          }
-        }
-      >
-        SEO Page Description
-      </label>
-      <textarea
-        id="description"
-        onBlur={[Function]}
-        onChange={[Function]}
-        style={
-          Object {
-            "background": "#000",
-            "border": "none",
-            "color": "#FFF",
-            "fontSize": "18px",
-            "height": 0,
-            "lineHeight": "24px",
-            "outline": "none",
-            "padding": "0",
-            "resize": "none",
-          }
-        }
-        value="description"
-      />
-      <textarea
-        aria-hidden={true}
-        readOnly={true}
-        style={
-          Object {
-            "background": "#000",
-            "border": "none",
-            "color": "#FFF",
-            "fontSize": "18px",
-            "height": 0,
-            "left": 0,
-            "lineHeight": "24px",
-            "outline": "none",
-            "overflow": "hidden",
-            "padding": "0",
-            "position": "absolute",
-            "resize": "none",
-            "top": 0,
-            "visibility": "hidden",
-          }
-        }
-        tabIndex={-1}
-      />
-      <div
-        style={
-          Object {
-            "position": "absolute",
-            "right": 0,
-            "top": 2,
-          }
-        }
-      >
-        <label
-          htmlFor="description"
-          style={
-            Object {
-              "cursor": "pointer",
-            }
-          }
-        >
-          <div
-            className="c12"
-          >
-            <svg
-              style={
-                Object {
-                  "fill": "#FFF",
-                  "height": "30px",
-                  "width": "30px",
-                }
-              }
-              viewBox="0 0 30 30"
-            >
-              <path
-                d="M21.789 10.92a.724.724 0 000-1.022l-1.687-1.687a.724.724 0 00-1.022 0l-1.322 1.322 2.709 2.709 1.322-1.322zM9 18.291V21h2.709l7.992-7.992-2.709-2.71L9 18.292z"
-                fillRule="evenodd"
-              />
-            </svg>
-          </div>
-        </label>
-      </div>
-    </div>
-    <div
-      className="c7"
-      id="descriptionError"
-    />
-  </div>
-  <div
-    className="c11"
-  >
-    <div
-      style={
-        Object {
-          "display": "flex",
-          "flexDirection": "column",
-          "maxWidth": "100%",
-          "paddingBottom": "30px",
-          "position": "relative",
-        }
-      }
-    >
-      <label
-        htmlFor="keywords"
-        style={
-          Object {
-            "border": "none",
-            "borderTop": "2px solid #2F2F36",
-            "color": "#71737e",
-            "display": "block",
-            "fontSize": "14px",
-            "outline": "none",
-            "paddingTop": "8px",
-            "width": "100%",
-          }
-        }
-      >
-        SEO Keywords
-      </label>
-      <input
-        id="keywords"
-        name="keywords"
-        onBlur={[Function]}
-        onChange={[Function]}
-        style={
-          Object {
-            "backgroundColor": "transparent",
-            "border": "none",
-            "color": "#FFF",
-            "fontFamily": "inherit",
-            "fontSize": "18px",
-            "fontWeight": "inherit",
-            "letterSpacing": "normal",
-            "lineHeight": "24px",
-            "maxWidth": "100%",
-            "minWidth": 60,
-            "outline": "none",
-            "padding": 0,
-          }
-        }
-        type="text"
-        value="keyword;"
-      />
-      <div
-        style={
-          Object {
-            "position": "absolute",
-            "right": 0,
-            "top": 2,
-          }
-        }
-      >
-        <label
-          htmlFor="keywords"
-          style={
-            Object {
-              "cursor": "pointer",
-            }
-          }
-        >
-          <div
-            className="c12"
-          >
-            <svg
-              style={
-                Object {
-                  "fill": "#FFF",
-                  "height": "30px",
-                  "width": "30px",
-                }
-              }
-              viewBox="0 0 30 30"
-            >
-              <path
-                d="M21.789 10.92a.724.724 0 000-1.022l-1.687-1.687a.724.724 0 00-1.022 0l-1.322 1.322 2.709 2.709 1.322-1.322zM9 18.291V21h2.709l7.992-7.992-2.709-2.71L9 18.292z"
-                fillRule="evenodd"
-              />
-            </svg>
-          </div>
-        </label>
-      </div>
-    </div>
-    <div
-      className="c7"
-      id="keywordsError"
-    />
-  </div>
-  <div
-    className="c11"
-  >
-    <div
-      style={
-        Object {
-          "display": "flex",
-          "flexDirection": "column",
-          "maxWidth": "100%",
-          "paddingBottom": "30px",
-          "position": "relative",
-        }
-      }
-    >
-      <label
-        htmlFor="link"
-        style={
-          Object {
-            "border": "none",
-            "borderTop": "2px solid #2F2F36",
-            "color": "#71737e",
-            "display": "block",
-            "fontSize": "14px",
-            "outline": "none",
-            "paddingTop": "8px",
-            "width": "100%",
-          }
-        }
-      >
-        Frontend page Link
-      </label>
-      <input
-        id="link"
-        name="link"
-        onBlur={[Function]}
-        onChange={[Function]}
-        style={
-          Object {
-            "backgroundColor": "transparent",
-            "border": "none",
-            "color": "#FFF",
-            "fontFamily": "inherit",
-            "fontSize": "18px",
-            "fontWeight": "inherit",
-            "letterSpacing": "normal",
-            "lineHeight": "24px",
-            "maxWidth": "100%",
-            "minWidth": 60,
-            "outline": "none",
-            "padding": 0,
-          }
-        }
-        type="text"
-      />
-      <div
-        style={
-          Object {
-            "position": "absolute",
-            "right": 0,
-            "top": 2,
-          }
-        }
-      >
-        <label
-          htmlFor="link"
-          style={
-            Object {
-              "cursor": "pointer",
-            }
-          }
-        >
-          <div
-            className="c12"
-          >
-            <svg
-              style={
-                Object {
-                  "fill": "#FFF",
-                  "height": "30px",
-                  "width": "30px",
-                }
-              }
-              viewBox="0 0 30 30"
-            >
-              <path
-                d="M21.789 10.92a.724.724 0 000-1.022l-1.687-1.687a.724.724 0 00-1.022 0l-1.322 1.322 2.709 2.709 1.322-1.322zM9 18.291V21h2.709l7.992-7.992-2.709-2.71L9 18.292z"
-                fillRule="evenodd"
-              />
-            </svg>
-          </div>
-        </label>
-      </div>
-    </div>
-    <div
-      className="c7"
-      id="linkError"
-    />
-  </div>
-  <label
-    style={
-      Object {
-        "border": "none",
-        "borderTop": "2px solid #2F2F36",
-        "color": "#71737e",
-        "display": "block",
-        "fontSize": "14px",
-        "outline": "none",
-        "paddingTop": "8px",
-        "width": "100%",
-      }
-    }
-  >
-    Tags
-  </label>
-  <div
     className="c13"
   >
     <div
@@ -1071,229 +696,37 @@ exports[`PageForm: Component should render correctly 1`] = `
     >
       <div
         className="c15"
-        title="Colors"
-      >
-        <span
-          className="c16"
-        >
-          Category: 
-        </span>
-        Colors
-      </div>
-      <div
-        className=""
       >
         <div
-          className=" css-2b097c-container"
-          onKeyDown={[Function]}
+          className="c16"
         >
           <div
-            className=" css-17k7d72-control"
-            onMouseDown={[Function]}
-            onTouchEnd={[Function]}
+            className="c17"
+            id="tab-0-tab-button"
+            onClick={[Function]}
           >
-            <div
-              className=" css-193kkzd-ValueContainer"
-            >
-              <div
-                className=" css-1wa3eu0-placeholder"
-              >
-                Select...
-              </div>
-              <div
-                className="css-14m14bb-Input"
-              >
-                <div
-                  className=""
-                  style={
-                    Object {
-                      "display": "inline-block",
-                    }
-                  }
-                >
-                  <input
-                    aria-autocomplete="list"
-                    autoCapitalize="none"
-                    autoComplete="off"
-                    autoCorrect="off"
-                    disabled={false}
-                    id="react-select-2-input"
-                    onBlur={[Function]}
-                    onChange={[Function]}
-                    onFocus={[Function]}
-                    spellCheck="false"
-                    style={
-                      Object {
-                        "background": 0,
-                        "border": 0,
-                        "boxSizing": "content-box",
-                        "color": "inherit",
-                        "fontSize": "inherit",
-                        "label": "input",
-                        "opacity": 1,
-                        "outline": 0,
-                        "padding": 0,
-                        "width": "1px",
-                      }
-                    }
-                    tabIndex="0"
-                    type="text"
-                    value=""
-                  />
-                  <div
-                    style={
-                      Object {
-                        "height": 0,
-                        "left": 0,
-                        "overflow": "scroll",
-                        "position": "absolute",
-                        "top": 0,
-                        "visibility": "hidden",
-                        "whiteSpace": "pre",
-                      }
-                    }
-                  >
-                    
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div
-              className=" css-1hb7zxy-IndicatorsContainer"
-            >
-              <span
-                className=" css-43ykx9-indicatorSeparator"
-              />
-              <div
-                aria-hidden="true"
-                className=" css-tlfecz-indicatorContainer"
-                onMouseDown={[Function]}
-                onTouchEnd={[Function]}
-              >
-                0
-                /
-                4
-              </div>
-            </div>
+            Blocks
           </div>
         </div>
-      </div>
-      <div
-        className="c15"
-        title="Countries"
-      >
-        <span
-          className="c16"
-        >
-          Category: 
-        </span>
-        Countries
-      </div>
-      <div
-        className=""
-      >
         <div
-          className=" css-2b097c-container"
-          onKeyDown={[Function]}
+          className="c18"
         >
           <div
-            className=" css-17k7d72-control"
-            onMouseDown={[Function]}
-            onTouchEnd={[Function]}
+            className="c17"
+            id="tab-1-tab-button"
+            onClick={[Function]}
           >
-            <div
-              className=" css-193kkzd-ValueContainer"
-            >
-              <div
-                className=" css-1wa3eu0-placeholder"
-              >
-                Select...
-              </div>
-              <div
-                className="css-14m14bb-Input"
-              >
-                <div
-                  className=""
-                  style={
-                    Object {
-                      "display": "inline-block",
-                    }
-                  }
-                >
-                  <input
-                    aria-autocomplete="list"
-                    autoCapitalize="none"
-                    autoComplete="off"
-                    autoCorrect="off"
-                    disabled={false}
-                    id="react-select-3-input"
-                    onBlur={[Function]}
-                    onChange={[Function]}
-                    onFocus={[Function]}
-                    spellCheck="false"
-                    style={
-                      Object {
-                        "background": 0,
-                        "border": 0,
-                        "boxSizing": "content-box",
-                        "color": "inherit",
-                        "fontSize": "inherit",
-                        "label": "input",
-                        "opacity": 1,
-                        "outline": 0,
-                        "padding": 0,
-                        "width": "1px",
-                      }
-                    }
-                    tabIndex="0"
-                    type="text"
-                    value=""
-                  />
-                  <div
-                    style={
-                      Object {
-                        "height": 0,
-                        "left": 0,
-                        "overflow": "scroll",
-                        "position": "absolute",
-                        "top": 0,
-                        "visibility": "hidden",
-                        "whiteSpace": "pre",
-                      }
-                    }
-                  >
-                    
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div
-              className=" css-1hb7zxy-IndicatorsContainer"
-            >
-              <span
-                className=" css-43ykx9-indicatorSeparator"
-              />
-              <div
-                aria-hidden="true"
-                className=" css-tlfecz-indicatorContainer"
-                onMouseDown={[Function]}
-                onTouchEnd={[Function]}
-              >
-                0
-                /
-                1
-              </div>
-            </div>
+            Metadata
           </div>
         </div>
       </div>
     </div>
   </div>
   <div
-    className="c17"
+    className="c19"
   >
     <div
-      className="c18"
+      className="c20"
       onClick={[Function]}
     >
       <label
@@ -1445,7 +878,7 @@ exports[`PageForm: Component should render correctly 1`] = `
         </div>
       </div>
       <div
-        className="c19"
+        className="c21"
       >
         <svg
           style={
@@ -1466,18 +899,18 @@ exports[`PageForm: Component should render correctly 1`] = `
     </div>
   </div>
   <div
-    className="c20"
+    className="c22"
   >
     <div
-      className="c21"
+      className="c23"
       id="tagsCounter"
     />
     1 Block
     <div
-      className="c21"
+      className="c23"
     >
       <div
-        className="c22"
+        className="c24"
       >
         <button
           disabled={false}
@@ -1574,14 +1007,14 @@ exports[`PageForm: Component should render correctly 1`] = `
           }
         >
           <div
-            className="c23"
+            className="c25"
           >
             <div
-              className="c24"
+              className="c26"
             >
               <div>
                 <div
-                  className="c25"
+                  className="c27"
                 >
                   <svg
                     style={
@@ -1688,7 +1121,7 @@ exports[`PageForm: Component should render correctly 1`] = `
               />
             </div>
             <div
-              className="c24"
+              className="c26"
             >
               <label
                 className="c9"
@@ -1734,7 +1167,7 @@ exports[`PageForm: Component should render correctly 1`] = `
             </div>
           </div>
           <div
-            className="c26"
+            className="c28"
             title="type"
           >
             type
@@ -1789,13 +1222,13 @@ exports[`PageForm: Component should render correctly 1`] = `
      
   </span>
   <div
-    className="c27"
+    className="c29"
   >
     <div
-      className="c28"
+      className="c30"
     >
       <div
-        className="c29"
+        className="c31"
       >
         <div>
           <input
@@ -1847,23 +1280,23 @@ exports[`PageForm: Component should render correctly 1`] = `
           </label>
         </div>
         <div
-          className="c30"
+          className="c32"
         >
           <label
-            className="c31"
+            className="c33"
             htmlFor="isPublic"
           >
             Make it Public
           </label>
           <span
-            className="c32"
+            className="c34"
           >
             This Page is currently Private
             <span
-              className="c33"
+              className="c35"
             />
             <a
-              className="c34"
+              className="c36"
               href="pageUrl"
               target="_blank"
             >
@@ -1873,7 +1306,7 @@ exports[`PageForm: Component should render correctly 1`] = `
         </div>
       </div>
       <div
-        className="c35"
+        className="c37"
       >
         <button
           disabled={false}
@@ -1912,18 +1345,22 @@ exports[`PageForm: Component should render with page template 1`] = `
   padding-bottom: 50px;
 }
 
-.c17 {
+.c13 {
+  width: 100%;
+}
+
+.c19 {
   position: relative;
   z-index: 999;
 }
 
-.c27 {
+.c29 {
   margin-top: 30px;
   border-top: 2px solid #2F2F36;
   padding-top: 15px;
 }
 
-.c28 {
+.c30 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -1943,16 +1380,16 @@ exports[`PageForm: Component should render with page template 1`] = `
   position: relative;
 }
 
-.c31 {
+.c33 {
   padding-right: 10px;
 }
 
-.c30 {
+.c32 {
   padding-left: 10px;
   max-width: 100%;
 }
 
-.c29 {
+.c31 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -1968,7 +1405,7 @@ exports[`PageForm: Component should render with page template 1`] = `
   padding-right: 10px;
 }
 
-.c35 {
+.c37 {
   margin-top: 15px;
 }
 
@@ -1976,7 +1413,7 @@ exports[`PageForm: Component should render with page template 1`] = `
   cursor: pointer;
 }
 
-.c32 {
+.c34 {
   color: #71737e;
   min-width: 100%;
 }
@@ -2003,20 +1440,20 @@ exports[`PageForm: Component should render with page template 1`] = `
   position: relative;
 }
 
-.c22 {
+.c24 {
   text-align: right;
 }
 
-.c33 {
+.c35 {
   padding: 0 10px;
 }
 
-.c33:before {
+.c35:before {
   content: '|';
   display: inline;
 }
 
-.c25 {
+.c27 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -2076,7 +1513,7 @@ exports[`PageForm: Component should render with page template 1`] = `
   color: #FFF;
 }
 
-.c18 {
+.c20 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -2091,17 +1528,17 @@ exports[`PageForm: Component should render with page template 1`] = `
   cursor: pointer;
 }
 
-.c18 label {
+.c20 label {
   margin-bottom: 2px;
 }
 
-.c19 {
+.c21 {
   position: absolute;
   right: 0;
   top: 5px;
 }
 
-.c23 {
+.c25 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -2117,7 +1554,7 @@ exports[`PageForm: Component should render with page template 1`] = `
   align-items: center;
 }
 
-.c24 {
+.c26 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -2128,7 +1565,7 @@ exports[`PageForm: Component should render with page template 1`] = `
   align-items: center;
 }
 
-.c26 {
+.c28 {
   color: #71737e;
   max-width: 240px;
   white-space: nowrap;
@@ -2137,7 +1574,7 @@ exports[`PageForm: Component should render with page template 1`] = `
   display: none;
 }
 
-.c20 {
+.c22 {
   color: #71737e;
   text-align: center;
   padding-bottom: 20px;
@@ -2159,33 +1596,11 @@ exports[`PageForm: Component should render with page template 1`] = `
   align-items: center;
 }
 
-.c21 {
+.c23 {
   width: 33%;
 }
 
-.c13 {
-  padding-bottom: 30px;
-}
-
-.c15 {
-  font-size: 15px;
-  padding: 20px 0 5px;
-  text-overflow: ellipsis;
-  white-space: nowrap;
-  width: 100%;
-  overflow: hidden;
-}
-
-.c16 {
-  color: #71737e;
-}
-
-.c14 {
-  margin-top: 10px;
-  padding: 0 20px 20px;
-}
-
-.c34 {
+.c36 {
   -webkit-text-decoration: none;
   text-decoration: none;
   white-space: nowrap;
@@ -2196,12 +1611,67 @@ exports[`PageForm: Component should render with page template 1`] = `
   border-bottom: 1px solid transparent;
 }
 
-.c34:hover {
+.c36:hover {
   border-bottom: 1px solid #FFF;
 }
 
+.c14 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  border-bottom: 1px solid grey;
+}
+
+.c15 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  width: 100%;
+}
+
+.c16 {
+  display: block;
+  -webkit-flex: 1;
+  -ms-flex: 1;
+  flex: 1;
+  -webkit-align-self: flex-end;
+  -ms-flex-item-align: end;
+  align-self: flex-end;
+  text-align: center;
+  border-bottom: 2px solid #FFF;
+  cursor: pointer;
+}
+
+.c16:hover {
+  border-bottom-color: #FFF;
+}
+
+.c18 {
+  display: block;
+  -webkit-flex: 1;
+  -ms-flex: 1;
+  flex: 1;
+  -webkit-align-self: flex-end;
+  -ms-flex-item-align: end;
+  align-self: flex-end;
+  text-align: center;
+  border-bottom: 2px solid #2F2F36;
+  cursor: pointer;
+}
+
+.c18:hover {
+  border-bottom-color: #FFF;
+}
+
+.c17 {
+  color: #FFF;
+  padding: 16px;
+}
+
 @media (min-width:480px) {
-  .c28 {
+  .c30 {
     -webkit-flex-direction: row;
     -ms-flex-direction: row;
     flex-direction: row;
@@ -2213,13 +1683,13 @@ exports[`PageForm: Component should render with page template 1`] = `
 }
 
 @media (min-width:480px) {
-  .c29 {
+  .c31 {
     padding-right: 40px;
   }
 }
 
 @media (min-width:480px) {
-  .c35 {
+  .c37 {
     margin-top: 0;
   }
 }
@@ -2260,21 +1730,38 @@ exports[`PageForm: Component should render with page template 1`] = `
 }
 
 @media (min-width:1050px) {
-  .c23 {
+  .c25 {
     max-width: calc(100% - 350px);
   }
 }
 
 @media (min-width:1050px) {
-  .c26 {
+  .c28 {
     display: block;
   }
 }
 
 @media (min-width:1050px) {
-  .c20 {
+  .c22 {
     margin-top: 0px;
     padding-bottom: 40px;
+  }
+}
+
+@media (min-width:1050px) {
+  .c14 {
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    margin: 29px 0 20px 0;
+    font-size: 14px;
+  }
+}
+
+@media (min-width:1050px) {
+  .c15 {
+    width: 400px;
   }
 }
 
@@ -2542,435 +2029,6 @@ exports[`PageForm: Component should render with page template 1`] = `
     </div>
   </div>
   <div
-    className="c11"
-  >
-    <div
-      style={
-        Object {
-          "display": "flex",
-          "flexDirection": "column",
-          "maxWidth": "100%",
-          "paddingBottom": "30px",
-          "position": "relative",
-        }
-      }
-    >
-      <label
-        htmlFor="displayName"
-        style={
-          Object {
-            "border": "none",
-            "borderTop": "2px solid #2F2F36",
-            "color": "#71737e",
-            "display": "block",
-            "fontSize": "14px",
-            "outline": "none",
-            "paddingTop": "8px",
-            "width": "100%",
-          }
-        }
-      >
-        URL Display Name
-      </label>
-      <input
-        id="displayName"
-        name="displayName"
-        onBlur={[Function]}
-        onChange={[Function]}
-        style={
-          Object {
-            "backgroundColor": "transparent",
-            "border": "none",
-            "color": "#FFF",
-            "fontFamily": "inherit",
-            "fontSize": "18px",
-            "fontWeight": "inherit",
-            "letterSpacing": "normal",
-            "lineHeight": "24px",
-            "maxWidth": "100%",
-            "minWidth": 60,
-            "outline": "none",
-            "padding": 0,
-          }
-        }
-        type="text"
-        value="page-name"
-      />
-      <div
-        style={
-          Object {
-            "position": "absolute",
-            "right": 0,
-            "top": 2,
-          }
-        }
-      >
-        <label
-          htmlFor="displayName"
-          style={
-            Object {
-              "cursor": "pointer",
-            }
-          }
-        >
-          <div
-            className="c12"
-          >
-            <svg
-              style={
-                Object {
-                  "fill": "#FFF",
-                  "height": "30px",
-                  "width": "30px",
-                }
-              }
-              viewBox="0 0 30 30"
-            >
-              <path
-                d="M21.789 10.92a.724.724 0 000-1.022l-1.687-1.687a.724.724 0 00-1.022 0l-1.322 1.322 2.709 2.709 1.322-1.322zM9 18.291V21h2.709l7.992-7.992-2.709-2.71L9 18.292z"
-                fillRule="evenodd"
-              />
-            </svg>
-          </div>
-        </label>
-      </div>
-    </div>
-    <div
-      className="c7"
-      id="displayNameError"
-    />
-  </div>
-  <div
-    className="c11"
-  >
-    <div
-      style={
-        Object {
-          "display": "flex",
-          "flexDirection": "column",
-          "maxWidth": "100%",
-          "paddingBottom": "30px",
-          "position": "relative",
-        }
-      }
-    >
-      <label
-        htmlFor="description"
-        style={
-          Object {
-            "border": "none",
-            "borderTop": "2px solid #2F2F36",
-            "color": "#71737e",
-            "display": "block",
-            "fontSize": "14px",
-            "outline": "none",
-            "paddingTop": "8px",
-            "width": "100%",
-          }
-        }
-      >
-        SEO Page Description
-      </label>
-      <textarea
-        id="description"
-        onBlur={[Function]}
-        onChange={[Function]}
-        style={
-          Object {
-            "background": "#000",
-            "border": "none",
-            "color": "#FFF",
-            "fontSize": "18px",
-            "height": 0,
-            "lineHeight": "24px",
-            "outline": "none",
-            "padding": "0",
-            "resize": "none",
-          }
-        }
-        value="description"
-      />
-      <textarea
-        aria-hidden={true}
-        readOnly={true}
-        style={
-          Object {
-            "background": "#000",
-            "border": "none",
-            "color": "#FFF",
-            "fontSize": "18px",
-            "height": 0,
-            "left": 0,
-            "lineHeight": "24px",
-            "outline": "none",
-            "overflow": "hidden",
-            "padding": "0",
-            "position": "absolute",
-            "resize": "none",
-            "top": 0,
-            "visibility": "hidden",
-          }
-        }
-        tabIndex={-1}
-      />
-      <div
-        style={
-          Object {
-            "position": "absolute",
-            "right": 0,
-            "top": 2,
-          }
-        }
-      >
-        <label
-          htmlFor="description"
-          style={
-            Object {
-              "cursor": "pointer",
-            }
-          }
-        >
-          <div
-            className="c12"
-          >
-            <svg
-              style={
-                Object {
-                  "fill": "#FFF",
-                  "height": "30px",
-                  "width": "30px",
-                }
-              }
-              viewBox="0 0 30 30"
-            >
-              <path
-                d="M21.789 10.92a.724.724 0 000-1.022l-1.687-1.687a.724.724 0 00-1.022 0l-1.322 1.322 2.709 2.709 1.322-1.322zM9 18.291V21h2.709l7.992-7.992-2.709-2.71L9 18.292z"
-                fillRule="evenodd"
-              />
-            </svg>
-          </div>
-        </label>
-      </div>
-    </div>
-    <div
-      className="c7"
-      id="descriptionError"
-    />
-  </div>
-  <div
-    className="c11"
-  >
-    <div
-      style={
-        Object {
-          "display": "flex",
-          "flexDirection": "column",
-          "maxWidth": "100%",
-          "paddingBottom": "30px",
-          "position": "relative",
-        }
-      }
-    >
-      <label
-        htmlFor="keywords"
-        style={
-          Object {
-            "border": "none",
-            "borderTop": "2px solid #2F2F36",
-            "color": "#71737e",
-            "display": "block",
-            "fontSize": "14px",
-            "outline": "none",
-            "paddingTop": "8px",
-            "width": "100%",
-          }
-        }
-      >
-        SEO Keywords
-      </label>
-      <input
-        id="keywords"
-        name="keywords"
-        onBlur={[Function]}
-        onChange={[Function]}
-        style={
-          Object {
-            "backgroundColor": "transparent",
-            "border": "none",
-            "color": "#FFF",
-            "fontFamily": "inherit",
-            "fontSize": "18px",
-            "fontWeight": "inherit",
-            "letterSpacing": "normal",
-            "lineHeight": "24px",
-            "maxWidth": "100%",
-            "minWidth": 60,
-            "outline": "none",
-            "padding": 0,
-          }
-        }
-        type="text"
-        value="keyword;"
-      />
-      <div
-        style={
-          Object {
-            "position": "absolute",
-            "right": 0,
-            "top": 2,
-          }
-        }
-      >
-        <label
-          htmlFor="keywords"
-          style={
-            Object {
-              "cursor": "pointer",
-            }
-          }
-        >
-          <div
-            className="c12"
-          >
-            <svg
-              style={
-                Object {
-                  "fill": "#FFF",
-                  "height": "30px",
-                  "width": "30px",
-                }
-              }
-              viewBox="0 0 30 30"
-            >
-              <path
-                d="M21.789 10.92a.724.724 0 000-1.022l-1.687-1.687a.724.724 0 00-1.022 0l-1.322 1.322 2.709 2.709 1.322-1.322zM9 18.291V21h2.709l7.992-7.992-2.709-2.71L9 18.292z"
-                fillRule="evenodd"
-              />
-            </svg>
-          </div>
-        </label>
-      </div>
-    </div>
-    <div
-      className="c7"
-      id="keywordsError"
-    />
-  </div>
-  <div
-    className="c11"
-  >
-    <div
-      style={
-        Object {
-          "display": "flex",
-          "flexDirection": "column",
-          "maxWidth": "100%",
-          "paddingBottom": "30px",
-          "position": "relative",
-        }
-      }
-    >
-      <label
-        htmlFor="link"
-        style={
-          Object {
-            "border": "none",
-            "borderTop": "2px solid #2F2F36",
-            "color": "#71737e",
-            "display": "block",
-            "fontSize": "14px",
-            "outline": "none",
-            "paddingTop": "8px",
-            "width": "100%",
-          }
-        }
-      >
-        Frontend page Link
-      </label>
-      <input
-        id="link"
-        name="link"
-        onBlur={[Function]}
-        onChange={[Function]}
-        style={
-          Object {
-            "backgroundColor": "transparent",
-            "border": "none",
-            "color": "#FFF",
-            "fontFamily": "inherit",
-            "fontSize": "18px",
-            "fontWeight": "inherit",
-            "letterSpacing": "normal",
-            "lineHeight": "24px",
-            "maxWidth": "100%",
-            "minWidth": 60,
-            "outline": "none",
-            "padding": 0,
-          }
-        }
-        type="text"
-      />
-      <div
-        style={
-          Object {
-            "position": "absolute",
-            "right": 0,
-            "top": 2,
-          }
-        }
-      >
-        <label
-          htmlFor="link"
-          style={
-            Object {
-              "cursor": "pointer",
-            }
-          }
-        >
-          <div
-            className="c12"
-          >
-            <svg
-              style={
-                Object {
-                  "fill": "#FFF",
-                  "height": "30px",
-                  "width": "30px",
-                }
-              }
-              viewBox="0 0 30 30"
-            >
-              <path
-                d="M21.789 10.92a.724.724 0 000-1.022l-1.687-1.687a.724.724 0 00-1.022 0l-1.322 1.322 2.709 2.709 1.322-1.322zM9 18.291V21h2.709l7.992-7.992-2.709-2.71L9 18.292z"
-                fillRule="evenodd"
-              />
-            </svg>
-          </div>
-        </label>
-      </div>
-    </div>
-    <div
-      className="c7"
-      id="linkError"
-    />
-  </div>
-  <label
-    style={
-      Object {
-        "border": "none",
-        "borderTop": "2px solid #2F2F36",
-        "color": "#71737e",
-        "display": "block",
-        "fontSize": "14px",
-        "outline": "none",
-        "paddingTop": "8px",
-        "width": "100%",
-      }
-    }
-  >
-    Tags
-  </label>
-  <div
     className="c13"
   >
     <div
@@ -2978,229 +2036,37 @@ exports[`PageForm: Component should render with page template 1`] = `
     >
       <div
         className="c15"
-        title="Colors"
-      >
-        <span
-          className="c16"
-        >
-          Category: 
-        </span>
-        Colors
-      </div>
-      <div
-        className=""
       >
         <div
-          className=" css-2b097c-container"
-          onKeyDown={[Function]}
+          className="c16"
         >
           <div
-            className=" css-17k7d72-control"
-            onMouseDown={[Function]}
-            onTouchEnd={[Function]}
+            className="c17"
+            id="tab-0-tab-button"
+            onClick={[Function]}
           >
-            <div
-              className=" css-193kkzd-ValueContainer"
-            >
-              <div
-                className=" css-1wa3eu0-placeholder"
-              >
-                Select...
-              </div>
-              <div
-                className="css-14m14bb-Input"
-              >
-                <div
-                  className=""
-                  style={
-                    Object {
-                      "display": "inline-block",
-                    }
-                  }
-                >
-                  <input
-                    aria-autocomplete="list"
-                    autoCapitalize="none"
-                    autoComplete="off"
-                    autoCorrect="off"
-                    disabled={false}
-                    id="react-select-4-input"
-                    onBlur={[Function]}
-                    onChange={[Function]}
-                    onFocus={[Function]}
-                    spellCheck="false"
-                    style={
-                      Object {
-                        "background": 0,
-                        "border": 0,
-                        "boxSizing": "content-box",
-                        "color": "inherit",
-                        "fontSize": "inherit",
-                        "label": "input",
-                        "opacity": 1,
-                        "outline": 0,
-                        "padding": 0,
-                        "width": "1px",
-                      }
-                    }
-                    tabIndex="0"
-                    type="text"
-                    value=""
-                  />
-                  <div
-                    style={
-                      Object {
-                        "height": 0,
-                        "left": 0,
-                        "overflow": "scroll",
-                        "position": "absolute",
-                        "top": 0,
-                        "visibility": "hidden",
-                        "whiteSpace": "pre",
-                      }
-                    }
-                  >
-                    
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div
-              className=" css-1hb7zxy-IndicatorsContainer"
-            >
-              <span
-                className=" css-43ykx9-indicatorSeparator"
-              />
-              <div
-                aria-hidden="true"
-                className=" css-tlfecz-indicatorContainer"
-                onMouseDown={[Function]}
-                onTouchEnd={[Function]}
-              >
-                0
-                /
-                4
-              </div>
-            </div>
+            Blocks
           </div>
         </div>
-      </div>
-      <div
-        className="c15"
-        title="Countries"
-      >
-        <span
-          className="c16"
-        >
-          Category: 
-        </span>
-        Countries
-      </div>
-      <div
-        className=""
-      >
         <div
-          className=" css-2b097c-container"
-          onKeyDown={[Function]}
+          className="c18"
         >
           <div
-            className=" css-17k7d72-control"
-            onMouseDown={[Function]}
-            onTouchEnd={[Function]}
+            className="c17"
+            id="tab-1-tab-button"
+            onClick={[Function]}
           >
-            <div
-              className=" css-193kkzd-ValueContainer"
-            >
-              <div
-                className=" css-1wa3eu0-placeholder"
-              >
-                Select...
-              </div>
-              <div
-                className="css-14m14bb-Input"
-              >
-                <div
-                  className=""
-                  style={
-                    Object {
-                      "display": "inline-block",
-                    }
-                  }
-                >
-                  <input
-                    aria-autocomplete="list"
-                    autoCapitalize="none"
-                    autoComplete="off"
-                    autoCorrect="off"
-                    disabled={false}
-                    id="react-select-5-input"
-                    onBlur={[Function]}
-                    onChange={[Function]}
-                    onFocus={[Function]}
-                    spellCheck="false"
-                    style={
-                      Object {
-                        "background": 0,
-                        "border": 0,
-                        "boxSizing": "content-box",
-                        "color": "inherit",
-                        "fontSize": "inherit",
-                        "label": "input",
-                        "opacity": 1,
-                        "outline": 0,
-                        "padding": 0,
-                        "width": "1px",
-                      }
-                    }
-                    tabIndex="0"
-                    type="text"
-                    value=""
-                  />
-                  <div
-                    style={
-                      Object {
-                        "height": 0,
-                        "left": 0,
-                        "overflow": "scroll",
-                        "position": "absolute",
-                        "top": 0,
-                        "visibility": "hidden",
-                        "whiteSpace": "pre",
-                      }
-                    }
-                  >
-                    
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div
-              className=" css-1hb7zxy-IndicatorsContainer"
-            >
-              <span
-                className=" css-43ykx9-indicatorSeparator"
-              />
-              <div
-                aria-hidden="true"
-                className=" css-tlfecz-indicatorContainer"
-                onMouseDown={[Function]}
-                onTouchEnd={[Function]}
-              >
-                0
-                /
-                1
-              </div>
-            </div>
+            Metadata
           </div>
         </div>
       </div>
     </div>
   </div>
   <div
-    className="c17"
+    className="c19"
   >
     <div
-      className="c18"
+      className="c20"
       onClick={[Function]}
     >
       <label
@@ -3352,7 +2218,7 @@ exports[`PageForm: Component should render with page template 1`] = `
         </div>
       </div>
       <div
-        className="c19"
+        className="c21"
       >
         <svg
           style={
@@ -3373,18 +2239,18 @@ exports[`PageForm: Component should render with page template 1`] = `
     </div>
   </div>
   <div
-    className="c20"
+    className="c22"
   >
     <div
-      className="c21"
+      className="c23"
       id="tagsCounter"
     />
     1 Block
     <div
-      className="c21"
+      className="c23"
     >
       <div
-        className="c22"
+        className="c24"
       >
         <button
           disabled={false}
@@ -3481,14 +2347,14 @@ exports[`PageForm: Component should render with page template 1`] = `
           }
         >
           <div
-            className="c23"
+            className="c25"
           >
             <div
-              className="c24"
+              className="c26"
             >
               <div>
                 <div
-                  className="c25"
+                  className="c27"
                 >
                   <svg
                     style={
@@ -3595,7 +2461,7 @@ exports[`PageForm: Component should render with page template 1`] = `
               />
             </div>
             <div
-              className="c24"
+              className="c26"
             >
               <label
                 className="c9"
@@ -3641,7 +2507,7 @@ exports[`PageForm: Component should render with page template 1`] = `
             </div>
           </div>
           <div
-            className="c26"
+            className="c28"
             title="type"
           >
             type
@@ -3696,13 +2562,13 @@ exports[`PageForm: Component should render with page template 1`] = `
      
   </span>
   <div
-    className="c27"
+    className="c29"
   >
     <div
-      className="c28"
+      className="c30"
     >
       <div
-        className="c29"
+        className="c31"
       >
         <div>
           <input
@@ -3754,23 +2620,23 @@ exports[`PageForm: Component should render with page template 1`] = `
           </label>
         </div>
         <div
-          className="c30"
+          className="c32"
         >
           <label
-            className="c31"
+            className="c33"
             htmlFor="isPublic"
           >
             Make it Public
           </label>
           <span
-            className="c32"
+            className="c34"
           >
             This Page is currently Private
             <span
-              className="c33"
+              className="c35"
             />
             <a
-              className="c34"
+              className="c36"
               href="pageUrl"
               target="_blank"
             >
@@ -3780,7 +2646,7 @@ exports[`PageForm: Component should render with page template 1`] = `
         </div>
       </div>
       <div
-        className="c35"
+        className="c37"
       >
         <button
           disabled={false}

@@ -73,11 +73,11 @@ exports[`EditPage: Component should render correctly 1`] = `
   word-break: break-word;
 }
 
-.c50 {
+.c52 {
   height: 120px;
 }
 
-.c52 {
+.c54 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -96,7 +96,7 @@ exports[`EditPage: Component should render correctly 1`] = `
   width: 100%;
 }
 
-.c51 {
+.c53 {
   bottom: 0;
   width: 100%;
   padding: 10px 0 36px;
@@ -106,12 +106,12 @@ exports[`EditPage: Component should render correctly 1`] = `
   background-image: linear-gradient( to top, #000,#000 30%, rgba(0,0,0,0) );
 }
 
-.c54 {
+.c56 {
   width: calc(50% - 5px);
   max-width: 240px;
 }
 
-.c53 {
+.c55 {
   width: calc(50% - 5px);
   max-width: 240px;
   background-color: #1d1d20;
@@ -129,18 +129,22 @@ exports[`EditPage: Component should render correctly 1`] = `
   padding-bottom: 50px;
 }
 
-.c31 {
+.c27 {
+  width: 100%;
+}
+
+.c33 {
   position: relative;
   z-index: 999;
 }
 
-.c41 {
+.c43 {
   margin-top: 30px;
   border-top: 2px solid #2F2F36;
   padding-top: 15px;
 }
 
-.c42 {
+.c44 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -160,16 +164,16 @@ exports[`EditPage: Component should render correctly 1`] = `
   position: relative;
 }
 
-.c45 {
+.c47 {
   padding-right: 10px;
 }
 
-.c44 {
+.c46 {
   padding-left: 10px;
   max-width: 100%;
 }
 
-.c43 {
+.c45 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -185,7 +189,7 @@ exports[`EditPage: Component should render correctly 1`] = `
   padding-right: 10px;
 }
 
-.c49 {
+.c51 {
   margin-top: 15px;
 }
 
@@ -193,7 +197,7 @@ exports[`EditPage: Component should render correctly 1`] = `
   cursor: pointer;
 }
 
-.c46 {
+.c48 {
   color: #71737e;
   min-width: 100%;
 }
@@ -220,20 +224,20 @@ exports[`EditPage: Component should render correctly 1`] = `
   position: relative;
 }
 
-.c36 {
+.c38 {
   text-align: right;
 }
 
-.c47 {
+.c49 {
   padding: 0 10px;
 }
 
-.c47:before {
+.c49:before {
   content: '|';
   display: inline;
 }
 
-.c39 {
+.c41 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -293,7 +297,7 @@ exports[`EditPage: Component should render correctly 1`] = `
   color: #FFF;
 }
 
-.c32 {
+.c34 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -308,17 +312,17 @@ exports[`EditPage: Component should render correctly 1`] = `
   cursor: pointer;
 }
 
-.c32 label {
+.c34 label {
   margin-bottom: 2px;
 }
 
-.c33 {
+.c35 {
   position: absolute;
   right: 0;
   top: 5px;
 }
 
-.c37 {
+.c39 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -334,7 +338,7 @@ exports[`EditPage: Component should render correctly 1`] = `
   align-items: center;
 }
 
-.c38 {
+.c40 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -345,7 +349,7 @@ exports[`EditPage: Component should render correctly 1`] = `
   align-items: center;
 }
 
-.c40 {
+.c42 {
   color: #71737e;
   max-width: 240px;
   white-space: nowrap;
@@ -354,7 +358,7 @@ exports[`EditPage: Component should render correctly 1`] = `
   display: none;
 }
 
-.c34 {
+.c36 {
   color: #71737e;
   text-align: center;
   padding-bottom: 20px;
@@ -376,30 +380,8 @@ exports[`EditPage: Component should render correctly 1`] = `
   align-items: center;
 }
 
-.c35 {
+.c37 {
   width: 33%;
-}
-
-.c27 {
-  padding-bottom: 30px;
-}
-
-.c29 {
-  font-size: 15px;
-  padding: 20px 0 5px;
-  text-overflow: ellipsis;
-  white-space: nowrap;
-  width: 100%;
-  overflow: hidden;
-}
-
-.c30 {
-  color: #71737e;
-}
-
-.c28 {
-  margin-top: 10px;
-  padding: 0 20px 20px;
 }
 
 .c23 {
@@ -407,7 +389,7 @@ exports[`EditPage: Component should render correctly 1`] = `
   position: relative;
 }
 
-.c48 {
+.c50 {
   -webkit-text-decoration: none;
   text-decoration: none;
   white-space: nowrap;
@@ -418,8 +400,63 @@ exports[`EditPage: Component should render correctly 1`] = `
   border-bottom: 1px solid transparent;
 }
 
-.c48:hover {
+.c50:hover {
   border-bottom: 1px solid #FFF;
+}
+
+.c28 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  border-bottom: 1px solid grey;
+}
+
+.c29 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  width: 100%;
+}
+
+.c30 {
+  display: block;
+  -webkit-flex: 1;
+  -ms-flex: 1;
+  flex: 1;
+  -webkit-align-self: flex-end;
+  -ms-flex-item-align: end;
+  align-self: flex-end;
+  text-align: center;
+  border-bottom: 2px solid #FFF;
+  cursor: pointer;
+}
+
+.c30:hover {
+  border-bottom-color: #FFF;
+}
+
+.c32 {
+  display: block;
+  -webkit-flex: 1;
+  -ms-flex: 1;
+  flex: 1;
+  -webkit-align-self: flex-end;
+  -ms-flex-item-align: end;
+  align-self: flex-end;
+  text-align: center;
+  border-bottom: 2px solid #2F2F36;
+  cursor: pointer;
+}
+
+.c32:hover {
+  border-bottom-color: #FFF;
+}
+
+.c31 {
+  color: #FFF;
+  padding: 16px;
 }
 
 .c9 {
@@ -472,13 +509,13 @@ exports[`EditPage: Component should render correctly 1`] = `
 }
 
 @media (min-width:1050px) {
-  .c50 {
+  .c52 {
     height: 100px;
   }
 }
 
 @media (min-width:1050px) {
-  .c52 {
+  .c54 {
     display: -webkit-box;
     display: -webkit-flex;
     display: -ms-flexbox;
@@ -487,7 +524,7 @@ exports[`EditPage: Component should render correctly 1`] = `
 }
 
 @media (min-width:1050px) {
-  .c51 {
+  .c53 {
     position: fixed;
     width: calc(100% - 40px);
     z-index: 999;
@@ -498,19 +535,19 @@ exports[`EditPage: Component should render correctly 1`] = `
 }
 
 @media (min-width:1050px) {
-  .c54 {
+  .c56 {
     width: 240px;
   }
 }
 
 @media (min-width:1050px) {
-  .c53 {
+  .c55 {
     width: 240px;
   }
 }
 
 @media (min-width:480px) {
-  .c42 {
+  .c44 {
     -webkit-flex-direction: row;
     -ms-flex-direction: row;
     flex-direction: row;
@@ -522,13 +559,13 @@ exports[`EditPage: Component should render correctly 1`] = `
 }
 
 @media (min-width:480px) {
-  .c43 {
+  .c45 {
     padding-right: 40px;
   }
 }
 
 @media (min-width:480px) {
-  .c49 {
+  .c51 {
     margin-top: 0;
   }
 }
@@ -565,21 +602,38 @@ exports[`EditPage: Component should render correctly 1`] = `
 }
 
 @media (min-width:1050px) {
-  .c37 {
+  .c39 {
     max-width: calc(100% - 350px);
   }
 }
 
 @media (min-width:1050px) {
-  .c40 {
+  .c42 {
     display: block;
   }
 }
 
 @media (min-width:1050px) {
-  .c34 {
+  .c36 {
     margin-top: 0px;
     padding-bottom: 40px;
+  }
+}
+
+@media (min-width:1050px) {
+  .c28 {
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    margin: 29px 0 20px 0;
+    font-size: 14px;
+  }
+}
+
+@media (min-width:1050px) {
+  .c29 {
+    width: 400px;
   }
 }
 
@@ -1452,436 +1506,6 @@ exports[`EditPage: Component should render correctly 1`] = `
         </div>
       </div>
       <div
-        className="c25"
-      >
-        <div
-          style={
-            Object {
-              "display": "flex",
-              "flexDirection": "column",
-              "maxWidth": "100%",
-              "paddingBottom": "30px",
-              "position": "relative",
-            }
-          }
-        >
-          <label
-            htmlFor="displayName"
-            style={
-              Object {
-                "border": "none",
-                "borderTop": "2px solid #2F2F36",
-                "color": "#71737e",
-                "display": "block",
-                "fontSize": "14px",
-                "outline": "none",
-                "paddingTop": "8px",
-                "width": "100%",
-              }
-            }
-          >
-            URL Display Name
-          </label>
-          <input
-            id="displayName"
-            name="displayName"
-            onBlur={[Function]}
-            onChange={[Function]}
-            style={
-              Object {
-                "backgroundColor": "transparent",
-                "border": "none",
-                "color": "#FFF",
-                "fontFamily": "inherit",
-                "fontSize": "18px",
-                "fontWeight": "inherit",
-                "letterSpacing": "normal",
-                "lineHeight": "24px",
-                "maxWidth": "100%",
-                "minWidth": 60,
-                "outline": "none",
-                "padding": 0,
-              }
-            }
-            type="text"
-            value="page-name"
-          />
-          <div
-            style={
-              Object {
-                "position": "absolute",
-                "right": 0,
-                "top": 2,
-              }
-            }
-          >
-            <label
-              htmlFor="displayName"
-              style={
-                Object {
-                  "cursor": "pointer",
-                }
-              }
-            >
-              <div
-                className="c26"
-              >
-                <svg
-                  style={
-                    Object {
-                      "fill": "#FFF",
-                      "height": "30px",
-                      "width": "30px",
-                    }
-                  }
-                  viewBox="0 0 30 30"
-                >
-                  <path
-                    d="M21.789 10.92a.724.724 0 000-1.022l-1.687-1.687a.724.724 0 00-1.022 0l-1.322 1.322 2.709 2.709 1.322-1.322zM9 18.291V21h2.709l7.992-7.992-2.709-2.71L9 18.292z"
-                    fillRule="evenodd"
-                  />
-                </svg>
-              </div>
-            </label>
-          </div>
-        </div>
-        <div
-          className="c20"
-          id="displayNameError"
-        />
-      </div>
-      <div
-        className="c25"
-      >
-        <div
-          style={
-            Object {
-              "display": "flex",
-              "flexDirection": "column",
-              "maxWidth": "100%",
-              "paddingBottom": "30px",
-              "position": "relative",
-            }
-          }
-        >
-          <label
-            htmlFor="description"
-            style={
-              Object {
-                "border": "none",
-                "borderTop": "2px solid #2F2F36",
-                "color": "#71737e",
-                "display": "block",
-                "fontSize": "14px",
-                "outline": "none",
-                "paddingTop": "8px",
-                "width": "100%",
-              }
-            }
-          >
-            SEO Page Description
-          </label>
-          <textarea
-            id="description"
-            onBlur={[Function]}
-            onChange={[Function]}
-            style={
-              Object {
-                "background": "#000",
-                "border": "none",
-                "color": "#FFF",
-                "fontSize": "18px",
-                "height": 0,
-                "lineHeight": "24px",
-                "outline": "none",
-                "padding": "0",
-                "resize": "none",
-              }
-            }
-            value="description"
-          />
-          <textarea
-            aria-hidden={true}
-            readOnly={true}
-            style={
-              Object {
-                "background": "#000",
-                "border": "none",
-                "color": "#FFF",
-                "fontSize": "18px",
-                "height": 0,
-                "left": 0,
-                "lineHeight": "24px",
-                "outline": "none",
-                "overflow": "hidden",
-                "padding": "0",
-                "position": "absolute",
-                "resize": "none",
-                "top": 0,
-                "visibility": "hidden",
-              }
-            }
-            tabIndex={-1}
-          />
-          <div
-            style={
-              Object {
-                "position": "absolute",
-                "right": 0,
-                "top": 2,
-              }
-            }
-          >
-            <label
-              htmlFor="description"
-              style={
-                Object {
-                  "cursor": "pointer",
-                }
-              }
-            >
-              <div
-                className="c26"
-              >
-                <svg
-                  style={
-                    Object {
-                      "fill": "#FFF",
-                      "height": "30px",
-                      "width": "30px",
-                    }
-                  }
-                  viewBox="0 0 30 30"
-                >
-                  <path
-                    d="M21.789 10.92a.724.724 0 000-1.022l-1.687-1.687a.724.724 0 00-1.022 0l-1.322 1.322 2.709 2.709 1.322-1.322zM9 18.291V21h2.709l7.992-7.992-2.709-2.71L9 18.292z"
-                    fillRule="evenodd"
-                  />
-                </svg>
-              </div>
-            </label>
-          </div>
-        </div>
-        <div
-          className="c20"
-          id="descriptionError"
-        />
-      </div>
-      <div
-        className="c25"
-      >
-        <div
-          style={
-            Object {
-              "display": "flex",
-              "flexDirection": "column",
-              "maxWidth": "100%",
-              "paddingBottom": "30px",
-              "position": "relative",
-            }
-          }
-        >
-          <label
-            htmlFor="keywords"
-            style={
-              Object {
-                "border": "none",
-                "borderTop": "2px solid #2F2F36",
-                "color": "#71737e",
-                "display": "block",
-                "fontSize": "14px",
-                "outline": "none",
-                "paddingTop": "8px",
-                "width": "100%",
-              }
-            }
-          >
-            SEO Keywords
-          </label>
-          <input
-            id="keywords"
-            name="keywords"
-            onBlur={[Function]}
-            onChange={[Function]}
-            style={
-              Object {
-                "backgroundColor": "transparent",
-                "border": "none",
-                "color": "#FFF",
-                "fontFamily": "inherit",
-                "fontSize": "18px",
-                "fontWeight": "inherit",
-                "letterSpacing": "normal",
-                "lineHeight": "24px",
-                "maxWidth": "100%",
-                "minWidth": 60,
-                "outline": "none",
-                "padding": 0,
-              }
-            }
-            type="text"
-            value="keyword;"
-          />
-          <div
-            style={
-              Object {
-                "position": "absolute",
-                "right": 0,
-                "top": 2,
-              }
-            }
-          >
-            <label
-              htmlFor="keywords"
-              style={
-                Object {
-                  "cursor": "pointer",
-                }
-              }
-            >
-              <div
-                className="c26"
-              >
-                <svg
-                  style={
-                    Object {
-                      "fill": "#FFF",
-                      "height": "30px",
-                      "width": "30px",
-                    }
-                  }
-                  viewBox="0 0 30 30"
-                >
-                  <path
-                    d="M21.789 10.92a.724.724 0 000-1.022l-1.687-1.687a.724.724 0 00-1.022 0l-1.322 1.322 2.709 2.709 1.322-1.322zM9 18.291V21h2.709l7.992-7.992-2.709-2.71L9 18.292z"
-                    fillRule="evenodd"
-                  />
-                </svg>
-              </div>
-            </label>
-          </div>
-        </div>
-        <div
-          className="c20"
-          id="keywordsError"
-        />
-      </div>
-      <div
-        className="c25"
-      >
-        <div
-          style={
-            Object {
-              "display": "flex",
-              "flexDirection": "column",
-              "maxWidth": "100%",
-              "paddingBottom": "30px",
-              "position": "relative",
-            }
-          }
-        >
-          <label
-            htmlFor="link"
-            style={
-              Object {
-                "border": "none",
-                "borderTop": "2px solid #2F2F36",
-                "color": "#71737e",
-                "display": "block",
-                "fontSize": "14px",
-                "outline": "none",
-                "paddingTop": "8px",
-                "width": "100%",
-              }
-            }
-          >
-            Frontend page Link
-          </label>
-          <input
-            id="link"
-            name="link"
-            onBlur={[Function]}
-            onChange={[Function]}
-            style={
-              Object {
-                "backgroundColor": "transparent",
-                "border": "none",
-                "color": "#FFF",
-                "fontFamily": "inherit",
-                "fontSize": "18px",
-                "fontWeight": "inherit",
-                "letterSpacing": "normal",
-                "lineHeight": "24px",
-                "maxWidth": "100%",
-                "minWidth": 60,
-                "outline": "none",
-                "padding": 0,
-              }
-            }
-            type="text"
-            value=""
-          />
-          <div
-            style={
-              Object {
-                "position": "absolute",
-                "right": 0,
-                "top": 2,
-              }
-            }
-          >
-            <label
-              htmlFor="link"
-              style={
-                Object {
-                  "cursor": "pointer",
-                }
-              }
-            >
-              <div
-                className="c26"
-              >
-                <svg
-                  style={
-                    Object {
-                      "fill": "#FFF",
-                      "height": "30px",
-                      "width": "30px",
-                    }
-                  }
-                  viewBox="0 0 30 30"
-                >
-                  <path
-                    d="M21.789 10.92a.724.724 0 000-1.022l-1.687-1.687a.724.724 0 00-1.022 0l-1.322 1.322 2.709 2.709 1.322-1.322zM9 18.291V21h2.709l7.992-7.992-2.709-2.71L9 18.292z"
-                    fillRule="evenodd"
-                  />
-                </svg>
-              </div>
-            </label>
-          </div>
-        </div>
-        <div
-          className="c20"
-          id="linkError"
-        />
-      </div>
-      <label
-        style={
-          Object {
-            "border": "none",
-            "borderTop": "2px solid #2F2F36",
-            "color": "#71737e",
-            "display": "block",
-            "fontSize": "14px",
-            "outline": "none",
-            "paddingTop": "8px",
-            "width": "100%",
-          }
-        }
-      >
-        Tags
-      </label>
-      <div
         className="c27"
       >
         <div
@@ -1889,229 +1513,37 @@ exports[`EditPage: Component should render correctly 1`] = `
         >
           <div
             className="c29"
-            title="Colors"
-          >
-            <span
-              className="c30"
-            >
-              Category: 
-            </span>
-            Colors
-          </div>
-          <div
-            className=""
           >
             <div
-              className=" css-2b097c-container"
-              onKeyDown={[Function]}
+              className="c30"
             >
               <div
-                className=" css-17k7d72-control"
-                onMouseDown={[Function]}
-                onTouchEnd={[Function]}
+                className="c31"
+                id="tab-0-tab-button"
+                onClick={[Function]}
               >
-                <div
-                  className=" css-193kkzd-ValueContainer"
-                >
-                  <div
-                    className=" css-1wa3eu0-placeholder"
-                  >
-                    Select...
-                  </div>
-                  <div
-                    className="css-14m14bb-Input"
-                  >
-                    <div
-                      className=""
-                      style={
-                        Object {
-                          "display": "inline-block",
-                        }
-                      }
-                    >
-                      <input
-                        aria-autocomplete="list"
-                        autoCapitalize="none"
-                        autoComplete="off"
-                        autoCorrect="off"
-                        disabled={false}
-                        id="react-select-2-input"
-                        onBlur={[Function]}
-                        onChange={[Function]}
-                        onFocus={[Function]}
-                        spellCheck="false"
-                        style={
-                          Object {
-                            "background": 0,
-                            "border": 0,
-                            "boxSizing": "content-box",
-                            "color": "inherit",
-                            "fontSize": "inherit",
-                            "label": "input",
-                            "opacity": 1,
-                            "outline": 0,
-                            "padding": 0,
-                            "width": "1px",
-                          }
-                        }
-                        tabIndex="0"
-                        type="text"
-                        value=""
-                      />
-                      <div
-                        style={
-                          Object {
-                            "height": 0,
-                            "left": 0,
-                            "overflow": "scroll",
-                            "position": "absolute",
-                            "top": 0,
-                            "visibility": "hidden",
-                            "whiteSpace": "pre",
-                          }
-                        }
-                      >
-                        
-                      </div>
-                    </div>
-                  </div>
-                </div>
-                <div
-                  className=" css-1hb7zxy-IndicatorsContainer"
-                >
-                  <span
-                    className=" css-43ykx9-indicatorSeparator"
-                  />
-                  <div
-                    aria-hidden="true"
-                    className=" css-tlfecz-indicatorContainer"
-                    onMouseDown={[Function]}
-                    onTouchEnd={[Function]}
-                  >
-                    0
-                    /
-                    4
-                  </div>
-                </div>
+                Blocks
               </div>
             </div>
-          </div>
-          <div
-            className="c29"
-            title="Countries"
-          >
-            <span
-              className="c30"
-            >
-              Category: 
-            </span>
-            Countries
-          </div>
-          <div
-            className=""
-          >
             <div
-              className=" css-2b097c-container"
-              onKeyDown={[Function]}
+              className="c32"
             >
               <div
-                className=" css-17k7d72-control"
-                onMouseDown={[Function]}
-                onTouchEnd={[Function]}
+                className="c31"
+                id="tab-1-tab-button"
+                onClick={[Function]}
               >
-                <div
-                  className=" css-193kkzd-ValueContainer"
-                >
-                  <div
-                    className=" css-1wa3eu0-placeholder"
-                  >
-                    Select...
-                  </div>
-                  <div
-                    className="css-14m14bb-Input"
-                  >
-                    <div
-                      className=""
-                      style={
-                        Object {
-                          "display": "inline-block",
-                        }
-                      }
-                    >
-                      <input
-                        aria-autocomplete="list"
-                        autoCapitalize="none"
-                        autoComplete="off"
-                        autoCorrect="off"
-                        disabled={false}
-                        id="react-select-3-input"
-                        onBlur={[Function]}
-                        onChange={[Function]}
-                        onFocus={[Function]}
-                        spellCheck="false"
-                        style={
-                          Object {
-                            "background": 0,
-                            "border": 0,
-                            "boxSizing": "content-box",
-                            "color": "inherit",
-                            "fontSize": "inherit",
-                            "label": "input",
-                            "opacity": 1,
-                            "outline": 0,
-                            "padding": 0,
-                            "width": "1px",
-                          }
-                        }
-                        tabIndex="0"
-                        type="text"
-                        value=""
-                      />
-                      <div
-                        style={
-                          Object {
-                            "height": 0,
-                            "left": 0,
-                            "overflow": "scroll",
-                            "position": "absolute",
-                            "top": 0,
-                            "visibility": "hidden",
-                            "whiteSpace": "pre",
-                          }
-                        }
-                      >
-                        
-                      </div>
-                    </div>
-                  </div>
-                </div>
-                <div
-                  className=" css-1hb7zxy-IndicatorsContainer"
-                >
-                  <span
-                    className=" css-43ykx9-indicatorSeparator"
-                  />
-                  <div
-                    aria-hidden="true"
-                    className=" css-tlfecz-indicatorContainer"
-                    onMouseDown={[Function]}
-                    onTouchEnd={[Function]}
-                  >
-                    0
-                    /
-                    1
-                  </div>
-                </div>
+                Metadata
               </div>
             </div>
           </div>
         </div>
       </div>
       <div
-        className="c31"
+        className="c33"
       >
         <div
-          className="c32"
+          className="c34"
           onClick={[Function]}
         >
           <label
@@ -2263,7 +1695,7 @@ exports[`EditPage: Component should render correctly 1`] = `
             </div>
           </div>
           <div
-            className="c33"
+            className="c35"
           >
             <svg
               style={
@@ -2284,18 +1716,18 @@ exports[`EditPage: Component should render correctly 1`] = `
         </div>
       </div>
       <div
-        className="c34"
+        className="c36"
       >
         <div
-          className="c35"
+          className="c37"
           id="tagsCounter"
         />
         1 Block
         <div
-          className="c35"
+          className="c37"
         >
           <div
-            className="c36"
+            className="c38"
           >
             <button
               disabled={false}
@@ -2392,14 +1824,14 @@ exports[`EditPage: Component should render correctly 1`] = `
               }
             >
               <div
-                className="c37"
+                className="c39"
               >
                 <div
-                  className="c38"
+                  className="c40"
                 >
                   <div>
                     <div
-                      className="c39"
+                      className="c41"
                     >
                       <svg
                         style={
@@ -2506,7 +1938,7 @@ exports[`EditPage: Component should render correctly 1`] = `
                   />
                 </div>
                 <div
-                  className="c38"
+                  className="c40"
                 >
                   <label
                     className="c22"
@@ -2552,7 +1984,7 @@ exports[`EditPage: Component should render correctly 1`] = `
                 </div>
               </div>
               <div
-                className="c40"
+                className="c42"
                 title="type"
               >
                 type
@@ -2607,13 +2039,13 @@ exports[`EditPage: Component should render correctly 1`] = `
          
       </span>
       <div
-        className="c41"
+        className="c43"
       >
         <div
-          className="c42"
+          className="c44"
         >
           <div
-            className="c43"
+            className="c45"
           >
             <div>
               <input
@@ -2665,23 +2097,23 @@ exports[`EditPage: Component should render correctly 1`] = `
               </label>
             </div>
             <div
-              className="c44"
+              className="c46"
             >
               <label
-                className="c45"
+                className="c47"
                 htmlFor="isPublic"
               >
                 Make it Public
               </label>
               <span
-                className="c46"
+                className="c48"
               >
                 This Page is currently Private
                 <span
-                  className="c47"
+                  className="c49"
                 />
                 <a
-                  className="c48"
+                  className="c50"
                   href="http://project.domain/page-name-2/page-name"
                   target="_blank"
                 >
@@ -2691,7 +2123,7 @@ exports[`EditPage: Component should render correctly 1`] = `
             </div>
           </div>
           <div
-            className="c49"
+            className="c51"
           >
             <button
               disabled={false}
@@ -2724,16 +2156,16 @@ exports[`EditPage: Component should render correctly 1`] = `
       </div>
     </div>
     <div
-      className="c50"
+      className="c52"
     >
       <div
-        className="c51"
+        className="c53"
       >
         <div
-          className="c52"
+          className="c54"
         >
           <a
-            className="c53"
+            className="c55"
             disabled={false}
             href="/section/sectionId"
             id="backBtn"
@@ -2742,7 +2174,7 @@ exports[`EditPage: Component should render correctly 1`] = `
             Back
           </a>
           <button
-            className="c54"
+            className="c56"
             disabled={true}
             id="publishPage"
             onClick={[Function]}
@@ -2770,7 +2202,7 @@ exports[`EditPage: Component should render correctly 1`] = `
             Publish
           </button>
           <button
-            className="c54"
+            className="c56"
             disabled={true}
             id="savePage"
             style={
