@@ -25,7 +25,7 @@ import { DndProvider } from 'react-dnd';
 import MultiBackend from 'react-dnd-multi-backend';
 import HTML5toTouch from 'react-dnd-multi-backend/dist/cjs/HTML5toTouch';
 
-import { Container, SelectContainer } from './pageForm.styles';
+import { Container, SelectContainer, TabsContainer } from './pageForm.styles';
 import {
   AvailableCopy,
   DeleteButtonContainer,
@@ -74,6 +74,8 @@ import { CopyButton } from '../copyButton';
 import { renderWhenTrue } from '../../utils/rendering';
 import { PageLink } from '../../../theme/typography';
 import { ROUTES } from '../../utils/routes.contants';
+import { Tabs } from '../tabs';
+import { TABS } from './pageForm.constants';
 
 const { EditIcon, MenuIcon, PlusIcon } = Icons;
 const { Switch, Label } = Form;
@@ -109,6 +111,23 @@ export const PageForm = ({
     map(({ name, id }) => ({ value: id, label: name })),
     prepend({ value: 0, label: intl.formatMessage(messages.blankTemplate) })
   )(pageTemplates);
+
+  // Tabs config
+  const [activeTab, setActiveTab] = useState(TABS.BLOCKS);
+  const tabs = [
+    {
+      id: `tab-${TABS.BLOCKS}`,
+      content: intl.formatMessage(messages.blocksTabName),
+      onClick: () => setActiveTab(TABS.BLOCKS),
+      active: activeTab === TABS.BLOCKS,
+    },
+    {
+      id: `tab-${TABS.METADATA}`,
+      content: intl.formatMessage(messages.metadataTabName),
+      onClick: () => setActiveTab(TABS.METADATA),
+      active: activeTab === TABS.METADATA,
+    },
+  ];
 
   const setBlocks = value => {
     const templateBlocks = pipe(
@@ -261,68 +280,8 @@ export const PageForm = ({
     expandCopy: intl.formatMessage(messages.expandCopy),
   });
 
-  return (
-    <Container>
-      <ContextHeader title={title} subtitle={nameInput} />
-      <MobileInputName>
-        <TextInput
-          onChange={handleChange}
-          name={PAGE_NAME}
-          value={values[PAGE_NAME]}
-          label={<FormattedMessage {...messages[PAGE_NAME]} />}
-          fullWidth
-          autoFocus={!values[PAGE_NAME].length}
-          isEdit
-          {...restFormikProps}
-        />
-      </MobileInputName>
-      <TextInput
-        onChange={handleChange}
-        onBlur={handleDisplayNameBlur}
-        name={PAGE_DISPLAY_NAME}
-        value={values[PAGE_DISPLAY_NAME]}
-        fullWidth
-        isEdit
-        label={<FormattedMessage {...messages[PAGE_DISPLAY_NAME]} />}
-        {...restFormikProps}
-      />
-      <TextInput
-        onChange={handleChange}
-        name={PAGE_DESCRIPTION}
-        value={values[PAGE_DESCRIPTION]}
-        fullWidth
-        multiline
-        isEdit
-        label={<FormattedMessage {...messages[PAGE_DESCRIPTION]} />}
-        {...restFormikProps}
-      />
-      <TextInput
-        onChange={handleChange}
-        name={PAGE_KEYWORDS}
-        value={values[PAGE_KEYWORDS]}
-        fullWidth
-        isEdit
-        label={<FormattedMessage {...messages[PAGE_KEYWORDS]} />}
-        {...restFormikProps}
-      />
-      <TextInput
-        onChange={handleChange}
-        name={PAGE_LINK}
-        value={values[PAGE_LINK]}
-        fullWidth
-        isEdit
-        label={<FormattedMessage {...messages[PAGE_LINK]} />}
-        {...restFormikProps}
-      />
-      <Label>
-        <FormattedMessage {...messages[PAGE_TAGS]} />
-      </Label>
-      <TagSearch
-        tagCategories={tagCategories}
-        values={values[PAGE_TAGS]}
-        setFieldValue={setFieldValue}
-        valuePath={PAGE_TAGS}
-      />
+  const renderBlocks = () => (
+    <>
       <SelectContainer>
         <Select
           label={intl.formatMessage(messages[PAGE_TEMPLATE])}
@@ -381,6 +340,87 @@ export const PageForm = ({
           ))}
         </Accordion>
       </DndProvider>
+    </>
+  );
+
+  const renderMetadata = () => (
+    <>
+      <TextInput
+        onChange={handleChange}
+        onBlur={handleDisplayNameBlur}
+        name={PAGE_DISPLAY_NAME}
+        value={values[PAGE_DISPLAY_NAME]}
+        fullWidth
+        isEdit
+        label={<FormattedMessage {...messages[PAGE_DISPLAY_NAME]} />}
+        {...restFormikProps}
+      />
+      <TextInput
+        onChange={handleChange}
+        name={PAGE_DESCRIPTION}
+        value={values[PAGE_DESCRIPTION]}
+        fullWidth
+        multiline
+        isEdit
+        label={<FormattedMessage {...messages[PAGE_DESCRIPTION]} />}
+        {...restFormikProps}
+      />
+      <TextInput
+        onChange={handleChange}
+        name={PAGE_KEYWORDS}
+        value={values[PAGE_KEYWORDS]}
+        fullWidth
+        isEdit
+        label={<FormattedMessage {...messages[PAGE_KEYWORDS]} />}
+        {...restFormikProps}
+      />
+      <TextInput
+        onChange={handleChange}
+        name={PAGE_LINK}
+        value={values[PAGE_LINK]}
+        fullWidth
+        isEdit
+        label={<FormattedMessage {...messages[PAGE_LINK]} />}
+        {...restFormikProps}
+      />
+      <Label>
+        <FormattedMessage {...messages[PAGE_TAGS]} />
+      </Label>
+      <TagSearch
+        tagCategories={tagCategories}
+        values={values[PAGE_TAGS]}
+        setFieldValue={setFieldValue}
+        valuePath={PAGE_TAGS}
+      />
+    </>
+  );
+
+  const renderContent = () => {
+    if (activeTab === TABS.BLOCKS) {
+      return renderBlocks();
+    }
+    return renderMetadata();
+  };
+
+  return (
+    <Container>
+      <ContextHeader title={title} subtitle={nameInput} />
+      <MobileInputName>
+        <TextInput
+          onChange={handleChange}
+          name={PAGE_NAME}
+          value={values[PAGE_NAME]}
+          label={<FormattedMessage {...messages[PAGE_NAME]} />}
+          fullWidth
+          autoFocus={!values[PAGE_NAME].length}
+          isEdit
+          {...restFormikProps}
+        />
+      </MobileInputName>
+      <TabsContainer>
+        <Tabs id="tabsSelect" withRedirection={false} hideOnMobile={false} tabs={tabs} />
+      </TabsContainer>
+      {renderContent()}
       <Switches>
         <SwitchContainer>
           <SwitchContent>
