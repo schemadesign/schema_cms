@@ -1,7 +1,7 @@
 import React, { Fragment, useState } from 'react';
 import PropTypes from 'prop-types';
 import { FormattedMessage, useIntl } from 'react-intl';
-import { Icons, Form, Accordion } from 'schemaUI';
+import { Icons, Form, Accordion, Button, BUTTON_SIZES } from 'schemaUI';
 import { useRouteMatch, useHistory } from 'react-router';
 import {
   map,
@@ -28,7 +28,7 @@ import HTML5toTouch from 'react-dnd-multi-backend/dist/cjs/HTML5toTouch';
 import { Container, SelectContainer } from './pageForm.styles';
 import {
   AvailableCopy,
-  BinIconContainer,
+  DeleteButtonContainer,
   IconsContainer,
   inputContainerStyles,
   inputStyles,
@@ -40,7 +40,6 @@ import {
   Switches,
   SwitchLabel,
   CopySeparator,
-  mobilePlusStyles,
   PlusContainer,
   IconWrapper,
   menuIconStyles,
@@ -65,7 +64,7 @@ import {
 } from '../../../modules/page/page.constants';
 import { Select } from '../form/select';
 import { Modal, ModalActions, modalStyles, ModalTitle } from '../modal/modal.styles';
-import { BackButton, NextButton, PlusButton } from '../navigation';
+import { BackButton, NextButton } from '../navigation';
 import { PageBlock } from '../pageBlock';
 import { Draggable } from '../draggable';
 import { CounterHeader } from '../counterHeader';
@@ -76,7 +75,7 @@ import { renderWhenTrue } from '../../utils/rendering';
 import { PageLink } from '../../../theme/typography';
 import { ROUTES } from '../../utils/routes.contants';
 
-const { EditIcon, BinIcon, MenuIcon } = Icons;
+const { EditIcon, MenuIcon, PlusIcon } = Icons;
 const { Switch, Label } = Form;
 
 export const PageForm = ({
@@ -179,9 +178,11 @@ export const PageForm = ({
     copyPageFunc();
   };
   const binIcon = setRemoveModalOpen ? (
-    <BinIconContainer id="removePage" onClick={() => setRemoveModalOpen(true)}>
-      <BinIcon />
-    </BinIconContainer>
+    <DeleteButtonContainer>
+      <Button size={BUTTON_SIZES.SMALL} id="removePage" onClick={() => setRemoveModalOpen(true)}>
+        <FormattedMessage {...messages.deleteButton} />
+      </Button>
+    </DeleteButtonContainer>
   ) : null;
   const visitPage = pageUrl ? (
     <Fragment>
@@ -221,7 +222,10 @@ export const PageForm = ({
     propOr(values[PAGE_TEMPLATE] === 0, 'allowEdit')
   )(pageTemplates);
   const plusButton = allowEdit ? (
-    <PlusButton customStyles={mobilePlusStyles} id="addBlock" onClick={handleAddBlock} type="button" />
+    <Button onClick={handleAddBlock} size={BUTTON_SIZES.MEDIUM} id="addBlock" inverse>
+      <PlusIcon customStyles={{ width: 24, height: 24 }} inverse />
+      <FormattedMessage {...messages.addBlockButton} />
+    </Button>
   ) : null;
   const removeBlock = index => {
     const removedElement = values[PAGE_BLOCKS][index];

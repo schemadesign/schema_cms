@@ -1,12 +1,364 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`CreateDataSourceState: Component should render correctly 1`] = `
+.c27 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+  margin-bottom: 24px;
+  width: 100%;
+}
+
+.c9 {
+  display: none;
+}
+
+.c10 {
+  margin-right: 20px;
+  overflow: hidden;
+}
+
+.c11 {
+  color: #FFF;
+}
+
+.c12 {
+  color: #FFF;
+}
+
+.c24 {
+  height: 120px;
+}
+
+.c26 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+  -webkit-flex-wrap: wrap;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  width: 100%;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+}
+
+.c25 {
+  bottom: 0;
+  width: 100%;
+  padding: 10px 0 36px;
+  position: fixed;
+  width: calc(100% - 40px);
+  z-index: 999;
+  background-image: linear-gradient( to top, #000,#000 30%, rgba(0,0,0,0) );
+}
+
+.c29 {
+  width: calc(50% - 5px);
+  max-width: 240px;
+}
+
+.c28 {
+  width: calc(50% - 5px);
+  max-width: 240px;
+  background-color: #1d1d20;
+  color: #FFF;
+  border-radius: 30px;
+  text-align: center;
+  line-height: 30px;
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  font-size: 20px;
+  padding: 9px 0;
+}
+
+.c17 {
+  color: #FFF;
+  text-align: center;
+  padding: 50px 10px;
+  font-weight: 200;
+  font-size: 20px;
+}
+
+.c0 {
+  font-weight: normal;
+  width: calc(100% - 50px);
+}
+
+.c4 {
+  padding-right: 50px;
+}
+
+.c3 {
+  overflow: auto;
+  -webkit-overflow-scrolling: touch;
+  max-height: 100%;
+}
+
+.c5 {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+}
+
+.c6 {
+  line-height: 1.5;
+  margin: 2px 0;
+  cursor: pointer;
+  font-size: 24px;
+  border-bottom: 2.4px solid #2F2F36;
+  padding: 8px 0 13px;
+}
+
+.c6 a,
+.c6 div {
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  color: #71737e;
+  display: block;
+}
+
+.c7 {
+  margin: 10px 0;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+}
+
+.c8 {
+  color: #FFF;
+  font-size: 14px;
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  margin: 12px 0;
+}
+
+.c1 {
+  word-break: break-word;
+}
+
+.c2 {
+  word-break: break-word;
+}
+
+.c13 {
+  padding-bottom: 50px;
+}
+
+.c14 {
+  position: relative;
+}
+
+.c15 {
+  margin-top: 0;
+}
+
+.c16 {
+  position: relative;
+  top: 0;
+  left: 0;
+  color: #f21e29;
+  font-size: 14px;
+  font-weight: normal;
+}
+
+.c18 {
+  margin-top: 30px;
+  border-top: 2px solid #2F2F36;
+  padding-top: 15px;
+}
+
+.c19 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-align-items: start;
+  -webkit-box-align: start;
+  -ms-flex-align: start;
+  align-items: start;
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+  padding-bottom: 15px;
+  position: relative;
+}
+
+.c22 {
+  padding-right: 10px;
+}
+
+.c21 {
+  padding-left: 10px;
+  max-width: 100%;
+}
+
+.c20 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  max-width: 100%;
+  padding-right: 10px;
+}
+
+.c23 {
+  color: #71737e;
+  min-width: 100%;
+}
+
+@media (min-width:1050px) {
+  .c9 {
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: justify;
+    -webkit-justify-content: space-between;
+    -ms-flex-pack: justify;
+    justify-content: space-between;
+    -webkit-align-items: center;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    margin: 60px 0 40px 0;
+    min-height: 63px;
+  }
+}
+
+@media (min-width:1050px) {
+  .c24 {
+    height: 100px;
+  }
+}
+
+@media (min-width:1050px) {
+  .c26 {
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+  }
+}
+
+@media (min-width:1050px) {
+  .c25 {
+    position: fixed;
+    width: calc(100% - 40px);
+    z-index: 999;
+    background-image: linear-gradient( to top, #000,#000 30%, rgba(0,0,0,0) );
+    padding: 10px 0 36px;
+    width: 1000px;
+  }
+}
+
+@media (min-width:1050px) {
+  .c29 {
+    width: 240px;
+  }
+}
+
+@media (min-width:1050px) {
+  .c28 {
+    width: 240px;
+  }
+}
+
+@media (min-width:1050px) {
+  .c0 {
+    display: none;
+  }
+}
+
+@media (min-width:1050px) {
+  .c4 {
+    height: 54px;
+  }
+}
+
+@media (min-width:1050px) {
+  .c3 {
+    padding-bottom: 20px;
+  }
+}
+
+@media (min-width:768px) {
+
+}
+
+@media (min-width:1050px) {
+  .c15 {
+    margin-top: 0;
+  }
+}
+
+@media (min-width:480px) {
+  .c19 {
+    -webkit-flex-direction: row;
+    -ms-flex-direction: row;
+    flex-direction: row;
+    -webkit-align-items: center;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+  }
+}
+
+@media (min-width:480px) {
+  .c20 {
+    padding-right: 40px;
+  }
+}
+
 <form
-  className="sc-bdnylx"
+  className=""
   onSubmit={[Function]}
 >
   <div
-    className="sc-hBMVcZ dQhXKx"
+    className="c0"
   >
     <div
       style={
@@ -23,10 +375,10 @@ exports[`CreateDataSourceState: Component should render correctly 1`] = `
     >
       <div>
         <div
-          className="sc-fnVYJo"
+          className=""
         >
           <h2
-            className="sc-kfYqjs cbmCxw"
+            className="c1"
             id="headerTitle"
             style={
               Object {
@@ -40,7 +392,7 @@ exports[`CreateDataSourceState: Component should render correctly 1`] = `
             State
           </h2>
           <h1
-            className="sc-fKgIGh egBmWs"
+            className="c2"
             id="headerSubtitle"
             style={
               Object {
@@ -63,14 +415,16 @@ exports[`CreateDataSourceState: Component should render correctly 1`] = `
         onClick={[Function]}
         style={
           Object {
+            "alignItems": "center",
             "backgroundColor": "transparent",
             "border": "none",
-            "borderRadius": "48px",
+            "borderRadius": "30px",
             "color": "#FFF",
             "cursor": "pointer",
-            "display": "inline-block",
+            "display": "flex",
             "fill": "#FFF",
-            "fontSize": "18px",
+            "fontSize": "20px",
+            "justifyContent": "center",
             "margin": "0",
             "minHeight": "48px",
             "outline": "none",
@@ -122,16 +476,16 @@ exports[`CreateDataSourceState: Component should render correctly 1`] = `
       }
     >
       <div
-        className="sc-bkbjAj bTvJWQ"
+        className="c3"
       >
         <div
-          className="sc-fFSRdu cLvykh"
+          className="c4"
         >
           <div
-            className="sc-fnVYJo"
+            className=""
           >
             <h2
-              className="sc-kfYqjs cbmCxw"
+              className="c1"
               id="headerTitle"
               style={
                 Object {
@@ -145,7 +499,7 @@ exports[`CreateDataSourceState: Component should render correctly 1`] = `
               State
             </h2>
             <h1
-              className="sc-fKgIGh egBmWs"
+              className="c2"
               id="headerSubtitle"
               style={
                 Object {
@@ -163,10 +517,10 @@ exports[`CreateDataSourceState: Component should render correctly 1`] = `
           </div>
         </div>
         <div
-          className="sc-iemXMA jNejcA"
+          className="c5"
         >
           <div
-            className="sc-dIvqjp iEPBku"
+            className="c6"
           >
             <a
               href="/project/"
@@ -177,7 +531,7 @@ exports[`CreateDataSourceState: Component should render correctly 1`] = `
             </a>
           </div>
           <div
-            className="sc-dIvqjp iEPBku"
+            className="c6"
           >
             <a
               href="/user/"
@@ -188,7 +542,7 @@ exports[`CreateDataSourceState: Component should render correctly 1`] = `
             </a>
           </div>
           <div
-            className="sc-dIvqjp iEPBku"
+            className="c6"
           >
             <a
               href="/project/1"
@@ -199,7 +553,7 @@ exports[`CreateDataSourceState: Component should render correctly 1`] = `
             </a>
           </div>
           <div
-            className="sc-dIvqjp iEPBku"
+            className="c6"
           >
             <a
               href="/project/1/datasource"
@@ -210,7 +564,7 @@ exports[`CreateDataSourceState: Component should render correctly 1`] = `
             </a>
           </div>
           <div
-            className="sc-dIvqjp iEPBku"
+            className="c6"
           >
             <a
               href="/project/1/user"
@@ -221,7 +575,7 @@ exports[`CreateDataSourceState: Component should render correctly 1`] = `
             </a>
           </div>
           <div
-            className="sc-dIvqjp iEPBku"
+            className="c6"
           >
             <a
               href="/project/1/content"
@@ -232,7 +586,7 @@ exports[`CreateDataSourceState: Component should render correctly 1`] = `
             </a>
           </div>
           <div
-            className="sc-dIvqjp iEPBku"
+            className="c6"
           >
             <a
               href="/project/1/templates"
@@ -244,10 +598,10 @@ exports[`CreateDataSourceState: Component should render correctly 1`] = `
           </div>
         </div>
         <div
-          className="sc-iemXMA jNejcA"
+          className="c5"
         >
           <div
-            className="sc-dIvqjp iEPBku"
+            className="c6"
           >
             <a
               href="/settings"
@@ -258,7 +612,7 @@ exports[`CreateDataSourceState: Component should render correctly 1`] = `
             </a>
           </div>
           <div
-            className="sc-dIvqjp iEPBku"
+            className="c6"
           >
             <div
               id="logoutNavBtn"
@@ -269,10 +623,10 @@ exports[`CreateDataSourceState: Component should render correctly 1`] = `
           </div>
         </div>
         <div
-          className="sc-hHEjAm FxEiE"
+          className="c7"
         >
           <a
-            className="sc-dlMBXb dqipSy"
+            className="c8"
             href="/"
             id="aboutNavBtn"
             onClick={[Function]}
@@ -282,7 +636,7 @@ exports[`CreateDataSourceState: Component should render correctly 1`] = `
             About Schema CMS
           </a>
           <a
-            className="sc-dlMBXb dqipSy"
+            className="c8"
             href="https://github.com/schemadesign/schema_cms/blob/master/backend/app/docs/public_api/api_calls.md"
             id="apiNavBtn"
             onClick={[Function]}
@@ -292,7 +646,7 @@ exports[`CreateDataSourceState: Component should render correctly 1`] = `
             API Doc
           </a>
           <a
-            className="sc-dlMBXb dqipSy"
+            className="c8"
             href="https://github.com/schemadesign/schema_cms"
             id="repositoryNavBtn"
             onClick={[Function]}
@@ -309,14 +663,16 @@ exports[`CreateDataSourceState: Component should render correctly 1`] = `
         onClick={[Function]}
         style={
           Object {
+            "alignItems": "center",
             "backgroundColor": "transparent",
             "border": "none",
-            "borderRadius": "48px",
+            "borderRadius": "30px",
             "color": "#FFF",
             "cursor": "pointer",
-            "display": "inline-block",
+            "display": "flex",
             "fill": "#FFF",
-            "fontSize": "18px",
+            "fontSize": "20px",
+            "justifyContent": "center",
             "margin": "0",
             "minHeight": "48px",
             "outline": "none",
@@ -348,13 +704,13 @@ exports[`CreateDataSourceState: Component should render correctly 1`] = `
     </div>
   </div>
   <div
-    className="sc-dlnjPT dpbPKV"
+    className="c9"
   >
     <div
-      className="sc-hKFyIo hkUAqa"
+      className="c10"
     >
       <h2
-        className="sc-eCApGN jLlqJF"
+        className="c11"
         id="desktopHeaderTitle"
         style={
           Object {
@@ -368,7 +724,7 @@ exports[`CreateDataSourceState: Component should render correctly 1`] = `
         State
       </h2>
       <h1
-        className="sc-jSFkmK jHNGuh"
+        className="c12"
         id="desktopHeaderSubtitle"
         style={
           Object {
@@ -385,14 +741,14 @@ exports[`CreateDataSourceState: Component should render correctly 1`] = `
       </h1>
     </div>
     <div
-      className="sc-gKAblj"
+      className=""
     />
   </div>
   <div
-    className="sc-iJCRLp dmVujA"
+    className="c13"
   >
     <div
-      className="sc-giAqnE hRtEWu"
+      className="c14"
     >
       <div
         style={
@@ -464,7 +820,7 @@ exports[`CreateDataSourceState: Component should render correctly 1`] = `
             }
           >
             <div
-              className="sc-ezzayL htAOfL"
+              className="c15"
             >
               <svg
                 style={
@@ -486,12 +842,12 @@ exports[`CreateDataSourceState: Component should render correctly 1`] = `
         </div>
       </div>
       <div
-        className="sc-bYwzba bAVweK"
+        className="c16"
         id="nameError"
       />
     </div>
     <div
-      className="sc-giAqnE hRtEWu"
+      className="c14"
     >
       <div
         style={
@@ -581,7 +937,7 @@ exports[`CreateDataSourceState: Component should render correctly 1`] = `
             }
           >
             <div
-              className="sc-ezzayL htAOfL"
+              className="c15"
             >
               <svg
                 style={
@@ -603,12 +959,12 @@ exports[`CreateDataSourceState: Component should render correctly 1`] = `
         </div>
       </div>
       <div
-        className="sc-bYwzba bAVweK"
+        className="c16"
         id="descriptionError"
       />
     </div>
     <div
-      className="sc-giAqnE hRtEWu"
+      className="c14"
     >
       <div
         style={
@@ -680,7 +1036,7 @@ exports[`CreateDataSourceState: Component should render correctly 1`] = `
             }
           >
             <div
-              className="sc-ezzayL htAOfL"
+              className="c15"
             >
               <svg
                 style={
@@ -702,7 +1058,7 @@ exports[`CreateDataSourceState: Component should render correctly 1`] = `
         </div>
       </div>
       <div
-        className="sc-bYwzba bAVweK"
+        className="c16"
         id="sourceUrlError"
       />
     </div>
@@ -723,7 +1079,7 @@ exports[`CreateDataSourceState: Component should render correctly 1`] = `
       Tags
     </label>
     <div
-      className="sc-ksluoS cNJlQo"
+      className="c17"
     >
       No Tags available
     </div>
@@ -744,18 +1100,18 @@ exports[`CreateDataSourceState: Component should render correctly 1`] = `
       Filters
     </label>
     <div
-      className="sc-ksluoS cNJlQo"
+      className="c17"
     >
       No Filters available
     </div>
     <div
-      className="sc-jcwofb bFQwKB"
+      className="c18"
     >
       <div
-        className="sc-carGAA hPFXxs"
+        className="c19"
       >
         <div
-          className="sc-efHXLn ckwWiH"
+          className="c20"
         >
           <div>
             <input
@@ -807,16 +1163,16 @@ exports[`CreateDataSourceState: Component should render correctly 1`] = `
             </label>
           </div>
           <div
-            className="sc-iBzFoy dgWGuH"
+            className="c21"
           >
             <label
-              className="sc-iTVIwl dHaTes"
+              className="c22"
               htmlFor="isPublic"
             >
               Make it Public
             </label>
             <span
-              className="sc-dPaNSN hbWViB"
+              className="c23"
             >
               This State is currently Private
             </span>
@@ -826,19 +1182,19 @@ exports[`CreateDataSourceState: Component should render correctly 1`] = `
     </div>
   </div>
   <div
-    className="sc-iCoHVE iVwhst"
+    className="c24"
   >
     <div
-      className="sc-pNWxx leFfYk"
+      className="c25"
     >
       <div
-        className="sc-fujyUd cktdoz"
+        className="c26"
       >
         <div
-          className="sc-gtssRu kIzCcZ"
+          className="c27"
         >
           <a
-            className="sc-kEqYlL kfMKSa"
+            className="c28"
             disabled={false}
             href="/datasource/dataSourceId/state"
             onClick={[Function]}
@@ -846,18 +1202,20 @@ exports[`CreateDataSourceState: Component should render correctly 1`] = `
             Cancel
           </a>
           <button
-            className="sc-jrsJCI fykTWR"
+            className="c29"
             disabled={true}
             style={
               Object {
+                "alignItems": "center",
                 "backgroundColor": "#1d1d20",
                 "border": "none",
-                "borderRadius": "48px",
+                "borderRadius": "30px",
                 "color": "#71737e",
                 "cursor": "default",
-                "display": "inline-block",
+                "display": "flex",
                 "fill": "#FFF",
-                "fontSize": "18px",
+                "fontSize": "20px",
+                "justifyContent": "center",
                 "margin": "0",
                 "minHeight": "48px",
                 "outline": "none",

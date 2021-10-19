@@ -1,25 +1,47 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`TagSearch: Component should render correctly 1`] = `
+.c0 {
+  padding-bottom: 30px;
+}
+
+.c2 {
+  font-size: 15px;
+  padding: 20px 0 5px;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  width: 100%;
+  overflow: hidden;
+}
+
+.c3 {
+  color: #71737e;
+}
+
+.c1 {
+  margin-top: 10px;
+  padding: 0 20px 20px;
+}
+
 <div
-  className="sc-bdnylx hNPpjF"
+  className="c0"
 >
   <div
-    className="sc-hKFyIo fDdDXB"
+    className="c1"
   >
     <div
-      className="sc-gtssRu keTtVk"
+      className="c2"
       title="Colors"
     >
       <span
-        className="sc-dlnjPT gyNzNF"
+        className="c3"
       >
         Category: 
       </span>
       Colors
     </div>
     <div
-      className="sc-jSFkmK"
+      className=""
     >
       <div
         className=" css-2b097c-container"
@@ -117,18 +139,18 @@ exports[`TagSearch: Component should render correctly 1`] = `
       </div>
     </div>
     <div
-      className="sc-gtssRu keTtVk"
+      className="c2"
       title="Countries"
     >
       <span
-        className="sc-dlnjPT gyNzNF"
+        className="c3"
       >
         Category: 
       </span>
       Countries
     </div>
     <div
-      className="sc-jSFkmK"
+      className=""
     >
       <div
         className=" css-2b097c-container"
@@ -230,8 +252,16 @@ exports[`TagSearch: Component should render correctly 1`] = `
 `;
 
 exports[`TagSearch: Component should render correctly with no tag categories 1`] = `
+.c0 {
+  color: #FFF;
+  text-align: center;
+  padding: 50px 10px;
+  font-weight: 200;
+  font-size: 20px;
+}
+
 <div
-  className="sc-fujyUd bXuLlE"
+  className="c0"
 >
   No Tags available
 </div>

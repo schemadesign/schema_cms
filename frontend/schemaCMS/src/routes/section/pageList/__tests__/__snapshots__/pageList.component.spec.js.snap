@@ -1,11 +1,766 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`PageList: Component should render correctly 1`] = `
+.c41 {
+  width: 100%;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  white-space: nowrap;
+}
+
+.c43 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+}
+
+.c43 ul,
+.c43 li {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  text-align: center;
+}
+
+.c43 li {
+  margin: 6px;
+  border-radius: 50%;
+  width: 20px;
+  height: 20px;
+  cursor: pointer;
+  -webkit-transition: background-color 200ms ease-in-out,color 200ms ease-in-out;
+  transition: background-color 200ms ease-in-out,color 200ms ease-in-out;
+}
+
+.c43 .previous,
+.c43 .next {
+  border: none;
+  width: auto;
+  border-radius: 5px;
+  padding: 2px;
+  -webkit-transition: background-color 200ms ease-in-out,color 200ms ease-in-out;
+  transition: background-color 200ms ease-in-out,color 200ms ease-in-out;
+}
+
+.c43 .previous:not(.disabled):hover,
+.c43 .next:not(.disabled):hover {
+  background-color: #ffffff;
+  color: #000000;
+}
+
+.c43 .selected,
+.c43 li:not(.previous):not(.next):hover {
+  background-color: #ffffff;
+  color: #000000;
+}
+
+.c43 a {
+  padding: 4px;
+}
+
+.c43 .disabled {
+  pointer-events: none;
+  cursor: default;
+  opacity: 0.5;
+}
+
+.c37 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+}
+
+.c0 {
+  font-weight: normal;
+  width: calc(100% - 50px);
+}
+
+.c4 {
+  padding-right: 50px;
+}
+
+.c3 {
+  overflow: auto;
+  -webkit-overflow-scrolling: touch;
+  max-height: 100%;
+}
+
+.c5 {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+}
+
+.c6 {
+  line-height: 1.5;
+  margin: 2px 0;
+  cursor: pointer;
+  font-size: 24px;
+  border-bottom: 2.4px solid #2F2F36;
+  padding: 8px 0 13px;
+}
+
+.c6 a,
+.c6 div {
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  color: #71737e;
+  display: block;
+}
+
+.c7 {
+  line-height: 1.5;
+  margin: 2px 0;
+  cursor: pointer;
+  font-size: 24px;
+  border-bottom: 2.4px solid #FFF;
+  padding: 8px 0 13px;
+}
+
+.c7 a,
+.c7 div {
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  color: #FFF;
+  display: block;
+}
+
+.c8 {
+  margin: 10px 0;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+}
+
+.c9 {
+  color: #FFF;
+  font-size: 14px;
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  margin: 12px 0;
+}
+
+.c1 {
+  word-break: break-word;
+}
+
+.c2 {
+  word-break: break-word;
+}
+
+.c53 {
+  height: 120px;
+}
+
+.c55 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+  -webkit-flex-wrap: wrap;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  width: 100%;
+}
+
+.c54 {
+  bottom: 0;
+  width: 100%;
+  padding: 10px 0 36px;
+  position: fixed;
+  width: calc(100% - 40px);
+  z-index: 999;
+  background-image: linear-gradient( to top, #000,#000 30%, rgba(0,0,0,0) );
+}
+
+.c57 {
+  width: calc(50% - 5px);
+  max-width: 240px;
+}
+
+.c56 {
+  width: calc(50% - 5px);
+  max-width: 240px;
+  background-color: #1d1d20;
+  color: #FFF;
+  border-radius: 30px;
+  text-align: center;
+  line-height: 30px;
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  font-size: 20px;
+  padding: 9px 0;
+}
+
+.c23 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  border-radius: 4px;
+  padding: 4px 8px 4px 6px;
+  background-color: #FFF;
+  color: #000;
+  -webkit-text-decoration: none;
+  text-decoration: none;
+}
+
+.c14 {
+  display: none;
+}
+
+.c15 {
+  margin-right: 20px;
+  overflow: hidden;
+}
+
+.c16 {
+  color: #FFF;
+}
+
+.c17 {
+  color: #FFF;
+}
+
+.c29 {
+  color: #71737e;
+  text-align: center;
+  padding-bottom: 20px;
+  min-height: 43px;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+}
+
+.c30 {
+  width: 33%;
+}
+
+.c33 {
+  margin-bottom: 20px;
+  -webkit-flex: 0 0 auto;
+  -ms-flex: 0 0 auto;
+  flex: 0 0 auto;
+  width: 100%;
+  min-height: 150px;
+}
+
+.c39 {
+  word-break: break-word;
+  cursor: pointer;
+  line-height: 1.25;
+  -webkit-letter-spacing: -0.12px;
+  -moz-letter-spacing: -0.12px;
+  -ms-letter-spacing: -0.12px;
+  letter-spacing: -0.12px;
+  margin: 0;
+  color: inherit;
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  display: block;
+  font-size: 2em;
+  font-weight: bold;
+}
+
+.c40 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.c32 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  -webkit-flex-wrap: wrap;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
+}
+
+.c35 {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+}
+
+.c36 {
+  display: inline-block;
+  line-height: 1.25;
+  margin-right: 1.5em;
+  color: #71737e;
+}
+
+.c36::before {
+  content: '•';
+  margin-left: -1.5em;
+  display: inline-block;
+  padding: 0 7px;
+}
+
+.c34 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+}
+
+.c44 {
+  margin-top: 30px;
+  border-top: 2px solid #2F2F36;
+  padding-top: 15px;
+}
+
+.c45 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-align-items: start;
+  -webkit-box-align: start;
+  -ms-flex-align: start;
+  align-items: start;
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+  padding-bottom: 15px;
+  position: relative;
+}
+
+.c48 {
+  padding-right: 10px;
+}
+
+.c47 {
+  padding-left: 10px;
+  max-width: 100%;
+}
+
+.c46 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  max-width: 100%;
+  padding-right: 10px;
+}
+
+.c52 {
+  margin-top: 15px;
+}
+
+.c22 {
+  cursor: pointer;
+}
+
+.c49 {
+  color: #71737e;
+  min-width: 100%;
+}
+
+.c18 {
+  position: relative;
+}
+
+.c21 {
+  position: absolute;
+  right: 0;
+  top: 0;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+}
+
+.c24 {
+  position: relative;
+}
+
+.c31 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: end;
+  -webkit-justify-content: end;
+  -ms-flex-pack: end;
+  justify-content: end;
+}
+
+.c50 {
+  padding: 0 10px;
+}
+
+.c50:before {
+  content: '|';
+  display: inline;
+}
+
+.c42 {
+  color: #71737e;
+  font-weight: bold;
+  font-size: 14px;
+}
+
+.c19 {
+  position: relative;
+  max-width: 100%;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  position: relative;
+}
+
+.c25 {
+  position: relative;
+}
+
+.c26 {
+  margin-top: 0;
+}
+
+.c20 {
+  position: relative;
+  top: 0;
+  left: 0;
+  color: #f21e29;
+  font-size: 14px;
+  font-weight: normal;
+}
+
+.c10 {
+  display: none;
+}
+
+.c13 {
+  color: #FFF;
+  width: 100%;
+}
+
+.c11 {
+  color: #a6a7aa;
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  width: 100%;
+}
+
+.c11:hover {
+  color: #FFF;
+}
+
+.c12 {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  max-width: 230px;
+}
+
+.c27 {
+  width: 200px;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+}
+
+.c28 {
+  width: 100%;
+}
+
+.c38 {
+  cursor: pointer;
+  position: relative;
+}
+
+.c51 {
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  white-space: nowrap;
+  cursor: pointer;
+  color: #FFF;
+  -webkit-transition: border 400ms;
+  transition: border 400ms;
+  border-bottom: 1px solid transparent;
+}
+
+.c51:hover {
+  border-bottom: 1px solid #FFF;
+}
+
+@media (min-width:1050px) {
+  .c0 {
+    display: none;
+  }
+}
+
+@media (min-width:1050px) {
+  .c4 {
+    height: 54px;
+  }
+}
+
+@media (min-width:1050px) {
+  .c3 {
+    padding-bottom: 20px;
+  }
+}
+
+@media (min-width:768px) {
+
+}
+
+@media (min-width:1050px) {
+  .c53 {
+    height: 100px;
+  }
+}
+
+@media (min-width:1050px) {
+  .c55 {
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+  }
+}
+
+@media (min-width:1050px) {
+  .c54 {
+    position: fixed;
+    width: calc(100% - 40px);
+    z-index: 999;
+    background-image: linear-gradient( to top, #000,#000 30%, rgba(0,0,0,0) );
+    padding: 10px 0 36px;
+    width: 1000px;
+  }
+}
+
+@media (min-width:1050px) {
+  .c57 {
+    width: 240px;
+  }
+}
+
+@media (min-width:1050px) {
+  .c56 {
+    width: 240px;
+  }
+}
+
+@media (min-width:1050px) {
+  .c23 {
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+  }
+}
+
+@media (min-width:1050px) {
+  .c14 {
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: justify;
+    -webkit-justify-content: space-between;
+    -ms-flex-pack: justify;
+    justify-content: space-between;
+    -webkit-align-items: center;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    margin: 60px 0 40px 0;
+    min-height: 63px;
+  }
+}
+
+@media (min-width:1050px) {
+  .c29 {
+    margin-top: 0px;
+    padding-bottom: 40px;
+  }
+}
+
+@media (min-width:1050px) {
+  .c33 {
+    width: calc(100%/3 - 20px);
+    max-width: 320px;
+    min-height: 192px;
+    margin: 10px;
+  }
+}
+
+@media (min-width:1050px) {
+  .c32 {
+    -webkit-box-pack: start;
+    -webkit-justify-content: flex-start;
+    -ms-flex-pack: start;
+    justify-content: flex-start;
+    margin: 0 -10px;
+  }
+}
+
+@media (min-width:480px) {
+  .c45 {
+    -webkit-flex-direction: row;
+    -ms-flex-direction: row;
+    flex-direction: row;
+    -webkit-align-items: center;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+  }
+}
+
+@media (min-width:480px) {
+  .c46 {
+    padding-right: 40px;
+  }
+}
+
+@media (min-width:480px) {
+  .c52 {
+    margin-top: 0;
+  }
+}
+
+@media (min-width:1050px) {
+  .c24 {
+    display: none;
+  }
+}
+
+@media (min-width:1050px) {
+  .c31 {
+    display: none;
+  }
+}
+
+@media (min-width:1050px) {
+  .c26 {
+    margin-top: 0;
+  }
+}
+
+@media (min-width:1050px) {
+  .c10 {
+    display: block;
+  }
+}
+
 <div
-  className="sc-bdnylx"
+  className=""
 >
   <div
-    className="sc-jSFkmK fOnWDj"
+    className="c0"
   >
     <div
       style={
@@ -22,10 +777,10 @@ exports[`PageList: Component should render correctly 1`] = `
     >
       <div>
         <div
-          className="sc-gKAblj"
+          className=""
         >
           <h2
-            className="sc-crzoUp hGYdip"
+            className="c1"
             id="headerTitle"
             style={
               Object {
@@ -39,7 +794,7 @@ exports[`PageList: Component should render correctly 1`] = `
             Section
           </h2>
           <h1
-            className="sc-dIsAE exJHSK"
+            className="c2"
             id="headerSubtitle"
             style={
               Object {
@@ -62,14 +817,16 @@ exports[`PageList: Component should render correctly 1`] = `
         onClick={[Function]}
         style={
           Object {
+            "alignItems": "center",
             "backgroundColor": "transparent",
             "border": "none",
-            "borderRadius": "48px",
+            "borderRadius": "30px",
             "color": "#FFF",
             "cursor": "pointer",
-            "display": "inline-block",
+            "display": "flex",
             "fill": "#FFF",
-            "fontSize": "18px",
+            "fontSize": "20px",
+            "justifyContent": "center",
             "margin": "0",
             "minHeight": "48px",
             "outline": "none",
@@ -121,16 +878,16 @@ exports[`PageList: Component should render correctly 1`] = `
       }
     >
       <div
-        className="sc-fujyUd gEHBTT"
+        className="c3"
       >
         <div
-          className="sc-iCoHVE gmeCWb"
+          className="c4"
         >
           <div
-            className="sc-gKAblj"
+            className=""
           >
             <h2
-              className="sc-crzoUp hGYdip"
+              className="c1"
               id="headerTitle"
               style={
                 Object {
@@ -144,7 +901,7 @@ exports[`PageList: Component should render correctly 1`] = `
               Section
             </h2>
             <h1
-              className="sc-dIsAE exJHSK"
+              className="c2"
               id="headerSubtitle"
               style={
                 Object {
@@ -162,10 +919,10 @@ exports[`PageList: Component should render correctly 1`] = `
           </div>
         </div>
         <div
-          className="sc-pNWxx bAQKCE"
+          className="c5"
         >
           <div
-            className="sc-jrsJCI hEdsDt"
+            className="c6"
           >
             <a
               href="/project/"
@@ -176,7 +933,7 @@ exports[`PageList: Component should render correctly 1`] = `
             </a>
           </div>
           <div
-            className="sc-jrsJCI hEdsDt"
+            className="c6"
           >
             <a
               href="/user/"
@@ -187,7 +944,7 @@ exports[`PageList: Component should render correctly 1`] = `
             </a>
           </div>
           <div
-            className="sc-jrsJCI hEdsDt"
+            className="c6"
           >
             <a
               href="/project/1"
@@ -198,7 +955,7 @@ exports[`PageList: Component should render correctly 1`] = `
             </a>
           </div>
           <div
-            className="sc-jrsJCI hEdsDt"
+            className="c6"
           >
             <a
               href="/project/1/datasource"
@@ -209,7 +966,7 @@ exports[`PageList: Component should render correctly 1`] = `
             </a>
           </div>
           <div
-            className="sc-jrsJCI hEdsDt"
+            className="c6"
           >
             <a
               href="/project/1/user"
@@ -220,7 +977,7 @@ exports[`PageList: Component should render correctly 1`] = `
             </a>
           </div>
           <div
-            className="sc-jrsJCI jrieOI"
+            className="c7"
           >
             <a
               href="/project/1/content"
@@ -231,7 +988,7 @@ exports[`PageList: Component should render correctly 1`] = `
             </a>
           </div>
           <div
-            className="sc-jrsJCI hEdsDt"
+            className="c6"
           >
             <a
               href="/project/1/templates"
@@ -243,10 +1000,10 @@ exports[`PageList: Component should render correctly 1`] = `
           </div>
         </div>
         <div
-          className="sc-pNWxx bAQKCE"
+          className="c5"
         >
           <div
-            className="sc-jrsJCI hEdsDt"
+            className="c6"
           >
             <a
               href="/settings"
@@ -257,7 +1014,7 @@ exports[`PageList: Component should render correctly 1`] = `
             </a>
           </div>
           <div
-            className="sc-jrsJCI hEdsDt"
+            className="c6"
           >
             <div
               id="logoutNavBtn"
@@ -268,10 +1025,10 @@ exports[`PageList: Component should render correctly 1`] = `
           </div>
         </div>
         <div
-          className="sc-kEqYlL isgfvN"
+          className="c8"
         >
           <a
-            className="sc-iqAbSa kJREqS"
+            className="c9"
             href="/"
             id="aboutNavBtn"
             onClick={[Function]}
@@ -281,7 +1038,7 @@ exports[`PageList: Component should render correctly 1`] = `
             About Schema CMS
           </a>
           <a
-            className="sc-iqAbSa kJREqS"
+            className="c9"
             href="https://github.com/schemadesign/schema_cms/blob/master/backend/app/docs/public_api/api_calls.md"
             id="apiNavBtn"
             onClick={[Function]}
@@ -291,7 +1048,7 @@ exports[`PageList: Component should render correctly 1`] = `
             API Doc
           </a>
           <a
-            className="sc-iqAbSa kJREqS"
+            className="c9"
             href="https://github.com/schemadesign/schema_cms"
             id="repositoryNavBtn"
             onClick={[Function]}
@@ -308,14 +1065,16 @@ exports[`PageList: Component should render correctly 1`] = `
         onClick={[Function]}
         style={
           Object {
+            "alignItems": "center",
             "backgroundColor": "transparent",
             "border": "none",
-            "borderRadius": "48px",
+            "borderRadius": "30px",
             "color": "#FFF",
             "cursor": "pointer",
-            "display": "inline-block",
+            "display": "flex",
             "fill": "#FFF",
-            "fontSize": "18px",
+            "fontSize": "20px",
+            "justifyContent": "center",
             "margin": "0",
             "minHeight": "48px",
             "outline": "none",
@@ -347,7 +1106,7 @@ exports[`PageList: Component should render correctly 1`] = `
     </div>
   </div>
   <div
-    className="sc-hhIhEF btgZyM"
+    className="c10"
   >
     <div
       style={
@@ -369,7 +1128,7 @@ exports[`PageList: Component should render correctly 1`] = `
         }
       >
         <a
-          className="sc-lbVuaH fPMYye"
+          className="c11"
           href="/project/1/"
           onClick={[Function]}
           style={
@@ -391,7 +1150,7 @@ exports[`PageList: Component should render correctly 1`] = `
             Project
           </span>
           <h3
-            className="sc-gGLyOc tKUnA"
+            className="c12"
             style={
               Object {
                 "fontFamily": "Inter, \\"Helvetica Neue\\", Helvetica, Arial, sans-serif",
@@ -427,7 +1186,7 @@ exports[`PageList: Component should render correctly 1`] = `
         }
       >
         <a
-          className="sc-lbVuaH fPMYye"
+          className="c11"
           href="/project/1/content"
           onClick={[Function]}
           style={
@@ -449,7 +1208,7 @@ exports[`PageList: Component should render correctly 1`] = `
             Tab
           </span>
           <h3
-            className="sc-gGLyOc tKUnA"
+            className="c12"
             style={
               Object {
                 "fontFamily": "Inter, \\"Helvetica Neue\\", Helvetica, Arial, sans-serif",
@@ -485,7 +1244,7 @@ exports[`PageList: Component should render correctly 1`] = `
         }
       >
         <div
-          className="sc-eirseW joltyZ"
+          className="c13"
         >
           <span
             style={
@@ -498,7 +1257,7 @@ exports[`PageList: Component should render correctly 1`] = `
             Section
           </span>
           <h3
-            className="sc-gGLyOc tKUnA"
+            className="c12"
             style={
               Object {
                 "fontFamily": "Inter, \\"Helvetica Neue\\", Helvetica, Arial, sans-serif",
@@ -516,17 +1275,17 @@ exports[`PageList: Component should render correctly 1`] = `
     </div>
   </div>
   <form
-    className="sc-gtssRu"
+    className=""
     onSubmit={[Function]}
   >
     <div
-      className="sc-fKgIGh iDRmPx"
+      className="c14"
     >
       <div
-        className="sc-bCwgka jNlFsP"
+        className="c15"
       >
         <h2
-          className="sc-iwaifL fAJgQr"
+          className="c16"
           id="desktopHeaderTitle"
           style={
             Object {
@@ -540,7 +1299,7 @@ exports[`PageList: Component should render correctly 1`] = `
           Section
         </h2>
         <h1
-          className="sc-cxNIbT eQmLRd"
+          className="c17"
           id="desktopHeaderSubtitle"
           style={
             Object {
@@ -554,10 +1313,10 @@ exports[`PageList: Component should render correctly 1`] = `
           }
         >
           <div
-            className="sc-cOigif dzFJcM"
+            className="c18"
           >
             <div
-              className="sc-jffIyK dWzFyc"
+              className="c19"
             >
               <div
                 style={
@@ -641,15 +1400,15 @@ exports[`PageList: Component should render correctly 1`] = `
                 </div>
               </div>
               <div
-                className="sc-oefIU crFEYj"
+                className="c20"
                 id="nameError"
               />
             </div>
             <div
-              className="sc-ArjOu hTLVka"
+              className="c21"
             >
               <label
-                className="sc-dPaNSN jQMCAH"
+                className="c22"
                 htmlFor="name"
               >
                 <svg
@@ -673,10 +1432,10 @@ exports[`PageList: Component should render correctly 1`] = `
         </h1>
       </div>
       <div
-        className="sc-lmgQde"
+        className=""
       >
         <a
-          className="sc-kfYqjs gpkNwB"
+          className="c23"
           href="/section/sectionId/create-page"
           onClick={[Function]}
         >
@@ -685,9 +1444,9 @@ exports[`PageList: Component should render correctly 1`] = `
             style={
               Object {
                 "fill": "#000",
-                "height": 60,
+                "height": 24,
                 "shapeRendering": "crispEdges",
-                "width": 60,
+                "width": 24,
               }
             }
             viewBox="0 0 60 60"
@@ -696,14 +1455,16 @@ exports[`PageList: Component should render correctly 1`] = `
               d="M32 15v13h13v4H32v13h-4V32H15v-4h13V15h4z"
             />
           </svg>
+           
+          Page
         </a>
       </div>
     </div>
     <div
-      className="sc-khIgXV kWqkfo"
+      className="c24"
     >
       <div
-        className="sc-jffIyK uZkeG"
+        className="c25"
       >
         <div
           style={
@@ -775,7 +1536,7 @@ exports[`PageList: Component should render correctly 1`] = `
               }
             >
               <div
-                className="sc-eJoaVz iOWEpP"
+                className="c26"
               >
                 <svg
                   style={
@@ -797,16 +1558,16 @@ exports[`PageList: Component should render correctly 1`] = `
           </div>
         </div>
         <div
-          className="sc-oefIU crFEYj"
+          className="c20"
           id="nameError"
         />
       </div>
     </div>
     <div
-      className="sc-ckTRkR edwCZp"
+      className="c27"
     >
       <div
-        className="sc-fbIXFq bdvLzQ"
+        className="c28"
       >
         <div
           className=" css-2b097c-container"
@@ -912,21 +1673,21 @@ exports[`PageList: Component should render correctly 1`] = `
       </svg>
     </div>
     <div
-      className="sc-iJCRLp bTRNxe"
+      className="c29"
     >
       <div
-        className="sc-giAqnE jEMelV"
+        className="c30"
         id="tagsCounter"
       />
       3 pages
       <div
-        className="sc-giAqnE jEMelV"
+        className="c30"
       >
         <div
-          className="sc-jgPznn enCBum"
+          className="c31"
         >
           <a
-            className="sc-kfYqjs gpkNwB"
+            className="c23"
             href="/section/sectionId/create-page"
             onClick={[Function]}
           >
@@ -935,9 +1696,9 @@ exports[`PageList: Component should render correctly 1`] = `
               style={
                 Object {
                   "fill": "#000",
-                  "height": 60,
+                  "height": 24,
                   "shapeRendering": "crispEdges",
-                  "width": 60,
+                  "width": 24,
                 }
               }
               viewBox="0 0 60 60"
@@ -946,15 +1707,17 @@ exports[`PageList: Component should render correctly 1`] = `
                 d="M32 15v13h13v4H32v13h-4V32H15v-4h13V15h4z"
               />
             </svg>
+             
+            Page
           </a>
         </div>
       </div>
     </div>
     <section
-      className="sc-hiKfjK iDUsJk"
+      className="c32"
     >
       <div
-        className="sc-ezzayL evcARB"
+        className="c33"
         style={
           Object {
             "backgroundColor": "#1d1d20",
@@ -987,29 +1750,29 @@ exports[`PageList: Component should render correctly 1`] = `
             }
           >
             <div
-              className="sc-ciSmjq eQvaZQ"
+              className="c34"
             >
               <ul
-                className="sc-gXfWUo kWWUTg"
+                className="c35"
               >
                 <li
-                  className="sc-cBoprd crrcUS"
+                  className="c36"
                   id="headerItem-0"
                 >
                   in 3 months
                 </li>
                 <li
-                  className="sc-cBoprd crrcUS"
+                  className="c36"
                   id="headerItem-1"
                 >
                   owner
                 </li>
               </ul>
               <div
-                className="sc-jcwofb"
+                className=""
               >
                 <div
-                  className="sc-eCApGN cEkex"
+                  className="c37"
                 >
                   <svg
                     id="homeIcon-0"
@@ -1031,7 +1794,7 @@ exports[`PageList: Component should render correctly 1`] = `
                     />
                   </svg>
                   <div
-                    className="sc-TtZHJ ewxVJf"
+                    className="c38"
                     id="pageCopyButton-0"
                     onClick={[Function]}
                   >
@@ -1055,7 +1818,7 @@ exports[`PageList: Component should render correctly 1`] = `
             </div>
           </div>
           <a
-            className="sc-bYwzba GQEpm"
+            className="c39"
             href="/page/1"
             id="page-1"
             onClick={[Function]}
@@ -1073,16 +1836,16 @@ exports[`PageList: Component should render correctly 1`] = `
           }
         >
           <div
-            className="sc-jJMGHv hoqIYF"
+            className="c40"
           >
             <div
-              className="sc-dlnjPT cSNLyR"
+              className="c41"
               title="templateName"
             >
               templateName
             </div>
             <div
-              className="sc-iNiQeE kCibwz"
+              className="c42"
             >
               Draft
             </div>
@@ -1090,7 +1853,7 @@ exports[`PageList: Component should render correctly 1`] = `
         </div>
       </div>
       <div
-        className="sc-ezzayL evcARB"
+        className="c33"
         style={
           Object {
             "backgroundColor": "#1d1d20",
@@ -1123,29 +1886,29 @@ exports[`PageList: Component should render correctly 1`] = `
             }
           >
             <div
-              className="sc-ciSmjq eQvaZQ"
+              className="c34"
             >
               <ul
-                className="sc-gXfWUo kWWUTg"
+                className="c35"
               >
                 <li
-                  className="sc-cBoprd crrcUS"
+                  className="c36"
                   id="headerItem-0"
                 >
                   in 3 months
                 </li>
                 <li
-                  className="sc-cBoprd crrcUS"
+                  className="c36"
                   id="headerItem-1"
                 >
                   owner
                 </li>
               </ul>
               <div
-                className="sc-jcwofb"
+                className=""
               >
                 <div
-                  className="sc-eCApGN cEkex"
+                  className="c37"
                 >
                   <svg
                     id="homeIcon-1"
@@ -1167,7 +1930,7 @@ exports[`PageList: Component should render correctly 1`] = `
                     />
                   </svg>
                   <div
-                    className="sc-TtZHJ ewxVJf"
+                    className="c38"
                     id="pageCopyButton-1"
                     onClick={[Function]}
                   >
@@ -1191,7 +1954,7 @@ exports[`PageList: Component should render correctly 1`] = `
             </div>
           </div>
           <a
-            className="sc-bYwzba GQEpm"
+            className="c39"
             href="/page/2"
             id="page-2"
             onClick={[Function]}
@@ -1209,16 +1972,16 @@ exports[`PageList: Component should render correctly 1`] = `
           }
         >
           <div
-            className="sc-jJMGHv hoqIYF"
+            className="c40"
           >
             <div
-              className="sc-dlnjPT cSNLyR"
+              className="c41"
               title="(blank)"
             >
               (blank)
             </div>
             <div
-              className="sc-iNiQeE kCibwz"
+              className="c42"
             >
               Draft
             </div>
@@ -1226,7 +1989,7 @@ exports[`PageList: Component should render correctly 1`] = `
         </div>
       </div>
       <div
-        className="sc-ezzayL evcARB"
+        className="c33"
         style={
           Object {
             "backgroundColor": "#1d1d20",
@@ -1259,29 +2022,29 @@ exports[`PageList: Component should render correctly 1`] = `
             }
           >
             <div
-              className="sc-ciSmjq eQvaZQ"
+              className="c34"
             >
               <ul
-                className="sc-gXfWUo kWWUTg"
+                className="c35"
               >
                 <li
-                  className="sc-cBoprd crrcUS"
+                  className="c36"
                   id="headerItem-0"
                 >
                   in 3 months
                 </li>
                 <li
-                  className="sc-cBoprd crrcUS"
+                  className="c36"
                   id="headerItem-1"
                 >
                   owner
                 </li>
               </ul>
               <div
-                className="sc-jcwofb"
+                className=""
               >
                 <div
-                  className="sc-eCApGN cEkex"
+                  className="c37"
                 >
                   <svg
                     id="homeIcon-2"
@@ -1303,7 +2066,7 @@ exports[`PageList: Component should render correctly 1`] = `
                     />
                   </svg>
                   <div
-                    className="sc-TtZHJ ewxVJf"
+                    className="c38"
                     id="pageCopyButton-2"
                     onClick={[Function]}
                   >
@@ -1327,7 +2090,7 @@ exports[`PageList: Component should render correctly 1`] = `
             </div>
           </div>
           <a
-            className="sc-bYwzba GQEpm"
+            className="c39"
             href="/page/3"
             id="page-3"
             onClick={[Function]}
@@ -1345,10 +2108,10 @@ exports[`PageList: Component should render correctly 1`] = `
           }
         >
           <div
-            className="sc-jJMGHv hoqIYF"
+            className="c40"
           >
             <div
-              className="sc-dlnjPT cSNLyR"
+              className="c41"
               title="(blank)"
             >
               (blank)
@@ -1358,7 +2121,7 @@ exports[`PageList: Component should render correctly 1`] = `
       </div>
     </section>
     <div
-      className="sc-hKFyIo jsTCJV"
+      className="c43"
     >
       <ul>
         <li
@@ -1418,13 +2181,13 @@ exports[`PageList: Component should render correctly 1`] = `
       </ul>
     </div>
     <div
-      className="sc-carGAA ljsrVT"
+      className="c44"
     >
       <div
-        className="sc-iTVIwl brkBmG"
+        className="c45"
       >
         <div
-          className="sc-cTJmaU iRCvXq"
+          className="c46"
         >
           <div>
             <input
@@ -1476,23 +2239,23 @@ exports[`PageList: Component should render correctly 1`] = `
             </label>
           </div>
           <div
-            className="sc-efHXLn jsnDT"
+            className="c47"
           >
             <label
-              className="sc-iBzFoy kRpNRE"
+              className="c48"
               htmlFor="isPublic"
             >
               Make it Public
             </label>
             <span
-              className="sc-bBjRzc gYKhhW"
+              className="c49"
             >
               This Section is currently Public
               <span
-                className="sc-gSYCTC bjcjEy"
+                className="c50"
               />
               <a
-                className="sc-hmbsMR fSxnsN"
+                className="c51"
                 href="http://project.domain"
                 target="_blank"
               >
@@ -1502,34 +2265,41 @@ exports[`PageList: Component should render correctly 1`] = `
           </div>
         </div>
         <div
-          className="sc-jNnnWF iqdECK"
-          id="removeSection"
-          onClick={[Function]}
+          className="c52"
         >
-          <svg
+          <button
+            disabled={false}
+            id="removeSection"
+            onClick={[Function]}
             style={
               Object {
+                "alignItems": "center",
+                "backgroundColor": "#1d1d20",
+                "border": "none",
+                "borderRadius": "30px",
+                "color": "#FFF",
+                "cursor": "pointer",
+                "display": "flex",
                 "fill": "#FFF",
-                "height": "20px",
-                "width": "20px",
+                "fontSize": "14px",
+                "justifyContent": "center",
+                "margin": "0",
+                "minHeight": "30px",
+                "outline": "none",
+                "padding": "0 16px",
+                "transition": "background 0.25s ease-in-out, color 0.25s ease-in-out",
               }
             }
-            viewBox="-47 0 512 512"
           >
-            <path
-              d="M416.875 114.441L405.57 80.555a31.527 31.527 0 00-29.941-21.578h-95.012V28.043C280.617 12.582 268.047 0 252.59 0h-87.008c-15.453 0-28.027 12.582-28.027 28.043v30.934H42.547a31.528 31.528 0 00-29.945 21.578L1.297 114.44a25.426 25.426 0 003.484 22.856 25.427 25.427 0 0020.578 10.539h11.817L63.184 469.44C65.117 493.305 85.367 512 109.293 512h204.863c23.922 0 44.176-18.695 46.106-42.563l26.008-321.601h6.543A25.434 25.434 0 00413.39 137.3a25.434 25.434 0 003.484-22.86zM167.555 30h83.062v28.977h-83.062zm162.804 437.02c-.68 8.402-7.796 14.98-16.203 14.98H109.293c-8.406 0-15.523-6.578-16.203-14.98L67.273 147.836h288.899zM31.793 117.836l9.27-27.79c.21-.64.808-1.07 1.484-1.07h333.082c.676 0 1.27.43 1.484 1.07l9.27 27.79zm0 0"
-            />
-            <path
-              d="M282.516 465.957c.265.016.527.02.793.02 7.925 0 14.55-6.211 14.964-14.22L312.36 181.36c.43-8.273-5.93-15.332-14.199-15.761-8.293-.442-15.328 5.925-15.762 14.199l-14.082 270.398c-.43 8.274 5.926 15.332 14.2 15.762zm0 0M120.566 451.793c.438 7.996 7.055 14.184 14.965 14.184.274 0 .555-.008.832-.024 8.27-.45 14.61-7.52 14.16-15.793L135.77 179.762c-.45-8.274-7.52-14.614-15.793-14.16-8.27.449-14.61 7.52-14.16 15.793zm0 0M209.254 465.977c8.285 0 15-6.715 15-15V180.578c0-8.285-6.715-15-15-15s-15 6.715-15 15v270.399c0 8.285 6.715 15 15 15zm0 0"
-            />
-          </svg>
+            Delete Section
+          </button>
         </div>
       </div>
       <div
-        className="sc-iTVIwl brkBmG"
+        className="c45"
       >
         <div
-          className="sc-cTJmaU iRCvXq"
+          className="c46"
         >
           <div>
             <input
@@ -1581,23 +2351,23 @@ exports[`PageList: Component should render correctly 1`] = `
             </label>
           </div>
           <div
-            className="sc-efHXLn jsnDT"
+            className="c47"
           >
             <label
-              className="sc-iBzFoy kRpNRE"
+              className="c48"
               htmlFor="isRssContent"
             >
               Make it available for RSS
             </label>
             <span
-              className="sc-bBjRzc gYKhhW"
+              className="c49"
             >
               This Section is currently disabled for RSS feed
               <span
-                className="sc-gSYCTC bjcjEy"
+                className="c50"
               />
               <a
-                className="sc-hmbsMR fSxnsN"
+                className="c51"
                 href="http://project.domain"
                 target="_blank"
               >
@@ -1609,16 +2379,16 @@ exports[`PageList: Component should render correctly 1`] = `
       </div>
     </div>
     <div
-      className="sc-fFSRdu eVZQbr"
+      className="c53"
     >
       <div
-        className="sc-iemXMA fOmduE"
+        className="c54"
       >
         <div
-          className="sc-bkbjAj kUjVTG"
+          className="c55"
         >
           <a
-            className="sc-hHEjAm geZhlj"
+            className="c56"
             disabled={false}
             href="/project/1/content"
             id="backBtn"
@@ -1627,19 +2397,21 @@ exports[`PageList: Component should render correctly 1`] = `
             Back
           </a>
           <button
-            className="sc-dIvqjp eFQuxu"
+            className="c57"
             disabled={true}
             id="updateSection"
             style={
               Object {
+                "alignItems": "center",
                 "backgroundColor": "#1d1d20",
                 "border": "none",
-                "borderRadius": "48px",
+                "borderRadius": "30px",
                 "color": "#71737e",
                 "cursor": "default",
-                "display": "inline-block",
+                "display": "flex",
                 "fill": "#FFF",
-                "fontSize": "18px",
+                "fontSize": "20px",
+                "justifyContent": "center",
                 "margin": "0",
                 "minHeight": "48px",
                 "outline": "none",

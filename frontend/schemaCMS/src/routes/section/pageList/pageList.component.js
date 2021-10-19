@@ -5,7 +5,7 @@ import { useHistory, useParams } from 'react-router';
 import Helmet from 'react-helmet';
 import { useFormik } from 'formik';
 import { pick, propEq, propOr, pipe, find, always } from 'ramda';
-import { Form as FormUI, Icons } from 'schemaUI';
+import { Form as FormUI, Icons, Button, BUTTON_SIZES } from 'schemaUI';
 import { useEffectOnce } from 'react-use';
 import { parse, stringify } from 'query-string';
 import ReactPaginate from 'react-paginate';
@@ -17,14 +17,7 @@ import reportError from '../../../shared/utils/reportError';
 import { MobileMenu } from '../../../shared/components/menu/mobileMenu';
 import { errorMessageParser, filterMenuOptions, getUrlParams } from '../../../shared/utils/helpers';
 import { ContextHeader } from '../../../shared/components/contextHeader';
-import {
-  BackButton,
-  NavigationContainer,
-  NextButton,
-  PlusLink,
-  LARGE_BUTTON_SIZE,
-  BackLink,
-} from '../../../shared/components/navigation';
+import { BackButton, NavigationContainer, NextButton, BackLink } from '../../../shared/components/navigation';
 import { CounterHeader } from '../../../shared/components/counterHeader';
 import { ListContainer, ListItem, ListItemTitle, FooterContainer } from '../../../shared/components/listComponents';
 import extendedDayjs, { BASE_DATE_FORMAT } from '../../../shared/utils/extendedDayjs';
@@ -38,7 +31,6 @@ import {
 } from '../../../modules/sections/sections.constants';
 import {
   AvailableCopy,
-  BinIconContainer,
   IconsContainer,
   inputContainerStyles,
   inputStyles,
@@ -53,6 +45,7 @@ import {
   CopySeparator,
   Draft,
   EditIconLabel,
+  DeleteButtonContainer,
 } from '../../../shared/components/form/frequentComponents.styles';
 import { TextInput } from '../../../shared/components/form/inputs/textInput';
 import { Modal, ModalActions, modalStyles, ModalTitle } from '../../../shared/components/modal/modal.styles';
@@ -70,8 +63,9 @@ import { INITIAL_PAGE_SIZE } from '../../../shared/utils/api.constants';
 import { renderWhenTrue } from '../../../shared/utils/rendering';
 import { CopyButton } from '../../../shared/components/copyButton';
 import { PageLink } from '../../../theme/typography';
+import { PlusLinkWithText } from '../../../shared/components/navigation/navigation.component';
 
-const { EditIcon, BinIcon, HomeIcon } = Icons;
+const { EditIcon, HomeIcon } = Icons;
 const { Switch } = FormUI;
 
 export const Page = ({
@@ -310,7 +304,7 @@ export const PageList = ({
           <ProjectBreadcrumbs items={getBreadcrumbsItems({ id: projectId, title: projectTitle }, section)} />
           <Form onSubmit={handleSubmit}>
             <ContextHeader title={title} subtitle={nameInput}>
-              <PlusLink id="createPage" to={addPageUrl} size={LARGE_BUTTON_SIZE} />
+              <PlusLinkWithText id="createPage" text={intl.formatMessage(messages.addPageButton)} to={addPageUrl} />
             </ContextHeader>
             <MobileInputName>
               <TextInput
@@ -330,7 +324,11 @@ export const PageList = ({
                 count={pages.results.length}
                 right={
                   <MobilePlusContainer>
-                    <PlusLink id="createPageMobile" to={addPageUrl} />
+                    <PlusLinkWithText
+                      id="createPageMobile"
+                      text={intl.formatMessage(messages.addPageButton)}
+                      to={addPageUrl}
+                    />
                   </MobilePlusContainer>
                 }
               />
@@ -369,9 +367,11 @@ export const PageList = ({
                       </AvailableCopy>
                     </SwitchCopy>
                   </SwitchContent>
-                  <BinIconContainer id="removeSection" onClick={() => setRemoveModalOpen(true)}>
-                    <BinIcon />
-                  </BinIconContainer>
+                  <DeleteButtonContainer>
+                    <Button size={BUTTON_SIZES.SMALL} id="removeSection" onClick={() => setRemoveModalOpen(true)}>
+                      <FormattedMessage {...messages.deleteButton} />
+                    </Button>
+                  </DeleteButtonContainer>
                 </SwitchContainer>
                 <SwitchContainer>
                   <SwitchContent>

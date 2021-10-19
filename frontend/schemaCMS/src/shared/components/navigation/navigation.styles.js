@@ -70,11 +70,12 @@ export const NavigationLink = styled(Link)`
   max-width: 240px;
   background-color: ${({ theme, $inverse }) => ($inverse ? theme.inverseButton.background : theme.button.background)};
   color: ${({ theme, $inverse }) => ($inverse ? theme.inverseButton.text : theme.button.text)};
-  border-radius: 48px;
+  border-radius: 30px;
   text-align: center;
-  line-height: 48px;
+  line-height: 30px;
   text-decoration: none;
-  font-size: 18px;
+  font-size: 20px;
+  padding: 9px 0;
 
   ${media.desktop`
     width: 240px;
@@ -93,6 +94,21 @@ export const buttonIconStyles = {
 };
 
 export const LinkButton = styled(Link)`
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-radius: 4px;
+  padding: 4px 8px 4px 6px;
+  background-color: ${({ theme }) => theme.inverseButton.background};
+  color: ${({ theme }) => theme.inverseButton.text};
+  text-decoration: none;
+
+  ${media.desktop`
+    display: ${({ $hideOnDesktop }) => ($hideOnDesktop ? 'none' : 'flex')};
+  `};
+`;
+
+export const RoundLinkButton = styled(Link)`
   background-color: ${({ theme }) => theme.inverseButton.background};
   width: ${({ $size }) => $size}px;
   height: ${({ $size }) => $size}px;

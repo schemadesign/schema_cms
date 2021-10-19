@@ -1,8 +1,41 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`ProjectBreadcrumbs: Component should render correctly 1`] = `
+.c0 {
+  display: none;
+}
+
+.c3 {
+  color: #FFF;
+  width: 100%;
+}
+
+.c1 {
+  color: #a6a7aa;
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  width: 100%;
+}
+
+.c1:hover {
+  color: #FFF;
+}
+
+.c2 {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  max-width: 230px;
+}
+
+@media (min-width:1050px) {
+  .c0 {
+    display: block;
+  }
+}
+
 <div
-  className="sc-bdnylx fRDYPD"
+  className="c0"
 >
   <div
     style={
@@ -24,7 +57,7 @@ exports[`ProjectBreadcrumbs: Component should render correctly 1`] = `
       }
     >
       <a
-        className="sc-dlnjPT chOHIW"
+        className="c1"
         href="/project/1/"
         onClick={[Function]}
         style={
@@ -46,7 +79,7 @@ exports[`ProjectBreadcrumbs: Component should render correctly 1`] = `
           Project
         </span>
         <h3
-          className="sc-hKFyIo fuYsAv"
+          className="c2"
           style={
             Object {
               "fontFamily": "Inter, \\"Helvetica Neue\\", Helvetica, Arial, sans-serif",
@@ -82,7 +115,7 @@ exports[`ProjectBreadcrumbs: Component should render correctly 1`] = `
       }
     >
       <a
-        className="sc-dlnjPT chOHIW"
+        className="c1"
         href="/project/1/templates"
         onClick={[Function]}
         style={
@@ -104,7 +137,7 @@ exports[`ProjectBreadcrumbs: Component should render correctly 1`] = `
           Tab
         </span>
         <h3
-          className="sc-hKFyIo fuYsAv"
+          className="c2"
           style={
             Object {
               "fontFamily": "Inter, \\"Helvetica Neue\\", Helvetica, Arial, sans-serif",
@@ -140,7 +173,7 @@ exports[`ProjectBreadcrumbs: Component should render correctly 1`] = `
       }
     >
       <a
-        className="sc-dlnjPT chOHIW"
+        className="c1"
         href="/project/1/block-templates"
         onClick={[Function]}
         style={
@@ -162,7 +195,7 @@ exports[`ProjectBreadcrumbs: Component should render correctly 1`] = `
           Library
         </span>
         <h3
-          className="sc-hKFyIo fuYsAv"
+          className="c2"
           style={
             Object {
               "fontFamily": "Inter, \\"Helvetica Neue\\", Helvetica, Arial, sans-serif",
@@ -198,7 +231,7 @@ exports[`ProjectBreadcrumbs: Component should render correctly 1`] = `
       }
     >
       <div
-        className="sc-gtssRu bGMeDK"
+        className="c3"
       >
         <span
           style={
@@ -211,7 +244,7 @@ exports[`ProjectBreadcrumbs: Component should render correctly 1`] = `
           Template
         </span>
         <h3
-          className="sc-hKFyIo fuYsAv"
+          className="c2"
           style={
             Object {
               "fontFamily": "Inter, \\"Helvetica Neue\\", Helvetica, Arial, sans-serif",

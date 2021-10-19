@@ -1,8 +1,13 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`CopyButton: Component should render correctly 1`] = `
+.c0 {
+  cursor: pointer;
+  position: relative;
+}
+
 <div
-  className="sc-bdnylx bcziRq"
+  className="c0"
   id="id"
   onClick={[Function]}
 >

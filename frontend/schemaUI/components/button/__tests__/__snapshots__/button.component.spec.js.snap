@@ -6,19 +6,22 @@ exports[`Button: Component should render correctly 1`] = `
     customStyles={Object {}}
     disabled={false}
     inverse={false}
+    size="BIG"
   >
     <button
       disabled={false}
       style={
         Object {
+          "alignItems": "center",
           "backgroundColor": "#1d1d20",
           "border": "none",
-          "borderRadius": "48px",
+          "borderRadius": "30px",
           "color": "#FFF",
           "cursor": "pointer",
-          "display": "inline-block",
+          "display": "flex",
           "fill": "#FFF",
-          "fontSize": "18px",
+          "fontSize": "20px",
+          "justifyContent": "center",
           "margin": "0",
           "minHeight": "48px",
           "outline": "none",
@@ -49,19 +52,22 @@ exports[`Button: Component should render with custom styles 1`] = `
     }
     disabled={false}
     inverse={false}
+    size="BIG"
   >
     <button
       disabled={false}
       style={
         Object {
+          "alignItems": "center",
           "backgroundColor": "red",
           "border": "none",
-          "borderRadius": "48px",
+          "borderRadius": "30px",
           "color": "#FFF",
           "cursor": "pointer",
-          "display": "inline-block",
+          "display": "flex",
           "fill": "#FFF",
-          "fontSize": "18px",
+          "fontSize": "20px",
+          "justifyContent": "center",
           "margin": "0",
           "minHeight": "48px",
           "outline": "none",

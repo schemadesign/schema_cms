@@ -18,7 +18,14 @@ Array [
   >
     Filters
   </label>,
-  <div
+  .c0 {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  cursor: pointer;
+}
+
+<div
     style={
       Object {
         "border": "none",
@@ -71,7 +78,7 @@ Array [
         }
       >
         <div
-          className="sc-hKFyIo ftZtcs"
+          className="c0"
           id="filterName-0"
           onClick={[Function]}
           title="Filter First Name"
@@ -169,7 +176,7 @@ Array [
         }
       >
         <div
-          className="sc-hKFyIo ftZtcs"
+          className="c0"
           id="filterName-1"
           onClick={[Function]}
           title="Filter Last Name"
@@ -256,7 +263,7 @@ Array [
         }
       >
         <div
-          className="sc-hKFyIo ftZtcs"
+          className="c0"
           id="filterName-2"
           onClick={[Function]}
           title="Filter Birthday"

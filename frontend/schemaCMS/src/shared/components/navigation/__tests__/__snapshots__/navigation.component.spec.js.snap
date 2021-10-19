@@ -25,8 +25,28 @@ exports[`Navigation: Component should render BackButton with custom children 1`]
 `;
 
 exports[`Navigation: Component should render BackLink with custom children 1`] = `
+.c0 {
+  width: calc(50% - 5px);
+  max-width: 240px;
+  background-color: #1d1d20;
+  color: #FFF;
+  border-radius: 30px;
+  text-align: center;
+  line-height: 30px;
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  font-size: 20px;
+  padding: 9px 0;
+}
+
+@media (min-width:1050px) {
+  .c0 {
+    width: 240px;
+  }
+}
+
 <a
-  className="sc-eCApGN bCGgwq"
+  className="c0"
   disabled={false}
   href="/toUrl"
   onClick={[Function]}
@@ -100,8 +120,22 @@ exports[`Navigation: Component should render PlusButton 1`] = `
 `;
 
 exports[`Navigation: Component should render PlusLink with custom children 1`] = `
+.c0 {
+  background-color: #FFF;
+  width: 60px;
+  height: 60px;
+  display: inline-block;
+  border-radius: 50%;
+}
+
+@media (min-width:1050px) {
+  .c0 {
+    display: inline-block;
+  }
+}
+
 <a
-  className="sc-gKAblj EFWDY"
+  className="c0"
   href="/toUrl"
   onClick={[Function]}
 >

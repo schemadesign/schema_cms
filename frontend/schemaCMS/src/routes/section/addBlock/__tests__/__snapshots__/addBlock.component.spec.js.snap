@@ -2,8 +2,130 @@
 
 exports[`AddBlock: Component should render correctly 1`] = `
 Array [
-  <div
-    className="sc-bdnylx dRwqAs"
+  .c0 {
+  font-weight: normal;
+  width: calc(100% - 50px);
+}
+
+.c4 {
+  padding-right: 50px;
+}
+
+.c3 {
+  overflow: auto;
+  -webkit-overflow-scrolling: touch;
+  max-height: 100%;
+}
+
+.c5 {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+}
+
+.c6 {
+  line-height: 1.5;
+  margin: 2px 0;
+  cursor: pointer;
+  font-size: 24px;
+  border-bottom: 2.4px solid #2F2F36;
+  padding: 8px 0 13px;
+}
+
+.c6 a,
+.c6 div {
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  color: #71737e;
+  display: block;
+}
+
+.c7 {
+  margin: 10px 0;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+}
+
+.c8 {
+  color: #FFF;
+  font-size: 14px;
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  margin: 12px 0;
+}
+
+.c1 {
+  word-break: break-word;
+}
+
+.c2 {
+  word-break: break-word;
+}
+
+@media (min-width:1050px) {
+  .c0 {
+    display: none;
+  }
+}
+
+@media (min-width:1050px) {
+  .c4 {
+    height: 54px;
+  }
+}
+
+@media (min-width:1050px) {
+  .c3 {
+    padding-bottom: 20px;
+  }
+}
+
+@media (min-width:768px) {
+
+}
+
+@media (min-width:1050px) {
+
+}
+
+@media (min-width:1050px) {
+
+}
+
+@media (min-width:1050px) {
+
+}
+
+@media (min-width:1050px) {
+
+}
+
+@media (min-width:1050px) {
+
+}
+
+@media (min-width:1050px) {
+
+}
+
+@media (min-width:1050px) {
+
+}
+
+<div
+    className="c0"
   >
     <div
       style={
@@ -20,10 +142,10 @@ Array [
     >
       <div>
         <div
-          className="sc-gtssRu"
+          className=""
         >
           <h2
-            className="sc-fujyUd jqnRIx"
+            className="c1"
             id="headerTitle"
             style={
               Object {
@@ -37,7 +159,7 @@ Array [
             Block
           </h2>
           <h1
-            className="sc-pNWxx gmkJvd"
+            className="c2"
             id="headerSubtitle"
             style={
               Object {
@@ -60,14 +182,16 @@ Array [
         onClick={[Function]}
         style={
           Object {
+            "alignItems": "center",
             "backgroundColor": "transparent",
             "border": "none",
-            "borderRadius": "48px",
+            "borderRadius": "30px",
             "color": "#FFF",
             "cursor": "pointer",
-            "display": "inline-block",
+            "display": "flex",
             "fill": "#FFF",
-            "fontSize": "18px",
+            "fontSize": "20px",
+            "justifyContent": "center",
             "margin": "0",
             "minHeight": "48px",
             "outline": "none",
@@ -119,16 +243,16 @@ Array [
       }
     >
       <div
-        className="sc-hKFyIo dzrtUc"
+        className="c3"
       >
         <div
-          className="sc-dlnjPT gvuTTJ"
+          className="c4"
         >
           <div
-            className="sc-gtssRu"
+            className=""
           >
             <h2
-              className="sc-fujyUd jqnRIx"
+              className="c1"
               id="headerTitle"
               style={
                 Object {
@@ -142,7 +266,7 @@ Array [
               Block
             </h2>
             <h1
-              className="sc-pNWxx gmkJvd"
+              className="c2"
               id="headerSubtitle"
               style={
                 Object {
@@ -160,10 +284,10 @@ Array [
           </div>
         </div>
         <div
-          className="sc-eCApGN gHWXPv"
+          className="c5"
         >
           <div
-            className="sc-jSFkmK eVxisg"
+            className="c6"
           >
             <a
               href="/project/"
@@ -174,7 +298,7 @@ Array [
             </a>
           </div>
           <div
-            className="sc-jSFkmK eVxisg"
+            className="c6"
           >
             <a
               href="/user/"
@@ -185,7 +309,7 @@ Array [
             </a>
           </div>
           <div
-            className="sc-jSFkmK eVxisg"
+            className="c6"
           >
             <a
               href="/project/1"
@@ -196,7 +320,7 @@ Array [
             </a>
           </div>
           <div
-            className="sc-jSFkmK eVxisg"
+            className="c6"
           >
             <a
               href="/project/1/datasource"
@@ -207,7 +331,7 @@ Array [
             </a>
           </div>
           <div
-            className="sc-jSFkmK eVxisg"
+            className="c6"
           >
             <a
               href="/project/1/user"
@@ -218,7 +342,7 @@ Array [
             </a>
           </div>
           <div
-            className="sc-jSFkmK eVxisg"
+            className="c6"
           >
             <a
               href="/project/1/content"
@@ -229,7 +353,7 @@ Array [
             </a>
           </div>
           <div
-            className="sc-jSFkmK eVxisg"
+            className="c6"
           >
             <a
               href="/project/1/templates"
@@ -241,10 +365,10 @@ Array [
           </div>
         </div>
         <div
-          className="sc-eCApGN gHWXPv"
+          className="c5"
         >
           <div
-            className="sc-jSFkmK eVxisg"
+            className="c6"
           >
             <a
               href="/settings"
@@ -255,7 +379,7 @@ Array [
             </a>
           </div>
           <div
-            className="sc-jSFkmK eVxisg"
+            className="c6"
           >
             <div
               id="logoutNavBtn"
@@ -266,10 +390,10 @@ Array [
           </div>
         </div>
         <div
-          className="sc-gKAblj ditiSe"
+          className="c7"
         >
           <a
-            className="sc-iCoHVE duNSbN"
+            className="c8"
             href="/"
             id="aboutNavBtn"
             onClick={[Function]}
@@ -279,7 +403,7 @@ Array [
             About Schema CMS
           </a>
           <a
-            className="sc-iCoHVE duNSbN"
+            className="c8"
             href="https://github.com/schemadesign/schema_cms/blob/master/backend/app/docs/public_api/api_calls.md"
             id="apiNavBtn"
             onClick={[Function]}
@@ -289,7 +413,7 @@ Array [
             API Doc
           </a>
           <a
-            className="sc-iCoHVE duNSbN"
+            className="c8"
             href="https://github.com/schemadesign/schema_cms"
             id="repositoryNavBtn"
             onClick={[Function]}
@@ -306,14 +430,16 @@ Array [
         onClick={[Function]}
         style={
           Object {
+            "alignItems": "center",
             "backgroundColor": "transparent",
             "border": "none",
-            "borderRadius": "48px",
+            "borderRadius": "30px",
             "color": "#FFF",
             "cursor": "pointer",
-            "display": "inline-block",
+            "display": "flex",
             "fill": "#FFF",
-            "fontSize": "18px",
+            "fontSize": "20px",
+            "justifyContent": "center",
             "margin": "0",
             "minHeight": "48px",
             "outline": "none",
@@ -344,8 +470,81 @@ Array [
       </button>
     </div>
   </div>,
-  <div
-    className="sc-laZMyp fpUnlB"
+  .c0 {
+  display: none;
+}
+
+.c3 {
+  color: #FFF;
+  width: 100%;
+}
+
+.c1 {
+  color: #a6a7aa;
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  width: 100%;
+}
+
+.c1:hover {
+  color: #FFF;
+}
+
+.c2 {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  max-width: 230px;
+}
+
+@media (min-width:1050px) {
+
+}
+
+@media (min-width:1050px) {
+
+}
+
+@media (min-width:1050px) {
+
+}
+
+@media (min-width:768px) {
+
+}
+
+@media (min-width:1050px) {
+
+}
+
+@media (min-width:1050px) {
+
+}
+
+@media (min-width:1050px) {
+
+}
+
+@media (min-width:1050px) {
+
+}
+
+@media (min-width:1050px) {
+
+}
+
+@media (min-width:1050px) {
+  .c0 {
+    display: block;
+  }
+}
+
+@media (min-width:1050px) {
+
+}
+
+<div
+    className="c0"
   >
     <div
       style={
@@ -367,7 +566,7 @@ Array [
         }
       >
         <a
-          className="sc-jffIyK caVlzT"
+          className="c1"
           href="/project/1/"
           onClick={[Function]}
           style={
@@ -389,7 +588,7 @@ Array [
             Project
           </span>
           <h3
-            className="sc-eJoaVz bhVYRo"
+            className="c2"
             style={
               Object {
                 "fontFamily": "Inter, \\"Helvetica Neue\\", Helvetica, Arial, sans-serif",
@@ -425,7 +624,7 @@ Array [
         }
       >
         <a
-          className="sc-jffIyK caVlzT"
+          className="c1"
           href="/project/1/content"
           onClick={[Function]}
           style={
@@ -447,7 +646,7 @@ Array [
             Tab
           </span>
           <h3
-            className="sc-eJoaVz bhVYRo"
+            className="c2"
             style={
               Object {
                 "fontFamily": "Inter, \\"Helvetica Neue\\", Helvetica, Arial, sans-serif",
@@ -483,7 +682,7 @@ Array [
         }
       >
         <a
-          className="sc-jffIyK caVlzT"
+          className="c1"
           href="/section/1"
           onClick={[Function]}
           style={
@@ -505,7 +704,7 @@ Array [
             Section
           </span>
           <h3
-            className="sc-eJoaVz bhVYRo"
+            className="c2"
             style={
               Object {
                 "fontFamily": "Inter, \\"Helvetica Neue\\", Helvetica, Arial, sans-serif",
@@ -541,7 +740,7 @@ Array [
         }
       >
         <a
-          className="sc-jffIyK caVlzT"
+          className="c1"
           href="/section/1/create-page"
           onClick={[Function]}
           style={
@@ -563,7 +762,7 @@ Array [
             Page
           </span>
           <h3
-            className="sc-eJoaVz bhVYRo"
+            className="c2"
             style={
               Object {
                 "fontFamily": "Inter, \\"Helvetica Neue\\", Helvetica, Arial, sans-serif",
@@ -599,7 +798,7 @@ Array [
         }
       >
         <div
-          className="sc-iNiQeE fCvpAR"
+          className="c3"
         >
           <span
             style={
@@ -612,7 +811,7 @@ Array [
             Block
           </span>
           <h3
-            className="sc-eJoaVz bhVYRo"
+            className="c2"
             style={
               Object {
                 "fontFamily": "Inter, \\"Helvetica Neue\\", Helvetica, Arial, sans-serif",
@@ -629,14 +828,90 @@ Array [
       </div>
     </div>
   </div>,
-  <div
-    className="sc-oefIU dqWhXt"
+  .c0 {
+  display: none;
+}
+
+.c1 {
+  margin-right: 20px;
+  overflow: hidden;
+}
+
+.c2 {
+  color: #FFF;
+}
+
+.c3 {
+  color: #FFF;
+}
+
+@media (min-width:1050px) {
+
+}
+
+@media (min-width:1050px) {
+
+}
+
+@media (min-width:1050px) {
+
+}
+
+@media (min-width:768px) {
+
+}
+
+@media (min-width:1050px) {
+
+}
+
+@media (min-width:1050px) {
+
+}
+
+@media (min-width:1050px) {
+
+}
+
+@media (min-width:1050px) {
+
+}
+
+@media (min-width:1050px) {
+
+}
+
+@media (min-width:1050px) {
+
+}
+
+@media (min-width:1050px) {
+  .c0 {
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: justify;
+    -webkit-justify-content: space-between;
+    -ms-flex-pack: justify;
+    justify-content: space-between;
+    -webkit-align-items: center;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    margin: 60px 0 40px 0;
+    min-height: 63px;
+  }
+}
+
+<div
+    className="c0"
   >
     <div
-      className="sc-hhIhEF irRtUq"
+      className="c1"
     >
       <h2
-        className="sc-eirseW cddnhE"
+        className="c2"
         id="desktopHeaderTitle"
         style={
           Object {
@@ -650,7 +925,7 @@ Array [
         Block
       </h2>
       <h1
-        className="sc-lbVuaH bopGjn"
+        className="c3"
         id="desktopHeaderSubtitle"
         style={
           Object {
@@ -667,17 +942,142 @@ Array [
       </h1>
     </div>
     <div
-      className="sc-gGLyOc"
+      className=""
     />
   </div>,
-  <form
+  .c3 {
+  height: 120px;
+}
+
+.c5 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+  -webkit-flex-wrap: wrap;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  width: 100%;
+}
+
+.c4 {
+  bottom: 0;
+  width: 100%;
+  padding: 10px 0 36px;
+  position: fixed;
+  width: calc(100% - 40px);
+  z-index: 999;
+  background-image: linear-gradient( to top, #000,#000 30%, rgba(0,0,0,0) );
+}
+
+.c6 {
+  width: calc(50% - 5px);
+  max-width: 240px;
+}
+
+.c1 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  padding-bottom: 30px;
+  padding-right: 30px;
+  position: relative;
+  font-size: 18px;
+  cursor: pointer;
+}
+
+.c1 label {
+  margin-bottom: 2px;
+}
+
+.c2 {
+  position: absolute;
+  right: 0;
+  top: 5px;
+}
+
+@media (min-width:1050px) {
+
+}
+
+@media (min-width:1050px) {
+
+}
+
+@media (min-width:1050px) {
+
+}
+
+@media (min-width:768px) {
+
+}
+
+@media (min-width:1050px) {
+  .c3 {
+    height: 100px;
+  }
+}
+
+@media (min-width:1050px) {
+  .c5 {
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+  }
+}
+
+@media (min-width:1050px) {
+  .c4 {
+    position: fixed;
+    width: calc(100% - 40px);
+    z-index: 999;
+    background-image: linear-gradient( to top, #000,#000 30%, rgba(0,0,0,0) );
+    padding: 10px 0 36px;
+    width: 1000px;
+  }
+}
+
+@media (min-width:1050px) {
+  .c6 {
+    width: 240px;
+  }
+}
+
+@media (min-width:1050px) {
+  .c0 {
+    margin-top: -20px;
+  }
+}
+
+@media (min-width:1050px) {
+
+}
+
+@media (min-width:1050px) {
+
+}
+
+<form
     onSubmit={[Function]}
   >
     <div
-      className="sc-iemXMA mIaHi"
+      className="c0"
     >
       <div
-        className="sc-ciSmjq kgcbbF"
+        className="c1"
         onClick={[Function]}
       >
         <label
@@ -848,7 +1248,7 @@ Array [
           </div>
         </div>
         <div
-          className="sc-jcwofb dnVwpu"
+          className="c2"
         >
           <svg
             style={
@@ -869,29 +1269,31 @@ Array [
       </div>
     </div>
     <div
-      className="sc-dIsAE dKmsfl"
+      className="c3"
     >
       <div
-        className="sc-ksluoS gjxFBk"
+        className="c4"
       >
         <div
-          className="sc-bqGHjH golbKa"
+          className="c5"
         >
           <button
-            className="sc-hBMVcZ hyDlka"
+            className="c6"
             disabled={false}
             id="backBtn"
             onClick={[Function]}
             style={
               Object {
+                "alignItems": "center",
                 "backgroundColor": "#1d1d20",
                 "border": "none",
-                "borderRadius": "48px",
+                "borderRadius": "30px",
                 "color": "#FFF",
                 "cursor": "pointer",
-                "display": "inline-block",
+                "display": "flex",
                 "fill": "#FFF",
-                "fontSize": "18px",
+                "fontSize": "20px",
+                "justifyContent": "center",
                 "margin": "0",
                 "minHeight": "48px",
                 "outline": "none",
@@ -904,19 +1306,21 @@ Array [
             Back
           </button>
           <button
-            className="sc-hBMVcZ hyDlka"
+            className="c6"
             disabled={true}
             id="addBlock"
             style={
               Object {
+                "alignItems": "center",
                 "backgroundColor": "#1d1d20",
                 "border": "none",
-                "borderRadius": "48px",
+                "borderRadius": "30px",
                 "color": "#71737e",
                 "cursor": "default",
-                "display": "inline-block",
+                "display": "flex",
                 "fill": "#FFF",
-                "fontSize": "18px",
+                "fontSize": "20px",
+                "justifyContent": "center",
                 "margin": "0",
                 "minHeight": "48px",
                 "outline": "none",

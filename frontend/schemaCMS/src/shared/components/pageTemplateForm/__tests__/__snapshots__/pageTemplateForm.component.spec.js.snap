@@ -1,17 +1,344 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`PageTemplateForm: Component should render correctly 1`] = `
+.c0 {
+  display: none;
+}
+
+.c1 {
+  margin-right: 20px;
+  overflow: hidden;
+}
+
+.c2 {
+  color: #FFF;
+}
+
+.c3 {
+  color: #FFF;
+}
+
+.c23 {
+  margin-top: 30px;
+  border-top: 2px solid #2F2F36;
+  padding-top: 15px;
+}
+
+.c24 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-align-items: start;
+  -webkit-box-align: start;
+  -ms-flex-align: start;
+  align-items: start;
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+  padding-bottom: 15px;
+  position: relative;
+}
+
+.c27 {
+  padding-right: 10px;
+}
+
+.c26 {
+  padding-left: 10px;
+  max-width: 100%;
+}
+
+.c25 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  max-width: 100%;
+  padding-right: 10px;
+}
+
+.c29 {
+  cursor: pointer;
+  position: absolute;
+  right: 0;
+  top: 0;
+}
+
+.c8 {
+  cursor: pointer;
+}
+
+.c28 {
+  color: #71737e;
+  min-width: 100%;
+}
+
+.c4 {
+  position: relative;
+}
+
+.c7 {
+  position: absolute;
+  right: 0;
+  top: 0;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+}
+
+.c11 {
+  position: relative;
+}
+
+.c16 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: end;
+  -webkit-justify-content: end;
+  -ms-flex-pack: end;
+  justify-content: end;
+}
+
+.c19 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  cursor: move;
+  touch-action: none;
+}
+
+.c5 {
+  position: relative;
+  max-width: 100%;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  position: relative;
+}
+
+.c12 {
+  position: relative;
+}
+
+.c13 {
+  margin-top: 0;
+}
+
+.c6 {
+  position: relative;
+  top: 0;
+  left: 0;
+  color: #f21e29;
+  font-size: 14px;
+  font-weight: normal;
+}
+
+.c14 {
+  color: #71737e;
+  text-align: center;
+  padding-bottom: 20px;
+  min-height: 43px;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+}
+
+.c15 {
+  width: 33%;
+}
+
+.c17 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  width: 100%;
+  border-top: 1px solid #FFF;
+}
+
+.c18 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+}
+
+.c20 {
+  padding-left: 0;
+  width: calc(100% - 81px);
+}
+
+.c21 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  padding-bottom: 30px;
+  padding-right: 30px;
+  position: relative;
+  font-size: 18px;
+  cursor: pointer;
+  padding-bottom: 0;
+}
+
+.c21 label {
+  margin-bottom: 2px;
+}
+
+.c22 {
+  position: absolute;
+  right: 0;
+  top: 5px;
+  top: 50%;
+  right: 5px;
+  -webkit-transform: translateY(-50%);
+  -ms-transform: translateY(-50%);
+  transform: translateY(-50%);
+  font-size: 0;
+}
+
+.c9 {
+  cursor: pointer;
+  position: relative;
+}
+
+@media (min-width:1050px) {
+  .c0 {
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: justify;
+    -webkit-justify-content: space-between;
+    -ms-flex-pack: justify;
+    justify-content: space-between;
+    -webkit-align-items: center;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    margin: 60px 0 40px 0;
+    min-height: 63px;
+  }
+}
+
+@media (min-width:1050px) {
+  .c10 {
+    display: block;
+  }
+}
+
+@media (min-width:480px) {
+  .c24 {
+    -webkit-flex-direction: row;
+    -ms-flex-direction: row;
+    flex-direction: row;
+    -webkit-align-items: center;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+  }
+}
+
+@media (min-width:480px) {
+  .c25 {
+    padding-right: 40px;
+  }
+}
+
+@media (min-width:1050px) {
+  .c11 {
+    display: none;
+  }
+}
+
+@media (min-width:1050px) {
+  .c16 {
+    display: none;
+  }
+}
+
+@media (min-width:1050px) {
+  .c13 {
+    margin-top: 0;
+  }
+}
+
+@media (min-width:1050px) {
+  .c14 {
+    margin-top: -35px;
+    padding-bottom: 40px;
+  }
+}
+
+@media (min-width:768px) {
+
+}
+
 <div
-  className="sc-bdnylx"
+  className=""
 >
   <div
-    className="sc-gtssRu cSfTGJ"
+    className="c0"
   >
     <div
-      className="sc-dlnjPT gwWBsA"
+      className="c1"
     >
       <h2
-        className="sc-hKFyIo bLxEgh"
+        className="c2"
         id="desktopHeaderTitle"
         style={
           Object {
@@ -27,7 +354,7 @@ exports[`PageTemplateForm: Component should render correctly 1`] = `
         </span>
       </h2>
       <h1
-        className="sc-eCApGN jLlqJF"
+        className="c3"
         id="desktopHeaderSubtitle"
         style={
           Object {
@@ -41,10 +368,10 @@ exports[`PageTemplateForm: Component should render correctly 1`] = `
         }
       >
         <div
-          className="sc-iemXMA duXrBA"
+          className="c4"
         >
           <div
-            className="sc-cxNIbT bGWzbL"
+            className="c5"
           >
             <div
               style={
@@ -127,15 +454,15 @@ exports[`PageTemplateForm: Component should render correctly 1`] = `
               </div>
             </div>
             <div
-              className="sc-iJCRLp bWFzJd"
+              className="c6"
               id="nameError"
             />
           </div>
           <div
-            className="sc-dIvqjp ivNCfN"
+            className="c7"
           >
             <label
-              className="sc-fFSRdu dydEKp"
+              className="c8"
               htmlFor="name"
             >
               <svg
@@ -155,7 +482,7 @@ exports[`PageTemplateForm: Component should render correctly 1`] = `
               </svg>
             </label>
             <div
-              className="sc-carGAA hHxcvA"
+              className="c9"
               id="pageTemplateCopyButton"
               onClick={[Function]}
             >
@@ -179,10 +506,10 @@ exports[`PageTemplateForm: Component should render correctly 1`] = `
       </h1>
     </div>
     <div
-      className="sc-jSFkmK"
+      className=""
     >
       <div
-        className="sc-kEqYlL bzTLXi"
+        className="c10"
       >
         <button
           disabled={false}
@@ -190,15 +517,17 @@ exports[`PageTemplateForm: Component should render correctly 1`] = `
           onClick={[Function]}
           style={
             Object {
+              "alignItems": "center",
               "backgroundColor": "#FFF",
               "border": "none",
-              "borderRadius": "48px",
+              "borderRadius": "30px",
               "color": "#000",
               "cursor": "pointer",
-              "display": "inline-block",
+              "display": "flex",
               "fill": "#FFF",
-              "fontSize": "18px",
+              "fontSize": "20px",
               "height": "60px",
+              "justifyContent": "center",
               "margin": "0",
               "minHeight": "48px",
               "outline": "none",
@@ -229,10 +558,10 @@ exports[`PageTemplateForm: Component should render correctly 1`] = `
     </div>
   </div>
   <div
-    className="sc-hHEjAm fDPUGs"
+    className="c11"
   >
     <div
-      className="sc-cxNIbT dxskWl"
+      className="c12"
     >
       <div
         style={
@@ -303,7 +632,7 @@ exports[`PageTemplateForm: Component should render correctly 1`] = `
             }
           >
             <div
-              className="sc-lmgQde bGsGIg"
+              className="c13"
             >
               <svg
                 style={
@@ -325,27 +654,27 @@ exports[`PageTemplateForm: Component should render correctly 1`] = `
         </div>
       </div>
       <div
-        className="sc-iJCRLp bWFzJd"
+        className="c6"
         id="nameError"
       />
     </div>
   </div>
   <div
-    className="sc-giAqnE eFZBDm"
+    className="c14"
   >
     <div
-      className="sc-ezzayL euZLdJ"
+      className="c15"
       id="tagsCounter"
     />
     1 Block
     <div
-      className="sc-ezzayL euZLdJ"
+      className="c15"
     >
       <div
-        className="sc-kfYqjs kYSTTd"
+        className="c16"
       >
         <div
-          className="sc-kEqYlL bzTLXi"
+          className="c10"
         >
           <button
             disabled={false}
@@ -353,15 +682,17 @@ exports[`PageTemplateForm: Component should render correctly 1`] = `
             onClick={[Function]}
             style={
               Object {
+                "alignItems": "center",
                 "backgroundColor": "#FFF",
                 "border": "none",
-                "borderRadius": "48px",
+                "borderRadius": "30px",
                 "color": "#000",
                 "cursor": "pointer",
-                "display": "inline-block",
+                "display": "flex",
                 "fill": "#FFF",
-                "fontSize": "18px",
+                "fontSize": "20px",
                 "height": 40,
+                "justifyContent": "center",
                 "margin": "0",
                 "minHeight": 40,
                 "outline": "none",
@@ -409,14 +740,14 @@ exports[`PageTemplateForm: Component should render correctly 1`] = `
       }
     >
       <div
-        className="sc-kLokih egsxcB"
+        className="c17"
       >
         <div
-          className="sc-iklIKw cXFMgw"
+          className="c18"
         >
           <div>
             <div
-              className="sc-bCwgka vLXKp"
+              className="c19"
             >
               <svg
                 style={
@@ -438,10 +769,10 @@ exports[`PageTemplateForm: Component should render correctly 1`] = `
           </div>
         </div>
         <div
-          className="sc-jJMGHv ffhJZy"
+          className="c20"
         >
           <div
-            className="sc-hiKfjK iMDFLp"
+            className="c21"
             onClick={[Function]}
           >
             <input
@@ -576,7 +907,7 @@ exports[`PageTemplateForm: Component should render correctly 1`] = `
               </div>
             </div>
             <div
-              className="sc-gXfWUo fYmIqP"
+              className="c22"
             >
               <svg
                 style={
@@ -597,7 +928,7 @@ exports[`PageTemplateForm: Component should render correctly 1`] = `
           </div>
         </div>
         <div
-          className="sc-iklIKw cXFMgw"
+          className="c18"
         >
           <svg
             style={
@@ -640,13 +971,13 @@ exports[`PageTemplateForm: Component should render correctly 1`] = `
     </div>
   </span>
   <div
-    className="sc-crzoUp AvPFd"
+    className="c23"
   >
     <div
-      className="sc-dIsAE iociTF"
+      className="c24"
     >
       <div
-        className="sc-hBMVcZ fDCJSy"
+        className="c25"
       >
         <div>
           <input
@@ -698,23 +1029,23 @@ exports[`PageTemplateForm: Component should render correctly 1`] = `
           </label>
         </div>
         <div
-          className="sc-ksluoS gOzAaT"
+          className="c26"
         >
           <label
-            className="sc-bqGHjH hTAmED"
+            className="c27"
             htmlFor="isAvailable"
           >
             Make it Available
           </label>
           <span
-            className="sc-bkbjAj hjwsvd"
+            className="c28"
           >
             This Template is currently available for Editors
           </span>
         </div>
       </div>
       <div
-        className="sc-fnVYJo daTqzp"
+        className="c29"
         id="removePage"
         onClick={[Function]}
       >
@@ -738,7 +1069,7 @@ exports[`PageTemplateForm: Component should render correctly 1`] = `
       </div>
     </div>
     <div
-      className="sc-dIsAE iociTF"
+      className="c24"
     >
       <div>
         <input
@@ -790,10 +1121,10 @@ exports[`PageTemplateForm: Component should render correctly 1`] = `
         </label>
       </div>
       <div
-        className="sc-ksluoS gOzAaT"
+        className="c26"
       >
         <label
-          className="sc-bqGHjH hTAmED"
+          className="c27"
           htmlFor="allowEdit"
         >
           Allow editing the Page Template

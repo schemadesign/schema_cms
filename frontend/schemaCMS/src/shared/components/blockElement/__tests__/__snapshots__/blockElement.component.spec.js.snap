@@ -2,22 +2,65 @@
 
 exports[`BlockElement: Component should render correctly custom element 1`] = `
 Array [
-  <div
-    className="sc-cBoprd kVYrUE"
+  .c2 {
+  text-align: right;
+}
+
+.c0 {
+  color: #71737e;
+  text-align: center;
+  padding-bottom: 20px;
+  min-height: 43px;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+}
+
+.c1 {
+  width: 33%;
+}
+
+@media (min-width:1050px) {
+  .c0 {
+    margin-top: 0px;
+    padding-bottom: 40px;
+  }
+}
+
+@media (min-width:1050px) {
+  .c3 {
+    display: block;
+  }
+}
+
+<div
+    className="c0"
   >
     <div
-      className="sc-ciSmjq cmoBib"
+      className="c1"
       id="tagsCounter"
     />
     3 Sets
     <div
-      className="sc-ciSmjq cmoBib"
+      className="c1"
     >
       <div
-        className="sc-ezzayL fqGViI"
+        className="c2"
       >
         <div
-          className="sc-cTJmaU jGOUAM"
+          className="c3"
         >
           <button
             disabled={false}
@@ -25,15 +68,17 @@ Array [
             onClick={[Function]}
             style={
               Object {
+                "alignItems": "center",
                 "backgroundColor": "#FFF",
                 "border": "none",
-                "borderRadius": "48px",
+                "borderRadius": "30px",
                 "color": "#000",
                 "cursor": "pointer",
-                "display": "inline-block",
+                "display": "flex",
                 "fill": "#FFF",
-                "fontSize": "18px",
+                "fontSize": "20px",
                 "height": 40,
+                "justifyContent": "center",
                 "margin": "0",
                 "minHeight": 40,
                 "outline": "none",
@@ -65,7 +110,69 @@ Array [
       </div>
     </div>
   </div>,
-  <span>
+  .c0 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  -webkit-align-items: flex-start;
+  -webkit-box-align: flex-start;
+  -ms-flex-align: flex-start;
+  align-items: flex-start;
+  width: 100%;
+  position: relative;
+}
+
+.c0:after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  border-top: 2px solid #2F2F36;
+}
+
+.c3 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  width: 100%;
+}
+
+.c4 {
+  cursor: pointer;
+  margin-top: 10px;
+}
+
+.c2 {
+  width: 100%;
+}
+
+.c1 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  cursor: move;
+  touch-action: none;
+}
+
+@media (min-width:1050px) {
+
+}
+
+@media (min-width:1050px) {
+
+}
+
+<span>
     <div
       style={
         Object {
@@ -81,11 +188,11 @@ Array [
       }
     >
       <div
-        className="sc-kEqYlL bbORUY"
+        className="c0"
       >
         <div>
           <div
-            className="sc-iklIKw cjCzld"
+            className="c1"
           >
             <svg
               style={
@@ -106,10 +213,10 @@ Array [
           </div>
         </div>
         <div
-          className="sc-ksluoS kiDXUP"
+          className="c2"
         >
           <div
-            className="sc-iqAbSa eTimPT"
+            className="c3"
           >
             <div
               onClick={[Function]}
@@ -337,7 +444,7 @@ Array [
           </div>
         </div>
         <div
-          className="sc-crzoUp eegLDG"
+          className="c4"
         >
           <svg
             id="remove-blockPath.elements.0.value.0"
@@ -374,11 +481,11 @@ Array [
       }
     >
       <div
-        className="sc-kEqYlL bbORUY"
+        className="c0"
       >
         <div>
           <div
-            className="sc-iklIKw cjCzld"
+            className="c1"
           >
             <svg
               style={
@@ -399,10 +506,10 @@ Array [
           </div>
         </div>
         <div
-          className="sc-ksluoS kiDXUP"
+          className="c2"
         >
           <div
-            className="sc-iqAbSa eTimPT"
+            className="c3"
           >
             <div
               onClick={[Function]}
@@ -630,7 +737,7 @@ Array [
           </div>
         </div>
         <div
-          className="sc-crzoUp eegLDG"
+          className="c4"
         >
           <svg
             id="remove-blockPath.elements.0.value.1"
@@ -667,11 +774,11 @@ Array [
       }
     >
       <div
-        className="sc-kEqYlL bbORUY"
+        className="c0"
       >
         <div>
           <div
-            className="sc-iklIKw cjCzld"
+            className="c1"
           >
             <svg
               style={
@@ -692,10 +799,10 @@ Array [
           </div>
         </div>
         <div
-          className="sc-ksluoS kiDXUP"
+          className="c2"
         >
           <div
-            className="sc-iqAbSa eTimPT"
+            className="c3"
           >
             <div
               onClick={[Function]}
@@ -923,7 +1030,7 @@ Array [
           </div>
         </div>
         <div
-          className="sc-crzoUp eegLDG"
+          className="c4"
         >
           <svg
             id="remove-blockPath.elements.0.value.2"
@@ -950,6 +1057,71 @@ Array [
 `;
 
 exports[`BlockElement: Component should render correctly embed video element 1`] = `
+.c0 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  font-size: 16px;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  max-width: calc(100% - 80px);
+}
+
+.c1 {
+  width: 0;
+  overflow: hidden;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+}
+
+.c2 {
+  position: relative;
+  max-width: 100%;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  position: relative;
+}
+
+.c3 {
+  position: relative;
+  top: 0;
+  left: 0;
+  color: #f21e29;
+  font-size: 14px;
+  font-weight: normal;
+}
+
+.c4 {
+  cursor: pointer;
+}
+
+@media (min-width:1050px) {
+  .c1 {
+    min-width: 50px;
+  }
+}
+
 <div
   style={
     Object {
@@ -974,10 +1146,10 @@ exports[`BlockElement: Component should render correctly embed video element 1`]
     }
   >
     <div
-      className="sc-gtssRu dyZBMG"
+      className="c0"
     >
       <div
-        className="sc-jrsJCI bgDRrR"
+        className="c1"
       >
         <svg
           style={
@@ -996,7 +1168,7 @@ exports[`BlockElement: Component should render correctly embed video element 1`]
         </svg>
       </div>
       <div
-        className="sc-hBMVcZ fxvonN"
+        className="c2"
       >
         <div
           style={
@@ -1078,15 +1250,15 @@ exports[`BlockElement: Component should render correctly embed video element 1`]
           </div>
         </div>
         <div
-          className="sc-fFSRdu dyJKsj"
+          className="c3"
           id="blockPath.elements.0.nameError"
         />
       </div>
       <div
-        className="sc-jrsJCI bgDRrR"
+        className="c1"
       >
         <label
-          className="sc-iwaifL fLxMjF"
+          className="c4"
           htmlFor="blockPath.elements.0.name"
         >
           <svg
@@ -1139,6 +1311,71 @@ exports[`BlockElement: Component should render correctly embed video element 1`]
 `;
 
 exports[`BlockElement: Component should render correctly file element 1`] = `
+.c0 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  font-size: 16px;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  max-width: calc(100% - 80px);
+}
+
+.c1 {
+  width: 0;
+  overflow: hidden;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+}
+
+.c2 {
+  position: relative;
+  max-width: 100%;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  position: relative;
+}
+
+.c3 {
+  position: relative;
+  top: 0;
+  left: 0;
+  color: #f21e29;
+  font-size: 14px;
+  font-weight: normal;
+}
+
+.c4 {
+  cursor: pointer;
+}
+
+@media (min-width:1050px) {
+  .c1 {
+    min-width: 50px;
+  }
+}
+
 <div
   style={
     Object {
@@ -1163,10 +1400,10 @@ exports[`BlockElement: Component should render correctly file element 1`] = `
     }
   >
     <div
-      className="sc-gtssRu dyZBMG"
+      className="c0"
     >
       <div
-        className="sc-jrsJCI bgDRrR"
+        className="c1"
       >
         <svg
           style={
@@ -1185,7 +1422,7 @@ exports[`BlockElement: Component should render correctly file element 1`] = `
         </svg>
       </div>
       <div
-        className="sc-hBMVcZ fxvonN"
+        className="c2"
       >
         <div
           style={
@@ -1267,15 +1504,15 @@ exports[`BlockElement: Component should render correctly file element 1`] = `
           </div>
         </div>
         <div
-          className="sc-fFSRdu dyJKsj"
+          className="c3"
           id="blockPath.elements.0.nameError"
         />
       </div>
       <div
-        className="sc-jrsJCI bgDRrR"
+        className="c1"
       >
         <label
-          className="sc-iwaifL fLxMjF"
+          className="c4"
           htmlFor="blockPath.elements.0.name"
         >
           <svg
@@ -1328,6 +1565,71 @@ exports[`BlockElement: Component should render correctly file element 1`] = `
 `;
 
 exports[`BlockElement: Component should render correctly image element 1`] = `
+.c0 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  font-size: 16px;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  max-width: calc(100% - 80px);
+}
+
+.c1 {
+  width: 0;
+  overflow: hidden;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+}
+
+.c2 {
+  position: relative;
+  max-width: 100%;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  position: relative;
+}
+
+.c3 {
+  position: relative;
+  top: 0;
+  left: 0;
+  color: #f21e29;
+  font-size: 14px;
+  font-weight: normal;
+}
+
+.c4 {
+  cursor: pointer;
+}
+
+@media (min-width:1050px) {
+  .c1 {
+    min-width: 50px;
+  }
+}
+
 <div
   style={
     Object {
@@ -1352,10 +1654,10 @@ exports[`BlockElement: Component should render correctly image element 1`] = `
     }
   >
     <div
-      className="sc-gtssRu dyZBMG"
+      className="c0"
     >
       <div
-        className="sc-jrsJCI bgDRrR"
+        className="c1"
       >
         <svg
           style={
@@ -1374,7 +1676,7 @@ exports[`BlockElement: Component should render correctly image element 1`] = `
         </svg>
       </div>
       <div
-        className="sc-hBMVcZ fxvonN"
+        className="c2"
       >
         <div
           style={
@@ -1456,15 +1758,15 @@ exports[`BlockElement: Component should render correctly image element 1`] = `
           </div>
         </div>
         <div
-          className="sc-fFSRdu dyJKsj"
+          className="c3"
           id="blockPath.elements.0.nameError"
         />
       </div>
       <div
-        className="sc-jrsJCI bgDRrR"
+        className="c1"
       >
         <label
-          className="sc-iwaifL fLxMjF"
+          className="c4"
           htmlFor="blockPath.elements.0.name"
         >
           <svg
@@ -1517,6 +1819,71 @@ exports[`BlockElement: Component should render correctly image element 1`] = `
 `;
 
 exports[`BlockElement: Component should render correctly internal connection element 1`] = `
+.c0 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  font-size: 16px;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  max-width: calc(100% - 80px);
+}
+
+.c1 {
+  width: 0;
+  overflow: hidden;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+}
+
+.c2 {
+  position: relative;
+  max-width: 100%;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  position: relative;
+}
+
+.c3 {
+  position: relative;
+  top: 0;
+  left: 0;
+  color: #f21e29;
+  font-size: 14px;
+  font-weight: normal;
+}
+
+.c4 {
+  cursor: pointer;
+}
+
+@media (min-width:1050px) {
+  .c1 {
+    min-width: 50px;
+  }
+}
+
 <div
   style={
     Object {
@@ -1541,10 +1908,10 @@ exports[`BlockElement: Component should render correctly internal connection ele
     }
   >
     <div
-      className="sc-gtssRu dyZBMG"
+      className="c0"
     >
       <div
-        className="sc-jrsJCI bgDRrR"
+        className="c1"
       >
         <svg
           style={
@@ -1563,7 +1930,7 @@ exports[`BlockElement: Component should render correctly internal connection ele
         </svg>
       </div>
       <div
-        className="sc-hBMVcZ fxvonN"
+        className="c2"
       >
         <div
           style={
@@ -1645,15 +2012,15 @@ exports[`BlockElement: Component should render correctly internal connection ele
           </div>
         </div>
         <div
-          className="sc-fFSRdu dyJKsj"
+          className="c3"
           id="blockPath.elements.0.nameError"
         />
       </div>
       <div
-        className="sc-jrsJCI bgDRrR"
+        className="c1"
       >
         <label
-          className="sc-iwaifL fLxMjF"
+          className="c4"
           htmlFor="blockPath.elements.0.name"
         >
           <svg
@@ -1706,6 +2073,71 @@ exports[`BlockElement: Component should render correctly internal connection ele
 `;
 
 exports[`BlockElement: Component should render correctly internal connection element 2`] = `
+.c0 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  font-size: 16px;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  max-width: calc(100% - 80px);
+}
+
+.c1 {
+  width: 0;
+  overflow: hidden;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+}
+
+.c2 {
+  position: relative;
+  max-width: 100%;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  position: relative;
+}
+
+.c3 {
+  position: relative;
+  top: 0;
+  left: 0;
+  color: #f21e29;
+  font-size: 14px;
+  font-weight: normal;
+}
+
+.c4 {
+  cursor: pointer;
+}
+
+@media (min-width:1050px) {
+  .c1 {
+    min-width: 50px;
+  }
+}
+
 <div
   style={
     Object {
@@ -1730,10 +2162,10 @@ exports[`BlockElement: Component should render correctly internal connection ele
     }
   >
     <div
-      className="sc-gtssRu dyZBMG"
+      className="c0"
     >
       <div
-        className="sc-jrsJCI bgDRrR"
+        className="c1"
       >
         <svg
           style={
@@ -1752,7 +2184,7 @@ exports[`BlockElement: Component should render correctly internal connection ele
         </svg>
       </div>
       <div
-        className="sc-hBMVcZ fxvonN"
+        className="c2"
       >
         <div
           style={
@@ -1834,15 +2266,15 @@ exports[`BlockElement: Component should render correctly internal connection ele
           </div>
         </div>
         <div
-          className="sc-fFSRdu dyJKsj"
+          className="c3"
           id="blockPath.elements.0.nameError"
         />
       </div>
       <div
-        className="sc-jrsJCI bgDRrR"
+        className="c1"
       >
         <label
-          className="sc-iwaifL fLxMjF"
+          className="c4"
           htmlFor="blockPath.elements.0.name"
         >
           <svg
@@ -1895,6 +2327,71 @@ exports[`BlockElement: Component should render correctly internal connection ele
 `;
 
 exports[`BlockElement: Component should render correctly markdown element 1`] = `
+.c0 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  font-size: 16px;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  max-width: calc(100% - 80px);
+}
+
+.c1 {
+  width: 0;
+  overflow: hidden;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+}
+
+.c2 {
+  position: relative;
+  max-width: 100%;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  position: relative;
+}
+
+.c3 {
+  position: relative;
+  top: 0;
+  left: 0;
+  color: #f21e29;
+  font-size: 14px;
+  font-weight: normal;
+}
+
+.c4 {
+  cursor: pointer;
+}
+
+@media (min-width:1050px) {
+  .c1 {
+    min-width: 50px;
+  }
+}
+
 <div
   style={
     Object {
@@ -1919,10 +2416,10 @@ exports[`BlockElement: Component should render correctly markdown element 1`] = 
     }
   >
     <div
-      className="sc-gtssRu dyZBMG"
+      className="c0"
     >
       <div
-        className="sc-jrsJCI bgDRrR"
+        className="c1"
       >
         <svg
           style={
@@ -1941,7 +2438,7 @@ exports[`BlockElement: Component should render correctly markdown element 1`] = 
         </svg>
       </div>
       <div
-        className="sc-hBMVcZ fxvonN"
+        className="c2"
       >
         <div
           style={
@@ -2023,15 +2520,15 @@ exports[`BlockElement: Component should render correctly markdown element 1`] = 
           </div>
         </div>
         <div
-          className="sc-fFSRdu dyJKsj"
+          className="c3"
           id="blockPath.elements.0.nameError"
         />
       </div>
       <div
-        className="sc-jrsJCI bgDRrR"
+        className="c1"
       >
         <label
-          className="sc-iwaifL fLxMjF"
+          className="c4"
           htmlFor="blockPath.elements.0.name"
         >
           <svg
@@ -2084,6 +2581,71 @@ exports[`BlockElement: Component should render correctly markdown element 1`] = 
 `;
 
 exports[`BlockElement: Component should render correctly observable element 1`] = `
+.c0 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  font-size: 16px;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  max-width: calc(100% - 80px);
+}
+
+.c1 {
+  width: 0;
+  overflow: hidden;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+}
+
+.c2 {
+  position: relative;
+  max-width: 100%;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  position: relative;
+}
+
+.c3 {
+  position: relative;
+  top: 0;
+  left: 0;
+  color: #f21e29;
+  font-size: 14px;
+  font-weight: normal;
+}
+
+.c4 {
+  cursor: pointer;
+}
+
+@media (min-width:1050px) {
+  .c1 {
+    min-width: 50px;
+  }
+}
+
 <div
   style={
     Object {
@@ -2108,10 +2670,10 @@ exports[`BlockElement: Component should render correctly observable element 1`] 
     }
   >
     <div
-      className="sc-gtssRu dyZBMG"
+      className="c0"
     >
       <div
-        className="sc-jrsJCI bgDRrR"
+        className="c1"
       >
         <svg
           style={
@@ -2130,7 +2692,7 @@ exports[`BlockElement: Component should render correctly observable element 1`] 
         </svg>
       </div>
       <div
-        className="sc-hBMVcZ fxvonN"
+        className="c2"
       >
         <div
           style={
@@ -2212,15 +2774,15 @@ exports[`BlockElement: Component should render correctly observable element 1`] 
           </div>
         </div>
         <div
-          className="sc-fFSRdu dyJKsj"
+          className="c3"
           id="blockPath.elements.0.nameError"
         />
       </div>
       <div
-        className="sc-jrsJCI bgDRrR"
+        className="c1"
       >
         <label
-          className="sc-iwaifL fLxMjF"
+          className="c4"
           htmlFor="blockPath.elements.0.name"
         >
           <svg
@@ -2273,6 +2835,71 @@ exports[`BlockElement: Component should render correctly observable element 1`] 
 `;
 
 exports[`BlockElement: Component should render correctly text element 1`] = `
+.c0 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  font-size: 16px;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  max-width: calc(100% - 80px);
+}
+
+.c1 {
+  width: 0;
+  overflow: hidden;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+}
+
+.c2 {
+  position: relative;
+  max-width: 100%;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  position: relative;
+}
+
+.c3 {
+  position: relative;
+  top: 0;
+  left: 0;
+  color: #f21e29;
+  font-size: 14px;
+  font-weight: normal;
+}
+
+.c4 {
+  cursor: pointer;
+}
+
+@media (min-width:1050px) {
+  .c1 {
+    min-width: 50px;
+  }
+}
+
 <div
   style={
     Object {
@@ -2297,10 +2924,10 @@ exports[`BlockElement: Component should render correctly text element 1`] = `
     }
   >
     <div
-      className="sc-gtssRu dyZBMG"
+      className="c0"
     >
       <div
-        className="sc-jrsJCI bgDRrR"
+        className="c1"
       >
         <svg
           style={
@@ -2319,7 +2946,7 @@ exports[`BlockElement: Component should render correctly text element 1`] = `
         </svg>
       </div>
       <div
-        className="sc-hBMVcZ fxvonN"
+        className="c2"
       >
         <div
           style={
@@ -2401,15 +3028,15 @@ exports[`BlockElement: Component should render correctly text element 1`] = `
           </div>
         </div>
         <div
-          className="sc-fFSRdu dyJKsj"
+          className="c3"
           id="blockPath.elements.0.nameError"
         />
       </div>
       <div
-        className="sc-jrsJCI bgDRrR"
+        className="c1"
       >
         <label
-          className="sc-iwaifL fLxMjF"
+          className="c4"
           htmlFor="blockPath.elements.0.name"
         >
           <svg

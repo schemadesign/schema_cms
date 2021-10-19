@@ -1,11 +1,539 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`CreatePageTemplate: Component should render correctly 1`] = `
+.c0 {
+  font-weight: normal;
+  width: calc(100% - 50px);
+}
+
+.c4 {
+  padding-right: 50px;
+}
+
+.c3 {
+  overflow: auto;
+  -webkit-overflow-scrolling: touch;
+  max-height: 100%;
+}
+
+.c5 {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+}
+
+.c6 {
+  line-height: 1.5;
+  margin: 2px 0;
+  cursor: pointer;
+  font-size: 24px;
+  border-bottom: 2.4px solid #2F2F36;
+  padding: 8px 0 13px;
+}
+
+.c6 a,
+.c6 div {
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  color: #71737e;
+  display: block;
+}
+
+.c7 {
+  margin: 10px 0;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+}
+
+.c8 {
+  color: #FFF;
+  font-size: 14px;
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  margin: 12px 0;
+}
+
+.c1 {
+  word-break: break-word;
+}
+
+.c2 {
+  word-break: break-word;
+}
+
+.c41 {
+  height: 120px;
+}
+
+.c43 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+  -webkit-flex-wrap: wrap;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  width: 100%;
+}
+
+.c42 {
+  bottom: 0;
+  width: 100%;
+  padding: 10px 0 36px;
+  position: fixed;
+  width: calc(100% - 40px);
+  z-index: 999;
+  background-image: linear-gradient( to top, #000,#000 30%, rgba(0,0,0,0) );
+}
+
+.c45 {
+  width: calc(50% - 5px);
+  max-width: 240px;
+}
+
+.c44 {
+  width: calc(50% - 5px);
+  max-width: 240px;
+  background-color: #1d1d20;
+  color: #FFF;
+  border-radius: 30px;
+  text-align: center;
+  line-height: 30px;
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  font-size: 20px;
+  padding: 9px 0;
+}
+
+.c13 {
+  display: none;
+}
+
+.c14 {
+  margin-right: 20px;
+  overflow: hidden;
+}
+
+.c15 {
+  color: #FFF;
+}
+
+.c16 {
+  color: #FFF;
+}
+
+.c35 {
+  margin-top: 30px;
+  border-top: 2px solid #2F2F36;
+  padding-top: 15px;
+}
+
+.c36 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-align-items: start;
+  -webkit-box-align: start;
+  -ms-flex-align: start;
+  align-items: start;
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+  padding-bottom: 15px;
+  position: relative;
+}
+
+.c39 {
+  padding-right: 10px;
+}
+
+.c38 {
+  padding-left: 10px;
+  max-width: 100%;
+}
+
+.c37 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  max-width: 100%;
+  padding-right: 10px;
+}
+
+.c21 {
+  cursor: pointer;
+}
+
+.c40 {
+  color: #71737e;
+  min-width: 100%;
+}
+
+.c17 {
+  position: relative;
+}
+
+.c20 {
+  position: absolute;
+  right: 0;
+  top: 0;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+}
+
+.c23 {
+  position: relative;
+}
+
+.c28 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: end;
+  -webkit-justify-content: end;
+  -ms-flex-pack: end;
+  justify-content: end;
+}
+
+.c31 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  cursor: move;
+  touch-action: none;
+}
+
+.c18 {
+  position: relative;
+  max-width: 100%;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  position: relative;
+}
+
+.c24 {
+  position: relative;
+}
+
+.c25 {
+  margin-top: 0;
+}
+
+.c19 {
+  position: relative;
+  top: 0;
+  left: 0;
+  color: #f21e29;
+  font-size: 14px;
+  font-weight: normal;
+}
+
+.c26 {
+  color: #71737e;
+  text-align: center;
+  padding-bottom: 20px;
+  min-height: 43px;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+}
+
+.c27 {
+  width: 33%;
+}
+
+.c29 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  width: 100%;
+  border-top: 1px solid #FFF;
+}
+
+.c30 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+}
+
+.c32 {
+  padding-left: 0;
+  width: calc(100% - 81px);
+}
+
+.c33 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  padding-bottom: 30px;
+  padding-right: 30px;
+  position: relative;
+  font-size: 18px;
+  cursor: pointer;
+  padding-bottom: 0;
+}
+
+.c33 label {
+  margin-bottom: 2px;
+}
+
+.c34 {
+  position: absolute;
+  right: 0;
+  top: 5px;
+  top: 50%;
+  right: 5px;
+  -webkit-transform: translateY(-50%);
+  -ms-transform: translateY(-50%);
+  transform: translateY(-50%);
+  font-size: 0;
+}
+
+.c9 {
+  display: none;
+}
+
+.c12 {
+  color: #FFF;
+  width: 100%;
+}
+
+.c10 {
+  color: #a6a7aa;
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  width: 100%;
+}
+
+.c10:hover {
+  color: #FFF;
+}
+
+.c11 {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  max-width: 230px;
+}
+
+@media (min-width:1050px) {
+  .c0 {
+    display: none;
+  }
+}
+
+@media (min-width:1050px) {
+  .c4 {
+    height: 54px;
+  }
+}
+
+@media (min-width:1050px) {
+  .c3 {
+    padding-bottom: 20px;
+  }
+}
+
+@media (min-width:768px) {
+
+}
+
+@media (min-width:1050px) {
+  .c41 {
+    height: 100px;
+  }
+}
+
+@media (min-width:1050px) {
+  .c43 {
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+  }
+}
+
+@media (min-width:1050px) {
+  .c42 {
+    position: fixed;
+    width: calc(100% - 40px);
+    z-index: 999;
+    background-image: linear-gradient( to top, #000,#000 30%, rgba(0,0,0,0) );
+    padding: 10px 0 36px;
+    width: 1000px;
+  }
+}
+
+@media (min-width:1050px) {
+  .c45 {
+    width: 240px;
+  }
+}
+
+@media (min-width:1050px) {
+  .c44 {
+    width: 240px;
+  }
+}
+
+@media (min-width:1050px) {
+  .c22 {
+    display: block;
+  }
+}
+
+@media (min-width:1050px) {
+  .c13 {
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: justify;
+    -webkit-justify-content: space-between;
+    -ms-flex-pack: justify;
+    justify-content: space-between;
+    -webkit-align-items: center;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    margin: 60px 0 40px 0;
+    min-height: 63px;
+  }
+}
+
+@media (min-width:480px) {
+  .c36 {
+    -webkit-flex-direction: row;
+    -ms-flex-direction: row;
+    flex-direction: row;
+    -webkit-align-items: center;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+  }
+}
+
+@media (min-width:480px) {
+  .c37 {
+    padding-right: 40px;
+  }
+}
+
+@media (min-width:1050px) {
+  .c23 {
+    display: none;
+  }
+}
+
+@media (min-width:1050px) {
+  .c28 {
+    display: none;
+  }
+}
+
+@media (min-width:1050px) {
+  .c25 {
+    margin-top: 0;
+  }
+}
+
+@media (min-width:1050px) {
+  .c26 {
+    margin-top: -35px;
+    padding-bottom: 40px;
+  }
+}
+
+@media (min-width:1050px) {
+  .c9 {
+    display: block;
+  }
+}
+
 <div
-  className="sc-bdnylx"
+  className=""
 >
   <div
-    className="sc-gtssRu zMrMd"
+    className="c0"
   >
     <div
       style={
@@ -22,10 +550,10 @@ exports[`CreatePageTemplate: Component should render correctly 1`] = `
     >
       <div>
         <div
-          className="sc-dlnjPT"
+          className=""
         >
           <h2
-            className="sc-pNWxx gmkJvd"
+            className="c1"
             id="headerTitle"
             style={
               Object {
@@ -39,7 +567,7 @@ exports[`CreatePageTemplate: Component should render correctly 1`] = `
             Page Template
           </h2>
           <h1
-            className="sc-jrsJCI jTtAyv"
+            className="c2"
             id="headerSubtitle"
             style={
               Object {
@@ -62,14 +590,16 @@ exports[`CreatePageTemplate: Component should render correctly 1`] = `
         onClick={[Function]}
         style={
           Object {
+            "alignItems": "center",
             "backgroundColor": "transparent",
             "border": "none",
-            "borderRadius": "48px",
+            "borderRadius": "30px",
             "color": "#FFF",
             "cursor": "pointer",
-            "display": "inline-block",
+            "display": "flex",
             "fill": "#FFF",
-            "fontSize": "18px",
+            "fontSize": "20px",
+            "justifyContent": "center",
             "margin": "0",
             "minHeight": "48px",
             "outline": "none",
@@ -121,16 +651,16 @@ exports[`CreatePageTemplate: Component should render correctly 1`] = `
       }
     >
       <div
-        className="sc-eCApGN jLOikM"
+        className="c3"
       >
         <div
-          className="sc-hKFyIo bSqpkn"
+          className="c4"
         >
           <div
-            className="sc-dlnjPT"
+            className=""
           >
             <h2
-              className="sc-pNWxx gmkJvd"
+              className="c1"
               id="headerTitle"
               style={
                 Object {
@@ -144,7 +674,7 @@ exports[`CreatePageTemplate: Component should render correctly 1`] = `
               Page Template
             </h2>
             <h1
-              className="sc-jrsJCI jTtAyv"
+              className="c2"
               id="headerSubtitle"
               style={
                 Object {
@@ -162,10 +692,10 @@ exports[`CreatePageTemplate: Component should render correctly 1`] = `
           </div>
         </div>
         <div
-          className="sc-jSFkmK dNvWwD"
+          className="c5"
         >
           <div
-            className="sc-gKAblj giqbFz"
+            className="c6"
           >
             <a
               href="/project/"
@@ -176,7 +706,7 @@ exports[`CreatePageTemplate: Component should render correctly 1`] = `
             </a>
           </div>
           <div
-            className="sc-gKAblj giqbFz"
+            className="c6"
           >
             <a
               href="/user/"
@@ -187,7 +717,7 @@ exports[`CreatePageTemplate: Component should render correctly 1`] = `
             </a>
           </div>
           <div
-            className="sc-gKAblj giqbFz"
+            className="c6"
           >
             <a
               href="/project/projectId"
@@ -198,7 +728,7 @@ exports[`CreatePageTemplate: Component should render correctly 1`] = `
             </a>
           </div>
           <div
-            className="sc-gKAblj giqbFz"
+            className="c6"
           >
             <a
               href="/project/projectId/datasource"
@@ -209,7 +739,7 @@ exports[`CreatePageTemplate: Component should render correctly 1`] = `
             </a>
           </div>
           <div
-            className="sc-gKAblj giqbFz"
+            className="c6"
           >
             <a
               href="/project/projectId/user"
@@ -220,7 +750,7 @@ exports[`CreatePageTemplate: Component should render correctly 1`] = `
             </a>
           </div>
           <div
-            className="sc-gKAblj giqbFz"
+            className="c6"
           >
             <a
               href="/project/projectId/content"
@@ -231,7 +761,7 @@ exports[`CreatePageTemplate: Component should render correctly 1`] = `
             </a>
           </div>
           <div
-            className="sc-gKAblj giqbFz"
+            className="c6"
           >
             <a
               href="/project/projectId/templates"
@@ -243,10 +773,10 @@ exports[`CreatePageTemplate: Component should render correctly 1`] = `
           </div>
         </div>
         <div
-          className="sc-jSFkmK dNvWwD"
+          className="c5"
         >
           <div
-            className="sc-gKAblj giqbFz"
+            className="c6"
           >
             <a
               href="/settings"
@@ -257,7 +787,7 @@ exports[`CreatePageTemplate: Component should render correctly 1`] = `
             </a>
           </div>
           <div
-            className="sc-gKAblj giqbFz"
+            className="c6"
           >
             <div
               id="logoutNavBtn"
@@ -268,10 +798,10 @@ exports[`CreatePageTemplate: Component should render correctly 1`] = `
           </div>
         </div>
         <div
-          className="sc-iCoHVE jZmAqJ"
+          className="c7"
         >
           <a
-            className="sc-fujyUd cmhbQC"
+            className="c8"
             href="/"
             id="aboutNavBtn"
             onClick={[Function]}
@@ -281,7 +811,7 @@ exports[`CreatePageTemplate: Component should render correctly 1`] = `
             About Schema CMS
           </a>
           <a
-            className="sc-fujyUd cmhbQC"
+            className="c8"
             href="https://github.com/schemadesign/schema_cms/blob/master/backend/app/docs/public_api/api_calls.md"
             id="apiNavBtn"
             onClick={[Function]}
@@ -291,7 +821,7 @@ exports[`CreatePageTemplate: Component should render correctly 1`] = `
             API Doc
           </a>
           <a
-            className="sc-fujyUd cmhbQC"
+            className="c8"
             href="https://github.com/schemadesign/schema_cms"
             id="repositoryNavBtn"
             onClick={[Function]}
@@ -308,14 +838,16 @@ exports[`CreatePageTemplate: Component should render correctly 1`] = `
         onClick={[Function]}
         style={
           Object {
+            "alignItems": "center",
             "backgroundColor": "transparent",
             "border": "none",
-            "borderRadius": "48px",
+            "borderRadius": "30px",
             "color": "#FFF",
             "cursor": "pointer",
-            "display": "inline-block",
+            "display": "flex",
             "fill": "#FFF",
-            "fontSize": "18px",
+            "fontSize": "20px",
+            "justifyContent": "center",
             "margin": "0",
             "minHeight": "48px",
             "outline": "none",
@@ -347,7 +879,7 @@ exports[`CreatePageTemplate: Component should render correctly 1`] = `
     </div>
   </div>
   <div
-    className="sc-eJoaVz lifigH"
+    className="c9"
   >
     <div
       style={
@@ -369,7 +901,7 @@ exports[`CreatePageTemplate: Component should render correctly 1`] = `
         }
       >
         <a
-          className="sc-hhIhEF djezdw"
+          className="c10"
           href="/project/1/"
           onClick={[Function]}
           style={
@@ -391,7 +923,7 @@ exports[`CreatePageTemplate: Component should render correctly 1`] = `
             Project
           </span>
           <h3
-            className="sc-eirseW frqVju"
+            className="c11"
             style={
               Object {
                 "fontFamily": "Inter, \\"Helvetica Neue\\", Helvetica, Arial, sans-serif",
@@ -427,7 +959,7 @@ exports[`CreatePageTemplate: Component should render correctly 1`] = `
         }
       >
         <a
-          className="sc-hhIhEF djezdw"
+          className="c10"
           href="/project/1/templates"
           onClick={[Function]}
           style={
@@ -449,7 +981,7 @@ exports[`CreatePageTemplate: Component should render correctly 1`] = `
             Tab
           </span>
           <h3
-            className="sc-eirseW frqVju"
+            className="c11"
             style={
               Object {
                 "fontFamily": "Inter, \\"Helvetica Neue\\", Helvetica, Arial, sans-serif",
@@ -485,7 +1017,7 @@ exports[`CreatePageTemplate: Component should render correctly 1`] = `
         }
       >
         <a
-          className="sc-hhIhEF djezdw"
+          className="c10"
           href="/project/1/block-templates"
           onClick={[Function]}
           style={
@@ -507,7 +1039,7 @@ exports[`CreatePageTemplate: Component should render correctly 1`] = `
             Library
           </span>
           <h3
-            className="sc-eirseW frqVju"
+            className="c11"
             style={
               Object {
                 "fontFamily": "Inter, \\"Helvetica Neue\\", Helvetica, Arial, sans-serif",
@@ -543,7 +1075,7 @@ exports[`CreatePageTemplate: Component should render correctly 1`] = `
         }
       >
         <div
-          className="sc-oefIU bJjNUe"
+          className="c12"
         >
           <span
             style={
@@ -556,7 +1088,7 @@ exports[`CreatePageTemplate: Component should render correctly 1`] = `
             Template
           </span>
           <h3
-            className="sc-eirseW frqVju"
+            className="c11"
             style={
               Object {
                 "fontFamily": "Inter, \\"Helvetica Neue\\", Helvetica, Arial, sans-serif",
@@ -577,16 +1109,16 @@ exports[`CreatePageTemplate: Component should render correctly 1`] = `
     onSubmit={[Function]}
   >
     <div
-      className="sc-kfYqjs"
+      className=""
     >
       <div
-        className="sc-fKgIGh iDRmPx"
+        className="c13"
       >
         <div
-          className="sc-bCwgka jNlFsP"
+          className="c14"
         >
           <h2
-            className="sc-iwaifL fAJgQr"
+            className="c15"
             id="desktopHeaderTitle"
             style={
               Object {
@@ -600,7 +1132,7 @@ exports[`CreatePageTemplate: Component should render correctly 1`] = `
             Page Template
           </h2>
           <h1
-            className="sc-cxNIbT eQmLRd"
+            className="c16"
             id="desktopHeaderSubtitle"
             style={
               Object {
@@ -614,10 +1146,10 @@ exports[`CreatePageTemplate: Component should render correctly 1`] = `
             }
           >
             <div
-              className="sc-gXfWUo lhDuBl"
+              className="c17"
             >
               <div
-                className="sc-cTJmaU bAvdmN"
+                className="c18"
               >
                 <div
                   style={
@@ -701,15 +1233,15 @@ exports[`CreatePageTemplate: Component should render correctly 1`] = `
                   </div>
                 </div>
                 <div
-                  className="sc-dPaNSN hoQDhR"
+                  className="c19"
                   id="nameError"
                 />
               </div>
               <div
-                className="sc-cBoprd katUGt"
+                className="c20"
               >
                 <label
-                  className="sc-jJMGHv eWbJnh"
+                  className="c21"
                   htmlFor="name"
                 >
                   <svg
@@ -733,10 +1265,10 @@ exports[`CreatePageTemplate: Component should render correctly 1`] = `
           </h1>
         </div>
         <div
-          className="sc-lmgQde"
+          className=""
         >
           <div
-            className="sc-bkbjAj iFdJhe"
+            className="c22"
           >
             <button
               disabled={true}
@@ -744,15 +1276,17 @@ exports[`CreatePageTemplate: Component should render correctly 1`] = `
               onClick={[Function]}
               style={
                 Object {
+                  "alignItems": "center",
                   "backgroundColor": "#1d1d20",
                   "border": "none",
-                  "borderRadius": "48px",
+                  "borderRadius": "30px",
                   "color": "#71737e",
                   "cursor": "default",
-                  "display": "inline-block",
+                  "display": "flex",
                   "fill": "#FFF",
-                  "fontSize": "18px",
+                  "fontSize": "20px",
                   "height": "60px",
+                  "justifyContent": "center",
                   "margin": "0",
                   "minHeight": "48px",
                   "outline": "none",
@@ -783,10 +1317,10 @@ exports[`CreatePageTemplate: Component should render correctly 1`] = `
         </div>
       </div>
       <div
-        className="sc-ciSmjq fazbWU"
+        className="c23"
       >
         <div
-          className="sc-cTJmaU hyxntz"
+          className="c24"
         >
           <div
             style={
@@ -858,7 +1392,7 @@ exports[`CreatePageTemplate: Component should render correctly 1`] = `
                 }
               >
                 <div
-                  className="sc-jNnnWF bxPInj"
+                  className="c25"
                 >
                   <svg
                     style={
@@ -880,27 +1414,27 @@ exports[`CreatePageTemplate: Component should render correctly 1`] = `
             </div>
           </div>
           <div
-            className="sc-dPaNSN hoQDhR"
+            className="c19"
             id="nameError"
           />
         </div>
       </div>
       <div
-        className="sc-bBjRzc iXtoFi"
+        className="c26"
       >
         <div
-          className="sc-cOigif lasETV"
+          className="c27"
           id="tagsCounter"
         />
         1 Block
         <div
-          className="sc-cOigif lasETV"
+          className="c27"
         >
           <div
-            className="sc-carGAA dLvJIe"
+            className="c28"
           >
             <div
-              className="sc-bkbjAj iFdJhe"
+              className="c22"
             >
               <button
                 disabled={true}
@@ -908,15 +1442,17 @@ exports[`CreatePageTemplate: Component should render correctly 1`] = `
                 onClick={[Function]}
                 style={
                   Object {
+                    "alignItems": "center",
                     "backgroundColor": "#1d1d20",
                     "border": "none",
-                    "borderRadius": "48px",
+                    "borderRadius": "30px",
                     "color": "#71737e",
                     "cursor": "default",
-                    "display": "inline-block",
+                    "display": "flex",
                     "fill": "#FFF",
-                    "fontSize": "18px",
+                    "fontSize": "20px",
                     "height": 40,
+                    "justifyContent": "center",
                     "margin": "0",
                     "minHeight": 40,
                     "outline": "none",
@@ -964,14 +1500,14 @@ exports[`CreatePageTemplate: Component should render correctly 1`] = `
           }
         >
           <div
-            className="sc-khIgXV htvfms"
+            className="c29"
           >
             <div
-              className="sc-hTRkEk hUWyjQ"
+              className="c30"
             >
               <div>
                 <div
-                  className="sc-iBzFoy ifOLmv"
+                  className="c31"
                 >
                   <svg
                     style={
@@ -993,10 +1529,10 @@ exports[`CreatePageTemplate: Component should render correctly 1`] = `
               </div>
             </div>
             <div
-              className="sc-jgPznn kibGvt"
+              className="c32"
             >
               <div
-                className="sc-gSYCTC cVTzNB"
+                className="c33"
                 onClick={[Function]}
               >
                 <input
@@ -1130,7 +1666,7 @@ exports[`CreatePageTemplate: Component should render correctly 1`] = `
                   </div>
                 </div>
                 <div
-                  className="sc-laZMyp bfLBkw"
+                  className="c34"
                 >
                   <svg
                     style={
@@ -1151,7 +1687,7 @@ exports[`CreatePageTemplate: Component should render correctly 1`] = `
               </div>
             </div>
             <div
-              className="sc-hTRkEk hUWyjQ"
+              className="c30"
             >
               <svg
                 style={
@@ -1194,13 +1730,13 @@ exports[`CreatePageTemplate: Component should render correctly 1`] = `
         </div>
       </span>
       <div
-        className="sc-iJCRLp bwNhyG"
+        className="c35"
       >
         <div
-          className="sc-giAqnE iRUXvy"
+          className="c36"
         >
           <div
-            className="sc-kLokih kBNefU"
+            className="c37"
           >
             <div>
               <input
@@ -1252,16 +1788,16 @@ exports[`CreatePageTemplate: Component should render correctly 1`] = `
               </label>
             </div>
             <div
-              className="sc-bYwzba czRGjr"
+              className="c38"
             >
               <label
-                className="sc-ezzayL iyiHTg"
+                className="c39"
                 htmlFor="isAvailable"
               >
                 Make it Available
               </label>
               <span
-                className="sc-hiKfjK dXVHlu"
+                className="c40"
               >
                 This Template is currently unavailable for Editors
               </span>
@@ -1269,7 +1805,7 @@ exports[`CreatePageTemplate: Component should render correctly 1`] = `
           </div>
         </div>
         <div
-          className="sc-giAqnE iRUXvy"
+          className="c36"
         >
           <div>
             <input
@@ -1321,10 +1857,10 @@ exports[`CreatePageTemplate: Component should render correctly 1`] = `
             </label>
           </div>
           <div
-            className="sc-bYwzba czRGjr"
+            className="c38"
           >
             <label
-              className="sc-ezzayL iyiHTg"
+              className="c39"
               htmlFor="allowEdit"
             >
               Allow editing the Page Template
@@ -1334,16 +1870,16 @@ exports[`CreatePageTemplate: Component should render correctly 1`] = `
       </div>
     </div>
     <div
-      className="sc-bqGHjH cREPMJ"
+      className="c41"
     >
       <div
-        className="sc-hBMVcZ feRjcl"
+        className="c42"
       >
         <div
-          className="sc-ksluoS hnruJh"
+          className="c43"
         >
           <a
-            className="sc-fFSRdu ixzilk"
+            className="c44"
             disabled={false}
             href="/project/projectId/page-templates"
             id="cancelBtn"
@@ -1352,19 +1888,21 @@ exports[`CreatePageTemplate: Component should render correctly 1`] = `
             Cancel
           </a>
           <button
-            className="sc-fnVYJo lmnryI"
+            className="c45"
             disabled={true}
             id="createTemplateBlock"
             style={
               Object {
+                "alignItems": "center",
                 "backgroundColor": "#1d1d20",
                 "border": "none",
-                "borderRadius": "48px",
+                "borderRadius": "30px",
                 "color": "#71737e",
                 "cursor": "default",
-                "display": "inline-block",
+                "display": "flex",
                 "fill": "#FFF",
-                "fontSize": "18px",
+                "fontSize": "20px",
+                "justifyContent": "center",
                 "margin": "0",
                 "minHeight": "48px",
                 "outline": "none",

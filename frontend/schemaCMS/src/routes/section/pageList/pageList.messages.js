@@ -15,6 +15,10 @@ export default defineMessages({
     id: 'section.pageList.page',
     defaultMessage: 'page',
   },
+  addPageButton: {
+    id: 'section.pageList.addPageButton',
+    defaultMessage: 'Page',
+  },
   [SECTIONS_NAME]: {
     id: `section.pageList.${SECTIONS_NAME}`,
     defaultMessage: 'Name',
@@ -86,5 +90,9 @@ export default defineMessages({
   nameSectionNameUniqueError: {
     id: 'section.pageList.nameSectionNameUniqueError',
     defaultMessage: 'A section with this name already exists in project',
+  },
+  deleteButton: {
+    id: 'section.pageList.deleteButton',
+    defaultMessage: 'Delete Section',
   },
 });

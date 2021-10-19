@@ -2,8 +2,93 @@
 
 exports[`EditState: Component should render correctly 1`] = `
 Array [
-  <div
-    className="sc-gSYCTC gZEKEv"
+  .c0 {
+  display: none;
+}
+
+.c3 {
+  color: #FFF;
+  width: 100%;
+}
+
+.c1 {
+  color: #a6a7aa;
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  width: 100%;
+}
+
+.c1:hover {
+  color: #FFF;
+}
+
+.c2 {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  max-width: 230px;
+}
+
+@media (min-width:1050px) {
+
+}
+
+@media (min-width:1050px) {
+
+}
+
+@media (min-width:1050px) {
+
+}
+
+@media (min-width:768px) {
+
+}
+
+@media (min-width:1050px) {
+
+}
+
+@media (min-width:1050px) {
+
+}
+
+@media (min-width:1050px) {
+
+}
+
+@media (min-width:1050px) {
+
+}
+
+@media (min-width:1050px) {
+
+}
+
+@media (min-width:1050px) {
+
+}
+
+@media (min-width:1050px) {
+
+}
+
+@media (min-width:480px) {
+
+}
+
+@media (min-width:480px) {
+
+}
+
+@media (min-width:1050px) {
+  .c0 {
+    display: block;
+  }
+}
+
+<div
+    className="c0"
   >
     <div
       style={
@@ -25,7 +110,7 @@ Array [
         }
       >
         <a
-          className="sc-iNiQeE hnQVGV"
+          className="c1"
           href="/project/1/"
           onClick={[Function]}
           style={
@@ -47,7 +132,7 @@ Array [
             Project
           </span>
           <h3
-            className="sc-jffIyK iNBqKg"
+            className="c2"
             style={
               Object {
                 "fontFamily": "Inter, \\"Helvetica Neue\\", Helvetica, Arial, sans-serif",
@@ -83,7 +168,7 @@ Array [
         }
       >
         <a
-          className="sc-iNiQeE hnQVGV"
+          className="c1"
           href="/project/1/datasource"
           onClick={[Function]}
           style={
@@ -105,7 +190,7 @@ Array [
             Tab
           </span>
           <h3
-            className="sc-jffIyK iNBqKg"
+            className="c2"
             style={
               Object {
                 "fontFamily": "Inter, \\"Helvetica Neue\\", Helvetica, Arial, sans-serif",
@@ -141,7 +226,7 @@ Array [
         }
       >
         <a
-          className="sc-iNiQeE hnQVGV"
+          className="c1"
           href="/datasource/1"
           onClick={[Function]}
           style={
@@ -163,7 +248,7 @@ Array [
             Data Source
           </span>
           <h3
-            className="sc-jffIyK iNBqKg"
+            className="c2"
             style={
               Object {
                 "fontFamily": "Inter, \\"Helvetica Neue\\", Helvetica, Arial, sans-serif",
@@ -199,7 +284,7 @@ Array [
         }
       >
         <a
-          className="sc-iNiQeE hnQVGV"
+          className="c1"
           href="/datasource/1/state"
           onClick={[Function]}
           style={
@@ -221,7 +306,7 @@ Array [
             Tab
           </span>
           <h3
-            className="sc-jffIyK iNBqKg"
+            className="c2"
             style={
               Object {
                 "fontFamily": "Inter, \\"Helvetica Neue\\", Helvetica, Arial, sans-serif",
@@ -257,7 +342,7 @@ Array [
         }
       >
         <div
-          className="sc-laZMyp kOJbHl"
+          className="c3"
         >
           <span
             style={
@@ -270,7 +355,7 @@ Array [
             State
           </span>
           <h3
-            className="sc-jffIyK iNBqKg"
+            className="c2"
             style={
               Object {
                 "fontFamily": "Inter, \\"Helvetica Neue\\", Helvetica, Arial, sans-serif",
@@ -287,8 +372,142 @@ Array [
       </div>
     </div>
   </div>,
-  <div
-    className="sc-hKFyIo ivkAyL"
+  .c0 {
+  font-weight: normal;
+  width: calc(100% - 50px);
+}
+
+.c4 {
+  padding-right: 50px;
+}
+
+.c3 {
+  overflow: auto;
+  -webkit-overflow-scrolling: touch;
+  max-height: 100%;
+}
+
+.c5 {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+}
+
+.c6 {
+  line-height: 1.5;
+  margin: 2px 0;
+  cursor: pointer;
+  font-size: 24px;
+  border-bottom: 2.4px solid #2F2F36;
+  padding: 8px 0 13px;
+}
+
+.c6 a,
+.c6 div {
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  color: #71737e;
+  display: block;
+}
+
+.c7 {
+  margin: 10px 0;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+}
+
+.c8 {
+  color: #FFF;
+  font-size: 14px;
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  margin: 12px 0;
+}
+
+.c1 {
+  word-break: break-word;
+}
+
+.c2 {
+  word-break: break-word;
+}
+
+@media (min-width:1050px) {
+  .c0 {
+    display: none;
+  }
+}
+
+@media (min-width:1050px) {
+  .c4 {
+    height: 54px;
+  }
+}
+
+@media (min-width:1050px) {
+  .c3 {
+    padding-bottom: 20px;
+  }
+}
+
+@media (min-width:768px) {
+
+}
+
+@media (min-width:1050px) {
+
+}
+
+@media (min-width:1050px) {
+
+}
+
+@media (min-width:1050px) {
+
+}
+
+@media (min-width:1050px) {
+
+}
+
+@media (min-width:1050px) {
+
+}
+
+@media (min-width:1050px) {
+
+}
+
+@media (min-width:1050px) {
+
+}
+
+@media (min-width:480px) {
+
+}
+
+@media (min-width:480px) {
+
+}
+
+@media (min-width:1050px) {
+
+}
+
+<div
+    className="c0"
   >
     <div
       style={
@@ -305,10 +524,10 @@ Array [
     >
       <div>
         <div
-          className="sc-eCApGN"
+          className=""
         >
           <h2
-            className="sc-kEqYlL iSsYxm"
+            className="c1"
             id="headerTitle"
             style={
               Object {
@@ -320,7 +539,7 @@ Array [
             }
           />
           <h1
-            className="sc-iqAbSa gKKaKh"
+            className="c2"
             id="headerSubtitle"
             style={
               Object {
@@ -343,14 +562,16 @@ Array [
         onClick={[Function]}
         style={
           Object {
+            "alignItems": "center",
             "backgroundColor": "transparent",
             "border": "none",
-            "borderRadius": "48px",
+            "borderRadius": "30px",
             "color": "#FFF",
             "cursor": "pointer",
-            "display": "inline-block",
+            "display": "flex",
             "fill": "#FFF",
-            "fontSize": "18px",
+            "fontSize": "20px",
+            "justifyContent": "center",
             "margin": "0",
             "minHeight": "48px",
             "outline": "none",
@@ -402,16 +623,16 @@ Array [
       }
     >
       <div
-        className="sc-gKAblj llrNkH"
+        className="c3"
       >
         <div
-          className="sc-jSFkmK hQXddb"
+          className="c4"
         >
           <div
-            className="sc-eCApGN"
+            className=""
           >
             <h2
-              className="sc-kEqYlL iSsYxm"
+              className="c1"
               id="headerTitle"
               style={
                 Object {
@@ -423,7 +644,7 @@ Array [
               }
             />
             <h1
-              className="sc-iqAbSa gKKaKh"
+              className="c2"
               id="headerSubtitle"
               style={
                 Object {
@@ -441,10 +662,10 @@ Array [
           </div>
         </div>
         <div
-          className="sc-iCoHVE gCJJlT"
+          className="c5"
         >
           <div
-            className="sc-fujyUd fKowmD"
+            className="c6"
           >
             <a
               href="/project/"
@@ -455,7 +676,7 @@ Array [
             </a>
           </div>
           <div
-            className="sc-fujyUd fKowmD"
+            className="c6"
           >
             <a
               href="/user/"
@@ -466,7 +687,7 @@ Array [
             </a>
           </div>
           <div
-            className="sc-fujyUd fKowmD"
+            className="c6"
           >
             <a
               href="/project/1"
@@ -477,7 +698,7 @@ Array [
             </a>
           </div>
           <div
-            className="sc-fujyUd fKowmD"
+            className="c6"
           >
             <a
               href="/project/1/datasource"
@@ -488,7 +709,7 @@ Array [
             </a>
           </div>
           <div
-            className="sc-fujyUd fKowmD"
+            className="c6"
           >
             <a
               href="/project/1/user"
@@ -499,7 +720,7 @@ Array [
             </a>
           </div>
           <div
-            className="sc-fujyUd fKowmD"
+            className="c6"
           >
             <a
               href="/project/1/content"
@@ -510,7 +731,7 @@ Array [
             </a>
           </div>
           <div
-            className="sc-fujyUd fKowmD"
+            className="c6"
           >
             <a
               href="/project/1/templates"
@@ -522,10 +743,10 @@ Array [
           </div>
         </div>
         <div
-          className="sc-iCoHVE gCJJlT"
+          className="c5"
         >
           <div
-            className="sc-fujyUd fKowmD"
+            className="c6"
           >
             <a
               href="/settings"
@@ -536,7 +757,7 @@ Array [
             </a>
           </div>
           <div
-            className="sc-fujyUd fKowmD"
+            className="c6"
           >
             <div
               id="logoutNavBtn"
@@ -547,10 +768,10 @@ Array [
           </div>
         </div>
         <div
-          className="sc-pNWxx fFCFli"
+          className="c7"
         >
           <a
-            className="sc-jrsJCI laNVwM"
+            className="c8"
             href="/"
             id="aboutNavBtn"
             onClick={[Function]}
@@ -560,7 +781,7 @@ Array [
             About Schema CMS
           </a>
           <a
-            className="sc-jrsJCI laNVwM"
+            className="c8"
             href="https://github.com/schemadesign/schema_cms/blob/master/backend/app/docs/public_api/api_calls.md"
             id="apiNavBtn"
             onClick={[Function]}
@@ -570,7 +791,7 @@ Array [
             API Doc
           </a>
           <a
-            className="sc-jrsJCI laNVwM"
+            className="c8"
             href="https://github.com/schemadesign/schema_cms"
             id="repositoryNavBtn"
             onClick={[Function]}
@@ -587,14 +808,16 @@ Array [
         onClick={[Function]}
         style={
           Object {
+            "alignItems": "center",
             "backgroundColor": "transparent",
             "border": "none",
-            "borderRadius": "48px",
+            "borderRadius": "30px",
             "color": "#FFF",
             "cursor": "pointer",
-            "display": "inline-block",
+            "display": "flex",
             "fill": "#FFF",
-            "fontSize": "18px",
+            "fontSize": "20px",
+            "justifyContent": "center",
             "margin": "0",
             "minHeight": "48px",
             "outline": "none",
@@ -625,14 +848,102 @@ Array [
       </button>
     </div>
   </div>,
-  <div
-    className="sc-dlMBXb jygUFU"
+  .c0 {
+  display: none;
+}
+
+.c1 {
+  margin-right: 20px;
+  overflow: hidden;
+}
+
+.c2 {
+  color: #FFF;
+}
+
+.c3 {
+  color: #FFF;
+}
+
+@media (min-width:1050px) {
+
+}
+
+@media (min-width:1050px) {
+
+}
+
+@media (min-width:1050px) {
+
+}
+
+@media (min-width:768px) {
+
+}
+
+@media (min-width:1050px) {
+
+}
+
+@media (min-width:1050px) {
+
+}
+
+@media (min-width:1050px) {
+
+}
+
+@media (min-width:1050px) {
+
+}
+
+@media (min-width:1050px) {
+
+}
+
+@media (min-width:1050px) {
+  .c0 {
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: justify;
+    -webkit-justify-content: space-between;
+    -ms-flex-pack: justify;
+    justify-content: space-between;
+    -webkit-align-items: center;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    margin: 60px 0 40px 0;
+    min-height: 63px;
+  }
+}
+
+@media (min-width:1050px) {
+
+}
+
+@media (min-width:480px) {
+
+}
+
+@media (min-width:480px) {
+
+}
+
+@media (min-width:1050px) {
+
+}
+
+<div
+    className="c0"
   >
     <div
-      className="sc-kfYqjs cvqBSM"
+      className="c1"
     >
       <h2
-        className="sc-fKgIGh dOwufL"
+        className="c2"
         id="desktopHeaderTitle"
         style={
           Object {
@@ -644,7 +955,7 @@ Array [
         }
       />
       <h1
-        className="sc-bCwgka bBdQKU"
+        className="c3"
         id="desktopHeaderSubtitle"
         style={
           Object {
@@ -661,14 +972,174 @@ Array [
       </h1>
     </div>
     <div
-      className="sc-iwaifL"
+      className=""
     />
   </div>,
-  <div
-    className="sc-cxNIbT fanCMY"
+  .c4 {
+  color: #FFF;
+  text-align: center;
+  padding: 50px 10px;
+  font-weight: 200;
+  font-size: 20px;
+}
+
+.c0 {
+  padding-bottom: 50px;
+}
+
+.c1 {
+  position: relative;
+}
+
+.c2 {
+  margin-top: 0;
+}
+
+.c3 {
+  position: relative;
+  top: 0;
+  left: 0;
+  color: #f21e29;
+  font-size: 14px;
+  font-weight: normal;
+}
+
+.c5 {
+  margin-top: 30px;
+  border-top: 2px solid #2F2F36;
+  padding-top: 15px;
+}
+
+.c6 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-align-items: start;
+  -webkit-box-align: start;
+  -ms-flex-align: start;
+  align-items: start;
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+  padding-bottom: 15px;
+  position: relative;
+}
+
+.c9 {
+  padding-right: 10px;
+}
+
+.c8 {
+  padding-left: 10px;
+  max-width: 100%;
+}
+
+.c7 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  max-width: 100%;
+  padding-right: 10px;
+}
+
+.c11 {
+  cursor: pointer;
+  position: absolute;
+  right: 0;
+  top: 0;
+}
+
+.c10 {
+  color: #71737e;
+  min-width: 100%;
+}
+
+@media (min-width:1050px) {
+
+}
+
+@media (min-width:1050px) {
+
+}
+
+@media (min-width:1050px) {
+
+}
+
+@media (min-width:768px) {
+
+}
+
+@media (min-width:1050px) {
+
+}
+
+@media (min-width:1050px) {
+
+}
+
+@media (min-width:1050px) {
+
+}
+
+@media (min-width:1050px) {
+
+}
+
+@media (min-width:1050px) {
+
+}
+
+@media (min-width:1050px) {
+
+}
+
+@media (min-width:1050px) {
+  .c2 {
+    margin-top: 0;
+  }
+}
+
+@media (min-width:480px) {
+  .c6 {
+    -webkit-flex-direction: row;
+    -ms-flex-direction: row;
+    flex-direction: row;
+    -webkit-align-items: center;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+  }
+}
+
+@media (min-width:480px) {
+  .c7 {
+    padding-right: 40px;
+  }
+}
+
+@media (min-width:1050px) {
+
+}
+
+<div
+    className="c0"
   >
     <div
-      className="sc-lmgQde cgzwxR"
+      className="c1"
     >
       <div
         style={
@@ -739,7 +1210,7 @@ Array [
             }
           >
             <div
-              className="sc-iJCRLp kLvrzs"
+              className="c2"
             >
               <svg
                 style={
@@ -761,12 +1232,12 @@ Array [
         </div>
       </div>
       <div
-        className="sc-giAqnE gKmdVy"
+        className="c3"
         id="nameError"
       />
     </div>
     <div
-      className="sc-lmgQde cgzwxR"
+      className="c1"
     >
       <div
         style={
@@ -855,7 +1326,7 @@ Array [
             }
           >
             <div
-              className="sc-iJCRLp kLvrzs"
+              className="c2"
             >
               <svg
                 style={
@@ -877,12 +1348,12 @@ Array [
         </div>
       </div>
       <div
-        className="sc-giAqnE gKmdVy"
+        className="c3"
         id="descriptionError"
       />
     </div>
     <div
-      className="sc-lmgQde cgzwxR"
+      className="c1"
     >
       <div
         style={
@@ -953,7 +1424,7 @@ Array [
             }
           >
             <div
-              className="sc-iJCRLp kLvrzs"
+              className="c2"
             >
               <svg
                 style={
@@ -975,7 +1446,7 @@ Array [
         </div>
       </div>
       <div
-        className="sc-giAqnE gKmdVy"
+        className="c3"
         id="sourceUrlError"
       />
     </div>
@@ -996,7 +1467,7 @@ Array [
       Tags
     </label>
     <div
-      className="sc-dlnjPT kvEGkR"
+      className="c4"
     >
       No Tags available
     </div>
@@ -1017,18 +1488,18 @@ Array [
       Filters
     </label>
     <div
-      className="sc-dlnjPT kvEGkR"
+      className="c4"
     >
       No Filters available
     </div>
     <div
-      className="sc-cBoprd eZJDNA"
+      className="c5"
     >
       <div
-        className="sc-ciSmjq jukrfc"
+        className="c6"
       >
         <div
-          className="sc-iTVIwl jjWxdD"
+          className="c7"
         >
           <div>
             <input
@@ -1079,23 +1550,23 @@ Array [
             </label>
           </div>
           <div
-            className="sc-carGAA hnBnVR"
+            className="c8"
           >
             <label
-              className="sc-jcwofb hbUPLQ"
+              className="c9"
               htmlFor="isPublic"
             >
               Make it Public
             </label>
             <span
-              className="sc-cTJmaU hBzeJT"
+              className="c10"
             >
               This State is currently Private
             </span>
           </div>
         </div>
         <div
-          className="sc-iBzFoy bjbpWW"
+          className="c11"
           id="removeState"
           onClick={[Function]}
         >
@@ -1120,17 +1591,143 @@ Array [
       </div>
     </div>
   </div>,
-  <div
-    className="sc-hBMVcZ cmobYf"
+  .c0 {
+  height: 120px;
+}
+
+.c2 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+  -webkit-flex-wrap: wrap;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  width: 100%;
+}
+
+.c1 {
+  bottom: 0;
+  width: 100%;
+  padding: 10px 0 36px;
+  position: fixed;
+  width: calc(100% - 40px);
+  z-index: 999;
+  background-image: linear-gradient( to top, #000,#000 30%, rgba(0,0,0,0) );
+}
+
+.c4 {
+  width: calc(50% - 5px);
+  max-width: 240px;
+}
+
+.c3 {
+  width: calc(50% - 5px);
+  max-width: 240px;
+  background-color: #1d1d20;
+  color: #FFF;
+  border-radius: 30px;
+  text-align: center;
+  line-height: 30px;
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  font-size: 20px;
+  padding: 9px 0;
+}
+
+@media (min-width:1050px) {
+
+}
+
+@media (min-width:1050px) {
+
+}
+
+@media (min-width:1050px) {
+
+}
+
+@media (min-width:768px) {
+
+}
+
+@media (min-width:1050px) {
+  .c0 {
+    height: 100px;
+  }
+}
+
+@media (min-width:1050px) {
+  .c2 {
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+  }
+}
+
+@media (min-width:1050px) {
+  .c1 {
+    position: fixed;
+    width: calc(100% - 40px);
+    z-index: 999;
+    background-image: linear-gradient( to top, #000,#000 30%, rgba(0,0,0,0) );
+    padding: 10px 0 36px;
+    width: 1000px;
+  }
+}
+
+@media (min-width:1050px) {
+  .c4 {
+    width: 240px;
+  }
+}
+
+@media (min-width:1050px) {
+  .c3 {
+    width: 240px;
+  }
+}
+
+@media (min-width:1050px) {
+
+}
+
+@media (min-width:1050px) {
+
+}
+
+@media (min-width:480px) {
+
+}
+
+@media (min-width:480px) {
+
+}
+
+@media (min-width:1050px) {
+
+}
+
+<div
+    className="c0"
   >
     <div
-      className="sc-fFSRdu ktpSFp"
+      className="c1"
     >
       <div
-        className="sc-fnVYJo lcUbTO"
+        className="c2"
       >
         <a
-          className="sc-iemXMA jJqiqd"
+          className="c3"
           disabled={false}
           href="/datasource/1/state"
           onClick={[Function]}
@@ -1138,19 +1735,21 @@ Array [
           Back
         </a>
         <button
-          className="sc-bkbjAj eMzpTM"
+          className="c4"
           disabled={true}
           onClick={[Function]}
           style={
             Object {
+              "alignItems": "center",
               "backgroundColor": "#1d1d20",
               "border": "none",
-              "borderRadius": "48px",
+              "borderRadius": "30px",
               "color": "#71737e",
               "cursor": "default",
-              "display": "inline-block",
+              "display": "flex",
               "fill": "#FFF",
-              "fontSize": "18px",
+              "fontSize": "20px",
+              "justifyContent": "center",
               "margin": "0",
               "minHeight": "48px",
               "outline": "none",

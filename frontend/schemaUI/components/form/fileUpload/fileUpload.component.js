@@ -15,7 +15,7 @@ import { getStyles } from '../../button/button.styles';
 import { UploadIcon, BinIcon } from '../../icons';
 import { withStyles } from '../../styles/withStyles';
 import { Label } from '../label';
-import { BUTTON } from '../../button/button.constants';
+import { BUTTON, BUTTON_SIZES } from '../../button/button.constants';
 import { filterAllowedAttributes } from '../../../utils/helpers';
 
 const DEFAULT_TEXT_VALUE = 'Select a file';
@@ -50,7 +50,7 @@ export class FileUploadComponent extends PureComponent {
     iconComponent: this.props.iconComponent || (
       <div
         style={{
-          ...getStyles(this.props.theme, BUTTON, this.props.disabled).containerStyles,
+          ...getStyles(this.props.theme, BUTTON, this.props.disabled, BUTTON_SIZES.BIG).containerStyles,
           ...getButtonStyles(this.props.disabled),
         }}
       >

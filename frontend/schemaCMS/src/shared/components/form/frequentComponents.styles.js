@@ -9,10 +9,16 @@ export const Switches = styled.div`
 
 export const SwitchContainer = styled.div`
   display: flex;
-  flex-direction: row;
-  align-items: center;
+  flex-direction: column;
+  align-items: start;
+  justify-content: space-between;
   padding-bottom: 15px;
   position: relative;
+
+  ${media.bigMobile`
+   flex-direction: row;
+   align-items: center;
+  `};
 `;
 
 export const SwitchLabel = styled.label`
@@ -28,8 +34,11 @@ export const SwitchContent = styled.div`
   display: flex;
   flex-direction: row;
   align-items: center;
-  padding-right: 40px;
   max-width: 100%;
+  padding-right: 10px;
+  ${media.bigMobile`
+   padding-right: 40px;
+  `};
 `;
 
 export const BinIconContainer = styled.div`
@@ -37,6 +46,13 @@ export const BinIconContainer = styled.div`
   position: absolute;
   right: 0;
   top: 0;
+`;
+
+export const DeleteButtonContainer = styled.div`
+  margin-top: 15px;
+  ${media.bigMobile`
+    margin-top: 0;
+  `};
 `;
 
 export const EditIconLabel = styled.label`
@@ -73,7 +89,8 @@ export const PlusContainer = styled.div`
 `;
 
 export const MobilePlusContainer = styled.div`
-  text-align: right;
+  display: flex;
+  justify-content: end;
   ${media.desktop`
     display: none;
   `}

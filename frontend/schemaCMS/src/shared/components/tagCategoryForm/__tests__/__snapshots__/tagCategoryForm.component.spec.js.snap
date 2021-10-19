@@ -2,8 +2,43 @@
 
 exports[`TagCategoryForm: Component should render correctly 1`] = `
 Array [
-  <div
-    className="sc-bdnylx fndEZO"
+  .c0 {
+  position: relative;
+}
+
+.c1 {
+  margin-top: 0;
+}
+
+.c2 {
+  position: relative;
+  top: 0;
+  left: 0;
+  color: #f21e29;
+  font-size: 14px;
+  font-weight: normal;
+}
+
+@media (min-width:1050px) {
+  .c1 {
+    margin-top: 0;
+  }
+}
+
+@media (min-width:480px) {
+
+}
+
+@media (min-width:1050px) {
+
+}
+
+@media (min-width:1050px) {
+
+}
+
+<div
+    className="c0"
   >
     <div
       style={
@@ -74,7 +109,7 @@ Array [
           }
         >
           <div
-            className="sc-gtssRu gKLALO"
+            className="c1"
           >
             <svg
               style={
@@ -96,11 +131,27 @@ Array [
       </div>
     </div>
     <div
-      className="sc-dlnjPT dLCwXv"
+      className="c2"
       id="nameError"
     />
   </div>,
-  <label
+  @media (min-width:1050px) {
+
+}
+
+@media (min-width:480px) {
+
+}
+
+@media (min-width:1050px) {
+
+}
+
+@media (min-width:1050px) {
+
+}
+
+<label
     style={
       Object {
         "border": "none",
@@ -116,7 +167,27 @@ Array [
   >
     Applicable in
   </label>,
-  <div
+  .c0 {
+  margin-right: 20px;
+}
+
+@media (min-width:1050px) {
+
+}
+
+@media (min-width:480px) {
+
+}
+
+@media (min-width:1050px) {
+
+}
+
+@media (min-width:1050px) {
+
+}
+
+<div
     style={
       Object {
         "border": "none",
@@ -168,7 +239,7 @@ Array [
         }
       >
         <label
-          className="sc-jrsJCI ddxAxa"
+          className="c0"
           htmlFor="content"
         >
           Content
@@ -296,22 +367,73 @@ Array [
       </div>
     </div>
   </div>,
-  <div
-    className="sc-bCwgka eDDRwn"
+  .c2 {
+  text-align: right;
+}
+
+.c0 {
+  color: #71737e;
+  text-align: center;
+  padding-bottom: 20px;
+  min-height: 43px;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+}
+
+.c1 {
+  width: 33%;
+}
+
+@media (min-width:1050px) {
+
+}
+
+@media (min-width:480px) {
+
+}
+
+@media (min-width:1050px) {
+  .c0 {
+    margin-top: 0px;
+    padding-bottom: 40px;
+  }
+}
+
+@media (min-width:1050px) {
+  .c3 {
+    display: block;
+  }
+}
+
+<div
+    className="c0"
   >
     <div
-      className="sc-iwaifL egjjJw"
+      className="c1"
       id="tagsCounter"
     />
     2 Tags
     <div
-      className="sc-iwaifL egjjJw"
+      className="c1"
     >
       <div
-        className="sc-dIvqjp iNCAit"
+        className="c2"
       >
         <div
-          className="sc-bYwzba ikCxt"
+          className="c3"
         >
           <button
             disabled={false}
@@ -319,15 +441,17 @@ Array [
             onClick={[Function]}
             style={
               Object {
+                "alignItems": "center",
                 "backgroundColor": "#FFF",
                 "border": "none",
-                "borderRadius": "48px",
+                "borderRadius": "30px",
                 "color": "#000",
                 "cursor": "pointer",
-                "display": "inline-block",
+                "display": "flex",
                 "fill": "#FFF",
-                "fontSize": "18px",
+                "fontSize": "20px",
                 "height": 40,
+                "justifyContent": "center",
                 "margin": "0",
                 "minHeight": 40,
                 "outline": "none",
@@ -359,14 +483,61 @@ Array [
       </div>
     </div>
   </div>,
-  <div
-    className="sc-jSFkmK iZdDrC"
+  .c1 {
+  border-bottom: 2px solid #2F2F36;
+  padding: 10px 0;
+}
+
+.c2 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  position: relative;
+}
+
+.c0 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  border-top: 2px solid #2F2F36;
+}
+
+@media (min-width:1050px) {
+
+}
+
+@media (min-width:480px) {
+
+}
+
+@media (min-width:1050px) {
+
+}
+
+@media (min-width:1050px) {
+
+}
+
+<div
+    className="c0"
   >
     <div
-      className="sc-hKFyIo xpGLh"
+      className="c1"
     >
       <div
-        className="sc-eCApGN ikaKkR"
+        className="c2"
       >
         <div
           style={
@@ -448,10 +619,10 @@ Array [
       </div>
     </div>
     <div
-      className="sc-hKFyIo xpGLh"
+      className="c1"
     >
       <div
-        className="sc-eCApGN ikaKkR"
+        className="c2"
       >
         <div
           style={
@@ -533,17 +704,103 @@ Array [
       </div>
     </div>
   </div>,
-  <div
-    className="sc-fujyUd kIzGDf"
+  .c0 {
+  text-align: center;
+  padding: 20px 0 40px;
+  cursor: pointer;
+  color: #71737e;
+}
+
+@media (min-width:1050px) {
+
+}
+
+@media (min-width:480px) {
+
+}
+
+@media (min-width:1050px) {
+
+}
+
+@media (min-width:1050px) {
+
+}
+
+<div
+    className="c0"
     onClick={[Function]}
   >
     Tap or click to add new Tag
   </div>,
-  <div
-    className="sc-pNWxx NWUiw"
+  .c0 {
+  border-top: 2px solid #2F2F36;
+  padding: 10px 0 20px;
+}
+
+.c1 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-align-items: start;
+  -webkit-box-align: start;
+  -ms-flex-align: start;
+  align-items: start;
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+  padding-bottom: 15px;
+  position: relative;
+}
+
+.c3 {
+  padding-right: 10px;
+}
+
+.c2 {
+  padding-left: 10px;
+  max-width: 100%;
+}
+
+.c4 {
+  color: #71737e;
+  min-width: 100%;
+}
+
+@media (min-width:1050px) {
+
+}
+
+@media (min-width:480px) {
+  .c1 {
+    -webkit-flex-direction: row;
+    -ms-flex-direction: row;
+    flex-direction: row;
+    -webkit-align-items: center;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+  }
+}
+
+@media (min-width:1050px) {
+
+}
+
+@media (min-width:1050px) {
+
+}
+
+<div
+    className="c0"
   >
     <div
-      className="sc-iqAbSa dPXBia"
+      className="c1"
     >
       <div>
         <input
@@ -594,23 +851,23 @@ Array [
         </label>
       </div>
       <div
-        className="sc-dIsAE hfcUik"
+        className="c2"
       >
         <label
-          className="sc-crzoUp iuReZo"
+          className="c3"
           htmlFor="isAvailable"
         >
           Make it Available
         </label>
         <span
-          className="sc-fnVYJo huOJvB"
+          className="c4"
         >
           This Tag Category is currently unavailable for Editors
         </span>
       </div>
     </div>
     <div
-      className="sc-iqAbSa dPXBia"
+      className="c1"
     >
       <div>
         <input
@@ -661,16 +918,16 @@ Array [
         </label>
       </div>
       <div
-        className="sc-dIsAE hfcUik"
+        className="c2"
       >
         <label
-          className="sc-crzoUp iuReZo"
+          className="c3"
           htmlFor="isSingleSelect"
         >
           Make it Single Choice
         </label>
         <span
-          className="sc-fnVYJo huOJvB"
+          className="c4"
         >
           This Tag Category is currently Multi Choice
         </span>
@@ -682,8 +939,43 @@ Array [
 
 exports[`TagCategoryForm: Component should render empty 1`] = `
 Array [
-  <div
-    className="sc-bdnylx fndEZO"
+  .c0 {
+  position: relative;
+}
+
+.c1 {
+  margin-top: 0;
+}
+
+.c2 {
+  position: relative;
+  top: 0;
+  left: 0;
+  color: #f21e29;
+  font-size: 14px;
+  font-weight: normal;
+}
+
+@media (min-width:1050px) {
+  .c1 {
+    margin-top: 0;
+  }
+}
+
+@media (min-width:480px) {
+
+}
+
+@media (min-width:1050px) {
+
+}
+
+@media (min-width:1050px) {
+
+}
+
+<div
+    className="c0"
   >
     <div
       style={
@@ -754,7 +1046,7 @@ Array [
           }
         >
           <div
-            className="sc-gtssRu gKLALO"
+            className="c1"
           >
             <svg
               style={
@@ -776,11 +1068,27 @@ Array [
       </div>
     </div>
     <div
-      className="sc-dlnjPT dLCwXv"
+      className="c2"
       id="nameError"
     />
   </div>,
-  <label
+  @media (min-width:1050px) {
+
+}
+
+@media (min-width:480px) {
+
+}
+
+@media (min-width:1050px) {
+
+}
+
+@media (min-width:1050px) {
+
+}
+
+<label
     style={
       Object {
         "border": "none",
@@ -796,7 +1104,27 @@ Array [
   >
     Applicable in
   </label>,
-  <div
+  .c0 {
+  margin-right: 20px;
+}
+
+@media (min-width:1050px) {
+
+}
+
+@media (min-width:480px) {
+
+}
+
+@media (min-width:1050px) {
+
+}
+
+@media (min-width:1050px) {
+
+}
+
+<div
     style={
       Object {
         "border": "none",
@@ -848,7 +1176,7 @@ Array [
         }
       >
         <label
-          className="sc-jrsJCI ddxAxa"
+          className="c0"
           htmlFor="content"
         >
           Content
@@ -976,22 +1304,73 @@ Array [
       </div>
     </div>
   </div>,
-  <div
-    className="sc-bCwgka eDDRwn"
+  .c2 {
+  text-align: right;
+}
+
+.c0 {
+  color: #71737e;
+  text-align: center;
+  padding-bottom: 20px;
+  min-height: 43px;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+}
+
+.c1 {
+  width: 33%;
+}
+
+@media (min-width:1050px) {
+
+}
+
+@media (min-width:480px) {
+
+}
+
+@media (min-width:1050px) {
+  .c0 {
+    margin-top: 0px;
+    padding-bottom: 40px;
+  }
+}
+
+@media (min-width:1050px) {
+  .c3 {
+    display: block;
+  }
+}
+
+<div
+    className="c0"
   >
     <div
-      className="sc-iwaifL egjjJw"
+      className="c1"
       id="tagsCounter"
     />
     0 Tags
     <div
-      className="sc-iwaifL egjjJw"
+      className="c1"
     >
       <div
-        className="sc-dIvqjp iNCAit"
+        className="c2"
       >
         <div
-          className="sc-bYwzba ikCxt"
+          className="c3"
         >
           <button
             disabled={false}
@@ -999,15 +1378,17 @@ Array [
             onClick={[Function]}
             style={
               Object {
+                "alignItems": "center",
                 "backgroundColor": "#FFF",
                 "border": "none",
-                "borderRadius": "48px",
+                "borderRadius": "30px",
                 "color": "#000",
                 "cursor": "pointer",
-                "display": "inline-block",
+                "display": "flex",
                 "fill": "#FFF",
-                "fontSize": "18px",
+                "fontSize": "20px",
                 "height": 40,
+                "justifyContent": "center",
                 "margin": "0",
                 "minHeight": 40,
                 "outline": "none",
@@ -1039,20 +1420,133 @@ Array [
       </div>
     </div>
   </div>,
-  <div
-    className="sc-jSFkmK iZdDrC"
+  .c0 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  border-top: 2px solid #2F2F36;
+}
+
+@media (min-width:1050px) {
+
+}
+
+@media (min-width:480px) {
+
+}
+
+@media (min-width:1050px) {
+
+}
+
+@media (min-width:1050px) {
+
+}
+
+<div
+    className="c0"
   />,
-  <div
-    className="sc-fujyUd kIzGDf"
+  .c0 {
+  text-align: center;
+  padding: 20px 0 40px;
+  cursor: pointer;
+  color: #71737e;
+}
+
+@media (min-width:1050px) {
+
+}
+
+@media (min-width:480px) {
+
+}
+
+@media (min-width:1050px) {
+
+}
+
+@media (min-width:1050px) {
+
+}
+
+<div
+    className="c0"
     onClick={[Function]}
   >
     Tap or click to add new Tag
   </div>,
-  <div
-    className="sc-pNWxx NWUiw"
+  .c0 {
+  border-top: 2px solid #2F2F36;
+  padding: 10px 0 20px;
+}
+
+.c1 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-align-items: start;
+  -webkit-box-align: start;
+  -ms-flex-align: start;
+  align-items: start;
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+  padding-bottom: 15px;
+  position: relative;
+}
+
+.c3 {
+  padding-right: 10px;
+}
+
+.c2 {
+  padding-left: 10px;
+  max-width: 100%;
+}
+
+.c4 {
+  color: #71737e;
+  min-width: 100%;
+}
+
+@media (min-width:1050px) {
+
+}
+
+@media (min-width:480px) {
+  .c1 {
+    -webkit-flex-direction: row;
+    -ms-flex-direction: row;
+    flex-direction: row;
+    -webkit-align-items: center;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+  }
+}
+
+@media (min-width:1050px) {
+
+}
+
+@media (min-width:1050px) {
+
+}
+
+<div
+    className="c0"
   >
     <div
-      className="sc-iqAbSa dPXBia"
+      className="c1"
     >
       <div>
         <input
@@ -1103,23 +1597,23 @@ Array [
         </label>
       </div>
       <div
-        className="sc-dIsAE hfcUik"
+        className="c2"
       >
         <label
-          className="sc-crzoUp iuReZo"
+          className="c3"
           htmlFor="isAvailable"
         >
           Make it Available
         </label>
         <span
-          className="sc-fnVYJo huOJvB"
+          className="c4"
         >
           This Tag Category is currently unavailable for Editors
         </span>
       </div>
     </div>
     <div
-      className="sc-iqAbSa dPXBia"
+      className="c1"
     >
       <div>
         <input
@@ -1170,16 +1664,16 @@ Array [
         </label>
       </div>
       <div
-        className="sc-dIsAE hfcUik"
+        className="c2"
       >
         <label
-          className="sc-crzoUp iuReZo"
+          className="c3"
           htmlFor="isSingleSelect"
         >
           Make it Single Choice
         </label>
         <span
-          className="sc-fnVYJo huOJvB"
+          className="c4"
         >
           This Tag Category is currently Multi Choice
         </span>

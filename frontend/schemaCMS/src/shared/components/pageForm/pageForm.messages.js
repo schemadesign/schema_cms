@@ -84,6 +84,10 @@ export default defineMessages({
     id: 'shared.components.pageForm.confirmChange',
     defaultMessage: 'Confirm',
   },
+  addBlockButton: {
+    id: 'shared.components.pageForm.addBlockButton',
+    defaultMessage: 'Block',
+  },
   blocks: {
     id: 'shared.components.pageForm.blocks',
     defaultMessage: 'Block',
@@ -107,5 +111,9 @@ export default defineMessages({
   confirmCopy: {
     id: 'shared.components.pageForm.confirmCopy',
     defaultMessage: 'Copy',
+  },
+  deleteButton: {
+    id: 'shared.components.pageForm.deleteButton',
+    defaultMessage: 'Delete Page',
   },
 });

@@ -2,7 +2,7 @@
 
 exports[`MultiSelect: Component should render correctly 1`] = `
 <div
-  className="sc-bdnylx"
+  className=""
 >
   <div
     className=" css-2b097c-container"
