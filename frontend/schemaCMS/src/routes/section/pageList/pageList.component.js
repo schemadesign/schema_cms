@@ -65,7 +65,7 @@ import { CopyButton } from '../../../shared/components/copyButton';
 import { PageLink } from '../../../theme/typography';
 import { PlusLinkWithText } from '../../../shared/components/navigation/navigation.component';
 
-const { EditIcon, HomeIcon } = Icons;
+const { EditIcon, HomeIcon, ThreeDotsIcon } = Icons;
 const { Switch } = FormUI;
 
 export const Page = ({
@@ -112,8 +112,11 @@ export const Page = ({
       list={list}
       icon={
         <CardHeaderIcons>
-          <HomeIcon id={`homeIcon-${index}`} customStyles={getCustomHomeIconStyles({ active })} onClick={setMainPage} />
-          <CopyButton name={`pageCopyButton-${index}`} loading={loading} error={error} action={copyPageAction} />
+          <ThreeDotsIcon id={`dots-menu-${index}`} onClick={() => {}} />
+          {/* eslint-disable-next-line no-inline-comments,max-len */}
+          {/*<HomeIcon id={`homeIcon-${index}`} customStyles={getCustomHomeIconStyles({ active })} onClick={setMainPage} />*/}
+          {/* eslint-disable-next-line no-inline-comments */}
+          {/*<CopyButton name={`pageCopyButton-${index}`} loading={loading} error={error} action={copyPageAction} />*/}
         </CardHeaderIcons>
       }
     />

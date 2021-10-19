@@ -73,5 +73,5 @@ export const Pagination = styled.div`
 
 export const CardHeaderIcons = styled.div`
   display: flex;
-  justify-content: center;
+  justify-content: end;
 `;
