@@ -76,7 +76,6 @@ import { PageLink } from '../../../theme/typography';
 import { ROUTES } from '../../utils/routes.contants';
 import { Tabs } from '../tabs';
 import { TABS } from './pageForm.constants';
-import { NEW_USER_ROLES_OPTIONS, USER_ROLE } from '../../../modules/user/user.constants';
 
 const { EditIcon, MenuIcon, PlusIcon } = Icons;
 const { Switch, Label } = Form;
@@ -395,7 +394,6 @@ export const PageForm = ({
       />
     </>
   );
-
   const renderContent = () => renderWhenTrueOtherwise(renderBlocks, renderMetadata)(activeTab === TABS.BLOCKS);
 
   return (
