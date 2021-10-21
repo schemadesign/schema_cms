@@ -50,8 +50,8 @@ exports[`ProjectTabs: Component should render correctly 1`] = `
 
 .c3 {
   color: #FFF;
-  display: block;
   padding: 16px;
+  display: block;
   -webkit-text-decoration: none;
   text-decoration: none;
 }

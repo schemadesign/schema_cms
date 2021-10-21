@@ -228,8 +228,8 @@ exports[`Content: Component should render correctly 1`] = `
 
 .c13 {
   color: #FFF;
-  display: block;
   padding: 16px;
+  display: block;
   -webkit-text-decoration: none;
   text-decoration: none;
 }
