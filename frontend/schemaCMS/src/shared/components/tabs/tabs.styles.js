@@ -1,4 +1,4 @@
-import styled from 'styled-components';
+import styled, { css } from 'styled-components';
 import { Link } from 'react-router-dom';
 
 import { media } from '../../../theme/media';
@@ -36,14 +36,17 @@ export const Tab = styled.div`
   }
 `;
 
-export const TabContentLink = styled(Link)`
+const tabContentStyles = css`
   color: ${({ theme: { text } }) => text};
-  display: block;
   padding: 16px;
+`;
+
+export const TabContentLink = styled(Link)`
+  ${tabContentStyles};
+  display: block;
   text-decoration: none;
 `;
 
 export const TabContentButton = styled.div`
-  color: ${({ theme: { text } }) => text};
-  padding: 16px;
+  ${tabContentStyles};
 `;

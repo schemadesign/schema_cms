@@ -71,11 +71,12 @@ import { CounterHeader } from '../counterHeader';
 import { getPropsWhenNotEmpty, getPageUrlOptions, setDefaultValue } from '../../utils/helpers';
 import { TagSearch } from '../tagSearch';
 import { CopyButton } from '../copyButton';
-import { renderWhenTrue } from '../../utils/rendering';
+import { renderWhenTrue, renderWhenTrueOtherwise } from '../../utils/rendering';
 import { PageLink } from '../../../theme/typography';
 import { ROUTES } from '../../utils/routes.contants';
 import { Tabs } from '../tabs';
 import { TABS } from './pageForm.constants';
+import { NEW_USER_ROLES_OPTIONS, USER_ROLE } from '../../../modules/user/user.constants';
 
 const { EditIcon, MenuIcon, PlusIcon } = Icons;
 const { Switch, Label } = Form;
@@ -395,12 +396,7 @@ export const PageForm = ({
     </>
   );
 
-  const renderContent = () => {
-    if (activeTab === TABS.BLOCKS) {
-      return renderBlocks();
-    }
-    return renderMetadata();
-  };
+  const renderContent = () => renderWhenTrueOtherwise(renderBlocks, renderMetadata)(activeTab === TABS.BLOCKS);
 
   return (
     <Container>
