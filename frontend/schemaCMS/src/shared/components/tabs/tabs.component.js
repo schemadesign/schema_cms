@@ -1,24 +1,41 @@
 import React, { PureComponent } from 'react';
 import PropTypes from 'prop-types';
 
-import { Container, Tab, TabContent } from './tabs.styles';
+import { Container, InnerContainer, Tab, TabContentLink, TabContentButton } from './tabs.styles';
 
 export class Tabs extends PureComponent {
   static propTypes = {
     tabs: PropTypes.array,
+    withRedirection: PropTypes.bool,
+    hideOnMobile: PropTypes.bool,
   };
 
-  renderTab = ({ to, active, content, id }, index) => (
+  static defaultProps = {
+    withRedirection: true,
+    hideOnMobile: true,
+  };
+
+  renderTab = ({ active, id, content, to, onClick }, index) => (
     <Tab active={active} key={index}>
-      <TabContent id={`${id}Tab`} to={to}>
-        {content}
-      </TabContent>
+      {this.props.withRedirection ? (
+        <TabContentLink id={`${id}-tab-link`} to={to}>
+          {content}
+        </TabContentLink>
+      ) : (
+        <TabContentButton id={`${id}-tab-button`} onClick={onClick}>
+          {content}
+        </TabContentButton>
+      )}
     </Tab>
   );
 
   render() {
-    const { tabs } = this.props;
+    const { tabs, hideOnMobile } = this.props;
 
-    return <Container>{tabs.map(this.renderTab)}</Container>;
+    return (
+      <Container hideOnMobile={hideOnMobile}>
+        <InnerContainer hideOnMobile={hideOnMobile}>{tabs.map(this.renderTab)}</InnerContainer>
+      </Container>
+    );
   }
 }

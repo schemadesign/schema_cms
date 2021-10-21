@@ -12,12 +12,20 @@ import {
 } from '../../../modules/page/page.constants';
 
 export default defineMessages({
-  [`${PAGE_NAME}Placeholder`]: {
-    id: `shared.components.pageForm.${PAGE_NAME}Placeholder`,
-    defaultMessage: 'Name',
+  blocksTabName: {
+    id: 'shared.components.pageForm.blocksTabName',
+    defaultMessage: 'Blocks',
+  },
+  metadataTabName: {
+    id: 'shared.components.pageForm.metadataTabName',
+    defaultMessage: 'Metadata',
   },
   [PAGE_NAME]: {
     id: `shared.components.pageForm.${PAGE_NAME}`,
+    defaultMessage: 'Name',
+  },
+  [`${PAGE_NAME}Placeholder`]: {
+    id: `shared.components.pageForm.${PAGE_NAME}Placeholder`,
     defaultMessage: 'Name',
   },
   [PAGE_KEYWORDS]: {

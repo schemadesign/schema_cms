@@ -3,8 +3,8 @@ import PropTypes from 'prop-types';
 import { Form, Icons } from 'schemaUI';
 import { always, split, pathOr, path } from 'ramda';
 
-import { Container, ErrorWrapper, IconWrapper, getIconStyles } from './textInput.styles';
 import { renderWhenTrue } from '../../../../utils/rendering';
+import { Container, ErrorWrapper, IconWrapper, getIconStyles } from './textInput.styles';
 
 const { TextField } = Form;
 

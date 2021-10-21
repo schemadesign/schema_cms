@@ -1,47 +1,53 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Tabs: Component should render correctly 1`] = `
-<styled.div>
+<styled.div
+  hideOnMobile={true}
+>
   <styled.div
-    key="0"
+    hideOnMobile={true}
   >
-    <Styled(Link)
-      id="tab1Tab"
-      to="/"
+    <styled.div
+      key="0"
     >
-      Tab 1
-    </Styled(Link)>
-  </styled.div>
-  <styled.div
-    active={true}
-    key="1"
-  >
-    <Styled(Link)
-      id="tab2Tab"
-      to="/"
+      <Styled(Link)
+        id="tab1-tab-link"
+        to="/"
+      >
+        Tab 1
+      </Styled(Link)>
+    </styled.div>
+    <styled.div
+      active={true}
+      key="1"
     >
-      Tab 2
-    </Styled(Link)>
-  </styled.div>
-  <styled.div
-    key="2"
-  >
-    <Styled(Link)
-      id="tab3Tab"
-      to="/"
+      <Styled(Link)
+        id="tab2-tab-link"
+        to="/"
+      >
+        Tab 2
+      </Styled(Link)>
+    </styled.div>
+    <styled.div
+      key="2"
     >
-      Tab 3 Lorem ipsum dolor sit amet, consectetur adipiscing elit
-    </Styled(Link)>
-  </styled.div>
-  <styled.div
-    key="3"
-  >
-    <Styled(Link)
-      id="tab4Tab"
-      to="/"
+      <Styled(Link)
+        id="tab3-tab-link"
+        to="/"
+      >
+        Tab 3 Lorem ipsum dolor sit amet, consectetur adipiscing elit
+      </Styled(Link)>
+    </styled.div>
+    <styled.div
+      key="3"
     >
-      Tab 4
-    </Styled(Link)>
+      <Styled(Link)
+        id="tab4-tab-link"
+        to="/"
+      >
+        Tab 4
+      </Styled(Link)>
+    </styled.div>
   </styled.div>
 </styled.div>
 `;

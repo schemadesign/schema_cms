@@ -8,6 +8,7 @@ import { PAGE_TEMPLATES_BLOCKS } from '../../../../modules/pageTemplates/pageTem
 import { page } from '../../../../modules/page/page.mocks';
 import { PAGE_DISPLAY_NAME, PAGE_TAGS, PAGE_TEMPLATE } from '../../../../modules/page/page.constants';
 import { ROUTES } from '../../../utils/routes.contants';
+import { TABS } from '../pageForm.constants';
 
 const mockPushHistory = jest.fn();
 
@@ -57,6 +58,10 @@ describe('PageForm: Component', () => {
     jest.spyOn(defaultProps, 'setFieldValue');
     jest.spyOn(defaultProps, 'handleBlur');
     const wrapper = await render({ values: { ...page, [PAGE_DISPLAY_NAME]: 'VALUE', [PAGE_TAGS]: {} } });
+
+    act(() => {
+      wrapper.root.findByProps({ id: `tab-${TABS.METADATA}-tab-button` }).props.onClick();
+    });
 
     act(() => {
       wrapper.root.findByProps({ id: 'displayName' }).props.onBlur({ target: 'target' });

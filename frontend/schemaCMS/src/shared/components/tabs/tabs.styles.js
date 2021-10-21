@@ -1,15 +1,25 @@
-import styled from 'styled-components';
+import styled, { css } from 'styled-components';
 import { Link } from 'react-router-dom';
 
 import { media } from '../../../theme/media';
 
 export const Container = styled.div`
-  display: none;
+  display: ${({ hideOnMobile }) => (hideOnMobile ? 'none' : 'flex')};
 
   ${media.desktop`
     display: flex;
     margin: 29px 0 20px 0;
-    font-size: 15px;
+    font-size: 14px;
+  `};
+  border-bottom: 1px solid grey;
+`;
+
+export const InnerContainer = styled.div`
+  display: flex;
+  width: 100%;
+
+  ${media.desktop`
+    width: ${({ hideOnMobile }) => (hideOnMobile ? 'auto' : '400px')};
   `};
 `;
 
@@ -26,9 +36,17 @@ export const Tab = styled.div`
   }
 `;
 
-export const TabContent = styled(Link)`
+const tabContentStyles = css`
   color: ${({ theme: { text } }) => text};
-  display: block;
   padding: 16px;
+`;
+
+export const TabContentLink = styled(Link)`
+  ${tabContentStyles};
+  display: block;
   text-decoration: none;
+`;
+
+export const TabContentButton = styled.div`
+  ${tabContentStyles};
 `;
