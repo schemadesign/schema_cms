@@ -8,10 +8,7 @@ describe('DotsMenu: Component', () => {
   const render = props => makeContextRenderer(<DotsMenu {...defaultProps} {...props} />);
 
   it('should render correctly', async () => {
-    const wrapper = await render({
-      value: 'one',
-      onSelect: Function.prototype,
-    });
+    const wrapper = await render({});
     global.expect(wrapper).toMatchSnapshot();
   });
 });

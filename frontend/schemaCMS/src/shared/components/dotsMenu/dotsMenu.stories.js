@@ -5,25 +5,36 @@ import { DotsMenu } from './dotsMenu.component';
 import { withTheme } from '../../../.storybook/decorators';
 
 export const defaultProps = {
-  label: 'Selector',
-  name: 'selectField',
-  options: [{ value: 'one', label: 'One' }, { value: 'two', label: 'Two' }, { value: 'three', label: 'Three' }],
+  options: [
+    {
+      label: 'One',
+      onClick: () => {
+        // eslint-disable-next-line no-console
+        console.log('Option "One" pressed');
+      },
+    },
+    {
+      label: 'Two',
+      onClick: () => {
+        // eslint-disable-next-line no-console
+        console.log('Option "Two" pressed');
+      },
+    },
+    {
+      label: 'Three',
+      onClick: () => {
+        // eslint-disable-next-line no-console
+        console.log('Option "Three" pressed');
+      },
+    },
+  ],
 };
 
 class TestComponent extends PureComponent {
-  state = { selectedOption: 'one' };
-
-  handleSelect = ({ value: selectedOption }) => this.setState({ selectedOption: selectedOption });
-
   render() {
-    const { selectedOption } = this.state;
-
     return (
       <div>
-        <DotsMenu {...defaultProps} value={selectedOption} onSelect={this.handleSelect} />
-        <br />
-        <br />
-        Value: {selectedOption}
+        <DotsMenu {...defaultProps} />
       </div>
     );
   }
