@@ -23,7 +23,7 @@ export const SelectContainer = styled.div`
   position: absolute;
   top: 0;
   right: 0;
-  width: 250px;
+  width: 260px;
 `;
 
 const getCenterIconStyles = styleWhenTrue(

@@ -13,9 +13,9 @@ export const CardFooter = styled.div`
 `;
 
 export const getCustomHomeIconStyles = ({ active }) => ({
-  opacity: active ? 1 : 0.3,
-  cursor: 'pointer',
-  marginRight: 10,
+  display: active ? 'block' : 'none',
+  width: '17px',
+  height: '17px',
 });
 
 export const Pagination = styled.div`
