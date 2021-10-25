@@ -2,6 +2,7 @@ import styled, { css } from 'styled-components';
 import { identity } from 'ramda';
 
 import { styleWhenTrue } from '../../utils/rendering';
+import { media } from '../../../theme/media';
 
 export const Container = styled.div`
   display: flex;
@@ -23,7 +24,12 @@ export const SelectContainer = styled.div`
   position: absolute;
   top: 0;
   right: 0;
-  width: 260px;
+  width: 250px;
+  ${media.desktop`
+    top: 22px;
+    right: 22px;
+    width: 324px;
+  `};
 `;
 
 const getCenterIconStyles = styleWhenTrue(
