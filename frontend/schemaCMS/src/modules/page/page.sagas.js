@@ -77,7 +77,10 @@ function* removePage({ payload: { pageId, folderId } }) {
     yield api.delete(`${PAGES_PATH}/${pageId}`);
 
     yield put(PageRoutines.removePage.success());
-    browserHistory.push(`/folder/${folderId}`);
+
+    if (folderId) {
+      browserHistory.push(`/folder/${folderId}`);
+    }
   } catch (e) {
     reportError(e);
     yield put(PageRoutines.removePage.failure(e));
