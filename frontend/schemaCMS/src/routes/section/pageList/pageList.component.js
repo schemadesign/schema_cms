@@ -135,6 +135,7 @@ export const Page = ({
       },
     },
   ];
+
   const header = (
     <CardHeader
       list={list}
