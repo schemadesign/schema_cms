@@ -64,6 +64,7 @@ import { renderWhenTrue } from '../../../shared/utils/rendering';
 import { CopyButton } from '../../../shared/components/copyButton';
 import { PageLink } from '../../../theme/typography';
 import { PlusLinkWithText } from '../../../shared/components/navigation/navigation.component';
+import { DotsMenu } from '../../../shared/components/dotsMenu';
 
 const { EditIcon, HomeIcon, ThreeDotsIcon } = Icons;
 const { Switch } = FormUI;
@@ -107,12 +108,35 @@ export const Page = ({
     </Draft>
   ));
 
+  const dotsMenuOptions = [
+    {
+      label: 'Option1',
+      value: 1,
+      onClick: () => {
+        console.log('I am in onClick1');
+      },
+    },
+    {
+      label: 'Option2',
+      value: 2,
+      onClick: () => {
+        console.log('I am in onClick2');
+      },
+    },
+    {
+      label: 'Option3',
+      value: 3,
+      onClick: () => {
+        console.log('I am in onClick3');
+      },
+    },
+  ];
   const header = (
     <CardHeader
       list={list}
       icon={
         <CardHeaderIcons>
-          <ThreeDotsIcon id={`dots-menu-${index}`} onClick={() => {}} />
+          <DotsMenu options={dotsMenuOptions} onSelect={() => {}} />
           {/* eslint-disable-next-line no-inline-comments,max-len */}
           {/*<HomeIcon id={`homeIcon-${index}`} customStyles={getCustomHomeIconStyles({ active })} onClick={setMainPage} />*/}
           {/* eslint-disable-next-line no-inline-comments */}
