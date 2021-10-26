@@ -22,178 +22,195 @@ exports[`DotsMenu: Component should render correctly 1`] = `
 
 .c1 {
   position: absolute;
+  top: 0;
+  right: 0;
+  width: 250px;
+}
+
+.c2 {
+  position: absolute;
   right: 0;
   top: 5px;
+}
+
+@media (min-width:1050px) {
+  .c1 {
+    top: 22px;
+    right: 22px;
+    width: 324px;
+  }
 }
 
 <div
   className="c0"
   onClick={[Function]}
 >
-  <label
-    id="fieldProjectStatusLabel"
-    style={
-      Object {
-        "border": "none",
-        "borderTop": "2px solid #2F2F36",
-        "color": "#71737e",
-        "display": "block",
-        "fontSize": "14px",
-        "outline": "none",
-        "paddingTop": "8px",
-        "width": "100%",
-      }
-    }
-  >
-    Selector
-  </label>
-  <input
-    id="selectField"
-    name="selectField"
-    type="hidden"
-    value="one"
-  />
   <div
-    style={
-      Object {
-        "color": "#FFF",
-        "display": "flex",
-        "width": "100%",
-      }
-    }
+    className="c1"
   >
     <div
       style={
         Object {
-          "cursor": "pointer",
+          "color": "#FFF",
           "display": "flex",
-          "position": "relative",
           "width": "100%",
         }
       }
     >
       <div
-        onClick={[Function]}
         style={
           Object {
             "cursor": "pointer",
             "display": "flex",
+            "position": "relative",
             "width": "100%",
           }
         }
       >
         <div
+          onClick={[Function]}
           style={
             Object {
               "cursor": "pointer",
-              "overflow": "hidden",
-              "textOverflow": "ellipsis",
-              "whiteSpace": "nowrap",
+              "display": "flex",
               "width": "100%",
             }
           }
         >
-          One
+          <div
+            style={
+              Object {
+                "cursor": "pointer",
+                "overflow": "hidden",
+                "textOverflow": "ellipsis",
+                "whiteSpace": "nowrap",
+                "width": "100%",
+              }
+            }
+          >
+            
+          </div>
         </div>
-      </div>
-      <div
-        style={
-          Object {
-            "WebkitOverflowScrolling": "touch",
-            "backgroundColor": "#1d1d20",
-            "display": "none",
-            "flexDirection": "column",
-            "left": "0",
-            "maxHeight": "184px",
-            "overflowY": "hidden",
-            "position": "absolute",
-            "top": "calc(100% + 5px)",
-            "width": "100%",
-            "zIndex": 99,
-          }
-        }
-      >
         <div
-          id="select-item-0"
-          onClick={[Function]}
-          onMouseOut={[Function]}
-          onMouseOver={[Function]}
           style={
             Object {
-              "backgroundColor": "#FFF",
-              "border": "1px solid  #2F2F36",
-              "borderTop": "1px solid  #2F2F36",
-              "color": "#000",
-              "cursor": "pointer",
-              "overflow": "hidden",
-              "padding": "20px 10px",
-              "textOverflow": "ellipsis",
-              "whiteSpace": "nowrap",
+              "WebkitOverflowScrolling": "touch",
+              "backgroundColor": "#1d1d20",
+              "display": "none",
+              "flexDirection": "column",
+              "left": "0",
+              "maxHeight": "184px",
+              "overflowY": "hidden",
+              "position": "absolute",
+              "top": "calc(100% + 5px)",
+              "width": "100%",
+              "zIndex": 99,
             }
           }
         >
-          One
-        </div>
-        <div
-          id="select-item-1"
-          onClick={[Function]}
-          onMouseOut={[Function]}
-          onMouseOver={[Function]}
-          style={
-            Object {
-              "border": "1px solid  #2F2F36",
-              "borderTop": "none",
-              "color": "#71737e",
-              "cursor": "pointer",
-              "overflow": "hidden",
-              "padding": "20px 10px",
-              "textOverflow": "ellipsis",
-              "whiteSpace": "nowrap",
+          <div
+            id="select-item-0"
+            onClick={[Function]}
+            onMouseOut={[Function]}
+            onMouseOver={[Function]}
+            style={
+              Object {
+                "border": "1px solid  #2F2F36",
+                "borderTop": "1px solid  #2F2F36",
+                "color": "#71737e",
+                "cursor": "pointer",
+                "overflow": "hidden",
+                "padding": "20px 10px",
+                "textOverflow": "ellipsis",
+                "whiteSpace": "nowrap",
+              }
             }
-          }
-        >
-          Two
-        </div>
-        <div
-          id="select-item-2"
-          onClick={[Function]}
-          onMouseOut={[Function]}
-          onMouseOver={[Function]}
-          style={
-            Object {
-              "border": "1px solid  #2F2F36",
-              "borderTop": "none",
-              "color": "#71737e",
-              "cursor": "pointer",
-              "overflow": "hidden",
-              "padding": "20px 10px",
-              "textOverflow": "ellipsis",
-              "whiteSpace": "nowrap",
+          >
+            One
+          </div>
+          <div
+            id="select-item-1"
+            onClick={[Function]}
+            onMouseOut={[Function]}
+            onMouseOver={[Function]}
+            style={
+              Object {
+                "border": "1px solid  #2F2F36",
+                "borderTop": "none",
+                "color": "#71737e",
+                "cursor": "pointer",
+                "overflow": "hidden",
+                "padding": "20px 10px",
+                "textOverflow": "ellipsis",
+                "whiteSpace": "nowrap",
+              }
             }
-          }
-        >
-          Three
+          >
+            Two
+          </div>
+          <div
+            id="select-item-2"
+            onClick={[Function]}
+            onMouseOut={[Function]}
+            onMouseOver={[Function]}
+            style={
+              Object {
+                "border": "1px solid  #2F2F36",
+                "borderTop": "none",
+                "color": "#71737e",
+                "cursor": "pointer",
+                "overflow": "hidden",
+                "padding": "20px 10px",
+                "textOverflow": "ellipsis",
+                "whiteSpace": "nowrap",
+              }
+            }
+          >
+            Three
+          </div>
         </div>
       </div>
     </div>
   </div>
   <div
-    className="c1"
+    className="c2"
   >
     <svg
+      fill="none"
+      height={20}
+      id="dots-menu-1"
       style={
         Object {
           "fill": "#FFF",
-          "height": "30px",
-          "width": "30px",
+          "height": "20px",
+          "width": "20px",
         }
       }
-      viewBox="0 0 30 30"
+      width={20}
     >
-      <path
-        d="M15.117 18L9 12h12z"
-        fillRule="evenodd"
-      />
+      <g
+        fill="#fff"
+        opacity={0.5}
+      >
+        <circle
+          cx={4}
+          cy={10}
+          r={2}
+          transform="rotate(-90 4 10)"
+        />
+        <circle
+          cx={10}
+          cy={10}
+          r={2}
+          transform="rotate(-90 10 10)"
+        />
+        <circle
+          cx={16}
+          cy={10}
+          r={2}
+          transform="rotate(-90 16 10)"
+        />
+      </g>
     </svg>
   </div>
 </div>

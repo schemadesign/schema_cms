@@ -1,6 +1,17 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Content: Component should render correctly 1`] = `
+.c27 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: end;
+  -webkit-justify-content: end;
+  -ms-flex-pack: end;
+  justify-content: end;
+}
+
 .c0 {
   font-weight: normal;
   width: calc(100% - 50px);
@@ -90,11 +101,11 @@ exports[`Content: Component should render correctly 1`] = `
   word-break: break-word;
 }
 
-.c28 {
+.c32 {
   height: 120px;
 }
 
-.c30 {
+.c34 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -113,7 +124,7 @@ exports[`Content: Component should render correctly 1`] = `
   width: 100%;
 }
 
-.c29 {
+.c33 {
   bottom: 0;
   width: 100%;
   padding: 10px 0 36px;
@@ -123,7 +134,7 @@ exports[`Content: Component should render correctly 1`] = `
   background-image: linear-gradient( to top, #000,#000 30%, rgba(0,0,0,0) );
 }
 
-.c31 {
+.c35 {
   width: calc(50% - 5px);
   max-width: 240px;
   background-color: #1d1d20;
@@ -158,7 +169,7 @@ exports[`Content: Component should render correctly 1`] = `
   text-decoration: none;
 }
 
-.c32 {
+.c36 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -256,6 +267,14 @@ exports[`Content: Component should render correctly 1`] = `
   margin: 0;
   padding: 0;
   overflow: hidden;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
 }
 
 .c26 {
@@ -265,7 +284,7 @@ exports[`Content: Component should render correctly 1`] = `
   color: #71737e;
 }
 
-.c26::before {
+.c26:not(:first-child)::before {
   content: '•';
   margin-left: -1.5em;
   display: inline-block;
@@ -299,7 +318,7 @@ exports[`Content: Component should render correctly 1`] = `
   min-height: 150px;
 }
 
-.c27 {
+.c31 {
   word-break: break-word;
   cursor: pointer;
   line-height: 1.25;
@@ -355,6 +374,38 @@ exports[`Content: Component should render correctly 1`] = `
   width: 0%;
 }
 
+.c28 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  padding-bottom: 30px;
+  padding-right: 30px;
+  position: relative;
+  font-size: 18px;
+  cursor: pointer;
+}
+
+.c28 label {
+  margin-bottom: 2px;
+}
+
+.c29 {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 250px;
+}
+
+.c30 {
+  position: absolute;
+  right: 0;
+  top: 5px;
+}
+
 @media (min-width:1050px) {
   .c0 {
     display: none;
@@ -378,13 +429,13 @@ exports[`Content: Component should render correctly 1`] = `
 }
 
 @media (min-width:1050px) {
-  .c28 {
+  .c32 {
     height: 100px;
   }
 }
 
 @media (min-width:1050px) {
-  .c30 {
+  .c34 {
     display: -webkit-box;
     display: -webkit-flex;
     display: -ms-flexbox;
@@ -393,7 +444,7 @@ exports[`Content: Component should render correctly 1`] = `
 }
 
 @media (min-width:1050px) {
-  .c29 {
+  .c33 {
     position: fixed;
     width: calc(100% - 40px);
     z-index: 999;
@@ -404,7 +455,7 @@ exports[`Content: Component should render correctly 1`] = `
 }
 
 @media (min-width:1050px) {
-  .c31 {
+  .c35 {
     width: 240px;
   }
 }
@@ -419,7 +470,7 @@ exports[`Content: Component should render correctly 1`] = `
 }
 
 @media (min-width:1050px) {
-  .c32 {
+  .c36 {
     display: none;
   }
 }
@@ -483,6 +534,14 @@ exports[`Content: Component should render correctly 1`] = `
   .c20 {
     margin-top: -35px;
     padding-bottom: 40px;
+  }
+}
+
+@media (min-width:1050px) {
+  .c29 {
+    top: 22px;
+    right: 22px;
+    width: 324px;
   }
 }
 
@@ -1041,10 +1100,171 @@ exports[`Content: Component should render correctly 1`] = `
                 owner
               </li>
             </ul>
+            <div
+              className=""
+            >
+              <div
+                className="c27"
+              >
+                <div
+                  className="c28"
+                  onClick={[Function]}
+                >
+                  <div
+                    className="c29"
+                  >
+                    <div
+                      style={
+                        Object {
+                          "color": "#FFF",
+                          "display": "flex",
+                          "width": "100%",
+                        }
+                      }
+                    >
+                      <div
+                        style={
+                          Object {
+                            "cursor": "pointer",
+                            "display": "flex",
+                            "position": "relative",
+                            "width": "100%",
+                          }
+                        }
+                      >
+                        <div
+                          onClick={[Function]}
+                          style={
+                            Object {
+                              "cursor": "pointer",
+                              "display": "flex",
+                              "width": "100%",
+                            }
+                          }
+                        >
+                          <div
+                            style={
+                              Object {
+                                "cursor": "pointer",
+                                "overflow": "hidden",
+                                "textOverflow": "ellipsis",
+                                "whiteSpace": "nowrap",
+                                "width": "100%",
+                              }
+                            }
+                          >
+                            
+                          </div>
+                        </div>
+                        <div
+                          style={
+                            Object {
+                              "WebkitOverflowScrolling": "touch",
+                              "backgroundColor": "#1d1d20",
+                              "display": "none",
+                              "flexDirection": "column",
+                              "left": "0",
+                              "maxHeight": "184px",
+                              "overflowY": "hidden",
+                              "position": "absolute",
+                              "top": "calc(100% + 5px)",
+                              "width": "100%",
+                              "zIndex": 99,
+                            }
+                          }
+                        >
+                          <div
+                            id="select-item-0"
+                            onClick={[Function]}
+                            onMouseOut={[Function]}
+                            onMouseOver={[Function]}
+                            style={
+                              Object {
+                                "border": "1px solid  #2F2F36",
+                                "borderTop": "1px solid  #2F2F36",
+                                "color": "#71737e",
+                                "cursor": "pointer",
+                                "overflow": "hidden",
+                                "padding": "20px 10px",
+                                "textOverflow": "ellipsis",
+                                "whiteSpace": "nowrap",
+                              }
+                            }
+                          >
+                            Edit
+                          </div>
+                          <div
+                            id="select-item-1"
+                            onClick={[Function]}
+                            onMouseOut={[Function]}
+                            onMouseOver={[Function]}
+                            style={
+                              Object {
+                                "border": "1px solid  #2F2F36",
+                                "borderTop": "none",
+                                "color": "#71737e",
+                                "cursor": "pointer",
+                                "overflow": "hidden",
+                                "padding": "20px 10px",
+                                "textOverflow": "ellipsis",
+                                "whiteSpace": "nowrap",
+                              }
+                            }
+                          >
+                            Delete
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div
+                    className="c30"
+                  >
+                    <svg
+                      fill="none"
+                      height={20}
+                      id="dots-menu-1"
+                      style={
+                        Object {
+                          "fill": "#FFF",
+                          "height": "20px",
+                          "width": "20px",
+                        }
+                      }
+                      width={20}
+                    >
+                      <g
+                        fill="#fff"
+                        opacity={0.5}
+                      >
+                        <circle
+                          cx={4}
+                          cy={10}
+                          r={2}
+                          transform="rotate(-90 4 10)"
+                        />
+                        <circle
+                          cx={10}
+                          cy={10}
+                          r={2}
+                          transform="rotate(-90 10 10)"
+                        />
+                        <circle
+                          cx={16}
+                          cy={10}
+                          r={2}
+                          transform="rotate(-90 16 10)"
+                        />
+                      </g>
+                    </svg>
+                  </div>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
         <a
-          className="c27"
+          className="c31"
           href="/section/1"
           id="section-1"
           onClick={[Function]}
@@ -1116,10 +1336,171 @@ exports[`Content: Component should render correctly 1`] = `
                 owner 2
               </li>
             </ul>
+            <div
+              className=""
+            >
+              <div
+                className="c27"
+              >
+                <div
+                  className="c28"
+                  onClick={[Function]}
+                >
+                  <div
+                    className="c29"
+                  >
+                    <div
+                      style={
+                        Object {
+                          "color": "#FFF",
+                          "display": "flex",
+                          "width": "100%",
+                        }
+                      }
+                    >
+                      <div
+                        style={
+                          Object {
+                            "cursor": "pointer",
+                            "display": "flex",
+                            "position": "relative",
+                            "width": "100%",
+                          }
+                        }
+                      >
+                        <div
+                          onClick={[Function]}
+                          style={
+                            Object {
+                              "cursor": "pointer",
+                              "display": "flex",
+                              "width": "100%",
+                            }
+                          }
+                        >
+                          <div
+                            style={
+                              Object {
+                                "cursor": "pointer",
+                                "overflow": "hidden",
+                                "textOverflow": "ellipsis",
+                                "whiteSpace": "nowrap",
+                                "width": "100%",
+                              }
+                            }
+                          >
+                            
+                          </div>
+                        </div>
+                        <div
+                          style={
+                            Object {
+                              "WebkitOverflowScrolling": "touch",
+                              "backgroundColor": "#1d1d20",
+                              "display": "none",
+                              "flexDirection": "column",
+                              "left": "0",
+                              "maxHeight": "184px",
+                              "overflowY": "hidden",
+                              "position": "absolute",
+                              "top": "calc(100% + 5px)",
+                              "width": "100%",
+                              "zIndex": 99,
+                            }
+                          }
+                        >
+                          <div
+                            id="select-item-0"
+                            onClick={[Function]}
+                            onMouseOut={[Function]}
+                            onMouseOver={[Function]}
+                            style={
+                              Object {
+                                "border": "1px solid  #2F2F36",
+                                "borderTop": "1px solid  #2F2F36",
+                                "color": "#71737e",
+                                "cursor": "pointer",
+                                "overflow": "hidden",
+                                "padding": "20px 10px",
+                                "textOverflow": "ellipsis",
+                                "whiteSpace": "nowrap",
+                              }
+                            }
+                          >
+                            Edit
+                          </div>
+                          <div
+                            id="select-item-1"
+                            onClick={[Function]}
+                            onMouseOut={[Function]}
+                            onMouseOver={[Function]}
+                            style={
+                              Object {
+                                "border": "1px solid  #2F2F36",
+                                "borderTop": "none",
+                                "color": "#71737e",
+                                "cursor": "pointer",
+                                "overflow": "hidden",
+                                "padding": "20px 10px",
+                                "textOverflow": "ellipsis",
+                                "whiteSpace": "nowrap",
+                              }
+                            }
+                          >
+                            Delete
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div
+                    className="c30"
+                  >
+                    <svg
+                      fill="none"
+                      height={20}
+                      id="dots-menu-1"
+                      style={
+                        Object {
+                          "fill": "#FFF",
+                          "height": "20px",
+                          "width": "20px",
+                        }
+                      }
+                      width={20}
+                    >
+                      <g
+                        fill="#fff"
+                        opacity={0.5}
+                      >
+                        <circle
+                          cx={4}
+                          cy={10}
+                          r={2}
+                          transform="rotate(-90 4 10)"
+                        />
+                        <circle
+                          cx={10}
+                          cy={10}
+                          r={2}
+                          transform="rotate(-90 10 10)"
+                        />
+                        <circle
+                          cx={16}
+                          cy={10}
+                          r={2}
+                          transform="rotate(-90 16 10)"
+                        />
+                      </g>
+                    </svg>
+                  </div>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
         <a
-          className="c27"
+          className="c31"
           href="/section/2"
           id="section-2"
           onClick={[Function]}
@@ -1141,16 +1522,16 @@ exports[`Content: Component should render correctly 1`] = `
     </div>
   </section>
   <div
-    className="c28"
+    className="c32"
   >
     <div
-      className="c29"
+      className="c33"
     >
       <div
-        className="c30"
+        className="c34"
       >
         <a
-          className="c31"
+          className="c35"
           disabled={false}
           href="/project/projectId"
           id="backBtn"
@@ -1159,7 +1540,7 @@ exports[`Content: Component should render correctly 1`] = `
           Back
         </a>
         <a
-          className="c32"
+          className="c36"
           href="/project/projectId/section/create"
           onClick={[Function]}
         >

@@ -1,14 +1,14 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`PageList: Component should render correctly 1`] = `
-.c41 {
+.c43 {
   width: 100%;
   text-overflow: ellipsis;
   overflow: hidden;
   white-space: nowrap;
 }
 
-.c43 {
+.c45 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -19,8 +19,8 @@ exports[`PageList: Component should render correctly 1`] = `
   justify-content: center;
 }
 
-.c43 ul,
-.c43 li {
+.c45 ul,
+.c45 li {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -39,7 +39,7 @@ exports[`PageList: Component should render correctly 1`] = `
   text-align: center;
 }
 
-.c43 li {
+.c45 li {
   margin: 6px;
   border-radius: 50%;
   width: 20px;
@@ -49,8 +49,8 @@ exports[`PageList: Component should render correctly 1`] = `
   transition: background-color 200ms ease-in-out,color 200ms ease-in-out;
 }
 
-.c43 .previous,
-.c43 .next {
+.c45 .previous,
+.c45 .next {
   border: none;
   width: auto;
   border-radius: 5px;
@@ -59,23 +59,23 @@ exports[`PageList: Component should render correctly 1`] = `
   transition: background-color 200ms ease-in-out,color 200ms ease-in-out;
 }
 
-.c43 .previous:not(.disabled):hover,
-.c43 .next:not(.disabled):hover {
+.c45 .previous:not(.disabled):hover,
+.c45 .next:not(.disabled):hover {
   background-color: #ffffff;
   color: #000000;
 }
 
-.c43 .selected,
-.c43 li:not(.previous):not(.next):hover {
+.c45 .selected,
+.c45 li:not(.previous):not(.next):hover {
   background-color: #ffffff;
   color: #000000;
 }
 
-.c43 a {
+.c45 a {
   padding: 4px;
 }
 
-.c43 .disabled {
+.c45 .disabled {
   pointer-events: none;
   cursor: default;
   opacity: 0.5;
@@ -86,10 +86,10 @@ exports[`PageList: Component should render correctly 1`] = `
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
-  -webkit-box-pack: center;
-  -webkit-justify-content: center;
-  -ms-flex-pack: center;
-  justify-content: center;
+  -webkit-box-pack: end;
+  -webkit-justify-content: end;
+  -ms-flex-pack: end;
+  justify-content: end;
 }
 
 .c0 {
@@ -181,11 +181,11 @@ exports[`PageList: Component should render correctly 1`] = `
   word-break: break-word;
 }
 
-.c53 {
+.c55 {
   height: 120px;
 }
 
-.c55 {
+.c57 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -204,7 +204,7 @@ exports[`PageList: Component should render correctly 1`] = `
   width: 100%;
 }
 
-.c54 {
+.c56 {
   bottom: 0;
   width: 100%;
   padding: 10px 0 36px;
@@ -214,12 +214,12 @@ exports[`PageList: Component should render correctly 1`] = `
   background-image: linear-gradient( to top, #000,#000 30%, rgba(0,0,0,0) );
 }
 
-.c57 {
+.c59 {
   width: calc(50% - 5px);
   max-width: 240px;
 }
 
-.c56 {
+.c58 {
   width: calc(50% - 5px);
   max-width: 240px;
   background-color: #1d1d20;
@@ -306,7 +306,7 @@ exports[`PageList: Component should render correctly 1`] = `
   min-height: 150px;
 }
 
-.c39 {
+.c41 {
   word-break: break-word;
   cursor: pointer;
   line-height: 1.25;
@@ -323,7 +323,7 @@ exports[`PageList: Component should render correctly 1`] = `
   font-weight: bold;
 }
 
-.c40 {
+.c42 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -348,6 +348,14 @@ exports[`PageList: Component should render correctly 1`] = `
   margin: 0;
   padding: 0;
   overflow: hidden;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
 }
 
 .c36 {
@@ -357,7 +365,7 @@ exports[`PageList: Component should render correctly 1`] = `
   color: #71737e;
 }
 
-.c36::before {
+.c36:not(:first-child)::before {
   content: '•';
   margin-left: -1.5em;
   display: inline-block;
@@ -382,13 +390,13 @@ exports[`PageList: Component should render correctly 1`] = `
   justify-content: space-between;
 }
 
-.c44 {
+.c46 {
   margin-top: 30px;
   border-top: 2px solid #2F2F36;
   padding-top: 15px;
 }
 
-.c45 {
+.c47 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -408,16 +416,16 @@ exports[`PageList: Component should render correctly 1`] = `
   position: relative;
 }
 
-.c48 {
+.c50 {
   padding-right: 10px;
 }
 
-.c47 {
+.c49 {
   padding-left: 10px;
   max-width: 100%;
 }
 
-.c46 {
+.c48 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -433,7 +441,7 @@ exports[`PageList: Component should render correctly 1`] = `
   padding-right: 10px;
 }
 
-.c52 {
+.c54 {
   margin-top: 15px;
 }
 
@@ -441,7 +449,7 @@ exports[`PageList: Component should render correctly 1`] = `
   cursor: pointer;
 }
 
-.c49 {
+.c51 {
   color: #71737e;
   min-width: 100%;
 }
@@ -479,16 +487,16 @@ exports[`PageList: Component should render correctly 1`] = `
   justify-content: end;
 }
 
-.c50 {
+.c52 {
   padding: 0 10px;
 }
 
-.c50:before {
+.c52:before {
   content: '|';
   display: inline;
 }
 
-.c42 {
+.c44 {
   color: #71737e;
   font-weight: bold;
   font-size: 14px;
@@ -574,12 +582,7 @@ exports[`PageList: Component should render correctly 1`] = `
   width: 100%;
 }
 
-.c38 {
-  cursor: pointer;
-  position: relative;
-}
-
-.c51 {
+.c53 {
   -webkit-text-decoration: none;
   text-decoration: none;
   white-space: nowrap;
@@ -590,8 +593,40 @@ exports[`PageList: Component should render correctly 1`] = `
   border-bottom: 1px solid transparent;
 }
 
-.c51:hover {
+.c53:hover {
   border-bottom: 1px solid #FFF;
+}
+
+.c38 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  padding-bottom: 30px;
+  padding-right: 30px;
+  position: relative;
+  font-size: 18px;
+  cursor: pointer;
+}
+
+.c38 label {
+  margin-bottom: 2px;
+}
+
+.c39 {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 250px;
+}
+
+.c40 {
+  position: absolute;
+  right: 0;
+  top: 5px;
 }
 
 @media (min-width:1050px) {
@@ -617,13 +652,13 @@ exports[`PageList: Component should render correctly 1`] = `
 }
 
 @media (min-width:1050px) {
-  .c53 {
+  .c55 {
     height: 100px;
   }
 }
 
 @media (min-width:1050px) {
-  .c55 {
+  .c57 {
     display: -webkit-box;
     display: -webkit-flex;
     display: -ms-flexbox;
@@ -632,7 +667,7 @@ exports[`PageList: Component should render correctly 1`] = `
 }
 
 @media (min-width:1050px) {
-  .c54 {
+  .c56 {
     position: fixed;
     width: calc(100% - 40px);
     z-index: 999;
@@ -643,13 +678,13 @@ exports[`PageList: Component should render correctly 1`] = `
 }
 
 @media (min-width:1050px) {
-  .c57 {
+  .c59 {
     width: 240px;
   }
 }
 
 @media (min-width:1050px) {
-  .c56 {
+  .c58 {
     width: 240px;
   }
 }
@@ -709,7 +744,7 @@ exports[`PageList: Component should render correctly 1`] = `
 }
 
 @media (min-width:480px) {
-  .c45 {
+  .c47 {
     -webkit-flex-direction: row;
     -ms-flex-direction: row;
     flex-direction: row;
@@ -721,13 +756,13 @@ exports[`PageList: Component should render correctly 1`] = `
 }
 
 @media (min-width:480px) {
-  .c46 {
+  .c48 {
     padding-right: 40px;
   }
 }
 
 @media (min-width:480px) {
-  .c52 {
+  .c54 {
     margin-top: 0;
   }
 }
@@ -753,6 +788,14 @@ exports[`PageList: Component should render correctly 1`] = `
 @media (min-width:1050px) {
   .c10 {
     display: block;
+  }
+}
+
+@media (min-width:1050px) {
+  .c39 {
+    top: 22px;
+    right: 22px;
+    width: 324px;
   }
 }
 
@@ -1718,6 +1761,7 @@ exports[`PageList: Component should render correctly 1`] = `
     >
       <div
         className="c33"
+        id="page-1-item"
         style={
           Object {
             "backgroundColor": "#1d1d20",
@@ -1759,11 +1803,32 @@ exports[`PageList: Component should render correctly 1`] = `
                   className="c36"
                   id="headerItem-0"
                 >
-                  in 3 months
+                  <svg
+                    id="homeIcon-0"
+                    style={
+                      Object {
+                        "display": "none",
+                        "fill": "#FFF",
+                        "height": "17px",
+                        "width": "17px",
+                      }
+                    }
+                    viewBox="0 0 512 512"
+                  >
+                    <path
+                      d="M503.401 228.884l-43.253-39.411V58.79c0-8.315-6.741-15.057-15.057-15.057H340.976c-8.315 0-15.057 6.741-15.057 15.057v8.374l-52.236-47.597c-10.083-9.189-25.288-9.188-35.367-.001L8.598 228.885c-8.076 7.36-10.745 18.7-6.799 28.889 3.947 10.189 13.557 16.772 24.484 16.772h36.689v209.721c0 8.315 6.741 15.057 15.057 15.057h125.913c8.315 0 15.057-6.741 15.057-15.057V356.931H293v127.337c0 8.315 6.741 15.057 15.057 15.057h125.908c8.315 0 15.057-6.741 15.056-15.057V274.547h36.697c10.926 0 20.537-6.584 24.484-16.772 3.945-10.19 1.277-21.53-6.801-28.891zm-69.436 15.549c-8.315 0-15.057 6.741-15.057 15.057v209.721h-95.793V341.874c0-8.315-6.742-15.057-15.057-15.057H203.942c-8.315 0-15.057 6.741-15.057 15.057v127.337h-95.8V259.49c0-8.315-6.741-15.057-15.057-15.057H36.245l219.756-200.24 74.836 68.191a15.061 15.061 0 0016.224 2.644 15.06 15.06 0 008.973-13.774V73.847h74.002v122.276c0 4.237 1.784 8.276 4.916 11.13l40.803 37.18h-41.79z"
+                    />
+                  </svg>
                 </li>
                 <li
                   className="c36"
                   id="headerItem-1"
+                >
+                  in 3 months
+                </li>
+                <li
+                  className="c36"
+                  id="headerItem-2"
                 >
                   owner
                 </li>
@@ -1774,51 +1839,205 @@ exports[`PageList: Component should render correctly 1`] = `
                 <div
                   className="c37"
                 >
-                  <svg
-                    id="homeIcon-0"
-                    onClick={[Function]}
-                    style={
-                      Object {
-                        "cursor": "pointer",
-                        "fill": "#FFF",
-                        "height": "20px",
-                        "marginRight": 10,
-                        "opacity": 0.3,
-                        "width": "20px",
-                      }
-                    }
-                    viewBox="0 0 512 512"
-                  >
-                    <path
-                      d="M503.401 228.884l-43.253-39.411V58.79c0-8.315-6.741-15.057-15.057-15.057H340.976c-8.315 0-15.057 6.741-15.057 15.057v8.374l-52.236-47.597c-10.083-9.189-25.288-9.188-35.367-.001L8.598 228.885c-8.076 7.36-10.745 18.7-6.799 28.889 3.947 10.189 13.557 16.772 24.484 16.772h36.689v209.721c0 8.315 6.741 15.057 15.057 15.057h125.913c8.315 0 15.057-6.741 15.057-15.057V356.931H293v127.337c0 8.315 6.741 15.057 15.057 15.057h125.908c8.315 0 15.057-6.741 15.056-15.057V274.547h36.697c10.926 0 20.537-6.584 24.484-16.772 3.945-10.19 1.277-21.53-6.801-28.891zm-69.436 15.549c-8.315 0-15.057 6.741-15.057 15.057v209.721h-95.793V341.874c0-8.315-6.742-15.057-15.057-15.057H203.942c-8.315 0-15.057 6.741-15.057 15.057v127.337h-95.8V259.49c0-8.315-6.741-15.057-15.057-15.057H36.245l219.756-200.24 74.836 68.191a15.061 15.061 0 0016.224 2.644 15.06 15.06 0 008.973-13.774V73.847h74.002v122.276c0 4.237 1.784 8.276 4.916 11.13l40.803 37.18h-41.79z"
-                    />
-                  </svg>
                   <div
                     className="c38"
-                    id="pageCopyButton-0"
                     onClick={[Function]}
                   >
-                    <svg
-                      style={
-                        Object {
-                          "fill": "#FFF",
-                          "height": "20px",
-                          "width": "20px",
-                        }
-                      }
-                      viewBox="0 0 512 512"
+                    <div
+                      className="c39"
                     >
-                      <path
-                        d="M464 64h-48V48c0-26.51-21.49-48-48-48H48C21.49 0 0 21.49 0 48v320c0 26.51 21.49 48 48 48h16v48c0 26.51 21.49 48 48 48h352c26.51 0 48-21.49 48-48V112c0-26.51-21.49-48-48-48zM64 112v272H48c-8.837 0-16-7.163-16-16V48c0-8.837 7.163-16 16-16h320c8.837 0 16 7.163 16 16v16H112c-26.51 0-48 21.49-48 48zm416 352c0 8.837-7.163 16-16 16H112c-8.837 0-16-7.163-16-16V112c0-8.837 7.163-16 16-16h352c8.837 0 16 7.163 16 16v352z"
-                      />
-                    </svg>
+                      <div
+                        style={
+                          Object {
+                            "color": "#FFF",
+                            "display": "flex",
+                            "width": "100%",
+                          }
+                        }
+                      >
+                        <div
+                          style={
+                            Object {
+                              "cursor": "pointer",
+                              "display": "flex",
+                              "position": "relative",
+                              "width": "100%",
+                            }
+                          }
+                        >
+                          <div
+                            onClick={[Function]}
+                            style={
+                              Object {
+                                "cursor": "pointer",
+                                "display": "flex",
+                                "width": "100%",
+                              }
+                            }
+                          >
+                            <div
+                              style={
+                                Object {
+                                  "cursor": "pointer",
+                                  "overflow": "hidden",
+                                  "textOverflow": "ellipsis",
+                                  "whiteSpace": "nowrap",
+                                  "width": "100%",
+                                }
+                              }
+                            >
+                              
+                            </div>
+                          </div>
+                          <div
+                            style={
+                              Object {
+                                "WebkitOverflowScrolling": "touch",
+                                "backgroundColor": "#1d1d20",
+                                "display": "none",
+                                "flexDirection": "column",
+                                "left": "0",
+                                "maxHeight": "184px",
+                                "overflowY": "hidden",
+                                "position": "absolute",
+                                "top": "calc(100% + 5px)",
+                                "width": "100%",
+                                "zIndex": 99,
+                              }
+                            }
+                          >
+                            <div
+                              id="select-item-0"
+                              onClick={[Function]}
+                              onMouseOut={[Function]}
+                              onMouseOver={[Function]}
+                              style={
+                                Object {
+                                  "border": "1px solid  #2F2F36",
+                                  "borderTop": "1px solid  #2F2F36",
+                                  "color": "#71737e",
+                                  "cursor": "pointer",
+                                  "overflow": "hidden",
+                                  "padding": "20px 10px",
+                                  "textOverflow": "ellipsis",
+                                  "whiteSpace": "nowrap",
+                                }
+                              }
+                            >
+                              Set as Home Page
+                            </div>
+                            <div
+                              id="select-item-1"
+                              onClick={[Function]}
+                              onMouseOut={[Function]}
+                              onMouseOver={[Function]}
+                              style={
+                                Object {
+                                  "border": "1px solid  #2F2F36",
+                                  "borderTop": "none",
+                                  "color": "#71737e",
+                                  "cursor": "pointer",
+                                  "overflow": "hidden",
+                                  "padding": "20px 10px",
+                                  "textOverflow": "ellipsis",
+                                  "whiteSpace": "nowrap",
+                                }
+                              }
+                            >
+                              Edit
+                            </div>
+                            <div
+                              id="select-item-2"
+                              onClick={[Function]}
+                              onMouseOut={[Function]}
+                              onMouseOver={[Function]}
+                              style={
+                                Object {
+                                  "border": "1px solid  #2F2F36",
+                                  "borderTop": "none",
+                                  "color": "#71737e",
+                                  "cursor": "pointer",
+                                  "overflow": "hidden",
+                                  "padding": "20px 10px",
+                                  "textOverflow": "ellipsis",
+                                  "whiteSpace": "nowrap",
+                                }
+                              }
+                            >
+                              Duplicate
+                            </div>
+                            <div
+                              id="select-item-3"
+                              onClick={[Function]}
+                              onMouseOut={[Function]}
+                              onMouseOver={[Function]}
+                              style={
+                                Object {
+                                  "border": "1px solid  #2F2F36",
+                                  "borderTop": "none",
+                                  "color": "#71737e",
+                                  "cursor": "pointer",
+                                  "overflow": "hidden",
+                                  "padding": "20px 10px",
+                                  "textOverflow": "ellipsis",
+                                  "whiteSpace": "nowrap",
+                                }
+                              }
+                            >
+                              Delete
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <div
+                      className="c40"
+                    >
+                      <svg
+                        fill="none"
+                        height={20}
+                        id="dots-menu-1"
+                        style={
+                          Object {
+                            "fill": "#FFF",
+                            "height": "20px",
+                            "width": "20px",
+                          }
+                        }
+                        width={20}
+                      >
+                        <g
+                          fill="#fff"
+                          opacity={0.5}
+                        >
+                          <circle
+                            cx={4}
+                            cy={10}
+                            r={2}
+                            transform="rotate(-90 4 10)"
+                          />
+                          <circle
+                            cx={10}
+                            cy={10}
+                            r={2}
+                            transform="rotate(-90 10 10)"
+                          />
+                          <circle
+                            cx={16}
+                            cy={10}
+                            r={2}
+                            transform="rotate(-90 16 10)"
+                          />
+                        </g>
+                      </svg>
+                    </div>
                   </div>
                 </div>
               </div>
             </div>
           </div>
           <a
-            className="c39"
+            className="c41"
             href="/page/1"
             id="page-1"
             onClick={[Function]}
@@ -1836,16 +2055,16 @@ exports[`PageList: Component should render correctly 1`] = `
           }
         >
           <div
-            className="c40"
+            className="c42"
           >
             <div
-              className="c41"
+              className="c43"
               title="templateName"
             >
               templateName
             </div>
             <div
-              className="c42"
+              className="c44"
             >
               Draft
             </div>
@@ -1854,6 +2073,7 @@ exports[`PageList: Component should render correctly 1`] = `
       </div>
       <div
         className="c33"
+        id="page-2-item"
         style={
           Object {
             "backgroundColor": "#1d1d20",
@@ -1895,11 +2115,32 @@ exports[`PageList: Component should render correctly 1`] = `
                   className="c36"
                   id="headerItem-0"
                 >
-                  in 3 months
+                  <svg
+                    id="homeIcon-1"
+                    style={
+                      Object {
+                        "display": "none",
+                        "fill": "#FFF",
+                        "height": "17px",
+                        "width": "17px",
+                      }
+                    }
+                    viewBox="0 0 512 512"
+                  >
+                    <path
+                      d="M503.401 228.884l-43.253-39.411V58.79c0-8.315-6.741-15.057-15.057-15.057H340.976c-8.315 0-15.057 6.741-15.057 15.057v8.374l-52.236-47.597c-10.083-9.189-25.288-9.188-35.367-.001L8.598 228.885c-8.076 7.36-10.745 18.7-6.799 28.889 3.947 10.189 13.557 16.772 24.484 16.772h36.689v209.721c0 8.315 6.741 15.057 15.057 15.057h125.913c8.315 0 15.057-6.741 15.057-15.057V356.931H293v127.337c0 8.315 6.741 15.057 15.057 15.057h125.908c8.315 0 15.057-6.741 15.056-15.057V274.547h36.697c10.926 0 20.537-6.584 24.484-16.772 3.945-10.19 1.277-21.53-6.801-28.891zm-69.436 15.549c-8.315 0-15.057 6.741-15.057 15.057v209.721h-95.793V341.874c0-8.315-6.742-15.057-15.057-15.057H203.942c-8.315 0-15.057 6.741-15.057 15.057v127.337h-95.8V259.49c0-8.315-6.741-15.057-15.057-15.057H36.245l219.756-200.24 74.836 68.191a15.061 15.061 0 0016.224 2.644 15.06 15.06 0 008.973-13.774V73.847h74.002v122.276c0 4.237 1.784 8.276 4.916 11.13l40.803 37.18h-41.79z"
+                    />
+                  </svg>
                 </li>
                 <li
                   className="c36"
                   id="headerItem-1"
+                >
+                  in 3 months
+                </li>
+                <li
+                  className="c36"
+                  id="headerItem-2"
                 >
                   owner
                 </li>
@@ -1910,51 +2151,205 @@ exports[`PageList: Component should render correctly 1`] = `
                 <div
                   className="c37"
                 >
-                  <svg
-                    id="homeIcon-1"
-                    onClick={[Function]}
-                    style={
-                      Object {
-                        "cursor": "pointer",
-                        "fill": "#FFF",
-                        "height": "20px",
-                        "marginRight": 10,
-                        "opacity": 0.3,
-                        "width": "20px",
-                      }
-                    }
-                    viewBox="0 0 512 512"
-                  >
-                    <path
-                      d="M503.401 228.884l-43.253-39.411V58.79c0-8.315-6.741-15.057-15.057-15.057H340.976c-8.315 0-15.057 6.741-15.057 15.057v8.374l-52.236-47.597c-10.083-9.189-25.288-9.188-35.367-.001L8.598 228.885c-8.076 7.36-10.745 18.7-6.799 28.889 3.947 10.189 13.557 16.772 24.484 16.772h36.689v209.721c0 8.315 6.741 15.057 15.057 15.057h125.913c8.315 0 15.057-6.741 15.057-15.057V356.931H293v127.337c0 8.315 6.741 15.057 15.057 15.057h125.908c8.315 0 15.057-6.741 15.056-15.057V274.547h36.697c10.926 0 20.537-6.584 24.484-16.772 3.945-10.19 1.277-21.53-6.801-28.891zm-69.436 15.549c-8.315 0-15.057 6.741-15.057 15.057v209.721h-95.793V341.874c0-8.315-6.742-15.057-15.057-15.057H203.942c-8.315 0-15.057 6.741-15.057 15.057v127.337h-95.8V259.49c0-8.315-6.741-15.057-15.057-15.057H36.245l219.756-200.24 74.836 68.191a15.061 15.061 0 0016.224 2.644 15.06 15.06 0 008.973-13.774V73.847h74.002v122.276c0 4.237 1.784 8.276 4.916 11.13l40.803 37.18h-41.79z"
-                    />
-                  </svg>
                   <div
                     className="c38"
-                    id="pageCopyButton-1"
                     onClick={[Function]}
                   >
-                    <svg
-                      style={
-                        Object {
-                          "fill": "#FFF",
-                          "height": "20px",
-                          "width": "20px",
-                        }
-                      }
-                      viewBox="0 0 512 512"
+                    <div
+                      className="c39"
                     >
-                      <path
-                        d="M464 64h-48V48c0-26.51-21.49-48-48-48H48C21.49 0 0 21.49 0 48v320c0 26.51 21.49 48 48 48h16v48c0 26.51 21.49 48 48 48h352c26.51 0 48-21.49 48-48V112c0-26.51-21.49-48-48-48zM64 112v272H48c-8.837 0-16-7.163-16-16V48c0-8.837 7.163-16 16-16h320c8.837 0 16 7.163 16 16v16H112c-26.51 0-48 21.49-48 48zm416 352c0 8.837-7.163 16-16 16H112c-8.837 0-16-7.163-16-16V112c0-8.837 7.163-16 16-16h352c8.837 0 16 7.163 16 16v352z"
-                      />
-                    </svg>
+                      <div
+                        style={
+                          Object {
+                            "color": "#FFF",
+                            "display": "flex",
+                            "width": "100%",
+                          }
+                        }
+                      >
+                        <div
+                          style={
+                            Object {
+                              "cursor": "pointer",
+                              "display": "flex",
+                              "position": "relative",
+                              "width": "100%",
+                            }
+                          }
+                        >
+                          <div
+                            onClick={[Function]}
+                            style={
+                              Object {
+                                "cursor": "pointer",
+                                "display": "flex",
+                                "width": "100%",
+                              }
+                            }
+                          >
+                            <div
+                              style={
+                                Object {
+                                  "cursor": "pointer",
+                                  "overflow": "hidden",
+                                  "textOverflow": "ellipsis",
+                                  "whiteSpace": "nowrap",
+                                  "width": "100%",
+                                }
+                              }
+                            >
+                              
+                            </div>
+                          </div>
+                          <div
+                            style={
+                              Object {
+                                "WebkitOverflowScrolling": "touch",
+                                "backgroundColor": "#1d1d20",
+                                "display": "none",
+                                "flexDirection": "column",
+                                "left": "0",
+                                "maxHeight": "184px",
+                                "overflowY": "hidden",
+                                "position": "absolute",
+                                "top": "calc(100% + 5px)",
+                                "width": "100%",
+                                "zIndex": 99,
+                              }
+                            }
+                          >
+                            <div
+                              id="select-item-0"
+                              onClick={[Function]}
+                              onMouseOut={[Function]}
+                              onMouseOver={[Function]}
+                              style={
+                                Object {
+                                  "border": "1px solid  #2F2F36",
+                                  "borderTop": "1px solid  #2F2F36",
+                                  "color": "#71737e",
+                                  "cursor": "pointer",
+                                  "overflow": "hidden",
+                                  "padding": "20px 10px",
+                                  "textOverflow": "ellipsis",
+                                  "whiteSpace": "nowrap",
+                                }
+                              }
+                            >
+                              Set as Home Page
+                            </div>
+                            <div
+                              id="select-item-1"
+                              onClick={[Function]}
+                              onMouseOut={[Function]}
+                              onMouseOver={[Function]}
+                              style={
+                                Object {
+                                  "border": "1px solid  #2F2F36",
+                                  "borderTop": "none",
+                                  "color": "#71737e",
+                                  "cursor": "pointer",
+                                  "overflow": "hidden",
+                                  "padding": "20px 10px",
+                                  "textOverflow": "ellipsis",
+                                  "whiteSpace": "nowrap",
+                                }
+                              }
+                            >
+                              Edit
+                            </div>
+                            <div
+                              id="select-item-2"
+                              onClick={[Function]}
+                              onMouseOut={[Function]}
+                              onMouseOver={[Function]}
+                              style={
+                                Object {
+                                  "border": "1px solid  #2F2F36",
+                                  "borderTop": "none",
+                                  "color": "#71737e",
+                                  "cursor": "pointer",
+                                  "overflow": "hidden",
+                                  "padding": "20px 10px",
+                                  "textOverflow": "ellipsis",
+                                  "whiteSpace": "nowrap",
+                                }
+                              }
+                            >
+                              Duplicate
+                            </div>
+                            <div
+                              id="select-item-3"
+                              onClick={[Function]}
+                              onMouseOut={[Function]}
+                              onMouseOver={[Function]}
+                              style={
+                                Object {
+                                  "border": "1px solid  #2F2F36",
+                                  "borderTop": "none",
+                                  "color": "#71737e",
+                                  "cursor": "pointer",
+                                  "overflow": "hidden",
+                                  "padding": "20px 10px",
+                                  "textOverflow": "ellipsis",
+                                  "whiteSpace": "nowrap",
+                                }
+                              }
+                            >
+                              Delete
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <div
+                      className="c40"
+                    >
+                      <svg
+                        fill="none"
+                        height={20}
+                        id="dots-menu-1"
+                        style={
+                          Object {
+                            "fill": "#FFF",
+                            "height": "20px",
+                            "width": "20px",
+                          }
+                        }
+                        width={20}
+                      >
+                        <g
+                          fill="#fff"
+                          opacity={0.5}
+                        >
+                          <circle
+                            cx={4}
+                            cy={10}
+                            r={2}
+                            transform="rotate(-90 4 10)"
+                          />
+                          <circle
+                            cx={10}
+                            cy={10}
+                            r={2}
+                            transform="rotate(-90 10 10)"
+                          />
+                          <circle
+                            cx={16}
+                            cy={10}
+                            r={2}
+                            transform="rotate(-90 16 10)"
+                          />
+                        </g>
+                      </svg>
+                    </div>
                   </div>
                 </div>
               </div>
             </div>
           </div>
           <a
-            className="c39"
+            className="c41"
             href="/page/2"
             id="page-2"
             onClick={[Function]}
@@ -1972,16 +2367,16 @@ exports[`PageList: Component should render correctly 1`] = `
           }
         >
           <div
-            className="c40"
+            className="c42"
           >
             <div
-              className="c41"
+              className="c43"
               title="(blank)"
             >
               (blank)
             </div>
             <div
-              className="c42"
+              className="c44"
             >
               Draft
             </div>
@@ -1990,6 +2385,7 @@ exports[`PageList: Component should render correctly 1`] = `
       </div>
       <div
         className="c33"
+        id="page-3-item"
         style={
           Object {
             "backgroundColor": "#1d1d20",
@@ -2031,11 +2427,32 @@ exports[`PageList: Component should render correctly 1`] = `
                   className="c36"
                   id="headerItem-0"
                 >
-                  in 3 months
+                  <svg
+                    id="homeIcon-2"
+                    style={
+                      Object {
+                        "display": "none",
+                        "fill": "#FFF",
+                        "height": "17px",
+                        "width": "17px",
+                      }
+                    }
+                    viewBox="0 0 512 512"
+                  >
+                    <path
+                      d="M503.401 228.884l-43.253-39.411V58.79c0-8.315-6.741-15.057-15.057-15.057H340.976c-8.315 0-15.057 6.741-15.057 15.057v8.374l-52.236-47.597c-10.083-9.189-25.288-9.188-35.367-.001L8.598 228.885c-8.076 7.36-10.745 18.7-6.799 28.889 3.947 10.189 13.557 16.772 24.484 16.772h36.689v209.721c0 8.315 6.741 15.057 15.057 15.057h125.913c8.315 0 15.057-6.741 15.057-15.057V356.931H293v127.337c0 8.315 6.741 15.057 15.057 15.057h125.908c8.315 0 15.057-6.741 15.056-15.057V274.547h36.697c10.926 0 20.537-6.584 24.484-16.772 3.945-10.19 1.277-21.53-6.801-28.891zm-69.436 15.549c-8.315 0-15.057 6.741-15.057 15.057v209.721h-95.793V341.874c0-8.315-6.742-15.057-15.057-15.057H203.942c-8.315 0-15.057 6.741-15.057 15.057v127.337h-95.8V259.49c0-8.315-6.741-15.057-15.057-15.057H36.245l219.756-200.24 74.836 68.191a15.061 15.061 0 0016.224 2.644 15.06 15.06 0 008.973-13.774V73.847h74.002v122.276c0 4.237 1.784 8.276 4.916 11.13l40.803 37.18h-41.79z"
+                    />
+                  </svg>
                 </li>
                 <li
                   className="c36"
                   id="headerItem-1"
+                >
+                  in 3 months
+                </li>
+                <li
+                  className="c36"
+                  id="headerItem-2"
                 >
                   owner
                 </li>
@@ -2046,51 +2463,205 @@ exports[`PageList: Component should render correctly 1`] = `
                 <div
                   className="c37"
                 >
-                  <svg
-                    id="homeIcon-2"
-                    onClick={[Function]}
-                    style={
-                      Object {
-                        "cursor": "pointer",
-                        "fill": "#FFF",
-                        "height": "20px",
-                        "marginRight": 10,
-                        "opacity": 1,
-                        "width": "20px",
-                      }
-                    }
-                    viewBox="0 0 512 512"
-                  >
-                    <path
-                      d="M503.401 228.884l-43.253-39.411V58.79c0-8.315-6.741-15.057-15.057-15.057H340.976c-8.315 0-15.057 6.741-15.057 15.057v8.374l-52.236-47.597c-10.083-9.189-25.288-9.188-35.367-.001L8.598 228.885c-8.076 7.36-10.745 18.7-6.799 28.889 3.947 10.189 13.557 16.772 24.484 16.772h36.689v209.721c0 8.315 6.741 15.057 15.057 15.057h125.913c8.315 0 15.057-6.741 15.057-15.057V356.931H293v127.337c0 8.315 6.741 15.057 15.057 15.057h125.908c8.315 0 15.057-6.741 15.056-15.057V274.547h36.697c10.926 0 20.537-6.584 24.484-16.772 3.945-10.19 1.277-21.53-6.801-28.891zm-69.436 15.549c-8.315 0-15.057 6.741-15.057 15.057v209.721h-95.793V341.874c0-8.315-6.742-15.057-15.057-15.057H203.942c-8.315 0-15.057 6.741-15.057 15.057v127.337h-95.8V259.49c0-8.315-6.741-15.057-15.057-15.057H36.245l219.756-200.24 74.836 68.191a15.061 15.061 0 0016.224 2.644 15.06 15.06 0 008.973-13.774V73.847h74.002v122.276c0 4.237 1.784 8.276 4.916 11.13l40.803 37.18h-41.79z"
-                    />
-                  </svg>
                   <div
                     className="c38"
-                    id="pageCopyButton-2"
                     onClick={[Function]}
                   >
-                    <svg
-                      style={
-                        Object {
-                          "fill": "#FFF",
-                          "height": "20px",
-                          "width": "20px",
-                        }
-                      }
-                      viewBox="0 0 512 512"
+                    <div
+                      className="c39"
                     >
-                      <path
-                        d="M464 64h-48V48c0-26.51-21.49-48-48-48H48C21.49 0 0 21.49 0 48v320c0 26.51 21.49 48 48 48h16v48c0 26.51 21.49 48 48 48h352c26.51 0 48-21.49 48-48V112c0-26.51-21.49-48-48-48zM64 112v272H48c-8.837 0-16-7.163-16-16V48c0-8.837 7.163-16 16-16h320c8.837 0 16 7.163 16 16v16H112c-26.51 0-48 21.49-48 48zm416 352c0 8.837-7.163 16-16 16H112c-8.837 0-16-7.163-16-16V112c0-8.837 7.163-16 16-16h352c8.837 0 16 7.163 16 16v352z"
-                      />
-                    </svg>
+                      <div
+                        style={
+                          Object {
+                            "color": "#FFF",
+                            "display": "flex",
+                            "width": "100%",
+                          }
+                        }
+                      >
+                        <div
+                          style={
+                            Object {
+                              "cursor": "pointer",
+                              "display": "flex",
+                              "position": "relative",
+                              "width": "100%",
+                            }
+                          }
+                        >
+                          <div
+                            onClick={[Function]}
+                            style={
+                              Object {
+                                "cursor": "pointer",
+                                "display": "flex",
+                                "width": "100%",
+                              }
+                            }
+                          >
+                            <div
+                              style={
+                                Object {
+                                  "cursor": "pointer",
+                                  "overflow": "hidden",
+                                  "textOverflow": "ellipsis",
+                                  "whiteSpace": "nowrap",
+                                  "width": "100%",
+                                }
+                              }
+                            >
+                              
+                            </div>
+                          </div>
+                          <div
+                            style={
+                              Object {
+                                "WebkitOverflowScrolling": "touch",
+                                "backgroundColor": "#1d1d20",
+                                "display": "none",
+                                "flexDirection": "column",
+                                "left": "0",
+                                "maxHeight": "184px",
+                                "overflowY": "hidden",
+                                "position": "absolute",
+                                "top": "calc(100% + 5px)",
+                                "width": "100%",
+                                "zIndex": 99,
+                              }
+                            }
+                          >
+                            <div
+                              id="select-item-0"
+                              onClick={[Function]}
+                              onMouseOut={[Function]}
+                              onMouseOver={[Function]}
+                              style={
+                                Object {
+                                  "border": "1px solid  #2F2F36",
+                                  "borderTop": "1px solid  #2F2F36",
+                                  "color": "#71737e",
+                                  "cursor": "pointer",
+                                  "overflow": "hidden",
+                                  "padding": "20px 10px",
+                                  "textOverflow": "ellipsis",
+                                  "whiteSpace": "nowrap",
+                                }
+                              }
+                            >
+                              Unset as Home Page
+                            </div>
+                            <div
+                              id="select-item-1"
+                              onClick={[Function]}
+                              onMouseOut={[Function]}
+                              onMouseOver={[Function]}
+                              style={
+                                Object {
+                                  "border": "1px solid  #2F2F36",
+                                  "borderTop": "none",
+                                  "color": "#71737e",
+                                  "cursor": "pointer",
+                                  "overflow": "hidden",
+                                  "padding": "20px 10px",
+                                  "textOverflow": "ellipsis",
+                                  "whiteSpace": "nowrap",
+                                }
+                              }
+                            >
+                              Edit
+                            </div>
+                            <div
+                              id="select-item-2"
+                              onClick={[Function]}
+                              onMouseOut={[Function]}
+                              onMouseOver={[Function]}
+                              style={
+                                Object {
+                                  "border": "1px solid  #2F2F36",
+                                  "borderTop": "none",
+                                  "color": "#71737e",
+                                  "cursor": "pointer",
+                                  "overflow": "hidden",
+                                  "padding": "20px 10px",
+                                  "textOverflow": "ellipsis",
+                                  "whiteSpace": "nowrap",
+                                }
+                              }
+                            >
+                              Duplicate
+                            </div>
+                            <div
+                              id="select-item-3"
+                              onClick={[Function]}
+                              onMouseOut={[Function]}
+                              onMouseOver={[Function]}
+                              style={
+                                Object {
+                                  "border": "1px solid  #2F2F36",
+                                  "borderTop": "none",
+                                  "color": "#71737e",
+                                  "cursor": "pointer",
+                                  "overflow": "hidden",
+                                  "padding": "20px 10px",
+                                  "textOverflow": "ellipsis",
+                                  "whiteSpace": "nowrap",
+                                }
+                              }
+                            >
+                              Delete
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <div
+                      className="c40"
+                    >
+                      <svg
+                        fill="none"
+                        height={20}
+                        id="dots-menu-1"
+                        style={
+                          Object {
+                            "fill": "#FFF",
+                            "height": "20px",
+                            "width": "20px",
+                          }
+                        }
+                        width={20}
+                      >
+                        <g
+                          fill="#fff"
+                          opacity={0.5}
+                        >
+                          <circle
+                            cx={4}
+                            cy={10}
+                            r={2}
+                            transform="rotate(-90 4 10)"
+                          />
+                          <circle
+                            cx={10}
+                            cy={10}
+                            r={2}
+                            transform="rotate(-90 10 10)"
+                          />
+                          <circle
+                            cx={16}
+                            cy={10}
+                            r={2}
+                            transform="rotate(-90 16 10)"
+                          />
+                        </g>
+                      </svg>
+                    </div>
                   </div>
                 </div>
               </div>
             </div>
           </div>
           <a
-            className="c39"
+            className="c41"
             href="/page/3"
             id="page-3"
             onClick={[Function]}
@@ -2108,10 +2679,10 @@ exports[`PageList: Component should render correctly 1`] = `
           }
         >
           <div
-            className="c40"
+            className="c42"
           >
             <div
-              className="c41"
+              className="c43"
               title="(blank)"
             >
               (blank)
@@ -2121,7 +2692,7 @@ exports[`PageList: Component should render correctly 1`] = `
       </div>
     </section>
     <div
-      className="c43"
+      className="c45"
     >
       <ul>
         <li
@@ -2181,13 +2752,13 @@ exports[`PageList: Component should render correctly 1`] = `
       </ul>
     </div>
     <div
-      className="c44"
+      className="c46"
     >
       <div
-        className="c45"
+        className="c47"
       >
         <div
-          className="c46"
+          className="c48"
         >
           <div>
             <input
@@ -2239,23 +2810,23 @@ exports[`PageList: Component should render correctly 1`] = `
             </label>
           </div>
           <div
-            className="c47"
+            className="c49"
           >
             <label
-              className="c48"
+              className="c50"
               htmlFor="isPublic"
             >
               Make it Public
             </label>
             <span
-              className="c49"
+              className="c51"
             >
               This Section is currently Public
               <span
-                className="c50"
+                className="c52"
               />
               <a
-                className="c51"
+                className="c53"
                 href="http://project.domain"
                 target="_blank"
               >
@@ -2265,7 +2836,7 @@ exports[`PageList: Component should render correctly 1`] = `
           </div>
         </div>
         <div
-          className="c52"
+          className="c54"
         >
           <button
             disabled={false}
@@ -2296,10 +2867,10 @@ exports[`PageList: Component should render correctly 1`] = `
         </div>
       </div>
       <div
-        className="c45"
+        className="c47"
       >
         <div
-          className="c46"
+          className="c48"
         >
           <div>
             <input
@@ -2351,23 +2922,23 @@ exports[`PageList: Component should render correctly 1`] = `
             </label>
           </div>
           <div
-            className="c47"
+            className="c49"
           >
             <label
-              className="c48"
+              className="c50"
               htmlFor="isRssContent"
             >
               Make it available for RSS
             </label>
             <span
-              className="c49"
+              className="c51"
             >
               This Section is currently disabled for RSS feed
               <span
-                className="c50"
+                className="c52"
               />
               <a
-                className="c51"
+                className="c53"
                 href="http://project.domain"
                 target="_blank"
               >
@@ -2379,16 +2950,16 @@ exports[`PageList: Component should render correctly 1`] = `
       </div>
     </div>
     <div
-      className="c53"
+      className="c55"
     >
       <div
-        className="c54"
+        className="c56"
       >
         <div
-          className="c55"
+          className="c57"
         >
           <a
-            className="c56"
+            className="c58"
             disabled={false}
             href="/project/1/content"
             id="backBtn"
@@ -2397,7 +2968,7 @@ exports[`PageList: Component should render correctly 1`] = `
             Back
           </a>
           <button
-            className="c57"
+            className="c59"
             disabled={true}
             id="updateSection"
             style={

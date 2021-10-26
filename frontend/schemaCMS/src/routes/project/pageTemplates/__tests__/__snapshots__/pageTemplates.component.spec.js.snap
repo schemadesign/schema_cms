@@ -197,6 +197,14 @@ exports[`PageTemplates: Component should render correctly 1`] = `
   margin: 0;
   padding: 0;
   overflow: hidden;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
 }
 
 .c24 {
@@ -206,7 +214,7 @@ exports[`PageTemplates: Component should render correctly 1`] = `
   color: #71737e;
 }
 
-.c24::before {
+.c24:not(:first-child)::before {
   content: '•';
   margin-left: -1.5em;
   display: inline-block;
