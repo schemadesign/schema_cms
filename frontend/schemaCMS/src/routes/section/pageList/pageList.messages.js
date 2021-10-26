@@ -99,6 +99,10 @@ export default defineMessages({
     id: 'section.pageList.dotsMenu.setAsHomePage',
     defaultMessage: 'Set as Home Page',
   },
+  dotsMenuUnsetAsHomePage: {
+    id: 'section.pageList.dotsMenu.unsetAsHomePage',
+    defaultMessage: 'Unset as Home Page',
+  },
   dotsMenuEdit: {
     id: 'section.pageList.dotsMenu.Edit',
     defaultMessage: 'Edit',

@@ -87,13 +87,17 @@ export const Page = ({
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState(false);
   const whenCreated = extendedDayjs(created, BASE_DATE_FORMAT).fromNow();
-  const active = mainPage === id;
+  const isHomePage = mainPage === id;
   const list = [
-    <HomeIcon key={`homeIcon-${index}`} id={`homeIcon-${index}`} customStyles={getCustomHomeIconStyles({ active })} />,
+    <HomeIcon
+      key={`homeIcon-${index}`}
+      id={`homeIcon-${index}`}
+      customStyles={getCustomHomeIconStyles({ isHomePage })}
+    />,
     whenCreated,
     createdBy,
   ];
-  const setMainPage = () => setFieldValue(SECTIONS_MAIN_PAGE, active ? null : id);
+  const setMainPage = () => setFieldValue(SECTIONS_MAIN_PAGE, isHomePage ? null : id);
   const templateCopy = templateName || intl.formatMessage(messages.blankTemplate);
 
   const copyPageAction = async () => {
@@ -115,7 +119,9 @@ export const Page = ({
 
   const getDotsMenuOptions = (index, id) => [
     {
-      label: intl.formatMessage(messages.dotsMenuSetAsHomePage),
+      label: isHomePage
+        ? intl.formatMessage(messages.dotsMenuUnsetAsHomePage)
+        : intl.formatMessage(messages.dotsMenuSetAsHomePage),
       onClick: setMainPage,
     },
     {
@@ -155,7 +161,7 @@ export const Page = ({
   );
 
   return (
-    <ListItem headerComponent={header} footerComponent={renderFooterComponent()}>
+    <ListItem id={`page-${id}-item`} headerComponent={header} footerComponent={renderFooterComponent()}>
       <ListItemTitle id={`page-${id}`} to={`/page/${id}`}>
         {name}
       </ListItemTitle>
