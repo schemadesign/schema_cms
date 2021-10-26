@@ -5,8 +5,8 @@ exports[`ThreeDotsIcon: Component should render correctly 1`] = `
   style={
     Object {
       "fill": "#FFF",
-      "height": "60px",
-      "width": "60px",
+      "height": "20px",
+      "width": "20px",
     }
   }
 />
@@ -17,8 +17,8 @@ exports[`ThreeDotsIcon: Component should render with custom styles 1`] = `
   style={
     Object {
       "fill": "blue",
-      "height": "60px",
-      "width": "60px",
+      "height": "20px",
+      "width": "20px",
     }
   }
 />
