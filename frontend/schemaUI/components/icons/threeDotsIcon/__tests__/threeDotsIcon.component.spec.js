@@ -1,7 +1,7 @@
 import React from 'react';
 import { shallow } from 'enzyme';
 
-import { ThreeDotsIconComponent } from 'schemaUI/components/icons/threeDotIcon/threeDotIcon.component';
+import { ThreeDotsIconComponent } from '../threeDotsIcon.component';
 
 describe('ThreeDotsIcon: Component', () => {
   const defaultProps = {};
