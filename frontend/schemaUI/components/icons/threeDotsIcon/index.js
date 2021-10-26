@@ -1,1 +1,1 @@
-export { ThreeDotsIcon } from 'schemaUI/components/icons/threeDotsIcon/threeDotsIcon.component';
+export { ThreeDotsIcon } from './threeDotsIcon.component';
