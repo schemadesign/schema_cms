@@ -12,8 +12,8 @@ export const CardFooter = styled.div`
   white-space: nowrap;
 `;
 
-export const getCustomHomeIconStyles = ({ active }) => ({
-  display: active ? 'block' : 'none',
+export const getCustomHomeIconStyles = ({ isHomePage }) => ({
+  display: isHomePage ? 'block' : 'none',
   width: '17px',
   height: '17px',
 });
