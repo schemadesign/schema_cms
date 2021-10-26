@@ -2431,7 +2431,7 @@ exports[`PageList: Component should render correctly 1`] = `
                     id="homeIcon-2"
                     style={
                       Object {
-                        "display": "none",
+                        "display": "block",
                         "fill": "#FFF",
                         "height": "17px",
                         "width": "17px",

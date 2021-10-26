@@ -84,7 +84,11 @@ export const Page = ({
 }) => {
   const intl = useIntl();
   const history = useHistory();
+  // eslint-disable-next-line no-warning-comments
+  // TODO utilise loading and error variables to improve UX
+  // eslint-disable-next-line no-unused-vars
   const [loading, setLoading] = useState(false);
+  // eslint-disable-next-line no-unused-vars
   const [error, setError] = useState(false);
   const whenCreated = extendedDayjs(created, BASE_DATE_FORMAT).fromNow();
   const isHomePage = mainPage === id;
