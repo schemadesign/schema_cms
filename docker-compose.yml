@@ -85,7 +85,9 @@ services:
 
   documentation:
     restart: always
-    image: schema_cms_backend
+    image: schema_cms_docs
+    build:
+      context: backend/app
     container_name: schema-cms-docs
     command: "mkdocs serve"
     volumes:
