@@ -47,5 +47,5 @@ export const IconContainer = styled.div`
   right: 0;
   top: 5px;
 
-  ${({ centerIcon }) => getCenterIconStyles(centerIcon)}
+  ${({ centerIcon }) => getCenterIconStyles(centerIcon)};
 `;
