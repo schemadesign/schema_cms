@@ -142,7 +142,7 @@ class PAProjectView(
                 is_draft=True if show_drafts == "true" else False,
             )
             .order_by(ordering)
-            .distinct(ordering)
+            .distinct()
         )
 
         page = self.paginate_queryset(pages)
