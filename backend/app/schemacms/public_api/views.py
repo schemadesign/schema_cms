@@ -131,15 +131,19 @@ class PAProjectView(
         if ordering not in ["created", "modified", "name", "-created", "-modified", "-name"]:
             ordering = "-created"
 
-        pages = Page.only_pages.filter(
-            section__project=self.get_object(),
-            section__is_public=True,
-            is_public=True,
-            state__in=[PageState.DRAFT]
-            if show_drafts == "true"
-            else [PageState.PUBLISHED, PageState.WAITING_TO_REPUBLISH],
-            is_draft=True if show_drafts == "true" else False,
-        ).order_by(ordering)
+        pages = (
+            Page.only_pages.filter(
+                section__project=self.get_object(),
+                section__is_public=True,
+                is_public=True,
+                state__in=[PageState.DRAFT]
+                if show_drafts == "true"
+                else [PageState.PUBLISHED, PageState.WAITING_TO_REPUBLISH],
+                is_draft=True if show_drafts == "true" else False,
+            )
+            .order_by(ordering)
+            .distinct(ordering)
+        )
 
         page = self.paginate_queryset(pages)
         if page is not None:
@@ -204,7 +208,7 @@ class PAPageView(mixins.ListModelMixin, mixins.RetrieveModelMixin, viewsets.Gene
                 state__in=[PageState.DRAFT]
                 if show_drafts == "true"
                 else [PageState.PUBLISHED, PageState.WAITING_TO_REPUBLISH],
-            )
+            ).distinct()
 
         if self.action in ["retrieve", "html"]:
             self.queryset = self.queryset.filter(
