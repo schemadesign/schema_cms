@@ -9,6 +9,9 @@ import {
   PAGE_IS_PUBLIC,
   PAGE_TAGS,
   PAGE_LINK,
+  PAGE_SOCIAL_TITLE,
+  PAGE_SOCIAL_DESC,
+  PAGE_SOCIAL_IMG,
 } from '../../../modules/page/page.constants';
 
 export default defineMessages({
@@ -59,6 +62,30 @@ export default defineMessages({
   [PAGE_LINK]: {
     id: `shared.components.pageForm.${PAGE_LINK}`,
     defaultMessage: 'Frontend page Link',
+  },
+  [`${PAGE_SOCIAL_TITLE}Label`]: {
+    id: `shared.components.pageForm.${PAGE_SOCIAL_TITLE}`,
+    defaultMessage: 'Social Media Title',
+  },
+  [`${PAGE_SOCIAL_TITLE}Placeholder`]: {
+    id: `shared.components.pageForm.${PAGE_SOCIAL_TITLE}`,
+    defaultMessage: 'Type your social media embed title here',
+  },
+  [`${PAGE_SOCIAL_DESC}Label`]: {
+    id: `shared.components.pageForm.${PAGE_SOCIAL_DESC}`,
+    defaultMessage: 'Social Media Description',
+  },
+  [`${PAGE_SOCIAL_DESC}Placeholder`]: {
+    id: `shared.components.pageForm.${PAGE_SOCIAL_DESC}`,
+    defaultMessage: 'Type your social media embed title here',
+  },
+  [`${PAGE_SOCIAL_IMG}Label`]: {
+    id: `shared.components.pageForm.${PAGE_SOCIAL_IMG}`,
+    defaultMessage: 'Social Media Image Upload',
+  },
+  [`${PAGE_SOCIAL_IMG}Placeholder`]: {
+    id: `shared.components.pageForm.${PAGE_SOCIAL_IMG}`,
+    defaultMessage: 'Type your social media embed title here',
   },
   pageAvailability: {
     id: 'shared.components.pageForm.pageAvailability',

@@ -61,6 +61,9 @@ import {
   BLOCK_ID,
   PAGE_TAGS,
   PAGE_LINK,
+  PAGE_SOCIAL_TITLE,
+  PAGE_SOCIAL_DESC,
+  PAGE_SOCIAL_IMG,
 } from '../../../modules/page/page.constants';
 import { Select } from '../form/select';
 import { Modal, ModalActions, modalStyles, ModalTitle } from '../modal/modal.styles';
@@ -391,6 +394,24 @@ export const PageForm = ({
         values={values[PAGE_TAGS]}
         setFieldValue={setFieldValue}
         valuePath={PAGE_TAGS}
+      />
+      <TextInput
+        onChange={handleChange}
+        name={PAGE_SOCIAL_TITLE}
+        value={values[PAGE_SOCIAL_TITLE]}
+        fullWidth
+        isEdit
+        label={<FormattedMessage {...messages[`${PAGE_SOCIAL_TITLE}Label`]} />}
+        {...restFormikProps}
+      />
+      <TextInput
+        onChange={handleChange}
+        name={PAGE_SOCIAL_DESC}
+        value={values[PAGE_SOCIAL_DESC]}
+        fullWidth
+        isEdit
+        label={<FormattedMessage {...messages[`${PAGE_SOCIAL_DESC}Label`]} />}
+        {...restFormikProps}
       />
     </>
   );

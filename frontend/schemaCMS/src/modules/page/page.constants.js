@@ -31,6 +31,9 @@ export const PAGE_BLOCKS = 'blocks';
 export const PAGE_DELETE_BLOCKS = 'deleteBlocks';
 export const PAGE_TAGS = 'tags';
 export const PAGE_LINK = 'link';
+export const PAGE_SOCIAL_TITLE = 'socialTitle';
+export const PAGE_SOCIAL_DESC = 'socialDescription';
+export const PAGE_SOCIAL_IMG = 'socialImage';
 
 export const BLOCK_NAME = 'name';
 export const BLOCK_TYPE = 'type';
@@ -160,6 +163,13 @@ export const PAGE_SCHEMA = Yup.object().shape({
         ),
       })
     ),
+  [PAGE_SOCIAL_TITLE]: Yup.string()
+    .trim()
+    .max(250, 'Social Media Title should have maximum 250 characters'),
+  [PAGE_SOCIAL_DESC]: Yup.string()
+    .trim()
+    .max(1000, 'Social Media Description should have maximum 1000 characters'),
+  [PAGE_SOCIAL_IMG]: Yup.string(),
 });
 
 export const ADD_BLOCK_SCHEMA = Yup.object().shape({
