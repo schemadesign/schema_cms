@@ -95,4 +95,24 @@ export default defineMessages({
     id: 'section.pageList.deleteButton',
     defaultMessage: 'Delete Section',
   },
+  dotsMenuSetAsHomePage: {
+    id: 'section.pageList.dotsMenu.setAsHomePage',
+    defaultMessage: 'Set as Home Page',
+  },
+  dotsMenuUnsetAsHomePage: {
+    id: 'section.pageList.dotsMenu.unsetAsHomePage',
+    defaultMessage: 'Unset as Home Page',
+  },
+  dotsMenuEdit: {
+    id: 'section.pageList.dotsMenu.Edit',
+    defaultMessage: 'Edit',
+  },
+  dotsMenuDuplicate: {
+    id: 'section.pageList.dotsMenu.Duplicate',
+    defaultMessage: 'Duplicate',
+  },
+  dotsMenuDelete: {
+    id: 'section.pageList.dotsMenu.Delete',
+    defaultMessage: 'Delete',
+  },
 });

@@ -5,7 +5,7 @@ set -Eexo pipefail
 CWD="$(cd -P -- "$(dirname -- "${BASH_SOURCE[0]}")" && pwd -P)"
 cd $CWD/../..
 
-export APP="schema-cms"
+export APP="schema-cms-"
 export TEST_ENV="jest"
 export PROJECT_NAME="$APP${CIRCLE_SHA1-}$TEST_ENV"
 VOLUME_NAME="_snapshot_output"

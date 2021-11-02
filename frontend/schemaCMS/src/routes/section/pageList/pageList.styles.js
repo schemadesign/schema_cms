@@ -12,10 +12,10 @@ export const CardFooter = styled.div`
   white-space: nowrap;
 `;
 
-export const getCustomHomeIconStyles = ({ active }) => ({
-  opacity: active ? 1 : 0.3,
-  cursor: 'pointer',
-  marginRight: 10,
+export const getCustomHomeIconStyles = ({ isHomePage }) => ({
+  display: isHomePage ? 'block' : 'none',
+  width: '17px',
+  height: '17px',
 });
 
 export const Pagination = styled.div`
@@ -73,5 +73,5 @@ export const Pagination = styled.div`
 
 export const CardHeaderIcons = styled.div`
   display: flex;
-  justify-content: center;
+  justify-content: end;
 `;

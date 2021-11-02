@@ -5,6 +5,8 @@ export const HeaderList = styled.ul`
   margin: 0;
   padding: 0;
   overflow: hidden;
+  display: flex;
+  justify-content: center;
 `;
 
 export const HeaderItem = styled.li`
@@ -13,7 +15,7 @@ export const HeaderItem = styled.li`
   margin-right: 1.5em;
   color: ${({ theme: { label } }) => label.text};
 
-  &::before {
+  &:not(:first-child)::before {
     content: '•';
     margin-left: -1.5em;
     display: inline-block;

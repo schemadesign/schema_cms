@@ -9,6 +9,7 @@ import { sections } from '../../../modules/sections/sections.mocks';
 export const defaultProps = {
   sections,
   fetchSections: Function.prototype,
+  removeSection: Function.prototype,
   userRole: ROLES.ADMIN,
 };
 

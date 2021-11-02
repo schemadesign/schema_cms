@@ -5,6 +5,7 @@ import { makeContextRenderer } from '../../../shared/utils/testUtils';
 
 const defaultProps = {
   fetchPage: Function.prototype,
+  removePage: Function.prototype,
 };
 
 jest.mock('react-router', () => ({

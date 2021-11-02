@@ -61,9 +61,9 @@ import { SortingSelect } from '../../../shared/components/form/sortingSelect';
 import { LoadingWrapper } from '../../../shared/components/loadingWrapper';
 import { INITIAL_PAGE_SIZE } from '../../../shared/utils/api.constants';
 import { renderWhenTrue } from '../../../shared/utils/rendering';
-import { CopyButton } from '../../../shared/components/copyButton';
 import { PageLink } from '../../../theme/typography';
 import { PlusLinkWithText } from '../../../shared/components/navigation/navigation.component';
+import { DotsMenu } from '../../../shared/components/dotsMenu';
 
 const { EditIcon, HomeIcon } = Icons;
 const { Switch } = FormUI;
@@ -72,6 +72,7 @@ export const Page = ({
   created,
   sectionId,
   copyPage,
+  removePage,
   createdBy,
   name,
   isChanged,
@@ -82,12 +83,25 @@ export const Page = ({
   index,
 }) => {
   const intl = useIntl();
+  const history = useHistory();
+  // eslint-disable-next-line no-warning-comments
+  // TODO utilise loading and error variables to improve UX
+  // eslint-disable-next-line no-unused-vars
   const [loading, setLoading] = useState(false);
+  // eslint-disable-next-line no-unused-vars
   const [error, setError] = useState(false);
   const whenCreated = extendedDayjs(created, BASE_DATE_FORMAT).fromNow();
-  const list = [whenCreated, createdBy];
-  const active = mainPage === id;
-  const setMainPage = () => setFieldValue(SECTIONS_MAIN_PAGE, active ? null : id);
+  const isHomePage = mainPage === id;
+  const list = [
+    <HomeIcon
+      key={`homeIcon-${index}`}
+      id={`homeIcon-${index}`}
+      customStyles={getCustomHomeIconStyles({ isHomePage })}
+    />,
+    whenCreated,
+    createdBy,
+  ];
+  const setMainPage = () => setFieldValue(SECTIONS_MAIN_PAGE, isHomePage ? null : id);
   const templateCopy = templateName || intl.formatMessage(messages.blankTemplate);
 
   const copyPageAction = async () => {
@@ -107,13 +121,37 @@ export const Page = ({
     </Draft>
   ));
 
+  const getDotsMenuOptions = (index, id) => [
+    {
+      label: isHomePage
+        ? intl.formatMessage(messages.dotsMenuUnsetAsHomePage)
+        : intl.formatMessage(messages.dotsMenuSetAsHomePage),
+      onClick: setMainPage,
+    },
+    {
+      label: intl.formatMessage(messages.dotsMenuEdit),
+      onClick: () => {
+        history.push(`/page/${id}`);
+      },
+    },
+    {
+      label: intl.formatMessage(messages.dotsMenuDuplicate),
+      onClick: copyPageAction,
+    },
+    {
+      label: intl.formatMessage(messages.dotsMenuDelete),
+      onClick: async () => {
+        await removePage(id);
+      },
+    },
+  ];
+
   const header = (
     <CardHeader
       list={list}
       icon={
         <CardHeaderIcons>
-          <HomeIcon id={`homeIcon-${index}`} customStyles={getCustomHomeIconStyles({ active })} onClick={setMainPage} />
-          <CopyButton name={`pageCopyButton-${index}`} loading={loading} error={error} action={copyPageAction} />
+          <DotsMenu options={getDotsMenuOptions(index, id)} />
         </CardHeaderIcons>
       }
     />
@@ -127,7 +165,7 @@ export const Page = ({
   );
 
   return (
-    <ListItem headerComponent={header} footerComponent={renderFooterComponent()}>
+    <ListItem id={`page-${id}-item`} headerComponent={header} footerComponent={renderFooterComponent()}>
       <ListItemTitle id={`page-${id}`} to={`/page/${id}`}>
         {name}
       </ListItemTitle>
@@ -144,6 +182,7 @@ Page.propTypes = {
   templateName: PropTypes.string,
   setFieldValue: PropTypes.func.isRequired,
   copyPage: PropTypes.func.isRequired,
+  removePage: PropTypes.func.isRequired,
   mainPage: PropTypes.number,
   index: PropTypes.number.isRequired,
   sectionId: PropTypes.string.isRequired,
@@ -178,6 +217,7 @@ export const PageList = ({
   fetchPages,
   userRole,
   copyPage,
+  removePage,
 }) => {
   const [loading, setLoading] = useState(true);
   const [page, setPage] = useState(0);
@@ -227,6 +267,21 @@ export const PageList = ({
   });
 
   const pageCount = pages.count / INITIAL_PAGE_SIZE;
+
+  const fetchPagesFunc = async () => {
+    try {
+      const urlParams = getUrlParams(history);
+      await fetchPages({ sectionId, ...urlParams });
+    } catch (e) {
+      reportError(e);
+      setError(e);
+    }
+  };
+
+  const removePageFunc = async pageId => {
+    await removePage({ pageId });
+    await fetchPagesFunc();
+  };
 
   const fetchSectionFunc = async () => {
     try {
@@ -340,6 +395,7 @@ export const PageList = ({
                     mainPage={values[SECTIONS_MAIN_PAGE]}
                     sectionId={sectionId}
                     copyPage={copyPage}
+                    removePage={removePageFunc}
                     setFieldValue={restFormikProps.setFieldValue}
                     {...page}
                   />
@@ -451,6 +507,7 @@ PageList.propTypes = {
   fetchSection: PropTypes.func.isRequired,
   fetchPages: PropTypes.func.isRequired,
   copyPage: PropTypes.func.isRequired,
+  removePage: PropTypes.func.isRequired,
   section: PropTypes.object.isRequired,
   pages: PropTypes.object.isRequired,
   project: PropTypes.object.isRequired,

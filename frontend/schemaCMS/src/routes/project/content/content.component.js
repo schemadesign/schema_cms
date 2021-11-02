@@ -2,10 +2,10 @@ import React, { Fragment, useState } from 'react';
 import PropTypes from 'prop-types';
 import { FormattedMessage, useIntl } from 'react-intl';
 import Helmet from 'react-helmet';
-import { useParams } from 'react-router';
+import { useHistory, useParams } from 'react-router';
 import { useEffectOnce } from 'react-use';
 
-import { Container } from './content.styles';
+import { Container, CardHeaderIcons } from './content.styles';
 import messages from './content.messages';
 import { MobileMenu } from '../../../shared/components/menu/mobileMenu';
 import { filterMenuOptions } from '../../../shared/utils/helpers';
@@ -21,11 +21,37 @@ import { CounterHeader } from '../../../shared/components/counterHeader';
 import reportError from '../../../shared/utils/reportError';
 import { NavigationContainer, BackLink } from '../../../shared/components/navigation';
 import { PlusLinkWithText } from '../../../shared/components/navigation/navigation.component';
+import { DotsMenu } from '../../../shared/components/dotsMenu';
 
-const Section = ({ created, createdBy, name, id, pagesCount = 0 }) => {
+const Section = ({ created, createdBy, name, id, pagesCount = 0, removeSection }) => {
+  const intl = useIntl();
+  const history = useHistory();
+
   const whenCreated = extendedDayjs(created, BASE_DATE_FORMAT).fromNow();
   const list = [whenCreated, createdBy];
-  const header = <CardHeader list={list} />;
+
+  const getDotsMenuOptions = id => [
+    {
+      label: intl.formatMessage(messages.dotsMenuEdit),
+      onClick: () => {
+        history.push(`/section/${id}`);
+      },
+    },
+    {
+      label: intl.formatMessage(messages.dotsMenuDelete),
+      onClick: () => removeSection(id),
+    },
+  ];
+  const header = (
+    <CardHeader
+      list={list}
+      icon={
+        <CardHeaderIcons>
+          <DotsMenu options={getDotsMenuOptions(id)} />
+        </CardHeaderIcons>
+      }
+    />
+  );
   const footer = <FormattedMessage {...messages.pagesCounter} values={{ pagesCount }} />;
 
   return (
@@ -43,9 +69,10 @@ Section.propTypes = {
   name: PropTypes.string.isRequired,
   id: PropTypes.number.isRequired,
   pagesCount: PropTypes.number.isRequired,
+  removeSection: PropTypes.func.isRequired,
 };
 
-export const Content = ({ userRole, fetchSections, sections }) => {
+export const Content = ({ userRole, fetchSections, removeSection, sections }) => {
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
   const { projectId } = useParams();
@@ -53,6 +80,11 @@ export const Content = ({ userRole, fetchSections, sections }) => {
   const title = <FormattedMessage {...messages.title} />;
   const subtitle = <FormattedMessage {...messages.subtitle} />;
   const menuOptions = getProjectMenuOptions(projectId);
+
+  const removeSectionAndRefresh = async sectionId => {
+    await removeSection({ sectionId });
+    await fetchSections({ projectId });
+  };
 
   useEffectOnce(() => {
     (async () => {
@@ -89,7 +121,7 @@ export const Content = ({ userRole, fetchSections, sections }) => {
           <CounterHeader moveToTop copy={intl.formatMessage(messages.section)} count={sections.length} />
           <ListContainer>
             {sections.map((section, index) => (
-              <Section key={index} {...section} />
+              <Section key={index} removeSection={removeSectionAndRefresh} {...section} />
             ))}
           </ListContainer>
         </Fragment>
@@ -110,5 +142,6 @@ export const Content = ({ userRole, fetchSections, sections }) => {
 Content.propTypes = {
   userRole: PropTypes.string.isRequired,
   fetchSections: PropTypes.func.isRequired,
+  removeSection: PropTypes.func.isRequired,
   sections: PropTypes.array.isRequired,
 };

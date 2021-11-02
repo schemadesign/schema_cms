@@ -26,6 +26,7 @@ import { StateIcon } from './stateIcon';
 import { CopyIcon } from './copyIcon';
 import { GoogleSpreadsheetIcon } from './googleSpreadsheetIcon';
 import { ApiIcon } from './apiIcon';
+import { ThreeDotsIcon } from './threeDotsIcon';
 
 const Icons = {
   ResultIcon,
@@ -56,6 +57,7 @@ const Icons = {
   CopyIcon,
   GoogleSpreadsheetIcon,
   ApiIcon,
+  ThreeDotsIcon,
 };
 
 export {
@@ -83,6 +85,7 @@ export {
   CopyIcon,
   GoogleSpreadsheetIcon,
   ApiIcon,
+  ThreeDotsIcon,
 };
 
 export default Icons;

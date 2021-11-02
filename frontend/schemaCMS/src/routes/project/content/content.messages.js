@@ -22,4 +22,12 @@ export default defineMessages({
     id: 'project.content.addBlockButton',
     defaultMessage: 'Block',
   },
+  dotsMenuEdit: {
+    id: 'section.content.dotsMenu.Edit',
+    defaultMessage: 'Edit',
+  },
+  dotsMenuDelete: {
+    id: 'section.content.dotsMenu.Delete',
+    defaultMessage: 'Delete',
+  },
 });

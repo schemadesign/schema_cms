@@ -5,6 +5,8 @@ import { PageList, Page } from '../pageList.component';
 import { defaultProps } from '../pageList.stories';
 import { makeContextRenderer } from '../../../../shared/utils/testUtils';
 import { section } from '../../../../modules/sections/sections.mocks';
+import { Container as DotsMenuContainer } from '../../../../shared/components/dotsMenu/dotsMenu.styles';
+import { DotsMenu } from '../../../../shared/components/dotsMenu';
 
 const mockPushHistory = jest.fn();
 
@@ -36,9 +38,19 @@ describe('PageList: Component', () => {
   it('should copy page', async () => {
     jest.spyOn(defaultProps, 'copyPage');
     const wrapper = await render();
-
     await act(async () => {
-      await wrapper.root.findByProps({ id: 'pageCopyButton-1' }).props.onClick();
+      await wrapper.root
+        //Page card
+        .findByProps({ id: 'page-2-item' })
+        //ThreeDotsMenu
+        .findByType(DotsMenuContainer)
+        .props.onClick();
+      await wrapper.root
+        //Page card
+        .findByProps({ id: 'page-2-item' })
+        //Copy option from Dots Menu
+        .findByProps({ id: 'select-item-2' })
+        .props.onClick();
     });
 
     expect(defaultProps.copyPage).toHaveBeenCalledWith({ pageId: 2, sectionId: 'sectionId' });
@@ -49,6 +61,7 @@ describe('PageList: Component', () => {
       ...section.pages[0],
       setFieldValue: Function.prototype,
       copyPage: Function.prototype,
+      removePage: Function.prototype,
       sectionId: 'sectionId',
       mainPage: null,
       index: 1,
@@ -56,7 +69,17 @@ describe('PageList: Component', () => {
 
     jest.spyOn(props, 'setFieldValue');
     const wrapper = await makeContextRenderer(<Page {...props} />);
-    wrapper.root.findByProps({ id: 'homeIcon-1' }).props.onClick();
+
+    await act(async () => {
+      await wrapper.root
+        //ThreeDotsMenu
+        .findByType(DotsMenuContainer)
+        .props.onClick();
+      await wrapper.root
+        //Set Home Page option from Dots Menu
+        .findByProps({ id: 'select-item-0' })
+        .props.onClick();
+    });
 
     expect(props.setFieldValue).toHaveBeenCalledWith('mainPage', 1);
   });
@@ -66,6 +89,7 @@ describe('PageList: Component', () => {
       ...section.pages[0],
       setFieldValue: Function.prototype,
       copyPage: Function.prototype,
+      removePage: Function.prototype,
       sectionId: 'sectionId',
       mainPage: 1,
       index: 1,
@@ -73,7 +97,16 @@ describe('PageList: Component', () => {
 
     jest.spyOn(props, 'setFieldValue');
     const wrapper = await makeContextRenderer(<Page {...props} />);
-    wrapper.root.findByProps({ id: 'homeIcon-1' }).props.onClick();
+    await act(async () => {
+      await wrapper.root
+        //ThreeDotsMenu
+        .findByType(DotsMenuContainer)
+        .props.onClick();
+      await wrapper.root
+        //Set Home Page option from Dots Menu
+        .findByProps({ id: 'select-item-0' })
+        .props.onClick();
+    });
 
     expect(props.setFieldValue).toHaveBeenCalledWith('mainPage', null);
   });

@@ -63,7 +63,7 @@ export class SelectComponent extends PureComponent {
 
   renderSelectedOption = ({ selectedOptionStyles }, label) => <div style={selectedOptionStyles}>{label}</div>;
 
-  renderOptions = ({ value, label, selected }, index, { customOptionStyle, hoverStyles }) => {
+  renderOptions = ({ value, label, selected, onClick }, index, { customOptionStyle, hoverStyles }) => {
     const eventObj = {
       target: {
         value: value,
@@ -79,15 +79,15 @@ export class SelectComponent extends PureComponent {
         style={{ ...customOptionStyle(index), ...actionStyles }}
         onMouseOver={() => this.setState({ hoverIndex: index })}
         onMouseOut={() => this.setState({ hoverIndex: null })}
-        onClick={() => this.handleOptionClick(eventObj)}
+        onClick={onClick ? onClick : () => this.handleOptionClick(eventObj)}
       >
         {label}
       </div>
     );
   };
 
-  renderNativeOptions = ({ value, label, selected }, index) => (
-    <option key={index} value={value}>
+  renderNativeOptions = ({ value, label, selected, onClick }, index) => (
+    <option key={index} value={value} onClick={onClick}>
       {label}
     </option>
   );
