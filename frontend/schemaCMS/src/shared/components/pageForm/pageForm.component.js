@@ -407,6 +407,7 @@ export const PageForm = ({
         fullWidth
         isEdit
         label={<FormattedMessage {...messages[PAGE_DISPLAY_NAME]} />}
+        placeholder={intl.formatMessage(messages[`${PAGE_DISPLAY_NAME}Placeholder`])}
         {...restFormikProps}
       />
       <TextInput
@@ -417,6 +418,7 @@ export const PageForm = ({
         multiline
         isEdit
         label={<FormattedMessage {...messages[PAGE_DESCRIPTION]} />}
+        placeholder={intl.formatMessage(messages[`${PAGE_DESCRIPTION}Placeholder`])}
         {...restFormikProps}
       />
       <TextInput
@@ -426,6 +428,7 @@ export const PageForm = ({
         fullWidth
         isEdit
         label={<FormattedMessage {...messages[PAGE_KEYWORDS]} />}
+        placeholder={intl.formatMessage(messages[`${PAGE_KEYWORDS}Placeholder`])}
         {...restFormikProps}
       />
       <TextInput
@@ -435,6 +438,7 @@ export const PageForm = ({
         fullWidth
         isEdit
         label={<FormattedMessage {...messages[PAGE_LINK]} />}
+        placeholder={intl.formatMessage(messages[`${PAGE_LINK}Placeholder`])}
         {...restFormikProps}
       />
       <Label>
@@ -445,6 +449,7 @@ export const PageForm = ({
         values={values[PAGE_TAGS]}
         setFieldValue={setFieldValue}
         valuePath={PAGE_TAGS}
+        placeholder={intl.formatMessage(messages[`${PAGE_TAGS}Placeholder`])}
       />
       <TextInput
         onChange={handleChange}
@@ -453,6 +458,7 @@ export const PageForm = ({
         fullWidth
         isEdit
         label={<FormattedMessage {...messages[`${PAGE_SOCIAL_TITLE}Label`]} />}
+        placeholder={intl.formatMessage(messages[`${PAGE_SOCIAL_TITLE}Placeholder`])}
         {...restFormikProps}
       />
       <TextInput
@@ -462,6 +468,7 @@ export const PageForm = ({
         fullWidth
         isEdit
         label={<FormattedMessage {...messages[`${PAGE_SOCIAL_DESC}Label`]} />}
+        placeholder={intl.formatMessage(messages[`${PAGE_SOCIAL_DESC}Placeholder`])}
         {...restFormikProps}
       />
       <TextInput
@@ -471,13 +478,14 @@ export const PageForm = ({
         fullWidth
         isEdit
         label={<FormattedMessage {...messages[`${PAGE_SOCIAL_IMG_TITLE}Label`]} />}
+        placeholder={intl.formatMessage(messages[`${PAGE_SOCIAL_IMG_TITLE}Placeholder`])}
         {...restFormikProps}
       />
       <Uploader
         fileNames={pathOr('', [FILE_NAME], values)}
         name={PAGE_SOCIAL_IMG}
-        label={<FormattedMessage {...messages[`${PAGE_SOCIAL_IMG}Label`]} />}
-        placeholder="  "
+        label="  "
+        placeholder={<FormattedMessage {...messages[`${PAGE_SOCIAL_IMG}Label`]} />}
         type="file"
         id="fileUpload"
         onChange={data => handleUploadChange(data, { setFieldValue })}

@@ -32,37 +32,45 @@ export default defineMessages({
     id: `shared.components.pageForm.${PAGE_NAME}Placeholder`,
     defaultMessage: 'Name',
   },
-  [PAGE_KEYWORDS]: {
-    id: `shared.components.pageForm.${PAGE_KEYWORDS}`,
-    defaultMessage: 'SEO Keywords',
+  [PAGE_DISPLAY_NAME]: {
+    id: `shared.components.pageForm.${PAGE_DISPLAY_NAME}`,
+    defaultMessage: 'URL Display Name',
+  },
+  [`${PAGE_DISPLAY_NAME}Placeholder`]: {
+    id: `shared.components.pageForm.${PAGE_DISPLAY_NAME}Placeholder`,
+    defaultMessage: 'Type URL here',
   },
   [PAGE_DESCRIPTION]: {
     id: `shared.components.pageForm.${PAGE_DESCRIPTION}`,
     defaultMessage: 'SEO Page Description',
   },
-  [PAGE_DISPLAY_NAME]: {
-    id: `shared.components.pageForm.${PAGE_DISPLAY_NAME}`,
-    defaultMessage: 'URL Display Name',
+  [`${PAGE_DESCRIPTION}Placeholder`]: {
+    id: `shared.components.pageForm.${PAGE_DESCRIPTION}Placeholder`,
+    defaultMessage: 'Type SEO Page Description here',
   },
-  [PAGE_TEMPLATE]: {
-    id: `shared.components.pageForm.${PAGE_TEMPLATE}`,
-    defaultMessage: 'Page Template',
+  [PAGE_KEYWORDS]: {
+    id: `shared.components.pageForm.${PAGE_KEYWORDS}`,
+    defaultMessage: 'SEO Keywords',
   },
-  [`${PAGE_TEMPLATE}Placeholder`]: {
-    id: `shared.components.pageForm.${PAGE_TEMPLATE}Placeholder`,
-    defaultMessage: 'Select Page Template',
+  [`${PAGE_KEYWORDS}Placeholder`]: {
+    id: `shared.components.pageForm.${PAGE_KEYWORDS}Placeholder`,
+    defaultMessage: 'Type SEO keywords here',
   },
-  [PAGE_IS_PUBLIC]: {
-    id: `shared.components.pageForm.${PAGE_IS_PUBLIC}`,
-    defaultMessage: 'Make it Public',
+  [PAGE_LINK]: {
+    id: `shared.components.pageForm.${PAGE_LINK}`,
+    defaultMessage: 'Frontend page Link',
+  },
+  [`${PAGE_LINK}Placeholder`]: {
+    id: `shared.components.pageForm.${PAGE_LINK}Placeholder`,
+    defaultMessage: 'Type frontend page link here',
   },
   [PAGE_TAGS]: {
     id: `shared.components.pageForm.${PAGE_TAGS}`,
     defaultMessage: 'Tags',
   },
-  [PAGE_LINK]: {
-    id: `shared.components.pageForm.${PAGE_LINK}`,
-    defaultMessage: 'Frontend page Link',
+  [`${PAGE_TAGS}Placeholder`]: {
+    id: `shared.components.pageForm.${PAGE_TAGS}Placeholder`,
+    defaultMessage: 'Select tags',
   },
   [`${PAGE_SOCIAL_TITLE}Label`]: {
     id: `shared.components.pageForm.${PAGE_SOCIAL_TITLE}`,
@@ -95,6 +103,18 @@ export default defineMessages({
   [`${PAGE_SOCIAL_IMG}Placeholder`]: {
     id: `shared.components.pageForm.${PAGE_SOCIAL_IMG}`,
     defaultMessage: 'Select image or drag and drop it here',
+  },
+  [PAGE_TEMPLATE]: {
+    id: `shared.components.pageForm.${PAGE_TEMPLATE}`,
+    defaultMessage: 'Page Template',
+  },
+  [`${PAGE_TEMPLATE}Placeholder`]: {
+    id: `shared.components.pageForm.${PAGE_TEMPLATE}Placeholder`,
+    defaultMessage: 'Select Page Template',
+  },
+  [PAGE_IS_PUBLIC]: {
+    id: `shared.components.pageForm.${PAGE_IS_PUBLIC}`,
+    defaultMessage: 'Make it Public',
   },
   pageAvailability: {
     id: 'shared.components.pageForm.pageAvailability',
