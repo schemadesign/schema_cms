@@ -12,6 +12,7 @@ import {
   PAGE_SOCIAL_TITLE,
   PAGE_SOCIAL_DESC,
   PAGE_SOCIAL_IMG,
+  PAGE_SOCIAL_IMG_TITLE,
 } from '../../../modules/page/page.constants';
 
 export default defineMessages({
@@ -79,13 +80,21 @@ export default defineMessages({
     id: `shared.components.pageForm.${PAGE_SOCIAL_DESC}`,
     defaultMessage: 'Type your social media embed title here',
   },
-  [`${PAGE_SOCIAL_IMG}Label`]: {
+  [`${PAGE_SOCIAL_IMG_TITLE}Label`]: {
     id: `shared.components.pageForm.${PAGE_SOCIAL_IMG}`,
     defaultMessage: 'Social Media Image Upload',
   },
-  [`${PAGE_SOCIAL_IMG}Placeholder`]: {
+  [`${PAGE_SOCIAL_IMG_TITLE}Placeholder`]: {
     id: `shared.components.pageForm.${PAGE_SOCIAL_IMG}`,
     defaultMessage: 'Type your social media embed title here',
+  },
+  [`${PAGE_SOCIAL_IMG}Label`]: {
+    id: `shared.components.pageForm.${PAGE_SOCIAL_IMG}`,
+    defaultMessage: 'Select image or drag and drop it here',
+  },
+  [`${PAGE_SOCIAL_IMG}Placeholder`]: {
+    id: `shared.components.pageForm.${PAGE_SOCIAL_IMG}`,
+    defaultMessage: 'Select image or drag and drop it here',
   },
   pageAvailability: {
     id: 'shared.components.pageForm.pageAvailability',
