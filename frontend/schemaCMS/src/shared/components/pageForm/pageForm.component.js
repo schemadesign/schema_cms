@@ -83,7 +83,6 @@ import { PageLink } from '../../../theme/typography';
 import { ROUTES } from '../../utils/routes.contants';
 import { Tabs } from '../tabs';
 import { TABS } from './pageForm.constants';
-import { DATA_SOURCE_FILE, DATA_SOURCE_FILE_NAME } from '../../../modules/dataSource/dataSource.constants';
 import { Uploader } from '../form/uploader';
 
 const { EditIcon, MenuIcon, PlusIcon } = Icons;
@@ -278,16 +277,6 @@ export const PageForm = ({
   };
 
   const handleUploadChange = (data, { setFieldValue }) => {
-    // const uploadFile = getEventFiles(data);
-    // if (!uploadFile.length) {
-    //   return;
-    // }
-    //
-    // setFieldValue(PAGE_SOCIAL_IMG, uploadFile[0]);
-    // setFieldValue(FILE_NAME, pathOr('', ['name'], uploadFile[0]));
-    //
-    // setTimeout(() => restFormikProps.validateForm());
-
     const uploadFile = getEventFiles(data);
 
     if (!uploadFile) {
@@ -300,13 +289,6 @@ export const PageForm = ({
     }
 
     const file = uploadFile[0];
-
-    // if (MAX_SIZE < file.size) {
-    //   setError(true);
-    //   return;
-    // }
-    //
-    // setError(false);
 
     const reader = new FileReader();
     reader.readAsDataURL(file);
@@ -485,11 +467,10 @@ export const PageForm = ({
         fileNames={pathOr('', [PAGE_SOCIAL_IMG, FILE_NAME], values)}
         name={PAGE_SOCIAL_IMG}
         label="  "
-        placeholder={<FormattedMessage {...messages[`${PAGE_SOCIAL_IMG}Label`]} />}
+        placeholder={<FormattedMessage {...messages[`${PAGE_SOCIAL_IMG}Placeholder`]} />}
         type="file"
         id="fileUpload"
         onChange={data => handleUploadChange(data, { setFieldValue })}
-        // accept=".csv"
         checkOnlyErrors
         {...restFormikProps}
       />
