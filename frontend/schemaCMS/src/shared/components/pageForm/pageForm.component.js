@@ -314,8 +314,8 @@ export const PageForm = ({
     reader.addEventListener(
       'load',
       ({ target: { result } }) => {
-        setFieldValue(PAGE_SOCIAL_IMG, result);
-        setFieldValue(FILE_NAME, pathOr('', ['name'], file));
+        setFieldValue(`${PAGE_SOCIAL_IMG}.${FILE}`, result);
+        setFieldValue(`${PAGE_SOCIAL_IMG}.${FILE_NAME}`, pathOr('', ['name'], file));
       },
       false
     );
@@ -482,7 +482,7 @@ export const PageForm = ({
         {...restFormikProps}
       />
       <Uploader
-        fileNames={pathOr('', [FILE_NAME], values)}
+        fileNames={pathOr('', [PAGE_SOCIAL_IMG, FILE_NAME], values)}
         name={PAGE_SOCIAL_IMG}
         label="  "
         placeholder={<FormattedMessage {...messages[`${PAGE_SOCIAL_IMG}Label`]} />}
