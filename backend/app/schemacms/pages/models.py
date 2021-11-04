@@ -177,6 +177,11 @@ class Page(Content):
 
     natural_key.dependencies = ["projects.project", "pages.section", "pages.blocktemplate"]
 
+    def relative_path_to_save(self, filename):
+        base_path = self.social_image.storage.location
+
+        return os.path.join(base_path, f"pages/{self.id}/social_image/{filename}")
+
     @property
     def is_published(self):
         published_states = [constants.PageState.PUBLISHED, constants.PageState.WAITING_TO_REPUBLISH]

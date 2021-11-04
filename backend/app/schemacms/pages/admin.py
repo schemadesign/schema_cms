@@ -109,6 +109,7 @@ class SectionAdmin(SoftDeleteObjectAdmin):
 class PageAdmin(SoftDeleteObjectAdmin):
     list_display = ("name", "section", "project", "deleted_at")
     fields = (
+        "social_image",
         "project",
         "section",
         "template",
