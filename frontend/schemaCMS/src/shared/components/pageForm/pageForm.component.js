@@ -379,6 +379,19 @@ export const PageForm = ({
     </>
   );
 
+  const customLabelStyles = {
+    borderTop: 'none',
+    padding: '12px 0',
+    fontSize: '18px',
+    color: '#6E6E7B',
+  };
+
+  const customInputStyles = {
+    padding: '17px 24px',
+    color: '#4F515C',
+    backgroundColor: '#1B1C23',
+  };
+
   const renderMetadata = () => (
     <>
       <TextInput
@@ -387,9 +400,10 @@ export const PageForm = ({
         name={PAGE_DISPLAY_NAME}
         value={values[PAGE_DISPLAY_NAME]}
         fullWidth
-        isEdit
         label={<FormattedMessage {...messages[PAGE_DISPLAY_NAME]} />}
         placeholder={intl.formatMessage(messages[`${PAGE_DISPLAY_NAME}Placeholder`])}
+        customLabelStyles={customLabelStyles}
+        customInputStyles={customInputStyles}
         {...restFormikProps}
       />
       <TextInput
@@ -398,9 +412,10 @@ export const PageForm = ({
         value={values[PAGE_DESCRIPTION]}
         fullWidth
         multiline
-        isEdit
         label={<FormattedMessage {...messages[PAGE_DESCRIPTION]} />}
         placeholder={intl.formatMessage(messages[`${PAGE_DESCRIPTION}Placeholder`])}
+        customLabelStyles={customLabelStyles}
+        customInputStyles={customInputStyles}
         {...restFormikProps}
       />
       <TextInput
@@ -408,9 +423,10 @@ export const PageForm = ({
         name={PAGE_KEYWORDS}
         value={values[PAGE_KEYWORDS]}
         fullWidth
-        isEdit
         label={<FormattedMessage {...messages[PAGE_KEYWORDS]} />}
         placeholder={intl.formatMessage(messages[`${PAGE_KEYWORDS}Placeholder`])}
+        customLabelStyles={customLabelStyles}
+        customInputStyles={customInputStyles}
         {...restFormikProps}
       />
       <TextInput
@@ -418,9 +434,10 @@ export const PageForm = ({
         name={PAGE_LINK}
         value={values[PAGE_LINK]}
         fullWidth
-        isEdit
         label={<FormattedMessage {...messages[PAGE_LINK]} />}
         placeholder={intl.formatMessage(messages[`${PAGE_LINK}Placeholder`])}
+        customLabelStyles={customLabelStyles}
+        customInputStyles={customInputStyles}
         {...restFormikProps}
       />
       <Label>
@@ -432,15 +449,18 @@ export const PageForm = ({
         setFieldValue={setFieldValue}
         valuePath={PAGE_TAGS}
         placeholder={intl.formatMessage(messages[`${PAGE_TAGS}Placeholder`])}
+        customLabelStyles={customLabelStyles}
+        customInputStyles={customInputStyles}
       />
       <TextInput
         onChange={handleChange}
         name={PAGE_SOCIAL_TITLE}
         value={values[PAGE_SOCIAL_TITLE]}
         fullWidth
-        isEdit
         label={<FormattedMessage {...messages[`${PAGE_SOCIAL_TITLE}Label`]} />}
         placeholder={intl.formatMessage(messages[`${PAGE_SOCIAL_TITLE}Placeholder`])}
+        customLabelStyles={customLabelStyles}
+        customInputStyles={customInputStyles}
         {...restFormikProps}
       />
       <TextInput
@@ -448,9 +468,10 @@ export const PageForm = ({
         name={PAGE_SOCIAL_DESC}
         value={values[PAGE_SOCIAL_DESC]}
         fullWidth
-        isEdit
         label={<FormattedMessage {...messages[`${PAGE_SOCIAL_DESC}Label`]} />}
         placeholder={intl.formatMessage(messages[`${PAGE_SOCIAL_DESC}Placeholder`])}
+        customLabelStyles={customLabelStyles}
+        customInputStyles={customInputStyles}
         {...restFormikProps}
       />
       <TextInput
@@ -458,9 +479,10 @@ export const PageForm = ({
         name={PAGE_SOCIAL_IMG_TITLE}
         value={values[PAGE_SOCIAL_IMG_TITLE]}
         fullWidth
-        isEdit
         label={<FormattedMessage {...messages[`${PAGE_SOCIAL_IMG_TITLE}Label`]} />}
         placeholder={intl.formatMessage(messages[`${PAGE_SOCIAL_IMG_TITLE}Placeholder`])}
+        customLabelStyles={customLabelStyles}
+        customInputStyles={customInputStyles}
         {...restFormikProps}
       />
       <Uploader
