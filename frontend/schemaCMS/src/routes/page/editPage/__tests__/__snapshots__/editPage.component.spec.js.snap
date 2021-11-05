@@ -73,11 +73,11 @@ exports[`EditPage: Component should render correctly 1`] = `
   word-break: break-word;
 }
 
-.c52 {
+.c53 {
   height: 120px;
 }
 
-.c54 {
+.c55 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -96,7 +96,7 @@ exports[`EditPage: Component should render correctly 1`] = `
   width: 100%;
 }
 
-.c53 {
+.c54 {
   bottom: 0;
   width: 100%;
   padding: 10px 0 36px;
@@ -106,12 +106,12 @@ exports[`EditPage: Component should render correctly 1`] = `
   background-image: linear-gradient( to top, #000,#000 30%, rgba(0,0,0,0) );
 }
 
-.c56 {
+.c57 {
   width: calc(50% - 5px);
   max-width: 240px;
 }
 
-.c55 {
+.c56 {
   width: calc(50% - 5px);
   max-width: 240px;
   background-color: #1d1d20;
@@ -125,26 +125,80 @@ exports[`EditPage: Component should render correctly 1`] = `
   padding: 9px 0;
 }
 
+.c19 {
+  position: relative;
+  max-width: 100%;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  position: relative;
+}
+
+.c25 {
+  position: relative;
+}
+
+.c27 {
+  margin-top: 0;
+}
+
+.c20 {
+  position: relative;
+  top: 0;
+  left: 0;
+  color: #f21e29;
+  font-size: 14px;
+  font-weight: normal;
+}
+
 .c13 {
   padding-bottom: 50px;
 }
 
-.c27 {
+.c28 {
   width: 100%;
 }
 
-.c33 {
+.c34 {
   position: relative;
   z-index: 999;
 }
 
-.c43 {
+.c26::-webkit-input-placeholder {
+  color: #4f515c;
+}
+
+.c26::-moz-placeholder {
+  color: #4f515c;
+}
+
+.c26:-ms-input-placeholder {
+  color: #4f515c;
+}
+
+.c26::placeholder {
+  color: #4f515c;
+}
+
+.c26::-webkit-input-placeholder {
+  color: #4f515c;
+}
+
+.c44 {
   margin-top: 30px;
   border-top: 2px solid #2F2F36;
   padding-top: 15px;
 }
 
-.c44 {
+.c45 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -164,16 +218,16 @@ exports[`EditPage: Component should render correctly 1`] = `
   position: relative;
 }
 
-.c47 {
+.c48 {
   padding-right: 10px;
 }
 
-.c46 {
+.c47 {
   padding-left: 10px;
   max-width: 100%;
 }
 
-.c45 {
+.c46 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -189,7 +243,7 @@ exports[`EditPage: Component should render correctly 1`] = `
   padding-right: 10px;
 }
 
-.c51 {
+.c52 {
   margin-top: 15px;
 }
 
@@ -197,7 +251,7 @@ exports[`EditPage: Component should render correctly 1`] = `
   cursor: pointer;
 }
 
-.c48 {
+.c49 {
   color: #71737e;
   min-width: 100%;
 }
@@ -224,60 +278,26 @@ exports[`EditPage: Component should render correctly 1`] = `
   position: relative;
 }
 
-.c38 {
+.c39 {
   text-align: right;
 }
 
-.c49 {
+.c50 {
   padding: 0 10px;
 }
 
-.c49:before {
+.c50:before {
   content: '|';
   display: inline;
 }
 
-.c41 {
+.c42 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
   cursor: move;
   touch-action: none;
-}
-
-.c19 {
-  position: relative;
-  max-width: 100%;
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: center;
-  -webkit-justify-content: center;
-  -ms-flex-pack: center;
-  justify-content: center;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
-  flex-direction: column;
-  position: relative;
-}
-
-.c25 {
-  position: relative;
-}
-
-.c26 {
-  margin-top: 0;
-}
-
-.c20 {
-  position: relative;
-  top: 0;
-  left: 0;
-  color: #f21e29;
-  font-size: 14px;
-  font-weight: normal;
 }
 
 .c14 {
@@ -297,7 +317,7 @@ exports[`EditPage: Component should render correctly 1`] = `
   color: #FFF;
 }
 
-.c34 {
+.c35 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -312,17 +332,17 @@ exports[`EditPage: Component should render correctly 1`] = `
   cursor: pointer;
 }
 
-.c34 label {
+.c35 label {
   margin-bottom: 2px;
 }
 
-.c35 {
+.c36 {
   position: absolute;
   right: 0;
   top: 5px;
 }
 
-.c39 {
+.c40 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -338,7 +358,7 @@ exports[`EditPage: Component should render correctly 1`] = `
   align-items: center;
 }
 
-.c40 {
+.c41 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -349,7 +369,7 @@ exports[`EditPage: Component should render correctly 1`] = `
   align-items: center;
 }
 
-.c42 {
+.c43 {
   color: #71737e;
   max-width: 240px;
   white-space: nowrap;
@@ -358,7 +378,7 @@ exports[`EditPage: Component should render correctly 1`] = `
   display: none;
 }
 
-.c36 {
+.c37 {
   color: #71737e;
   text-align: center;
   padding-bottom: 20px;
@@ -380,7 +400,7 @@ exports[`EditPage: Component should render correctly 1`] = `
   align-items: center;
 }
 
-.c37 {
+.c38 {
   width: 33%;
 }
 
@@ -389,7 +409,7 @@ exports[`EditPage: Component should render correctly 1`] = `
   position: relative;
 }
 
-.c50 {
+.c51 {
   -webkit-text-decoration: none;
   text-decoration: none;
   white-space: nowrap;
@@ -400,16 +420,8 @@ exports[`EditPage: Component should render correctly 1`] = `
   border-bottom: 1px solid transparent;
 }
 
-.c50:hover {
+.c51:hover {
   border-bottom: 1px solid #FFF;
-}
-
-.c28 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  border-bottom: 1px solid grey;
 }
 
 .c29 {
@@ -417,10 +429,18 @@ exports[`EditPage: Component should render correctly 1`] = `
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
-  width: 100%;
+  border-bottom: 1px solid grey;
 }
 
 .c30 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  width: 100%;
+}
+
+.c31 {
   display: block;
   -webkit-flex: 1;
   -ms-flex: 1;
@@ -433,11 +453,11 @@ exports[`EditPage: Component should render correctly 1`] = `
   cursor: pointer;
 }
 
-.c30:hover {
+.c31:hover {
   border-bottom-color: #FFF;
 }
 
-.c32 {
+.c33 {
   display: block;
   -webkit-flex: 1;
   -ms-flex: 1;
@@ -450,11 +470,11 @@ exports[`EditPage: Component should render correctly 1`] = `
   cursor: pointer;
 }
 
-.c32:hover {
+.c33:hover {
   border-bottom-color: #FFF;
 }
 
-.c31 {
+.c32 {
   color: #FFF;
   padding: 16px;
 }
@@ -509,13 +529,13 @@ exports[`EditPage: Component should render correctly 1`] = `
 }
 
 @media (min-width:1050px) {
-  .c52 {
+  .c53 {
     height: 100px;
   }
 }
 
 @media (min-width:1050px) {
-  .c54 {
+  .c55 {
     display: -webkit-box;
     display: -webkit-flex;
     display: -ms-flexbox;
@@ -524,7 +544,7 @@ exports[`EditPage: Component should render correctly 1`] = `
 }
 
 @media (min-width:1050px) {
-  .c53 {
+  .c54 {
     position: fixed;
     width: calc(100% - 40px);
     z-index: 999;
@@ -535,19 +555,25 @@ exports[`EditPage: Component should render correctly 1`] = `
 }
 
 @media (min-width:1050px) {
+  .c57 {
+    width: 240px;
+  }
+}
+
+@media (min-width:1050px) {
   .c56 {
     width: 240px;
   }
 }
 
 @media (min-width:1050px) {
-  .c55 {
-    width: 240px;
+  .c27 {
+    margin-top: 0;
   }
 }
 
 @media (min-width:480px) {
-  .c44 {
+  .c45 {
     -webkit-flex-direction: row;
     -ms-flex-direction: row;
     flex-direction: row;
@@ -559,13 +585,13 @@ exports[`EditPage: Component should render correctly 1`] = `
 }
 
 @media (min-width:480px) {
-  .c45 {
+  .c46 {
     padding-right: 40px;
   }
 }
 
 @media (min-width:480px) {
-  .c51 {
+  .c52 {
     margin-top: 0;
   }
 }
@@ -573,12 +599,6 @@ exports[`EditPage: Component should render correctly 1`] = `
 @media (min-width:1050px) {
   .c24 {
     display: none;
-  }
-}
-
-@media (min-width:1050px) {
-  .c26 {
-    margin-top: 0;
   }
 }
 
@@ -602,26 +622,26 @@ exports[`EditPage: Component should render correctly 1`] = `
 }
 
 @media (min-width:1050px) {
-  .c39 {
+  .c40 {
     max-width: calc(100% - 350px);
   }
 }
 
 @media (min-width:1050px) {
-  .c42 {
+  .c43 {
     display: block;
   }
 }
 
 @media (min-width:1050px) {
-  .c36 {
+  .c37 {
     margin-top: 0px;
     padding-bottom: 40px;
   }
 }
 
 @media (min-width:1050px) {
-  .c28 {
+  .c29 {
     display: -webkit-box;
     display: -webkit-flex;
     display: -ms-flexbox;
@@ -632,7 +652,7 @@ exports[`EditPage: Component should render correctly 1`] = `
 }
 
 @media (min-width:1050px) {
-  .c29 {
+  .c30 {
     width: 400px;
   }
 }
@@ -1437,6 +1457,7 @@ exports[`EditPage: Component should render correctly 1`] = `
               Name
             </label>
             <input
+              className="c26"
               id="name"
               name="name"
               onBlur={[Function]}
@@ -1478,7 +1499,7 @@ exports[`EditPage: Component should render correctly 1`] = `
                 }
               >
                 <div
-                  className="c26"
+                  className="c27"
                 >
                   <svg
                     style={
@@ -1506,19 +1527,19 @@ exports[`EditPage: Component should render correctly 1`] = `
         </div>
       </div>
       <div
-        className="c27"
+        className="c28"
       >
         <div
-          className="c28"
+          className="c29"
         >
           <div
-            className="c29"
+            className="c30"
           >
             <div
-              className="c30"
+              className="c31"
             >
               <div
-                className="c31"
+                className="c32"
                 id="tab-0-tab-button"
                 onClick={[Function]}
               >
@@ -1526,10 +1547,10 @@ exports[`EditPage: Component should render correctly 1`] = `
               </div>
             </div>
             <div
-              className="c32"
+              className="c33"
             >
               <div
-                className="c31"
+                className="c32"
                 id="tab-1-tab-button"
                 onClick={[Function]}
               >
@@ -1540,10 +1561,10 @@ exports[`EditPage: Component should render correctly 1`] = `
         </div>
       </div>
       <div
-        className="c33"
+        className="c34"
       >
         <div
-          className="c34"
+          className="c35"
           onClick={[Function]}
         >
           <label
@@ -1695,7 +1716,7 @@ exports[`EditPage: Component should render correctly 1`] = `
             </div>
           </div>
           <div
-            className="c35"
+            className="c36"
           >
             <svg
               style={
@@ -1716,18 +1737,18 @@ exports[`EditPage: Component should render correctly 1`] = `
         </div>
       </div>
       <div
-        className="c36"
+        className="c37"
       >
         <div
-          className="c37"
+          className="c38"
           id="tagsCounter"
         />
         1 Block
         <div
-          className="c37"
+          className="c38"
         >
           <div
-            className="c38"
+            className="c39"
           >
             <button
               disabled={false}
@@ -1824,14 +1845,14 @@ exports[`EditPage: Component should render correctly 1`] = `
               }
             >
               <div
-                className="c39"
+                className="c40"
               >
                 <div
-                  className="c40"
+                  className="c41"
                 >
                   <div>
                     <div
-                      className="c41"
+                      className="c42"
                     >
                       <svg
                         style={
@@ -1938,7 +1959,7 @@ exports[`EditPage: Component should render correctly 1`] = `
                   />
                 </div>
                 <div
-                  className="c40"
+                  className="c41"
                 >
                   <label
                     className="c22"
@@ -1984,7 +2005,7 @@ exports[`EditPage: Component should render correctly 1`] = `
                 </div>
               </div>
               <div
-                className="c42"
+                className="c43"
                 title="type"
               >
                 type
@@ -2039,13 +2060,13 @@ exports[`EditPage: Component should render correctly 1`] = `
          
       </span>
       <div
-        className="c43"
+        className="c44"
       >
         <div
-          className="c44"
+          className="c45"
         >
           <div
-            className="c45"
+            className="c46"
           >
             <div>
               <input
@@ -2097,23 +2118,23 @@ exports[`EditPage: Component should render correctly 1`] = `
               </label>
             </div>
             <div
-              className="c46"
+              className="c47"
             >
               <label
-                className="c47"
+                className="c48"
                 htmlFor="isPublic"
               >
                 Make it Public
               </label>
               <span
-                className="c48"
+                className="c49"
               >
                 This Page is currently Private
                 <span
-                  className="c49"
+                  className="c50"
                 />
                 <a
-                  className="c50"
+                  className="c51"
                   href="http://project.domain/page-name-2/page-name"
                   target="_blank"
                 >
@@ -2123,7 +2144,7 @@ exports[`EditPage: Component should render correctly 1`] = `
             </div>
           </div>
           <div
-            className="c51"
+            className="c52"
           >
             <button
               disabled={false}
@@ -2156,16 +2177,16 @@ exports[`EditPage: Component should render correctly 1`] = `
       </div>
     </div>
     <div
-      className="c52"
+      className="c53"
     >
       <div
-        className="c53"
+        className="c54"
       >
         <div
-          className="c54"
+          className="c55"
         >
           <a
-            className="c55"
+            className="c56"
             disabled={false}
             href="/section/sectionId"
             id="backBtn"
@@ -2174,7 +2195,7 @@ exports[`EditPage: Component should render correctly 1`] = `
             Back
           </a>
           <button
-            className="c56"
+            className="c57"
             disabled={true}
             id="publishPage"
             onClick={[Function]}
@@ -2202,7 +2223,7 @@ exports[`EditPage: Component should render correctly 1`] = `
             Publish
           </button>
           <button
-            className="c56"
+            className="c57"
             disabled={true}
             id="savePage"
             style={

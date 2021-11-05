@@ -1,26 +1,80 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`PageForm: Component should render correctly 1`] = `
+.c6 {
+  position: relative;
+  max-width: 100%;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  position: relative;
+}
+
+.c11 {
+  position: relative;
+}
+
+.c13 {
+  margin-top: 0;
+}
+
+.c7 {
+  position: relative;
+  top: 0;
+  left: 0;
+  color: #f21e29;
+  font-size: 14px;
+  font-weight: normal;
+}
+
 .c0 {
   padding-bottom: 50px;
 }
 
-.c13 {
+.c14 {
   width: 100%;
 }
 
-.c19 {
+.c20 {
   position: relative;
   z-index: 999;
 }
 
-.c29 {
+.c12::-webkit-input-placeholder {
+  color: #4f515c;
+}
+
+.c12::-moz-placeholder {
+  color: #4f515c;
+}
+
+.c12:-ms-input-placeholder {
+  color: #4f515c;
+}
+
+.c12::placeholder {
+  color: #4f515c;
+}
+
+.c12::-webkit-input-placeholder {
+  color: #4f515c;
+}
+
+.c30 {
   margin-top: 30px;
   border-top: 2px solid #2F2F36;
   padding-top: 15px;
 }
 
-.c30 {
+.c31 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -40,16 +94,16 @@ exports[`PageForm: Component should render correctly 1`] = `
   position: relative;
 }
 
-.c33 {
+.c34 {
   padding-right: 10px;
 }
 
-.c32 {
+.c33 {
   padding-left: 10px;
   max-width: 100%;
 }
 
-.c31 {
+.c32 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -65,7 +119,7 @@ exports[`PageForm: Component should render correctly 1`] = `
   padding-right: 10px;
 }
 
-.c37 {
+.c38 {
   margin-top: 15px;
 }
 
@@ -73,7 +127,7 @@ exports[`PageForm: Component should render correctly 1`] = `
   cursor: pointer;
 }
 
-.c34 {
+.c35 {
   color: #71737e;
   min-width: 100%;
 }
@@ -100,60 +154,26 @@ exports[`PageForm: Component should render correctly 1`] = `
   position: relative;
 }
 
-.c24 {
+.c25 {
   text-align: right;
 }
 
-.c35 {
+.c36 {
   padding: 0 10px;
 }
 
-.c35:before {
+.c36:before {
   content: '|';
   display: inline;
 }
 
-.c27 {
+.c28 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
   cursor: move;
   touch-action: none;
-}
-
-.c6 {
-  position: relative;
-  max-width: 100%;
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: center;
-  -webkit-justify-content: center;
-  -ms-flex-pack: center;
-  justify-content: center;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
-  flex-direction: column;
-  position: relative;
-}
-
-.c11 {
-  position: relative;
-}
-
-.c12 {
-  margin-top: 0;
-}
-
-.c7 {
-  position: relative;
-  top: 0;
-  left: 0;
-  color: #f21e29;
-  font-size: 14px;
-  font-weight: normal;
 }
 
 .c1 {
@@ -173,7 +193,7 @@ exports[`PageForm: Component should render correctly 1`] = `
   color: #FFF;
 }
 
-.c20 {
+.c21 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -188,17 +208,17 @@ exports[`PageForm: Component should render correctly 1`] = `
   cursor: pointer;
 }
 
-.c20 label {
+.c21 label {
   margin-bottom: 2px;
 }
 
-.c21 {
+.c22 {
   position: absolute;
   right: 0;
   top: 5px;
 }
 
-.c25 {
+.c26 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -214,7 +234,7 @@ exports[`PageForm: Component should render correctly 1`] = `
   align-items: center;
 }
 
-.c26 {
+.c27 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -225,7 +245,7 @@ exports[`PageForm: Component should render correctly 1`] = `
   align-items: center;
 }
 
-.c28 {
+.c29 {
   color: #71737e;
   max-width: 240px;
   white-space: nowrap;
@@ -234,7 +254,7 @@ exports[`PageForm: Component should render correctly 1`] = `
   display: none;
 }
 
-.c22 {
+.c23 {
   color: #71737e;
   text-align: center;
   padding-bottom: 20px;
@@ -256,11 +276,11 @@ exports[`PageForm: Component should render correctly 1`] = `
   align-items: center;
 }
 
-.c23 {
+.c24 {
   width: 33%;
 }
 
-.c36 {
+.c37 {
   -webkit-text-decoration: none;
   text-decoration: none;
   white-space: nowrap;
@@ -271,16 +291,8 @@ exports[`PageForm: Component should render correctly 1`] = `
   border-bottom: 1px solid transparent;
 }
 
-.c36:hover {
+.c37:hover {
   border-bottom: 1px solid #FFF;
-}
-
-.c14 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  border-bottom: 1px solid grey;
 }
 
 .c15 {
@@ -288,10 +300,18 @@ exports[`PageForm: Component should render correctly 1`] = `
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
-  width: 100%;
+  border-bottom: 1px solid grey;
 }
 
 .c16 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  width: 100%;
+}
+
+.c17 {
   display: block;
   -webkit-flex: 1;
   -ms-flex: 1;
@@ -304,11 +324,11 @@ exports[`PageForm: Component should render correctly 1`] = `
   cursor: pointer;
 }
 
-.c16:hover {
+.c17:hover {
   border-bottom-color: #FFF;
 }
 
-.c18 {
+.c19 {
   display: block;
   -webkit-flex: 1;
   -ms-flex: 1;
@@ -321,17 +341,23 @@ exports[`PageForm: Component should render correctly 1`] = `
   cursor: pointer;
 }
 
-.c18:hover {
+.c19:hover {
   border-bottom-color: #FFF;
 }
 
-.c17 {
+.c18 {
   color: #FFF;
   padding: 16px;
 }
 
+@media (min-width:1050px) {
+  .c13 {
+    margin-top: 0;
+  }
+}
+
 @media (min-width:480px) {
-  .c30 {
+  .c31 {
     -webkit-flex-direction: row;
     -ms-flex-direction: row;
     flex-direction: row;
@@ -343,13 +369,13 @@ exports[`PageForm: Component should render correctly 1`] = `
 }
 
 @media (min-width:480px) {
-  .c31 {
+  .c32 {
     padding-right: 40px;
   }
 }
 
 @media (min-width:480px) {
-  .c37 {
+  .c38 {
     margin-top: 0;
   }
 }
@@ -357,12 +383,6 @@ exports[`PageForm: Component should render correctly 1`] = `
 @media (min-width:1050px) {
   .c10 {
     display: none;
-  }
-}
-
-@media (min-width:1050px) {
-  .c12 {
-    margin-top: 0;
   }
 }
 
@@ -390,26 +410,26 @@ exports[`PageForm: Component should render correctly 1`] = `
 }
 
 @media (min-width:1050px) {
-  .c25 {
+  .c26 {
     max-width: calc(100% - 350px);
   }
 }
 
 @media (min-width:1050px) {
-  .c28 {
+  .c29 {
     display: block;
   }
 }
 
 @media (min-width:1050px) {
-  .c22 {
+  .c23 {
     margin-top: 0px;
     padding-bottom: 40px;
   }
 }
 
 @media (min-width:1050px) {
-  .c14 {
+  .c15 {
     display: -webkit-box;
     display: -webkit-flex;
     display: -ms-flexbox;
@@ -420,7 +440,7 @@ exports[`PageForm: Component should render correctly 1`] = `
 }
 
 @media (min-width:1050px) {
-  .c15 {
+  .c16 {
     width: 400px;
   }
 }
@@ -620,6 +640,7 @@ exports[`PageForm: Component should render correctly 1`] = `
           Name
         </label>
         <input
+          className="c12"
           id="name"
           name="name"
           onBlur={[Function]}
@@ -661,7 +682,7 @@ exports[`PageForm: Component should render correctly 1`] = `
             }
           >
             <div
-              className="c12"
+              className="c13"
             >
               <svg
                 style={
@@ -689,19 +710,19 @@ exports[`PageForm: Component should render correctly 1`] = `
     </div>
   </div>
   <div
-    className="c13"
+    className="c14"
   >
     <div
-      className="c14"
+      className="c15"
     >
       <div
-        className="c15"
+        className="c16"
       >
         <div
-          className="c16"
+          className="c17"
         >
           <div
-            className="c17"
+            className="c18"
             id="tab-0-tab-button"
             onClick={[Function]}
           >
@@ -709,10 +730,10 @@ exports[`PageForm: Component should render correctly 1`] = `
           </div>
         </div>
         <div
-          className="c18"
+          className="c19"
         >
           <div
-            className="c17"
+            className="c18"
             id="tab-1-tab-button"
             onClick={[Function]}
           >
@@ -723,10 +744,10 @@ exports[`PageForm: Component should render correctly 1`] = `
     </div>
   </div>
   <div
-    className="c19"
+    className="c20"
   >
     <div
-      className="c20"
+      className="c21"
       onClick={[Function]}
     >
       <label
@@ -878,7 +899,7 @@ exports[`PageForm: Component should render correctly 1`] = `
         </div>
       </div>
       <div
-        className="c21"
+        className="c22"
       >
         <svg
           style={
@@ -899,18 +920,18 @@ exports[`PageForm: Component should render correctly 1`] = `
     </div>
   </div>
   <div
-    className="c22"
+    className="c23"
   >
     <div
-      className="c23"
+      className="c24"
       id="tagsCounter"
     />
     1 Block
     <div
-      className="c23"
+      className="c24"
     >
       <div
-        className="c24"
+        className="c25"
       >
         <button
           disabled={false}
@@ -1007,14 +1028,14 @@ exports[`PageForm: Component should render correctly 1`] = `
           }
         >
           <div
-            className="c25"
+            className="c26"
           >
             <div
-              className="c26"
+              className="c27"
             >
               <div>
                 <div
-                  className="c27"
+                  className="c28"
                 >
                   <svg
                     style={
@@ -1121,7 +1142,7 @@ exports[`PageForm: Component should render correctly 1`] = `
               />
             </div>
             <div
-              className="c26"
+              className="c27"
             >
               <label
                 className="c9"
@@ -1167,7 +1188,7 @@ exports[`PageForm: Component should render correctly 1`] = `
             </div>
           </div>
           <div
-            className="c28"
+            className="c29"
             title="type"
           >
             type
@@ -1222,13 +1243,13 @@ exports[`PageForm: Component should render correctly 1`] = `
      
   </span>
   <div
-    className="c29"
+    className="c30"
   >
     <div
-      className="c30"
+      className="c31"
     >
       <div
-        className="c31"
+        className="c32"
       >
         <div>
           <input
@@ -1280,23 +1301,23 @@ exports[`PageForm: Component should render correctly 1`] = `
           </label>
         </div>
         <div
-          className="c32"
+          className="c33"
         >
           <label
-            className="c33"
+            className="c34"
             htmlFor="isPublic"
           >
             Make it Public
           </label>
           <span
-            className="c34"
+            className="c35"
           >
             This Page is currently Private
             <span
-              className="c35"
+              className="c36"
             />
             <a
-              className="c36"
+              className="c37"
               href="pageUrl"
               target="_blank"
             >
@@ -1306,7 +1327,7 @@ exports[`PageForm: Component should render correctly 1`] = `
         </div>
       </div>
       <div
-        className="c37"
+        className="c38"
       >
         <button
           disabled={false}
@@ -1341,26 +1362,80 @@ exports[`PageForm: Component should render correctly 1`] = `
 `;
 
 exports[`PageForm: Component should render with page template 1`] = `
+.c6 {
+  position: relative;
+  max-width: 100%;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  position: relative;
+}
+
+.c11 {
+  position: relative;
+}
+
+.c13 {
+  margin-top: 0;
+}
+
+.c7 {
+  position: relative;
+  top: 0;
+  left: 0;
+  color: #f21e29;
+  font-size: 14px;
+  font-weight: normal;
+}
+
 .c0 {
   padding-bottom: 50px;
 }
 
-.c13 {
+.c14 {
   width: 100%;
 }
 
-.c19 {
+.c20 {
   position: relative;
   z-index: 999;
 }
 
-.c29 {
+.c12::-webkit-input-placeholder {
+  color: #4f515c;
+}
+
+.c12::-moz-placeholder {
+  color: #4f515c;
+}
+
+.c12:-ms-input-placeholder {
+  color: #4f515c;
+}
+
+.c12::placeholder {
+  color: #4f515c;
+}
+
+.c12::-webkit-input-placeholder {
+  color: #4f515c;
+}
+
+.c30 {
   margin-top: 30px;
   border-top: 2px solid #2F2F36;
   padding-top: 15px;
 }
 
-.c30 {
+.c31 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -1380,16 +1455,16 @@ exports[`PageForm: Component should render with page template 1`] = `
   position: relative;
 }
 
-.c33 {
+.c34 {
   padding-right: 10px;
 }
 
-.c32 {
+.c33 {
   padding-left: 10px;
   max-width: 100%;
 }
 
-.c31 {
+.c32 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -1405,7 +1480,7 @@ exports[`PageForm: Component should render with page template 1`] = `
   padding-right: 10px;
 }
 
-.c37 {
+.c38 {
   margin-top: 15px;
 }
 
@@ -1413,7 +1488,7 @@ exports[`PageForm: Component should render with page template 1`] = `
   cursor: pointer;
 }
 
-.c34 {
+.c35 {
   color: #71737e;
   min-width: 100%;
 }
@@ -1440,60 +1515,26 @@ exports[`PageForm: Component should render with page template 1`] = `
   position: relative;
 }
 
-.c24 {
+.c25 {
   text-align: right;
 }
 
-.c35 {
+.c36 {
   padding: 0 10px;
 }
 
-.c35:before {
+.c36:before {
   content: '|';
   display: inline;
 }
 
-.c27 {
+.c28 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
   cursor: move;
   touch-action: none;
-}
-
-.c6 {
-  position: relative;
-  max-width: 100%;
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: center;
-  -webkit-justify-content: center;
-  -ms-flex-pack: center;
-  justify-content: center;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
-  flex-direction: column;
-  position: relative;
-}
-
-.c11 {
-  position: relative;
-}
-
-.c12 {
-  margin-top: 0;
-}
-
-.c7 {
-  position: relative;
-  top: 0;
-  left: 0;
-  color: #f21e29;
-  font-size: 14px;
-  font-weight: normal;
 }
 
 .c1 {
@@ -1513,7 +1554,7 @@ exports[`PageForm: Component should render with page template 1`] = `
   color: #FFF;
 }
 
-.c20 {
+.c21 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -1528,17 +1569,17 @@ exports[`PageForm: Component should render with page template 1`] = `
   cursor: pointer;
 }
 
-.c20 label {
+.c21 label {
   margin-bottom: 2px;
 }
 
-.c21 {
+.c22 {
   position: absolute;
   right: 0;
   top: 5px;
 }
 
-.c25 {
+.c26 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -1554,7 +1595,7 @@ exports[`PageForm: Component should render with page template 1`] = `
   align-items: center;
 }
 
-.c26 {
+.c27 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -1565,7 +1606,7 @@ exports[`PageForm: Component should render with page template 1`] = `
   align-items: center;
 }
 
-.c28 {
+.c29 {
   color: #71737e;
   max-width: 240px;
   white-space: nowrap;
@@ -1574,7 +1615,7 @@ exports[`PageForm: Component should render with page template 1`] = `
   display: none;
 }
 
-.c22 {
+.c23 {
   color: #71737e;
   text-align: center;
   padding-bottom: 20px;
@@ -1596,11 +1637,11 @@ exports[`PageForm: Component should render with page template 1`] = `
   align-items: center;
 }
 
-.c23 {
+.c24 {
   width: 33%;
 }
 
-.c36 {
+.c37 {
   -webkit-text-decoration: none;
   text-decoration: none;
   white-space: nowrap;
@@ -1611,16 +1652,8 @@ exports[`PageForm: Component should render with page template 1`] = `
   border-bottom: 1px solid transparent;
 }
 
-.c36:hover {
+.c37:hover {
   border-bottom: 1px solid #FFF;
-}
-
-.c14 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  border-bottom: 1px solid grey;
 }
 
 .c15 {
@@ -1628,10 +1661,18 @@ exports[`PageForm: Component should render with page template 1`] = `
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
-  width: 100%;
+  border-bottom: 1px solid grey;
 }
 
 .c16 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  width: 100%;
+}
+
+.c17 {
   display: block;
   -webkit-flex: 1;
   -ms-flex: 1;
@@ -1644,11 +1685,11 @@ exports[`PageForm: Component should render with page template 1`] = `
   cursor: pointer;
 }
 
-.c16:hover {
+.c17:hover {
   border-bottom-color: #FFF;
 }
 
-.c18 {
+.c19 {
   display: block;
   -webkit-flex: 1;
   -ms-flex: 1;
@@ -1661,17 +1702,23 @@ exports[`PageForm: Component should render with page template 1`] = `
   cursor: pointer;
 }
 
-.c18:hover {
+.c19:hover {
   border-bottom-color: #FFF;
 }
 
-.c17 {
+.c18 {
   color: #FFF;
   padding: 16px;
 }
 
+@media (min-width:1050px) {
+  .c13 {
+    margin-top: 0;
+  }
+}
+
 @media (min-width:480px) {
-  .c30 {
+  .c31 {
     -webkit-flex-direction: row;
     -ms-flex-direction: row;
     flex-direction: row;
@@ -1683,13 +1730,13 @@ exports[`PageForm: Component should render with page template 1`] = `
 }
 
 @media (min-width:480px) {
-  .c31 {
+  .c32 {
     padding-right: 40px;
   }
 }
 
 @media (min-width:480px) {
-  .c37 {
+  .c38 {
     margin-top: 0;
   }
 }
@@ -1697,12 +1744,6 @@ exports[`PageForm: Component should render with page template 1`] = `
 @media (min-width:1050px) {
   .c10 {
     display: none;
-  }
-}
-
-@media (min-width:1050px) {
-  .c12 {
-    margin-top: 0;
   }
 }
 
@@ -1730,26 +1771,26 @@ exports[`PageForm: Component should render with page template 1`] = `
 }
 
 @media (min-width:1050px) {
-  .c25 {
+  .c26 {
     max-width: calc(100% - 350px);
   }
 }
 
 @media (min-width:1050px) {
-  .c28 {
+  .c29 {
     display: block;
   }
 }
 
 @media (min-width:1050px) {
-  .c22 {
+  .c23 {
     margin-top: 0px;
     padding-bottom: 40px;
   }
 }
 
 @media (min-width:1050px) {
-  .c14 {
+  .c15 {
     display: -webkit-box;
     display: -webkit-flex;
     display: -ms-flexbox;
@@ -1760,7 +1801,7 @@ exports[`PageForm: Component should render with page template 1`] = `
 }
 
 @media (min-width:1050px) {
-  .c15 {
+  .c16 {
     width: 400px;
   }
 }
@@ -1960,6 +2001,7 @@ exports[`PageForm: Component should render with page template 1`] = `
           Name
         </label>
         <input
+          className="c12"
           id="name"
           name="name"
           onBlur={[Function]}
@@ -2001,7 +2043,7 @@ exports[`PageForm: Component should render with page template 1`] = `
             }
           >
             <div
-              className="c12"
+              className="c13"
             >
               <svg
                 style={
@@ -2029,19 +2071,19 @@ exports[`PageForm: Component should render with page template 1`] = `
     </div>
   </div>
   <div
-    className="c13"
+    className="c14"
   >
     <div
-      className="c14"
+      className="c15"
     >
       <div
-        className="c15"
+        className="c16"
       >
         <div
-          className="c16"
+          className="c17"
         >
           <div
-            className="c17"
+            className="c18"
             id="tab-0-tab-button"
             onClick={[Function]}
           >
@@ -2049,10 +2091,10 @@ exports[`PageForm: Component should render with page template 1`] = `
           </div>
         </div>
         <div
-          className="c18"
+          className="c19"
         >
           <div
-            className="c17"
+            className="c18"
             id="tab-1-tab-button"
             onClick={[Function]}
           >
@@ -2063,10 +2105,10 @@ exports[`PageForm: Component should render with page template 1`] = `
     </div>
   </div>
   <div
-    className="c19"
+    className="c20"
   >
     <div
-      className="c20"
+      className="c21"
       onClick={[Function]}
     >
       <label
@@ -2218,7 +2260,7 @@ exports[`PageForm: Component should render with page template 1`] = `
         </div>
       </div>
       <div
-        className="c21"
+        className="c22"
       >
         <svg
           style={
@@ -2239,18 +2281,18 @@ exports[`PageForm: Component should render with page template 1`] = `
     </div>
   </div>
   <div
-    className="c22"
+    className="c23"
   >
     <div
-      className="c23"
+      className="c24"
       id="tagsCounter"
     />
     1 Block
     <div
-      className="c23"
+      className="c24"
     >
       <div
-        className="c24"
+        className="c25"
       >
         <button
           disabled={false}
@@ -2347,14 +2389,14 @@ exports[`PageForm: Component should render with page template 1`] = `
           }
         >
           <div
-            className="c25"
+            className="c26"
           >
             <div
-              className="c26"
+              className="c27"
             >
               <div>
                 <div
-                  className="c27"
+                  className="c28"
                 >
                   <svg
                     style={
@@ -2461,7 +2503,7 @@ exports[`PageForm: Component should render with page template 1`] = `
               />
             </div>
             <div
-              className="c26"
+              className="c27"
             >
               <label
                 className="c9"
@@ -2507,7 +2549,7 @@ exports[`PageForm: Component should render with page template 1`] = `
             </div>
           </div>
           <div
-            className="c28"
+            className="c29"
             title="type"
           >
             type
@@ -2562,13 +2604,13 @@ exports[`PageForm: Component should render with page template 1`] = `
      
   </span>
   <div
-    className="c29"
+    className="c30"
   >
     <div
-      className="c30"
+      className="c31"
     >
       <div
-        className="c31"
+        className="c32"
       >
         <div>
           <input
@@ -2620,23 +2662,23 @@ exports[`PageForm: Component should render with page template 1`] = `
           </label>
         </div>
         <div
-          className="c32"
+          className="c33"
         >
           <label
-            className="c33"
+            className="c34"
             htmlFor="isPublic"
           >
             Make it Public
           </label>
           <span
-            className="c34"
+            className="c35"
           >
             This Page is currently Private
             <span
-              className="c35"
+              className="c36"
             />
             <a
-              className="c36"
+              className="c37"
               href="pageUrl"
               target="_blank"
             >
@@ -2646,7 +2688,7 @@ exports[`PageForm: Component should render with page template 1`] = `
         </div>
       </div>
       <div
-        className="c37"
+        className="c38"
       >
         <button
           disabled={false}
