@@ -1,3 +1,5 @@
+import base64
+from django.core.files.base import ContentFile
 from django.db import transaction, models as django_models
 from rest_framework import serializers
 
@@ -6,6 +8,34 @@ from . import models, constants
 from ..utils.serializers import CustomModelSerializer, ReadOnlySerializer
 from ..utils.validators import CustomUniqueTogetherValidator
 from ..projects.constants import ProjectStatus
+
+
+class CustomImageField(serializers.Field):
+    def to_representation(self, value):
+        if not value:
+            return {}
+
+        return {"file": value.url, "file_name": self.get_file_name(value.name)}
+
+    def to_internal_value(self, data):
+        if not data:
+            return None
+
+        file = data["file"]
+        file_name = data["file_name"]
+
+        if "data:" in file and ";base64," in file:
+            header, file = file.split(";base64,")
+        else:
+            return False
+
+        decoded_file = base64.b64decode(file)
+
+        return ContentFile(decoded_file, name=f"{file_name}")
+
+    @staticmethod
+    def get_file_name(file):
+        return file.split("/")[-1]
 
 
 class ElementValueField(serializers.Field):
@@ -267,6 +297,7 @@ class PageBaseSerializer(CustomModelSerializer):
     )
     tags = PageTagSerializer(read_only=True, many=True)
     is_changed = serializers.SerializerMethodField()
+    social_image = CustomImageField(allow_null=True, default={})
 
     class Meta:
         model = models.Page
