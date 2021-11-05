@@ -297,7 +297,7 @@ class PageBaseSerializer(CustomModelSerializer):
     )
     tags = PageTagSerializer(read_only=True, many=True)
     is_changed = serializers.SerializerMethodField()
-    social_image = CustomImageField(allow_null=True, default={})
+    social_image = CustomImageField(required=False, allow_null=True)
 
     class Meta:
         model = models.Page
