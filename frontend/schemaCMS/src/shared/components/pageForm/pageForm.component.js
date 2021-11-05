@@ -494,6 +494,8 @@ export const PageForm = ({
         id="fileUpload"
         onChange={data => handleUploadChange(data, { setFieldValue })}
         checkOnlyErrors
+        usesNewStyling
+        isRemovable
         {...restFormikProps}
       />
     </>

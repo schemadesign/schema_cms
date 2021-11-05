@@ -102,7 +102,7 @@ export default defineMessages({
   },
   [`${PAGE_SOCIAL_IMG}Placeholder`]: {
     id: `shared.components.pageForm.${PAGE_SOCIAL_IMG}`,
-    defaultMessage: 'Select image or drag and drop it here',
+    defaultMessage: 'Select Image Or Drag And Drop It Here',
   },
   [PAGE_TEMPLATE]: {
     id: `shared.components.pageForm.${PAGE_TEMPLATE}`,

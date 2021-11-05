@@ -4,11 +4,13 @@ import { ifElse, equals, always } from 'ramda';
 
 import {
   getButtonStyles,
-  iconContainerStyles,
+  getIconWrapperStyles,
   getLabelStyles,
   inputStyles,
   getValueStyles,
+  newLabelStyles,
   containerStyles,
+  innerContainerStyles,
   customBinStyles,
 } from './fileUpload.styles';
 import { getStyles } from '../../button/button.styles';
@@ -36,11 +38,13 @@ export class FileUploadComponent extends PureComponent {
     customIconContainerStyles: PropTypes.object,
     iconComponent: PropTypes.element,
     isRemovable: PropTypes.bool,
+    usesNewStyling: PropTypes.bool,
   };
 
   static defaultProps = {
     disabled: false,
     isRemovable: false,
+    usesNewStyling: false,
     customStyles: {},
     customInputStyles: {},
     customLabelStyles: {},
@@ -50,7 +54,8 @@ export class FileUploadComponent extends PureComponent {
     iconComponent: this.props.iconComponent || (
       <div
         style={{
-          ...getStyles(this.props.theme, BUTTON, this.props.disabled, BUTTON_SIZES.BIG).containerStyles,
+          ...getStyles(this.props.theme, BUTTON, this.props.disabled, BUTTON_SIZES.BIG, this.props.usesNewStyling)
+            .containerStyles,
           ...getButtonStyles(this.props.disabled),
         }}
       >
@@ -85,20 +90,29 @@ export class FileUploadComponent extends PureComponent {
     customIconContainerStyles,
     placeholder,
     disabled,
-  }) => (
-    <Fragment>
-      <Label htmlFor={id} customStyles={customLabelStyles}>
-        {label}
-      </Label>
-      <label htmlFor={id} style={{ ...getValueStyles(disabled), ...customInputStyles }}>
-        {(fileNames.length && fileNames) || placeholder || DEFAULT_TEXT_VALUE}
-        {this.renderBin(!!fileNames.length && this.props.isRemovable)}
-      </label>
-      <div style={{ ...iconContainerStyles, ...customIconContainerStyles }}>
-        {this.iconComponent({ id, label, disabled })}
-      </div>
-    </Fragment>
-  );
+    usesNewStyling,
+  }) => {
+    const labelStyles = usesNewStyling ? newLabelStyles : {};
+    return (
+      <Fragment>
+        <Label htmlFor={id} customStyles={{ ...customLabelStyles, ...labelStyles }}>
+          {label}
+        </Label>
+        <div style={usesNewStyling ? innerContainerStyles : {}}>
+          <label
+            htmlFor={id}
+            style={{ ...getValueStyles(disabled, usesNewStyling, fileNames.length), ...customInputStyles }}
+          >
+            {(fileNames.length && fileNames) || placeholder || DEFAULT_TEXT_VALUE}
+            {this.renderBin(!!fileNames.length && this.props.isRemovable)}
+          </label>
+          <div style={{ ...getIconWrapperStyles(usesNewStyling), ...customIconContainerStyles }}>
+            {this.iconComponent({ id, label, disabled })}
+          </div>
+        </div>
+      </Fragment>
+    );
+  };
 
   renderContent = data => (data.label ? this.renderTextField(data) : this.iconComponent(data));
 
@@ -115,6 +129,7 @@ export class FileUploadComponent extends PureComponent {
       multiple,
       placeholder,
       disabled,
+      usesNewStyling,
       ...restProps
     } = this.props;
     const filteredProps = filterAllowedAttributes('input', restProps);
@@ -132,6 +147,7 @@ export class FileUploadComponent extends PureComponent {
           multiple,
           placeholder,
           disabled,
+          usesNewStyling,
         })}
         <input
           style={inputStyles}
