@@ -26,7 +26,7 @@ import { DndProvider } from 'react-dnd';
 import MultiBackend from 'react-dnd-multi-backend';
 import HTML5toTouch from 'react-dnd-multi-backend/dist/cjs/HTML5toTouch';
 
-import { Container, SelectContainer, TabsContainer } from './pageForm.styles';
+import { Container, SelectContainer, StyledTextInput, TabsContainer } from './pageForm.styles';
 import {
   AvailableCopy,
   DeleteButtonContainer,
@@ -388,13 +388,13 @@ export const PageForm = ({
 
   const customInputStyles = {
     padding: '17px 24px',
-    color: '#4F515C',
+    color: '#6E6E7B',
     backgroundColor: '#1B1C23',
   };
 
   const renderMetadata = () => (
     <>
-      <TextInput
+      <StyledTextInput
         onChange={handleChange}
         onBlur={handleDisplayNameBlur}
         name={PAGE_DISPLAY_NAME}
@@ -406,7 +406,7 @@ export const PageForm = ({
         customInputStyles={customInputStyles}
         {...restFormikProps}
       />
-      <TextInput
+      <StyledTextInput
         onChange={handleChange}
         name={PAGE_DESCRIPTION}
         value={values[PAGE_DESCRIPTION]}
@@ -418,7 +418,7 @@ export const PageForm = ({
         customInputStyles={customInputStyles}
         {...restFormikProps}
       />
-      <TextInput
+      <StyledTextInput
         onChange={handleChange}
         name={PAGE_KEYWORDS}
         value={values[PAGE_KEYWORDS]}
@@ -429,7 +429,7 @@ export const PageForm = ({
         customInputStyles={customInputStyles}
         {...restFormikProps}
       />
-      <TextInput
+      <StyledTextInput
         onChange={handleChange}
         name={PAGE_LINK}
         value={values[PAGE_LINK]}
@@ -452,7 +452,7 @@ export const PageForm = ({
         customLabelStyles={customLabelStyles}
         customInputStyles={customInputStyles}
       />
-      <TextInput
+      <StyledTextInput
         onChange={handleChange}
         name={PAGE_SOCIAL_TITLE}
         value={values[PAGE_SOCIAL_TITLE]}
@@ -463,7 +463,7 @@ export const PageForm = ({
         customInputStyles={customInputStyles}
         {...restFormikProps}
       />
-      <TextInput
+      <StyledTextInput
         onChange={handleChange}
         name={PAGE_SOCIAL_DESC}
         value={values[PAGE_SOCIAL_DESC]}
@@ -474,7 +474,7 @@ export const PageForm = ({
         customInputStyles={customInputStyles}
         {...restFormikProps}
       />
-      <TextInput
+      <StyledTextInput
         onChange={handleChange}
         name={PAGE_SOCIAL_IMG_TITLE}
         value={values[PAGE_SOCIAL_IMG_TITLE]}
@@ -489,7 +489,7 @@ export const PageForm = ({
         fileNames={pathOr('', [PAGE_SOCIAL_IMG, FILE_NAME], values)}
         name={PAGE_SOCIAL_IMG}
         label="  "
-        placeholder={<FormattedMessage {...messages[`${PAGE_SOCIAL_IMG}Placeholder`]} />}
+        placeholder={intl.formatMessage(messages[`${PAGE_SOCIAL_IMG}Placeholder`])}
         type="file"
         id="fileUpload"
         onChange={data => handleUploadChange(data, { setFieldValue })}
@@ -504,7 +504,7 @@ export const PageForm = ({
     <Container>
       <ContextHeader title={title} subtitle={nameInput} />
       <MobileInputName>
-        <TextInput
+        <StyledTextInput
           onChange={handleChange}
           name={PAGE_NAME}
           value={values[PAGE_NAME]}
