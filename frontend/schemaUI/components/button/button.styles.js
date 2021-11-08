@@ -22,11 +22,17 @@ const sizes = {
   },
 };
 
-export const getStyles = (theme = defaultTheme, buttonType = BUTTON, disabled, size = BUTTON_SIZES.BIG) => ({
+export const getStyles = (
+  theme = defaultTheme,
+  buttonType = BUTTON,
+  disabled,
+  size = BUTTON_SIZES.BIG,
+  usesNewStyling
+) => ({
   containerStyles: {
     border: 'none',
     borderRadius: sizes[size].borderRadius,
-    backgroundColor: theme[buttonType].background,
+    backgroundColor: usesNewStyling ? theme.textArea.background : theme[buttonType].background,
     fill: theme.icon.fill,
     color: theme[buttonType].text,
     padding: sizes[size].padding,

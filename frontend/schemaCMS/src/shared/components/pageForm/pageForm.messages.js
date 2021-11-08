@@ -9,6 +9,10 @@ import {
   PAGE_IS_PUBLIC,
   PAGE_TAGS,
   PAGE_LINK,
+  PAGE_SOCIAL_TITLE,
+  PAGE_SOCIAL_DESC,
+  PAGE_SOCIAL_IMG,
+  PAGE_SOCIAL_IMG_TITLE,
 } from '../../../modules/page/page.constants';
 
 export default defineMessages({
@@ -28,17 +32,77 @@ export default defineMessages({
     id: `shared.components.pageForm.${PAGE_NAME}Placeholder`,
     defaultMessage: 'Name',
   },
-  [PAGE_KEYWORDS]: {
-    id: `shared.components.pageForm.${PAGE_KEYWORDS}`,
-    defaultMessage: 'SEO Keywords',
+  [PAGE_DISPLAY_NAME]: {
+    id: `shared.components.pageForm.${PAGE_DISPLAY_NAME}`,
+    defaultMessage: 'URL Display Name',
+  },
+  [`${PAGE_DISPLAY_NAME}Placeholder`]: {
+    id: `shared.components.pageForm.${PAGE_DISPLAY_NAME}Placeholder`,
+    defaultMessage: 'Type URL here',
   },
   [PAGE_DESCRIPTION]: {
     id: `shared.components.pageForm.${PAGE_DESCRIPTION}`,
     defaultMessage: 'SEO Page Description',
   },
-  [PAGE_DISPLAY_NAME]: {
-    id: `shared.components.pageForm.${PAGE_DISPLAY_NAME}`,
-    defaultMessage: 'URL Display Name',
+  [`${PAGE_DESCRIPTION}Placeholder`]: {
+    id: `shared.components.pageForm.${PAGE_DESCRIPTION}Placeholder`,
+    defaultMessage: 'Type SEO Page Description here',
+  },
+  [PAGE_KEYWORDS]: {
+    id: `shared.components.pageForm.${PAGE_KEYWORDS}`,
+    defaultMessage: 'SEO Keywords',
+  },
+  [`${PAGE_KEYWORDS}Placeholder`]: {
+    id: `shared.components.pageForm.${PAGE_KEYWORDS}Placeholder`,
+    defaultMessage: 'Type SEO keywords here',
+  },
+  [PAGE_LINK]: {
+    id: `shared.components.pageForm.${PAGE_LINK}`,
+    defaultMessage: 'Frontend page Link',
+  },
+  [`${PAGE_LINK}Placeholder`]: {
+    id: `shared.components.pageForm.${PAGE_LINK}Placeholder`,
+    defaultMessage: 'Type frontend page link here',
+  },
+  [PAGE_TAGS]: {
+    id: `shared.components.pageForm.${PAGE_TAGS}`,
+    defaultMessage: 'Tags',
+  },
+  [`${PAGE_TAGS}Placeholder`]: {
+    id: `shared.components.pageForm.${PAGE_TAGS}Placeholder`,
+    defaultMessage: 'Select tags',
+  },
+  [`${PAGE_SOCIAL_TITLE}Label`]: {
+    id: `shared.components.pageForm.${PAGE_SOCIAL_TITLE}`,
+    defaultMessage: 'Social Media Title',
+  },
+  [`${PAGE_SOCIAL_TITLE}Placeholder`]: {
+    id: `shared.components.pageForm.${PAGE_SOCIAL_TITLE}`,
+    defaultMessage: 'Type your social media embed title here',
+  },
+  [`${PAGE_SOCIAL_DESC}Label`]: {
+    id: `shared.components.pageForm.${PAGE_SOCIAL_DESC}`,
+    defaultMessage: 'Social Media Description',
+  },
+  [`${PAGE_SOCIAL_DESC}Placeholder`]: {
+    id: `shared.components.pageForm.${PAGE_SOCIAL_DESC}`,
+    defaultMessage: 'Type your social media embed title here',
+  },
+  [`${PAGE_SOCIAL_IMG_TITLE}Label`]: {
+    id: `shared.components.pageForm.${PAGE_SOCIAL_IMG}`,
+    defaultMessage: 'Social Media Image Upload',
+  },
+  [`${PAGE_SOCIAL_IMG_TITLE}Placeholder`]: {
+    id: `shared.components.pageForm.${PAGE_SOCIAL_IMG}`,
+    defaultMessage: 'Type your social media embed title here',
+  },
+  [`${PAGE_SOCIAL_IMG}Label`]: {
+    id: `shared.components.pageForm.${PAGE_SOCIAL_IMG}`,
+    defaultMessage: 'Select image or drag and drop it here',
+  },
+  [`${PAGE_SOCIAL_IMG}Placeholder`]: {
+    id: `shared.components.pageForm.${PAGE_SOCIAL_IMG}`,
+    defaultMessage: 'Select Image Or Drag And Drop It Here',
   },
   [PAGE_TEMPLATE]: {
     id: `shared.components.pageForm.${PAGE_TEMPLATE}`,
@@ -51,14 +115,6 @@ export default defineMessages({
   [PAGE_IS_PUBLIC]: {
     id: `shared.components.pageForm.${PAGE_IS_PUBLIC}`,
     defaultMessage: 'Make it Public',
-  },
-  [PAGE_TAGS]: {
-    id: `shared.components.pageForm.${PAGE_TAGS}`,
-    defaultMessage: 'Tags',
-  },
-  [PAGE_LINK]: {
-    id: `shared.components.pageForm.${PAGE_LINK}`,
-    defaultMessage: 'Frontend page Link',
   },
   pageAvailability: {
     id: 'shared.components.pageForm.pageAvailability',

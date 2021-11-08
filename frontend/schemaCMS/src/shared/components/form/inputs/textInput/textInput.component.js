@@ -11,6 +11,7 @@ const { TextField } = Form;
 export class TextInput extends PureComponent {
   static propTypes = {
     customStyles: PropTypes.object,
+    customLabelStyles: PropTypes.object,
     customInputStyles: PropTypes.object,
     errors: PropTypes.object,
     label: PropTypes.oneOfType([PropTypes.element, PropTypes.string]),
@@ -60,6 +61,7 @@ export class TextInput extends PureComponent {
       label,
       multiline,
       customStyles,
+      customLabelStyles,
       customInputStyles,
       fullWidth,
       checkOnlyErrors,
@@ -82,6 +84,7 @@ export class TextInput extends PureComponent {
           error={error}
           multiline={multiline}
           customStyles={customStyles}
+          customLabelStyles={customLabelStyles}
           customInputStyles={customInputStyles}
           customIconStyles={getIconStyles(!!label || autoWidth)}
           autoWidth={autoWidth}

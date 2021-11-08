@@ -136,6 +136,15 @@ class Page(Content):
     display_name = models.CharField(max_length=constants.PAGE_DISPLAY_NAME_MAX_LENGTH, blank=True, default="")
     description = models.TextField(blank=True, default="")
     keywords = models.TextField(blank=True, default="")
+    social_title = models.CharField(max_length=100, blank=True, default="")
+    social_description = models.TextField(blank=True, default="")
+    social_image_title = models.CharField(max_length=100, blank=True, default="")
+    social_image = models.ImageField(
+        null=True,
+        storage=S3Boto3Storage(bucket=settings.AWS_STORAGE_PAGES_BUCKET_NAME),
+        upload_to=file_upload_path,
+        max_length=200,
+    )
     slug = AutoSlugField(populate_from="name", allow_duplicates=True)
     is_public = models.BooleanField(default=True)
     allow_edit = models.BooleanField(default=False)
@@ -167,6 +176,11 @@ class Page(Content):
         return self.project.title, section, self.name, self.is_template, self.is_draft
 
     natural_key.dependencies = ["projects.project", "pages.section", "pages.blocktemplate"]
+
+    def relative_path_to_save(self, filename):
+        base_path = self.social_image.storage.location
+
+        return os.path.join(base_path, f"pages/{self.id}/social_image/{filename}")
 
     @property
     def is_published(self):

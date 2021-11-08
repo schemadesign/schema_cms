@@ -85,46 +85,51 @@ exports[`FileUpload: Component should render with custom icon 1`] = `
   >
     label
   </Component>
-  <label
-    htmlFor="id"
-    style={
-      Object {
-        "alignItems": "center",
-        "cursor": "pointer",
-        "display": "flex",
-        "fontSize": 18,
-        "lineHeight": "24px",
-        "opacity": 1,
-        "paddingBottom": 30,
-        "width": "calc(100% - 70px)",
-        "wordBreak": "break-word",
-      }
-    }
-  >
-    Select a file
-  </label>
   <div
-    style={
-      Object {
-        "position": "absolute",
-        "right": 0,
-        "top": 0,
-      }
-    }
+    style={Object {}}
   >
     <label
       htmlFor="id"
       style={
         Object {
-          "position": "relative",
-          "top": 10,
+          "alignItems": "center",
+          "cursor": "pointer",
+          "display": "flex",
+          "fontSize": 18,
+          "lineHeight": "24px",
+          "opacity": 1,
+          "paddingBottom": 30,
+          "textAlign": "left",
+          "width": "calc(100% - 70px)",
+          "wordBreak": "break-word",
         }
       }
     >
-      <span>
-        icon
-      </span>
+      Select a file
     </label>
+    <div
+      style={
+        Object {
+          "position": "absolute",
+          "right": 0,
+          "top": 0,
+        }
+      }
+    >
+      <label
+        htmlFor="id"
+        style={
+          Object {
+            "position": "relative",
+            "top": 10,
+          }
+        }
+      >
+        <span>
+          icon
+        </span>
+      </label>
+    </div>
   </div>
   <input
     aria-hidden={true}
@@ -164,78 +169,83 @@ exports[`FileUpload: Component should render with custom styles 1`] = `
   >
     label
   </Component>
-  <label
-    htmlFor="id"
-    style={
-      Object {
-        "alignItems": "center",
-        "backgroundColor": "green",
-        "cursor": "pointer",
-        "display": "flex",
-        "fontSize": 18,
-        "lineHeight": "24px",
-        "opacity": 1,
-        "paddingBottom": 30,
-        "width": "calc(100% - 70px)",
-        "wordBreak": "break-word",
-      }
-    }
-  >
-    Select a file
-  </label>
   <div
-    style={
-      Object {
-        "position": "absolute",
-        "right": 0,
-        "top": 0,
-      }
-    }
+    style={Object {}}
   >
     <label
       htmlFor="id"
       style={
         Object {
-          "position": "relative",
-          "top": 10,
+          "alignItems": "center",
+          "backgroundColor": "green",
+          "cursor": "pointer",
+          "display": "flex",
+          "fontSize": 18,
+          "lineHeight": "24px",
+          "opacity": 1,
+          "paddingBottom": 30,
+          "textAlign": "left",
+          "width": "calc(100% - 70px)",
+          "wordBreak": "break-word",
         }
       }
     >
-      <div
+      Select a file
+    </label>
+    <div
+      style={
+        Object {
+          "position": "absolute",
+          "right": 0,
+          "top": 0,
+        }
+      }
+    >
+      <label
+        htmlFor="id"
         style={
           Object {
-            "alignItems": "center",
-            "backgroundColor": "#1d1d20",
-            "border": "none",
-            "borderRadius": "30px",
-            "color": "#FFF",
-            "cursor": "pointer",
-            "display": "flex",
-            "fill": "#FFF",
-            "fontSize": 0,
-            "height": 60,
-            "justifyContent": "center",
-            "margin": "0",
-            "minHeight": "48px",
-            "opacity": 1,
-            "outline": "none",
-            "padding": "0",
-            "paddingBottom": 5,
-            "transition": "background 0.25s ease-in-out, color 0.25s ease-in-out",
-            "width": 60,
+            "position": "relative",
+            "top": 10,
           }
         }
       >
-        <Component
-          customStyles={
+        <div
+          style={
             Object {
-              "height": 30,
-              "width": 30,
+              "alignItems": "center",
+              "backgroundColor": "#1d1d20",
+              "border": "none",
+              "borderRadius": "30px",
+              "color": "#FFF",
+              "cursor": "pointer",
+              "display": "flex",
+              "fill": "#FFF",
+              "fontSize": 0,
+              "height": 60,
+              "justifyContent": "center",
+              "margin": "0",
+              "minHeight": "48px",
+              "opacity": 1,
+              "outline": "none",
+              "padding": "0",
+              "paddingBottom": 5,
+              "transition": "background 0.25s ease-in-out, color 0.25s ease-in-out",
+              "width": 60,
             }
           }
-        />
-      </div>
-    </label>
+        >
+          <Component
+            customStyles={
+              Object {
+                "height": 30,
+                "width": 30,
+              }
+            }
+          />
+        </div>
+      </label>
+    </div>
   </div>
   <input
     aria-hidden={true}
@@ -270,77 +280,82 @@ exports[`FileUpload: Component should render with file name 1`] = `
   >
     label
   </Component>
-  <label
-    htmlFor="id"
-    style={
-      Object {
-        "alignItems": "center",
-        "cursor": "pointer",
-        "display": "flex",
-        "fontSize": 18,
-        "lineHeight": "24px",
-        "opacity": 1,
-        "paddingBottom": 30,
-        "width": "calc(100% - 70px)",
-        "wordBreak": "break-word",
-      }
-    }
-  >
-    Select a file
-  </label>
   <div
-    style={
-      Object {
-        "position": "absolute",
-        "right": 0,
-        "top": 0,
-      }
-    }
+    style={Object {}}
   >
     <label
       htmlFor="id"
       style={
         Object {
-          "position": "relative",
-          "top": 10,
+          "alignItems": "center",
+          "cursor": "pointer",
+          "display": "flex",
+          "fontSize": 18,
+          "lineHeight": "24px",
+          "opacity": 1,
+          "paddingBottom": 30,
+          "textAlign": "left",
+          "width": "calc(100% - 70px)",
+          "wordBreak": "break-word",
         }
       }
     >
-      <div
+      Select a file
+    </label>
+    <div
+      style={
+        Object {
+          "position": "absolute",
+          "right": 0,
+          "top": 0,
+        }
+      }
+    >
+      <label
+        htmlFor="id"
         style={
           Object {
-            "alignItems": "center",
-            "backgroundColor": "#1d1d20",
-            "border": "none",
-            "borderRadius": "30px",
-            "color": "#FFF",
-            "cursor": "pointer",
-            "display": "flex",
-            "fill": "#FFF",
-            "fontSize": 0,
-            "height": 60,
-            "justifyContent": "center",
-            "margin": "0",
-            "minHeight": "48px",
-            "opacity": 1,
-            "outline": "none",
-            "padding": "0",
-            "paddingBottom": 5,
-            "transition": "background 0.25s ease-in-out, color 0.25s ease-in-out",
-            "width": 60,
+            "position": "relative",
+            "top": 10,
           }
         }
       >
-        <Component
-          customStyles={
+        <div
+          style={
             Object {
-              "height": 30,
-              "width": 30,
+              "alignItems": "center",
+              "backgroundColor": "#1d1d20",
+              "border": "none",
+              "borderRadius": "30px",
+              "color": "#FFF",
+              "cursor": "pointer",
+              "display": "flex",
+              "fill": "#FFF",
+              "fontSize": 0,
+              "height": 60,
+              "justifyContent": "center",
+              "margin": "0",
+              "minHeight": "48px",
+              "opacity": 1,
+              "outline": "none",
+              "padding": "0",
+              "paddingBottom": 5,
+              "transition": "background 0.25s ease-in-out, color 0.25s ease-in-out",
+              "width": 60,
             }
           }
-        />
-      </div>
-    </label>
+        >
+          <Component
+            customStyles={
+              Object {
+                "height": 30,
+                "width": 30,
+              }
+            }
+          />
+        </div>
+      </label>
+    </div>
   </div>
   <input
     aria-hidden={true}
@@ -376,77 +391,82 @@ exports[`FileUpload: Component should render with label 1`] = `
   >
     label
   </Component>
-  <label
-    htmlFor="id"
-    style={
-      Object {
-        "alignItems": "center",
-        "cursor": "pointer",
-        "display": "flex",
-        "fontSize": 18,
-        "lineHeight": "24px",
-        "opacity": 1,
-        "paddingBottom": 30,
-        "width": "calc(100% - 70px)",
-        "wordBreak": "break-word",
-      }
-    }
-  >
-    Select a file
-  </label>
   <div
-    style={
-      Object {
-        "position": "absolute",
-        "right": 0,
-        "top": 0,
-      }
-    }
+    style={Object {}}
   >
     <label
       htmlFor="id"
       style={
         Object {
-          "position": "relative",
-          "top": 10,
+          "alignItems": "center",
+          "cursor": "pointer",
+          "display": "flex",
+          "fontSize": 18,
+          "lineHeight": "24px",
+          "opacity": 1,
+          "paddingBottom": 30,
+          "textAlign": "left",
+          "width": "calc(100% - 70px)",
+          "wordBreak": "break-word",
         }
       }
     >
-      <div
+      Select a file
+    </label>
+    <div
+      style={
+        Object {
+          "position": "absolute",
+          "right": 0,
+          "top": 0,
+        }
+      }
+    >
+      <label
+        htmlFor="id"
         style={
           Object {
-            "alignItems": "center",
-            "backgroundColor": "#1d1d20",
-            "border": "none",
-            "borderRadius": "30px",
-            "color": "#FFF",
-            "cursor": "pointer",
-            "display": "flex",
-            "fill": "#FFF",
-            "fontSize": 0,
-            "height": 60,
-            "justifyContent": "center",
-            "margin": "0",
-            "minHeight": "48px",
-            "opacity": 1,
-            "outline": "none",
-            "padding": "0",
-            "paddingBottom": 5,
-            "transition": "background 0.25s ease-in-out, color 0.25s ease-in-out",
-            "width": 60,
+            "position": "relative",
+            "top": 10,
           }
         }
       >
-        <Component
-          customStyles={
+        <div
+          style={
             Object {
-              "height": 30,
-              "width": 30,
+              "alignItems": "center",
+              "backgroundColor": "#1d1d20",
+              "border": "none",
+              "borderRadius": "30px",
+              "color": "#FFF",
+              "cursor": "pointer",
+              "display": "flex",
+              "fill": "#FFF",
+              "fontSize": 0,
+              "height": 60,
+              "justifyContent": "center",
+              "margin": "0",
+              "minHeight": "48px",
+              "opacity": 1,
+              "outline": "none",
+              "padding": "0",
+              "paddingBottom": 5,
+              "transition": "background 0.25s ease-in-out, color 0.25s ease-in-out",
+              "width": 60,
             }
           }
-        />
-      </div>
-    </label>
+        >
+          <Component
+            customStyles={
+              Object {
+                "height": 30,
+                "width": 30,
+              }
+            }
+          />
+        </div>
+      </label>
+    </div>
   </div>
   <input
     aria-hidden={true}

@@ -19,13 +19,14 @@ import {
   filter,
   complement,
   always,
+  pathOr,
 } from 'ramda';
 import { asMutable } from 'seamless-immutable';
 import { DndProvider } from 'react-dnd';
 import MultiBackend from 'react-dnd-multi-backend';
 import HTML5toTouch from 'react-dnd-multi-backend/dist/cjs/HTML5toTouch';
 
-import { Container, SelectContainer, TabsContainer } from './pageForm.styles';
+import { Container, SelectContainer, StyledTextInput, TabsContainer } from './pageForm.styles';
 import {
   AvailableCopy,
   DeleteButtonContainer,
@@ -61,6 +62,12 @@ import {
   BLOCK_ID,
   PAGE_TAGS,
   PAGE_LINK,
+  PAGE_SOCIAL_TITLE,
+  PAGE_SOCIAL_DESC,
+  PAGE_SOCIAL_IMG,
+  FILE_NAME,
+  PAGE_SOCIAL_IMG_TITLE,
+  FILE,
 } from '../../../modules/page/page.constants';
 import { Select } from '../form/select';
 import { Modal, ModalActions, modalStyles, ModalTitle } from '../modal/modal.styles';
@@ -68,7 +75,7 @@ import { BackButton, NextButton } from '../navigation';
 import { PageBlock } from '../pageBlock';
 import { Draggable } from '../draggable';
 import { CounterHeader } from '../counterHeader';
-import { getPropsWhenNotEmpty, getPageUrlOptions, setDefaultValue } from '../../utils/helpers';
+import { getPropsWhenNotEmpty, getPageUrlOptions, setDefaultValue, getEventFiles } from '../../utils/helpers';
 import { TagSearch } from '../tagSearch';
 import { CopyButton } from '../copyButton';
 import { renderWhenTrue, renderWhenTrueOtherwise } from '../../utils/rendering';
@@ -76,6 +83,7 @@ import { PageLink } from '../../../theme/typography';
 import { ROUTES } from '../../utils/routes.contants';
 import { Tabs } from '../tabs';
 import { TABS } from './pageForm.constants';
+import { Uploader } from '../form/uploader';
 
 const { EditIcon, MenuIcon, PlusIcon } = Icons;
 const { Switch, Label } = Form;
@@ -267,6 +275,34 @@ export const PageForm = ({
 
     setFieldValue(PAGE_BLOCKS, mutableValues);
   };
+
+  const handleUploadChange = (data, { setFieldValue }) => {
+    const uploadFile = getEventFiles(data);
+
+    if (!uploadFile) {
+      setFieldValue(PAGE_SOCIAL_IMG, {});
+      return;
+    }
+
+    if (!uploadFile.length) {
+      return;
+    }
+
+    const file = uploadFile[0];
+
+    const reader = new FileReader();
+    reader.readAsDataURL(file);
+
+    reader.addEventListener(
+      'load',
+      ({ target: { result } }) => {
+        setFieldValue(`${PAGE_SOCIAL_IMG}.${FILE}`, result);
+        setFieldValue(`${PAGE_SOCIAL_IMG}.${FILE_NAME}`, pathOr('', ['name'], file));
+      },
+      false
+    );
+  };
+
   const blocksCount = values[PAGE_BLOCKS].length;
   const handleDisplayNameBlur = e => {
     setFieldValue(PAGE_DISPLAY_NAME, values[PAGE_DISPLAY_NAME].toLowerCase());
@@ -343,44 +379,65 @@ export const PageForm = ({
     </>
   );
 
+  const customLabelStyles = {
+    borderTop: 'none',
+    padding: '12px 0',
+    fontSize: '18px',
+    color: '#6E6E7B',
+  };
+
+  const customInputStyles = {
+    padding: '17px 24px',
+    color: '#6E6E7B',
+    backgroundColor: '#1B1C23',
+  };
+
   const renderMetadata = () => (
     <>
-      <TextInput
+      <StyledTextInput
         onChange={handleChange}
         onBlur={handleDisplayNameBlur}
         name={PAGE_DISPLAY_NAME}
         value={values[PAGE_DISPLAY_NAME]}
         fullWidth
-        isEdit
         label={<FormattedMessage {...messages[PAGE_DISPLAY_NAME]} />}
+        placeholder={intl.formatMessage(messages[`${PAGE_DISPLAY_NAME}Placeholder`])}
+        customLabelStyles={customLabelStyles}
+        customInputStyles={customInputStyles}
         {...restFormikProps}
       />
-      <TextInput
+      <StyledTextInput
         onChange={handleChange}
         name={PAGE_DESCRIPTION}
         value={values[PAGE_DESCRIPTION]}
         fullWidth
         multiline
-        isEdit
         label={<FormattedMessage {...messages[PAGE_DESCRIPTION]} />}
+        placeholder={intl.formatMessage(messages[`${PAGE_DESCRIPTION}Placeholder`])}
+        customLabelStyles={customLabelStyles}
+        customInputStyles={customInputStyles}
         {...restFormikProps}
       />
-      <TextInput
+      <StyledTextInput
         onChange={handleChange}
         name={PAGE_KEYWORDS}
         value={values[PAGE_KEYWORDS]}
         fullWidth
-        isEdit
         label={<FormattedMessage {...messages[PAGE_KEYWORDS]} />}
+        placeholder={intl.formatMessage(messages[`${PAGE_KEYWORDS}Placeholder`])}
+        customLabelStyles={customLabelStyles}
+        customInputStyles={customInputStyles}
         {...restFormikProps}
       />
-      <TextInput
+      <StyledTextInput
         onChange={handleChange}
         name={PAGE_LINK}
         value={values[PAGE_LINK]}
         fullWidth
-        isEdit
         label={<FormattedMessage {...messages[PAGE_LINK]} />}
+        placeholder={intl.formatMessage(messages[`${PAGE_LINK}Placeholder`])}
+        customLabelStyles={customLabelStyles}
+        customInputStyles={customInputStyles}
         {...restFormikProps}
       />
       <Label>
@@ -391,6 +448,55 @@ export const PageForm = ({
         values={values[PAGE_TAGS]}
         setFieldValue={setFieldValue}
         valuePath={PAGE_TAGS}
+        placeholder={intl.formatMessage(messages[`${PAGE_TAGS}Placeholder`])}
+        customLabelStyles={customLabelStyles}
+        customInputStyles={customInputStyles}
+      />
+      <StyledTextInput
+        onChange={handleChange}
+        name={PAGE_SOCIAL_TITLE}
+        value={values[PAGE_SOCIAL_TITLE]}
+        fullWidth
+        label={<FormattedMessage {...messages[`${PAGE_SOCIAL_TITLE}Label`]} />}
+        placeholder={intl.formatMessage(messages[`${PAGE_SOCIAL_TITLE}Placeholder`])}
+        customLabelStyles={customLabelStyles}
+        customInputStyles={customInputStyles}
+        {...restFormikProps}
+      />
+      <StyledTextInput
+        onChange={handleChange}
+        name={PAGE_SOCIAL_DESC}
+        value={values[PAGE_SOCIAL_DESC]}
+        fullWidth
+        label={<FormattedMessage {...messages[`${PAGE_SOCIAL_DESC}Label`]} />}
+        placeholder={intl.formatMessage(messages[`${PAGE_SOCIAL_DESC}Placeholder`])}
+        customLabelStyles={customLabelStyles}
+        customInputStyles={customInputStyles}
+        {...restFormikProps}
+      />
+      <StyledTextInput
+        onChange={handleChange}
+        name={PAGE_SOCIAL_IMG_TITLE}
+        value={values[PAGE_SOCIAL_IMG_TITLE]}
+        fullWidth
+        label={<FormattedMessage {...messages[`${PAGE_SOCIAL_IMG_TITLE}Label`]} />}
+        placeholder={intl.formatMessage(messages[`${PAGE_SOCIAL_IMG_TITLE}Placeholder`])}
+        customLabelStyles={customLabelStyles}
+        customInputStyles={customInputStyles}
+        {...restFormikProps}
+      />
+      <Uploader
+        fileNames={pathOr('', [PAGE_SOCIAL_IMG, FILE_NAME], values)}
+        name={PAGE_SOCIAL_IMG}
+        label="  "
+        placeholder={intl.formatMessage(messages[`${PAGE_SOCIAL_IMG}Placeholder`])}
+        type="file"
+        id="fileUpload"
+        onChange={data => handleUploadChange(data, { setFieldValue })}
+        checkOnlyErrors
+        usesNewStyling
+        isRemovable
+        {...restFormikProps}
       />
     </>
   );
@@ -400,7 +506,7 @@ export const PageForm = ({
     <Container>
       <ContextHeader title={title} subtitle={nameInput} />
       <MobileInputName>
-        <TextInput
+        <StyledTextInput
           onChange={handleChange}
           name={PAGE_NAME}
           value={values[PAGE_NAME]}

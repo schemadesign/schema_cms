@@ -18,6 +18,7 @@ export class Uploader extends PureComponent {
     touched: PropTypes.object,
     checkOnlyErrors: PropTypes.bool,
     isRemovable: PropTypes.bool,
+    usesNewStyling: PropTypes.bool,
     onChange: PropTypes.func,
   };
 
