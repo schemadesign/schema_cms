@@ -239,7 +239,7 @@ class Page(Content):
         copy_time = timezone.now().strftime("%Y-%m-%d, %H:%M:%S.%f")
 
         if not attrs:
-            attrs = {"name": f"Page ID #{self.id} copy({copy_time})"}
+            attrs = {"is_main_page": False, "name": f"Page ID #{self.id} copy({copy_time})"}
 
         new_page = self.make_clone(attrs=attrs)
 

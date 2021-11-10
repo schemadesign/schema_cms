@@ -117,6 +117,7 @@ class PageAdmin(SoftDeleteObjectAdmin):
         "description",
         "keywords",
         "is_public",
+        "is_main_page",
         "deleted_at",
         "created_by",
     )
