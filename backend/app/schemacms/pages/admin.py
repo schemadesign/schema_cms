@@ -107,7 +107,7 @@ class SectionAdmin(SoftDeleteObjectAdmin):
 
 @admin.register(models.Page)
 class PageAdmin(SoftDeleteObjectAdmin):
-    list_display = ("name", "section", "project", "deleted_at")
+    list_display = ("name", "section", "project", "deleted_at", "is_draft")
     fields = (
         "project",
         "section",
@@ -120,9 +120,11 @@ class PageAdmin(SoftDeleteObjectAdmin):
         "is_main_page",
         "deleted_at",
         "created_by",
+        "published_version",
+        "is_draft",
     )
     list_filter = ("project", "section", "deleted_at")
-    readonly_on_update_fields = ("project",)
+    readonly_on_update_fields = ("project", "published_version", "is_draft")
 
     def soft_undelete(self, request, queryset):
         self.handle_unique_conflicts_on_undelete(
@@ -130,12 +132,7 @@ class PageAdmin(SoftDeleteObjectAdmin):
         )
 
     def get_queryset(self, request):
-        return (
-            super()
-            .get_queryset(request)
-            .select_related("project", "section")
-            .filter(is_template=False, is_draft=True)
-        )
+        return super().get_queryset(request).select_related("project", "section").filter(is_template=False)
 
     @transaction.atomic()
     def save_model(self, request, obj, form, change):
