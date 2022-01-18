@@ -70,6 +70,11 @@ class LambdaUser:
         return self.username
 
 
+class PublicApiUser(LambdaUser):
+    def __str__(self):
+        return "PublicApiUser"
+
+
 class EnvTokenAuthentication(authentication.BaseAuthentication):
     keyword = "Token"
 
@@ -99,3 +104,11 @@ class EnvTokenAuthentication(authentication.BaseAuthentication):
 
     def authenticate_header(self, request):
         return self.keyword
+
+
+class PublicApiEnvTokenAuthentication(EnvTokenAuthentication):
+    def authenticate_credentials(self, key):
+        if not settings.PUBLIC_API_AUTH_TOKEN or settings.PUBLIC_API_AUTH_TOKEN != key:
+            raise exceptions.AuthenticationFailed(_("Invalid token."))
+        user = PublicApiUser()
+        return user, key
