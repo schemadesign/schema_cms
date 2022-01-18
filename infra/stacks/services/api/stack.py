@@ -70,6 +70,9 @@ class ApiStack(Stack):
 
         django_secret = Secret(self, "DjangoSecretKey", secret_name="SCHEMA_CMS_DJANGO_SECRET_KEY")
         lambda_auth_token_secret = Secret(self, "LambdaAuthToken", secret_name="SCHEMA_CMS_LAMBDA_AUTH_TOKEN")
+        public_api_auth_token_secret = Secret(
+            self, "PublicApiAuthToken", secret_name="SCHEMA_CMS_PUBLIC_API_AUTH_TOKEN"
+        )
 
         if lambda_auth_token_secret.secret_arn:
             CfnOutput(
@@ -81,6 +84,7 @@ class ApiStack(Stack):
 
         self.django_secret_key = EcsSecret.from_secrets_manager(django_secret)
         self.lambda_auth_token = EcsSecret.from_secrets_manager(lambda_auth_token_secret)
+        self.public_api_auth_token = EcsSecret.from_secrets_manager(public_api_auth_token_secret)
 
         tag_from_context = self.node.try_get_context("app_image_tag")
         tag = tag_from_context if tag_from_context != "undefined" else None
@@ -142,6 +146,7 @@ class ApiStack(Stack):
                 ),
                 "DJANGO_SECRET_KEY": self.django_secret_key,
                 "LAMBDA_AUTH_TOKEN": self.lambda_auth_token,
+                "PUBLIC_API_AUTH_TOKEN": self.public_api_auth_token,
             },
             cpu=512,
             memory_limit_mib=1024,

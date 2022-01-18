@@ -9,16 +9,16 @@ from django_filters.rest_framework import DjangoFilterBackend
 from rest_framework import (
     decorators,
     filters as drf_filters,
-    mixins,
     permissions,
     reverse,
     response,
     renderers,
     views,
-    viewsets,
 )
-
+from rest_framework.viewsets import GenericViewSet
+from rest_framework.mixins import RetrieveModelMixin, ListModelMixin
 from . import filters, serializers, records_reader
+from ..authorization.authentication import PublicApiEnvTokenAuthentication
 from ..datasources.models import DataSource, Filter
 from ..pages.models import Section, Page, PageBlock, PageBlockElement
 from ..pages.constants import PageState
@@ -27,11 +27,24 @@ from ..tags.models import TagCategory
 from ..utils.serializers import ActionSerializerViewSetMixin
 
 
-class PARootView(views.APIView):
+class PublicApiView:
+    def get_permissions(self):
+        if settings.PROTECT_PUBLIC_API:
+            return [permissions.IsAuthenticated()]
+        else:
+            return [permissions.AllowAny()]
+
+    def get_authenticators(self):
+        if settings.PROTECT_PUBLIC_API:
+            return [PublicApiEnvTokenAuthentication()]
+        else:
+            return []
+
+
+class PARootView(PublicApiView, views.APIView):
     api_root_dict = None
     renderer_classes = [renderers.JSONRenderer]
     _ignore_model_permissions = False
-    permission_classes = (permissions.AllowAny,)
 
     def get(self, request, *args, **kwargs):
         ret = collections.OrderedDict()
@@ -52,9 +65,8 @@ class PARootView(views.APIView):
         return response.Response(ret)
 
 
-class TagCategoryListView(mixins.ListModelMixin, viewsets.GenericViewSet):
+class TagCategoryListView(PublicApiView, ListModelMixin, GenericViewSet):
     renderer_classes = [renderers.JSONRenderer]
-    permission_classes = ()
     queryset = TagCategory.objects.prefetch_related("tags").select_related("project").order_by("name")
     serializer_class = serializers.PATagCategorySerializer
     filter_backends = [drf_filters.OrderingFilter]
@@ -73,7 +85,7 @@ class TagCategoryListView(mixins.ListModelMixin, viewsets.GenericViewSet):
 
 
 class PAProjectView(
-    ActionSerializerViewSetMixin, mixins.RetrieveModelMixin, mixins.ListModelMixin, viewsets.GenericViewSet
+    PublicApiView, ActionSerializerViewSetMixin, RetrieveModelMixin, ListModelMixin, GenericViewSet
 ):
     serializer_class = serializers.PAProjectSerializer
     renderer_classes = [renderers.JSONRenderer]
@@ -150,7 +162,7 @@ class PAProjectView(
         return response.Response(serializer.data)
 
 
-class PASectionView(mixins.RetrieveModelMixin, viewsets.GenericViewSet):
+class PASectionView(PublicApiView, RetrieveModelMixin, GenericViewSet):
     serializer_class = serializers.PASectionDetailSerializer
     renderer_classes = [renderers.JSONRenderer]
     permission_classes = ()
@@ -161,7 +173,7 @@ class PASectionView(mixins.RetrieveModelMixin, viewsets.GenericViewSet):
     ordering_fields = ["created", "modified", "name"]
 
 
-class PABlocksView(mixins.RetrieveModelMixin, mixins.ListModelMixin, viewsets.GenericViewSet):
+class PABlocksView(PublicApiView, RetrieveModelMixin, ListModelMixin, GenericViewSet):
     serializer_class = serializers.PAPageBlockSerializer
     renderer_classes = [renderers.JSONRenderer]
     permission_classes = ()
@@ -186,7 +198,7 @@ class PABlocksView(mixins.RetrieveModelMixin, mixins.ListModelMixin, viewsets.Ge
         return super().get_queryset().filter(page=self.page_obj)
 
 
-class PAPageView(mixins.ListModelMixin, mixins.RetrieveModelMixin, viewsets.GenericViewSet):
+class PAPageView(PublicApiView, ListModelMixin, RetrieveModelMixin, GenericViewSet):
     serializer_class = serializers.PAPageDetailSerializer
     renderer_classes = [renderers.JSONRenderer]
     permission_classes = ()
@@ -240,7 +252,7 @@ class PAPageView(mixins.ListModelMixin, mixins.RetrieveModelMixin, viewsets.Gene
 
 
 class PADataSourceView(
-    ActionSerializerViewSetMixin, mixins.RetrieveModelMixin, mixins.ListModelMixin, viewsets.GenericViewSet
+    PublicApiView, ActionSerializerViewSetMixin, RetrieveModelMixin, ListModelMixin, GenericViewSet
 ):
     serializer_class = serializers.PADataSourceDetailNoRecordsSerializer
     renderer_classes = [renderers.JSONRenderer]
