@@ -8,6 +8,9 @@ from schemacms.authorization import pipeline
 from schemacms.utils import error
 
 
+pytestmark = [pytest.mark.django_db]
+
+
 class TestRetrieveAuthToken:
     """
     Tests /api/v1/auth/token operations.

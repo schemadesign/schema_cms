@@ -27,18 +27,15 @@ from ..tags.models import TagCategory
 from ..utils.serializers import ActionSerializerViewSetMixin
 
 
-PROTECT_API = ProjectsSettings.get_solo().protect_public_api
-
-
 class PublicApiView:
     def get_permissions(self):
-        if PROTECT_API:
+        if ProjectsSettings.get_solo().protect_public_api:
             return [permissions.IsAuthenticated()]
         else:
             return [permissions.AllowAny()]
 
     def get_authenticators(self):
-        if PROTECT_API:
+        if ProjectsSettings.get_solo().protect_public_api:
             return [PublicApiEnvTokenAuthentication()]
         else:
             return []
