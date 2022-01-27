@@ -20,6 +20,16 @@ from ..utils.models import file_upload_path
 from ..utils.services import s3
 
 
+from solo.models import SingletonModel
+
+
+class ProjectsSettings(SingletonModel):
+    protect_public_api = models.BooleanField(default=False)
+
+    def __str__(self):
+        return "All projects settings"
+
+
 class Project(SoftDeleteObject, TitleSlugDescriptionModel, TimeStampedModel):
     status = FSMField(choices=constants.PROJECT_STATUS_CHOICES, default=constants.ProjectStatus.IN_PROGRESS)
     owner = models.ForeignKey(

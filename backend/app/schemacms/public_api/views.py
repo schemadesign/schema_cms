@@ -22,20 +22,20 @@ from ..authorization.authentication import PublicApiEnvTokenAuthentication
 from ..datasources.models import DataSource, Filter
 from ..pages.models import Section, Page, PageBlock, PageBlockElement
 from ..pages.constants import PageState
-from ..projects.models import Project
+from ..projects.models import Project, ProjectsSettings
 from ..tags.models import TagCategory
 from ..utils.serializers import ActionSerializerViewSetMixin
 
 
 class PublicApiView:
     def get_permissions(self):
-        if settings.PROTECT_PUBLIC_API:
+        if ProjectsSettings.get_solo().protect_public_api:
             return [permissions.IsAuthenticated()]
         else:
             return [permissions.AllowAny()]
 
     def get_authenticators(self):
-        if settings.PROTECT_PUBLIC_API:
+        if ProjectsSettings.get_solo().protect_public_api:
             return [PublicApiEnvTokenAuthentication()]
         else:
             return []

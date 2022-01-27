@@ -24,6 +24,11 @@ from ..pages.models import PageBlockElement, CustomElementSet, PageBlockObservab
 from ..pages.constants import ElementType
 
 
+@admin.register(models.ProjectsSettings)
+class ProjectsSettings(admin.ModelAdmin):
+    pass
+
+
 class ProjectImportForm(forms.Form):
     zip_file = forms.FileField()
     owner = forms.ModelChoiceField(queryset=User.objects.all())

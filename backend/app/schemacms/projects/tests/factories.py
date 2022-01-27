@@ -3,6 +3,11 @@ import factory
 from schemacms.users.tests.factories import UserFactory
 
 
+class ProjectsSettings(factory.django.DjangoModelFactory):
+    class Meta:
+        model = "projects.ProjectsSettings"
+
+
 class ProjectFactory(factory.django.DjangoModelFactory):
     class Meta:
         model = "projects.Project"
