@@ -14,3 +14,9 @@ build:
 
 deploy-api:
 	$(MAKE) -C $(BASE_DIR)/infra/cdk deploy-api
+
+push-image-to-public-repo:
+	docker build -t schema-cms-public-backend .
+	docker tag schema-cms-public-backend:latest public.ecr.aws/d0t6m5r1/schema-cms-public-backend:latest
+	aws ecr-public get-login-password --region us-east-1 | docker login --username AWS --password-stdin public.ecr.aws/d0t6m5r1
+	docker push public.ecr.aws/d0t6m5r1/schema-cms-public-backend:latest
