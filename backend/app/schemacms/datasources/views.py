@@ -278,9 +278,13 @@ class DataSourceViewSet(BaseDataSourceView, ActionSerializerViewSetMixin, viewse
 
         return response.Response({"project": project, "results": serializer.data})
 
-    @decorators.action(detail=True, url_path="reimport", methods=["post"],
-                       permission_classes=[permissions.IsAuthenticated],
-                       authentication_classes=[authentication.EnvTokenAuthentication])
+    @decorators.action(
+        detail=True,
+        url_path="reimport",
+        methods=["post"],
+        permission_classes=[permissions.IsAuthenticated],
+        authentication_classes=[authentication.EnvTokenAuthentication],
+    )
     def reimport(self, request, pk=None, **kwargs):
         data_source = self.get_object()
         run_last_job = request.data.get("run_last_job", False)
