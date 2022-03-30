@@ -193,4 +193,3 @@ and enter `schema-cms-pipeline`.
 ### Debugging
 
 To see logs you can use [Cloud Watch](https://us-west-2.console.aws.amazon.com/cloudwatch/home) to monitor the logs for Lambda functions and the Django application.
-
