@@ -10,5 +10,5 @@ pack:
 	node_modules/.bin/sls package
 
 push-to-public:
-	aws s3 cp ./.serverless/main.zip s3://schema-cms-lamdas-code/workers/processing-latest.zip
+	aws s3 cp ./.serverless/main.zip s3://schema-cms-lamdas-code/workers/processing-latest.zip --acl public-read
 
