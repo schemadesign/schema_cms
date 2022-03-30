@@ -96,5 +96,14 @@ class SchemaCMSAPI:
     def _datasources_url(self):
         return os.path.join(self.backend_url, "datasources")
 
+    def repeat_last_datasource_job(self, datasource_pk):
+        url = os.path.join(self._datasource_url(datasource_pk), "internal-reimport")
+        response = requests.post(
+            url,
+            data={"run_last_job": True},
+            headers=self.get_headers()
+        )
+        return response
+
 
 schemacms_api = SchemaCMSAPI()

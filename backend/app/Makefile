@@ -20,3 +20,6 @@ push-image-to-public-repo:
 	docker tag schema-cms-public-backend:latest public.ecr.aws/d0t6m5r1/schema-cms-public-backend:latest
 	aws ecr-public get-login-password --region us-east-1 | docker login --username AWS --password-stdin public.ecr.aws/d0t6m5r1
 	docker push public.ecr.aws/d0t6m5r1/schema-cms-public-backend:latest
+
+black:
+	$(DOCKER_COMPOSE) run --rm -T backend black --config=pyproject.toml .

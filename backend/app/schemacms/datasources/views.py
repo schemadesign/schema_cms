@@ -288,6 +288,20 @@ class DataSourceViewSet(BaseDataSourceView, ActionSerializerViewSetMixin, viewse
 
     @decorators.action(
         detail=True,
+        url_path="internal-reimport",
+        methods=["post"],
+        permission_classes=[permissions.IsAuthenticated],
+        authentication_classes=[authentication.EnvTokenAuthentication],
+    )
+    def internal_reimport(self, request, pk=None, **kwargs):
+        data_source = self.get_object()
+        run_last_job = request.data.get("run_last_job", False)
+        data_source.schedule_update_meta(run_last_job)
+
+        return response.Response(status=status.HTTP_200_OK)
+
+    @decorators.action(
+        detail=True,
         url_path="update-meta",
         methods=["post"],
         permission_classes=[permissions.IsAuthenticated],
