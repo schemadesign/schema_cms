@@ -193,3 +193,36 @@ and enter `schema-cms-pipeline`.
 ### Debugging
 
 To see logs you can use [Cloud Watch](https://us-west-2.console.aws.amazon.com/cloudwatch/home) to monitor the logs for Lambda functions and the Django application.
+
+
+### Building Simplified Deployment Assets
+After new SchemaCMS version is released to master.
+
+Build backend public image:
+
+```shell
+cd backend/app
+aws-vault exec <profile to base schema aws account> -- make push-image-to-public-repo
+```
+
+Build frontend public image:
+```shell
+cd nginx
+aws-vault exec <profile to base schema aws account> -- make push-image-to-public-repo
+```
+
+Build workers lambda zip:
+
+```shell
+cd backend/functions/workeres
+make pack
+aws-vault exec <profile to base schema aws account> -- make push-to-public
+```
+
+Build workers lambda zip:
+
+```shell
+cd backend/functions/image_resize
+make pack
+aws-vault exec <profile to base schema aws account> -- make push-to-public
+```
