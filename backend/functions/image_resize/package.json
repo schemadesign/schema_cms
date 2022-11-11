@@ -9,7 +9,7 @@
   "private": true,
   "license": "ISC",
   "dependencies": {
-    "mocha": "^6.1.4",
+    "mocha": "^10.1.0",
     "nyc": "^14.0.0",
     "sharp": "^0.25.4",
     "sinon": "^7.3.2"
