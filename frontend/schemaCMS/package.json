@@ -71,7 +71,7 @@
     "jest-specific-snapshot": "^3.0.0",
     "jest-styled-components": "^7.0.0",
     "jest-watch-typeahead": "^0.2.1",
-    "lint-staged": "^8.1.0",
+    "lint-staged": "^13.1.0",
     "lodash.debounce": "^4.0.8",
     "markdown-it": "^11.0.1",
     "markdown-it-footnote": "^3.0.2",
