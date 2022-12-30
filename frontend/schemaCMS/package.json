@@ -48,7 +48,7 @@
     "eslint-plugin-prettier": "^3.0.1",
     "eslint-plugin-react": "7.21.3",
     "eslint-plugin-react-hooks": "^1.6.0",
-    "extract-react-intl-messages": "^0.11.1",
+    "extract-react-intl-messages": "^4.1.1",
     "file-loader": "3.0.1",
     "fontfaceobserver": "^2.1.0",
     "fork-ts-checker-webpack-plugin-alt": "0.4.14",
